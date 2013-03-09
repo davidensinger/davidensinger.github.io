@@ -21,13 +21,7 @@ body {
     font-size: 1em;
     line-height: 1.4;
 }
-.chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
+@import "ie/_ie";
 
 /* ==========================================================================
    Author's custom styles
