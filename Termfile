@@ -3,7 +3,7 @@ before { run 'cd ~/Development/davidensinger.com' }
 
 tab :name => 'Jekyll' do
   run 'rvm 2.0.0'
-  run 'jekyll --server'
+  run 'jekyll'
 end
 
 tab :name => 'Git' do
