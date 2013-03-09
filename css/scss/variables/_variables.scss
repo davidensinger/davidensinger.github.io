@@ -5,6 +5,39 @@
 // Colors
 // ==========================================================================
 
+// White, black, and grays
+$white: #fff;
+$white-dark: #f6f6f6;
+$white-darker: #eee;
+$gray: #808080;
+$gray-lightest: lighten($gray, 36);
+$gray-lighter: lighten($gray, 24);
+$gray-light: lighten($gray, 12);
+$gray-dark: darken($gray, 12);
+$gray-darker: darken($gray, 24);
+$gray-darkest: darken($gray, 36);
+$black-lighter: #111;
+$black-light: #090909;
+$black: #000;
+
+// Blues
+$blue: #05b6ff;
+$blue-lightest: lighten($blue, 36);
+$blue-lighter: lighten($blue, 24);
+$blue-light: lighten($blue, 12);
+$blue-dark: darken($blue, 12);
+$blue-darker: darken($blue, 24);
+$blue-darkest: darken($blue, 36);
+
+// Greens
+$green: #97b450;
+$green-lightest: lighten($green, 36);
+$green-lighter: lighten($green, 24);
+$green-light: lighten($green, 12);
+$green-dark: darken($green, 12);
+$green-darker: darken($green, 24);
+$green-darkest: darken($green, 36);
+
 // Links
 // ==========================================================================
 
