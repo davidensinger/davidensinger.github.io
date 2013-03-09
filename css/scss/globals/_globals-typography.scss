@@ -1,0 +1,13 @@
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: $font-face;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  color: $text-color; }
