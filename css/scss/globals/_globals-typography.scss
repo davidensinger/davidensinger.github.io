@@ -11,3 +11,16 @@ textarea {
   font-weight: $font-weight;
   line-height: $line-height;
   color: $text-color; }
+
+// Remove text-shadow in selection highlight: h5bp.com/i
+// These selection declarations have to be separate.
+// Customize the background color to match your design.
+::-moz-selection {
+  color: $selection-color;
+  background: $selection-background;
+  text-shadow: none; }
+
+::selection {
+  color: $selection-color;
+  background: $selection-background;
+  text-shadow: none; }
