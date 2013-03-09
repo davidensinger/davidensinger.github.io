@@ -11,8 +11,9 @@
 
 // Import partials
 // ==========================================================================
-@import "plugins/_normalize.scss";
-@import "globals/_globals.scss";
+@import "variables/_variables";
+@import "plugins/_normalize";
+@import "globals/_globals";
 
 html,
 button,
