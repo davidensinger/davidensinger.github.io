@@ -1,0 +1,19 @@
+// ==========================================================================
+// Scaffolding
+// ==========================================================================
+
+// apply a natural box layout model to all elements via http://paulirish.com/2012/box-sizing-border-box-ftw/
+// universal selector doesn't apply to pseudo-elements, so: http://jsfiddle.net/grewis/nHaxL/4/
+* {
+  &:before,
+  &:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; } }
+
+html {
+  font-size: 100%; }
+
+body {
+  min-height: 100%;
+  height: 100%; }
