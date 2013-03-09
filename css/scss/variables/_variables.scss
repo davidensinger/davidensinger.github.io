@@ -38,7 +38,15 @@ $green-lighter: lighten($green, 24);
 $green-light: lighten($green, 12);
 $green-dark: darken($green, 12);
 $green-darker: darken($green, 24);
-$green-darkest: darken($green, 36);
+$green-darkest: darken($green, 36); 
+
+// Borders
+// ==========================================================================
+$border-color: $gray-lighter;
+
+// Horizontal rules
+// ==========================================================================
+$hr-color: $gray-lightest;
 
 // Links
 // ==========================================================================

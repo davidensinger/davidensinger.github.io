@@ -1,0 +1,11 @@
+// ==========================================================================
+// Borders & Horizontal Rules
+// ==========================================================================
+
+@mixin border($border-or-hr, $direction) {
+  @if $border-or-hr == 'border' {
+    border-#{$direction}: 1px solid $border-color;
+  } @elseif $border-or-hr == 'hr' {
+    border-#{$direction}: 1px solid $hr-color;
+  }
+}
