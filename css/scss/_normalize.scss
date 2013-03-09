@@ -1,6 +1,7 @@
-// =============================================================================
-// Normalize.scss settings
-// =============================================================================
+// ==========================================================================
+// Normalize.scss
+// https://github.com/kristerkari/normalize.scss
+// ==========================================================================
 // So since we're using Sass to compile our Normalize, 
 // We can have some actual settings here, so we don't do more than we have to
 
@@ -8,7 +9,7 @@
 // Set to false if you want to drop support for IE6 and IE7
 // Notice: setting to false might render some elements
 // slightly differently than when set to true
-$legacy_support_for_ie: true !default; // Used also in Compass
+$legacy_support_for_ie: false !default; // Used also in Compass
 
 
 // Set the default font family here so you don't have to override it later
