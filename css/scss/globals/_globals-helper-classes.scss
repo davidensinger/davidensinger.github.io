@@ -2,6 +2,7 @@
 // Helper classes
 // ==========================================================================
 
+%ir,
 .ir { // Image replacement
   background-color: transparent;
   border: 0;
@@ -12,12 +13,13 @@
     width: 0;
     height: 100%; } }
 
+%hidden,
 .hidden { // Hide from both screenreaders and browsers: h5bp.com/u
   display: none !important;
   visibility: hidden; }
 
-.visuallyhidden, // Hide only visually, but have it available for screenreaders: h5bp.com/v
-.assistive-text {
+%visuallyhidden,
+.visuallyhidden { // Hide only visually, but have it available for screenreaders: h5bp.com/v
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -26,15 +28,17 @@
   padding: 0;
   position: absolute;
   width: 1px;
-  &.focusable:active, // Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p
-  &.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto; } }
+  &.focusable {
+    &:active, // Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p
+    &:focus {
+      clip: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      position: static;
+      width: auto; } } }
 
+%invisible,
 .invisible { // Hide visually and from screenreaders, but maintain layout
     visibility: hidden; }
 
