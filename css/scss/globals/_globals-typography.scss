@@ -24,3 +24,11 @@ textarea {
   color: $selection-color;
   background: $selection-background;
   text-shadow: none; }
+
+hr { // A better looking default horizontal rule
+  display: block;
+  height: 1px;
+  border: 0;
+  @include border(hr,top);
+  margin: 1em 0;
+  padding: 0; }
