@@ -3,26 +3,30 @@
 // ==========================================================================
 
 // Desktop
-@include breakpoint(desktop) {
-
-}
+@media only screen and (min-width: 1281px) {
+  .container {
+    max-width: 82%; } }
 
 // Large desktop
-@include breakpoint(large-desktop) {
+@media only screen and (min-width: 1441px) {
+  .container {
+    max-width: 76%; } }
 
-}
+// Smaller than small desktop
+@media only screen and (max-width: 959px) { }
 
-// Tablet portrait
-@include breakpoint(tablet-portrait) {
+// Tablet portrait to small desktop
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  .container {
+    max-width: 94%; } }
 
-}
+// All mobile
+@media only screen and (max-width: 767px) {
+  .container {
+    max-width: 100%; } }
 
-// Mobile landscape
-@include breakpoint(mobile-landscape) {
+// Mobile landscape to tablet portrait
+@media only screen and (min-width: 480px) and (max-width: 767px) {}
 
-}
-
-// Mobile portrait
-@include breakpoint(mobile-portrait) {
-
-}
+// Mobile portrait Size to mobile landscape
+@media only screen and (max-width: 479px) {}
