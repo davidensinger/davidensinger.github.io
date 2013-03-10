@@ -1,0 +1,45 @@
+// ==========================================================================
+// Alignment
+// ==========================================================================
+
+// Text
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.text-justify {
+  text-align: justify; }
+
+.text-intro {
+  font-size: 1.25em; // 20px
+  line-height: $line-height;
+  margin-bottom: 1em; }
+
+// Media
+.media-left {
+  float: left;
+  margin-right: 1.5em; }
+
+.media-right {
+  float: right;
+  margin-left: 1.5em; }
+
+.media-center {
+  clear: both;
+  display: block;
+  margin: 0 auto; }
+
+// Floats
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
+
+.float-none {
+  float: none; }
