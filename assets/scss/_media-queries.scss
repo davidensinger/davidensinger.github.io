@@ -5,20 +5,24 @@
 // Desktop
 @media only screen and (min-width: 1281px) {
   .container {
-    max-width: 82%; } }
+    max-width: 94%; } }
 
 // Large desktop
 @media only screen and (min-width: 1441px) {
-  .container {
-    max-width: 76%; } }
+  .primary {
+    width: 64%; }
+  .secondary {
+    width: 36%; } }
 
 // Smaller than small desktop
-@media only screen and (max-width: 959px) { }
+@media only screen and (max-width: 959px) {
+  .primary,
+  .secondary {
+    float: none;
+    width: auto; } }
 
 // Tablet portrait to small desktop
-@media only screen and (min-width: 768px) and (max-width: 959px) {
-  .container {
-    max-width: 94%; } }
+@media only screen and (min-width: 768px) and (max-width: 959px) {}
 
 // All mobile
 @media only screen and (max-width: 767px) {

@@ -20,9 +20,12 @@
   </head>
   <body class='{{ page.page-class }}'>
     <div class='container'>
-      <!--[if lt IE 9]><p class='chromeframe'>
-        Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.
-      </p><![endif]-->
+      <!--[if lt IE 9]><div class='chromeframe'>
+        <p>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+      </div><![endif]-->
+      <header>
+        <h1>Put balloon and navigation here only</h1>
+      </header>
       <div class='primary'>
         {{ content }}
       </div>
@@ -30,6 +33,9 @@
         <p>Secondary</p>
       </div>
     </div>
+    <footer>
+      <p>This is the footer.</p>
+    </footer>
     <script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
     <script>
       window.jQuery || document.write("<script src='/assets/js/vendor/jquery-1.9.1.min.js'><\/script>")

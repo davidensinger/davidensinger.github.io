@@ -4,12 +4,12 @@
 
 // apply a natural box layout model to all elements via http://paulirish.com/2012/box-sizing-border-box-ftw/
 // universal selector doesn't apply to pseudo-elements, so: http://jsfiddle.net/grewis/nHaxL/4/
-* {
-  &:before,
-  &:after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box; } }
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
 
 html {
   font-size: 100%; }
@@ -20,7 +20,37 @@ body {
   background: url("/assets/img/background.png"); }
 
 .container {
-  max-width: 88%;
+  @extend %clearfix;
+  max-width: 94%;
   background: $background-container;
   @extend %transitions-all;
   box-shadow: 0 0 3em 0 rgba($green-darkest, 0.1); }
+
+header {
+  padding: $padding-vertical $padding-horizontal; }
+
+.primary {
+  float: left;
+  width: 70%;
+  padding: $padding-vertical $padding-horizontal;
+  background: #f00; }
+
+.secondary {
+  float: left;
+  width: 30%;
+  padding: $padding-vertical $padding-horizontal;
+  position: relative;
+  z-index: 1;
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    background: #900; } }
+
+footer {
+  padding: $padding-vertical $padding-horizontal; }
