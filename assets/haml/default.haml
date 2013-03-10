@@ -28,8 +28,10 @@
       =surround "<!--[if lt IE 9]>", "<![endif]-->" do
         %p.chromeframe
           Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.
-
-      {{ content }}
+      .primary
+        {{ content }}
+      .secondary
+        %p Secondary
 
     %script{ :src => "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" }
     :javascript
