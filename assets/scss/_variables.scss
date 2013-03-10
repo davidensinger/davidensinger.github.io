@@ -40,6 +40,11 @@ $green-dark: darken($green, 12);
 $green-darker: darken($green, 24);
 $green-darkest: darken($green, 36); 
 
+// Backgrounds
+// ==========================================================================
+$background-primary: mix($white, $white-dark);
+$background-secondary: mix($white-dark, $white-darker);
+
 // Borders
 // ==========================================================================
 $border-color: $gray-lighter;
