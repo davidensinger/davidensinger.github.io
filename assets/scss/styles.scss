@@ -11,9 +11,17 @@
 
 // Import partials
 // ==========================================================================
-@import "variables/_variables";
-@import "mixins/_mixins";
-@import "plugins/_normalize";
-@import "globals/_globals";
-@import "media-queries/_media-queries";
-@import "ie/_ie";
+@import "_variables";
+@import "_mixins";
+@import "_normalize";
+@import "_scaffolding";
+@import "_typography";
+@import "_alignment";
+@import "_forms";
+@import "_media";
+@import "_helper-classes";
+@import "_transitions";
+@import "_media-queries";
+@import "_high-dpi";
+@import "_ie";
+@import "_print";
