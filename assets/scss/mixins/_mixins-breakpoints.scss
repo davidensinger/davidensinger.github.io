@@ -1,0 +1,32 @@
+// ==========================================================================
+// Breakpoints
+// http://css-tricks.com/media-queries-sass-3-2-and-codekit/
+// ==========================================================================
+
+$mq-mobile-portrait     : 320px !default;
+$mq-mobile-landscape    : 480px !default;
+$mq-tablet-portrait     : 769px !default;
+$mq-tablet-landscape    : 1024px !default;
+$mq-desktop             : 1280px !default;
+$mq-large-desktop       : 1440px !default;
+
+@mixin breakpoint($point) {
+  @if $point == mobile-portrait  {
+    @media (min-width: 320px) { @content; }
+  }
+  @if $point == mobile-landscape {
+    @media (min-width: 480px) { @content; }
+  }
+  @if $point == tablet-portrait {
+    @media (min-width: 769px) { @content; }
+  }
+  @if $point == tablet-landscape {
+    @media (min-width: 1024px) { @content; }
+  }
+  @if $point == desktop {
+    @media (min-width: 1280px)  { @content; }
+  }
+  @else if $point == large-desktop {
+    @media (min-width: 1440px)  { @content; }
+  }
+}
