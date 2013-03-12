@@ -26,31 +26,23 @@ body {
   @extend %transitions-all;
   box-shadow: 0 0 3em 0 rgba($green-darkest, 0.1); }
 
-header {
+%padding {
+  padding: $padding-vertical-fallback $padding-horizontal;
   padding: $padding-vertical $padding-horizontal; }
 
-.primary {
-  float: left;
-  width: 70%;
-  padding: $padding-vertical $padding-horizontal;
-  background: #f00; }
+header {
+  @extend %padding; }
 
+.primary,
 .secondary {
   float: left;
-  width: 30%;
-  padding: $padding-vertical $padding-horizontal;
-  position: relative;
-  z-index: 1;
-  &:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 30%;
-    background: #900; } }
+  @extend %padding; }
+
+.primary {
+  width: 70%; }
+
+.secondary {
+  width: 30%; }
 
 footer {
-  padding: $padding-vertical $padding-horizontal; }
+  @extend %padding; }

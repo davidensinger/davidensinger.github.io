@@ -11,3 +11,12 @@
     border-#{$direction}: 1px solid $hr-color;
   }
 }
+
+// Margin w/fallback
+// ==========================================================================
+@mixin margin($value, $direction) {
+  margin-#{$direction}: ($value * $base-pixels) + px;
+  margin-#{$direction}: $value + rem;
+}
+
+// MAKE BETTER MARGIN MIXIN WITH MULTIPLE DIRECTIONS IF DESIRED

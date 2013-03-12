@@ -25,10 +25,120 @@ textarea {
   background: $selection-background;
   text-shadow: none; }
 
-hr { // A better looking default horizontal rule
+// Headings
+// ==========================================================================
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  letter-spacing: 1px;
+  clear: left; }
+
+%margin-bottom {
+  margin-bottom: $margin-fallback;
+  margin-bottom: $margin; }
+
+p {
+  @extend %margin-bottom; }
+
+ul,
+ol {
+  @include margin(2,left);
+  @extend %margin-bottom; }
+
+// No top margins on first children
+p, ul, ol, dl,
+blockquote, pre,
+h1, h2, h3, h4, h5, h6 {
+  &:first-child {
+    margin-top: 0; } }
+
+// No margins on nested elements
+li {
+  p, ul, ol {
+    margin-top: 0;
+    margin-bottom: 0; } }
+
+// A better looking default horizontal rule
+hr {
   display: block;
   height: 1px;
   border: 0;
   @include border(hr,top);
   margin: 1em 0;
   padding: 0; }
+
+// Font weights
+b,
+strong,
+th {
+  font-weight: $font-weight-bold; }
+
+// Font styles
+cite,
+em,
+i {
+  font-style: italic; }
+
+blockquote {
+  cite { } }
+
+address {
+  @extend %margin-bottom; } 
+
+abbr,
+acronym {
+  border-bottom: 1px dotted $text-color;
+  cursor: help; }
+
+mark,
+ins {
+  background: $yellow-lighter;
+  color: $yellow-darker;
+  text-shadow: 0 1px 0 $yellow-lightest;
+  text-decoration: none; }
+
+pre {}
+
+code,
+kbd,
+tt,
+var {
+  font-weight: $font-weight; } 
+
+strike,
+s,
+del {
+  text-decoration: line-through;
+  text-shadow: none; }
+
+sup,
+sub {
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  bottom: 1ex; }
+
+sub {
+  top: .5ex; }
+
+small,
+sup,
+sub {
+  font-size: 75%; }
+
+big {
+  font-size: 125%; }
+
+figure {
+  margin: 0; }
+
+table {
+  @extend %margin-bottom;
+  width: 100%; }

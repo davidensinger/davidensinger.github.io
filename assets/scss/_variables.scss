@@ -40,6 +40,15 @@ $green-dark: darken($green, 12);
 $green-darker: darken($green, 24);
 $green-darkest: darken($green, 36); 
 
+// Yellows
+$yellow: #F1C40F;
+$yellow-lightest: lighten($yellow, 36);
+$yellow-lighter: lighten($yellow, 24);
+$yellow-light: lighten($yellow, 12);
+$yellow-dark: darken($yellow, 12);
+$yellow-darker: darken($yellow, 24);
+$yellow-darkest: darken($yellow, 36);
+
 // Backgrounds
 // ==========================================================================
 $background-container: mix($white, $white-dark);
@@ -55,10 +64,18 @@ $hr-color: $gray-lightest;
 // Links
 // ==========================================================================
 
+// Margin
+// ==========================================================================
+$base-pixels: 16;
+$margin: 1.5rem;
+$margin-fallback: $base-pixels * $margin;
+$margin-horizonal: 3%;
+
 // Padding
 // ==========================================================================
+$padding-vertical: 1.5rem;
+$padding-vertical-fallback: $base-pixels * $margin;
 $padding-horizontal: 3%;
-$padding-vertical: 1.5em;
 
 // Typography
 // ==========================================================================
