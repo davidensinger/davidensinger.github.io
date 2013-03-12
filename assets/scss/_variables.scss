@@ -53,11 +53,15 @@ $yellow-darkest: darken($yellow, 36);
 // ==========================================================================
 $background-container: mix($white, $white-dark);
 
+// Blockquotes
+// ==========================================================================
+
+
 // Borders
 // ==========================================================================
 $border-color: $gray-lighter;
 
-// Horizontal rules
+// Horizontal rule
 // ==========================================================================
 $hr-color: $gray-lightest;
 
@@ -66,24 +70,23 @@ $hr-color: $gray-lightest;
 
 // Margin
 // ==========================================================================
-$base-pixels: 16;
-$margin: 1.5rem;
-$margin-fallback: $base-pixels * $margin;
-$margin-horizonal: 3%;
 
 // Padding
 // ==========================================================================
-$padding-vertical: 1.5rem;
-$padding-vertical-fallback: $base-pixels * $margin;
-$padding-horizontal: 3%;
 
 // Typography
 // ==========================================================================
 $font-face: 'Open Sans', sans-serif;
 $font-weight: 400;
 $font-weight-bold: 600;
-$line-height: 1.5;
 
+$base-font-size: 16px; // in pixels
+$base-line-height: 24px; // in pixels
+$line-height: $base-line-height/$base-font-size;
+
+$text-color-light: $gray;
 $text-color: $gray-dark;
+$text-color-dark: $gray-darker;
+
 $selection-color: $white-dark;
 $selection-background: $green-light;

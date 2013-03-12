@@ -27,8 +27,7 @@ body {
   box-shadow: 0 0 3em 0 rgba($green-darkest, 0.1); }
 
 %padding {
-  padding: $padding-vertical-fallback $padding-horizontal;
-  padding: $padding-vertical $padding-horizontal; }
+  @include rem(padding, 1); }
 
 header {
   @extend %padding; }

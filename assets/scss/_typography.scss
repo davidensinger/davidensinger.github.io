@@ -25,6 +25,107 @@ textarea {
   background: $selection-background;
   text-shadow: none; }
 
+// Font sizes
+// ==========================================================================
+%giga-font {
+  @include rem(font-size, 3);
+  line-height: 1; }
+
+%giga-margin {
+  @include rem(margin-top, 0.5); }
+
+%giga {
+  @extend giga-font;
+  @extend giga-margin; }
+
+%mega-font {
+  @include rem(font-size, 2.5);
+  line-height: 1.2; }
+
+%mega-margin {
+  @include rem(margin-top, 0.6); }
+
+%mega {
+  @extend %mega-font;
+  @extend %mega-margin; }
+
+%alpha-font {
+  @include rem(font-size, 2.25);
+  line-height: 1.3333; }
+
+%alpha-margin {
+  @include rem(margin-top, 0.6667); }
+
+%alpha {
+  @extend %alpha-font;
+  @extend %alpha-margin; }
+
+%beta-font {
+  @include rem(font-size, 2);
+  line-height: 1.5; }
+
+%beta-margin {
+  @include rem(margin-top, 0.75); }
+
+%beta {
+  @extend %beta-font;
+  @extend %beta-margin; }
+
+%gamma-font {
+  @include rem(font-size, 1.5);
+  line-height: 1; }
+
+%gamma-margin {
+  @include rem(margin-top, 1); }
+
+%gamma {
+  @extend %gamma-font;
+  @extend %gamma-margin; }
+
+%delta-font {
+  @include rem(font-size, 1.25);
+  line-height: 1.2; }
+
+%delta-margin {
+  @include rem(margin-top, 1.2); }
+
+%delta {
+  @extend %delta-font;
+  @extend %delta-margin; }
+
+%epsilon-font {
+  @include rem(font-size, 1);
+  line-height: 1.5; }
+
+%epsilon-margin {
+  @include rem(margin-top, 1.5); }
+
+%epsilon {
+  @extend %epsilon-font;
+  @extend %epsilon-margin; }
+
+%zeta-font {
+  @include rem(font-size, 0.875);
+  line-height: 1.7143; }
+
+%zeta-margin {
+  @include rem(margin-top, 1.7143); }
+
+%zeta {
+  @extend %zeta-font;
+  @extend %zeta-margin; }
+
+%eta-font {
+  @include rem(font-size, 0.75);
+  line-height: 2; }
+
+%eta-margin {
+  @include rem(margin-top, 2); }
+
+%eta {
+  @extend %eta-font;
+  @extend %eta-margin; }
+
 // Headings
 // ==========================================================================
 h1,
@@ -33,21 +134,52 @@ h3,
 h4,
 h5,
 h6 {
+  margin: 0;
   padding: 0;
   letter-spacing: 1px;
+  font-weight: $font-weight-bold;
   clear: left; }
 
+h1 {
+  @extend %mega; }
+
+h2 {
+  @extend %alpha; }
+
+h3 {
+  @extend %beta; }
+
+h4 {
+  @extend %gamma; }
+
+h5 {
+  @extend %delta; }
+
+h6 {
+  @extend %epsilon;
+  text-transform: uppercase; }
+
 %margin-bottom {
-  margin-bottom: $margin-fallback;
-  margin-bottom: $margin; }
+  @include rem(margin-bottom, 1.5); }
 
 p {
   @extend %margin-bottom; }
 
-ul,
+ul {
+  list-style: disc; }
+
 ol {
-  @include margin(2,left);
+  list-style: decimal; }
+
+ul,
+ol,
+dd {
+  padding: 0;
+  @include rem(margin-left, 1.5);
   @extend %margin-bottom; }
+
+dt {
+  font-weight: $font-weight-bold; }
 
 // No top margins on first children
 p, ul, ol, dl,
@@ -55,6 +187,11 @@ blockquote, pre,
 h1, h2, h3, h4, h5, h6 {
   &:first-child {
     margin-top: 0; } }
+
+// No bottom margins on last children
+%no-last-child-margin {
+  &:last-child {
+    margin-bottom: 0; } }
 
 // No margins on nested elements
 li {
@@ -67,8 +204,9 @@ hr {
   display: block;
   height: 1px;
   border: 0;
+  @include rem(margin-top, 1.5);
   @include border(hr,top);
-  margin: 1em 0;
+  @extend %margin-bottom;
   padding: 0; }
 
 // Font weights
@@ -84,7 +222,17 @@ i {
   font-style: italic; }
 
 blockquote {
-  cite { } }
+  color: $text-color-light;
+  border-left: 4px solid $border-color;
+  @include rem(margin, 0 0 1.5 0.25);
+  @include rem(padding, 0.5 1);
+  cite {
+    color: $text-color;
+    font-style: $font-weight-bold;
+    font-style: normal; }
+  p {
+    @include rem(margin-bottom, 0.5);
+    @extend %no-last-child-margin; } }
 
 address {
   @extend %margin-bottom; } 
@@ -101,7 +249,12 @@ ins {
   text-shadow: 0 1px 0 $yellow-lightest;
   text-decoration: none; }
 
-pre {}
+pre {
+  @extend %margin-bottom;
+  @include rem(padding, 1);
+  background: $white-darker;
+  overflow: auto;
+  max-width: 100%; }
 
 code,
 kbd,
@@ -140,5 +293,8 @@ figure {
   margin: 0; }
 
 table {
+  width: 100%;
   @extend %margin-bottom;
-  width: 100%; }
+  caption {
+    text-align: left;
+    font-weight: $font-weight-bold; } }
