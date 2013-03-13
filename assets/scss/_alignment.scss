@@ -16,7 +16,7 @@
   text-align: justify; }
 
 .text-intro {
-  font-size: 1.25em; // 20px
+  @include rem(font-size, 1.25);
   line-height: $line-height;
   margin-bottom: 1em; }
 
