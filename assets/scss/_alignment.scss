@@ -16,9 +16,7 @@
   text-align: justify; }
 
 .text-intro {
-  @include rem(font-size, 1.25);
-  line-height: $line-height;
-  margin-bottom: 1em; }
+  @include rem(font-size, 1.25); }
 
 // Media
 .media-left {
