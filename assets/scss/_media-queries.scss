@@ -5,16 +5,31 @@
 // Desktop
 @media only screen and (min-width: 1281px) {
   html {
-    font-size: 125%; } // 20px
+    font-size: 118.75%; } // 19px
+
   .container {
-    max-width: 94%; } }
+    max-width: 94%; }
+
+  header,
+  .primary,
+  .secondary,
+  footer {
+    @include rem(padding, 3.5); } }
 
 // Large desktop
 @media only screen and (min-width: 1441px) {
   html {
-    font-size: 140%; } // 22px
+    font-size: 125%; } // 20px
+
+  header,
+  .primary,
+  .secondary,
+  footer {
+    @include rem(padding, 4); }
+
   .primary {
     width: 64%; }
+
   .secondary {
     width: 36%; } }
 
@@ -28,19 +43,34 @@
 // Tablet portrait to small desktop
 @media only screen and (min-width: 768px) and (max-width: 959px) {
   html {
-    font-size: 112.5%; } } // 18px
+    font-size: 106.25%; } // 17px
+
+  header,
+  .primary,
+  .secondary,
+  footer {
+    @include rem(padding, 2.5); } }
 
 // All mobile
 @media only screen and (max-width: 767px) {
+  html {
+    font-size: 100%; } // 16px
+
   .container {
     max-width: 100%; } }
 
 // Mobile landscape to tablet portrait
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  html {
-    font-size: 106.25%; } } // 17px
+  header,
+  .primary,
+  .secondary,
+  footer {
+    @include rem(padding, 2); } }
 
 // Mobile portrait Size to mobile landscape
 @media only screen and (max-width: 479px) {
-  html {
-    font-size: 100%; } } // 16px
+  header,
+  .primary,
+  .secondary,
+  footer {
+    @include rem(padding, 1.5); } }

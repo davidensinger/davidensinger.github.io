@@ -26,16 +26,17 @@ body {
   @extend %transitions-all;
   box-shadow: 0 0 3em 0 rgba($green-darkest, 0.1); }
 
-%padding {
-  @include rem(padding, 1); }
+header,
+.primary,
+.secondary,
+footer {
+  @include rem(padding, 3); }
 
-header {
-  @extend %padding; }
+header { }
 
 .primary,
 .secondary {
-  float: left;
-  @extend %padding; }
+  float: left; }
 
 .primary {
   width: 70%; }
@@ -43,5 +44,4 @@ header {
 .secondary {
   width: 30%; }
 
-footer {
-  @extend %padding; }
+footer { }
