@@ -76,13 +76,13 @@ $hr-color: $gray-lightest;
 
 // Typography
 // ==========================================================================
-$font-face: 'Open Sans', sans-serif;
-$font-weight: 400;
-$font-weight-bold: 600;
+$base-font-face: 'Open Sans', sans-serif!default;
+$base-font-weight: 400!default;
+$base-font-weight-bold: 600!default;
 
-$base-font-size: 16px; // in pixels
-$base-line-height: 24px; // in pixels
-$line-height: $base-line-height/$base-font-size;
+$base-font-size: 16px!default;
+$base-line-height: 24px!default;
+$line-height-ratio: $base-line-height/$base-font-size!default;
 
 $text-color-light: $gray;
 $text-color: $gray-dark;

@@ -2,14 +2,17 @@
 // Typography
 // ==========================================================================
 
+html {
+  font: 100%/#{$line-height-ratio} $base-font-face; }
+
 body,
 button,
 input,
 select,
 textarea {
-  font-family: $font-face;
-  font-weight: $font-weight;
-  line-height: $line-height;
+  font-family: $base-font-face;
+  font-weight: $base-font-weight;
+  line-height: $line-height-ratio;
   color: $text-color; }
 
 // Remove text-shadow in selection highlight: h5bp.com/i
@@ -137,7 +140,7 @@ h6 {
   margin: 0;
   padding: 0;
   letter-spacing: 1px;
-  font-weight: $font-weight-bold;
+  font-weight: $base-font-weight-bold;
   clear: left; }
 
 h1 {
@@ -180,7 +183,7 @@ dd {
   @extend %margin-bottom; }
 
 dt {
-  font-weight: $font-weight-bold; }
+  font-weight: $base-font-weight-bold; }
 
 // No top margins on first children
 p, ul, ol, dl,
@@ -214,7 +217,7 @@ hr {
 b,
 strong,
 th {
-  font-weight: $font-weight-bold; }
+  font-weight: $base-font-weight-bold; }
 
 // Font styles
 cite,
@@ -229,7 +232,7 @@ blockquote {
   @include rem(padding, 0.5 1);
   cite {
     color: $text-color;
-    font-style: $font-weight-bold;
+    font-style: $base-font-weight-bold;
     font-style: normal; }
   p {
     @include rem(margin-bottom, 0.5);
@@ -261,7 +264,7 @@ code,
 kbd,
 tt,
 var {
-  font-weight: $font-weight; } 
+  font-weight: $base-font-weight; } 
 
 strike,
 s,
@@ -298,4 +301,4 @@ table {
   @extend %margin-bottom;
   caption {
     text-align: left;
-    font-weight: $font-weight-bold; } }
+    font-weight: $base-font-weight-bold; } }
