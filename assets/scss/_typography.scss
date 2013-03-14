@@ -163,6 +163,7 @@ h6 {
   @include rem(margin-bottom, 1.5); }
 
 p {
+  @extend %epsilon-font;
   @extend %margin-bottom; }
 
 ul {
