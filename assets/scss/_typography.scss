@@ -193,7 +193,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0; } }
 
 // No bottom margins on last children
-%no-last-child-margin {
+%no-last-child-margin,
+p, ul, ol, dl,
+blockquote, pre, {
   &:last-child {
     margin-bottom: 0; } }
 
@@ -235,8 +237,7 @@ blockquote {
     font-style: $base-font-weight-bold;
     font-style: normal; }
   p {
-    @include rem(margin-bottom, 0.5);
-    @extend %no-last-child-margin; } }
+    @include rem(margin-bottom, 0.5); } }
 
 address {
   @extend %margin-bottom; } 
