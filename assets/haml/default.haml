@@ -44,8 +44,9 @@
         #content.primary{ :role => "main" }
           {{ content }}
         %aside.secondary{ :role => "complementary" }
-          %h1 David Ensinger
-          %p I’m a <strong>Front End Developer</strong> for <strong>The Ohio State University Libraries</strong>. I enjoy designing, developing, writing, or doing a combination thereof. Have a look around and please don’t hesitate to <a href="mailto:hello@davidensinger.com">contact me</a>.
+          %img{ :src => "/assets/img/david-ensinger.jpg", :class => "secondary-photo", :alt => "A photo of David Ensinger" }
+          %h1.secondary-title David Ensinger
+          %p.secondary-description I’m a <strong>Front End Developer</strong> for <strong>The Ohio State University Libraries</strong>. I enjoy designing, developing, writing, or doing a combination thereof. Have a look around and please don’t hesitate to <a href="mailto:hello@davidensinger.com">contact me</a>.
           %p <a href="http://twitter.com/DavidEnsinger">Follow me on Twitter</a>.
       %footer{ :role => "contentinfo" }
         .social-icons

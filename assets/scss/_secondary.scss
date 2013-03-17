@@ -3,7 +3,14 @@
 // ==========================================================================
 
 .secondary {
-  h1 {
-    @extend %epsilon; }
-  p {
-    @extend %eta-font-size; } }
+  @extend %clearfix; }
+
+.secondary-photo {
+  width: 75%;
+  border-radius: 50%; }
+
+.secondary-title {
+  @extend %epsilon-font-size; }
+
+.secondary-description {
+    @extend %eta-font-size; }

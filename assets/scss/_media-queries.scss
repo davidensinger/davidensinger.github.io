@@ -21,6 +21,9 @@
   html {
     font-size: 125%; } // 20px
 
+  .outer-container {
+    max-width: 1600px; }
+
   header,
   .primary,
   .secondary,
@@ -39,6 +42,11 @@
   .secondary {
     float: none;
     width: auto; }
+
+  .secondary-photo {
+    @include rem(margin, 1.8 0 0 1.5);
+    float: right;
+    width: 100px; }
 
   footer {
     text-align: center; }
@@ -79,4 +87,10 @@
   .primary,
   .secondary,
   footer {
-    @include rem(padding, 1.5); } }
+    @include rem(padding, 1.5); }
+
+  .secondary-photo {
+    margin: 0 auto;
+    display: block;
+    float: none;
+    width: 75%; } }
