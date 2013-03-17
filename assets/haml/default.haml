@@ -29,9 +29,15 @@
         =surround "<!--[if lt IE 9]>", "<![endif]-->" do
           .chromeframe
             %p Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.
-        %header
-          %h1 Put balloon and navigation here only
-        .primary
+        %header{ :role => "banner" }
+          %nav{ :role =>"navigation" }
+            %h1.visuallyhidden
+            .visuallyhidden
+              %a{ :title => "Skip to content", :href => "#content" } Skip to content
+            %a{ :href => "/" } Home
+            %a{ :href => "/about/" } About
+            %a{ :href => "/archive/" } Archive
+        #content.primary
           {{ content }}
         %aside.secondary
           %h1 David Ensinger

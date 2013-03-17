@@ -24,10 +24,18 @@
         <!--[if lt IE 9]><div class='chromeframe'>
           <p>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
         </div><![endif]-->
-        <header>
-          <h1>Put balloon and navigation here only</h1>
+        <header role='banner'>
+          <nav role='navigation'>
+            <h1 class='visuallyhidden'></h1>
+            <div class='visuallyhidden'>
+              <a href='#content' title='Skip to content'>Skip to content</a>
+            </div>
+            <a href='/'>Home</a>
+            <a href='/about/'>About</a>
+            <a href='/archive/'>Archive</a>
+          </nav>
         </header>
-        <div class='primary'>
+        <div class='primary' id='content'>
           {{ content }}
         </div>
         <aside class='secondary'>
