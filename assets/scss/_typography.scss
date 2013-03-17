@@ -37,8 +37,9 @@ textarea {
 %gamma-line-height {
   line-height: 1; }
 
-%giga-margin {
-  @include rem(margin-top, 0.5); }
+%giga-margin,
+%gamma-margin {
+  @include rem(margin, 1.5 0 0.5); }
 
 %giga {
   @extend giga-font-size;
@@ -52,8 +53,9 @@ textarea {
 %delta-line-height {
   line-height: 1.2; }
 
-%mega-margin {
-  @include rem(margin-top, 0.6); }
+%mega-margin,
+%delta-margin {
+  @include rem(margin, 1.8 0 0.6); }
 
 %mega {
   @extend %mega-font-size;
@@ -67,7 +69,7 @@ textarea {
   line-height: 1.3333; }
 
 %alpha-margin {
-  @include rem(margin-top, 0.6667); }
+  @include rem(margin, 1.995 0 0.665); }
 
 %alpha {
   @extend %alpha-font-size;
@@ -82,7 +84,7 @@ textarea {
   line-height: 1.5; }
 
 %beta-margin {
-  @include rem(margin-top, 0.75); }
+  @include rem(margin, 2.25 0 0.75); }
 
 %beta {
   @extend %beta-font-size;
@@ -92,9 +94,6 @@ textarea {
 %gamma-font-size {
   @include rem(font-size, 1.5); }
 
-%gamma-margin {
-  @include rem(margin-top, 1); }
-
 %gamma {
   @extend %gamma-font-size;
   @extend %gamma-line-height;
@@ -102,9 +101,6 @@ textarea {
 
 %delta-font-size {
   @include rem(font-size, 1.25); }
-
-%delta-margin {
-  @include rem(margin-top, 1.2); }
 
 %delta {
   @extend %delta-font-size;
@@ -129,7 +125,7 @@ textarea {
   line-height: 1.7143; }
 
 %zeta-margin {
-  @include rem(margin-top, 1.7143); }
+  @include rem(margin, 2.57145 0.85715); }
 
 %zeta {
   @extend %zeta-font-size;
@@ -143,7 +139,7 @@ textarea {
   line-height: 2; }
 
 %eta-margin {
-  @include rem(margin-top, 2); }
+  @include rem(margin, 3 0 1); }
 
 %eta {
   @extend %eta-font-size;
@@ -158,7 +154,6 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
   padding: 0;
   letter-spacing: 1px;
   font-weight: $base-font-weight-bold;
