@@ -187,6 +187,7 @@ h6 {
   @include rem(margin-bottom, 1.5); }
 
 p {
+  margin-top: 0;
   @extend %epsilon-font-size;
   @extend %epsilon-line-height;
   @extend %margin-bottom; }
