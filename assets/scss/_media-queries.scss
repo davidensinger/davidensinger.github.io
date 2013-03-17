@@ -40,9 +40,11 @@
     float: none;
     width: auto; }
 
-  footer,
+  footer {
+    text-align: center; }
+
   .social-icons {
-    text-align: center; } }
+    float: none; } }
 
 // Tablet portrait to small desktop
 @media only screen and (min-width: 768px) and (max-width: 959px) {
