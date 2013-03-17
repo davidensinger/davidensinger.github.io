@@ -3,7 +3,7 @@ layout: default
 title: About
 page-class: page-about
 permalink: /about/
-description: About David Ensinger, a Front End Developer from Columbus, OH
+description: David Ensinger is a Front End Developer from Columbus, OH
 ---
 
 # About
