@@ -1,0 +1,15 @@
+// ==========================================================================
+// Links
+// ==========================================================================
+
+a {
+  &:link,
+  &:visited {
+    color: $link-color;
+    font-weight: $base-font-weight-bold;
+    text-decoration: none; }
+  &:hover {
+    color: $link-color-hover; }
+  &:focus,
+  &:active {
+    color: $link-color-focus; } }
