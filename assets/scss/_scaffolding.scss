@@ -25,7 +25,7 @@ body {
 
 .inner-container {
   @extend %clearfix;
-  background: $background-container;
+  background: $background-inner-container;
   box-shadow: 0 0 3em 0 rgba($green-darkest, 0.1); }
 
 // Common
