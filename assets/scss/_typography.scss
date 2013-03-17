@@ -207,17 +207,12 @@ dd {
 dt {
   font-weight: $base-font-weight-bold; }
 
-// No top margins on first children
+// No top margins on first children or bottom margins on last children
 p, ul, ol, dl,
 blockquote, pre,
 h1, h2, h3, h4, h5, h6 {
   &:first-child {
-    margin-top: 0; } }
-
-// No bottom margins on last children
-%no-last-child-margin,
-p, ul, ol, dl,
-blockquote, pre, {
+    margin-top: 0; }
   &:last-child {
     margin-bottom: 0; } }
 
