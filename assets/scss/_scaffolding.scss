@@ -19,11 +19,13 @@ body {
   height: 100%;
   background: url("/assets/img/background.png"); }
 
-.container {
-  @extend %clearfix;
+.outer-container {
   max-width: 94%;
+  @extend %transitions-all; }
+
+.inner-container {
+  @extend %clearfix;
   background: $background-container;
-  @extend %transitions-all;
   box-shadow: 0 0 3em 0 rgba($green-darkest, 0.1); }
 
 // Common

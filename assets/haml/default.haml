@@ -24,22 +24,23 @@
 
   %body{ :class => "{{ page.page-class }}" }
 
-    .container
-      =surround "<!--[if lt IE 9]>", "<![endif]-->" do
-        .chromeframe
-          %p Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.
-      %header
-        %h1 Put balloon and navigation here only
-      .primary
-        {{ content }}
-      .secondary
-        %p Secondary
-    %footer
-      .social-icons
-        %a{:title => "Follow me on Twitter", :href => "http://twitter.com/DavidEnsinger"} Twitter
-        %a{:title => "Follow me on GitHub", :href => "http://github.com/davidensinger"} GitHub
-        %a{:title => "Follow me on Tumblr", :href => "http://www.republicofthespirit.com"} Tumblr
-      %p &copy; 2013 David Ensinger. All rights reserved.
+    .outer-container
+      .inner-container
+        =surround "<!--[if lt IE 9]>", "<![endif]-->" do
+          .chromeframe
+            %p Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.
+        %header
+          %h1 Put balloon and navigation here only
+        .primary
+          {{ content }}
+        .secondary
+          %p Secondary
+      %footer
+        .social-icons
+          %a{:title => "Follow me on Twitter", :href => "http://twitter.com/DavidEnsinger"} Twitter
+          %a{:title => "Follow me on GitHub", :href => "http://github.com/davidensinger"} GitHub
+          %a{:title => "Follow me on Tumblr", :href => "http://www.republicofthespirit.com"} Tumblr
+        %p &copy; 2013 David Ensinger. All rights reserved.
 
     %script{ :src => "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" }
     :javascript
