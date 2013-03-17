@@ -29,7 +29,6 @@ textarea {
   text-shadow: none; }
 
 // Font sizes
-// ==========================================================================
 %giga-font-size {
   @include rem(font-size, 3); }
 
@@ -147,13 +146,13 @@ textarea {
   @extend %eta-margin; }
 
 // Headings
-// ==========================================================================
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+  color: $heading-color;
   padding: 0;
   letter-spacing: 1px;
   font-weight: $base-font-weight-bold;
