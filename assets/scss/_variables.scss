@@ -23,7 +23,7 @@ $black-light: #090909;
 $black: #000;
 
 // Blues
-$blue: #05b6ff;
+$blue: #3498DB;
 $blue-lightest: lighten($blue, 36);
 $blue-lighter: lighten($blue, 24);
 $blue-light: lighten($blue, 12);
@@ -32,13 +32,13 @@ $blue-darker: darken($blue, 24);
 $blue-darkest: darken($blue, 36);
 
 // Greens
-$green: #97b450;
+$green: #2ECC71;
 $green-lightest: lighten($green, 36);
 $green-lighter: lighten($green, 24);
 $green-light: lighten($green, 12);
 $green-dark: darken($green, 12);
 $green-darker: darken($green, 24);
-$green-darkest: darken($green, 36); 
+$green-darkest: darken($green, 36);
 
 // Yellows
 $yellow: #F1C40F;
