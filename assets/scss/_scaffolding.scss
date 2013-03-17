@@ -26,14 +26,20 @@ body {
   @extend %transitions-all;
   box-shadow: 0 0 3em 0 rgba($green-darkest, 0.1); }
 
+// Common
+// ==========================================================================
 header,
 .primary,
 .secondary,
 footer {
   @include rem(padding, 3); }
 
+// Header
+// ==========================================================================
 header { }
 
+// Primary
+// ==========================================================================
 .primary,
 .secondary {
   float: left; }
@@ -41,7 +47,14 @@ header { }
 .primary {
   width: 70%; }
 
+// Secondary
+// ==========================================================================
 .secondary {
   width: 30%; }
 
+// Footer
+// ==========================================================================
 footer { }
+
+.social-icons {
+  text-align: right; }
