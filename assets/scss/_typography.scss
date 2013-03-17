@@ -30,103 +30,124 @@ textarea {
 
 // Font sizes
 // ==========================================================================
-%giga-font {
-  @include rem(font-size, 3);
+%giga-font-size {
+  @include rem(font-size, 3); }
+
+%giga-line-height,
+%gamma-line-height {
   line-height: 1; }
 
 %giga-margin {
   @include rem(margin-top, 0.5); }
 
 %giga {
-  @extend giga-font;
+  @extend giga-font-size;
+  @extend giga-line-height;
   @extend giga-margin; }
 
-%mega-font {
-  @include rem(font-size, 2.5);
+%mega-font-size {
+  @include rem(font-size, 2.5); }
+
+%mega-line-height,
+%delta-line-height {
   line-height: 1.2; }
 
 %mega-margin {
   @include rem(margin-top, 0.6); }
 
 %mega {
-  @extend %mega-font;
+  @extend %mega-font-size;
+  @extend %mega-line-height;
   @extend %mega-margin; }
 
-%alpha-font {
-  @include rem(font-size, 2.25);
+%alpha-font-size {
+  @include rem(font-size, 2.25); }
+
+%alpha-line-height {
   line-height: 1.3333; }
 
 %alpha-margin {
   @include rem(margin-top, 0.6667); }
 
 %alpha {
-  @extend %alpha-font;
+  @extend %alpha-font-size;
+  @extend %alpha-line-height;
   @extend %alpha-margin; }
 
-%beta-font {
-  @include rem(font-size, 2);
+%beta-font-size {
+  @include rem(font-size, 2); }
+
+%beta-line-height,
+%epsilon-line-height {
   line-height: 1.5; }
 
 %beta-margin {
   @include rem(margin-top, 0.75); }
 
 %beta {
-  @extend %beta-font;
+  @extend %beta-font-size;
+  @extend %beta-line-height;
   @extend %beta-margin; }
 
-%gamma-font {
-  @include rem(font-size, 1.5);
-  line-height: 1; }
+%gamma-font-size {
+  @include rem(font-size, 1.5); }
 
 %gamma-margin {
   @include rem(margin-top, 1); }
 
 %gamma {
-  @extend %gamma-font;
+  @extend %gamma-font-size;
+  @extend %gamma-line-height;
   @extend %gamma-margin; }
 
-%delta-font {
-  @include rem(font-size, 1.25);
-  line-height: 1.2; }
+%delta-font-size {
+  @include rem(font-size, 1.25); }
 
 %delta-margin {
   @include rem(margin-top, 1.2); }
 
 %delta {
-  @extend %delta-font;
+  @extend %delta-font-size;
+  @extend %delta-line-height;
   @extend %delta-margin; }
 
-%epsilon-font {
-  @include rem(font-size, 1);
-  line-height: 1.5; }
+%epsilon-font-size {
+  @include rem(font-size, 1); }
 
 %epsilon-margin {
   @include rem(margin-top, 1.5); }
 
 %epsilon {
-  @extend %epsilon-font;
+  @extend %epsilon-font-size;
+  @extend %epsilon-line-height;
   @extend %epsilon-margin; }
 
-%zeta-font {
-  @include rem(font-size, 0.875);
+%zeta-font-size {
+  @include rem(font-size, 0.875); }
+
+%zeta-line-height {
   line-height: 1.7143; }
 
 %zeta-margin {
   @include rem(margin-top, 1.7143); }
 
 %zeta {
-  @extend %zeta-font;
+  @extend %zeta-font-size;
+  @extend %zeta-line-height;
   @extend %zeta-margin; }
 
-%eta-font {
-  @include rem(font-size, 0.75);
+%eta-font-size {
+  @include rem(font-size, 0.75); }
+
+%eta-line-height {
   line-height: 2; }
 
 %eta-margin {
   @include rem(margin-top, 2); }
 
 %eta {
-  @extend %eta-font;
+  @extend %eta-font-size;
+  @extend %eta-line-height;
   @extend %eta-margin; }
 
 // Headings
@@ -166,7 +187,8 @@ h6 {
   @include rem(margin-bottom, 1.5); }
 
 p {
-  @extend %epsilon-font;
+  @extend %epsilon-font-size;
+  @extend %epsilon-line-height;
   @extend %margin-bottom; }
 
 ul {
