@@ -8,7 +8,7 @@ description: David Ensinger is a Front End Developer from Columbus, OH
 
 # About
 
-My name is David Ensinger and while I’m currently a Front End Developer, I don’t feel bound to the constraints of the job title. My skills and interests are varied and I’m happiest when I’m busy designing, developing, writing, or doing a combination thereof.
+<p class="text-intro">My name is David Ensinger and while I’m currently a Front End Developer, I don’t feel bound to the constraints of the job title. My skills and interests are varied and I’m happiest when I’m busy designing, developing, writing, or doing a combination thereof.</p>
 
 The websites I develop are well designed, useable, and adhere to modern standards and accessibility requirements. I’m also no slouch at writing documentation, leading training, and providing ongoing support. My clients and co-workers will vouch that I’m amiable and play nice with others too.
 
