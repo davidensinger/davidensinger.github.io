@@ -34,9 +34,13 @@
             %h1.visuallyhidden
             .visuallyhidden
               %a{ :title => "Skip to content", :href => "#content" } Skip to content
-            %a{ :href => "/" } Home
-            %a{ :href => "/about/" } About
-            %a{ :href => "/archive/" } Archive
+            %ul
+              %li
+                %a{ :href => "/" } Home
+              %li
+                %a{ :href => "/about/" } About
+              %li
+                %a{ :href => "/archive/" } Archive
         #content.primary{ :role => "main" }
           {{ content }}
         %aside.secondary{ :role => "complementary" }
