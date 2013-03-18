@@ -8,7 +8,7 @@ description: David Ensinger is a Front End Developer from Columbus, OH
 
 # About
 
-<p class="text-intro">Hi, my name is <strong>David Ensinger</strong> and I’m a <strong>Front End Developer</strong> with equal parts skill in design, development, and writing.</p>
+<p class="text-intro">Hi, my name is <strong>David Ensinger</strong> and I’m a <strong>Front End Developer</strong> with equal parts interest in design, development, and writing.</p>
 
 I develop websites that are designed well, useable, and adhere to modern standards and accessibility requirements. I’m also no slouch at writing documentation, leading training, and providing ongoing support. My clients and co-workers will vouch that I play well with others too.
 
@@ -23,3 +23,7 @@ For my personal web presence, see the [Republic of the Spirit](http://www.republ
 If you have any questions, comments, or would just like to say hello, please don't hesitate to [drop me a line](mailto:hello@davidensinger.com). I'll be sure to respond in a timely manner!
 
 ## Colophon
+
+### Jekyll
+
+- [Jekyll RSS Feed Templates](https://github.com/snaptortoise/jekyll-rss-feeds)
