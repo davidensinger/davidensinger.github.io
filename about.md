@@ -8,9 +8,9 @@ description: David Ensinger is a Front End Developer from Columbus, OH
 
 # About
 
-<p class="text-intro">My name is <strong>David Ensinger</strong> and I’m a <strong>Front End Developer</strong>. I enjoy designing, developing, writing, or doing a combination thereof.</p>
+<p class="text-intro">My name is <strong>David Ensinger</strong> and I’m a <strong>Front End Developer</strong> with equal parts skill in design, development, and writing.</p>
 
-I develop websites that are designed well, useable, and adhere to modern standards and accessibility requirements. I’m also no slouch at writing documentation, leading training, and providing ongoing support. My clients and co-workers will vouch that I play well with others as well.
+I develop websites that are designed well, useable, and adhere to modern standards and accessibility requirements. I’m also no slouch at writing documentation, leading training, and providing ongoing support. My clients and co-workers will vouch that I play well with others too.
 
 My current employer is [The Ohio State University Libraries](http://library.osu.edu/), but in past lives I was a Peace Corps Volunteer in the Republic of Moldova and a Web Marketing & Technology Specialist at eSchool Consultants. I graduated from the Ohio State University’s Fisher College of Business with a B.S. in Business Administration with a specialization in Finance.
 

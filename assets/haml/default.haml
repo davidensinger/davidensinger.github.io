@@ -45,17 +45,25 @@
           {{ content }}
         %aside.secondary{ :role => "complementary" }
           %img{ :src => "/assets/img/david-ensinger.jpg", :class => "secondary-photo", :alt => "A photo of David Ensinger" }
-          %h1.secondary-title David Ensinger
-          %p.secondary-description I’m a <strong>Front End Developer</strong> for <strong>The Ohio State University Libraries</strong>. I enjoy designing, developing, writing, or doing a combination thereof. Have a look around and please don’t hesitate to <a href="mailto:hello@davidensinger.com">contact me</a>.
-          %p <a href="http://twitter.com/DavidEnsinger">Follow me on Twitter</a>.
+          %p Hi, I’m <strong>David Ensinger</strong> and I’m a <strong>Front End Developer</strong>.
+          %p.secondary-contact Have a look around and please don’t hesitate to <a href="mailto:hello@davidensinger.com">contact me</a> with any comments, questions, or just to say hello!
+          %a{ :title => "Follow @DavidEnsinger on Twitter", :href => "http://twitter.com/DavidEnsinger", :class => "link-twitter icon-twitter" } Follow me on Twitter
       %footer{ :role => "contentinfo" }
         .social-icons
-          %a{ :title => "Follow me on Twitter", :href => "http://twitter.com/DavidEnsinger" } Twitter
-          %a{ :title => "Follow me on GitHub", :href => "http://github.com/davidensinger" } GitHub
-          %a{ :title => "Follow me on Tumblr", :href => "http://www.republicofthespirit.com/" } Tumblr
+          %a{ :title => "Follow me on Twitter", :href => "http://twitter.com/DavidEnsinger" }
+            %span{ :class => "icon-twitter", :"aria-hidden" => "true" }
+            %span.visuallyhidden Twitter
+          %a{ :title => "Follow me on GitHub", :href => "http://github.com/davidensinger" }
+            %span{ :class => "icon-github", :"aria-hidden" => "true" }
+            %span.visuallyhidden GitHub
+          %a{ :title => "Follow me on Tumblr", :href => "http://www.republicofthespirit.com/" }
+            %span{ :class => "icon-tumblr", :"aria-hidden" => "true" }
+            %span.visuallyhidden Tumblr
         %p
           &copy; {{ site.time | date: '%Y' }} David Ensinger. All rights reserved.
-          %a{ :title => "Subscribe to my RSS feed", :href => "RSS" } RSS
+          %a{ :title => "Subscribe to my RSS feed", :href => "/feed.xml", :class => "link-rss" }
+            %span{ :class => "icon-rss", :"aria-hidden" => "true" }
+            %span.visuallyhidden RSS
 
     %script{ :src => "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" }
     :javascript

@@ -63,4 +63,10 @@ nav { }
 footer { }
 
 .social-icons {
-  float: right; }
+  position: relative;
+  @include rem(top, -0.5);
+  float: right;
+  a {
+    @include rem(margin-left, 1);
+    &:first-child {
+      margin: 0; } } }

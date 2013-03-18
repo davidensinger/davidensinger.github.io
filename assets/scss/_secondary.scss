@@ -6,11 +6,9 @@
   @extend %clearfix; }
 
 .secondary-photo {
+  @extend %margin-bottom;
   width: 75%;
   border-radius: 50%; }
 
-.secondary-title {
-  @extend %epsilon-font-size; }
-
-.secondary-description {
-    @extend %eta-font-size; }
+.secondary-contact {
+  @extend %eta-font-size; }

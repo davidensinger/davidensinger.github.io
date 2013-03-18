@@ -7,6 +7,42 @@
 // http://sassme.arc90.com/
 // ==========================================================================
 
+// Oranges
+$orange: #E67E22;
+$orange-lightest: lighten($orange, 36);
+$orange-lighter: lighten($orange, 24);
+$orange-light: lighten($orange, 12);
+$orange-dark: darken($orange, 12);
+$orange-darker: darken($orange, 24);
+$orange-darkest: darken($orange, 36);
+
+// Yellows
+$yellow: #F1C40F;
+$yellow-lightest: lighten($yellow, 36);
+$yellow-lighter: lighten($yellow, 24);
+$yellow-light: lighten($yellow, 12);
+$yellow-dark: darken($yellow, 12);
+$yellow-darker: darken($yellow, 24);
+$yellow-darkest: darken($yellow, 36);
+
+// Greens
+$green: #2ECC71;
+$green-lightest: lighten($green, 36);
+$green-lighter: lighten($green, 24);
+$green-light: lighten($green, 12);
+$green-dark: darken($green, 12);
+$green-darker: darken($green, 24);
+$green-darkest: darken($green, 36);
+
+// Blues
+$blue: #3498DB;
+$blue-lightest: lighten($blue, 36);
+$blue-lighter: lighten($blue, 24);
+$blue-light: lighten($blue, 12);
+$blue-dark: darken($blue, 12);
+$blue-darker: darken($blue, 24);
+$blue-darkest: darken($blue, 36);
+
 // White, black, and grays
 $white: #fff;
 $white-dark: #f6f6f6;
@@ -22,36 +58,10 @@ $black-lighter: #111;
 $black-light: #090909;
 $black: #000;
 
-// Blues
-$blue: #3498DB;
-$blue-lightest: lighten($blue, 36);
-$blue-lighter: lighten($blue, 24);
-$blue-light: lighten($blue, 12);
-$blue-dark: darken($blue, 12);
-$blue-darker: darken($blue, 24);
-$blue-darkest: darken($blue, 36);
-
-// Greens
-$green: #2ECC71;
-$green-lightest: lighten($green, 36);
-$green-lighter: lighten($green, 24);
-$green-light: lighten($green, 12);
-$green-dark: darken($green, 12);
-$green-darker: darken($green, 24);
-$green-darkest: darken($green, 36);
-
-// Yellows
-$yellow: #F1C40F;
-$yellow-lightest: lighten($yellow, 36);
-$yellow-lighter: lighten($yellow, 24);
-$yellow-light: lighten($yellow, 12);
-$yellow-dark: darken($yellow, 12);
-$yellow-darker: darken($yellow, 24);
-$yellow-darkest: darken($yellow, 36);
-
 // Backgrounds
 // ==========================================================================
 $background-inner-container: $white;
+$background-secondary: mix($white, $white-dark);
 
 // Blockquotes
 // ==========================================================================

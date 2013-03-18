@@ -1,0 +1,63 @@
+{
+  "name": "",
+  "glyphs": [
+    {
+      "search": [
+        "rss"
+      ],
+      "code": 59195,
+      "from": 59195,
+      "uid": "7645346d5ab8b17f69a9c765c180aca3",
+      "css": "rss",
+      "orig_css": "rss-alt",
+      "orig_code": 59195,
+      "src": "websymbols"
+    },
+    {
+      "search": [
+        "github",
+        "social",
+        "logo"
+      ],
+      "code": 62208,
+      "uid": "d94334f23acba022bfd68e49d76b31bb",
+      "css": "github",
+      "orig_css": "github",
+      "orig_code": 62208,
+      "src": "entypo",
+      "from": 62208
+    },
+    {
+      "search": [
+        "twitter",
+        "social",
+        "logo"
+      ],
+      "code": 62217,
+      "uid": "d090355c31f497b61d676416c1fd39fb",
+      "css": "twitter",
+      "orig_css": "twitter",
+      "orig_code": 62217,
+      "src": "entypo",
+      "from": 62217
+    },
+    {
+      "search": [
+        "tumblr"
+      ],
+      "code": 62224,
+      "meta": {
+        "twitter": "https://twitter.com/puzrin",
+        "github": "https://github.com/puzrin",
+        "author": "Vitaly Puzrin"
+      },
+      "uid": "9e6a3483242474b6a1f77739ae3fdfdc",
+      "file": "tumblr-rect",
+      "css": "tumblr",
+      "orig_css": "tumblr-rect",
+      "orig_code": 62224,
+      "src": "brandico",
+      "from": 62224
+    }
+  ]
+}

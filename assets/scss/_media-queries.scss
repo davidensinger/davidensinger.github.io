@@ -43,8 +43,11 @@
     float: none;
     width: auto; }
 
+  .secondary {
+    background: $background-secondary; }
+
   .secondary-photo {
-    @include rem(margin, 1.8 0 0 1.5);
+    @include rem(margin, 0 0 0 1.5);
     float: right;
     width: 100px; }
 
@@ -52,6 +55,9 @@
     text-align: center; }
 
   .social-icons {
+    @include rem(margin-bottom, 1.5);
+    position: static;
+    top: 0;
     float: none; } }
 
 // Tablet portrait to small desktop
@@ -90,7 +96,7 @@
     @include rem(padding, 1.5); }
 
   .secondary-photo {
-    margin: 0 auto;
+    @include rem(margin, 0 auto 1.5);
     display: block;
     float: none;
     width: 75%; } }
