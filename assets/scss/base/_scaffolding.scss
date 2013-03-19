@@ -52,13 +52,6 @@ body {
 
 // Primary
 // ==========================================================================
-.primary,
-.secondary {
-  float: left;
-  @include breakpoint(smaller-than-small-desktop) {
-    float: none;
-    width: auto; } }
-
 .primary {
   width: 70%;
   @include breakpoint(large-desktop) {
@@ -70,3 +63,10 @@ body {
   width: 30%;
   @include breakpoint(large-desktop) {
     width: 36%; } }
+
+.primary,
+.secondary {
+  float: left;
+  @include breakpoint(smaller-than-small-desktop) {
+    float: none;
+    width: auto; } }
