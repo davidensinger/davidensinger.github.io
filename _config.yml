@@ -7,8 +7,7 @@ pygments: true
 permalink: /:year/:month/:title/
 paginate: 10
 
-# Specific to feed.xml
-# https://github.com/snaptortoise/jekyll-rss-feeds
+# feed.xml https://github.com/snaptortoise/jekyll-rss-feeds
 name: David Ensinger
 description: David Ensinger is a Front End Developer from Columbus, OH
 url: http://www.davidensinger.com
