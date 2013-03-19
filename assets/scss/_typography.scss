@@ -41,9 +41,9 @@ textarea {
   @include rem(margin, 1.5 0 0.5); }
 
 %giga {
-  @extend giga-font-size;
-  @extend giga-line-height;
-  @extend giga-margin; }
+  @extend %giga-font-size;
+  @extend %giga-line-height;
+  @extend %giga-margin; }
 
 %mega-font-size {
   @include rem(font-size, 2.5); }
