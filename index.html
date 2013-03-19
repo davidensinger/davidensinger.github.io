@@ -4,3 +4,8 @@ page-class: page-home
 title: Home
 description: David Ensinger is a Front End Developer from Columbus, OH
 ---
+      {% if post.excerpt %}
+        {{ post.excerpt | markdownify }}
+      {% else %}
+        {{ post.content }}
+      {% endif %}
