@@ -10,3 +10,9 @@
   p {
     &:first-child {
       @extend %text-intro; } } }
+
+.continue-reading {
+  @extend %button-blue;
+  @extend %button-small;
+  &:after {
+    content: "\2192"; } }

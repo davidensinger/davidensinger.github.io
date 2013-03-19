@@ -19,6 +19,9 @@ description: David Ensinger is a Front End Developer from Columbus, OH
   .entry-content
     {% if post.excerpt %}
     {{ post.excerpt | markdownify }}
+    %p
+      %a{ :href => "{{ post.url }}", :title => "Permalink to {{ post.title }}", :rel => "bookmark", :class => "continue-reading" }
+        Continue Reading
     {% else %}
     {{ post.content }}
     {% endif %}
