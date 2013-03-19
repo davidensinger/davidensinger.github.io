@@ -3,7 +3,8 @@
 // ==========================================================================
 
 .entry-meta {
-  font-weight: $base-font-weight-bold; }
+  font-weight: $base-font-weight-bold;
+  @include rem(margin-bottom, 0.6); }
 
 .entry-content {
   p {
