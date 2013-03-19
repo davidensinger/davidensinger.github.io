@@ -26,4 +26,5 @@ If you have any questions, comments, or would just like to say hello, please don
 
 ### Jekyll
 
+- [Jekyll Excerpt Plugin](http://blog.darkrefraction.com/2012/jekyll-excerpt-plugin.html)
 - [Jekyll RSS Feed Templates](https://github.com/snaptortoise/jekyll-rss-feeds)
