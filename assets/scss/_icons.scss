@@ -21,12 +21,12 @@
 .icon-github:before { content: '\f300'; }
 .icon-twitter:before { content: '\f309'; }
 .icon-tumblr:before { content: '\f310'; }
+.icon-entry-date:before { content: '🕔'; } // '\1f554'
 
-.link-twitter {
-  @include rem(width, 1);
-  @include rem(font-size, 1);
+.icon-left {
   &:before {
     @include rem(margin-right, 0.5); } }
 
-.social-icons {
-  @include rem(font-size, 1.5); }
+.icon-right {
+  &:before {
+    @include rem(margin-left, 0.5); } }

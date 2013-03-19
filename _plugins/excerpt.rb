@@ -1,3 +1,4 @@
+# Courtesy of http://blog.darkrefraction.com/2012/jekyll-excerpt-plugin.html
 module Jekyll
 
   class Excerpt < Liquid::Block

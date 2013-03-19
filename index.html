@@ -4,8 +4,23 @@ page-class: page-home
 title: Home
 description: David Ensinger is a Front End Developer from Columbus, OH
 ---
+
+{% for post in paginator.posts %}
+  <article>
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="{{ post.url }}" title="Permalink to {{ post.title }}" rel="bookmark">{{ post.title }}</a>
+      </h1>
+      <div class="entry-meta">
+        <a href="{{ post.url }}" title="{{ post.date | date: "%I:%M %p" }}" rel="bookmark" class="icon-left icon-entry-date"><time datetime="{{ post.date }}">{{ post.date | date: "%B %d, %Y" }}</time></a>
+      </div>
+    </header>
+    <div class="entry-content">
       {% if post.excerpt %}
         {{ post.excerpt | markdownify }}
       {% else %}
         {{ post.content }}
       {% endif %}
+    </div>
+  </article>
+{% endfor %}

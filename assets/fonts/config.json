@@ -58,6 +58,19 @@
       "orig_code": 62224,
       "src": "brandico",
       "from": 62224
+    },
+    {
+      "search": [
+        "clock",
+        "time"
+      ],
+      "code": 128340,
+      "uid": "8663320a860b00f26e94d3d15c9ba99a",
+      "css": "entry-date",
+      "orig_css": "clock",
+      "orig_code": 128340,
+      "src": "entypo",
+      "from": 128340
     }
   ]
 }

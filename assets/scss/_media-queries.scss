@@ -10,7 +10,7 @@
   .outer-container {
     max-width: 94%; }
 
-  header,
+  .site-header,
   .primary,
   .secondary,
   footer {
@@ -24,7 +24,7 @@
   .outer-container {
     max-width: 1600px; }
 
-  header,
+  .site-header,
   .primary,
   .secondary,
   footer {
@@ -54,7 +54,7 @@
   footer {
     text-align: center; }
 
-  .social-icons {
+  .footer-icons {
     @include rem(margin-bottom, 1.5);
     position: static;
     top: 0;
@@ -65,7 +65,7 @@
   html {
     font-size: 106.25%; } // 17px
 
-  header,
+  .site-header,
   .primary,
   .secondary,
   footer {
@@ -81,7 +81,7 @@
 
 // Mobile landscape to tablet portrait
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  header,
+  .site-header,
   .primary,
   .secondary,
   footer {
@@ -89,7 +89,7 @@
 
 // Mobile portrait Size to mobile landscape
 @media only screen and (max-width: 479px) {
-  header,
+  .site-header,
   .primary,
   .secondary,
   footer {
