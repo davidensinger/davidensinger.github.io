@@ -12,6 +12,33 @@
   }
 }
 
+// Breakpoint
+// http://css-tricks.com/media-queries-sass-3-2-and-codekit/
+// ==========================================================================
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 1281px) { @content; }
+  }
+  @if $point == large-desktop {
+    @media (min-width: 1441px) { @content; }
+  }
+  @if $point == smaller-than-desktop {
+    @media (max-width: 959px) { @content; }
+  }
+  @if $point == tablet-to-desktop {
+    @media (min-width: 768px) and (max-width: 959px) { @content; }
+  }
+  @if $point == all-mobile {
+    @media (max-width: 767px) { @content; }
+  }
+  @if $point == mobile-landscape-to-tablet-portrait {
+    @media (min-width: 480px) and (max-width: 767px) { @content; }
+  }
+  @elseif $point == mobile-portrait-to-mobile-landscape {
+    @media (max-width: 479px) { @content; }
+  }
+}
+
 // Rem
 // https://gist.github.com/webgefrickel/4530526
 // ==========================================================================
