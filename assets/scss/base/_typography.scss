@@ -3,7 +3,15 @@
 // ==========================================================================
 
 html {
-  font: 112.5%/#{$line-height-ratio} $base-font-face; } // 18px
+  font: 112.5%/#{$line-height-ratio} $base-font-face; // 18px
+  @include breakpoint(desktop) {
+    font-size: 118.75%; } // 19px
+  @include breakpoint(large-desktop) {
+    font-size: 125%; } // 20px
+  @include breakpoint(tablet-to-small-desktop) {
+    font-size: 106.25%; } // 17px
+  @include breakpoint(all-mobile) {
+    font-size: 100%; } } // 16px
 
 body,
 button,

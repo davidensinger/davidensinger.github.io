@@ -1,0 +1,20 @@
+// ==========================================================================
+// Footer
+// ==========================================================================
+
+.site-footer {
+  @include breakpoint(smaller-than-small-desktop) {
+    text-align: center; } }
+
+.footer-icons {
+  float: right;
+  @extend %gamma-font-size;
+  a {
+    @include rem(margin-left, 1);
+    &:first-child {
+      margin: 0; } }
+  @include breakpoint(smaller-than-small-desktop) {
+    @include rem(margin-bottom, 1.5);
+    position: static;
+    top: 0;
+    float: none; } }

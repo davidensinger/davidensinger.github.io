@@ -1,0 +1,28 @@
+// ==========================================================================
+// Secondary
+// ==========================================================================
+
+.secondary {
+  @extend %clearfix;
+  @include breakpoint(smaller-than-small-desktop) {
+    background: $background-secondary; } }
+
+.secondary-photo {
+  @extend %margin-bottom;
+  width: 75%;
+  border-radius: 50%;
+  @include breakpoint(smaller-than-small-desktop) {
+    @include rem(margin, 0 0 0 1.5);
+    float: right;
+    width: 100px; }
+  @include breakpoint(mobile-portrait-to-mobile-landscape) {
+    @include rem(margin, 0 auto 1.5);
+    display: block;
+    float: none;
+    width: 75%; } }
+    
+.secondary-contact {
+  @extend %eta-font-size; }
+
+.secondary-link-twitter {
+  @extend %epsilon-font-size; }

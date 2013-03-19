@@ -22,10 +22,10 @@
   @if $point == large-desktop {
     @media (min-width: 1441px) { @content; }
   }
-  @if $point == smaller-than-desktop {
+  @if $point == smaller-than-small-desktop {
     @media (max-width: 959px) { @content; }
   }
-  @if $point == tablet-to-desktop {
+  @if $point == tablet-portrait-to-small-desktop {
     @media (min-width: 768px) and (max-width: 959px) { @content; }
   }
   @if $point == all-mobile {

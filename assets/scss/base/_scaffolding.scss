@@ -21,7 +21,11 @@ body {
 
 .outer-container {
   max-width: 94%;
-  @extend %transitions-all; }
+  @extend %transitions-all;
+  @include breakpoint(large-desktop) {
+    max-width: 1600px; }
+  @include breakpoint(all-mobile) {
+    max-width: 100%; } }
 
 .inner-container {
   @extend %clearfix;
@@ -34,18 +38,35 @@ body {
 .primary,
 .secondary,
 .site-footer {
-  @include rem(padding, 3); }
+  @include rem(padding, 3);
+  @include breakpoint(desktop) {
+    @include rem(padding, 3.5); }
+  @include breakpoint(large-desktop) {
+    @include rem(padding, 4); }
+  @include breakpoint(tablet-portrait-to-small-desktop) {
+    @include rem(padding, 2.5); }
+  @include breakpoint(mobile-landscape-to-tablet-portrait) {
+    @include rem(padding, 2); }
+  @include breakpoint(mobile-portrait-to-mobile-landscape) {
+    @include rem(padding, 1.5); } }
 
 // Primary
 // ==========================================================================
 .primary,
 .secondary {
-  float: left; }
+  float: left;
+  @include breakpoint(smaller-than-small-desktop) {
+    float: none;
+    width: auto; } }
 
 .primary {
-  width: 70%; }
+  width: 70%;
+  @include breakpoint(large-desktop) {
+    width: 64%; } }
 
 // Secondary
 // ==========================================================================
 .secondary {
-  width: 30%; }
+  width: 30%;
+  @include breakpoint(large-desktop) {
+    width: 36%; } }
