@@ -15,9 +15,6 @@
 .text-justify {
   text-align: justify; }
 
-.text-intro {
-  @include rem(font-size, 1.25); }
-
 // Media
 .media-left {
   float: left;

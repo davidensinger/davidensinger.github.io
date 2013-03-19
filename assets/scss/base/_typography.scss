@@ -194,6 +194,10 @@ p {
   @extend %epsilon-line-height;
   @extend %margin-bottom; }
 
+%text-intro,
+.text-intro {
+  @include rem(font-size, 1.25); }
+
 ul {
   list-style: disc; }
 
