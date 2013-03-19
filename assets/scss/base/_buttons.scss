@@ -1,0 +1,69 @@
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+%button-base {
+  display: inline-block;
+  @include rem(padding, 0.5 1 0.4);
+  @include rem(margin-bottom, 1);
+  text-transform: uppercase;
+  font-weight: $base-font-weight-bold;
+  border-radius: 0.33em;
+  border: 0;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    text-decoration: none !important; }
+  &:active {
+    position: relative;
+    top: 1px; } }
+
+%button-green,
+.button-green {
+  @extend %button-base;
+  background: $green;
+  color: $white-dark !important;
+  text-shadow: 0 1px 0 $green;
+  box-shadow: 0 0.25em 0 0 $green-dark;
+  &:visited {
+    color: $white-dark !important; }
+  &:hover,
+  &:focus,
+  &:active {
+    background: $green-dark;
+    color: $white !important;
+    text-shadow: 0 1px 0 $green-darker;
+    box-shadow: 0 0.25em 0 0 $green-darker; } }
+
+%button-blue,
+.button-blue {
+  @extend %button-base;
+  background: $blue;
+  color: $white-dark !important;
+  text-shadow: 0 1px 0 $blue;
+  box-shadow: 0 0.25em 0 0 $blue-dark;
+  &:visited {
+    color: $white-dark !important; }
+  &:hover,
+  &:focus,
+  &:active {
+    background: $blue-dark;
+    color: $white !important;
+    text-shadow: 0 1px 0 $blue-darker;
+    box-shadow: 0 0.25em 0 0 $blue-darker; } }
+
+%button-gray-light,
+.button-gray-light {
+  @extend %button-base;
+  background: $white-dark;
+  color: $gray-dark !important;
+  text-shadow: 0 1px 0 $white;
+  box-shadow: 0 0.25em 0 0 $gray-lighter;
+  &:visited {
+    color: $gray-dark !important; }
+  &:hover,
+  &:focus,
+  &:active {
+    background: $gray-lightest;
+    color: $gray-darker !important;
+    box-shadow: 0 0.25em 0 0 $gray-light; } }
