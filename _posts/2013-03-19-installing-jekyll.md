@@ -12,7 +12,7 @@ After much deliberation, I decided to simplify my blogging workflow. To that end
 
 Thankfully, there is a wealth of documentation available from developers who have also made the switch. With that in mind, I’d like to contribute my experience with installing __Jekyll on OS X Mountain Lion 10.8.3__.
 
-## Installing Jekyll
+## Getting Started
 
 The consensus on the internet is to first install [Xcode](http://developer.apple.com/xcode/), which I had (thankfully) already installed (all 1.65 GB of it). Xcode is readily available from the [App Store](http://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12), although it does take a bit of time to download and install.
 
@@ -49,4 +49,4 @@ Which finally allowed me [to install Jekyll](https://github.com/mojombo/jekyll/w
     gem install jekyll
 
 ## Whew!
-That wasn’t so bad, was it? It feels good to work through the install with the satisfaction of knowing that you did it without any help, save for the good will efforts of fellow developers and their documentation. High fives to that!
+That wasn’t so bad, was it? It feels good to work through the install with the satisfaction of knowing that you did it without any help, save for the goodwill efforts of fellow developers and their documentation. High fives to that!
