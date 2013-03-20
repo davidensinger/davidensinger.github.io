@@ -35,24 +35,13 @@ body {
 // Common
 // ==========================================================================
 .site-header,
-.primary,
-.secondary,
 .site-footer {
-  @include rem(padding, 3);
-  @include breakpoint(desktop) {
-    @include rem(padding, 3.5); }
-  @include breakpoint(large-desktop) {
-    @include rem(padding, 4); }
-  @include breakpoint(tablet-portrait-to-small-desktop) {
-    @include rem(padding, 2.5); }
-  @include breakpoint(mobile-landscape-to-tablet-portrait) {
-    @include rem(padding, 2); }
-  @include breakpoint(mobile-portrait-to-mobile-landscape) {
-    @include rem(padding, 1.5); } }
+  padding: 6%; }
 
 // Primary
 // ==========================================================================
 .primary {
+  padding: 6% 3% 12% 6%;
   width: 70%;
   @include breakpoint(large-desktop) {
     width: 64%; } }
@@ -60,9 +49,13 @@ body {
 // Secondary
 // ==========================================================================
 .secondary {
+  padding: 6% 6% 12% 3%;
   width: 30%;
   @include breakpoint(large-desktop) {
-    width: 36%; } }
+    padding: 6% 6% 12%;
+    width: 36%; }
+  @include breakpoint(smaller-than-small-desktop) {
+    padding: 6%; } }
 
 .primary,
 .secondary {
