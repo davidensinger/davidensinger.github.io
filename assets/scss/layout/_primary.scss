@@ -3,16 +3,16 @@
 // ==========================================================================
 
 .entry-meta {
+  color: $link-meta-color;
   font-weight: $base-font-weight-bold;
-  @include rem(margin-bottom, 0.6); }
+  @include rem(margin-bottom, 1); }
 
-.entry-content {
-  p {
-    &:first-child {
-      @extend %text-intro; } } }
-
-.entry-meta {
-  color: $link-meta-color; }
+.entry-meta-icon {
+  &:before {
+    color: $icon-meta-color; }
+  &:hover {
+    &:before {
+      color: $icon-meta-color-hover; } } }
 
 .entry-meta-link {
   &:link,
@@ -24,12 +24,10 @@
   &:active {
     color: $link-meta-color-focus; } }
 
-.entry-meta-icon {
-  &:before {
-    color: $icon-meta-color; }
-  &:hover {
-    &:before {
-      color: $icon-meta-color-hover; } } }
+.entry-content {
+  p {
+    &:first-child {
+      @extend %text-intro; } } }
 
 .continue-reading {
   @extend %button-blue;
