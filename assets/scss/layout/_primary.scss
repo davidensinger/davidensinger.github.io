@@ -30,6 +30,7 @@
       @extend %text-intro; } } }
 
 .continue-reading {
+  @include rem(margin-top, 0.75);
   @extend %button-blue;
   &:after {
     content: "\2192"; } }
