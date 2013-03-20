@@ -288,10 +288,10 @@ sub {
 small,
 sup,
 sub {
-  font-size: 75%; }
+  @include rem(font-size, 75%); }
 
 big {
-  font-size: 125%; }
+  @include rem(font-size, 125%); }
 
 figure {
   margin: 0; }
