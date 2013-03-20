@@ -3,18 +3,19 @@ layout: default
 page-class: page-post
 ---
 <article class='post'>
-  <header class='entry-header'></header>
-  <h1 class='entry-title'>
-    {{ page.title }}
-  </h1>
-  <div class='entry-meta'>
-    <span class='icon-left icon-entry-date'>
-      <time datetime='{{ page.date }}'>
-        {{ page.date | date: "%B %d, %Y" }}
-      </time>
-    </span>
-  </div>
-  <div class='entry-content'>
-    {{ content }}
-  </div>
+  <header class='entry-header'>
+    <h1 class='entry-title'>
+      {{ page.title }}
+    </h1>
+    <div class='entry-meta'>
+      <span class='icon-left icon-entry-date'>
+        <time datetime='{{ page.date }}'>
+          {{ page.date | date: "%B %d, %Y" }}
+        </time>
+      </span>
+    </div>
+    <div class='entry-content'>
+      {{ content }}
+    </div>
+  </header>
 </article>

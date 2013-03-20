@@ -4,11 +4,11 @@ page-class: page-post
 \---
 %article.post
   %header.entry-header
-  %h1.entry-title
-    {{ page.title }}
-  .entry-meta
-    %span.icon-left.icon-entry-date
-      %time{ :datetime => "{{ page.date }}" }
-        {{ page.date | date: "%B %d, %Y" }}
-  .entry-content
-    {{ content }}
+    %h1.entry-title
+      {{ page.title }}
+    .entry-meta
+      %span.icon-left.icon-entry-date
+        %time{ :datetime => "{{ page.date }}" }
+          {{ page.date | date: "%B %d, %Y" }}
+    .entry-content
+      {{ content }}

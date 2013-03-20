@@ -6,32 +6,33 @@ description: David Ensinger is a Front End Developer from Columbus, OH
 ---
 {% for post in paginator.posts %}
 <article class='post'>
-  <header class='entry-header'></header>
-  <h1 class='entry-title'>
-    <a href='{{ post.url }}' rel='bookmark' title='Permalink to {{ post.title }}'>
-      {{ post.title }}
-    </a>
-  </h1>
-  <div class='entry-meta'>
-    <span class='icon-left icon-entry-date'>
-      <a href='{{ post.url }}' rel='bookmark' title=' {{ post.date }}'>
-        <time datetime='{{ post.date }}'>
-          {{ post.date | date: "%B %d, %Y" }}
-        </time>
+  <header class='entry-header'>
+    <h1 class='entry-title'>
+      <a href='{{ post.url }}' rel='bookmark' title='Permalink to {{ post.title }}'>
+        {{ post.title }}
       </a>
-    </span>
-  </div>
-  <div class='entry-content'>
-    {% if post.excerpt %}
-    {{ post.excerpt | markdownify }}
-    <p>
-      <a class='continue-reading' href='{{ post.url }}' rel='bookmark' title='Permalink to {{ post.title }}'>
-        Continue Reading
-      </a>
-    </p>
-    {% else %}
-    {{ post.content }}
-    {% endif %}
-  </div>
+    </h1>
+    <div class='entry-meta'>
+      <span class='icon-left icon-entry-date'>
+        <a href='{{ post.url }}' rel='bookmark' title=' {{ post.date }}'>
+          <time datetime='{{ post.date }}'>
+            {{ post.date | date: "%B %d, %Y" }}
+          </time>
+        </a>
+      </span>
+    </div>
+    <div class='entry-content'>
+      {% if post.excerpt %}
+      {{ post.excerpt | markdownify }}
+      <p>
+        <a class='continue-reading' href='{{ post.url }}' rel='bookmark' title='Permalink to {{ post.title }}'>
+          Continue Reading
+        </a>
+      </p>
+      {% else %}
+      {{ post.content }}
+      {% endif %}
+    </div>
+  </header>
 </article>
 {% endfor %}
