@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+page-class: page-about
 description: David Ensinger is a Front End Developer from Columbus, OH
 ---
 
