@@ -33,6 +33,5 @@
 
 .continue-reading {
   @extend %button-blue;
-  @extend %button-small;
   &:after {
     content: "\2192"; } }
