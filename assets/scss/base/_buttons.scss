@@ -27,12 +27,17 @@
   &:visited {
     color: $white-dark !important; }
   &:hover,
-  &:focus,
   &:active {
     background: $blue-dark;
     color: $white !important;
     text-shadow: 0 1px 0 $blue-darker;
-    box-shadow: 0 0.25em 0 0 $blue-darker; } }
+    box-shadow: 0 0.25em 0 0 $blue-darker; }
+  &:focus {
+    background: $green;
+    color: $white !important;
+    text-shadow: 0 1px 0 $green-dark;
+    box-shadow: 0 0.25em 0 0 $green-dark; } }
+
 
 %button-mini,
 .button-mini {
