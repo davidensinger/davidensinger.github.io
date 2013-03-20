@@ -164,25 +164,6 @@ h6 {
   letter-spacing: 1px;
   font-weight: $base-font-weight-bold; }
 
-h1 {
-  @extend %mega; }
-
-h2 {
-  @extend %alpha; }
-
-h3 {
-  @extend %beta; }
-
-h4 {
-  @extend %gamma; }
-
-h5 {
-  @extend %delta; }
-
-h6 {
-  @extend %epsilon;
-  text-transform: uppercase; }
-
 %margin-bottom {
   @include rem(margin-bottom, 1.5); }
 
@@ -191,10 +172,6 @@ p {
   @extend %epsilon-font-size;
   @extend %epsilon-line-height;
   @extend %margin-bottom; }
-
-%text-intro,
-.text-intro {
-  @include rem(font-size, 1.25); }
 
 ul {
   list-style: disc; }

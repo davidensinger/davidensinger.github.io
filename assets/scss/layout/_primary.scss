@@ -2,10 +2,15 @@
 // Primary
 // ==========================================================================
 
+.entry-title {
+  @extend %mega-font-size;
+  @extend %mega-line-height;
+  @include rem(margin-bottom, 0.9); }
+
 .entry-meta {
   color: $link-meta-color;
   font-weight: $base-font-weight-bold;
-  @include rem(margin-bottom, 1); }
+  @include rem(margin-bottom, 0.7); }
 
 .entry-meta-icon {
   &:before {
@@ -25,9 +30,21 @@
     color: $link-meta-color-focus; } }
 
 .entry-content {
+  h2 {
+    @extend %beta; }
+  h3 {
+    @extend %gamma; }
+  h4 {
+    @extend %delta; }
+  h5 {
+    @extend %epsilon;
+    text-transform: uppercase; }
+  h6 {
+    @extend %epsilon;
+    font-weight: $base-font-weight-bold; }
   p {
     &:first-child {
-      @extend %text-intro; } } }
+      @extend %delta-font-size; } } }
 
 .continue-reading {
   @include rem(margin-top, 0.75);
