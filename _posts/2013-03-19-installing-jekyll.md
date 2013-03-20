@@ -1,19 +1,52 @@
 ---
-date: 2013-03-19 09:11:00
-layout: default
+date: 2013-03-19 22:55:00
+layout: post
 slug: installing-jekyll
 title: Installing Jekyll
-description: what?
+description: How to install Jekyll on OS X Mountain Lion 10.8.3
 ---
+
 {% excerpt %}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dui nulla, ullamcorper at ultricies ut, molestie sit amet sem. Nam ligula velit, eleifend a eleifend rutrum, facilisis nec justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+After much deliberation, I decided to simplify my blogging workflow. To that end I made the switch from __WordPress to Jekyll__, which is ”a simple, blog aware, static site generator.” Although Jekyll is easy to maintain, it can be confusing to set up, especially for one with a dearth of experience with Ruby.
 {% endexcerpt %}
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut mi leo, eleifend vel commodo eu, faucibus at metus. Cras libero sem, laoreet aliquet lacinia sed, sollicitudin quis augue. Etiam vulputate, massa non interdum accumsan, lacus tellus bibendum massa, sit amet pellentesque eros leo vitae nulla. Maecenas faucibus risus adipiscing tellus bibendum egestas. Donec tellus sem, fringilla quis tincidunt in, pharetra ut dolor. Cras euismod mauris id nisl ullamcorper eget laoreet erat interdum. Aenean ac erat enim, vitae commodo sapien. Duis vulputate sem a leo placerat vitae blandit diam semper. In sed blandit velit. Proin dictum aliquet turpis, sed aliquet erat imperdiet et. Aliquam malesuada suscipit rutrum.
 
-Cras nec orci metus, a commodo ante. Proin dapibus tincidunt neque, in ultricies ipsum porta dictum. Curabitur sapien lacus, sagittis eu gravida eget, condimentum vitae nulla. Phasellus a magna augue, id imperdiet enim. Nullam iaculis elementum vehicula. Duis leo ante, consectetur a egestas vel, tristique et nisl. Maecenas ac est ligula, in lobortis est. Quisque porta tellus id mauris ornare sit amet molestie dui consequat. Nullam faucibus condimentum nisi id placerat. Nam id arcu et elit pharetra adipiscing nec vel elit. Cras dignissim turpis ac mauris consequat ultrices. Nam placerat quam ac mauris lacinia iaculis sagittis libero scelerisque. Phasellus ac massa et massa tincidunt fringilla.
+Thankfully, there is a wealth of documentation available from developers who have also made the switch. With that in mind, I’d like to contribute my experience with installing __Jekyll on OS X Mountain Lion 10.8.3__.
 
-Aenean vitae est sapien. Sed eget quam vitae turpis placerat viverra. Ut eget scelerisque neque. Nulla et sapien odio, ut accumsan urna. Mauris ac odio id nulla consequat malesuada nec in lorem. Aliquam elementum lacus odio. Nulla at purus sed augue porta elementum. Maecenas sed mi eget ligula mollis ullamcorper. Vivamus vel enim erat, quis tincidunt nunc. Maecenas felis odio, dapibus non porta sit amet, sodales id magna. Proin fermentum eros sed tortor dictum tempus. Proin placerat dignissim tincidunt. Duis vitae ipsum at orci bibendum porttitor at quis turpis. Praesent elit lorem, vulputate vulputate aliquam at, condimentum vel dui. Sed molestie semper tortor, non cursus felis vulputate eu.
+## Installing Jekyll
 
-Ut id tincidunt nulla. Sed a convallis eros. Nulla malesuada tempus varius. Vivamus eget aliquam turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque cursus sagittis facilisis. Etiam venenatis turpis non tortor interdum id vulputate est imperdiet. Praesent suscipit condimentum odio vitae auctor. Nulla iaculis molestie magna, sit amet dapibus eros lobortis a. Curabitur non hendrerit sem. Fusce porta mauris a neque ultricies quis pretium diam congue. Cras facilisis massa in risus suscipit dictum. Nulla luctus volutpat nisl, eget ornare lacus blandit quis. Praesent vitae tempus massa. Sed laoreet eros nec ante imperdiet eleifend.
+The consensus on the internet is to first install [Xcode](http://developer.apple.com/xcode/), which I had (thankfully) already installed (all 1.65 GB of it). Xcode is readily available from the [App Store](http://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12), although it does take a bit of time to download and install.
 
-Sed massa libero, feugiat vitae sagittis non, laoreet a sem. Donec mollis, enim eget tristique tincidunt, ligula justo auctor massa, quis bibendum arcu tellus a orci. Phasellus venenatis, nulla at adipiscing hendrerit, turpis enim hendrerit quam, in dignissim urna est vitae tellus. Donec aliquam dignissim imperdiet. Cras malesuada aliquam ante vitae aliquet. Fusce turpis erat, tincidunt et euismod in, hendrerit in nisi. Nunc id pulvinar mi. Nunc a ligula massa, nec aliquet ipsum. Quisque est justo, congue eget malesuada vitae, iaculis quis dolor. Cras tempor massa risus. Donec sed dolor quis velit rhoncus cursus. Sed suscipit faucibus sem, semper imperdiet justo iaculis eu. Quisque hendrerit, eros ac vestibulum pharetra, lectus enim laoreet nibh, at tempus elit tortor at lorem.
+Once you’ve installed Xcode, the next step is to download __Command Line Tools__, which is available through the __Download__ tab of the the __Xcode Preferences__. It is through the command line that you'll be installing Jekyll.
+
+After installing the Command Line Tools, open up __Terminal__ (or the console of your choice) and install [Homebrew](http://mxcl.github.com/homebrew/), which will make downloading and installing Unix software packages on OS X much easier than without.
+
+    ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+
+The next step is to install [RVM](https://rvm.io), which is an acronym for __Ruby Version Manager__. With this you’ll be able to better manage different versions and implementations of Ruby on your computer.
+
+    \curl -#L https://get.rvm.io | bash -s stable --ruby
+
+I had some difficulty installing Ruby from RVM, which was due to missing dependencies. To remedy this I had to find the missing packages:
+
+    rvm requirements
+
+Which then necessitated running the following:
+
+    brew doctor
+
+That led to [a fix for a warning about my paths](http://stackoverflow.com/questions/10343834/homebrew-wants-me-to-amend-my-path-no-clue-how).
+
+After sorting that out, I was then able to install the list of missing dependencies:
+
+    brew install (and then the list of missing packages)
+
+And then I was able to install Ruby 2.0.0:
+
+    rvm install 2.0.0
+
+Which finally allowed me [to install Jekyll](https://github.com/mojombo/jekyll/wiki/Install):
+
+    gem install jekyll
+
+## Whew!
+That wasn’t so bad, was it? It feels good to work through the install with the satisfaction of knowing that you did it without any help, save for the good will efforts of fellow developers and their documentation. High fives to that!
