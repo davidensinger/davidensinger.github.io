@@ -19,11 +19,11 @@
 
 .icon-left {
   &:before {
-    @include rem(margin-right, 0.5); } }
+    @include rem(margin-right, 0.25); } }
 
 .icon-right {
   &:before {
-    @include rem(margin-left, 0.5); } }
+    @include rem(margin-left, 0.25); } }
 
 .icon-rss:before { content: '\e73b'; }
 .icon-github:before { content: '\f300'; }

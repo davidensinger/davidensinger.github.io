@@ -66,7 +66,6 @@ $background-secondary: mix($white, $white-dark);
 // Blockquotes
 // ==========================================================================
 
-
 // Borders
 // ==========================================================================
 $border-color: $gray-lighter;
@@ -74,6 +73,11 @@ $border-color: $gray-lighter;
 // Horizontal rule
 // ==========================================================================
 $hr-color: $gray-lightest;
+
+// Icons
+// ==========================================================================
+$icon-meta-color: $gray-lighter;
+$icon-meta-color-hover: $gray-light;
 
 // Links
 // ==========================================================================
@@ -83,10 +87,14 @@ $link-color-focus: $green;
 
 $link-nav-color: $gray;
 $link-nav-color-hover: $blue-dark;
-$link-nav-color-focus: $green;
+$link-nav-color-focus: $link-color-focus;
 
 $link-heading-color-hover: $blue-darker;
-$link-heading-color-focus: $green;
+$link-heading-color-focus: $link-color-focus;
+
+$link-meta-color: $gray-light;
+$link-meta-color-hover: $gray;
+$link-meta-color-focus: $link-color-focus;
 
 // Margin
 // ==========================================================================

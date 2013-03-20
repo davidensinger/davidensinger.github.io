@@ -11,6 +11,26 @@
     &:first-child {
       @extend %text-intro; } } }
 
+.entry-meta {
+  color: $link-meta-color; }
+
+.entry-meta-link {
+  &:link,
+  &:visited {
+    color: $link-meta-color; }
+  &:hover {
+    color: $link-meta-color-hover; }
+  &:focus,
+  &:active {
+    color: $link-meta-color-focus; } }
+
+.entry-meta-icon {
+  &:before {
+    color: $icon-meta-color; }
+  &:hover {
+    &:before {
+      color: $icon-meta-color-hover; } } }
+
 .continue-reading {
   @extend %button-blue;
   @extend %button-small;
