@@ -8,13 +8,28 @@
 
 .footer-icons {
   float: right;
-  @extend %gamma-font-size;
-  a {
-    @include rem(margin-left, 1);
-    &:first-child {
-      margin: 0; } }
+  @include rem(margin-top, -0.4);
   @include breakpoint(smaller-than-small-desktop) {
-    @include rem(margin-bottom, 1.5);
-    position: static;
-    top: 0;
+    @include rem(margin, 0 0 1.5);
     float: none; } }
+
+.footer-icon-link {
+  @include rem(margin-left, 1);
+  &:first-child {
+    margin: 0; }
+  &:link,
+  &:visited {
+    color: $link-footer-icon-color; }
+  &:hover {
+    color: $link-footer-icon-color-hover; }
+  &:focus,
+  &:active {
+    color: $link-footer-icon-color-focus; } }
+
+.footer-icon {
+  line-height: 0;
+  &:before {
+    @extend %gamma-font-size; }
+  &:hover {
+    &:before {
+      @extend %beta-font-size; } } }
