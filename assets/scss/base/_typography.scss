@@ -159,6 +159,7 @@ h4,
 h5,
 h6 {
   clear: left;
+  margin: 0;
   padding: 0;
   color: $heading-color;
   letter-spacing: 1px;
@@ -191,8 +192,7 @@ dt {
 
 // No top margins on first children or bottom margins on last children
 p, ul, ol, dl,
-blockquote, pre,
-h1, h2, h3, h4, h5, h6 {
+blockquote, pre {
   &:first-child {
     margin-top: 0; }
   &:last-child {
