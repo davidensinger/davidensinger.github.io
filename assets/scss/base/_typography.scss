@@ -160,11 +160,11 @@ h3,
 h4,
 h5,
 h6 {
-  color: $heading-color;
+  clear: left;
   padding: 0;
+  color: $heading-color;
   letter-spacing: 1px;
-  font-weight: $base-font-weight-bold;
-  clear: left; }
+  font-weight: $base-font-weight-bold; }
 
 h1 {
   @extend %mega; }
