@@ -41,15 +41,17 @@ body {
 // Primary
 // ==========================================================================
 .primary {
-  padding: 6% 6% 12%;
+  padding: 6% 4% 12% 6%;
   width: 70%;
   @include breakpoint(large-desktop) {
-    width: 64%; } }
+    width: 64%; }
+  @include breakpoint(smaller-than-small-desktop) {
+    padding: 6% 6% 12%; } }
 
 // Secondary
 // ==========================================================================
 .secondary {
-  padding: 6% 6% 12%;
+  padding: 6% 6% 12% 4%;
   width: 30%;
   @include breakpoint(large-desktop) {
     width: 36%; }
