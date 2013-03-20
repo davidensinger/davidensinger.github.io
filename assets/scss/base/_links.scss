@@ -13,3 +13,19 @@ a {
   &:focus,
   &:active {
     color: $link-color-focus; } }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  a {
+    &:link,
+    &:visited {
+      color: inherit; }
+    &:hover {
+      color: $link-heading-color-hover; }
+    &:focus,
+    &:active {
+      color: $link-heading-color-focus; } } }
