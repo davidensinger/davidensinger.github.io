@@ -2,7 +2,7 @@
 // Navigation
 // ==========================================================================
 
-// Navigation
+// Main navigation
 nav {
   text-transform: uppercase;
   ul {
@@ -25,3 +25,12 @@ nav {
     &:focus,
     &:active {
       color: $link-nav-color-focus; } } }
+
+// Current page
+%current-page-cursor {
+  cursor: text; }
+
+@each $page in home, about, archive {
+  .page-#{$page} .nav-#{$page} {
+    color: $link-nav-color-hover;
+    @extend %current-page-cursor; } }

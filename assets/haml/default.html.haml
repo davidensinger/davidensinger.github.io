@@ -36,11 +36,11 @@
               %a{ :title => "Skip to content", :href => "#content" } Skip to content
             %ul
               %li
-                %a{ :href => "/" } Home
+                %a{ :href => "/", :class => "nav-home" } Home
               %li
-                %a{ :href => "/about/" } About
+                %a{ :href => "/about/", :class => "nav-about" } About
               %li
-                %a{ :href => "/archive/" } Archive
+                %a{ :href => "/archive/", :class => "nav-archive" } Archive
         #content.primary{ :role => "main" }
           {{ content }}
         %aside.secondary{ :role => "complementary" }
