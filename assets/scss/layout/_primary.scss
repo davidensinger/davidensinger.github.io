@@ -2,6 +2,11 @@
 // Primary
 // ==========================================================================
 
+.post {
+  @include rem(margin-top, 4.1);
+  &:first-child {
+    margin-top: 0; } }
+
 .entry-title {
   @extend %mega-font-size;
   @extend %mega-line-height;
