@@ -24,5 +24,9 @@ If you have any questions, comments, or would just like to say hello, please don
 
 ### Jekyll
 
-- [Jekyll Excerpt Plugin](http://blog.darkrefraction.com/2012/jekyll-excerpt-plugin.html)
-- [Jekyll RSS Feed Templates](https://github.com/snaptortoise/jekyll-rss-feeds)
+- [Jekyll Excerpt Plugin](http://blog.darkrefraction.com/2012/jekyll-excerpt-plugin.html) via [Dark Refraction](http://blog.darkrefraction.com/)
+- [Jekyll RSS Feed Templates](https://github.com/snaptortoise/jekyll-rss-feeds) by [snaptortoise](https://github.com/snaptortoise/)
+
+### Sass
+
+- [Rem mixin](https://gist.github.com/webgefrickel/4530526) by [webgefrickel](https://github.com/webgefrickel)
