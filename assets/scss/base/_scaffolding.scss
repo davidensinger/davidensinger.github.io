@@ -19,6 +19,9 @@ body {
   height: 100%;
   background: $gray-lightest; }
 
+%margin-bottom {
+  @include rem(margin-bottom, 1.5); }
+
 .outer-container {
   max-width: 94%;
   @extend %transitions-all;

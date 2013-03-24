@@ -165,9 +165,6 @@ h6 {
   letter-spacing: 1px;
   font-weight: $base-font-weight-bold; }
 
-%margin-bottom {
-  @include rem(margin-bottom, 1.5); }
-
 p {
   margin-top: 0;
   @extend %epsilon-font-size;
