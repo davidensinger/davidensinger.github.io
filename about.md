@@ -8,7 +8,7 @@ description: David Ensinger is a Front End Developer from Columbus, OH
 
 Hi, my name is __David Ensinger__ and I’m a __Front End Developer__ with equal parts interest in design, development, and writing.
 
-I develop websites that are designed well, useable, and adhere to modern standards and accessibility requirements. I’m also no slouch at writing documentation, leading training, and providing ongoing support. My clients and co-workers will vouch that I play well with others too.
+I develop websites that are well designed, useable, and adhere to modern standards and accessibility requirements. I’m also no slouch at writing documentation, leading training, and providing ongoing support. My clients and co-workers will vouch that I play well with others too.
 
 My current employer is [The Ohio State University Libraries](http://library.osu.edu/), but in past lives I was a Peace Corps Volunteer in the Republic of Moldova and a Web Marketing & Technology Specialist at eSchool Consultants. I graduated from the Ohio State University’s Fisher College of Business with a B.S. in Business Administration with a specialization in Finance.
 
@@ -22,7 +22,7 @@ If you have any questions, comments, or would just like to say hello, please don
 
 ## Colophon
 
-This website was made on a [MacBook Air](http://www.apple.com/macbookair/), designed in browser with [Chrome](http://www.google.com/chrome/), and marked up in [Haml](http://haml.info/) and [Sass](http://sass-lang.com/) in [Sublime Text 2](http://www.sublimetext.com/). Type is set in [Open Sans](http://www.google.com/webfonts/specimen/Open+Sans), which is served by [Google Web Fonts](http://www.google.com/webfonts). Posts are composed in [Markdown](http://daringfireball.net/projects/markdown/).
+This website was made on a [MacBook Air](http://www.apple.com/macbookair/), designed in browser with [Chrome](http://www.google.com/chrome/), and marked up in [Haml](http://haml.info/) and [Sass](http://sass-lang.com/) in [Sublime Text 2](http://www.sublimetext.com/). Type is set in [Open Sans](http://www.google.com/webfonts/specimen/Open+Sans), which is served by [Google Web Fonts](http://www.google.com/webfonts). Posts are composed in [Markdown](http://daringfireball.net/projects/markdown/) and syntax is highlighted with [Pygments](http://pygments.org/).
 
 The site is published with [Jekyll](http://jekyllrb.com/) and hosted on [GitHub Page](http://pages.github.com/), while the code was compiled and committed into version control by [iTerm2](http://www.iterm2.com/) and [Git](http://git-scm.com/), respectively. [Consular](https://github.com/achiu/consular) was used to automate development workflow setup.
 
@@ -40,5 +40,3 @@ In addition, I consulted the following resources for both inspiration and best p
 
 - [HTML5 Boilerplate](http://html5boilerplate.com/)
 - [Microformats Wiki](http://microformats.org/wiki/)
-
-This site is structured semantically with valid [HTML5](http://www.w3.org/TR/html5/) and accessible to screen readers for the sight impaired. An [RSS feed](/feed.xml) is available for syndication.
