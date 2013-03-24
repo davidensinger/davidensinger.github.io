@@ -8,6 +8,7 @@ permalink: /:year/:month/:title/
 paginate: 10
 
 title: Development, design, and more by David Ensinger
-name: David Ensinger
+author: David Ensinger
+email: hello@davidensinger.com
 description: David Ensinger is a Front End Developer from Columbus, OH
 url: http://www.davidensinger.com

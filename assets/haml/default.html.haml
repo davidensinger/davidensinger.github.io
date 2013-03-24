@@ -26,7 +26,9 @@
     {% endif %}
     %meta{ :name => "author", :content => "David Ensinger" }/
 
-    %link{ :rel => "alternate", :type => "application/rss+xml", :title => "{{ site.name }}", :href => "/feed.xml" }/
+    %link{ :rel => "alternate", :type => "application/atom+xml", :title => "Atom", :href => "/atom.xml" }/
+    %link{ :rel => "alternate", :type => "application/rss+xml", :title => "RSS", :href => "/rss.xml" }/
+
     %link{ :href => "/favicon.ico", :rel => "shortcut icon" }/
 
     {% if page.title %}
@@ -92,7 +94,7 @@
             %span.visuallyhidden Tumblr
         %p
           &copy; {{ site.time | date: '%Y' }} David Ensinger. All rights reserved.
-          %a{ :title => "Subscribe to my RSS feed", :href => "/feed.xml", :class => "link-rss" }
+          %a{ :title => "Subscribe to my RSS feed", :href => "/atom.xml", :class => "link-rss" }
             %span{ :class => "icon-rss", :"aria-hidden" => "true" }
             %span.visuallyhidden RSS
 

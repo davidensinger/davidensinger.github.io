@@ -29,7 +29,7 @@ A number of supporting plugins and code snippets for Jekyll are used with the si
 
 - [Jekyll Excerpt Plugin](http://blog.darkrefraction.com/2012/jekyll-excerpt-plugin.html) via [Dark Refraction](http://blog.darkrefraction.com/)
 - [Open Graph for Jekyll](https://gist.github.com/pathawks/1406355) by [pathawks](https://github.com/pathawks/)
-- [Jekyll RSS Feed Templates](https://github.com/snaptortoise/jekyll-rss-feeds) by [snaptortoise](https://github.com/snaptortoise/)
+- [Jekyll Templates for Atom, RSS](http://davecoyle.com/tech-notes/jekyll-templates-for-atom-rss/) by [davecoyle.com](http://davecoyle.com/)
 
 A couple Sass mixins proved integral to the scaffolding of the site:
 
