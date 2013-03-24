@@ -30,9 +30,9 @@ It should be noted that [browser support for rems](http://caniuse.com/#search=re
 
 Thankfully [Sass](http://sass-lang.com/) allows for mixins, which allows ”re-use of styles – properties or even selectors – without having to copy and paste them or move them into a non-semantic class.” Pretty neat!
 
-When writing my SCSS, I initially did a cursory search for a rem mixin with pixel fallback. I found a half dozen that varied markedly in complexity and scope, although none of them fit my exact needs. 
+When writing my SCSS, I initially did a cursory search for a rem mixin with pixel fallback. I found many that varied markedly in complexity and scope, although none of them fit my exact needs. 
 
-### Available Mixins
+### A Selection of Available Mixins
 
 - [Mixins for Rem Font Sizing](http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/) via [CSS-Tricks](http://www.css-tricks.com/)
 - [An Improved Sass Rem Mixin](http://intuio.at/en/blog/an-improved-sass-rem-mixin-for-unitless-numbers/) with unitless numbers by [@xon1c](http://twitter.com/xon1c) at [intuio.at](http://intuio.at/) 
