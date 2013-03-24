@@ -12,7 +12,11 @@
     <link href='//themes.googleusercontent.com' rel='dns-prefetch'>
     <link href='//www.google-analytics.com' rel='dns-prefetch'>
     <title>{{ page.title }} &ndash; Development, design, and more, by David Ensinger</title>
+    {% if page.description %}
     <meta content='{{ page.description }}' name='description'>
+    {% else %}
+    <meta content='{{ site.description }}' name='description'>
+    {% endif %}
     <meta content='David Ensinger' name='author'>
     <link href='/feed.xml' rel='alternate' title='{{ site.name }}' type='application/rss+xml'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
