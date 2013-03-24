@@ -253,7 +253,7 @@ ins {
 pre {
   @extend %margin-bottom;
   @include rem(padding, 1);
-  background: $white-darker;
+  background: mix($white, $white-dark);
   overflow: auto;
   max-width: 100%; }
 
