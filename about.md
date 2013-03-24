@@ -25,9 +25,10 @@ This website was made on a [MacBook Air](http://www.apple.com/macbookair/), desi
 
 The site is published with [Jekyll](http://jekyllrb.com/) and hosted on [GitHub Page](http://pages.github.com/), while the code was compiled and committed into version control by [iTerm2](http://www.iterm2.com/) and [Git](http://git-scm.com/), respectively. [Consular](https://github.com/achiu/consular) was used to automate development workflow setup.
 
-A number of supporting plugins for Jekyll are used with the site:
+A number of supporting plugins and code snippets for Jekyll are used with the site:
 
 - [Jekyll Excerpt Plugin](http://blog.darkrefraction.com/2012/jekyll-excerpt-plugin.html) via [Dark Refraction](http://blog.darkrefraction.com/)
+- [Open Graph for Jekyll](https://gist.github.com/pathawks/1406355) by [pathawks](https://github.com/pathawks/)
 - [Jekyll RSS Feed Templates](https://github.com/snaptortoise/jekyll-rss-feeds) by [snaptortoise](https://github.com/snaptortoise/)
 
 A couple Sass mixins proved integral to the scaffolding of the site:

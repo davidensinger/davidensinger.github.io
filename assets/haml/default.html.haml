@@ -13,7 +13,12 @@
     %link{ :href => "//themes.googleusercontent.com", :rel => "dns-prefetch" }/
     %link{ :href => "//www.google-analytics.com", :rel => "dns-prefetch" }/
 
-    %title {{ page.title }} &ndash; Development, design, and more, by David Ensinger
+    {% if page.title %}
+    %title {{ page.title }} &ndash; {{ site.title }}
+    {% else %}
+    %title {{ site.title }}
+    {% endif %}
+
     {% if page.description %}
     %meta{ :name => "description", :content => "{{ page.description }}" }/
     {% else %}
@@ -22,10 +27,29 @@
     %meta{ :name => "author", :content => "David Ensinger" }/
 
     %link{ :rel => "alternate", :type => "application/rss+xml", :title => "{{ site.name }}", :href => "/feed.xml" }/
+    %link{ :href => "/favicon.ico", :rel => "shortcut icon" }/
+
+    {% if page.title %}
+    %meta{ :property => "og:type", :content => "article" }/
+    %meta{ :property => "og:title", :content => "{{ page.title }}" }/
+    {% else %}
+    %meta{ :property => "og:type", :content => "website" }/ 
+    {% endif %}
+     
+    {% if site.title %}
+    %meta{ :property => "og:site_name", :content => "{{ site.title }}" }/
+    {% endif %}
+     
+    {% if page.url %}
+    %meta{ :property => "og:url", :content => "{{ site.url }}{{ page.url }}" }/
+    {% endif %}
+     
+    {% if page.date %}
+    %meta{ :property => "article:published_time", :content => "{{page.date | date_to_xmlschema}}" }/
+    {% endif %}
 
     %link{ :href => "http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600", :type => "text/css", :rel => "stylesheet" }/
     %link{ :href => "/assets/css/styles.min.css", :type => "text/css", :rel => "stylesheet" }/
-    %link{ :href => "/favicon.ico", :rel => "shortcut icon" }/
 
     %script{ :src => "/assets/js/vendor/modernizr-2.6.2.min.js" }
 

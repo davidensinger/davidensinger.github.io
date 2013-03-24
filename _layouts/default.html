@@ -11,7 +11,11 @@
     <link href='//fonts.googleapis.com' rel='dns-prefetch'>
     <link href='//themes.googleusercontent.com' rel='dns-prefetch'>
     <link href='//www.google-analytics.com' rel='dns-prefetch'>
-    <title>{{ page.title }} &ndash; Development, design, and more, by David Ensinger</title>
+    {% if page.title %}
+    <title>{{ page.title }} &ndash; {{ site.title }}</title>
+    {% else %}
+    <title>{{ site.title }}</title>
+    {% endif %}
     {% if page.description %}
     <meta content='{{ page.description }}' name='description'>
     {% else %}
@@ -19,9 +23,24 @@
     {% endif %}
     <meta content='David Ensinger' name='author'>
     <link href='/feed.xml' rel='alternate' title='{{ site.name }}' type='application/rss+xml'>
+    <link href='/favicon.ico' rel='shortcut icon'>
+    {% if page.title %}
+    <meta content='article' property='og:type'>
+    <meta content='{{ page.title }}' property='og:title'>
+    {% else %}
+    <meta content='website' property='og:type'>
+    {% endif %}
+    {% if site.title %}
+    <meta content='{{ site.title }}' property='og:site_name'>
+    {% endif %}
+    {% if page.url %}
+    <meta content='{{ site.url }}{{ page.url }}' property='og:url'>
+    {% endif %}
+    {% if page.date %}
+    <meta content='{{page.date | date_to_xmlschema}}' property='article:published_time'>
+    {% endif %}
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='/assets/css/styles.min.css' rel='stylesheet' type='text/css'>
-    <link href='/favicon.ico' rel='shortcut icon'>
     <script src='/assets/js/vendor/modernizr-2.6.2.min.js'></script>
   </head>
   <body class='{{ page.page-class }}'>
