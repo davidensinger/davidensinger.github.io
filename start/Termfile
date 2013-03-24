@@ -1,0 +1,19 @@
+# davidensinger.com Termfile
+before { run 'cd ~/Development/davidensinger.com' }
+
+tab :name => 'Jekyll' do
+  run 'rvm 2.0.0'
+  run 'jekyll'
+end
+
+# tab :name => 'Sass' do
+#   run 'sass --style compressed --watch assets/scss/styles.scss:assets/css/styles.min.css --debug-info'
+# end
+
+tab :name => 'Git' do
+  run 'git status'
+end
+
+run 'subl .' #Opens project directory in Sublime Text 2
+run 'open http://0.0.0.0:4000'
+run 'exit'

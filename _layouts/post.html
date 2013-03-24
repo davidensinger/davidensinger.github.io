@@ -8,7 +8,7 @@ layout: default
     </h1>
     <div class='entry-meta'>
       <span class='icon-left icon-entry-date'>
-        <time datetime='{{ page.date }}'>
+        <time datetime='{{ post.date | date_to_xmlschema }}'>
           {{ page.date | date: "%B %d, %Y" }}
         </time>
       </span>

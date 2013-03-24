@@ -15,7 +15,7 @@ description: David Ensinger is a Front End Developer from Columbus, OH
     <div class='entry-meta'>
       <span class='icon-left icon-entry-date entry-meta-icon'>
         <a class='entry-meta-link' href='{{ post.url }}' rel='bookmark' title=' {{ post.date }}'>
-          <time datetime='{{ post.date }}'>
+          <time datetime='{{ post.date | date_to_xmlschema }}'>
             {{ post.date | date: "%B %d, %Y" }}
           </time>
         </a>
