@@ -41,10 +41,56 @@ When writing my SCSS, I initially did a cursory search for a rem mixin with pixe
 
 I wanted a rem mixin that would support the input of a property with any number, type, and mix of values, such as:
 
-    rem(font-size, 14px);
-    rem(margin, 0 auto 1);
-    rem(padding-bottom, 3%);
+{% highlight scss %}
+@include rem(font-size, 14px);
+@include rem(margin, 0 auto 1);
+@include rem(padding-bottom, 3%);
+{% endhighlight %}
 
 The nearest to that ideal was the [Rem mixin](https://gist.github.com/webgefrickel/4530526) by [webgefrickel](https://github.com/webgefrickel), but that mixin doesn’t allow for auto or percentage (`%`) values. No matter, he graciously posted it as a Gist, which [I forked to make the small revisions](https://gist.github.com/davidensinger/5217667) I needed.
+
+My modified version of the mixin:
+
+{% highlight scss %}
+@mixin rem($property, $values) {
+  // Create a couple of empty lists as output buffers.
+  $font-size: $base-font-size;
+  $px-values: ();
+  $rem-values: ();
+ 
+  // Loop through the $values list
+  @each $value in $values {
+    // For each property value, if it's in rem or px, derive both rem and
+    // px values for it and add those to the end of the appropriate buffer.
+    // Ensure all pixel values are rounded to the nearest pixel.
+    @if $value == 0 or $value == 0px {
+      // 0 -- use it without a unit
+      $px-values: join($px-values, 0);
+      $rem-values: join($rem-values, 0);
+    } @else if type-of($value) == number and not unitless($value) and (unit($value) == px) {
+      // px value given - calculate rem value from font-size
+      $new-rem-value: $value / $font-size;
+      $px-values: join($px-values, round($value));
+      $rem-values: join($rem-values, #{$new-rem-value}rem);
+    } @else if type-of($value) == number and not unitless($value) and (unit($value) == "%") {
+      // % value given - don't add px or rem
+      $px-values: join($px-values, #{$value});
+      $rem-values: join($rem-values, #{$value});
+    } @else if $value == auto {
+      // auto - don't add px or rem
+      $px-values: join($px-values, auto);
+      $rem-values: join($rem-values, auto);
+    } @else {
+      // unitless value - use those directly as rem and calculate the px-fallback
+      $px-values: join($px-values, round($value * $font-size));
+      $rem-values: join($rem-values, #{$value}rem);
+    }
+  }
+ 
+  // output the converted rules
+  #{$property}: $px-values;
+  #{$property}: $rem-values;
+}
+{% endhighlight %}
 
 I’m now able to use rems without worrying about browser support, which affords me more time to design and write.  
