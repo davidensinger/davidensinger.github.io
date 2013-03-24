@@ -22,11 +22,23 @@ If you have any questions, comments, or would just like to say hello, please don
 
 ## Colophon
 
-### Jekyll
+This website was made on a [MacBook Air](http://www.apple.com/macbookair/), designed in browser with [Chrome](http://www.google.com/chrome/), and marked up in [Haml](http://haml.info/) and [Sass](http://sass-lang.com/) in [Sublime Text 2](http://www.sublimetext.com/). Type is set in [Open Sans](http://www.google.com/webfonts/specimen/Open+Sans), which is served by [Google Web Fonts](http://www.google.com/webfonts). Posts are composed in [Markdown](http://daringfireball.net/projects/markdown/).
+
+The site is published with [Jekyll](http://jekyllrb.com/) and hosted on [GitHub Page](http://pages.github.com/), while the code was compiled and committed into version control by [iTerm2](http://www.iterm2.com/) and [Git](http://git-scm.com/), respectively. [Consular](https://github.com/achiu/consular) was used to automate development workflow setup.
+
+A number of supporting plugins for Jekyll are used with the site:
 
 - [Jekyll Excerpt Plugin](http://blog.darkrefraction.com/2012/jekyll-excerpt-plugin.html) via [Dark Refraction](http://blog.darkrefraction.com/)
 - [Jekyll RSS Feed Templates](https://github.com/snaptortoise/jekyll-rss-feeds) by [snaptortoise](https://github.com/snaptortoise/)
 
-### Sass
+A couple Sass mixins proved integral to the scaffolding of the site:
 
+- [Breakpoint mixin](http://css-tricks.com/media-queries-sass-3-2-and-codekit/) by [CSS-Tricks](http://css-tricks.com/)
 - [Rem mixin](https://gist.github.com/webgefrickel/4530526) by [webgefrickel](https://github.com/webgefrickel)
+
+In addition, I consulted the following resources for both inspiration and best practices:
+
+- [HTML5 Boilerplate](http://html5boilerplate.com/)
+- [Microformats Wiki](http://microformats.org/wiki/)
+
+This site is structured semantically with valid [HTML5](http://www.w3.org/TR/html5/) and accessible to screen readers for the sight impaired. An [RSS feed](/feed.xml) is available for syndication.
