@@ -1,0 +1,138 @@
+// ==========================================================================
+// Pygments styles
+// Courtesy of https://github.com/MozMorris/tomorrow-pygments
+// ==========================================================================
+
+.highlight  {
+  @extend %margin-bottom;
+  .hll {
+    background-color: #d6d6d6; }
+  .c { // Comment
+    color: #8e908c; }
+  .err { // Error
+    color: #c82829; }
+  .k { // Keyword
+    color: #8959a8; }
+  .l { // Literal
+    color: #f5871f; }
+  .n { // Name
+    color: #4d4d4c; }
+  .o { // Operator
+    color: #3e999f; }
+  .p { // Punctuation
+    color: #4d4d4c; }
+  .cm { // Comment.Multiline
+    color: #8e908c; }
+  .cp { // Comment.Preproc
+    color: #8e908c; }
+  .c1 { // Comment.Single
+    color: #8e908c; }
+  .cs { // Comment.Special
+    color: #8e908c; }
+  .gd { // Generic.Deleted
+    color: #c82829; }
+  .ge { // Generic.Emph
+    font-style: italic; }
+  .gh { // Generic.Heading
+    color: #4d4d4c;
+    font-weight: $base-font-weight-bold; }
+  .gi { // Generic.Inserted
+    color: #718c00; }
+  .gp { // Generic.Prompt
+    color: #8e908c;
+    font-weight: $base-font-weight-bold; }
+  .gs { // Generic.Strong
+    font-weight: $base-font-weight-bold; }
+  .gu { // Generic.Subheading
+    color: #3e999f;
+    font-weight: $base-font-weight-bold; }
+  .kc { // Keyword.Constant
+    color: #8959a8; }
+  .kd { // Keyword.Declaration
+    color: #8959a8; }
+  .kn { // Keyword.Namespace
+    color: #3e999f; }
+  .kp { // Keyword.Pseudo
+    color: #8959a8; }
+  .kr { // Keyword.Reserved
+    color: #8959a8; }
+  .kt { // Keyword.Type
+    color: #eab700; }
+  .ld { // Literal.Date
+    color: #718c00; }
+  .m { // Literal.Number
+    color: #f5871f; }
+  .s { // Literal.String
+    color: #718c00; }
+  .na { // Name.Attribute
+    color: #4271ae; }
+  .nb { // Name.Builtin
+    color: #4d4d4c; }
+  .nc { // Name.Class
+    color: #eab700; }
+  .no { // Name.Constant
+    color: #c82829; }
+  .nd { // Name.Decorator
+    color: #3e999f; }
+  .ni { // Name.Entity
+    color: #4d4d4c; }
+  .ne { // Name.Exception
+    color: #c82829; }
+  .nf { // Name.Function
+    color: #4271ae; }
+  .nl { // Name.Label
+    color: #4d4d4c; }
+  .nn { // Name.Namespace
+    color: #eab700; }
+  .nx { // Name.Other
+    color: #4271ae; }
+  .py { // Name.Property
+    color: #4d4d4c; }
+  .nt { // Name.Tag
+    color: #3e999f; }
+  .nv { // Name.Variable
+    color: #c82829; }
+  .ow { // Operator.Word
+    color: #3e999f; }
+  .w { // Text.Whitespace
+    color: #4d4d4c; }
+  .mf { // Literal.Number.Float
+    color: #f5871f; }
+  .mh { // Literal.Number.Hex
+    color: #f5871f; }
+  .mi { // Literal.Number.Integer
+    color: #f5871f; }
+  .mo { // Literal.Number.Oct
+    color: #f5871f; }
+  .sb { // Literal.String.Backtick
+    color: #718c00; }
+  .sc { // Literal.String.Char
+    color: #4d4d4c; }
+  .sd { // Literal.String.Doc
+    color: #8e908c; }
+  .s2 { // Literal.String.Double
+    color: #718c00; }
+  .se { // Literal.String.Escape
+    color: #f5871f; }
+  .sh { // Literal.String.Heredoc
+    color: #718c00; }
+  .si { // Literal.String.Interpol
+    color: #f5871f; }
+  .sx { // Literal.String.Other
+    color: #718c00; }
+  .sr { // Literal.String.Regex
+    color: #718c00; }
+  .s1 { // Literal.String.Single
+    color: #718c00; }
+  .ss { // Literal.String.Symbol
+    color: #718c00; }
+  .bp { // Name.Builtin.Pseudo
+    color: #4d4d4c; }
+  .vc { // Name.Variable.Class
+    color: #c82829; }
+  .vg { // Name.Variable.Global
+    color: #c82829; }
+  .vi { // Name.Variable.Instance
+    color: #c82829; }
+  .il { // Literal.Number.Integer.Long
+    color: #f5871f; } }
