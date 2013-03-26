@@ -3,8 +3,9 @@
 // ==========================================================================
 
 .chromeframe {
-  @include rem(margin, 0.2 0);
-  @include rem(padding, 0.2 0); }
+  padding: 3%;
+  text-align: center;
+  background: $background-gray-light; }
 
 .lt-ie9 {
   .site-logo,

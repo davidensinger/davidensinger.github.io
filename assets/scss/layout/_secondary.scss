@@ -5,7 +5,7 @@
 .secondary {
   @extend %clearfix;
   @include breakpoint(smaller-than-small-desktop) {
-    background: $background-secondary; } }
+    background: $background-gray-light; } }
 
 .secondary-photo {
   @extend %margin-bottom;
