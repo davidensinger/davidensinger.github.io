@@ -100,6 +100,10 @@ $link-footer-icon-color: $gray-light;
 $link-footer-icon-color-hover: $gray;
 $link-footer-icon-color-focus: $link-color-focus;
 
+$link-footer-rss-icon-color: inherit;
+$link-footer-rss-icon-color-hover: $white-dark;
+$link-footer-rss-icon-color-focus: $link-color-focus;
+
 // Margin
 // ==========================================================================
 
@@ -123,6 +127,7 @@ $text-color: mix($blue-dark, $gray-dark, 25%);
 $text-color-dark: mix($blue-darker, $gray-darker, 25%);
 
 $heading-color: $text-color-dark;
+$footer-color: mix($blue-lighter, $white-darker);
 
 $selection-color: $white-dark;
 $selection-background: $green-light;
