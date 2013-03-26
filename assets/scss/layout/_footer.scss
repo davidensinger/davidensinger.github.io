@@ -4,6 +4,7 @@
 
 .site-footer {
   color: $footer-color;
+  text-shadow: 0 1px 1px rgba($text-color, 0.25);
   @include breakpoint(smaller-than-small-desktop) {
     text-align: center; } }
 
@@ -17,7 +18,10 @@
 .footer-icon-link {
   @include rem(margin-left, 1);
   &:first-child {
-    margin: 0; }
+    margin: 0; } }
+
+.footer-icon-link,
+.link-rss {
   &:link,
   &:visited {
     color: $link-footer-icon-color; }
@@ -34,13 +38,3 @@
   &:hover {
     &:before {
       @extend %beta-font-size; } } }
-
-.link-rss {
-  &:link,
-  &:visited {
-    color: $link-footer-rss-icon-color; }
-  &:hover {
-    color: $link-footer-rss-icon-color-hover; }
-  &:focus,
-  &:active {
-    color: $link-footer-rss-icon-color-focus; } }

@@ -96,13 +96,9 @@ $link-meta-color: $gray-light;
 $link-meta-color-hover: $gray;
 $link-meta-color-focus: $link-color-focus;
 
-$link-footer-icon-color: $gray-light;
-$link-footer-icon-color-hover: $gray;
+$link-footer-icon-color: inherit;
+$link-footer-icon-color-hover: $white-dark;
 $link-footer-icon-color-focus: $link-color-focus;
-
-$link-footer-rss-icon-color: inherit;
-$link-footer-rss-icon-color-hover: $white-dark;
-$link-footer-rss-icon-color-focus: $link-color-focus;
 
 // Margin
 // ==========================================================================
