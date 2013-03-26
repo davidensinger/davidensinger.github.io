@@ -23,7 +23,7 @@ If you have any questions, comments, or would just like to say hello, please don
 
 This website was made on a [MacBook Air](http://www.apple.com/macbookair/), designed in browser with [Chrome](http://www.google.com/chrome/), and marked up in [Haml](http://haml.info/) and [Sass](http://sass-lang.com/) in [Sublime Text 2](http://www.sublimetext.com/). Type is set in [Open Sans](http://www.google.com/webfonts/specimen/Open+Sans), which is served by [Google Web Fonts](http://www.google.com/webfonts). Posts are composed in [Markdown](http://daringfireball.net/projects/markdown/) and syntax is highlighted with [Pygments](http://pygments.org/).
 
-The site is published with [Jekyll](http://jekyllrb.com/) and hosted on [GitHub Page](http://pages.github.com/), while the code was compiled and committed into version control by [iTerm2](http://www.iterm2.com/) and [Git](http://git-scm.com/), respectively. [Consular](https://github.com/achiu/consular) was used to automate development workflow setup.
+The site is published with [Jekyll](http://jekyllrb.com/) and hosted on [GitHub Pages](http://pages.github.com/), while the code was compiled and committed into version control by [iTerm2](http://www.iterm2.com/) and [Git](http://git-scm.com/), respectively. [Consular](https://github.com/achiu/consular) was used to automate development workflow setup.
 
 A number of supporting plugins and code snippets for Jekyll are used with the site:
 
