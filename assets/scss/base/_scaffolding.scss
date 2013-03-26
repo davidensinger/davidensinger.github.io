@@ -13,11 +13,20 @@
 
 html {
   overflow-y: scroll;
-  min-height: 100%; }
+  min-height: 100%;
+  background: $green;
+  background: -moz-linear-gradient(top,  $green 0%, $blue 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $green), color-stop(100%, $blue));
+  background: -webkit-linear-gradient(top,  $green 0%, $blue 100%);
+  background: -o-linear-gradient(top,  $green 0%, $blue 100%);
+  background: -ms-linear-gradient(top,  $green 0%, $blue 100%);
+  background: linear-gradient(to bottom,  $green 0%, $blue 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$green', endColorstr='$blue',GradientType=0 ); }
 
 body {
   height: 100%;
-  background: $gray-lightest; }
+  // background: url("../img/background.png");
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKIAAAAPCAMAAABQruQZAAAAGFBMVEX///////////////////////////8AAAAplebaAAAACHRSTlMDCA4VIx0oAGOp/P4AAAD1SURBVHja7VZBDsMwCAOMs///eEqoxEKzTuth2rT6SGVDHKxU6M4OmOlthhi9NULnqo6yO5GMY6ihU5rTVOYv8FGWHcNAegeFA+5dIvrKrMG2EJHe1INBmGbnhKiOPq0jhWcDmkN3wi0owzynTPbE52pc2JbVwkjFTXSgBeIEO5PA6l5UB6UwKjnOMeY0masedF37ZQCYAGztrWI7b5Gv1fWIM+W5nXFpb0MeNvJwlyqPcTtYxMWQy1LmPBOXnC6hWwtbxoU/HRdf3+/ruITqF8eFCfxfXHgYF34kLtfrcr0uh3FxqFQ7Y0w5ExdRcLGQUn53Ku5eSDSvOZXVuAAAAABJRU5ErkJggg==); }
 
 %margin-bottom {
   @include rem(margin-bottom, 1.5); }
@@ -33,7 +42,7 @@ body {
 .inner-container {
   @extend %clearfix;
   background: $background-inner-container;
-  box-shadow: 0 0 3em 0 rgba($green-darkest, 0.1); }
+  box-shadow: 0 0 3em 0 rgba($green-darkest, 0.25); }
 
 // Common
 // ==========================================================================
