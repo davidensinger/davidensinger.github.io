@@ -30,7 +30,7 @@ nav {
 %current-page-cursor {
   cursor: text; }
 
-@each $page in home, about, archive {
+@each $page in home, about {
   .page-#{$page} .nav-#{$page} {
     color: $link-nav-color-hover;
     @extend %current-page-cursor; } }
