@@ -51,24 +51,12 @@
     %meta{ :property => "article:published_time", :content => "{{page.date | date_to_xmlschema}}" }/
     {% endif %}
 
+    {% if page.title %}
     %meta{ :name => "twitter:card", :content => "summary" }/
     %meta{ :name => "twitter:site", :content => "@DavidEnsinger" }/
-
-    {% if page.title %}
     %meta{ :name => "twitter:url", :content => "{{ site.url }}{{ page.url }}" }/
     %meta{ :name => "twitter:title", :content => "{{ page.title }}" }/
-    {% else %}
-    %meta{ :name => "twitter:url", :content => "{{ site.url }}" }/
-    {% endif %}
-
-    {% if site.title %}
-    %meta{ :name => "twitter:title", :content => "{{ site.title }}" }/
-    {% endif %}
-
-    {% if page.description %}
     %meta{ :name => "twitter:description", :content => "{{ page.description }}" }/
-    {% else %}
-    %meta{ :name => "twitter:description", :content => "{{ site.description }}" }/
     {% endif %}
 
     %link{ :href => "http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600", :type => "text/css", :rel => "stylesheet" }/

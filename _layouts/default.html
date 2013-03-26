@@ -41,21 +41,12 @@
     {% if page.date %}
     <meta content='{{page.date | date_to_xmlschema}}' property='article:published_time'>
     {% endif %}
+    {% if page.title %}
     <meta content='summary' name='twitter:card'>
     <meta content='@DavidEnsinger' name='twitter:site'>
-    {% if page.title %}
     <meta content='{{ site.url }}{{ page.url }}' name='twitter:url'>
     <meta content='{{ page.title }}' name='twitter:title'>
-    {% else %}
-    <meta content='{{ site.url }}' name='twitter:url'>
-    {% endif %}
-    {% if site.title %}
-    <meta content='{{ site.title }}' name='twitter:title'>
-    {% endif %}
-    {% if page.description %}
     <meta content='{{ page.description }}' name='twitter:description'>
-    {% else %}
-    <meta content='{{ site.description }}' name='twitter:description'>
     {% endif %}
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='/assets/css/styles.min.css' rel='stylesheet' type='text/css'>
