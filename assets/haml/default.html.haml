@@ -30,6 +30,7 @@
     %link{ :rel => "alternate", :type => "application/rss+xml", :title => "RSS", :href => "/rss.xml" }/
 
     %link{ :href => "/favicon.ico", :rel => "shortcut icon" }/
+    %link{ :href => "{{ page.url }}", :rel => "canonical" }/
 
     {% if page.title %}
     %meta{ :property => "og:type", :content => "article" }/
