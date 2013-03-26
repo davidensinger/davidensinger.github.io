@@ -21,8 +21,8 @@ page-class: page-home
     </div>
   </header>
   <div class='entry-content'>
-    {% if post.excerpt %}
-    {{ post.excerpt | markdownify }}
+    {% if post.description %}
+    {{ post.description | markdownify }}
     <a class='continue-reading' href='{{ post.url }}' rel='bookmark' title='Permalink to {{ post.title }}'>
       Continue Reading
     </a>

@@ -27,7 +27,6 @@ The site is published with [Jekyll](http://jekyllrb.com/) and hosted on [GitHub 
 
 A number of supporting plugins and code snippets for Jekyll are used with the site:
 
-- [Jekyll Excerpt Plugin](http://blog.darkrefraction.com/2012/jekyll-excerpt-plugin.html) via [Dark Refraction](http://blog.darkrefraction.com/)
 - [Open Graph for Jekyll](https://gist.github.com/pathawks/1406355) by [pathawks](https://github.com/pathawks/)
 - [Jekyll Templates for Atom, RSS](http://davecoyle.com/tech-notes/jekyll-templates-for-atom-rss/) by [davecoyle.com](http://davecoyle.com/)
 

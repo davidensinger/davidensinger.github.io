@@ -3,12 +3,10 @@ date: 2013-03-20 22:58:00
 layout: post
 slug: selling-agile
 title: Selling Agile
-description: Thoughts on generating buy in for Agile development techniques in an organization
+description: Thoughts on generating buy in for Agile development techniques in an organization.
 ---
 
-{% excerpt %}
 Throughout the last year my team has been trying out a smattering of **Agile** approaches to software development. We’re largely self-taught and as a result, we’ve had mixed success with the framework (although that’s by no means an indictment against it). It’s fair to say that our successes (or occasionally our lack thereof) are usually in direct relation to our efforts.
-{% endexcerpt %}
 
 We’ve lately become more disciplined about our approach, as a result of a push from our recently hired manager. She is a proponent of Agile development and has encouraged us to not only adopt, but to really own such methods and tools as the **daily stand-up**, **test driven development**, **pair programming**, and **weekly sprints**, amongst others.
 

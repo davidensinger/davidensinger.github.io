@@ -15,8 +15,8 @@ page-class: page-home
           %time{ :datetime => "{{ post.date | date_to_xmlschema }}" }
             {{ post.date | date: "%B %d, %Y" }}
   .entry-content
-    {% if post.excerpt %}
-    {{ post.excerpt | markdownify }}
+    {% if post.description %}
+    {{ post.description | markdownify }}
     %a{ :href => "{{ post.url }}", :title => "Permalink to {{ post.title }}", :rel => "bookmark", :class => "continue-reading" }
       Continue Reading
     {% else %}
