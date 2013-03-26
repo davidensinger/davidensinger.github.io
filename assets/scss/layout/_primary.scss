@@ -3,7 +3,7 @@
 // ==========================================================================
 
 .post {
-  @include rem(margin-top, 4.1);
+  @include rem(margin, 4.1 0 3);
   &:first-child {
     margin-top: 0; } }
 

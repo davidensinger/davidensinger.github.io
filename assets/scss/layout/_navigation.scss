@@ -34,3 +34,25 @@ nav {
   .page-#{$page} .nav-#{$page} {
     color: $link-nav-color-hover;
     @extend %current-page-cursor; } }
+
+// Post navigation
+.post-navigation {
+  @extend %clearfix;
+  @include rem(padding-top, 3);
+  border-top: 1px solid $hr-color; }
+
+.nav-previous {
+  float: left; }
+
+.nav-previous-link {
+  &:before {
+    content: "\2190";
+    @include rem(margin-right, 0.25); } }
+
+.nav-next {
+  float: right; }
+
+.nav-next-link {
+  &:after {
+    content: "\2192";
+    @include rem(margin-left, 0.25); } }

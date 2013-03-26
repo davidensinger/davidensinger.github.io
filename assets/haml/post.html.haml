@@ -12,3 +12,13 @@ page-class: page-post
           {{ page.date | date: "%B %d, %Y" }}
   .entry-content
     {{ content }}
+%nav{ :role => "navigation", :class => "post-navigation" }
+  %h1.visuallyhidden Post navigation
+  {% if page.previous %}
+  .nav-previous
+    %a{ :href => "{{ site.url }}{{ page.previous.url }}", :class => "nav-previous-link", :rel => "prev" } {{ page.previous.title }}
+  {% endif %}
+  {% if page.next %}
+  .nav-next
+    %a{ :href => "{{ site.url }}{{ page.next.url }}", :class => "nav-next-link", :rel => "next" } {{ page.next.title }}
+  {% endif %}
