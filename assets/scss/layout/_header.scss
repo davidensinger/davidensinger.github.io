@@ -2,4 +2,14 @@
 // Header
 // ==========================================================================
 
-.site-header { }
+.site-header {
+  @extend %clearfix; }
+
+.site-logo {
+  float: left;
+  @include rem(margin-right, 2); }
+
+.logo {
+  @include rem(width, 6);
+  @include rem(height, 6);
+  background: url("../img/logo.svg") no-repeat; }

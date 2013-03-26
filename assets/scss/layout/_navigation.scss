@@ -2,9 +2,23 @@
 // Navigation
 // ==========================================================================
 
-// Main navigation
+// Common navigation
 nav {
   text-transform: uppercase;
+  a {
+    &:link,
+    &:visited {
+      color: $link-nav-color; }
+    &:hover {
+      color: $link-nav-color-hover; }
+    &:focus,
+    &:active {
+      color: $link-nav-color-focus; } } }
+
+// Main navigation
+.main-navigation {
+  float: left;
+  @include rem(margin-top, 2.25);
   ul {
     margin: 0; }
   li {
@@ -15,16 +29,7 @@ nav {
       color: $text-color-lightest; }
     &:first-child {
       &:before {
-        content: none; } } }
-  a {
-    &:link,
-    &:visited {
-      color: $link-nav-color; }
-    &:hover {
-      color: $link-nav-color-hover; }
-    &:focus,
-    &:active {
-      color: $link-nav-color-focus; } } }
+        content: none; } } } }
 
 // Current page
 %current-page-cursor {

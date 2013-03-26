@@ -37,9 +37,8 @@ body {
 
 // Common
 // ==========================================================================
-.site-header,
-.site-footer {
-  padding: 6%; }
+.site-header {
+  padding: 6% 6% 3%; }
 
 // Primary
 // ==========================================================================
@@ -67,3 +66,8 @@ body {
   @include breakpoint(smaller-than-small-desktop) {
     float: none;
     width: auto; } }
+
+// Footer
+// ==========================================================================
+.site-footer {
+  padding: 6%; }

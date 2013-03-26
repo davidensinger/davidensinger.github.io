@@ -63,7 +63,9 @@
           .chromeframe
             %p Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.
         %header{ :class => "site-header", :role => "banner" }
-          %nav{ :role => "navigation" }
+          %a{ :href => "/", :class => "site-logo" }
+            %img{ :src => "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==", :class => "logo", :alt => "" }
+          %nav{ :class => "main-navigation", :role => "navigation" }
             %h1.visuallyhidden
             .visuallyhidden
               %a{ :title => "Skip to content", :href => "#content" } Skip to content
