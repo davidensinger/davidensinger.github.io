@@ -53,7 +53,7 @@
     %link{ :href => "http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600", :type => "text/css", :rel => "stylesheet" }/
     %link{ :href => "/assets/css/styles.min.css", :type => "text/css", :rel => "stylesheet" }/
 
-    %script{ :src => "/assets/js/vendor/modernizr-2.6.2.min.js" }
+    %script{ :src => '/assets/js/vendor/html5shiv.js' }
 
   %body{ :class => "{{ page.page-class }}" }
 
@@ -98,11 +98,6 @@
             %span{ :class => "icon-rss", :"aria-hidden" => "true" }
             %span.visuallyhidden RSS
 
-    %script{ :src => "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" }
-    :javascript
-      window.jQuery || document.write("<script src='/assets/js/vendor/jquery-1.9.1.min.js'><\/script>")
-    %script{ :src => "/assets/js/plugins.js" }
-    %script{ :src => "/assets/js/main.js" }
     :javascript
       var _gaq=[["_setAccount","UA-26697016-1"],["_trackPageview"],["_trackPageLoadTime"]];
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;

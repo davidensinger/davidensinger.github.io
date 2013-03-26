@@ -5,3 +5,8 @@
 .chromeframe {
   @include rem(margin, 0.2 0);
   @include rem(padding, 0.2 0); }
+
+.lt-ie9 {
+  .site-logo,
+  .logo {
+    display: none; } }
