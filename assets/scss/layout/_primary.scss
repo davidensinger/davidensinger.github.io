@@ -2,6 +2,9 @@
 // Primary
 // ==========================================================================
 
+.hentry {
+  @extend %clearfix; }
+
 .post {
   @include rem(margin, 4.1 0 3);
   &:first-child {
