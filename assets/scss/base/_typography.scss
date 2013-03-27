@@ -230,7 +230,7 @@ blockquote {
   @include rem(padding, 0.5 1);
   cite {
     color: $text-color;
-    font-style: $base-font-weight-bold;
+    font-weight: $base-font-weight-bold;
     font-style: normal; }
   p {
     @include rem(margin-bottom, 0.5); } }
