@@ -3,6 +3,10 @@ layout: page
 title: About
 permalink: /about/
 page-class: page-about
+sitemap:
+  priority: 0.7
+  changefreq: weekly
+  lastmod: 2013-03-26T18:55:00-04:00
 ---
 
 Hi, my name is __David Ensinger__ and I’m a __Front End Developer__ with equal parts interest in design, development, and writing.
