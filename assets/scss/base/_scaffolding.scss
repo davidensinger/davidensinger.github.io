@@ -34,7 +34,7 @@ body {
 .outer-container {
   max-width: 94%;
   @extend %transitions-all;
-  @include breakpoint(large-desktop) {
+  @include breakpoint(extra-large-desktop) {
     max-width: 1600px; }
   @include breakpoint(all-mobile) {
     max-width: 100%; } }

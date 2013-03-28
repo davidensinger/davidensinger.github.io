@@ -22,6 +22,9 @@
   @if $point == large-desktop {
     @media (min-width: 1441px) { @content; }
   }
+  @if $point == extra-large-desktop {
+    @media (min-width: 1600px) { @content; }
+  }
   @if $point == smaller-than-small-desktop {
     @media (max-width: 959px) { @content; }
   }
