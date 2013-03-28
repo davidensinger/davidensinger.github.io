@@ -6,3 +6,18 @@ img {
   max-width: 100%;
   width: auto;
   vertical-align: middle; }
+
+.img-border { // Class to add a border to the image
+  border: 1px solid $border-color; }
+
+.img-frame { // Class to add a frame to the image
+  max-width: 98%;
+  padding: 5px;
+  background: $white;
+  border: 1px solid $border-color; }
+
+.img-circle {
+  border-radius: 100%; }
+
+.img-rounded {
+  border-radius: 5px; }
