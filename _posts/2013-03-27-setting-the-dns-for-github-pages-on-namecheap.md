@@ -31,7 +31,7 @@ Log into your Namecheap account, select the appropriate domain name, and then go
 1. Set the **@** (used to denote the domain name for which you’re configuring the DNS) **IP Address/URL** to `204.232.175.78` and the **Record Type** to `A (Address)` with a **TTL** (an acronym for **Time To Live** that refers to the capability of the DNS servers to cache DNS records) of `1800`.
 2. Set the **www** (the subdomain www) **IP Address/URL** to `username.github.com` and the **Record Type** to `CNAME (Alias)` with a **TTL** of `1800`.
 
-<img src="/assets/img/posts/2013-03-27-namecheap-dns-settings.png" alt="Image of DNS settings" class="img-border" />
+<img src="/assets/img/posts/2013-03-27-namecheap-dns-settings.png" alt="Image of DNS settings" class="media-center img-border" />
 
 Save and then you’re all set! Please note, however that it may take some time for the changes to the DNS to propagate.
 
