@@ -33,6 +33,7 @@ A number of supporting plugins and code snippets for Jekyll are used with the si
 
 - [Open Graph for Jekyll](https://gist.github.com/pathawks/1406355) by [pathawks](https://github.com/pathawks/)
 - [Jekyll Templates for Atom, RSS](http://davecoyle.com/tech-notes/jekyll-templates-for-atom-rss/) by [davecoyle.com](http://davecoyle.com/)
+- [sitemap.xml](https://github.com/havvg/havvg.github.com/blob/master/sitemap.xml) by [havvg](https://github.com/havvg)
 
 A couple Sass mixins proved integral to the scaffolding of the site:
 
