@@ -8,7 +8,7 @@
   @if $border-or-hr == 'border' {
     border-#{$direction}: 1px solid $border-color;
   } @elseif $border-or-hr == 'hr' {
-    border-#{$direction}: 1px solid $hr-color;
+    border-#{$direction}: 2px solid $hr-color;
   }
 }
 
