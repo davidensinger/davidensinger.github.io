@@ -253,12 +253,18 @@ ins {
 pre {
   @extend %gray-box;
   overflow: auto;
-  max-width: 100%; }
+  max-width: 100%;
+  code {
+    padding: 0; } }
 
 code,
 kbd,
 tt,
 var {
+  @include rem(padding, 0.125 0.33);
+  @include rem(border-radius, 0.5);
+  background: $white-dark;
+  color: $gray-dark;
   font-weight: $base-font-weight; } 
 
 strike,
