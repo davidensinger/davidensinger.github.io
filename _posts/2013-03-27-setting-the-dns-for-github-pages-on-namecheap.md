@@ -10,7 +10,9 @@ After pushing my site to **GitHub** and verifying that it worked at [davidensing
 
 In the interest of helping others avoid the mistakes I made, here’s a guide to setting up the DNS for GitHub pages on [Namecheap](http://www.namecheap.com/), my registrar of choice.
 
-**Please note that this guide assumes that you’ll also be using a top-level domain (TLD).**
+<div class="yellow-box">
+  <p><strong>Please Note:</strong> This guide assumes that you’re using a top-level domain (TLD).</p>
+</div>
 
 ## Add a CNAME File to your Repo
 
@@ -33,4 +35,6 @@ Log into your Namecheap account, select the appropriate domain name, and then go
 
 Save and then you’re all set! Please note, however that it may take some time for the changes to the DNS to propagate.
 
-For more information about DNS settings, Google has a pretty good [Basic Guide to DNS](http://support.google.com/a/bin/answer.py?hl=en&answer=48090).
+<div class="gray-box">
+  <p><strong>More Info:</strong> Google has a pretty good <a href="http://support.google.com/a/bin/answer.py?hl=en&answer=48090">Basic Guide to DNS</a>.</p>
+</div>
