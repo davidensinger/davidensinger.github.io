@@ -4,7 +4,7 @@
 
 %info-box-base {
   @include rem(padding, 1);
-  @include rem(margin, 0 0 1.5);
+  @extend %margin-bottom;
   a {
     color: inherit !important;
     font-weight: $base-font-weight-bold; } }
