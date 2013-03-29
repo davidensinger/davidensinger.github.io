@@ -1,0 +1,42 @@
+// ==========================================================================
+// Info boxes
+// ==========================================================================
+
+%info-box-base {
+  @include rem(padding, 1);
+  @include rem(margin, 0 0 1.5);
+  a {
+    color: inherit !important;
+    font-weight: $base-font-weight-bold; } }
+
+%red-box,
+.red-box {
+  @extend %info-box-base;
+  background: $red-lighter;
+  color: $red-darker;
+  text-shadow: 0 1px 0 $red-lightest;
+  border-left: 0.33em solid $red; }
+
+%yellow-box,
+.yellow-box {
+  @extend %info-box-base;
+  background: $yellow-lighter;
+  color: $yellow-darker;
+  text-shadow: 0 1px 0 $yellow-lightest;
+  border-left: 0.33em solid $yellow; } 
+
+%green-box,
+.green-box {
+  @extend %info-box-base;
+  background: $green-lighter;
+  color: $green-darker;
+  text-shadow: 0 1px 0 $green-lightest;
+  border-left: 0.33em solid $green; }
+
+%gray-box,
+.gray-box {
+  @extend %info-box-base;
+  background: $white-dark;
+  color: $gray-dark;
+  text-shadow: 0 1px 0 $white;
+  border-left: 0.33em solid $gray-lightest; }

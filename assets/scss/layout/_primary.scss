@@ -50,7 +50,7 @@
   h6 {
     @extend %epsilon;
     font-weight: $base-font-weight-bold; }
-  p {
+  >p {
     &:first-child {
       @extend %delta-font-size; } } }
 

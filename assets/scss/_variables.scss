@@ -7,6 +7,15 @@
 // http://sassme.arc90.com/
 // ==========================================================================
 
+// Reds
+$red: #E74C3C;
+$red-lightest: lighten($red, 36);
+$red-lighter: lighten($red, 24);
+$red-light: lighten($red, 12);
+$red-dark: darken($red, 12);
+$red-darker: darken($red, 24);
+$red-darkest: darken($red, 36);
+
 // Oranges
 $orange: #E67E22;
 $orange-lightest: lighten($orange, 36);
