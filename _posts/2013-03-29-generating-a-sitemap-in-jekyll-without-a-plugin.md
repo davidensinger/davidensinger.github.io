@@ -17,6 +17,7 @@ My cursory search for a plugin-less solution led to this [sitemap.xml](https://g
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% raw %} 
   {% for post in site.posts %}
   <url>
     <loc>{{ site.baseurl }}{{ post.url }}</loc>
@@ -39,10 +40,11 @@ My cursory search for a plugin-less solution led to this [sitemap.xml](https://g
   </url>
   {% endif %}
   {% endfor %}
+{% endraw %}
 </urlset>
 {% endhighlight %}
 
-The `{% for post in site.posts %}` loops through the posts and finds the pertinent metadata for the sitemap. The same looping method is used for pages, but with a conditional statement to include only the pages with the `sitemap` variable (and its corresponding values) present.
+The {% raw %}`{% for post in site.posts %}`{% endraw %} loops through the posts and finds the pertinent metadata for the sitemap. The same looping method is used for pages, but with a conditional statement to include only the pages with the `sitemap` variable (and its corresponding values) present.
 
     ---
     layout: default
