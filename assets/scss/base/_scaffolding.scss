@@ -36,6 +36,8 @@ body {
   @extend %transitions-all;
   @include breakpoint(extra-large-desktop) {
     max-width: 1600px; }
+  @include breakpoint(extra-extra-large-desktop) {
+    margin: 0 auto; }
   @include breakpoint(all-mobile) {
     max-width: 100%; } }
 
