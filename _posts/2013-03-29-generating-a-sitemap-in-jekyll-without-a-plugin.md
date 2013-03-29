@@ -56,4 +56,8 @@ The {% raw %}`{% for post in site.posts %}`{% endraw %} loops through the posts 
 
 The `lastmod` variable uses the [ISO format](http://wwp.greenwichmeantime.com/info/iso.htm), which allows for YYYY-MM-DD. It’s bit simpler than including the notation for hours, minutes, seconds, and time zone.
 
-In summary, it’s easy to generate a sitemap.xml for use with Jekyll on GitHub Pages. Thanks again to [havvg](https://github.com/havvg) for making available such a great example [sitemap.xml](https://github.com/havvg/havvg.github.com/blob/master/sitemap.xml). 
+In summary, it’s easy to generate a sitemap.xml for use with Jekyll on GitHub Pages. Thanks again to [havvg](https://github.com/havvg) for making available such a great example [sitemap.xml](https://github.com/havvg/havvg.github.com/blob/master/sitemap.xml).
+
+<div class="gray-box">
+  <p><strong>More Info:</strong> Visit the official <a href="http://www.sitemaps.org/">sitemaps.org</a> to learn more about the protocol.</p>
+</div>
