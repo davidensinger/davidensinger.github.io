@@ -24,7 +24,9 @@
     {% else %}
     %meta{ :name => "description", :content => "{{ site.description }}" }/
     {% endif %}
+    
     %meta{ :name => "author", :content => "David Ensinger" }/
+    %meta{ :property => "article:author", :content => "{{ site.url }}/about/" }
     %link{ :rel => "author", :href => "https://plus.google.com/111951762509840042073/posts" }/
 
     %link{ :rel => "alternate", :type => "application/atom+xml", :title => "Atom", :href => "/atom.xml" }/
