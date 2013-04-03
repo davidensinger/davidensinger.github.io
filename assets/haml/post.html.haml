@@ -8,7 +8,7 @@ page-class: page-post
       {{ page.title }}
     .entry-meta
       %span.icon-left.icon-entry-date
-        %time{ :datetime => "{{ page.date | date_to_xmlschema }}" }
+        %time{ :datetime => "{{ page.date | date_to_xmlschema }}", :class => "date updated" }
           {{ page.date | date: "%B %d, %Y" }}
   .entry-content
     {{ content }}

@@ -12,7 +12,7 @@ page-class: page-home
     .entry-meta
       %span.icon-left.icon-entry-date.entry-meta-icon
         %a{ :href => "{{ post.url }}", :title => " {{ post.date }}", :class => "entry-meta-link", :rel => "bookmark"}
-          %time{ :datetime => "{{ post.date | date_to_xmlschema }}" }
+          %time{ :datetime => "{{ post.date | date_to_xmlschema }}", :class => "date updated" }
             {{ post.date | date: "%B %d, %Y" }}
   .entry-content
     {% if post.description %}
