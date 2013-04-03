@@ -13,43 +13,44 @@
     <link href='//www.google-analytics.com' rel='dns-prefetch'>
     {% if page.title %}
     <title>{{ page.title }} &ndash; {{ site.title }}</title>
+    <meta content='{{ page.title }}' property='og:title'>
+    <meta content='{{ page.title }}' name='twitter:title'>
     {% else %}
     <title>{{ site.title }}</title>
+    <meta content='{{ site.title }}' property='og:title'>
+    <meta content='{{ site.title }}' name='twitter:title'>
     {% endif %}
+    <meta content='{{ site.title }}' property='og:site_name'>
     {% if page.description %}
     <meta content='{{ page.description }}' name='description'>
+    <meta content='{{ page.description }}' property='og:description'>
+    <meta content='{{ page.description }}' name='twitter:description'>
     {% else %}
     <meta content='{{ site.description }}' name='description'>
+    <meta content='{{ site.description }}' property='og:description'>
+    <meta content='{{ site.description }}' name='twitter:description'>
     {% endif %}
     <meta content='David Ensinger' name='author'>
     <link href='https://plus.google.com/111951762509840042073/posts' rel='author'>
+    <meta content='@DavidEnsinger' name='twitter:site'>
     <link href='/atom.xml' rel='alternate' title='Atom' type='application/atom+xml'>
     <link href='/rss.xml' rel='alternate' title='RSS' type='application/rss+xml'>
     <link href='/sitemap.xml' rel='sitemap' title='Sitemap' type='application/xml'>
     <link href='/favicon.ico' rel='shortcut icon'>
-    <link href='{{ page.url }}' rel='canonical'>
+    <link href='{{ site.url }}{{ page.url }}' rel='canonical'>
     {% if page.title %}
     <meta content='article' property='og:type'>
-    <meta content='{{ page.title }}' property='og:title'>
+    <meta content='summary' name='twitter:card'>
     {% else %}
     <meta content='website' property='og:type'>
     {% endif %}
-    {% if site.title %}
-    <meta content='{{ site.title }}' property='og:site_name'>
-    {% endif %}
     {% if page.url %}
     <meta content='{{ site.url }}{{ page.url }}' property='og:url'>
+    <meta content='{{ site.url }}{{ page.url }}' name='twitter:url'>
     {% endif %}
     {% if page.date %}
     <meta content='{{page.date | date_to_xmlschema}}' property='article:published_time'>
     <meta content='{{ site.url }}/about/' property='article:author'>
-    {% endif %}
-    {% if page.title %}
-    <meta content='summary' name='twitter:card'>
-    <meta content='@DavidEnsinger' name='twitter:site'>
-    <meta content='{{ site.url }}{{ page.url }}' name='twitter:url'>
-    <meta content='{{ page.title }}' name='twitter:title'>
-    <meta content='{{ page.description }}' name='twitter:description'>
     {% endif %}
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='/assets/css/styles.min.css' rel='stylesheet' type='text/css'>
