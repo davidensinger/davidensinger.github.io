@@ -22,7 +22,6 @@
     <meta content='{{ site.description }}' name='description'>
     {% endif %}
     <meta content='David Ensinger' name='author'>
-    <meta content='{{ site.url }}about/' property='article:author'>
     <link href='https://plus.google.com/111951762509840042073/posts' rel='author'>
     <link href='/atom.xml' rel='alternate' title='Atom' type='application/atom+xml'>
     <link href='/rss.xml' rel='alternate' title='RSS' type='application/rss+xml'>
@@ -43,6 +42,7 @@
     {% endif %}
     {% if page.date %}
     <meta content='{{page.date | date_to_xmlschema}}' property='article:published_time'>
+    <meta content='{{ site.url }}about/' property='article:author'>
     {% endif %}
     {% if page.title %}
     <meta content='summary' name='twitter:card'>
