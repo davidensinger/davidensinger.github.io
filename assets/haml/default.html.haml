@@ -5,13 +5,13 @@
 %html.no-js{ :lang => "en" }
   <!--<![endif]-->
   %head
-    %meta{ :charset => "utf-8" }/
-    %meta{ "http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1" }/
-    %meta{ :name => "viewport", :content => "width=device-width" }/
+    %meta{ :charset => "utf-8" }
+    %meta{ "http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1" }
+    %meta{ :name => "viewport", :content => "width=device-width" }
 
-    %link{ :href => "//fonts.googleapis.com", :rel => "dns-prefetch" }/
-    %link{ :href => "//themes.googleusercontent.com", :rel => "dns-prefetch" }/
-    %link{ :href => "//www.google-analytics.com", :rel => "dns-prefetch" }/
+    %link{ :href => "//fonts.googleapis.com", :rel => "dns-prefetch" }
+    %link{ :href => "//themes.googleusercontent.com", :rel => "dns-prefetch" }
+    %link{ :href => "//www.google-analytics.com", :rel => "dns-prefetch" }
 
     {% if page.title %}
     %title {{ page.title }} &ndash; {{ site.title }}
@@ -20,51 +20,51 @@
     {% endif %}
 
     {% if page.description %}
-    %meta{ :name => "description", :content => "{{ page.description }}" }/
+    %meta{ :name => "description", :content => "{{ page.description }}" }
     {% else %}
-    %meta{ :name => "description", :content => "{{ site.description }}" }/
+    %meta{ :name => "description", :content => "{{ site.description }}" }
     {% endif %}
-    
-    %meta{ :name => "author", :content => "David Ensinger" }/
-    %meta{ :property => "article:author", :content => "{{ site.url }}/about/" }
-    %link{ :rel => "author", :href => "https://plus.google.com/111951762509840042073/posts" }/
 
-    %link{ :rel => "alternate", :type => "application/atom+xml", :title => "Atom", :href => "/atom.xml" }/
-    %link{ :rel => "alternate", :type => "application/rss+xml", :title => "RSS", :href => "/rss.xml" }/
-    %link{ :rel => "sitemap", :type => "application/xml", :title => "Sitemap", :href => "/sitemap.xml" }/
+    %meta{ :name => "author", :content => "David Ensinger" }
+    %meta{ :property => "article:author", :content => "{{ site.url }}about/" }
+    %link{ :rel => "author", :href => "https://plus.google.com/111951762509840042073/posts" }
 
-    %link{ :href => "/favicon.ico", :rel => "shortcut icon" }/
-    %link{ :href => "{{ page.url }}", :rel => "canonical" }/
+    %link{ :rel => "alternate", :type => "application/atom+xml", :title => "Atom", :href => "/atom.xml" }
+    %link{ :rel => "alternate", :type => "application/rss+xml", :title => "RSS", :href => "/rss.xml" }
+    %link{ :rel => "sitemap", :type => "application/xml", :title => "Sitemap", :href => "/sitemap.xml" }
+
+    %link{ :href => "/favicon.ico", :rel => "shortcut icon" }
+    %link{ :href => "{{ page.url }}", :rel => "canonical" }
 
     {% if page.title %}
-    %meta{ :property => "og:type", :content => "article" }/
-    %meta{ :property => "og:title", :content => "{{ page.title }}" }/
+    %meta{ :property => "og:type", :content => "article" }
+    %meta{ :property => "og:title", :content => "{{ page.title }}" }
     {% else %}
-    %meta{ :property => "og:type", :content => "website" }/ 
+    %meta{ :property => "og:type", :content => "website" } 
     {% endif %}
      
     {% if site.title %}
-    %meta{ :property => "og:site_name", :content => "{{ site.title }}" }/
+    %meta{ :property => "og:site_name", :content => "{{ site.title }}" }
     {% endif %}
      
     {% if page.url %}
-    %meta{ :property => "og:url", :content => "{{ site.url }}{{ page.url }}" }/
+    %meta{ :property => "og:url", :content => "{{ site.url }}{{ page.url }}" }
     {% endif %}
      
     {% if page.date %}
-    %meta{ :property => "article:published_time", :content => "{{page.date | date_to_xmlschema}}" }/
+    %meta{ :property => "article:published_time", :content => "{{page.date | date_to_xmlschema}}" }
     {% endif %}
 
     {% if page.title %}
-    %meta{ :name => "twitter:card", :content => "summary" }/
-    %meta{ :name => "twitter:site", :content => "@DavidEnsinger" }/
-    %meta{ :name => "twitter:url", :content => "{{ site.url }}{{ page.url }}" }/
-    %meta{ :name => "twitter:title", :content => "{{ page.title }}" }/
-    %meta{ :name => "twitter:description", :content => "{{ page.description }}" }/
+    %meta{ :name => "twitter:card", :content => "summary" }
+    %meta{ :name => "twitter:site", :content => "@DavidEnsinger" }
+    %meta{ :name => "twitter:url", :content => "{{ site.url }}{{ page.url }}" }
+    %meta{ :name => "twitter:title", :content => "{{ page.title }}" }
+    %meta{ :name => "twitter:description", :content => "{{ page.description }}" }
     {% endif %}
 
-    %link{ :href => "http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600", :type => "text/css", :rel => "stylesheet" }/
-    %link{ :href => "/assets/css/styles.min.css", :type => "text/css", :rel => "stylesheet" }/
+    %link{ :href => "http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600", :type => "text/css", :rel => "stylesheet" }
+    %link{ :href => "/assets/css/styles.min.css", :type => "text/css", :rel => "stylesheet" }
 
     %script{ :src => '/assets/js/vendor/html5shiv.js' }
 
