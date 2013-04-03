@@ -12,3 +12,5 @@ author: David Ensinger
 email: hello@davidensinger.com
 description: David Ensinger is a Front End Developer from Columbus, OH
 url: http://davidensinger.com
+
+exclude: ["CNAME", "README.md", "Termfile"]
