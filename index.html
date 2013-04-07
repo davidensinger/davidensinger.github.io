@@ -3,32 +3,26 @@ layout: default
 page-class: page-home
 ---
 {% for post in paginator.posts %}
-<article class='post'>
-  <header class='entry-header'>
-    <h1 class='entry-title'>
-      <a href='{{ post.url }}' rel='bookmark' title='Permalink to {{ post.title }}'>
-        {{ post.title }}
-      </a>
-    </h1>
-    <div class='entry-meta'>
-      <span class='icon-left icon-entry-date entry-meta-icon'>
-        <a class='entry-meta-link' href='{{ post.url }}' rel='bookmark' title=' {{ post.date }}'>
-          <time class='date updated' datetime='{{ post.date | date_to_xmlschema }}'>
-            {{ post.date | date: "%B %d, %Y" }}
-          </time>
-        </a>
-      </span>
+  <article class="post">
+    <header class="entry-header">
+      <h1 class="entry-title">
+        <a href="{{ post.url }}" rel="bookmark" title="Permalink to {{ post.title }}">{{ post.title }}</a>
+      </h1>
+      <div class="entry-meta">
+        <span class="icon-left icon-entry-date entry-meta-icon">
+          <a class="entry-meta-link" href="{{ post.url }}" rel="bookmark" title="{{ post.date }}">
+            <time class="date updated" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+          </a>
+        </span>
+      </div>
+    </header>
+    <div class="entry-content">
+      {% if post.description %}
+        {{ post.description | markdownify }}
+          <a class="continue-reading" href="{{ post.url }}" rel="bookmark" title="Permalink to {{ post.title }}">Continue Reading</a>
+        {% else %}
+          {{ post.content }}
+      {% endif %}
     </div>
-  </header>
-  <div class='entry-content'>
-    {% if post.description %}
-    {{ post.description | markdownify }}
-    <a class='continue-reading' href='{{ post.url }}' rel='bookmark' title='Permalink to {{ post.title }}'>
-      Continue Reading
-    </a>
-    {% else %}
-    {{ post.content }}
-    {% endif %}
-  </div>
-</article>
+  </article>
 {% endfor %}
