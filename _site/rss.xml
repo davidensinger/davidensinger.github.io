@@ -6,8 +6,8 @@
     <atom:link href="http://davidensinger.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>David Ensinger is a Front End Developer from Columbus, OH</description>
     <language>en-us</language>
-    <pubDate>Wed, 03 Apr 2013 17:25:10 -0400</pubDate>
-    <lastBuildDate>Wed, 03 Apr 2013 17:25:10 -0400</lastBuildDate>
+    <pubDate>Mon, 08 Apr 2013 09:06:18 -0400</pubDate>
+    <lastBuildDate>Mon, 08 Apr 2013 09:06:18 -0400</lastBuildDate>
 
     
     <item>
@@ -82,9 +82,9 @@ sitemap:
       <pubDate>Wed, 27 Mar 2013 16:05:00 -0400</pubDate>
       <author>hello@davidensinger.com (David Ensinger)</author>
       <guid>http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap</guid>
-      <description>&lt;p&gt;After pushing my site to &lt;strong&gt;GitHub&lt;/strong&gt; and verifying that it worked at &lt;a href=&quot;davidensinger.github.com&quot;&gt;davidensinger.github.com&lt;/a&gt;, I then went to set up my custom domain name. The &lt;a href=&quot;https://help.github.com/articles/setting-up-a-custom-domain-with-pages&quot;&gt;documentation&lt;/a&gt; provided by GitHub is clear on the subject, but I still managed to forget about my subdomains. For more than eight hours, anyone who attempted to visit &lt;a href=&quot;http://www.davidensinger.com&quot;&gt;www.davidensinger.com&lt;/a&gt; was served with a 404, which is &lt;a href=&quot;https://twitter.com/DavidEnsinger/status/316642135216619522&quot;&gt;rather embarrassing&lt;/a&gt; for one who makes a living as a developer.&lt;/p&gt;
+      <description>&lt;p&gt;After pushing my site to &lt;strong&gt;GitHub&lt;/strong&gt; and verifying that it worked at &lt;a href=&quot;http://davidensinger.github.io/&quot;&gt;davidensinger.github.io&lt;/a&gt;, I then went to set up my custom domain name. The &lt;a href=&quot;https://help.github.com/articles/setting-up-a-custom-domain-with-pages&quot;&gt;documentation&lt;/a&gt; provided by GitHub is clear on the subject, but I still managed to forget about my subdomains. For more than eight hours, anyone who attempted to visit &lt;a href=&quot;http://davidensinger.com/&quot;&gt;davidensinger.com&lt;/a&gt; was served with a 404, which is &lt;a href=&quot;https://twitter.com/DavidEnsinger/status/316642135216619522&quot;&gt;rather embarrassing&lt;/a&gt; for one who makes a living as a developer.&lt;/p&gt;
 
-&lt;p&gt;In the interest of helping others avoid the mistakes I made, here’s a guide to setting up the DNS for GitHub pages on &lt;a href=&quot;http://www.namecheap.com/&quot;&gt;Namecheap&lt;/a&gt;, my registrar of choice.&lt;/p&gt;
+&lt;p&gt;In the interest of helping others avoid the mistakes I made, here’s a guide to setting up the DNS for GitHub pages on &lt;a href=&quot;http://www.namecheap.com/?aff=32887&quot;&gt;Namecheap&lt;/a&gt;, my registrar of choice.&lt;/p&gt;
 
 &lt;div class=&quot;yellow-box&quot;&gt;
   &lt;p&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; This guide assumes that you’re using a top-level domain (TLD).&lt;/p&gt;
@@ -108,7 +108,7 @@ sitemap:
 
 &lt;ol&gt;
 &lt;li&gt;Set the &lt;strong&gt;@&lt;/strong&gt; (used to denote the domain name for which you’re configuring the DNS) &lt;strong&gt;IP Address/URL&lt;/strong&gt; to &lt;code&gt;204.232.175.78&lt;/code&gt; and the &lt;strong&gt;Record Type&lt;/strong&gt; to &lt;code&gt;A (Address)&lt;/code&gt; with a &lt;strong&gt;TTL&lt;/strong&gt; (an acronym for &lt;strong&gt;Time To Live&lt;/strong&gt; that refers to the capability of the DNS servers to cache DNS records) of &lt;code&gt;1800&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Set the &lt;strong&gt;www&lt;/strong&gt; (the subdomain www) &lt;strong&gt;IP Address/URL&lt;/strong&gt; to &lt;code&gt;username.github.com&lt;/code&gt; and the &lt;strong&gt;Record Type&lt;/strong&gt; to &lt;code&gt;CNAME (Alias)&lt;/code&gt; with a &lt;strong&gt;TTL&lt;/strong&gt; of &lt;code&gt;1800&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Set the &lt;strong&gt;www&lt;/strong&gt; (the subdomain www) &lt;strong&gt;IP Address/URL&lt;/strong&gt; to &lt;code&gt;username.github.io&lt;/code&gt; and the &lt;strong&gt;Record Type&lt;/strong&gt; to &lt;code&gt;CNAME (Alias)&lt;/code&gt; with a &lt;strong&gt;TTL&lt;/strong&gt; of &lt;code&gt;1800&lt;/code&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 
 
