@@ -1,0 +1,309 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development, design, and more by David Ensinger</title>
+    <link>http://davidensinger.com/</link>
+    <atom:link href="http://davidensinger.com/rss.xml" rel="self" type="application/rss+xml" />
+    <description>David Ensinger is a Front End Developer from Columbus, OH</description>
+    <language>en-us</language>
+    <pubDate>Wed, 03 Apr 2013 17:25:10 -0400</pubDate>
+    <lastBuildDate>Wed, 03 Apr 2013 17:25:10 -0400</lastBuildDate>
+
+    
+    <item>
+      <title>Generating a Sitemap in Jekyll without a Plugin</title>
+      <link>http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/</link>
+      <pubDate>Fri, 29 Mar 2013 06:26:00 -0400</pubDate>
+      <author>hello@davidensinger.com (David Ensinger)</author>
+      <guid>http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin</guid>
+      <description>&lt;p&gt;During my switch from &lt;strong&gt;WordPress&lt;/strong&gt; to &lt;strong&gt;Jekyll&lt;/strong&gt;, I decided to simplify the scope of my site. One of the changes I made was to remove my portfolio, as I’d like to put more of an emphasis on my writing than on my past projects. As a result, I culled many pages that were indexed by search engines. This meant that I needed a proper &lt;strong&gt;sitemap.xml&lt;/strong&gt;, principally for use with Google’s &lt;a href=&quot;www.google.com/webmasters/tools&quot;&gt;Webmaster Tools&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;My initial thought was to find a plugin, but I then realized that wasn’t possible. I host the site on &lt;strong&gt;GitHub Pages&lt;/strong&gt;, which runs Jekyll in &lt;code&gt;--safe&lt;/code&gt; mode. This means that I can’t use any custom plugins and that precludes the implementation of the most popular plugin, which is the &lt;a href=&quot;http://www.kinnetica.com/projects/jekyll-sitemap-generator/&quot;&gt;Sitemap.xml Generator&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;One way around this limitation would be to generate the site locally with a source branch and then compile the pages on a master branch to push to GitHub. There are clear benefits to doing it this way, but for the time being I’d prefer to keep my site simple and let GitHub do the compiling.&lt;/p&gt;
+
+&lt;p&gt;My cursory search for a plugin-less solution led to this &lt;a href=&quot;https://github.com/havvg/havvg.github.com/blob/master/sitemap.xml&quot;&gt;sitemap.xml&lt;/a&gt; by &lt;a href=&quot;https://github.com/havvg&quot;&gt;havvg&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;urlset&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:xsi=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xsi:schemaLocation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://www.sitemaps.org/schemas/sitemap/0.9&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+ 
+  {% for post in site.posts %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;url&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;loc&amp;gt;&lt;/span&gt;{{ site.baseurl }}{{ post.url }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/loc&amp;gt;&lt;/span&gt;
+    {% if post.lastmod == null %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;lastmod&amp;gt;&lt;/span&gt;{{ post.date | date_to_xmlschema }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/lastmod&amp;gt;&lt;/span&gt;
+    {% else %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;lastmod&amp;gt;&lt;/span&gt;{{ post.lastmod | date_to_xmlschema }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/lastmod&amp;gt;&lt;/span&gt;
+    {% endif %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;changefreq&amp;gt;&lt;/span&gt;weekly&lt;span class=&quot;nt&quot;&gt;&amp;lt;/changefreq&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;priority&amp;gt;&lt;/span&gt;1.0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/priority&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/url&amp;gt;&lt;/span&gt;
+  {% endfor %}
+  {% for page in site.pages %}
+  {% if page.sitemap != null and page.sitemap != empty %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;url&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;loc&amp;gt;&lt;/span&gt;{{ site.baseurl }}{{ page.url }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/loc&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;lastmod&amp;gt;&lt;/span&gt;{{ page.sitemap.lastmod | date_to_xmlschema }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/lastmod&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;changefreq&amp;gt;&lt;/span&gt;{{ page.sitemap.changefreq }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/changefreq&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;priority&amp;gt;&lt;/span&gt;{{ page.sitemap.priority }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/priority&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/url&amp;gt;&lt;/span&gt;
+  {% endif %}
+  {% endfor %}
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/urlset&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The &lt;code&gt;{% for post in site.posts %}&lt;/code&gt; loops through the posts and finds the pertinent metadata for the sitemap. The same looping method is used for pages, but with a conditional statement to include only the pages with the &lt;code&gt;sitemap&lt;/code&gt; variable (and its corresponding values) present.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+layout: default
+sitemap:
+    priority: 0.7
+    changefreq: monthly
+    lastmod: 2013-03-29T12:49:30-05:00
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;lastmod&lt;/code&gt; variable uses the &lt;a href=&quot;http://wwp.greenwichmeantime.com/info/iso.htm&quot;&gt;ISO format&lt;/a&gt;, which allows for YYYY-MM-DD. It’s bit simpler than including the notation for hours, minutes, seconds, and time zone.&lt;/p&gt;
+
+&lt;p&gt;In summary, it’s easy to generate a sitemap.xml for use with Jekyll on GitHub Pages. Thanks again to &lt;a href=&quot;https://github.com/havvg&quot;&gt;havvg&lt;/a&gt; for making available such a great example &lt;a href=&quot;https://github.com/havvg/havvg.github.com/blob/master/sitemap.xml&quot;&gt;sitemap.xml&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;gray-box&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;More Info:&lt;/strong&gt; Visit the official &lt;a href=&quot;http://www.sitemaps.org/&quot;&gt;sitemaps.org&lt;/a&gt; to learn more about the protocol.&lt;/p&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Setting the DNS for GitHub Pages on Namecheap</title>
+      <link>http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/</link>
+      <pubDate>Wed, 27 Mar 2013 16:05:00 -0400</pubDate>
+      <author>hello@davidensinger.com (David Ensinger)</author>
+      <guid>http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap</guid>
+      <description>&lt;p&gt;After pushing my site to &lt;strong&gt;GitHub&lt;/strong&gt; and verifying that it worked at &lt;a href=&quot;davidensinger.github.com&quot;&gt;davidensinger.github.com&lt;/a&gt;, I then went to set up my custom domain name. The &lt;a href=&quot;https://help.github.com/articles/setting-up-a-custom-domain-with-pages&quot;&gt;documentation&lt;/a&gt; provided by GitHub is clear on the subject, but I still managed to forget about my subdomains. For more than eight hours, anyone who attempted to visit &lt;a href=&quot;http://www.davidensinger.com&quot;&gt;www.davidensinger.com&lt;/a&gt; was served with a 404, which is &lt;a href=&quot;https://twitter.com/DavidEnsinger/status/316642135216619522&quot;&gt;rather embarrassing&lt;/a&gt; for one who makes a living as a developer.&lt;/p&gt;
+
+&lt;p&gt;In the interest of helping others avoid the mistakes I made, here’s a guide to setting up the DNS for GitHub pages on &lt;a href=&quot;http://www.namecheap.com/&quot;&gt;Namecheap&lt;/a&gt;, my registrar of choice.&lt;/p&gt;
+
+&lt;div class=&quot;yellow-box&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; This guide assumes that you’re using a top-level domain (TLD).&lt;/p&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;Add a CNAME File to your Repo&lt;/h2&gt;
+
+&lt;p&gt;Create a new file and put your domain name in it. Save it as CNAME.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;yourtlddomainname.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Find your Host Records&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/2013-03-27-namecheap-all-host-records.png&quot; alt=&quot;Image of All Host Records&quot; class=&quot;media-right img-border&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Log into your Namecheap account, select the appropriate domain name, and then go to &lt;strong&gt;All Host Records&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Set up the DNS&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Set the &lt;strong&gt;@&lt;/strong&gt; (used to denote the domain name for which you’re configuring the DNS) &lt;strong&gt;IP Address/URL&lt;/strong&gt; to &lt;code&gt;204.232.175.78&lt;/code&gt; and the &lt;strong&gt;Record Type&lt;/strong&gt; to &lt;code&gt;A (Address)&lt;/code&gt; with a &lt;strong&gt;TTL&lt;/strong&gt; (an acronym for &lt;strong&gt;Time To Live&lt;/strong&gt; that refers to the capability of the DNS servers to cache DNS records) of &lt;code&gt;1800&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Set the &lt;strong&gt;www&lt;/strong&gt; (the subdomain www) &lt;strong&gt;IP Address/URL&lt;/strong&gt; to &lt;code&gt;username.github.com&lt;/code&gt; and the &lt;strong&gt;Record Type&lt;/strong&gt; to &lt;code&gt;CNAME (Alias)&lt;/code&gt; with a &lt;strong&gt;TTL&lt;/strong&gt; of &lt;code&gt;1800&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/2013-03-27-namecheap-dns-settings.png&quot; alt=&quot;Image of DNS settings&quot; class=&quot;media-center img-border&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Save and then you’re all set! Please note, however that it may take some time for the changes to the DNS to propagate.&lt;/p&gt;
+
+&lt;div class=&quot;gray-box&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;More Info:&lt;/strong&gt; Google has a pretty good &lt;a href=&quot;http://support.google.com/a/bin/answer.py?hl=en&amp;answer=48090&quot;&gt;Basic Guide to DNS&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Using Rems with Sass</title>
+      <link>http://davidensinger.com/2013/03/using-rems-with-sass/</link>
+      <pubDate>Thu, 21 Mar 2013 14:24:00 -0400</pubDate>
+      <author>hello@davidensinger.com (David Ensinger)</author>
+      <guid>http://davidensinger.com/2013/03/using-rems-with-sass</guid>
+      <description>&lt;p&gt;I used &lt;strong&gt;rems&lt;/strong&gt; quite liberally with this redesign, especially with the typographic elements. Even though I initially shied away from them, I have since decided that any potential drawbacks are easily mitigated by using &lt;strong&gt;Sass&lt;/strong&gt; to preprocess my CSS.&lt;/p&gt;
+
+&lt;p&gt;Before we discuss rems, we need to first talk a little about ems.&lt;/p&gt;
+
+&lt;h2&gt;What’s an Em?&lt;/h2&gt;
+
+&lt;p&gt;”An em is a unit of measurement in the field of typography, equal to the currently specified point size,” as per &lt;a href=&quot;http://en.wikipedia.org/wiki/Em_(typography&quot;&gt;Wikipedia&lt;/a&gt;. But for our purposes as web developers, it’s a measurement that’s equal to the font size of the parent element. Simple, right?&lt;/p&gt;
+
+&lt;p&gt;Not as simple as we’d like! Ems can be difficult to use in a manner that’s both efficient and predictable because changes in the font size are compounded by the cascade. In the past, this has been somewhat mitigated by setting the &lt;a href=&quot;http://clagnut.com/blog/348/&quot;&gt;font size of the body to 62.5%&lt;/a&gt;, which ostensibly &lt;a href=&quot;http://pxtoem.com/&quot;&gt;makes the math easier&lt;/a&gt; to calculate.&lt;/p&gt;
+
+&lt;p&gt;While that solution works moderately well, it seems rather convoluted in light of advances in modern web development. We are now able to use the rem unit, which stands for ”root em” and is just that, an em that is relative to the root element (&lt;code&gt;html&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h2&gt;Why Use Rems&lt;/h2&gt;
+
+&lt;p&gt;By using rems we’re afforded the benefit of avoiding values that are compounded by the cascade. A heading that’s set to &lt;code&gt;1rem&lt;/code&gt; is always &lt;code&gt;1rem&lt;/code&gt;, regardless of the font size of its parent. This is much simpler than using ems, especially with elements that are nested several levels deep.&lt;/p&gt;
+
+&lt;p&gt;It should be noted that &lt;a href=&quot;http://caniuse.com/#search=rem&quot;&gt;browser support for rems&lt;/a&gt; is surprisingly good, save for IE 8. That shouldn’t deter us, so long as we provide the necessary pixel (&lt;code&gt;px&lt;/code&gt;) fallback. We could hand code that, but there&amp;rsquo;s a better way.&lt;/p&gt;
+
+&lt;h2&gt;Sass to the Rescue&lt;/h2&gt;
+
+&lt;p&gt;Thankfully &lt;a href=&quot;http://sass-lang.com/&quot;&gt;Sass&lt;/a&gt; allows for mixins, which allows ”re-use of styles – properties or even selectors – without having to copy and paste them or move them into a non-semantic class.” Pretty neat!&lt;/p&gt;
+
+&lt;p&gt;When writing my SCSS, I initially did a cursory search for a rem mixin with pixel fallback. I found many that varied markedly in complexity and scope, although none of them fit my exact needs.&lt;/p&gt;
+
+&lt;h3&gt;A Selection of Available Mixins&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/&quot;&gt;Mixins for Rem Font Sizing&lt;/a&gt; via &lt;a href=&quot;http://www.css-tricks.com/&quot;&gt;CSS-Tricks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://intuio.at/en/blog/an-improved-sass-rem-mixin-for-unitless-numbers/&quot;&gt;An Improved Sass Rem Mixin&lt;/a&gt; with unitless numbers by &lt;a href=&quot;http://twitter.com/xon1c&quot;&gt;@xon1c&lt;/a&gt; at &lt;a href=&quot;http://intuio.at/&quot;&gt;intuio.at&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/bitmanic/rem&quot;&gt;Rem mixin&lt;/a&gt; by &lt;a href=&quot;https://github.com/bitmanic/&quot;&gt;bitmanic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://gist.github.com/webgefrickel/4530526&quot;&gt;Rem mixin&lt;/a&gt; by &lt;a href=&quot;https://github.com/webgefrickel&quot;&gt;webgefrickel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;I wanted a rem mixin that would support the input of a property with any number, type, and mix of values, such as:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;14&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;padding-bottom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The nearest to that ideal was the &lt;a href=&quot;https://gist.github.com/webgefrickel/4530526&quot;&gt;Rem mixin&lt;/a&gt; by &lt;a href=&quot;https://github.com/webgefrickel&quot;&gt;webgefrickel&lt;/a&gt;, but that mixin doesn’t allow for auto or percentage (&lt;code&gt;%&lt;/code&gt;) values. No matter, he graciously posted it as a Gist, which &lt;a href=&quot;https://gist.github.com/davidensinger/5217667&quot;&gt;I forked to make the small revisions&lt;/a&gt; I needed.&lt;/p&gt;
+
+&lt;p&gt;My modified version of the mixin:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@mixin&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt; rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$property&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Create a couple of empty lists as output buffers.&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;$font-size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$base-font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;$px-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;$rem-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+ 
+  &lt;span class=&quot;c1&quot;&gt;// Loop through the $values list&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@each&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;values&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// For each property value, if it&amp;#39;s in rem or px, derive both rem and&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// px values for it and add those to the end of the appropriate buffer.&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Ensure all pixel values are rounded to the nearest pixel.&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;@if&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// 0 -- use it without a unit&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;$px-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$px-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;$rem-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$rem-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;@else&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;type-of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;unitless&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;unit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// px value given - calculate rem value from font-size&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;$new-rem-value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;$px-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$px-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;$rem-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$rem-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$new-rem-value&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;@else&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;type-of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;unitless&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;unit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;%&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// % value given - don&amp;#39;t add px or rem&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;$px-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$px-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$value&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;$rem-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$rem-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$value&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;@else&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// auto - don&amp;#39;t add px or rem&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;$px-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$px-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;$rem-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$rem-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;@else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// unitless value - use those directly as rem and calculate the px-fallback&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;$px-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$px-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;$rem-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$rem-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$value&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ 
+  &lt;span class=&quot;c1&quot;&gt;// output the converted rules&lt;/span&gt;
+  &lt;span class=&quot;nn&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;property&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;px-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nn&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;property&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;rem-values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I’m now able to use rems without worrying about browser support, which affords me more time to design and write.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Selling Agile</title>
+      <link>http://davidensinger.com/2013/03/selling-agile/</link>
+      <pubDate>Wed, 20 Mar 2013 18:58:00 -0400</pubDate>
+      <author>hello@davidensinger.com (David Ensinger)</author>
+      <guid>http://davidensinger.com/2013/03/selling-agile</guid>
+      <description>&lt;p&gt;Throughout the last year my team has been trying out a smattering of &lt;strong&gt;Agile&lt;/strong&gt; approaches to software development. We’re largely self-taught and as a result, we’ve had mixed success with the framework (although that’s by no means an indictment against it). It’s fair to say that our successes (or occasionally our lack thereof) are usually in direct relation to our efforts.&lt;/p&gt;
+
+&lt;p&gt;We’ve lately become more disciplined about our approach, as a result of a push from our recently hired manager. She is a proponent of Agile development and has encouraged us to not only adopt, but to really own such methods and tools as the &lt;strong&gt;daily stand-up&lt;/strong&gt;, &lt;strong&gt;test driven development&lt;/strong&gt;, &lt;strong&gt;pair programming&lt;/strong&gt;, and &lt;strong&gt;weekly sprints&lt;/strong&gt;, amongst others.&lt;/p&gt;
+
+&lt;h2&gt;The Problem&lt;/h2&gt;
+
+&lt;p&gt;There’s always a problem, right? We’ve often been applying these techniques without appropriate buy in from our business users. We&amp;rsquo;ve also experienced some unexpected (and sometimes unsolicited) involvement from our stakeholders, which makes me wonder if our efforts can be considered Agile at all? Is this all or nothing? Or can we continue to develop without full buy in from management and our product owners?&lt;/p&gt;
+
+&lt;p&gt;My concerns were a popular topic of conversation at a two day &lt;strong&gt;Deploying Enterprise Agile&lt;/strong&gt; training that our team completed today. The consensus was that it would be difficult to sell Agile to the entire organization, although we certainly should try. We’ll invariably have our share of resistance, but there’d be easy converts to the cause as well.&lt;/p&gt;
+
+&lt;h2&gt;A Solution?&lt;/h2&gt;
+
+&lt;p&gt;We’ll need to explain the benefits of using Agile, the steps we’ll take to implement it, and manage the expectations of both our stakeholders and business owners all the while. We’ll then need to &lt;strong&gt;do work&lt;/strong&gt; and prove the worth of the framework by successfully completing projects in a satisfactory manner to all who are involved.&lt;/p&gt;
+
+&lt;p&gt;I look forward to the progress that we’re going to make in using Agile techniques for our development. Time to get to work!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Installing Jekyll</title>
+      <link>http://davidensinger.com/2013/03/installing-jekyll/</link>
+      <pubDate>Tue, 19 Mar 2013 18:55:00 -0400</pubDate>
+      <author>hello@davidensinger.com (David Ensinger)</author>
+      <guid>http://davidensinger.com/2013/03/installing-jekyll</guid>
+      <description>&lt;p&gt;After much deliberation, I decided to simplify my blogging workflow. To that end I made the switch from &lt;strong&gt;WordPress to Jekyll&lt;/strong&gt;, which is ”a simple, blog aware, static site generator.” Although Jekyll is easy to maintain, it can be confusing to set up, especially for one with a dearth of experience with Ruby.&lt;/p&gt;
+
+&lt;p&gt;Thankfully, there is a wealth of documentation available from developers who have also made the switch. With that in mind, I’d like to contribute my experience with installing &lt;strong&gt;Jekyll on OS X Mountain Lion 10.8.3&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;The consensus on the internet is to first install &lt;a href=&quot;http://developer.apple.com/xcode/&quot;&gt;Xcode&lt;/a&gt;, which I had (thankfully) already installed (all 1.65 GB of it). Xcode is readily available from the &lt;a href=&quot;http://itunes.apple.com/us/app/xcode/id497799835?ls=1&amp;amp;mt=12&quot;&gt;App Store&lt;/a&gt;, although it does take a bit of time to download and install.&lt;/p&gt;
+
+&lt;p&gt;Once you’ve installed Xcode, the next step is to download &lt;strong&gt;Command Line Tools&lt;/strong&gt;, which is available through the &lt;strong&gt;Download&lt;/strong&gt; tab of the the &lt;strong&gt;Xcode Preferences&lt;/strong&gt;. It is through the command line that you&amp;rsquo;ll be installing Jekyll.&lt;/p&gt;
+
+&lt;p&gt;After installing the Command Line Tools, open up &lt;strong&gt;Terminal&lt;/strong&gt; (or the console of your choice) and install &lt;a href=&quot;http://mxcl.github.com/homebrew/&quot;&gt;Homebrew&lt;/a&gt;, which will make downloading and installing Unix software packages on OS X much easier than without.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ruby -e &quot;$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The next step is to install &lt;a href=&quot;https://rvm.io&quot;&gt;RVM&lt;/a&gt;, which is an acronym for &lt;strong&gt;Ruby Version Manager&lt;/strong&gt;. With this you’ll be able to better manage different versions and implementations of Ruby on your computer.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;\curl -#L https://get.rvm.io | bash -s stable --ruby
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I had some difficulty installing Ruby from RVM, which was due to missing dependencies. To remedy this I had to find the missing packages:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rvm requirements
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Which then necessitated running the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew doctor
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That led to &lt;a href=&quot;http://stackoverflow.com/questions/10343834/homebrew-wants-me-to-amend-my-path-no-clue-how&quot;&gt;a fix for a warning about my paths&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;After sorting that out, I was then able to install the list of missing dependencies:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install (and then the list of missing packages)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And then I was able to install Ruby 2.0.0:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rvm install 2.0.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Which finally allowed me &lt;a href=&quot;https://github.com/mojombo/jekyll/wiki/Install&quot;&gt;to install Jekyll&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gem install jekyll
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Whew!&lt;/h2&gt;
+
+&lt;p&gt;That wasn’t so bad, was it? It feels good to work through the install with the satisfaction of knowing that you did it without any help, save for the goodwill efforts of fellow developers and their documentation. High fives to that!&lt;/p&gt;
+</description>
+    </item>
+    
+
+  </channel> 
+</rss>

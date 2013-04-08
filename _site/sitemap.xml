@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/</loc>
+    
+    <lastmod>2013-03-29T06:26:00-04:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/</loc>
+    
+    <lastmod>2013-03-27T16:05:00-04:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://davidensinger.com/2013/03/using-rems-with-sass/</loc>
+    
+    <lastmod>2013-03-21T14:24:00-04:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://davidensinger.com/2013/03/selling-agile/</loc>
+    
+    <lastmod>2013-03-20T18:58:00-04:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://davidensinger.com/2013/03/installing-jekyll/</loc>
+    
+    <lastmod>2013-03-19T18:55:00-04:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://davidensinger.com/about/</loc>
+    <lastmod>2013-03-26T18:55:00-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</urlset>

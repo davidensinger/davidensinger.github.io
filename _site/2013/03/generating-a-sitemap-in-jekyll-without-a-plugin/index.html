@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 10]><!-->
+<html class='no-js' lang='en'>
+  <!--<![endif]-->
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width' name='viewport'>
+    <link href='//fonts.googleapis.com' rel='dns-prefetch'>
+    <link href='//themes.googleusercontent.com' rel='dns-prefetch'>
+    <link href='//www.google-analytics.com' rel='dns-prefetch'>
+    
+    <title>Generating a Sitemap in Jekyll without a Plugin &ndash; Development, design, and more by David Ensinger</title>
+    <meta content='Generating a Sitemap in Jekyll without a Plugin' property='og:title'>
+    <meta content='Generating a Sitemap in Jekyll without a Plugin' name='twitter:title'>
+    
+    <meta content='Development, design, and more by David Ensinger' property='og:site_name'>
+    
+    <meta content='A guide to generating a sitemap.xml in Jekyll without using a plugin.' name='description'>
+    <meta content='A guide to generating a sitemap.xml in Jekyll without using a plugin.' property='og:description'>
+    <meta content='A guide to generating a sitemap.xml in Jekyll without using a plugin.' name='twitter:description'>
+    
+    <meta content='David Ensinger' name='author'>
+    <link href='https://plus.google.com/111951762509840042073/posts' rel='author'>
+    <meta content='@DavidEnsinger' name='twitter:site'>
+    <link href='/atom.xml' rel='alternate' title='Atom' type='application/atom+xml'>
+    <link href='/rss.xml' rel='alternate' title='RSS' type='application/rss+xml'>
+    <link href='/sitemap.xml' rel='sitemap' title='Sitemap' type='application/xml'>
+    <link href='/favicon.ico' rel='shortcut icon'>
+    <link href='http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/' rel='canonical'>
+    
+    <meta content='article' property='og:type'>
+    <meta content='summary' name='twitter:card'>
+    
+    
+    <meta content='http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/' property='og:url'>
+    <meta content='http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/' name='twitter:url'>
+    
+    
+    <meta content='2013-03-29T06:26:00-04:00' property='article:published_time'>
+    <meta content='http://davidensinger.com/about/' property='article:author'>
+    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='/assets/css/styles.min.css' rel='stylesheet' type='text/css'>
+    <script src='/assets/js/vendor/html5shiv.js'></script>
+  </head>
+  <body class='page-post'>
+    <div class='outer-container'>
+      <div class='inner-container'>
+        <!--[if lt IE 9]><div class='chromeframe'>
+          <p>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+        </div><![endif]-->
+        <header class='site-header' role='banner'>
+          <a class='site-logo' href='/'>
+            <img alt='' class='logo' src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='>
+          </a>
+          <nav class='main-navigation' role='navigation'>
+            <h1 class='visuallyhidden'></h1>
+            <div class='visuallyhidden'>
+              <a href='#content' title='Skip to content'>Skip to content</a>
+            </div>
+            <ul>
+              <li>
+                <a class='nav-home' href='/'>Home</a>
+              </li>
+              <li>
+                <a class='nav-about' href='/about/'>About</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <div class='primary' id='content' role='main'>
+          <article class='post hentry'>
+  <header class='entry-header'>
+    <h1 class='entry-title'>
+      Generating a Sitemap in Jekyll without a Plugin
+    </h1>
+    <div class='entry-meta'>
+      <span class='icon-left icon-entry-date'>
+        <time datetime='2013-03-29T06:26:00-04:00'>
+          March 29, 2013
+        </time>
+      </span>
+    </div>
+  </header>
+  <div class='entry-content'>
+    <p>During my switch from <strong>WordPress</strong> to <strong>Jekyll</strong>, I decided to simplify the scope of my site. One of the changes I made was to remove my portfolio, as I’d like to put more of an emphasis on my writing than on my past projects. As a result, I culled many pages that were indexed by search engines. This meant that I needed a proper <strong>sitemap.xml</strong>, principally for use with Google’s <a href="www.google.com/webmasters/tools">Webmaster Tools</a>.</p>
+
+<p>My initial thought was to find a plugin, but I then realized that wasn’t possible. I host the site on <strong>GitHub Pages</strong>, which runs Jekyll in <code>--safe</code> mode. This means that I can’t use any custom plugins and that precludes the implementation of the most popular plugin, which is the <a href="http://www.kinnetica.com/projects/jekyll-sitemap-generator/">Sitemap.xml Generator</a>.</p>
+
+<p>One way around this limitation would be to generate the site locally with a source branch and then compile the pages on a master branch to push to GitHub. There are clear benefits to doing it this way, but for the time being I’d prefer to keep my site simple and let GitHub do the compiling.</p>
+
+<p>My cursory search for a plugin-less solution led to this <a href="https://github.com/havvg/havvg.github.com/blob/master/sitemap.xml">sitemap.xml</a> by <a href="https://github.com/havvg">havvg</a>.</p>
+
+<div class="highlight"><pre><code class="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;urlset</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd&quot;</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;</span><span class="nt">&gt;</span>
+ 
+  {% for post in site.posts %}
+  <span class="nt">&lt;url&gt;</span>
+    <span class="nt">&lt;loc&gt;</span>{{ site.baseurl }}{{ post.url }}<span class="nt">&lt;/loc&gt;</span>
+    {% if post.lastmod == null %}
+    <span class="nt">&lt;lastmod&gt;</span>{{ post.date | date_to_xmlschema }}<span class="nt">&lt;/lastmod&gt;</span>
+    {% else %}
+    <span class="nt">&lt;lastmod&gt;</span>{{ post.lastmod | date_to_xmlschema }}<span class="nt">&lt;/lastmod&gt;</span>
+    {% endif %}
+    <span class="nt">&lt;changefreq&gt;</span>weekly<span class="nt">&lt;/changefreq&gt;</span>
+    <span class="nt">&lt;priority&gt;</span>1.0<span class="nt">&lt;/priority&gt;</span>
+  <span class="nt">&lt;/url&gt;</span>
+  {% endfor %}
+  {% for page in site.pages %}
+  {% if page.sitemap != null and page.sitemap != empty %}
+  <span class="nt">&lt;url&gt;</span>
+    <span class="nt">&lt;loc&gt;</span>{{ site.baseurl }}{{ page.url }}<span class="nt">&lt;/loc&gt;</span>
+    <span class="nt">&lt;lastmod&gt;</span>{{ page.sitemap.lastmod | date_to_xmlschema }}<span class="nt">&lt;/lastmod&gt;</span>
+    <span class="nt">&lt;changefreq&gt;</span>{{ page.sitemap.changefreq }}<span class="nt">&lt;/changefreq&gt;</span>
+    <span class="nt">&lt;priority&gt;</span>{{ page.sitemap.priority }}<span class="nt">&lt;/priority&gt;</span>
+  <span class="nt">&lt;/url&gt;</span>
+  {% endif %}
+  {% endfor %}
+
+<span class="nt">&lt;/urlset&gt;</span>
+</code></pre></div>
+
+
+<p>The <code>{% for post in site.posts %}</code> loops through the posts and finds the pertinent metadata for the sitemap. The same looping method is used for pages, but with a conditional statement to include only the pages with the <code>sitemap</code> variable (and its corresponding values) present.</p>
+
+<pre><code>---
+layout: default
+sitemap:
+    priority: 0.7
+    changefreq: monthly
+    lastmod: 2013-03-29T12:49:30-05:00
+---
+</code></pre>
+
+<p>The <code>lastmod</code> variable uses the <a href="http://wwp.greenwichmeantime.com/info/iso.htm">ISO format</a>, which allows for YYYY-MM-DD. It’s bit simpler than including the notation for hours, minutes, seconds, and time zone.</p>
+
+<p>In summary, it’s easy to generate a sitemap.xml for use with Jekyll on GitHub Pages. Thanks again to <a href="https://github.com/havvg">havvg</a> for making available such a great example <a href="https://github.com/havvg/havvg.github.com/blob/master/sitemap.xml">sitemap.xml</a>.</p>
+
+<div class="gray-box">
+  <p><strong>More Info:</strong> Visit the official <a href="http://www.sitemaps.org/">sitemaps.org</a> to learn more about the protocol.</p>
+</div>
+
+
+  </div>
+</article>
+<nav class='post-navigation' role='navigation'>
+  <h1 class='visuallyhidden'>Post navigation</h1>
+  
+  <div class='nav-previous'>
+    <a class='nav-previous-link' href='http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/' rel='prev'>Setting the DNS for GitHub Pages on Namecheap</a>
+  </div>
+  
+  
+</nav>
+
+        </div>
+        <aside class=' secondary vcard author' role='complementary'>
+          <img alt='A photo of David Ensinger' class='secondary-photo photo' src='/assets/img/david-ensinger.jpg'>
+          <p>Hi, I’m <strong class="fn">David Ensinger</strong> and I’m a <strong>Front End Developer</strong>. Learn more <a href="/about/" class="url">about me</a>.</p>
+          <p>Have a look around and please don’t hesitate to <a href="mailto:hello@davidensinger.com" class="email">contact me</a> with any comments, questions, or just to say hello!</p>
+          <a class='icon-left icon-twitter' href='http://twitter.com/DavidEnsinger' title='Follow @DavidEnsinger on Twitter'>Follow me on Twitter</a>
+        </aside>
+      </div>
+      <footer class='site-footer' role='contentinfo'>
+        <div class='footer-icons'>
+          <a class='footer-icon-link' href='http://twitter.com/DavidEnsinger' title='Follow me on Twitter'>
+            <span aria-hidden='true' class='footer-icon icon-twitter'></span>
+            <span class='visuallyhidden'>Twitter</span>
+          </a>
+          <a class='footer-icon-link' href='http://github.com/davidensinger' title='Follow me on GitHub'>
+            <span aria-hidden='true' class='footer-icon icon-github'></span>
+            <span class='visuallyhidden'>GitHub</span>
+          </a>
+          <a class='footer-icon-link' href='http://www.republicofthespirit.com/' title='Follow me on Tumblr'>
+            <span aria-hidden='true' class='footer-icon icon-tumblr'></span>
+            <span class='visuallyhidden'>Tumblr</span>
+          </a>
+        </div>
+        <p>
+          &copy; 2013 David Ensinger. All rights reserved.
+          <a class='link-rss' href='/atom.xml' title='Subscribe to my RSS feed'>
+            <span aria-hidden='true' class='icon-rss'></span>
+            <span class='visuallyhidden'>RSS</span>
+          </a>
+        </p>
+      </footer>
+    </div>
+    <script>
+      var _gaq=[["_setAccount","UA-26697016-1"],["_trackPageview"],["_trackPageLoadTime"]];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+      g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+      s.parentNode.insertBefore(g,s)}(document,"script"));
+    </script>
+  </body>
+</html>
