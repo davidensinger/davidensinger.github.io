@@ -1,5 +1,3 @@
-auto: true
-server: true
 markdown: rdiscount
 rdiscount:
   extensions: [smart]
@@ -13,4 +11,4 @@ email: hello@davidensinger.com
 description: David Ensinger is a Front End Developer from Columbus, OH
 url: http://davidensinger.com
 
-exclude: ["CNAME", "config.json", "README.md", "scss", "Termfile"]
+exclude: ["config.json", "README.md", "scss", "Termfile"]
