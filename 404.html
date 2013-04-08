@@ -1,10 +1,22 @@
-<p>You seem to have taken a wrong turn. Sorry about that!</p>
-<p>It looks like this was the result of either:</p>
-<ul>
-  <li>a mistyped address</li>
-  <li>an out-of-date link</li>
-</ul>
-<script>
-    var GOOG_FIXURL_LANG = (navigator.language || '').slice(0,2),GOOG_FIXURL_SITE = location.host;
-</script>
-<script src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
+---
+layout: default
+page-class: page-404
+title: Oops! That page can’t be found.
+---
+<article class="post hentry">
+  <header class="entry-header">
+    <h1 class="entry-title">{{ page.title }}</h1>
+  </header>
+  <div class="entry-content">
+	<p>You seem to have taken a wrong turn. Sorry about that!</p>
+	<p>It looks like this was the result of either:</p>
+	<ul>
+	  <li>a mistyped address</li>
+	  <li>an out-of-date link</li>
+	</ul>
+	<script>
+	    var GOOG_FIXURL_LANG = (navigator.language || '').slice(0,2),GOOG_FIXURL_SITE = location.host;
+	</script>
+	<script src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
+  </div>
+</article>
