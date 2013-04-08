@@ -7,7 +7,7 @@ page-class: page-post
     <h1 class="entry-title">{{ page.title }}</h1>
     <div class="entry-meta">
       <span class="icon-left icon-entry-date">
-        <time class="date updated" datetime="{{ post.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+        <time class="date updated" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
       </span>
     </div>
   </header>
