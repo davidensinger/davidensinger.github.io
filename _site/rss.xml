@@ -6,9 +6,54 @@
     <atom:link href="http://davidensinger.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>David Ensinger is a Front End Developer from Columbus, OH</description>
     <language>en-us</language>
-    <pubDate>Mon, 08 Apr 2013 09:14:02 -0400</pubDate>
-    <lastBuildDate>Mon, 08 Apr 2013 09:14:02 -0400</lastBuildDate>
+    <pubDate>Tue, 09 Apr 2013 12:52:26 -0400</pubDate>
+    <lastBuildDate>Tue, 09 Apr 2013 12:52:26 -0400</lastBuildDate>
 
+    
+    <item>
+      <title>Deploying Jekyll with Plugins to GitHub Pages</title>
+      <link>http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/</link>
+      <pubDate>Mon, 08 Apr 2013 06:30:00 -0400</pubDate>
+      <author>hello@davidensinger.com (David Ensinger)</author>
+      <guid>http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages</guid>
+      <description>&lt;p&gt;In spite of my resolution to design and develop this website simply, I’ve decided to run &lt;strong&gt;Jekyll&lt;/strong&gt; with plugins. This complicates my deployment because &lt;strong&gt;GitHub Pages&lt;/strong&gt; runs Jekyll in &lt;code&gt;--safe&lt;/code&gt; mode, which quite reasonably prevents the running of arbitrary Ruby code on the GitHub servers.&lt;/p&gt;
+
+&lt;p&gt;To work around this limitation, the consensus amongst developers is to create two branches: one for development (that I’ve named &lt;em&gt;source&lt;/em&gt;) and the other solely for the compiled &lt;strong&gt;_site&lt;/strong&gt;. In the former branch I’ll add additionally functionality via custom plugins, while the latter branch will serve as the &lt;em&gt;master&lt;/em&gt; that GitHub uses to publish the site.&lt;/p&gt;
+
+&lt;p&gt;I’ve chosen to follow these &lt;a href=&quot;https://github.com/rson/rson.github.com&quot;&gt;excellent deployment steps&lt;/a&gt; by &lt;a href=&quot;http://rsontech.net/&quot;&gt;Randy Morris&lt;/a&gt;, which I’ll list below with brief explanations as to what each command does.&lt;/p&gt;
+
+&lt;p&gt;Delete &lt;em&gt;master&lt;/em&gt; branch:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git branch -D master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Check out a new &lt;em&gt;master&lt;/em&gt; branch:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git checkout -b master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Force the &lt;em&gt;_site/&lt;/em&gt; subdirectory to be project root:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git filter-branch --subdirectory-filter _site/ -f
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Checkout the &lt;em&gt;source&lt;/em&gt; branch:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git checkout source
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Push all branches to origin:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git push --all origin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pretty simple, right? I’m glad that I’ll now be able to add categories and tags to my site, which is next on my todo list!&lt;/p&gt;
+
+&lt;h2&gt;Next Steps&lt;/h2&gt;
+
+&lt;p&gt;I’d like to automate this by including these deployment commands into a build script that concatenates, minifies, and (when applicable) optimizes my assets after Jekyll compiles the site. Still working on that, though!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Generating a Sitemap in Jekyll without a Plugin</title>

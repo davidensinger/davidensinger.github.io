@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 10]><!--><html class="no-js" lang="en"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width" name="viewport">
+    <link href="//fonts.googleapis.com" rel="dns-prefetch">
+    <link href="//themes.googleusercontent.com" rel="dns-prefetch">
+    <link href="//www.google-analytics.com" rel="dns-prefetch">
+    
+      <title>Deploying Jekyll with Plugins to GitHub Pages &ndash; Development, design, and more by David Ensinger</title>
+      <meta content="Deploying Jekyll with Plugins to GitHub Pages" property="og:title">
+      <meta content="Deploying Jekyll with Plugins to GitHub Pages" name="twitter:title">
+    
+    <meta content="Development, design, and more by David Ensinger" property="og:site_name">
+    
+      <meta content="Steps to deploying Jekyll with plugins to GitHub Pages." name="description">
+      <meta content="Steps to deploying Jekyll with plugins to GitHub Pages." property="og:description">
+      <meta content="Steps to deploying Jekyll with plugins to GitHub Pages." name="twitter:description">
+    
+    <meta content="David Ensinger" name="author">
+    <link href="https://plus.google.com/111951762509840042073/posts" rel="author">
+    <meta content="@DavidEnsinger" name="twitter:site">
+    <link href="/atom.xml" rel="alternate" title="Atom" type="application/atom+xml">
+    <link href="/rss.xml" rel="alternate" title="RSS" type="application/rss+xml">
+    <link href="/sitemap.xml" rel="sitemap" title="Sitemap" type="application/xml">
+    <link href="/favicon.ico" rel="shortcut icon">
+    <link href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/" rel="canonical">
+    
+      <meta content="article" property="og:type">
+      <meta content="summary" name="twitter:card">
+    
+    
+      <meta content="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/" property="og:url">
+      <meta content="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/" name="twitter:url">
+    
+    
+      <meta content="2013-04-08T06:30:00-04:00" property="article:published_time">
+      <meta content="http://davidensinger.com/about/" property="article:author">
+    
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600" rel="stylesheet" type="text/css">
+    <link href="/assets/css/styles.min.css" rel="stylesheet" type="text/css">
+    <script src="/assets/js/vendor/html5shiv.js"></script>
+  </head>
+  <body class="page-post">
+    <div class="outer-container">
+      <div class="inner-container">
+        <!--[if lt IE 9]><div class="chromeframe">
+          <p>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+        </div><![endif]-->
+        <header class="site-header" role="banner">
+          <a class="site-logo" href="/">
+            <img alt="" class="logo" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+          </a>
+          <nav class="main-navigation" role="navigation">
+            <h1 class="visuallyhidden">Menu</h1>
+            <div class="visuallyhidden">
+              <a href="#content" title="Skip to content">Skip to content</a>
+            </div>
+            <ul>
+              <li>
+                <a class="nav-home" href="/">Home</a>
+              </li>
+              <li>
+                <a class="nav-about" href="/about/">About</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <div class="primary" id="content" role="main">
+          <article class="post hentry">
+  <header class="entry-header">
+    <h1 class="entry-title">Deploying Jekyll with Plugins to GitHub Pages</h1>
+    <div class="entry-meta">
+      <span class="icon-left icon-entry-date">
+        <time class="date updated" datetime="2013-04-08T06:30:00-04:00">April 08, 2013</time>
+      </span>
+    </div>
+  </header>
+  <div class="entry-content">
+    <p>In spite of my resolution to design and develop this website simply, I’ve decided to run <strong>Jekyll</strong> with plugins. This complicates my deployment because <strong>GitHub Pages</strong> runs Jekyll in <code>--safe</code> mode, which quite reasonably prevents the running of arbitrary Ruby code on the GitHub servers.</p>
+
+<p>To work around this limitation, the consensus amongst developers is to create two branches: one for development (that I’ve named <em>source</em>) and the other solely for the compiled <strong>_site</strong>. In the former branch I’ll add additionally functionality via custom plugins, while the latter branch will serve as the <em>master</em> that GitHub uses to publish the site.</p>
+
+<p>I’ve chosen to follow these <a href="https://github.com/rson/rson.github.com">excellent deployment steps</a> by <a href="http://rsontech.net/">Randy Morris</a>, which I’ll list below with brief explanations as to what each command does.</p>
+
+<p>Delete <em>master</em> branch:</p>
+
+<pre><code>git branch -D master
+</code></pre>
+
+<p>Check out a new <em>master</em> branch:</p>
+
+<pre><code>git checkout -b master
+</code></pre>
+
+<p>Force the <em>_site/</em> subdirectory to be project root:</p>
+
+<pre><code>git filter-branch --subdirectory-filter _site/ -f
+</code></pre>
+
+<p>Checkout the <em>source</em> branch:</p>
+
+<pre><code>git checkout source
+</code></pre>
+
+<p>Push all branches to origin:</p>
+
+<pre><code>git push --all origin
+</code></pre>
+
+<p>Pretty simple, right? I’m glad that I’ll now be able to add categories and tags to my site, which is next on my todo list!</p>
+
+<h2>Next Steps</h2>
+
+<p>I’d like to automate this by including these deployment commands into a build script that concatenates, minifies, and (when applicable) optimizes my assets after Jekyll compiles the site. Still working on that, though!</p>
+
+  </div>
+</article>
+<nav class="post-navigation" role="navigation">
+  <h1 class="visuallyhidden">Post navigation</h1>
+  
+    <div class="nav-previous">
+      <a class="nav-previous-link" href="http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/" rel="prev">Generating a Sitemap in Jekyll without a Plugin</a>
+    </div>
+  
+  
+</nav>
+
+        </div>
+        <aside class="secondary vcard author" role="complementary">
+          <img alt="A photo of David Ensinger" class="secondary-photo photo" src="/assets/img/david-ensinger.jpg">
+          <p>Hi, I’m <strong class="fn">David Ensinger</strong> and I’m a <strong>Front End Developer</strong>. Learn more <a href="/about/" class="url">about me</a>.</p>
+          <p>Have a look around and please don’t hesitate to <a href="mailto:hello@davidensinger.com" class="email">contact me</a> with any comments, questions, or just to say hello!</p>
+          <a class="icon-left icon-twitter" href="http://twitter.com/DavidEnsinger" title="Follow @DavidEnsinger on Twitter">Follow me on Twitter</a>
+        </aside>
+      </div>
+      <footer class="site-footer" role="contentinfo">
+        <div class="footer-icons">
+          <a class="footer-icon-link" href="http://twitter.com/DavidEnsinger" title="Follow me on Twitter">
+            <span aria-hidden="true" class="footer-icon icon-twitter"></span>
+            <span class="visuallyhidden">Twitter</span>
+          </a>
+          <a class="footer-icon-link" href="http://github.com/davidensinger" title="Follow me on GitHub">
+            <span aria-hidden="true" class="footer-icon icon-github"></span>
+            <span class="visuallyhidden">GitHub</span>
+          </a>
+          <a class="footer-icon-link" href="http://www.republicofthespirit.com/" title="Follow me on Tumblr">
+            <span aria-hidden="true" class="footer-icon icon-tumblr"></span>
+            <span class="visuallyhidden">Tumblr</span>
+          </a>
+        </div>
+        <p>
+          &copy; 2013 David Ensinger. All rights reserved.
+          <a class="link-rss" href="/atom.xml" title="Subscribe to my RSS feed">
+            <span aria-hidden="true" class="icon-rss"></span>
+            <span class="visuallyhidden">RSS</span>
+          </a>
+        </p>
+      </footer>
+    </div>
+    <script>
+      var _gaq=[["_setAccount","UA-26697016-1"],["_trackPageview"],["_trackPageLoadTime"]];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+      g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+      s.parentNode.insertBefore(g,s)}(document,"script"));
+    </script>
+  </body>
+</html>
