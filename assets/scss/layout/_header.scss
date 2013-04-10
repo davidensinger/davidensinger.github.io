@@ -12,10 +12,6 @@
 .logo {
   @include rem(width, 6);
   @include rem(height, 6);
-  background: url("../img/logo.svg") no-repeat;
-  opacity: 0.9;
-  &:hover {
-    opacity: 1; }
   &:active {
     -ms-transform: rotate(2deg);
     -webkit-transform: rotate(2deg);
