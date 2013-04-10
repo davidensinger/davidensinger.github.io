@@ -8,9 +8,5 @@
   background: $background-gray-light; }
 
 .lt-ie9 {
-  .site-logo,
-  .logo {
-    width: 95px;
-    height: 100px; }
-  .logo {
-    background: url("../img/logo-ie.png") no-repeat; } }
+  .primary {
+    clear: both; } }
