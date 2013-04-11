@@ -9,10 +9,7 @@
   float: left;
   @include rem(margin-right, 2); }
 
-.no-inlinesvg .site-logo {
-  display: none; }
-
-.logo {
+.svg-logo {
   @include rem(width, 6);
   @include rem(height, 6);
   &:active {
