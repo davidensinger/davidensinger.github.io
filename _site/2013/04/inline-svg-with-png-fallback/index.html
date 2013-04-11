@@ -10,15 +10,15 @@
     <link href="//themes.googleusercontent.com" rel="dns-prefetch">
     <link href="//www.google-analytics.com" rel="dns-prefetch">
     
-      <title>Development, design, and more by David Ensinger</title>
-      <meta content="Development, design, and more by David Ensinger" property="og:title">
-      <meta content="Development, design, and more by David Ensinger" name="twitter:title">
+      <title>Inline SVG with PNG Fallback &ndash; Development, design, and more by David Ensinger</title>
+      <meta content="Inline SVG with PNG Fallback" property="og:title">
+      <meta content="Inline SVG with PNG Fallback" name="twitter:title">
     
     <meta content="Development, design, and more by David Ensinger" property="og:site_name">
     
-      <meta content="David Ensinger is a Front End Developer from Columbus, OH" name="description">
-      <meta content="David Ensinger is a Front End Developer from Columbus, OH" property="og:description">
-      <meta content="David Ensinger is a Front End Developer from Columbus, OH" name="twitter:description">
+      <meta content="How to use inline SVG with PNG fallback, courtesy of foreignObject and base64." name="description">
+      <meta content="How to use inline SVG with PNG fallback, courtesy of foreignObject and base64." property="og:description">
+      <meta content="How to use inline SVG with PNG fallback, courtesy of foreignObject and base64." name="twitter:description">
     
     <meta content="David Ensinger" name="author">
     <link href="https://plus.google.com/111951762509840042073/posts" rel="author">
@@ -27,14 +27,18 @@
     <link href="/rss.xml" rel="alternate" title="RSS" type="application/rss+xml">
     <link href="/sitemap.xml" rel="sitemap" title="Sitemap" type="application/xml">
     <link href="/favicon.ico" rel="shortcut icon">
-    <link href="http://davidensinger.com/index.html" rel="canonical">
+    <link href="http://davidensinger.com/2013/04/inline-svg-with-png-fallback/" rel="canonical">
     
-      <meta content="website" property="og:type">
+      <meta content="article" property="og:type">
+      <meta content="summary" name="twitter:card">
     
     
-      <meta content="http://davidensinger.com/index.html" property="og:url">
-      <meta content="http://davidensinger.com/index.html" name="twitter:url">
+      <meta content="http://davidensinger.com/2013/04/inline-svg-with-png-fallback/" property="og:url">
+      <meta content="http://davidensinger.com/2013/04/inline-svg-with-png-fallback/" name="twitter:url">
     
+    
+      <meta content="2013-04-10T17:41:00-04:00" property="article:published_time">
+      <meta content="http://davidensinger.com/about/" property="article:author">
     
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600" rel="stylesheet" type="text/css">
     <link href="/assets/css/styles.min.css" rel="stylesheet" type="text/css">
@@ -42,7 +46,7 @@
     <script src="/assets/js/html5shiv.js"></script>
     <![endif]-->
   </head>
-  <body class="page-home">
+  <body class="page-post">
     <div class="outer-container">
       <div class="inner-container">
         <!--[if lt IE 9]><div class="chromeframe">
@@ -66,161 +70,77 @@
           </nav>
         </header>
         <div class="primary" id="content" role="main">
-          
-  <article class="post">
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2013/04/inline-svg-with-png-fallback/" rel="bookmark" title="Permalink to Inline SVG with PNG Fallback">Inline SVG with PNG Fallback</a>
-      </h1>
-      <div class="entry-meta">
-        <span class="icon-left icon-entry-date entry-meta-icon">
-          <a class="entry-meta-link" href="/2013/04/inline-svg-with-png-fallback/" rel="bookmark" title="2013-04-10 17:41:00 -0400">
-            <time class="date updated" datetime="2013-04-10T17:41:00-04:00">April 10, 2013</time>
-          </a>
-        </span>
-      </div>
-    </header>
-    <div class="entry-content">
-      
-        <p>How to use inline SVG with PNG fallback, courtesy of foreignObject and base64.</p>
-
-          <a class="continue-reading" href="/2013/04/inline-svg-with-png-fallback/" rel="bookmark" title="Permalink to Inline SVG with PNG Fallback">Continue Reading</a>
-        
+          <article class="post hentry">
+  <header class="entry-header">
+    <h1 class="entry-title">Inline SVG with PNG Fallback</h1>
+    <div class="entry-meta">
+      <span class="icon-left icon-entry-date">
+        <time class="date updated" datetime="2013-04-10T17:41:00-04:00">April 10, 2013</time>
+      </span>
     </div>
-  </article>
+  </header>
+  <div class="entry-content">
+    <p>Notice anything different about my balloon logo? Probably not, as the change is subtle, but the image is now an <strong>inline SVG</strong> instead of an <strong>SVG background image</strong>. I did this to allow the colors of the balloon to darken on hover.</p>
 
-  <article class="post">
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2013/04/deploying-jekyll-to-github-pages/" rel="bookmark" title="Permalink to Deploying Jekyll with Plugins to GitHub Pages">Deploying Jekyll with Plugins to GitHub Pages</a>
-      </h1>
-      <div class="entry-meta">
-        <span class="icon-left icon-entry-date entry-meta-icon">
-          <a class="entry-meta-link" href="/2013/04/deploying-jekyll-to-github-pages/" rel="bookmark" title="2013-04-08 06:30:00 -0400">
-            <time class="date updated" datetime="2013-04-08T06:30:00-04:00">April 08, 2013</time>
-          </a>
-        </span>
-      </div>
-    </header>
-    <div class="entry-content">
-      
-        <p>Steps to deploying Jekyll with plugins to GitHub Pages.</p>
+<p>Using an inline SVG is the only way to do this, as the browser regards the other implementations of SVG as externally linked files. That prevents the browser from respecting any inline CSS pseudo classes within the SVG.</p>
 
-          <a class="continue-reading" href="/2013/04/deploying-jekyll-to-github-pages/" rel="bookmark" title="Permalink to Deploying Jekyll with Plugins to GitHub Pages">Continue Reading</a>
-        
+<p>As an added benefit, an HTTP request is saved, although this boon to page load optimization is at the expense of the tidiness of the markup. It’s not such a drawback, especially if the HTML will be minified before being deployed.</p>
+
+<p>As for browser support, <a href="http://caniuse.com/#feat=svg-html5">inline SVGs are supported by all modern browsers</a>, so long as the proper <strong>HTML5 DOCTYPE</strong> (<code>&lt;!DOCTYPE html&gt;</code>) is declared. Not surprisingly, IE8 doesn’t support inline SVGs, so a fallback is needed for the small percentage of visitors who use that browser.</p>
+
+<p>The obvious choice for an image fallback is a PNG since they support alpha transparency and are easily optimized for file size with <a href="http://pngmini.com/">ImageAlpha</a> and <a href="http://imageoptim.com/">ImageOptim</a>.</p>
+
+<h2>How Best to Fallback?</h2>
+
+<p>I initially considered replacing the inline SVG markup with an <code>img</code> tag via either <strong>JavaScript</strong> or <strong>jQuery</strong>, but decided against it. The user may have JavaScript disabled and if I elect to use jQuery I’ll need to make an additional HTTP request to load the library.</p>
+
+<p>Thankfully, I stumbled upon <a href="http://www.kaizou.org/2009/03/inline-svg-fallback/">a better solution</a> that makes use of <a href="https://developer.mozilla.org/en-US/docs/SVG/Element/foreignObject">foreignObject</a> and <a href="https://developer.mozilla.org/en-US/docs/SVG/Element/switch">switch</a>, which are both elements specific to SVG.</p>
+
+<blockquote><p>The <code>foreignObject</code> element allows for inclusion of a foreign
+XML namespace which has its graphical content drawn by a
+different user agent.</p>
+
+<p><cite><a href="https://developer.mozilla.org/en-US/docs/SVG/Element/foreignObject">Mozilla Developer Network</a></cite></p></blockquote>
+
+<p>With <code>foreignObject</code> I can insert fallback <strong>HTML</strong> into the SVG, which will look like this:</p>
+
+<div class="highlight"><pre><code class="xml"><span class="nt">&lt;svg&gt;</span>
+  SVG
+  <span class="nt">&lt;foreignObject&gt;</span>
+    Fallback HTML
+  <span class="nt">&lt;/foreignObject&gt;</span>
+<span class="nt">&lt;/svg&gt;</span>
+</code></pre></div>
+
+
+<p>The final step is to put the SVG code into a <strong>group</strong> (<code>g</code>) and then wrap the group and foreignObject in a <strong>switch</strong> (<code>switch</code>) element. The switch will then evaluate the children elements in order. The first element that has the proper attributes will be rendered, which will be the the group with the SVG.</p>
+
+<div class="highlight"><pre><code class="xml"><span class="nt">&lt;svg&gt;</span>
+  <span class="nt">&lt;g&gt;</span>
+    SVG
+  <span class="nt">&lt;/g&gt;</span>
+  <span class="nt">&lt;foreignObject&gt;</span>
+    Fallback
+  <span class="nt">&lt;/foreignObject&gt;</span>
+<span class="nt">&lt;/svg&gt;</span>
+</code></pre></div>
+
+
+<p>Browsers that support SVG will render the inline SVG, while older browsers will instead display the foreignObject, which contains the fallback PNG. Easy and efficient, right?</p>
+
+<p>Unfortunately, both the SVG and the image fallback will be loaded by the browser. This isn’t such a big deal, so long as the image is optimized and then converted to a <strong>base64 string</strong>, thus saving another HTTP request. I recommend my <a href="http://webcodertools.com/imagetobase64converter">favorite converter</a> for the task!</p>
+
+  </div>
+</article>
+<nav class="post-navigation" role="navigation">
+  <h1 class="visuallyhidden">Post navigation</h1>
+  
+    <div class="nav-previous">
+      <a class="nav-previous-link" href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/" rel="prev">Deploying Jekyll with Plugins to GitHub Pages</a>
     </div>
-  </article>
-
-  <article class="post">
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/" rel="bookmark" title="Permalink to Generating a Sitemap in Jekyll without a Plugin">Generating a Sitemap in Jekyll without a Plugin</a>
-      </h1>
-      <div class="entry-meta">
-        <span class="icon-left icon-entry-date entry-meta-icon">
-          <a class="entry-meta-link" href="/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/" rel="bookmark" title="2013-03-29 06:26:00 -0400">
-            <time class="date updated" datetime="2013-03-29T06:26:00-04:00">March 29, 2013</time>
-          </a>
-        </span>
-      </div>
-    </header>
-    <div class="entry-content">
-      
-        <p>A guide to generating a sitemap.xml in Jekyll without using a plugin.</p>
-
-          <a class="continue-reading" href="/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/" rel="bookmark" title="Permalink to Generating a Sitemap in Jekyll without a Plugin">Continue Reading</a>
-        
-    </div>
-  </article>
-
-  <article class="post">
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2013/03/setting-the-dns-for-github-pages-on-namecheap/" rel="bookmark" title="Permalink to Setting the DNS for GitHub Pages on Namecheap">Setting the DNS for GitHub Pages on Namecheap</a>
-      </h1>
-      <div class="entry-meta">
-        <span class="icon-left icon-entry-date entry-meta-icon">
-          <a class="entry-meta-link" href="/2013/03/setting-the-dns-for-github-pages-on-namecheap/" rel="bookmark" title="2013-03-27 16:05:00 -0400">
-            <time class="date updated" datetime="2013-03-27T16:05:00-04:00">March 27, 2013</time>
-          </a>
-        </span>
-      </div>
-    </header>
-    <div class="entry-content">
-      
-        <p>How to properly set up the DNS on Namecheap for your custom domain with GitHub Pages.</p>
-
-          <a class="continue-reading" href="/2013/03/setting-the-dns-for-github-pages-on-namecheap/" rel="bookmark" title="Permalink to Setting the DNS for GitHub Pages on Namecheap">Continue Reading</a>
-        
-    </div>
-  </article>
-
-  <article class="post">
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2013/03/using-rems-with-sass/" rel="bookmark" title="Permalink to Using Rems with Sass">Using Rems with Sass</a>
-      </h1>
-      <div class="entry-meta">
-        <span class="icon-left icon-entry-date entry-meta-icon">
-          <a class="entry-meta-link" href="/2013/03/using-rems-with-sass/" rel="bookmark" title="2013-03-21 14:24:00 -0400">
-            <time class="date updated" datetime="2013-03-21T14:24:00-04:00">March 21, 2013</time>
-          </a>
-        </span>
-      </div>
-    </header>
-    <div class="entry-content">
-      
-        <p>An argument for using a Sass mixin with pixel fallback to easily implement rems.</p>
-
-          <a class="continue-reading" href="/2013/03/using-rems-with-sass/" rel="bookmark" title="Permalink to Using Rems with Sass">Continue Reading</a>
-        
-    </div>
-  </article>
-
-  <article class="post">
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2013/03/selling-agile/" rel="bookmark" title="Permalink to Selling Agile">Selling Agile</a>
-      </h1>
-      <div class="entry-meta">
-        <span class="icon-left icon-entry-date entry-meta-icon">
-          <a class="entry-meta-link" href="/2013/03/selling-agile/" rel="bookmark" title="2013-03-20 18:58:00 -0400">
-            <time class="date updated" datetime="2013-03-20T18:58:00-04:00">March 20, 2013</time>
-          </a>
-        </span>
-      </div>
-    </header>
-    <div class="entry-content">
-      
-        <p>Thoughts on generating buy in for Agile development techniques in an organization.</p>
-
-          <a class="continue-reading" href="/2013/03/selling-agile/" rel="bookmark" title="Permalink to Selling Agile">Continue Reading</a>
-        
-    </div>
-  </article>
-
-  <article class="post">
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2013/03/installing-jekyll/" rel="bookmark" title="Permalink to Installing Jekyll">Installing Jekyll</a>
-      </h1>
-      <div class="entry-meta">
-        <span class="icon-left icon-entry-date entry-meta-icon">
-          <a class="entry-meta-link" href="/2013/03/installing-jekyll/" rel="bookmark" title="2013-03-19 18:55:00 -0400">
-            <time class="date updated" datetime="2013-03-19T18:55:00-04:00">March 19, 2013</time>
-          </a>
-        </span>
-      </div>
-    </header>
-    <div class="entry-content">
-      
-        <p>How to install Jekyll on OS X Mountain Lion 10.8.3.</p>
-
-          <a class="continue-reading" href="/2013/03/installing-jekyll/" rel="bookmark" title="Permalink to Installing Jekyll">Continue Reading</a>
-        
-    </div>
-  </article>
-
+  
+  
+</nav>
 
         </div>
         <aside class="secondary vcard author" role="complementary">
