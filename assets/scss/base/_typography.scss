@@ -224,16 +224,43 @@ i {
   font-style: italic; }
 
 blockquote {
-  color: $text-color-light;
-  border-left: 4px solid $border-color;
-  @include rem(margin, 0 0 1.5 0.25);
-  @include rem(padding, 0.5 1);
-  cite {
-    color: $text-color;
+  position: relative;
+  z-index: 1;
+  @include rem(margin, 0 0 1.5);
+  @include rem(padding, 2 3);
+  background: $gray-darker;
+  border-radius: 5px;
+  text-align: right;
+  color: $gray-lighter;
+  text-shadow: 0 1px 0 $gray-darkest;
+  &:before {
+    content: '\201C';
+    position: absolute;
+    top: 1.5rem;
+    left: 2.5rem;
+    z-index: -1;
+    @include rem(font-size, 14);
     font-weight: $base-font-weight-bold;
-    font-style: normal; }
-  p {
-    @include rem(margin-bottom, 0.5); } }
+    color: #3c3c3c;
+    text-shadow: none;
+    line-height: 0.7; }
+  code {
+    padding: 0;
+    color: $gray-lightest;
+    background: none; }
+  cite {
+    color: $gray-lightest;
+    font-weight: $base-font-weight-bold;
+    font-style: normal;
+    a {
+      &:link,
+      &:visited {
+        color: inherit; }
+      &:hover {
+        color: $white-dark; }
+      &:focus,
+      &:active {
+        color: $white; } } } }
 
 address {
   @extend %margin-bottom; } 
