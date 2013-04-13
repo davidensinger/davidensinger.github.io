@@ -5,6 +5,8 @@ slug: using-rems-with-sass
 title: Using Rems with Sass
 description: An argument for using a Sass mixin with pixel fallback to easily implement rems.
 tags:
+- Mixin
+- Rem
 - Sass
 ---
 

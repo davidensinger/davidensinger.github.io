@@ -5,6 +5,9 @@ slug: inline-svg-with-png-fallback
 title: Inline SVG with PNG Fallback
 description: How to use inline SVG with PNG fallback, courtesy of foreignObject and base64.
 tags:
+- base64
+- foreignObject
+- PNG
 - SVG
 ---
 
