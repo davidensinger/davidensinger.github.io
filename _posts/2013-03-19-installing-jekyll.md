@@ -4,6 +4,8 @@ layout: post
 slug: installing-jekyll
 title: Installing Jekyll
 description: How to install Jekyll on OS X Mountain Lion 10.8.3.
+tags:
+- Jekyll
 ---
 
 After much deliberation, I decided to simplify my blogging workflow. To that end I made the switch from __WordPress to Jekyll__, which is ”a simple, blog aware, static site generator.” Although Jekyll is easy to maintain, it can be confusing to set up, especially for one with a dearth of experience with Ruby.

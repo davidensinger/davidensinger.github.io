@@ -4,6 +4,8 @@ layout: post
 slug: generating-a-sitemap-in-jekyll-without-a-plugin
 title: Generating a Sitemap in Jekyll without a Plugin
 description: A guide to generating a sitemap.xml in Jekyll without using a plugin.
+tags:
+- Jekyll
 ---
 
 During my switch from **WordPress** to **Jekyll**, I decided to simplify the scope of my site. One of the changes I made was to remove my portfolio, as I’d like to put more of an emphasis on my writing than on my past projects. As a result, I culled many pages that were indexed by search engines. This meant that I needed a proper **sitemap.xml**, principally for use with Google’s [Webmaster Tools](www.google.com/webmasters/tools).

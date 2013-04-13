@@ -4,6 +4,8 @@ layout: post
 slug: deploying-jekyll-with-plugins-to-github-pages
 title: Deploying Jekyll with Plugins to GitHub Pages
 description: Steps to deploying Jekyll with plugins to GitHub Pages.
+tags:
+- Jekyll
 ---
 
 In spite of my resolution to design and develop this website simply, I’ve decided to run **Jekyll** with plugins. This complicates my deployment because **GitHub Pages** runs Jekyll in `--safe` mode, which quite reasonably prevents the running of arbitrary Ruby code on the GitHub servers.
