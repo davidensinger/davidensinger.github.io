@@ -58,4 +58,5 @@
   @include rem(margin-top, 0.75);
   @extend %button-blue;
   &:after {
-    content: "\2192"; } }
+    content: "\2192";
+    @include rem(margin-left, 0.5); } }
