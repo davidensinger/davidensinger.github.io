@@ -40,10 +40,13 @@ nav {
     color: $link-nav-color-hover;
     @extend %current-page-cursor; } }
 
-// Post navigation
-.post-navigation {
+// Post and page navigation
+.post-navigation,
+.paging-navigation {
   @extend %clearfix;
-  @include rem(padding-top, 3);
+  @include rem(padding-top, 3); }
+
+.post-navigation {
   @include border(hr,top); }
 
 .nav-previous {

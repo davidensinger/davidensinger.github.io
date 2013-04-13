@@ -3,7 +3,7 @@ rdiscount:
   extensions: [smart]
 pygments: true
 permalink: /:year/:month/:title/
-paginate: 10
+paginate: 5
 
 title: Development, design, and more by David Ensinger
 author: David Ensinger
