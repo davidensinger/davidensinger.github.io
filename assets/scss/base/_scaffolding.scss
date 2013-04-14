@@ -30,7 +30,6 @@ body {
 
 .outer-container {
   max-width: 94%;
-  @extend %transitions-all;
   @include breakpoint(extra-large-desktop) {
     max-width: 1600px; }
   @include breakpoint(extra-extra-large-desktop) {
