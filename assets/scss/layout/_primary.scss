@@ -18,6 +18,17 @@
 .entry-meta {
   color: $link-meta-color;
   font-weight: $base-font-weight-bold;
+  a {
+    &:link,
+    &:visited {
+      color: inherit; }
+    &:hover {
+      color: $link-meta-color-hover; }
+    &:focus,
+    &:active {
+      color: $link-meta-color-focus; } } }
+
+.entry-meta-header {
   @include rem(margin-bottom, 0.7); }
 
 .entry-meta-icon {
@@ -38,6 +49,7 @@
     color: $link-meta-color-focus; } }
 
 .entry-content {
+  @include rem(margin-bottom, 3);
   h2 {
     @extend %beta; }
   h3 {
