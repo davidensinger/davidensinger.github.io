@@ -3,6 +3,33 @@
   "glyphs": [
     {
       "search": [
+        "tag",
+        "category",
+        "price",
+        "offer"
+      ],
+      "code": 59148,
+      "from": 59148,
+      "uid": "3db5347bd219f3bce6025780f5d9ef45",
+      "css": "tag",
+      "orig_css": "tag",
+      "orig_code": 59148,
+      "src": "fontawesome"
+    },
+    {
+      "search": [
+        "archive"
+      ],
+      "code": 59192,
+      "from": 59192,
+      "uid": "96ea1be71f597a5bdfc8f791ada4f651",
+      "css": "category",
+      "orig_css": "archive",
+      "orig_code": 59192,
+      "src": "entypo"
+    },
+    {
+      "search": [
         "rss"
       ],
       "code": 59195,

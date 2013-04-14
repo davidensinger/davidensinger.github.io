@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg xmlns="http://www.w3.org/2000/svg">
 <metadata>
-Created by FontForge 20100429 at Tue Mar 19 14:09:34 2013
+Created by FontForge 20110222 at Sun Apr 14 18:39:36 2013
  By root
 Copyright (C) 2012 by original authors @ fontello.com
 </metadata>
@@ -19,7 +19,7 @@ Copyright (C) 2012 by original authors @ fontello.com
     bbox="14 -150 1015 850"
     underline-thickness="50"
     underline-position="-100"
-    unicode-range="U+E73B-1F554"
+    unicode-range="U+E70C-1F554"
   />
 <missing-glyph horiz-adv-x="364" 
 d="M33 0v666h265v-666h-265zM66 33h199v600h-199v-600z" />
@@ -29,6 +29,11 @@ d="M33 0v666h265v-666h-265zM66 33h199v600h-199v-600z" />
  />
     <glyph glyph-name="nonmarkingreturn" horiz-adv-x="333" 
  />
+    <glyph glyph-name="uniE70C" unicode="&#xe70c;" horiz-adv-x="875" 
+d="M15 707q0 29 21.5 50.5t49.5 21.5h233q32 0 67 -15.5t55 -35.5l399 -399q20 -21 20 -50q0 -31 -20 -51l-274 -274q-22 -21 -51 -21t-50 21l-399 399q-19 18 -35 54.5t-16 67.5v232zM122 600q0 -29 21.5 -50t50.5 -21t50 21t21 50t-21 50t-50 21t-50.5 -21t-21.5 -50z" />
+    <glyph glyph-name="uniE738" unicode="&#xe738;" horiz-adv-x="1011" 
+d="M159 600q0 18 11.5 33t26.5 17h608q20 0 36 -15q14 -14 14 -35v-50h-696v50zM259 700q0 18 11.5 33t26.5 17h410q20 0 36 -15q14 -14 14 -35h-498zM955 550q33 -30 38 -46q6 -18 0 -54l-76 -450q-3 -18 -17.5 -32.5t-30.5 -17.5h-710q-52 0 -60 50q0 1 -39 225t-39 225
+q-10 22 -3 44t10 26q1 2 21 20l40 40v-80h836v80zM707 280v100h-70v-80h-260v80h-68v-100q0 -50 48 -50h300q18 0 33 10.5t15 25.5z" />
     <glyph glyph-name="uniE73B" unicode="&#xe73b;" horiz-adv-x="927" 
 d="M834 850q33 0 56.5 -23.5t23.5 -55.5v-742q0 -32 -23.5 -55.5t-56.5 -23.5h-741q-33 0 -56 23.5t-23 55.5v742q0 32 23 55.5t56 23.5h741zM781 82q0 134 -51.5 251t-133.5 198.5t-199 134t-251 52.5v-122q146 0 263 -72t181 -183q69 -118 69 -259h122zM565 82
 q0 120 -59 215t-150 148q-97 57 -210 57v-122q122 0 210 -87q87 -85 87 -211h122zM305 162q0 33 -23.5 56.5t-56.5 23.5q-32 0 -55.5 -24t-23.5 -56.5t23.5 -56t55.5 -23.5t56 23.5t24 56.5z" />

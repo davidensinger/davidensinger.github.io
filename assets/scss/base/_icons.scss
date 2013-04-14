@@ -25,9 +25,10 @@
   &:before {
     @include rem(margin-left, 0.25); } }
 
+.icon-tag:before { content: '\e70c'; }
+.icon-category:before { content: '\e738'; }
 .icon-rss:before { content: '\e73b'; }
 .icon-github:before { content: '\f300'; }
 .icon-twitter:before { content: '\f309'; }
 .icon-tumblr:before { content: '\f310'; }
-.icon-entry-date:before { content: '🕔'; } // '\1f554'
-
+.icon-entry-date:before { content: '🕔'; }
