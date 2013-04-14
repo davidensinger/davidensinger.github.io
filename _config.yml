@@ -1,3 +1,5 @@
+safe: false
+auto: true
 markdown: rdiscount
 rdiscount:
   extensions: [smart]
