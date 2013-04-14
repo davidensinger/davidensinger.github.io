@@ -21,7 +21,7 @@ For my personal web presence, see the [Republic of the Spirit](http://www.republ
 
 ## Contact
 
-If you have any questions, comments, or would just like to say hello, please don't hesitate to [drop me a line](mailto:hello@davidensinger.com). I'll be sure to respond in a timely manner!
+If you have any questions, comments, or would just like to say hello, please don't hesitate to [drop me a line](mailto:hello@davidensinger.com). I’ll be sure to respond in a timely manner!
 
 ## Colophon
 
