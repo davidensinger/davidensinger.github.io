@@ -8,7 +8,7 @@ permalink: /:year/:month/:title/
 paginate: 5
 
 # https://github.com/pattex/jekyll-tagging
-tag_page_layout: tag
+tag_page_layout: tag_page
 tag_page_dir: tag
 
 title: Development, design, and more by David Ensinger
