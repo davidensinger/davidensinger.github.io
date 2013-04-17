@@ -55,11 +55,11 @@
       <meta content="{{ site.url }}/about/" property="article:author">
     {% endif %}
     {% if page.image %}
-      <meta property="og:image" content="/assets/img/posts/{{ page.image }}">
-      <meta name="twitter:image:src" content="/assets/img/posts/{{ page.image }}">
+      <meta property="og:image" content="{{ site.url }}/assets/img/posts/{{ page.image }}">
+      <meta name="twitter:image:src" content="{{ site.url }}/assets/img/posts/{{ page.image }}">
     {% else %}
-      <meta property="og:image" content="/assets/img/logo-high-resolution.png">
-      <meta name="twitter:image:src" content="/assets/img/logo-high-resolution.png">
+      <meta property="og:image" content="{{ site.url }}/assets/img/logo-high-resolution.png">
+      <meta name="twitter:image:src" content="{{ site.url }}/assets/img/logo-high-resolution.png">
     {% endif %}
     {% if page.tags %}
       {% for tag in page.tags %}
