@@ -42,10 +42,10 @@
     <link href="{{ site.url }}{{ page.url }}" rel="canonical">
     {% if page.title %}
       <meta content="article" property="og:type">
-      <meta content="summary" name="twitter:card">
     {% else %}
       <meta content="website" property="og:type">
     {% endif %}
+    <meta content="summary" name="twitter:card">
     {% if page.url %}
       <meta content="{{ site.url }}{{ page.url }}" property="og:url">
       <meta content="{{ site.url }}{{ page.url }}" name="twitter:url">
@@ -54,9 +54,16 @@
       <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
       <meta content="{{ site.url }}/about/" property="article:author">
     {% endif %}
+    {% if page.image %}
+      <meta property="og:image" content="/assets/img/posts/{{ page.image }}">
+      <meta name="twitter:image:src" content="/assets/img/posts/{{ page.image }}">
+    {% else %}
+      <meta property="og:image" content="/assets/img/logo-high-resolution.png">
+      <meta name="twitter:image:src" content="/assets/img/logo-high-resolution.png">
+    {% endif %}
     {% if page.tags %}
       {% for tag in page.tags %}
-      <meta property="article:tag" content="{{ tag }}" />
+      <meta property="article:tag" content="{{ tag }}">
       {% endfor %}
     {% endif %}
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600" rel="stylesheet" type="text/css">
