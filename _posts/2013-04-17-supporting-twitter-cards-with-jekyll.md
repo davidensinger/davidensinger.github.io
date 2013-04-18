@@ -61,7 +61,7 @@ Likewise, I have a general site description and a page specific description:
 {% endraw %}
 {% endhighlight %}
 
-A different approach to the page description is to escape and truncate the page content, which is how Paul Stamatiou [handles it](http://paulstamatiou.com/responsive-retina-blog-development-part-1):
+A different approach to the page description is to escape and truncate the page content, which is how [Paul Stamatiou handles it](http://paulstamatiou.com/responsive-retina-blog-development-part-1):
 
 {% highlight html %}{% raw %}
 <meta name="twitter:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }}">
@@ -109,8 +109,8 @@ Here’s what my final block of code looks like:
 
 ## Validate
 
-If you’re curious if your code validates, Twitter has provided a [validator](https://dev.twitter.com/docs/cards/validation/validator) so you can easily check. You’ll need to use the validator before you can submit a **Domain Approval Request**, which will whitelist your website for inclusion with the service. It shouldn’t take much time at all to be approved.
+If you’re curious if your code validates, Twitter has provided a [validator](https://dev.twitter.com/docs/cards/validation/validator) so you can easily check. You’ll need to pass the validation test before you can submit a **Domain Approval Request**, which will whitelist your website for inclusion with the service. It shouldn’t take much time at all to be approved.
 
 <div class="gray-box">
-  <p><strong>More Info:</strong> David Walsh has a really great overview of <a href="http://davidwalsh.name/twitter-cards">Twitter Cards</a>, which is worth a read.</p>
+  <p><strong>More Info:</strong> David Walsh has a really great overview of <a href="http://davidwalsh.name/twitter-cards">Twitter Cards</a>, which is well worth a read.</p>
 </div>
