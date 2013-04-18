@@ -4,7 +4,7 @@
   <title>Development, design, and more by David Ensinger</title>
   <link href="http://davidensinger.com/"/>
   <link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/>
-  <updated>2013-04-17T23:37:52-04:00</updated>
+  <updated>2013-04-18T16:47:30-04:00</updated>
   <id>http://davidensinger.com/</id>
   <author>
     <name>David Ensinger</name>
@@ -72,7 +72,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;A different approach to the page description is to escape and truncate the page content, which is how Paul Stamatiou &lt;a href=&quot;http://paulstamatiou.com/responsive-retina-blog-development-part-1&quot;&gt;handles it&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;A different approach to the page description is to escape and truncate the page content, which is how &lt;a href=&quot;http://paulstamatiou.com/responsive-retina-blog-development-part-1&quot;&gt;Paul Stamatiou handles it&lt;/a&gt;:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;twitter:description&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ page.content | strip_html | xml_escape | truncate: 200 }}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -117,10 +117,10 @@
 
 &lt;h2&gt;Validate&lt;/h2&gt;
 
-&lt;p&gt;If you’re curious if your code validates, Twitter has provided a &lt;a href=&quot;https://dev.twitter.com/docs/cards/validation/validator&quot;&gt;validator&lt;/a&gt; so you can easily check. You’ll need to use the validator before you can submit a &lt;strong&gt;Domain Approval Request&lt;/strong&gt;, which will whitelist your website for inclusion with the service. It shouldn’t take much time at all to be approved.&lt;/p&gt;
+&lt;p&gt;If you’re curious if your code validates, Twitter has provided a &lt;a href=&quot;https://dev.twitter.com/docs/cards/validation/validator&quot;&gt;validator&lt;/a&gt; so you can easily check. You’ll need to pass the validation test before you can submit a &lt;strong&gt;Domain Approval Request&lt;/strong&gt;, which will whitelist your website for inclusion with the service. It shouldn’t take much time at all to be approved.&lt;/p&gt;
 
 &lt;div class=&quot;gray-box&quot;&gt;
-  &lt;p&gt;&lt;strong&gt;More Info:&lt;/strong&gt; David Walsh has a really great overview of &lt;a href=&quot;http://davidwalsh.name/twitter-cards&quot;&gt;Twitter Cards&lt;/a&gt;, which is worth a read.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;More Info:&lt;/strong&gt; David Walsh has a really great overview of &lt;a href=&quot;http://davidwalsh.name/twitter-cards&quot;&gt;Twitter Cards&lt;/a&gt;, which is well worth a read.&lt;/p&gt;
 &lt;/div&gt;
 
 </content>

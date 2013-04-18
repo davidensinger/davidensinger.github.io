@@ -16,9 +16,9 @@
     
     <meta content="Development, design, and more by David Ensinger" property="og:site_name">
     
-      <meta content="How to add support for Twitter Cards to Jekyll." name="description">
-      <meta content="How to add support for Twitter Cards to Jekyll." property="og:description">
-      <meta content="How to add support for Twitter Cards to Jekyll." name="twitter:description">
+      <meta content="How to add support for Summary Twitter Cards to Jekyll." name="description">
+      <meta content="How to add support for Summary Twitter Cards to Jekyll." property="og:description">
+      <meta content="How to add support for Summary Twitter Cards to Jekyll." name="twitter:description">
     
     <meta content="David Ensinger" name="author">
     <link href="https://plus.google.com/111951762509840042073/posts" rel="author">
@@ -143,7 +143,7 @@
 </code></pre></div>
 
 
-<p>A different approach to the page description is to escape and truncate the page content, which is how Paul Stamatiou <a href="http://paulstamatiou.com/responsive-retina-blog-development-part-1">handles it</a>:</p>
+<p>A different approach to the page description is to escape and truncate the page content, which is how <a href="http://paulstamatiou.com/responsive-retina-blog-development-part-1">Paul Stamatiou handles it</a>:</p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ page.content | strip_html | xml_escape | truncate: 200 }}&quot;</span><span class="nt">&gt;</span>
 </code></pre></div>
@@ -188,10 +188,10 @@
 
 <h2>Validate</h2>
 
-<p>If you’re curious if your code validates, Twitter has provided a <a href="https://dev.twitter.com/docs/cards/validation/validator">validator</a> so you can easily check. You’ll need to use the validator before you can submit a <strong>Domain Approval Request</strong>, which will whitelist your website for inclusion with the service. It shouldn’t take much time at all to be approved.</p>
+<p>If you’re curious if your code validates, Twitter has provided a <a href="https://dev.twitter.com/docs/cards/validation/validator">validator</a> so you can easily check. You’ll need to pass the validation test before you can submit a <strong>Domain Approval Request</strong>, which will whitelist your website for inclusion with the service. It shouldn’t take much time at all to be approved.</p>
 
 <div class="gray-box">
-  <p><strong>More Info:</strong> David Walsh has a really great overview of <a href="http://davidwalsh.name/twitter-cards">Twitter Cards</a>, which is worth a read.</p>
+  <p><strong>More Info:</strong> David Walsh has a really great overview of <a href="http://davidwalsh.name/twitter-cards">Twitter Cards</a>, which is well worth a read.</p>
 </div>
 
 
