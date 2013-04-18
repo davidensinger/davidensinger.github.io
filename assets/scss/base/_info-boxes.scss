@@ -6,33 +6,68 @@
   @include rem(padding, 1);
   @extend %margin-bottom;
   a {
-    color: inherit !important;
-    font-weight: $base-font-weight-bold; } }
+    &:hover {
+      text-decoration: underline; } } }
 
 %red-box,
 .red-box {
   @extend %info-box-base;
   background: $red-lighter;
   color: $red-darker;
-  border-left: 0.33em solid $red; }
+  border-left: 0.33em solid $red;
+  a {
+    &:link,
+    &:visited {
+      color: inherit; }
+    &:hover {
+      color: $red-darkest; }
+    &:focus,
+    &:active {
+      color: $link-color-focus; } } }
 
 %yellow-box,
 .yellow-box {
   @extend %info-box-base;
   background: $yellow-lighter;
   color: $yellow-darker;
-  border-left: 0.33em solid $yellow; } 
+  border-left: 0.33em solid $yellow;
+  a {
+    &:link,
+    &:visited {
+      color: inherit; }
+    &:hover {
+      color: $yellow-darkest; }
+    &:focus,
+    &:active {
+      color: $link-color-focus; } } }
 
 %green-box,
 .green-box {
   @extend %info-box-base;
   background: $green-lighter;
   color: $green-darker;
-  border-left: 0.33em solid $green; }
+  border-left: 0.33em solid $green;
+  a {
+    &:link,
+    &:visited {
+      color: inherit; }
+    &:hover {
+      color: $green-darkest; }
+    &:focus,
+    &:active {
+      color: $link-color-focus; } } }
 
 %gray-box,
 .gray-box {
   @extend %info-box-base;
   background: $white-dark;
   color: $gray-dark;
-  border-left: 0.33em solid $gray-lightest; }
+  border-left: 0.33em solid $gray-lightest;  a {
+    &:link,
+    &:visited {
+      color: inherit; }
+    &:hover {
+      color: $gray-darker; }
+    &:focus,
+    &:active {
+      color: $link-color-focus; } } }
