@@ -20,6 +20,7 @@ The Summary Card is the default and includes a title, description, thumbnail, an
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@site_username">
 <meta name="twitter:title" content="Title">
+<meta name="twitter:url" content="URL">
 <meta name="twitter:description" content="Up than 200 characters.">
 <meta name="twitter:creator" content="@creator_username">
 <meta name="twitter:image:src" content="http://path/to/image.jpg">
@@ -48,6 +49,17 @@ I’ve denoted a site title in my **_config.yml** and a page title in the **YAML
 {% endraw %}
 {% endhighlight %}
 
+### URL
+
+I’ve also specified a *site.url* output as an absolute path in my in my **_config.yml**, as well as a *page.url* output in my **YAML Front Matter** block.
+
+{% highlight html %}{% raw %}
+{% if page.url %}
+  <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+{% endif %}
+{% endraw %}
+{% endhighlight %}
+
 ### Description
 
 Likewise, I have a general site description and a page specific description:
@@ -70,7 +82,7 @@ A different approach to the page description is to escape and truncate the page 
 
 ### Image
 
-I’ve also set a default image, if there’s not an image for the current page. The *site.url* output is an absolute path that I’ve denoted in my **_config.yml**.
+I’ve also set a default image, if there’s not an image for the current page.
 
 {% highlight html %}{% raw %}
 {% if page.image %}
@@ -93,6 +105,9 @@ Here’s what my final block of code looks like:
   <meta name="twitter:title" content="{{ page.title }}">
 {% else %}
   <meta name="twitter:title" content="{{ site.title }}">
+{% endif %}
+{% if page.url %}
+  <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
 {% endif %}
 {% if page.description %}
   <meta name="twitter:description" content="{{ page.description }}">
