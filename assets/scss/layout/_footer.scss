@@ -34,7 +34,11 @@
 .footer-icon {
   line-height: 0;
   &:before {
-    @extend %gamma-font-size; }
+    @extend %gamma-font-size;
+    -webkit-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out; }
   &:hover {
     &:before {
-      @extend %beta-font-size; } } }
+      -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+      transform: scale(1.5); } } }
