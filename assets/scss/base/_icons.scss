@@ -13,6 +13,8 @@
 [class*=" icon-"] {
   &:before {
     font-family: 'fontello';
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
     speak: none;
     display: inline-block;
     text-align: center; } }
