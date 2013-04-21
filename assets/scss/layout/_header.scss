@@ -12,7 +12,9 @@
 .svg-logo {
   @include rem(width, 6);
   @include rem(height, 6);
-  &:active {
-    -ms-transform: rotate(2deg);
-    -webkit-transform: rotate(2deg);
-    transform: rotate(2deg); } }
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  &:hover {
+  	-webkit-transform: scale(1.125) rotate(2deg);
+  	-ms-transform: scale(1.125) rotate(2deg);
+  	transform: scale(1.125) rotate(2deg); } }
