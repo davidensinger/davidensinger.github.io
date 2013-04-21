@@ -22,14 +22,14 @@ nav {
   ul {
     margin: 0; }
   li {
-    display: inline;
-    &:before {
-      @include rem(margin, 0 0.25 0 0.125);
-      content: "|";
-      color: $text-color-lightest; }
+    float: left;
+    @include rem(margin-left, 2);
     &:first-child {
-      &:before {
-        content: none; } } } }
+      margin-left: 0; } }
+  a {
+    @include rem(padding-bottom, 0.25);
+    &:hover {
+      border-bottom: 2px solid $link-color-focus; } } }
 
 // Current page
 %current-page-cursor {
@@ -38,7 +38,8 @@ nav {
 @each $page in home, about {
   .page-#{$page} .nav-#{$page} {
     color: $link-nav-color-hover;
-    @extend %current-page-cursor; } }
+    @extend %current-page-cursor;
+    border-bottom: none !important; } }
 
 // Post and page navigation
 .post-navigation,
