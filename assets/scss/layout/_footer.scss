@@ -31,6 +31,10 @@
   &:active {
     color: $link-footer-icon-color-focus; } }
 
+.icon-rss,
+.footer-icon {
+  font-weight: 400; }
+
 .footer-icon {
   line-height: 0;
   &:before {
