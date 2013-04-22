@@ -10,15 +10,15 @@
     <link href="//themes.googleusercontent.com" rel="dns-prefetch">
     <link href="//www.google-analytics.com" rel="dns-prefetch">
     
-      <title>Development, design, and more by David Ensinger</title>
-      <meta content="Development, design, and more by David Ensinger" property="og:title">
-      <meta content="Development, design, and more by David Ensinger" name="twitter:title">
+      <title>Adding Open Graph Tags to Jekyll &ndash; Development, design, and more by David Ensinger</title>
+      <meta content="Adding Open Graph Tags to Jekyll" property="og:title">
+      <meta content="Adding Open Graph Tags to Jekyll" name="twitter:title">
     
     <meta content="Development, design, and more by David Ensinger" property="og:site_name">
     
-      <meta content="David Ensinger is a Front End Developer from Columbus, OH" name="description">
-      <meta content="David Ensinger is a Front End Developer from Columbus, OH" property="og:description">
-      <meta content="David Ensinger is a Front End Developer from Columbus, OH" name="twitter:description">
+      <meta content="A guide to adding Open Graph meta tags to Jekyll." name="description">
+      <meta content="A guide to adding Open Graph meta tags to Jekyll." property="og:description">
+      <meta content="A guide to adding Open Graph meta tags to Jekyll." name="twitter:description">
     
     <meta content="David Ensinger" name="author">
     <link href="https://plus.google.com/111951762509840042073/posts" rel="author">
@@ -28,20 +28,31 @@
     <link href="/rss.xml" rel="alternate" title="RSS" type="application/rss+xml">
     <link href="/sitemap.xml" rel="sitemap" title="Sitemap" type="application/xml">
     <link href="/favicon.ico" rel="shortcut icon">
-    <link href="http://davidensinger.com/index.html" rel="canonical">
+    <link href="http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll/" rel="canonical">
     
-      <meta content="website" property="og:type">
+      <meta content="article" property="og:type">
     
     <meta content="summary" name="twitter:card">
     
-      <meta content="http://davidensinger.com/index.html" property="og:url">
-      <meta content="http://davidensinger.com/index.html" name="twitter:url">
+      <meta content="http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll/" property="og:url">
+      <meta content="http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll/" name="twitter:url">
     
+    
+      <meta content="2013-04-21T16:05:00-04:00" property="article:published_time">
+      <meta content="http://davidensinger.com/about/" property="article:author">
     
     
       <meta property="og:image" content="http://davidensinger.com/assets/img/logo-high-resolution.png">
       <meta name="twitter:image:src" content="http://davidensinger.com/assets/img/logo-high-resolution.png">
     
+    
+      
+      <meta property="article:tag" content="Jekyll">
+      
+      <meta property="article:tag" content="Open Graph">
+      
+      <meta property="article:tag" content="Facebook">
+      
     
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600" rel="stylesheet" type="text/css">
     <link href="/assets/css/styles.min.css" rel="stylesheet" type="text/css">
@@ -49,7 +60,7 @@
       <script src="/assets/js/html5shiv.js"></script>
     <![endif]-->
   </head>
-  <body class="page-home">
+  <body class="page-post">
     <div class="outer-container">
       <div class="inner-container">
         <!--[if lt IE 9]><div class="chromeframe">
@@ -73,127 +84,112 @@
           </nav>
         </header>
         <div class="primary" id="content" role="main">
-
-  <article class="post">
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2013/04/adding-open-graph-tags-to-jekyll/" rel="bookmark" title="Permalink to Adding Open Graph Tags to Jekyll">Adding Open Graph Tags to Jekyll</a>
-      </h1>
-      <div class="entry-meta entry-meta-header">
-        <span class="icon-left icon-entry-date entry-meta-icon">
-          <a class="entry-meta-link" href="/2013/04/adding-open-graph-tags-to-jekyll/" rel="bookmark" title="2013-04-21 16:05:00 -0400">
-            <time class="date updated" datetime="2013-04-21T16:05:00-04:00">April 21, 2013</time>
-          </a>
-        </span>
-      </div>
-    </header>
-    <div class="entry-content">
-      
-        <p>A guide to adding Open Graph meta tags to Jekyll.</p>
-
-          <a class="continue-reading" href="/2013/04/adding-open-graph-tags-to-jekyll/" rel="bookmark" title="Permalink to Adding Open Graph Tags to Jekyll">Continue Reading</a>
-        
+<article class="post hentry">
+  <header class="entry-header">
+    <h1 class="entry-title">Adding Open Graph Tags to Jekyll</h1>
+    <div class="entry-meta entry-meta-header">
+      <span class="icon-left icon-entry-date">
+        <time class="date updated" datetime="2013-04-21T16:05:00-04:00">April 21, 2013</time>
+      </span>
     </div>
-  </article>
+  </header>
+  <div class="entry-content">
+    <p>What is the <a href="http://ogp.me/">Open Graph</a> protocol? Per <strong>Facebook</strong>, it “enables any web page to become a rich object in a social graph.” The documentation goes on to state that “to turn your web pages into graph objects, you need to add basic metadata to your page.” Put more simply, add <strong>Open Graph meta tags</strong> to your website to have greater control over how your content is displayed when shared via Facebook.</p>
 
-  <article class="post">
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2013/04/supporting-twitter-cards-with-jekyll/" rel="bookmark" title="Permalink to Supporting Twitter Cards with Jekyll">Supporting Twitter Cards with Jekyll</a>
-      </h1>
-      <div class="entry-meta entry-meta-header">
-        <span class="icon-left icon-entry-date entry-meta-icon">
-          <a class="entry-meta-link" href="/2013/04/supporting-twitter-cards-with-jekyll/" rel="bookmark" title="2013-04-17 18:16:00 -0400">
-            <time class="date updated" datetime="2013-04-17T18:16:00-04:00">April 17, 2013</time>
-          </a>
-        </span>
-      </div>
-    </header>
-    <div class="entry-content">
-      
-        <p>How to add support for Summary Twitter Cards to Jekyll.</p>
+<h2>Basic Metadata</h2>
 
-          <a class="continue-reading" href="/2013/04/supporting-twitter-cards-with-jekyll/" rel="bookmark" title="Permalink to Supporting Twitter Cards with Jekyll">Continue Reading</a>
-        
-    </div>
-  </article>
+<p>The basic metadata includes a <strong>title</strong>, <strong>object type</strong>, <strong>image</strong>, and <strong>url</strong>, as per the documentation:</p>
 
-  <article class="post">
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2013/04/inline-svg-with-png-fallback/" rel="bookmark" title="Permalink to Inline SVG with PNG Fallback">Inline SVG with PNG Fallback</a>
-      </h1>
-      <div class="entry-meta entry-meta-header">
-        <span class="icon-left icon-entry-date entry-meta-icon">
-          <a class="entry-meta-link" href="/2013/04/inline-svg-with-png-fallback/" rel="bookmark" title="2013-04-10 17:41:00 -0400">
-            <time class="date updated" datetime="2013-04-10T17:41:00-04:00">April 10, 2013</time>
-          </a>
-        </span>
-      </div>
-    </header>
-    <div class="entry-content">
-      
-        <p>How to use inline SVG with PNG fallback, courtesy of foreignObject and base64.</p>
-
-          <a class="continue-reading" href="/2013/04/inline-svg-with-png-fallback/" rel="bookmark" title="Permalink to Inline SVG with PNG Fallback">Continue Reading</a>
-        
-    </div>
-  </article>
-
-  <article class="post">
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2013/04/deploying-jekyll-to-github-pages/" rel="bookmark" title="Permalink to Deploying Jekyll with Plugins to GitHub Pages">Deploying Jekyll with Plugins to GitHub Pages</a>
-      </h1>
-      <div class="entry-meta entry-meta-header">
-        <span class="icon-left icon-entry-date entry-meta-icon">
-          <a class="entry-meta-link" href="/2013/04/deploying-jekyll-to-github-pages/" rel="bookmark" title="2013-04-08 06:30:00 -0400">
-            <time class="date updated" datetime="2013-04-08T06:30:00-04:00">April 08, 2013</time>
-          </a>
-        </span>
-      </div>
-    </header>
-    <div class="entry-content">
-      
-        <p>Steps to deploying Jekyll with plugins to GitHub Pages.</p>
-
-          <a class="continue-reading" href="/2013/04/deploying-jekyll-to-github-pages/" rel="bookmark" title="Permalink to Deploying Jekyll with Plugins to GitHub Pages">Continue Reading</a>
-        
-    </div>
-  </article>
-
-  <article class="post">
-    <header class="entry-header">
-      <h1 class="entry-title">
-        <a href="/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/" rel="bookmark" title="Permalink to Generating a Sitemap in Jekyll without a Plugin">Generating a Sitemap in Jekyll without a Plugin</a>
-      </h1>
-      <div class="entry-meta entry-meta-header">
-        <span class="icon-left icon-entry-date entry-meta-icon">
-          <a class="entry-meta-link" href="/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/" rel="bookmark" title="2013-03-29 06:26:00 -0400">
-            <time class="date updated" datetime="2013-03-29T06:26:00-04:00">March 29, 2013</time>
-          </a>
-        </span>
-      </div>
-    </header>
-    <div class="entry-content">
-      
-        <p>A guide to generating a sitemap.xml in Jekyll without using a plugin.</p>
-
-          <a class="continue-reading" href="/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/" rel="bookmark" title="Permalink to Generating a Sitemap in Jekyll without a Plugin">Continue Reading</a>
-        
-    </div>
-  </article>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Title&quot;</span> <span class="na">property=</span><span class="s">&quot;og:title&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Type&quot;</span> <span class="na">property=</span><span class="s">&quot;og:type&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Image&quot;</span> <span class="na">property=</span><span class="s">&quot;og:image&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;URL&quot;</span> <span class="na">property=</span><span class="s">&quot;og:url&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
 
 
-<nav class="paging-navigation" role="navigation">
+<p>I’ve also included a <strong>site name</strong> and <strong>description</strong>:</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Site Name&quot;</span> <span class="na">property=</span><span class="s">&quot;og:site_name&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Description&quot;</span> <span class="na">property=</span><span class="s">&quot;og:description&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+
+
+<h3>Object Types</h3>
+
+<p>There are many different <a href="http://ogp.me/#types">object types</a> to which you may categorize your page: music, video, article, book, profile, and website, amongst others. The two types that are relevant to my site are <strong>article</strong> and <strong>website</strong>, the latter being the object type that I’ll fall back upon for every page that isn’t a post.</p>
+
+<h4>Article</h4>
+
+<p>The article object type has several possible values, but I’m only using <strong>article:published_time</strong>, <strong>article:author</strong>, and <strong>article:tag</strong> for my site:</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Time&quot;</span> <span class="na">property=</span><span class="s">&quot;article:published_time&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Author&quot;</span> <span class="na">property=</span><span class="s">&quot;article:author&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Tag&quot;</span> <span class="na">property=</span><span class="s">&quot;article:tag&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+
+
+<h2>Code</h2>
+
+<div class="yellow-box">
+  <p><strong>Please Note:</strong> I’ve skipped the explanations for some of the following conditional statements because they’re identical to those that I wrote about in my <a href="http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll/">Supporting Twitter Cards with Jekyll</a> post. See that post for further information.</p>
+</div>
+
+
+<p>Here’s the final snippet of code with the appropriate meta data:</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ site.title }}&quot;</span> <span class="na">property=</span><span class="s">&quot;og:site_name&quot;</span><span class="nt">&gt;</span>
+{% if page.title %}
+  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ page.title }}&quot;</span> <span class="na">property=</span><span class="s">&quot;og:title&quot;</span><span class="nt">&gt;</span>
+{% else %}
+  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ site.title }}&quot;</span> <span class="na">property=</span><span class="s">&quot;og:title&quot;</span><span class="nt">&gt;</span>
+{% endif %}
+{% if page.title %}
+  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;article&quot;</span> <span class="na">property=</span><span class="s">&quot;og:type&quot;</span><span class="nt">&gt;</span>
+{% else %}
+  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;website&quot;</span> <span class="na">property=</span><span class="s">&quot;og:type&quot;</span><span class="nt">&gt;</span>
+{% endif %}
+{% if page.description %}
+  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ page.description }}&quot;</span> <span class="na">property=</span><span class="s">&quot;og:description&quot;</span><span class="nt">&gt;</span>
+{% else %}
+  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ site.description }}&quot;</span> <span class="na">property=</span><span class="s">&quot;og:description&quot;</span><span class="nt">&gt;</span>
+{% endif %}
+{% if page.url %}
+  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}{{ page.url }}&quot;</span> <span class="na">property=</span><span class="s">&quot;og:url&quot;</span><span class="nt">&gt;</span>
+{% endif %}
+{% if page.date %}
+  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ page.date | date_to_xmlschema }}&quot;</span> <span class="na">property=</span><span class="s">&quot;article:published_time&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}/about/&quot;</span> <span class="na">property=</span><span class="s">&quot;article:author&quot;</span><span class="nt">&gt;</span>
+{% endif %}
+{% if page.image %}
+  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}/assets/img/posts/{{ page.image }}&quot;</span> <span class="na">property=</span><span class="s">&quot;og:image&quot;</span><span class="nt">&gt;</span>
+{% else %}
+  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}/assets/img/logo-high-resolution.png&quot;</span> <span class="na">property=</span><span class="s">&quot;og:image&quot;</span><span class="nt">&gt;</span>
+{% endif %}
+{% if page.tags %}
+  {% for tag in page.tags %}
+  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ tag }}&quot;</span> <span class="na">property=</span><span class="s">&quot;article:tag&quot;</span><span class="nt">&gt;</span>
+  {% endfor %}
+{% endif %}
+</code></pre></div>
+
+
+<h2>Validate</h2>
+
+<p>To verify that your code validates, see the <a href="https://developers.facebook.com/tools/debug">Facebook Debugger</a>.</p>
+
+  </div>
+  <footer class="entry-meta entry-meta-footer">
+    <span class="icon-left icon-tag"><a href="/tag/Jekyll" rel="tag">Jekyll</a>, <a href="/tag/Open Graph" rel="tag">Open Graph</a>, <a href="/tag/Facebook" rel="tag">Facebook</a></span>
+  </footer>
+</article>
+<nav class="post-navigation" role="navigation">
   <h1 class="visuallyhidden">Post navigation</h1>
   
+    <div class="nav-previous">
+      <a class="nav-previous-link" href="http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll/" rel="prev">Supporting Twitter Cards with Jekyll</a>
+    </div>
   
-   
-  <div class="nav-next">
-    <a href="/page2/" class="nav-next-link">Older Posts</a>
-  </div>
-   
+  
 </nav>
         </div>
         <aside class="secondary vcard author" role="complementary">

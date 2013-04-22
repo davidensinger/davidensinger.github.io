@@ -103,6 +103,7 @@
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content=</span><span class="s">&quot;summary&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:site&quot;</span> <span class="na">content=</span><span class="s">&quot;@site_username&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:title&quot;</span> <span class="na">content=</span><span class="s">&quot;Title&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:url&quot;</span> <span class="na">content=</span><span class="s">&quot;URL&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content=</span><span class="s">&quot;Up than 200 characters.&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:creator&quot;</span> <span class="na">content=</span><span class="s">&quot;@creator_username&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:image:src&quot;</span> <span class="na">content=</span><span class="s">&quot;http://path/to/image.jpg&quot;</span><span class="nt">&gt;</span>
@@ -131,6 +132,16 @@
 </code></pre></div>
 
 
+<h3>URL</h3>
+
+<p>I’ve also specified a <em>site.url</em> output as an absolute path in my in my <strong>_config.yml</strong>, as well as a <em>page.url</em> output in my <strong>YAML Front Matter</strong> block.</p>
+
+<div class="highlight"><pre><code class="html">{% if page.url %}
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:url&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}{{ page.url }}&quot;</span><span class="nt">&gt;</span>
+{% endif %}
+</code></pre></div>
+
+
 <h3>Description</h3>
 
 <p>Likewise, I have a general site description and a page specific description:</p>
@@ -151,7 +162,7 @@
 
 <h3>Image</h3>
 
-<p>I’ve also set a default image, if there’s not an image for the current page. The <em>site.url</em> output is an absolute path that I’ve denoted in my <strong>_config.yml</strong>.</p>
+<p>I’ve also set a default image, if there’s not an image for the current page.</p>
 
 <div class="highlight"><pre><code class="html">{% if page.image %}
   <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:image:src&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}/path/to/image/{{ page.image }}&quot;</span><span class="nt">&gt;</span>
@@ -172,6 +183,9 @@
   <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:title&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ page.title }}&quot;</span><span class="nt">&gt;</span>
 {% else %}
   <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:title&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.title }}&quot;</span><span class="nt">&gt;</span>
+{% endif %}
+{% if page.url %}
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:url&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}{{ page.url }}&quot;</span><span class="nt">&gt;</span>
 {% endif %}
 {% if page.description %}
   <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ page.description }}&quot;</span><span class="nt">&gt;</span>
@@ -207,6 +221,10 @@
       <a class="nav-previous-link" href="http://davidensinger.com/2013/04/inline-svg-with-png-fallback/" rel="prev">Inline SVG with PNG Fallback</a>
     </div>
   
+  
+    <div class="nav-next">
+      <a class="nav-next-link" href="http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll/" rel="next">Adding Open Graph Tags to Jekyll</a>
+    </div>
   
 </nav>
         </div>
