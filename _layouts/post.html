@@ -15,7 +15,7 @@ page-class: page-post
     {{ content }}
   </div>
   <footer class="entry-meta entry-meta-footer">
-    <span class="icon-left icon-tag">{% for tag in page.tags %}<a href="/tag/{{ tag }}" rel="tag">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}</span>
+    <span class="icon-left icon-tag">{% for tag in page.tags %}<a href="/tag/{{ tag | replace:' ','-' | downcase }}" rel="tag">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}</span>
   </footer>
 </article>
 <nav class="post-navigation" role="navigation">

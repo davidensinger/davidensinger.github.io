@@ -1,0 +1,66 @@
+{% include header.html %}
+{% if page.grouptype == 'tag' %}
+<div class="gray-box">
+  <p>Posts Tagged <strong>“{{ page.tag }}”</strong></p>
+</div>
+{% elsif page.grouptype == 'category' %}
+<div class="gray-box">
+  <p>Posts Categorized <strong>“{{ page.category }}”</strong></p>
+</div>
+{% endif %}
+
+{% for post in paginator.posts %}
+<article class="post">
+  <header class="entry-header">
+    <h1 class="entry-title">
+      <a href="{{ post.url }}" rel="bookmark" title="Permalink to {{ post.title }}">{{ post.title }}</a>
+    </h1>
+    <div class="entry-meta entry-meta-header">
+      <span class="icon-left icon-entry-date entry-meta-icon">
+        <a class="entry-meta-link" href="{{ post.url }}" rel="bookmark" title="{{ post.date }}">
+          <time class="date updated" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+        </a>
+      </span>
+    </div>
+  </header>
+  <div class="entry-content">
+    {% if post.description %}
+      {{ post.description | markdownify }}
+        <a class="continue-reading" href="{{ post.url }}" rel="bookmark" title="Permalink to {{ post.title }}">Continue Reading</a>
+      {% else %}
+        {{ post.content }}
+    {% endif %}
+  </div>
+</article>
+{% endfor %}
+
+{% if page.grouptype == 'tag' %}
+	{% capture paging_root %}/tag/{{ page.tag | replace:' ','-' | downcase }}/{% endcapture %}
+{% elsif page.grouptype == 'category' %}
+	{% capture paging_root %}/category/{{ page.category | replace:' ','-' | downcase }}/{% endcapture %}
+{% else %}
+	{% capture paging_root %}/{% endcapture %}
+{% endif %}
+
+<nav class="paging-navigation" role="navigation">
+  <h1 class="visuallyhidden">Post navigation</h1>
+  {% if paginator.previous_page %}
+    <div class="nav-previous">
+      {% if paginator.previous_page == 1 %}
+      <a href="{{ paging_root }}" class="nav-previous-link">Newer Posts</a>
+      {% else %}
+      <a href="{{ paging_root }}page{{ paginator.previous_page }}" class="nav-previous-link">Newer Posts</a>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if paginator.next_page %}
+  <div class="nav-next">
+    <a href="{{ paging_root }}page{{ paginator.next_page }}" class="nav-next-link">Older Posts</a>
+  </div>
+  {% endif %}
+</nav>
+
+{% assign type = nil %}
+{% assign paging_root = nil %}
+{% include footer.html %}

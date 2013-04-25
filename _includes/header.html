@@ -13,10 +13,14 @@
       <title>{{ page.title }} &ndash; {{ site.title }}</title>
       <meta content="{{ page.title }}" property="og:title">
       <meta content="{{ page.title }}" name="twitter:title">
-    {% elsif page.layout == "tag" %}
+    {% elsif page.grouptype == "tag" %}
       <title>Posts Tagged “{{ page.tag }}” &ndash; {{ site.title }}</title>
-      <meta content="Posts Tagged “{{ page.tag }}”" property="og:title">
-      <meta content="Posts Tagged “{{ page.tag }}”" name="twitter:title">
+      <meta content="Posts Tagged “{{ page.tag }}” &ndash; {{ site.title }}" property="og:title">
+      <meta content="Posts Tagged “{{ page.tag }}” &ndash; {{ site.title }}" name="twitter:title">
+    {% elsif page.grouptype == "category" %}
+      <title>Posts Categorized “{{ page.category }}” &ndash; {{ site.title }}</title>
+      <meta content="Posts Categorized “{{ page.category }}” &ndash; {{ site.title }}" property="og:title">
+      <meta content="Posts Categorized “{{ page.category }}” &ndash; {{ site.title }}" name="twitter:title">
     {% else %}
       <title>{{ site.title }}</title>
       <meta content="{{ site.title }}" property="og:title">

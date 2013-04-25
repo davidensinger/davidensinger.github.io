@@ -9,10 +9,16 @@ page-class: page-home
         <a href="{{ post.url }}" rel="bookmark" title="Permalink to {{ post.title }}">{{ post.title }}</a>
       </h1>
       <div class="entry-meta entry-meta-header">
-        <span class="icon-left icon-entry-date entry-meta-icon">
+        <span class="icon-left entry-meta-icon icon-entry-date">
           <a class="entry-meta-link" href="{{ post.url }}" rel="bookmark" title="{{ post.date }}">
             <time class="date updated" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
           </a>
+        </span>
+        <span class="icon-left entry-meta-icon icon-category">
+          {% for category in post.categories %}
+            <a href="/category/{{ category | replace:' ','-' | downcase }}" rel="category">{{ category }}</a>
+            {% if forloop.last == false %}, {% endif %}
+          {% endfor %}
         </span>
       </div>
     </header>
@@ -38,10 +44,10 @@ page-class: page-home
       {% endif %}
     </div>
   {% endif %}
-  
-  {% if paginator.next_page %} 
+
+  {% if paginator.next_page %}
   <div class="nav-next">
     <a href="/page{{ paginator.next_page }}/" class="nav-next-link">Older Posts</a>
   </div>
-  {% endif %} 
+  {% endif %}
 </nav>
