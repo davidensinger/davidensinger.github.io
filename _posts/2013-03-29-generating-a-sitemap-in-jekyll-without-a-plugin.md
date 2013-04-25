@@ -4,10 +4,8 @@ layout: post
 slug: generating-a-sitemap-in-jekyll-without-a-plugin
 title: Generating a Sitemap in Jekyll without a Plugin
 description: A guide to generating a sitemap.xml in Jekyll without using a plugin.
-tags:
-- Jekyll
-- Sitemap
-- XML
+category: Development
+tags: [Jekyll, Sitemap, XML]
 ---
 
 During my switch from **WordPress** to **Jekyll**, I decided to simplify the scope of my site. One of the changes I made was to remove my portfolio, as I’d like to put more of an emphasis on my writing than on my past projects. As a result, I culled many pages that were indexed by search engines. This meant that I needed a proper **sitemap.xml**, principally for use with Google’s [Webmaster Tools](www.google.com/webmasters/tools).
@@ -21,7 +19,7 @@ My cursory search for a plugin-less solution led to this [sitemap.xml](https://g
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{% raw %} 
+{% raw %}
   {% for post in site.posts %}
   <url>
     <loc>{{ site.baseurl }}{{ post.url }}</loc>

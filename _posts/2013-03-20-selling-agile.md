@@ -4,8 +4,8 @@ layout: post
 slug: selling-agile
 title: Selling Agile
 description: Thoughts on generating buy in for Agile development techniques in an organization.
-tags:
-- Agile
+category: Development
+tags: [Agile]
 ---
 
 Throughout the last year my team has been trying out a smattering of **Agile** approaches to software development. We’re largely self-taught and as a result, we’ve had mixed success with the framework (although that’s by no means an indictment against it). It’s fair to say that our successes (or occasionally our lack thereof) are usually in direct relation to our efforts.

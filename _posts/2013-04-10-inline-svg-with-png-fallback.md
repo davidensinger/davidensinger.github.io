@@ -4,11 +4,8 @@ layout: post
 slug: inline-svg-with-png-fallback
 title: Inline SVG with PNG Fallback
 description: How to use inline SVG with PNG fallback, courtesy of foreignObject and base64.
-tags:
-- base64
-- foreignObject
-- PNG
-- SVG
+category: Development
+tags: [base64, foreignObject, PNG, SVG]
 ---
 
 Notice anything different about my balloon logo? Probably not, as the change is subtle, but the image is now an **inline SVG** instead of an **SVG background image**. I did this to allow the colors of the balloon to darken on hover.
@@ -30,7 +27,7 @@ Thankfully, I stumbled upon [a better solution](http://www.kaizou.org/2009/03/in
 > The `foreignObject` element allows for inclusion of a foreign
 > XML namespace which has its graphical content drawn by a
 > different user agent.
-> 
+>
 > <cite>[Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/SVG/Element/foreignObject)</cite>
 
 With `foreignObject` I can insert fallback **HTML** into the SVG, which will look like this:
@@ -44,7 +41,7 @@ With `foreignObject` I can insert fallback **HTML** into the SVG, which will loo
 </svg>
 {% endhighlight %}
 
-The final step is to put the SVG code into a **group** (`g`) and then wrap the group and foreignObject in a **switch** (`switch`) element. The switch will then evaluate the children elements in order. The first element that has the proper attributes will be rendered, which will be the the group with the SVG. 
+The final step is to put the SVG code into a **group** (`g`) and then wrap the group and foreignObject in a **switch** (`switch`) element. The switch will then evaluate the children elements in order. The first element that has the proper attributes will be rendered, which will be the the group with the SVG.
 
 {% highlight xml %}
 <svg>

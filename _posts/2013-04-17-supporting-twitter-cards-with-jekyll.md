@@ -4,10 +4,8 @@ layout: post
 slug: supporting-twitter-cards-with-jekyll
 title: Supporting Twitter Cards with Jekyll
 description: How to add support for Summary Twitter Cards to Jekyll.
-tags:
-- Jekyll
-- Twitter
-- Twitter Cards
+categories: [Development, Social Media]
+tags: [Jekyll, Twitter, Twitter Cards]
 ---
 
 I just added support for [Twitter Cards](https://dev.twitter.com/docs/cards) to my website because I wanted more control over how my site displays on Twitter. There are six different card types, although the only one that’s appropriate for my site is the [Summary Card](http://dev.twitter.com/docs/cards/types/summary-card), which lets users preview site content within a tweet.
