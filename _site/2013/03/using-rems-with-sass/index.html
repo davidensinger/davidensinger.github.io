@@ -25,7 +25,6 @@
     <meta content="@DavidEnsinger" name="twitter:site">
     <meta content="@DavidEnsinger" name="twitter:creator">
     <link href="/atom.xml" rel="alternate" title="Atom" type="application/atom+xml">
-    <link href="/rss.xml" rel="alternate" title="RSS" type="application/rss+xml">
     <link href="/sitemap.xml" rel="sitemap" title="Sitemap" type="application/xml">
     <link href="/favicon.ico" rel="shortcut icon">
     <link href="http://davidensinger.com/2013/03/using-rems-with-sass/" rel="canonical">
@@ -91,6 +90,14 @@
       <span class="icon-left icon-entry-date">
         <time class="date updated" datetime="2013-03-21T14:24:00-04:00">March 21, 2013</time>
       </span>
+      
+        <span class="icon-left entry-meta-icon icon-category">
+          
+            <a href="/category/development" rel="category">Development</a>
+            
+          
+        </span>
+      
     </div>
   </header>
   <div class="entry-content">
@@ -145,7 +152,7 @@
   <span class="na">$font-size</span><span class="o">:</span> <span class="nv">$base-font-size</span><span class="p">;</span>
   <span class="na">$px-values</span><span class="o">:</span> <span class="p">();</span>
   <span class="na">$rem-values</span><span class="o">:</span> <span class="p">();</span>
- 
+
   <span class="c1">// Loop through the $values list</span>
   <span class="k">@each</span> <span class="err">$</span><span class="nt">value</span> <span class="nt">in</span> <span class="err">$</span><span class="nt">values</span> <span class="p">{</span>
     <span class="c1">// For each property value, if it&#39;s in rem or px, derive both rem and</span>
@@ -174,7 +181,7 @@
       <span class="na">$rem-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$rem-values</span><span class="o">,</span> <span class="si">#{</span><span class="nv">$value</span><span class="si">}</span><span class="n">rem</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
- 
+
   <span class="c1">// output the converted rules</span>
   <span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">property</span><span class="p">}</span><span class="nd">:</span> <span class="err">$</span><span class="nt">px-values</span><span class="o">;</span>
   <span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">property</span><span class="p">}</span><span class="nd">:</span> <span class="err">$</span><span class="nt">rem-values</span><span class="o">;</span>
@@ -185,9 +192,11 @@
 <p>I’m now able to use rems without worrying about browser support, which affords me more time to design and write.</p>
 
   </div>
-  <footer class="entry-meta entry-meta-footer">
-    <span class="icon-left icon-tag"><a href="/tag/Mixin" rel="tag">Mixin</a>, <a href="/tag/Rem" rel="tag">Rem</a>, <a href="/tag/Sass" rel="tag">Sass</a></span>
-  </footer>
+  
+    <footer class="entry-meta entry-meta-footer">
+      <span class="icon-left icon-tag"><a href="/tag/mixin" rel="tag">Mixin</a>, <a href="/tag/rem" rel="tag">Rem</a>, <a href="/tag/sass" rel="tag">Sass</a></span>
+    </footer>
+  
 </article>
 <nav class="post-navigation" role="navigation">
   <h1 class="visuallyhidden">Post navigation</h1>
@@ -229,7 +238,7 @@
           &copy; 2013 David Ensinger. All rights reserved.
           <a class="link-rss" href="/atom.xml" title="Subscribe to my RSS feed">
             <span aria-hidden="true" class="icon-rss"></span>
-            <span class="visuallyhidden">RSS</span>
+            <span class="visuallyhidden">RSS Feed</span>
           </a>
         </p>
       </footer>

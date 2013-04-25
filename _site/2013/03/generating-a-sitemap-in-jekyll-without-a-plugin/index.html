@@ -25,7 +25,6 @@
     <meta content="@DavidEnsinger" name="twitter:site">
     <meta content="@DavidEnsinger" name="twitter:creator">
     <link href="/atom.xml" rel="alternate" title="Atom" type="application/atom+xml">
-    <link href="/rss.xml" rel="alternate" title="RSS" type="application/rss+xml">
     <link href="/sitemap.xml" rel="sitemap" title="Sitemap" type="application/xml">
     <link href="/favicon.ico" rel="shortcut icon">
     <link href="http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/" rel="canonical">
@@ -91,6 +90,14 @@
       <span class="icon-left icon-entry-date">
         <time class="date updated" datetime="2013-03-29T06:26:00-04:00">March 29, 2013</time>
       </span>
+      
+        <span class="icon-left entry-meta-icon icon-category">
+          
+            <a href="/category/development" rel="category">Development</a>
+            
+          
+        </span>
+      
     </div>
   </header>
   <div class="entry-content">
@@ -104,7 +111,7 @@
 
 <div class="highlight"><pre><code class="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;urlset</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd&quot;</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;</span><span class="nt">&gt;</span>
- 
+
   {% for post in site.posts %}
   <span class="nt">&lt;url&gt;</span>
     <span class="nt">&lt;loc&gt;</span>{{ site.baseurl }}{{ post.url }}<span class="nt">&lt;/loc&gt;</span>
@@ -153,9 +160,11 @@ sitemap:
 
 
   </div>
-  <footer class="entry-meta entry-meta-footer">
-    <span class="icon-left icon-tag"><a href="/tag/Jekyll" rel="tag">Jekyll</a>, <a href="/tag/Sitemap" rel="tag">Sitemap</a>, <a href="/tag/XML" rel="tag">XML</a></span>
-  </footer>
+  
+    <footer class="entry-meta entry-meta-footer">
+      <span class="icon-left icon-tag"><a href="/tag/jekyll" rel="tag">Jekyll</a>, <a href="/tag/sitemap" rel="tag">Sitemap</a>, <a href="/tag/xml" rel="tag">XML</a></span>
+    </footer>
+  
 </article>
 <nav class="post-navigation" role="navigation">
   <h1 class="visuallyhidden">Post navigation</h1>
@@ -197,7 +206,7 @@ sitemap:
           &copy; 2013 David Ensinger. All rights reserved.
           <a class="link-rss" href="/atom.xml" title="Subscribe to my RSS feed">
             <span aria-hidden="true" class="icon-rss"></span>
-            <span class="visuallyhidden">RSS</span>
+            <span class="visuallyhidden">RSS Feed</span>
           </a>
         </p>
       </footer>

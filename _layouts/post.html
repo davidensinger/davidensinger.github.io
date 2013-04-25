@@ -9,14 +9,24 @@ page-class: page-post
       <span class="icon-left icon-entry-date">
         <time class="date updated" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
       </span>
+      {% if page.categories != empty %}
+        <span class="icon-left entry-meta-icon icon-category">
+          {% for category in page.categories %}
+            <a href="/category/{{ category | replace:' ','-' | downcase }}" rel="category">{{ category }}</a>
+            {% if forloop.last == false %}, {% endif %}
+          {% endfor %}
+        </span>
+      {% endif %}
     </div>
   </header>
   <div class="entry-content">
     {{ content }}
   </div>
-  <footer class="entry-meta entry-meta-footer">
-    <span class="icon-left icon-tag">{% for tag in page.tags %}<a href="/tag/{{ tag | replace:' ','-' | downcase }}" rel="tag">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}</span>
-  </footer>
+  {% if page.tags != empty %}
+    <footer class="entry-meta entry-meta-footer">
+      <span class="icon-left icon-tag">{% for tag in page.tags %}<a href="/tag/{{ tag | replace:' ','-' | downcase }}" rel="tag">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}</span>
+    </footer>
+  {% endif %}
 </article>
 <nav class="post-navigation" role="navigation">
   <h1 class="visuallyhidden">Post navigation</h1>

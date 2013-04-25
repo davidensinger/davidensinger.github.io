@@ -14,12 +14,14 @@ page-class: page-home
             <time class="date updated" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
           </a>
         </span>
-        <span class="icon-left entry-meta-icon icon-category">
-          {% for category in post.categories %}
-            <a href="/category/{{ category | replace:' ','-' | downcase }}" rel="category">{{ category }}</a>
-            {% if forloop.last == false %}, {% endif %}
-          {% endfor %}
-        </span>
+        {% if post.categories != empty %}
+          <span class="icon-left entry-meta-icon icon-category">
+            {% for category in post.categories %}
+              <a href="/category/{{ category | replace:' ','-' | downcase }}" rel="category">{{ category }}</a>
+              {% if forloop.last == false %}, {% endif %}
+            {% endfor %}
+          </span>
+        {% endif %}
       </div>
     </header>
     <div class="entry-content">
