@@ -34,11 +34,12 @@ There are many different [object types](http://ogp.me/#types) to which you may c
 
 #### Article
 
-The article object type has several possible values, but I’m only using **article:published_time**, **article:author**, and **article:tag** for my site:
+The article object type has several possible values, but I’m only using **article:published_time**, **article:author**, **article:section**, and **article:tag** for my site:
 
 {% highlight html %}
 <meta content="Time" property="article:published_time">
 <meta content="Author" property="article:author">
+<meta content="Category" property="article:section">
 <meta content="Tag" property="article:tag">
 {% endhighlight %}
 
@@ -47,6 +48,22 @@ The article object type has several possible values, but I’m only using **arti
 <div class="yellow-box">
   <p><strong>Please Note:</strong> I’ve skipped the explanations for some of the following conditional statements because they’re identical to those that I wrote about in my <a href="http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll/">Supporting Twitter Cards with Jekyll</a> post. See that post for further information.</p>
 </div>
+
+For the categories and tags, I’m using a for loop to output the appropriate meta tags. Open Graph tags only allow for one section, so I limit that to the first category. It’s rather arbitrary, but it works.
+
+{% highlight html %}{% raw %}
+{% if page.categories %}
+  {% for category in page.categories limit:1 %}
+  <meta content="{{ category }}" property="article:section">
+  {% endfor %}
+{% endif %}
+{% if page.tags %}
+  {% for tag in page.tags %}
+  <meta content="{{ tag }}" property="article:tag">
+  {% endfor %}
+{% endif %}
+{% endraw %}
+{% endhighlight %}
 
 Here’s the final snippet of code with the appropriate meta data:
 
@@ -78,6 +95,11 @@ Here’s the final snippet of code with the appropriate meta data:
   <meta content="{{ site.url }}/assets/img/posts/{{ page.image }}" property="og:image">
 {% else %}
   <meta content="{{ site.url }}/assets/img/logo-high-resolution.png" property="og:image">
+{% endif %}
+{% if page.categories %}
+  {% for category in page.categories limit:1 %}
+  <meta content="{{ category }}" property="article:section">
+  {% endfor %}
 {% endif %}
 {% if page.tags %}
   {% for tag in page.tags %}

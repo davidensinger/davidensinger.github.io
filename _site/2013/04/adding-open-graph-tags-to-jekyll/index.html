@@ -46,6 +46,11 @@
     
     
       
+      <meta property="article:section" content="Development">
+      
+    
+    
+      
       <meta property="article:tag" content="Jekyll">
       
       <meta property="article:tag" content="Open Graph">
@@ -119,10 +124,11 @@
 
 <h4>Article</h4>
 
-<p>The article object type has several possible values, but I’m only using <strong>article:published_time</strong>, <strong>article:author</strong>, and <strong>article:tag</strong> for my site:</p>
+<p>The article object type has several possible values, but I’m only using <strong>article:published_time</strong>, <strong>article:author</strong>, <strong>article:section</strong>, and <strong>article:tag</strong> for my site:</p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Time&quot;</span> <span class="na">property=</span><span class="s">&quot;article:published_time&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Author&quot;</span> <span class="na">property=</span><span class="s">&quot;article:author&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Category&quot;</span> <span class="na">property=</span><span class="s">&quot;article:section&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Tag&quot;</span> <span class="na">property=</span><span class="s">&quot;article:tag&quot;</span><span class="nt">&gt;</span>
 </code></pre></div>
 
@@ -132,6 +138,21 @@
 <div class="yellow-box">
   <p><strong>Please Note:</strong> I’ve skipped the explanations for some of the following conditional statements because they’re identical to those that I wrote about in my <a href="http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll/">Supporting Twitter Cards with Jekyll</a> post. See that post for further information.</p>
 </div>
+
+
+<p>For the categories and tags, I’m using a for loop to output the appropriate meta tags. Open Graph tags only allow for one section, so I limit that to the first category. It’s rather arbitrary, but it works.</p>
+
+<div class="highlight"><pre><code class="html">{% if page.categories %}
+  {% for category in page.categories limit:1 %}
+  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ category }}&quot;</span> <span class="na">property=</span><span class="s">&quot;article:section&quot;</span><span class="nt">&gt;</span>
+  {% endfor %}
+{% endif %}
+{% if page.tags %}
+  {% for tag in page.tags %}
+  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ tag }}&quot;</span> <span class="na">property=</span><span class="s">&quot;article:tag&quot;</span><span class="nt">&gt;</span>
+  {% endfor %}
+{% endif %}
+</code></pre></div>
 
 
 <p>Here’s the final snippet of code with the appropriate meta data:</p>
@@ -163,6 +184,11 @@
   <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}/assets/img/posts/{{ page.image }}&quot;</span> <span class="na">property=</span><span class="s">&quot;og:image&quot;</span><span class="nt">&gt;</span>
 {% else %}
   <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}/assets/img/logo-high-resolution.png&quot;</span> <span class="na">property=</span><span class="s">&quot;og:image&quot;</span><span class="nt">&gt;</span>
+{% endif %}
+{% if page.categories %}
+  {% for category in page.categories limit:1 %}
+  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ category }}&quot;</span> <span class="na">property=</span><span class="s">&quot;article:section&quot;</span><span class="nt">&gt;</span>
+  {% endfor %}
 {% endif %}
 {% if page.tags %}
   {% for tag in page.tags %}

@@ -5,7 +5,7 @@
   
   <link href="http://davidensinger.com/"/>
   <link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/>
-  <updated>2013-04-26T15:11:49-04:00</updated>
+  <updated>2013-04-26T16:27:29-04:00</updated>
   <id>http://davidensinger.com/</id>
   <author>
     <name>David Ensinger</name>
@@ -49,10 +49,11 @@
 
 <p>&lt;h4&gt;Article&lt;/h4&gt;</p>
 
-<p>&lt;p&gt;The article object type has several possible values, but I’m only using &lt;strong&gt;article:published_time&lt;/strong&gt;, &lt;strong&gt;article:author&lt;/strong&gt;, and &lt;strong&gt;article:tag&lt;/strong&gt; for my site:&lt;/p&gt;</p>
+<p>&lt;p&gt;The article object type has several possible values, but I’m only using &lt;strong&gt;article:published_time&lt;/strong&gt;, &lt;strong&gt;article:author&lt;/strong&gt;, &lt;strong&gt;article:section&lt;/strong&gt;, and &lt;strong&gt;article:tag&lt;/strong&gt; for my site:&lt;/p&gt;</p>
 
 <p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Time&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;article:published_time&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Author&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;article:author&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Category&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;article:section&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Tag&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;article:tag&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
 
@@ -61,6 +62,20 @@
 <p>&lt;div class=&quot;yellow-box&quot;&gt;
   &lt;p&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; I’ve skipped the explanations for some of the following conditional statements because they’re identical to those that I wrote about in my &lt;a href=&quot;http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll/&quot;&gt;Supporting Twitter Cards with Jekyll&lt;/a&gt; post. See that post for further information.&lt;/p&gt;
 &lt;/div&gt;</p>
+
+<p>&lt;p&gt;For the categories and tags, I’m using a for loop to output the appropriate meta tags. Open Graph tags only allow for one section, so I limit that to the first category. It’s rather arbitrary, but it works.&lt;/p&gt;</p>
+
+<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;{% if page.categories %}
+  {% for category in page.categories limit:1 %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ category }}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;article:section&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  {% endfor %}
+{% endif %}
+{% if page.tags %}
+  {% for tag in page.tags %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ tag }}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;article:tag&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  {% endfor %}
+{% endif %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
 
 <p>&lt;p&gt;Here’s the final snippet of code with the appropriate meta data:&lt;/p&gt;</p>
 
@@ -91,6 +106,11 @@
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ site.url }}/assets/img/posts/{{ page.image }}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:image&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
 {% else %}
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ site.url }}/assets/img/logo-high-resolution.png&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;og:image&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+{% endif %}
+{% if page.categories %}
+  {% for category in page.categories limit:1 %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ category }}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;article:section&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  {% endfor %}
 {% endif %}
 {% if page.tags %}
   {% for tag in page.tags %}

@@ -65,6 +65,11 @@
       <meta property="og:image" content="{{ site.url }}/assets/img/logo-high-resolution.png">
       <meta name="twitter:image:src" content="{{ site.url }}/assets/img/logo-high-resolution.png">
     {% endif %}
+    {% if page.categories %}
+      {% for category in page.categories limit:1 %}
+      <meta property="article:section" content="{{ category }}">
+      {% endfor %}
+    {% endif %}
     {% if page.tags %}
       {% for tag in page.tags %}
       <meta property="article:tag" content="{{ tag }}">
