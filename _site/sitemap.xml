@@ -2,6 +2,15 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://davidensinger.com/2013/05/setting-up-google-author-rich-snippets/</loc>
+    
+    <lastmod>2013-05-03T06:49:00-04:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
     <loc>http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll/</loc>
     
     <lastmod>2013-04-21T16:05:00-04:00</lastmod>
@@ -92,6 +101,14 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
