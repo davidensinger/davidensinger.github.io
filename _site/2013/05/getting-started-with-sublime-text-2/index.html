@@ -10,15 +10,15 @@
     <link href="//themes.googleusercontent.com" rel="dns-prefetch">
     <link href="//www.google-analytics.com" rel="dns-prefetch">
     
-      <title>Setting the DNS for GitHub Pages on Namecheap &ndash; Development, design, and more by David Ensinger</title>
-      <meta content="Setting the DNS for GitHub Pages on Namecheap" property="og:title">
-      <meta content="Setting the DNS for GitHub Pages on Namecheap" name="twitter:title">
+      <title>Getting Started with Sublime Text 2 &ndash; Development, design, and more by David Ensinger</title>
+      <meta content="Getting Started with Sublime Text 2" property="og:title">
+      <meta content="Getting Started with Sublime Text 2" name="twitter:title">
     
     <meta content="Development, design, and more by David Ensinger" property="og:site_name">
     
-      <meta content="How to properly set up the DNS on Namecheap for your custom domain with GitHub Pages." name="description">
-      <meta content="How to properly set up the DNS on Namecheap for your custom domain with GitHub Pages." property="og:description">
-      <meta content="How to properly set up the DNS on Namecheap for your custom domain with GitHub Pages." name="twitter:description">
+      <meta content="A quick start guide to configuring Sublime Text 2." name="description">
+      <meta content="A quick start guide to configuring Sublime Text 2." property="og:description">
+      <meta content="A quick start guide to configuring Sublime Text 2." name="twitter:description">
     
     <meta content="David Ensinger" name="author">
     <link href="https://plus.google.com/111951762509840042073/posts" rel="author">
@@ -27,22 +27,22 @@
     <link href="/atom.xml" rel="alternate" title="Atom" type="application/atom+xml">
     <link href="/sitemap.xml" rel="sitemap" title="Sitemap" type="application/xml">
     <link href="/favicon.ico" rel="shortcut icon">
-    <link href="http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/" rel="canonical">
+    <link href="http://davidensinger.com/2013/05/getting-started-with-sublime-text-2/" rel="canonical">
     
       <meta content="article" property="og:type">
     
     <meta content="summary" name="twitter:card">
     
-      <meta content="http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/" property="og:url">
-      <meta content="http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/" name="twitter:url">
+      <meta content="http://davidensinger.com/2013/05/getting-started-with-sublime-text-2/" property="og:url">
+      <meta content="http://davidensinger.com/2013/05/getting-started-with-sublime-text-2/" name="twitter:url">
     
     
-      <meta content="2013-03-27T16:05:00-04:00" property="article:published_time">
+      <meta content="2013-05-14T12:12:00-04:00" property="article:published_time">
       <meta content="http://davidensinger.com/about/" property="article:author">
     
     
-      <meta property="og:image" content="http://davidensinger.com/assets/img/posts/2013-03-27-namecheap-all-host-records.png">
-      <meta name="twitter:image:src" content="http://davidensinger.com/assets/img/posts/2013-03-27-namecheap-all-host-records.png">
+      <meta property="og:image" content="http://davidensinger.com/assets/img/logo-high-resolution.png">
+      <meta name="twitter:image:src" content="http://davidensinger.com/assets/img/logo-high-resolution.png">
     
     
       
@@ -51,13 +51,7 @@
     
     
       
-      <meta property="article:tag" content="DNS">
-      
-      <meta property="article:tag" content="GitHub">
-      
-      <meta property="article:tag" content="Jekyll">
-      
-      <meta property="article:tag" content="Namecheap">
+      <meta property="article:tag" content="Sublime Text 2">
       
     
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600" rel="stylesheet" type="text/css">
@@ -92,51 +86,112 @@
         <div class="primary" id="content" role="main">
 <article class="post hentry">
   <header class="entry-header">
-    <h1 class="entry-title">Setting the DNS for GitHub Pages on Namecheap</h1>
+    <h1 class="entry-title">Getting Started with Sublime Text 2</h1>
     <div class="entry-meta entry-meta-header">
       <span class="icon-left entry-meta-icon icon-entry-date">
-        <time class="date updated" datetime="2013-03-27T16:05:00-04:00">March 27, 2013</time>
+        <time class="date updated" datetime="2013-05-14T12:12:00-04:00">May 14, 2013</time>
       </span>
     </div>
   </header>
   <div class="entry-content">
-    <p>After pushing my site to <strong>GitHub</strong> and verifying that it worked at <a href="http://davidensinger.github.io/">davidensinger.github.io</a>, I then went to set up my custom domain name. The <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">documentation</a> provided by GitHub is clear on the subject, but I still managed to forget about my subdomains. For more than eight hours, anyone who attempted to visit <a href="http://davidensinger.com/">davidensinger.com</a> was served with a 404, which is <a href="https://twitter.com/DavidEnsinger/status/316642135216619522">rather embarrassing</a> for one who makes a living as a developer.</p>
+    <p>Although I switched to <a href="http://www.sublimetext.com/">Sublime Text 2</a> more than a year ago, I only recently decided to take a good look at my configuration, with the end goal of increasing my productivity. What follows are my settings, which will hopefully help others work a bit smarter. If you’ve got any useful tips, please <a href="https://twitter.com/davidensinger">tweet</a> at me!</p>
 
-<p>In the interest of helping others avoid the mistakes I made, here’s a guide to setting up the DNS for GitHub pages on <a href="http://www.namecheap.com/?aff=32887">Namecheap</a>, my registrar of choice.</p>
+<h2>Pasting</h2>
+
+<p>Some projects use tabs, while others use spaces. It’s nice to easily copy and paste snippets of code between the two, without worrying about the indentation.</p>
+
+<p>To adjust your indentation to match the context in which it’s pasted, use “Paste and Indent” for <strong>⌘V</strong> instead of the standard “Paste.”</p>
+
+<p>To do this, add the following in your <strong>Key Bindings &ndash; User file</strong>:</p>
+
+<div class="highlight"><pre><code class="json"><span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;super+v&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;paste_and_indent&quot;</span> <span class="p">}</span><span class="err">,</span> 
+<span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;super+shift+v&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;paste&quot;</span> <span class="p">}</span>
+</code></pre></div>
+
+
+<h2>Shortcuts</h2>
+
+<p>There are a lot of really useful keyboard shortcuts in Sublime Text 2. Instead of listing them all, I’m going to list some favorites. With a quick search of the internet you’ll surely find more to integrate into your workflow.</p>
+
+<ul>
+<li><strong>⌘L</strong> &ndash; Select line</li>
+<li><strong>⌘D</strong> &ndash; Select word (use this to select other occurrences, which is great for multiple editing)</li>
+<li><strong>⌘P</strong> &ndash; Goto anything (use <strong>#</strong> to search within file and <strong>:</strong> to go to a line number)</li>
+<li><strong>⌘⌃G</strong> &ndash; Select all occurrences of current word (again, helpful for multiple editing)</li>
+<li><strong>⌃⌘↑ (up) or ↓(down)</strong> &ndash; Swap lines either up or down</li>
+</ul>
+
 
 <div class="yellow-box">
-  <p><strong>Please Note:</strong> This guide assumes that you’re using a top-level domain (TLD).</p>
+  <p><strong>More Info:</strong> Here’s a <a href="https://gist.github.com/lucasfais/1207002">Gist of Useful Shortcuts</a> by <a href="https://twitter.com/lucasfais">@lucasfais</a>.</p>
 </div>
 
 
-<h2>Add a CNAME File to your Repo</h2>
+<h2>Package Control</h2>
 
-<p>Create a new file and put your domain name in it. Save it as CNAME.</p>
+<p>One of the best things about Sublime Text 2 is how extensible it is. There are hundreds of community developed plugins and with <a href="http://wbond.net/sublime_packages/package_control">Package Control</a> it’s quick and easy to install, update, and remove them from your installation.</p>
 
-<pre><code>yourtlddomainname.com
-</code></pre>
-
-<h2>Find your Host Records</h2>
-
-<p><img src="/assets/img/posts/2013-03-27-namecheap-all-host-records.png" alt="Image of All Host Records" class="media-right img-border" /></p>
-
-<p>Log into your Namecheap account, select the appropriate domain name, and then go to <strong>All Host Records</strong>.</p>
-
-<h2>Set up the DNS</h2>
+<h3>Installation</h3>
 
 <ol>
-<li>Set the <strong>@</strong> (used to denote the domain name for which you’re configuring the DNS) <strong>IP Address/URL</strong> to <code>204.232.175.78</code> and the <strong>Record Type</strong> to <code>A (Address)</code> with a <strong>TTL</strong> (an acronym for <strong>Time To Live</strong> that refers to the capability of the DNS servers to cache DNS records) of <code>1800</code>.</li>
-<li>Set the <strong>www</strong> (the subdomain www) <strong>IP Address/URL</strong> to <code>username.github.io</code> and the <strong>Record Type</strong> to <code>CNAME (Alias)</code> with a <strong>TTL</strong> of <code>1800</code>.</li>
+<li>Open Sublime Text 2 and press <strong>ctrl `</strong> (control backtick) to open the editor’s console.</li>
+<li>Paste in the following code:</li>
 </ol>
 
 
-<p><img src="/assets/img/posts/2013-03-27-namecheap-dns-settings.png" alt="Image of DNS settings" class="media-center img-border" /></p>
+<div class="highlight"><pre><code class="python"><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span><span class="nn">os</span><span class="p">;</span> <span class="n">pf</span><span class="o">=</span><span class="s">&#39;Package Control.sublime-package&#39;</span><span class="p">;</span> <span class="n">ipp</span><span class="o">=</span><span class="n">sublime</span><span class="o">.</span><span class="n">installed_packages_path</span><span class="p">();</span> <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">ipp</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">ipp</span><span class="p">)</span> <span class="k">else</span> <span class="bp">None</span><span class="p">;</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">install_opener</span><span class="p">(</span><span class="n">urllib2</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">urllib2</span><span class="o">.</span><span class="n">ProxyHandler</span><span class="p">()));</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ipp</span><span class="p">,</span><span class="n">pf</span><span class="p">),</span><span class="s">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://sublime.wbond.net/&#39;</span><span class="o">+</span><span class="n">pf</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;%20&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">read</span><span class="p">());</span> <span class="k">print</span><span class="p">(</span><span class="s">&#39;Please restart Sublime Text to finish installation&#39;</span><span class="p">)</span>
+</code></pre></div>
 
-<p>Save and then you’re all set! Please note, however that it may take some time for the changes to the DNS to propagate.</p>
 
-<div class="gray-box">
-  <p><strong>More Info:</strong> Google has a pretty good <a href="http://support.google.com/a/bin/answer.py?hl=en&answer=48090">Basic Guide to DNS</a>.</p>
-</div>
+<h3>Favorite Packages</h3>
+
+<ul>
+<li><a href="https://github.com/alienhard/SublimeAllAutocomplete">AllAutocomplete</a> &ndash; Allows autocompletion across open files</li>
+<li><a href="http://gcollazo.github.io/BrowserRefresh-Sublime/">BrowserRefresh-Sublime</a> &ndash; Refresh your browser from within the editor</li>
+<li><a href="https://github.com/jisaacks/GitGutter">GitGutter</a> &ndash; See git diffs in the gutter</li>
+<li><a href="https://github.com/speilberg0/GoldenRatio">GoldenRatio</a> &ndash; Resize active group by the golden ratio</li>
+<li><a href="https://github.com/titoBouzout/SideBarEnhancements">SideBarEnhancements</a> &ndash; Adds useful file operations to the sidebar, such as “New file”, “New folder”, etc</li>
+<li><a href="https://github.com/SublimeLinter/SublimeLinter">SublimeLinter</a> &ndash; Lint code as you type</li>
+<li><a href="https://github.com/SublimeText/TrailingSpaces">TrailingSpaces</a> &ndash; Strips trailing whitespace from files</li>
+</ul>
+
+
+<p>There are also innumerable packages to support syntax highlighting, linting, and snippets in any and all languages. You can easily <a href="http://wbond.net/sublime_packages/community">discover these via Package Control</a>.</p>
+
+<h2>Spaces</h2>
+
+<p>Open <strong>TrailingSpace&rsquo;s</strong> preferences (<strong>Preferences › Package Settings › TrailingSpaces › Settings &ndash; User</strong>), and add:</p>
+
+<div class="highlight"><pre><code class="json"><span class="s2">&quot;trailing_spaces_include_current_line&quot;</span><span class="err">:</span> <span class="kc">false</span>
+</code></pre></div>
+
+
+<p>Also add this to your global user preferences (<strong>⌘,</strong>):</p>
+
+<div class="highlight"><pre><code class="json"><span class="s2">&quot;trim_trailing_white_space_on_save&quot;</span><span class="err">:</span> <span class="kc">true</span>
+</code></pre></div>
+
+
+<h2>Tabs to Spaces</h2>
+
+<p>The default indentation style uses tabs instead of spaces. If you want to change this, go to your user preferences (<strong>Preferences › Settings &ndash; User</strong> or <strong>⌘,</strong>) and add:</p>
+
+<div class="highlight"><pre><code class="json"><span class="s2">&quot;tab_size&quot;</span><span class="err">:</span> <span class="mi">2</span><span class="err">,</span>
+<span class="s2">&quot;translate_tabs_to_spaces&quot;</span><span class="err">:</span> <span class="kc">true</span>
+</code></pre></div>
+
+
+<h2>Other Resources</h2>
+
+<p>There are a multitude of resources available to users of Sublime Text 2. Here are some good ones to read through:</p>
+
+<ul>
+<li><a href="http://www.sublimetext.com/docs/2/">Official Documentation</a></li>
+<li><a href="http://docs.sublimetext.info/en/latest/index.html">Unofficial Documentation</a></li>
+<li><a href="http://blog.alexmaccaw.com/sublime-text">Setting up Sublime Text 2</a></li>
+<li><a href="http://robdodson.me/blog/2012/06/23/sublime-text-2-tips-and-shortcuts/">Sublime Text 2 Tips and Shortcuts</a></li>
+<li><a href="http://whiletruecode.com/post/7-handy-text-manipulation-tricks-sublime-text-2">7 handy text manipulation tricks in Sublime Text 2</a></li>
+</ul>
 
 
   </div>
@@ -144,13 +199,7 @@
     <footer class="entry-meta entry-meta-footer">
       <span class="icon-left entry-meta-icon icon-tag">
         
-        <a href="/tag/dns" rel="tag">DNS</a>
-        , 
-        <a href="/tag/github" rel="tag">GitHub</a>
-        , 
-        <a href="/tag/jekyll" rel="tag">Jekyll</a>
-        , 
-        <a href="/tag/namecheap" rel="tag">Namecheap</a>
+        <a href="/tag/sublime-text-2" rel="tag">Sublime Text 2</a>
         
       </span>
       
@@ -168,13 +217,9 @@
   <h1 class="visuallyhidden">Post navigation</h1>
   
     <div class="nav-previous">
-      <a class="nav-previous-link" href="http://davidensinger.com/2013/03/using-rems-with-sass/" rel="prev">Using Rems with Sass</a>
+      <a class="nav-previous-link" href="http://davidensinger.com/2013/05/setting-up-google-author-rich-snippets/" rel="prev">Setting Up Google Author Rich Snippets</a>
     </div>
   
-  
-    <div class="nav-next">
-      <a class="nav-next-link" href="http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/" rel="next">Generating a Sitemap in Jekyll without a Plugin</a>
-    </div>
   
 </nav>
         </div>

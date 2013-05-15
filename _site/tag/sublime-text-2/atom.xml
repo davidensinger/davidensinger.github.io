@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  
+    <title>Posts Tagged “Sublime Text 2” &ndash; Development, design, and more by David Ensinger</title>
+  
+  <link href="http://davidensinger.com/"/>
+  <link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/>
+  <updated>2013-05-15T13:40:35-04:00</updated>
+  <id>http://davidensinger.com/</id>
+  <author>
+    <name>David Ensinger</name>
+    <email>hello@davidensinger.com</email>
+  </author>
+  <rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights>
+  
+	<entry>
+  <id>http://davidensinger.com/2013/05/getting-started-with-sublime-text-2</id>
+  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/05/getting-started-with-sublime-text-2/"/>
+  <title>Getting Started with Sublime Text 2</title>
+  <published>2013-05-14T12:12:00-04:00</published>
+  <updated>2013-05-14T12:12:00-04:00</updated>
+  <author>
+    <name>David Ensinger</name>
+    <uri>http://davidensinger.com/</uri>
+  </author>
+  <content type="html"><![CDATA[
+    <p>&lt;p&gt;Although I switched to &lt;a href=&quot;http://www.sublimetext.com/&quot;&gt;Sublime Text 2&lt;/a&gt; more than a year ago, I only recently decided to take a good look at my configuration, with the end goal of increasing my productivity. What follows are my settings, which will hopefully help others work a bit smarter. If you’ve got any useful tips, please &lt;a href=&quot;https://twitter.com/davidensinger&quot;&gt;tweet&lt;/a&gt; at me!&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;Pasting&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;Some projects use tabs, while others use spaces. It’s nice to easily copy and paste snippets of code between the two, without worrying about the indentation.&lt;/p&gt;</p>
+
+<p>&lt;p&gt;To adjust your indentation to match the context in which it’s pasted, use “Paste and Indent” for &lt;strong&gt;⌘V&lt;/strong&gt; instead of the standard “Paste.”&lt;/p&gt;</p>
+
+<p>&lt;p&gt;To do this, add the following in your &lt;strong&gt;Key Bindings &amp;ndash; User file&lt;/strong&gt;:&lt;/p&gt;</p>
+
+<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;quot;keys&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;super+v&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;quot;command&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;paste_and_indent&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;quot;keys&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;super+shift+v&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;quot;command&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;paste&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+
+<p>&lt;h2&gt;Shortcuts&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;There are a lot of really useful keyboard shortcuts in Sublime Text 2. Instead of listing them all, I’m going to list some favorites. With a quick search of the internet you’ll surely find more to integrate into your workflow.&lt;/p&gt;</p>
+
+<p>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;⌘L&lt;/strong&gt; &amp;ndash; Select line&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;⌘D&lt;/strong&gt; &amp;ndash; Select word (use this to select other occurrences, which is great for multiple editing)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;⌘P&lt;/strong&gt; &amp;ndash; Goto anything (use &lt;strong&gt;#&lt;/strong&gt; to search within file and &lt;strong&gt;:&lt;/strong&gt; to go to a line number)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;⌘⌃G&lt;/strong&gt; &amp;ndash; Select all occurrences of current word (again, helpful for multiple editing)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;⌃⌘↑ (up) or ↓(down)&lt;/strong&gt; &amp;ndash; Swap lines either up or down&lt;/li&gt;
+&lt;/ul&gt;</p>
+
+<p>&lt;div class=&quot;yellow-box&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;More Info:&lt;/strong&gt; Here’s a &lt;a href=&quot;https://gist.github.com/lucasfais/1207002&quot;&gt;Gist of Useful Shortcuts&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/lucasfais&quot;&gt;@lucasfais&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;</p>
+
+<p>&lt;h2&gt;Package Control&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;One of the best things about Sublime Text 2 is how extensible it is. There are hundreds of community developed plugins and with &lt;a href=&quot;http://wbond.net/sublime_packages/package_control&quot;&gt;Package Control&lt;/a&gt; it’s quick and easy to install, update, and remove them from your installation.&lt;/p&gt;</p>
+
+<p>&lt;h3&gt;Installation&lt;/h3&gt;</p>
+
+<p>&lt;ol&gt;
+&lt;li&gt;Open Sublime Text 2 and press &lt;strong&gt;ctrl `&lt;/strong&gt; (control backtick) to open the editor’s console.&lt;/li&gt;
+&lt;li&gt;Paste in the following code:&lt;/li&gt;
+&lt;/ol&gt;</p>
+
+<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;urllib2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Package Control.sublime-package&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ipp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sublime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;installed_packages_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;makedirs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ipp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ipp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urllib2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install_opener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;urllib2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;build_opener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;urllib2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ProxyHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()));&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ipp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;wb&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;urllib2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;urlopen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;http://sublime.wbond.net/&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;%20&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Please restart Sublime Text to finish installation&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+
+<p>&lt;h3&gt;Favorite Packages&lt;/h3&gt;</p>
+
+<p>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/alienhard/SublimeAllAutocomplete&quot;&gt;AllAutocomplete&lt;/a&gt; &amp;ndash; Allows autocompletion across open files&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://gcollazo.github.io/BrowserRefresh-Sublime/&quot;&gt;BrowserRefresh-Sublime&lt;/a&gt; &amp;ndash; Refresh your browser from within the editor&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/jisaacks/GitGutter&quot;&gt;GitGutter&lt;/a&gt; &amp;ndash; See git diffs in the gutter&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/speilberg0/GoldenRatio&quot;&gt;GoldenRatio&lt;/a&gt; &amp;ndash; Resize active group by the golden ratio&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/titoBouzout/SideBarEnhancements&quot;&gt;SideBarEnhancements&lt;/a&gt; &amp;ndash; Adds useful file operations to the sidebar, such as “New file”, “New folder”, etc&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/SublimeLinter/SublimeLinter&quot;&gt;SublimeLinter&lt;/a&gt; &amp;ndash; Lint code as you type&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/SublimeText/TrailingSpaces&quot;&gt;TrailingSpaces&lt;/a&gt; &amp;ndash; Strips trailing whitespace from files&lt;/li&gt;
+&lt;/ul&gt;</p>
+
+<p>&lt;p&gt;There are also innumerable packages to support syntax highlighting, linting, and snippets in any and all languages. You can easily &lt;a href=&quot;http://wbond.net/sublime_packages/community&quot;&gt;discover these via Package Control&lt;/a&gt;.&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;Spaces&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;Open &lt;strong&gt;TrailingSpace&amp;rsquo;s&lt;/strong&gt; preferences (&lt;strong&gt;Preferences › Package Settings › TrailingSpaces › Settings &amp;ndash; User&lt;/strong&gt;), and add:&lt;/p&gt;</p>
+
+<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;trailing_spaces_include_current_line&amp;quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+
+<p>&lt;p&gt;Also add this to your global user preferences (&lt;strong&gt;⌘,&lt;/strong&gt;):&lt;/p&gt;</p>
+
+<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;trim_trailing_white_space_on_save&amp;quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+
+<p>&lt;h2&gt;Tabs to Spaces&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;The default indentation style uses tabs instead of spaces. If you want to change this, go to your user preferences (&lt;strong&gt;Preferences › Settings &amp;ndash; User&lt;/strong&gt; or &lt;strong&gt;⌘,&lt;/strong&gt;) and add:&lt;/p&gt;</p>
+
+<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;tab_size&amp;quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;&amp;quot;translate_tabs_to_spaces&amp;quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+
+<p>&lt;h2&gt;Other Resources&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;There are a multitude of resources available to users of Sublime Text 2. Here are some good ones to read through:&lt;/p&gt;</p>
+
+<p>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.sublimetext.com/docs/2/&quot;&gt;Official Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://docs.sublimetext.info/en/latest/index.html&quot;&gt;Unofficial Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.alexmaccaw.com/sublime-text&quot;&gt;Setting up Sublime Text 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://robdodson.me/blog/2012/06/23/sublime-text-2-tips-and-shortcuts/&quot;&gt;Sublime Text 2 Tips and Shortcuts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://whiletruecode.com/post/7-handy-text-manipulation-tricks-sublime-text-2&quot;&gt;7 handy text manipulation tricks in Sublime Text 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</p>
+
+  ]]></content>
+</entry>
+
+</feed>

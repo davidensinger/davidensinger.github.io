@@ -46,7 +46,7 @@
     
     
       
-      <meta property="article:section" content="Development">
+      <meta property="article:section" content="development">
       
     
     
@@ -146,9 +146,9 @@
 
 <div class="highlight"><pre><code class="scss"><span class="k">@mixin</span><span class="nf"> rem</span><span class="p">(</span><span class="nv">$property</span><span class="o">,</span> <span class="nv">$values</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Create a couple of empty lists as output buffers.</span>
-  <span class="na">$font-size</span><span class="o">:</span> <span class="nv">$base-font-size</span><span class="p">;</span>
-  <span class="na">$px-values</span><span class="o">:</span> <span class="p">();</span>
-  <span class="na">$rem-values</span><span class="o">:</span> <span class="p">();</span>
+  <span class="nv">$font-size</span><span class="o">:</span> <span class="nv">$base-font-size</span><span class="p">;</span>
+  <span class="nv">$px-values</span><span class="o">:</span> <span class="p">();</span>
+  <span class="nv">$rem-values</span><span class="o">:</span> <span class="p">();</span>
 
   <span class="c1">// Loop through the $values list</span>
   <span class="k">@each</span> <span class="err">$</span><span class="nt">value</span> <span class="nt">in</span> <span class="err">$</span><span class="nt">values</span> <span class="p">{</span>
@@ -157,25 +157,25 @@
     <span class="c1">// Ensure all pixel values are rounded to the nearest pixel.</span>
     <span class="k">@if</span> <span class="nv">$value</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nv">$value</span> <span class="o">==</span> <span class="mi">0</span><span class="kt">px</span> <span class="p">{</span>
       <span class="c1">// 0 -- use it without a unit</span>
-      <span class="na">$px-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$px-values</span><span class="o">,</span> <span class="mi">0</span><span class="p">);</span>
-      <span class="na">$rem-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$rem-values</span><span class="o">,</span> <span class="mi">0</span><span class="p">);</span>
+      <span class="nv">$px-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$px-values</span><span class="o">,</span> <span class="mi">0</span><span class="p">);</span>
+      <span class="nv">$rem-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$rem-values</span><span class="o">,</span> <span class="mi">0</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">@else</span> <span class="nt">if</span> <span class="nt">type-of</span><span class="o">(</span><span class="err">$</span><span class="nt">value</span><span class="o">)</span> <span class="o">==</span> <span class="nt">number</span> <span class="nt">and</span> <span class="nt">not</span> <span class="nt">unitless</span><span class="o">(</span><span class="err">$</span><span class="nt">value</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">unit</span><span class="o">(</span><span class="err">$</span><span class="nt">value</span><span class="o">)</span> <span class="o">==</span> <span class="nt">px</span><span class="o">)</span> <span class="p">{</span>
       <span class="c1">// px value given - calculate rem value from font-size</span>
-      <span class="na">$new-rem-value</span><span class="o">:</span> <span class="nv">$value</span> <span class="o">/</span> <span class="nv">$font-size</span><span class="p">;</span>
-      <span class="na">$px-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$px-values</span><span class="o">,</span> <span class="nf">round</span><span class="p">(</span><span class="nv">$value</span><span class="p">));</span>
-      <span class="na">$rem-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$rem-values</span><span class="o">,</span> <span class="si">#{</span><span class="nv">$new-rem-value</span><span class="si">}</span><span class="n">rem</span><span class="p">);</span>
+      <span class="nv">$new-rem-value</span><span class="o">:</span> <span class="nv">$value</span> <span class="o">/</span> <span class="nv">$font-size</span><span class="p">;</span>
+      <span class="nv">$px-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$px-values</span><span class="o">,</span> <span class="nf">round</span><span class="p">(</span><span class="nv">$value</span><span class="p">));</span>
+      <span class="nv">$rem-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$rem-values</span><span class="o">,</span> <span class="si">#{</span><span class="nv">$new-rem-value</span><span class="si">}</span><span class="n">rem</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">@else</span> <span class="nt">if</span> <span class="nt">type-of</span><span class="o">(</span><span class="err">$</span><span class="nt">value</span><span class="o">)</span> <span class="o">==</span> <span class="nt">number</span> <span class="nt">and</span> <span class="nt">not</span> <span class="nt">unitless</span><span class="o">(</span><span class="err">$</span><span class="nt">value</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">unit</span><span class="o">(</span><span class="err">$</span><span class="nt">value</span><span class="o">)</span> <span class="o">==</span> <span class="s2">&quot;%&quot;</span><span class="o">)</span> <span class="p">{</span>
       <span class="c1">// % value given - don&#39;t add px or rem</span>
-      <span class="na">$px-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$px-values</span><span class="o">,</span> <span class="si">#{</span><span class="nv">$value</span><span class="si">}</span><span class="p">);</span>
-      <span class="na">$rem-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$rem-values</span><span class="o">,</span> <span class="si">#{</span><span class="nv">$value</span><span class="si">}</span><span class="p">);</span>
+      <span class="nv">$px-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$px-values</span><span class="o">,</span> <span class="si">#{</span><span class="nv">$value</span><span class="si">}</span><span class="p">);</span>
+      <span class="nv">$rem-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$rem-values</span><span class="o">,</span> <span class="si">#{</span><span class="nv">$value</span><span class="si">}</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">value</span> <span class="o">==</span> <span class="nt">auto</span> <span class="p">{</span>
       <span class="c1">// auto - don&#39;t add px or rem</span>
-      <span class="na">$px-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$px-values</span><span class="o">,</span> <span class="no">auto</span><span class="p">);</span>
-      <span class="na">$rem-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$rem-values</span><span class="o">,</span> <span class="no">auto</span><span class="p">);</span>
+      <span class="nv">$px-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$px-values</span><span class="o">,</span> <span class="no">auto</span><span class="p">);</span>
+      <span class="nv">$rem-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$rem-values</span><span class="o">,</span> <span class="no">auto</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">@else</span> <span class="p">{</span>
       <span class="c1">// unitless value - use those directly as rem and calculate the px-fallback</span>
-      <span class="na">$px-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$px-values</span><span class="o">,</span> <span class="nf">round</span><span class="p">(</span><span class="nv">$value</span> <span class="o">*</span> <span class="nv">$font-size</span><span class="p">));</span>
-      <span class="na">$rem-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$rem-values</span><span class="o">,</span> <span class="si">#{</span><span class="nv">$value</span><span class="si">}</span><span class="n">rem</span><span class="p">);</span>
+      <span class="nv">$px-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$px-values</span><span class="o">,</span> <span class="nf">round</span><span class="p">(</span><span class="nv">$value</span> <span class="o">*</span> <span class="nv">$font-size</span><span class="p">));</span>
+      <span class="nv">$rem-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$rem-values</span><span class="o">,</span> <span class="si">#{</span><span class="nv">$value</span><span class="si">}</span><span class="n">rem</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
@@ -203,7 +203,7 @@
       
         <span class="icon-left entry-meta-icon icon-category">
           
-            <a href="/category/development" rel="category">Development</a>
+            <a href="/category/development" rel="category">development</a>
             
           
         </span>
