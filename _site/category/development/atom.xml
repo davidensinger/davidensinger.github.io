@@ -5,7 +5,7 @@
   
   <link href="http://davidensinger.com/"/>
   <link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/>
-  <updated>2013-05-24T16:32:59-04:00</updated>
+  <updated>2013-05-27T17:36:02-04:00</updated>
   <id>http://davidensinger.com/</id>
   <author>
     <name>David Ensinger</name>
@@ -14,9 +14,9 @@
   <rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights>
   
 	<entry>
-  <id>http://davidensinger.com/2013/05/favorite-web-development-software</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/05/favorite-web-development-software/"/>
-  <title>Favorite Web Development Software</title>
+  <id>http://davidensinger.com/2013/05/my-favorite-web-development-software</id>
+  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/05/my-favorite-web-development-software/"/>
+  <title>My Favorite Web Development Software</title>
   <published>2013-05-24T08:48:00-04:00</published>
   <updated>2013-05-24T08:48:00-04:00</updated>
   <author>
@@ -24,7 +24,7 @@
     <uri>http://davidensinger.com/</uri>
   </author>
   <content type="html"><![CDATA[
-    <p>&lt;p&gt;I’m always interested in learning about the tools that other developers use during the course of their workday. What follows is a list of my preferred software with accompanying explanations on how I use it. Hopefully this list will prove helpful to someone else!&lt;/p&gt;</p>
+    <p>&lt;p&gt;I’m always interested in learning about the tools other developers use during the course of their workday. What follows is a list of my preferred software with accompanying explanations on how I use it. Hopefully this list will prove helpful to someone else! If you’ve got a suggestion for a better program, please let me know.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Console&lt;/h2&gt;</p>
 
@@ -32,46 +32,46 @@
 
 <p>&lt;h2&gt;FTP Client&lt;/h2&gt;</p>
 
-<p>&lt;p&gt;It’s not so often that I need to transfer files via FTP, but when I do I always use &lt;a href=&quot;http://cyberduck.ch/&quot;&gt;Cyberduck&lt;/a&gt;. I can’t say that it’s any better than any other popular alternative, but it’s my favorite merely for the fact that I’ve been using it for a long time.&lt;/p&gt;</p>
+<p>&lt;p&gt;It’s not so often that I need to transfer files via FTP, but when I do I always use &lt;a href=&quot;http://cyberduck.ch/&quot;&gt;Cyberduck&lt;/a&gt;. I can’t say that it’s any better than any other popular alternative, but it’s my favorite merely for the fact that I’ve been reliably using it for a long time.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Icons&lt;/h2&gt;</p>
 
-<p>&lt;p&gt;I use &lt;a href=&quot;http://www.kodlian.com/apps/icon-slate&quot;&gt;Icon Slate&lt;/a&gt; For creating, exporting, and packaging icons. The latter point is especially helpful for creating a retina version of a favicon.&lt;/p&gt;</p>
+<p>&lt;p&gt;I use &lt;a href=&quot;http://www.kodlian.com/apps/icon-slate&quot;&gt;Icon Slate&lt;/a&gt; for creating, exporting, and packaging icons. The latter point is especially helpful for the creation of retina versions of favicons.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Image Optimization&lt;/h2&gt;</p>
 
-<p>&lt;p&gt;To optimize images I use several different programs, the use of which depends largely on the file format.&lt;/p&gt;</p>
+<p>&lt;p&gt;To optimize images I use several different programs, the use of which depends on the file format.&lt;/p&gt;</p>
 
-<p>&lt;p&gt;For alpha transparent PNGs I use &lt;a href=&quot;http://pngmini.com/&quot;&gt;ImageAlpha&lt;/a&gt;, which allows for the conversion of “24-bit PNG to paletted 8-bit with full alpha channel.” This markedly reduces the size of very large images, with no perceptible loss of quality.&lt;/p&gt;</p>
+<p>&lt;p&gt;For alpha transparent PNGs I use &lt;a href=&quot;http://pngmini.com/&quot;&gt;ImageAlpha&lt;/a&gt;, which allows for the conversion of “24-bit PNG to paletted 8-bit with full alpha channel.” This markedly reduces the size of large images, with no perceptible loss of quality.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;For JPEGs I use &lt;a href=&quot;http://jpegmini.com/&quot;&gt;JPEGmini&lt;/a&gt;, which also reduces file size rather dramatically. Their proprietary algorithm is superior to Photoshop’s ”Save for Web”, so I usually process the file in JPEGmini in lieu of compressing it via Photoshop.&lt;/p&gt;</p>
 
-<p>&lt;p&gt;Once I’ve processed the images with the aforementioned programs, I then make an attempt to further reduce the file size with &lt;a href=&quot;http://imageoptim.com/&quot;&gt;ImageOptim&lt;/a&gt;, which supports GIFs too. This latter step often reduces file size by a further few percent.&lt;/p&gt;</p>
+<p>&lt;p&gt;Once I’ve processed the images with the aforementioned programs, I then make an attempt to further reduce the file size with &lt;a href=&quot;http://imageoptim.com/&quot;&gt;ImageOptim&lt;/a&gt;, which supports GIFs too. This latter step often reduces file size by another few percent.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Mobile&lt;/h2&gt;</p>
 
-<p>&lt;p&gt;I don’t typically do any native app development, but I often do create responsive designs. To test these in mobile browsers I use the &lt;strong&gt;iOS Simulator&lt;/strong&gt; (via &lt;a href=&quot;https://developer.apple.com/xcode/&quot;&gt;Xcode&lt;/a&gt;) and the &lt;a href=&quot;http://www.opera.com/developer/mobile-emulator&quot;&gt;Opera Mobile Emulator&lt;/a&gt;. These programs aren’t a substitute for the actual devices, but they are a close  approximation and work well for the vast majority of the work I do.&lt;/p&gt;</p>
+<p>&lt;p&gt;I have yet to do any native app development, but I do often create responsive designs. To test these in mobile browsers I use the &lt;strong&gt;iOS Simulator&lt;/strong&gt; (via &lt;a href=&quot;https://developer.apple.com/xcode/&quot;&gt;Xcode&lt;/a&gt;) and the &lt;a href=&quot;http://www.opera.com/developer/mobile-emulator&quot;&gt;Opera Mobile Emulator&lt;/a&gt;. These programs aren’t a substitute for the actual devices, but they are a close approximation and work well for the majority of the work I do.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Preprocessor&lt;/h2&gt;</p>
 
-<p>&lt;p&gt;I use &lt;a href=&quot;http://incident57.com/codekit/&quot;&gt;CodeKit&lt;/a&gt; to compile my &lt;strong&gt;Sass&lt;/strong&gt; on the occasions that I don’t feel like using the terminal. It supports a multitude of languages, including Haml, Less, and CoffeeScript as well. I also like it for the live browser reloads.&lt;/p&gt;</p>
+<p>&lt;p&gt;I use &lt;a href=&quot;http://incident57.com/codekit/&quot;&gt;CodeKit&lt;/a&gt; to compile my &lt;strong&gt;Sass&lt;/strong&gt; on the occasions that I don’t feel like using the command line. The program supports a multitude of languages, including Haml, Less, and CoffeeScript. It’s also really helpful for the live browser reloads. I’m looking forward to the 2.0 release, which should be out sometime soon!&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Productivity&lt;/h2&gt;</p>
 
 <p>&lt;p&gt;For productivity gains within OS X, I highly recommend &lt;a href=&quot;http://mizage.com/divvy/&quot;&gt;Divvy&lt;/a&gt; for window management and
-&lt;a href=&quot;https://itunes.apple.com/us/app/flycut-clipboard-manager/id442160987?mt=12&quot;&gt;Flycut&lt;/a&gt; for clipboard management. Divvy makes it easy to resize windows, which is especially useful when using multiple monitors (such a first world problem, right?). Flycut saves everything that you recently copied to the clipboard and makes it easy to cycle through and paste anew.&lt;/p&gt;</p>
+&lt;a href=&quot;https://itunes.apple.com/us/app/flycut-clipboard-manager/id442160987?mt=12&quot;&gt;Flycut&lt;/a&gt; for clipboard management. Divvy makes it easy to resize windows, which is especially useful when using multiple monitors (what a first world problem, right?). Flycut saves everything that you recently copied to the clipboard and makes it easy to cycle through to paste anew.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Source Control&lt;/h2&gt;</p>
 
-<p>&lt;p&gt;For version control I prefer to use a GUI to the command line, since some tasks are easier to do through an application. I use &lt;a href=&quot;http://www.zennaware.com/cornerstone/&quot;&gt;Cornerstone&lt;/a&gt; to manage &lt;strong&gt;Subversion&lt;/strong&gt; repositories and &lt;a href=&quot;http://www.git-tower.com/&quot;&gt;Tower&lt;/a&gt; to manage &lt;strong&gt;Git&lt;/strong&gt; repositories. There are several other well known Git clients, but Tower has the reputation of being the most robust.&lt;/p&gt;</p>
+<p>&lt;p&gt;For version control I prefer to use a GUI to the command line, since some tasks are easier to do through an application. I use &lt;a href=&quot;http://www.zennaware.com/cornerstone/&quot;&gt;Cornerstone&lt;/a&gt; to manage &lt;strong&gt;Subversion&lt;/strong&gt; repositories and &lt;a href=&quot;http://www.git-tower.com/&quot;&gt;Tower&lt;/a&gt; to manage &lt;strong&gt;Git&lt;/strong&gt; repositories. I’ve tried several other well known Git clients, but I like Tower the best.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Text Editor&lt;/h2&gt;</p>
 
-<p>&lt;p&gt;As a front end developer I don’t often need an integrated developing environment, so &lt;a href=&quot;http://www.sublimetext.com/2&quot;&gt;Sublime Text 2&lt;/a&gt; is my text editor of choice. It’s lightning fast, easily extensible, and enables me to efficiently write code with split editing and multiple selections.&lt;/p&gt;</p>
+<p>&lt;p&gt;As a front end developer I don’t typically need an integrated developing environment, so &lt;a href=&quot;http://www.sublimetext.com/2&quot;&gt;Sublime Text 2&lt;/a&gt; is my text editor of choice. It’s lightning fast, easily extensible, and enables me to efficiently write code with split editing and multiple selections. I’m definitely looking forward to the 3.0 release!&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Writing&lt;/h2&gt;</p>
 
-<p>&lt;p&gt;While not exactly an application for development, I use &lt;a href=&quot;http://www.iawriter.com/mac/&quot;&gt;iA Writer&lt;/a&gt; to write all my posts. It’s especially nice that &lt;strong&gt;Jekyll&lt;/strong&gt; comes with built in support for &lt;strong&gt;Markdown&lt;/strong&gt;.&lt;/p&gt;</p>
+<p>&lt;p&gt;While not exactly an application for development, I use &lt;a href=&quot;http://www.iawriter.com/mac/&quot;&gt;iA Writer&lt;/a&gt; to write all my posts. It’s especially nice that &lt;strong&gt;Jekyll&lt;/strong&gt; comes with built in support for &lt;strong&gt;Markdown&lt;/strong&gt;, so using iA Writer only makes sense.&lt;/p&gt;</p>
 
   ]]></content>
 </entry>

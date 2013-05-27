@@ -8,7 +8,7 @@ categories: [Development]
 tags: [Sublime Text 2]
 ---
 
-Although I switched to [Sublime Text 2](http://www.sublimetext.com/) more than a year ago, I only recently decided to take a good look at my configuration, with the end goal of increasing my productivity. What follows are my settings, which will hopefully help others work a bit smarter. If you’ve got any useful tips, please [tweet](https://twitter.com/davidensinger) at me! 
+Although I switched to [Sublime Text 2](http://www.sublimetext.com/) more than a year ago, I only recently decided to take a good look at my configuration, with the end goal of increasing my productivity. What follows are my settings, which will hopefully help others work a bit smarter. If you’ve got any useful tips, please [tweet](https://twitter.com/davidensinger) at me!
 
 ## Pasting
 Some projects use tabs, while others use spaces. It’s nice to easily copy and paste snippets of code between the two, without worrying about the indentation.
@@ -18,7 +18,7 @@ To adjust your indentation to match the context in which it’s pasted, use “P
 To do this, add the following in your **Key Bindings - User file**:
 
 {% highlight json %}
-{ "keys": ["super+v"], "command": "paste_and_indent" }, 
+{ "keys": ["super+v"], "command": "paste_and_indent" },
 { "keys": ["super+shift+v"], "command": "paste" }
 {% endhighlight %}
 
@@ -57,7 +57,7 @@ import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_p
 - [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter) - Lint code as you type
 - [TrailingSpaces](https://github.com/SublimeText/TrailingSpaces) - Strips trailing whitespace from files
 
-There are also innumerable packages to support syntax highlighting, linting, and snippets in any and all languages. You can easily [discover these via Package Control](http://wbond.net/sublime_packages/community). 
+There are also innumerable packages to support syntax highlighting, linting, and snippets in any and all languages. You can easily [discover these via Package Control](http://wbond.net/sublime_packages/community).
 
 ## Spaces
 Open **TrailingSpace's** preferences (**Preferences › Package Settings › TrailingSpaces › Settings - User**), and add:
