@@ -5,7 +5,7 @@
   
   <link href="http://davidensinger.com/"/>
   <link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/>
-  <updated>2013-05-27T17:36:02-04:00</updated>
+  <updated>2013-06-14T15:22:24-04:00</updated>
   <id>http://davidensinger.com/</id>
   <author>
     <name>David Ensinger</name>
@@ -13,6 +13,52 @@
   </author>
   <rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights>
   
+  
+    <entry>
+  <id>http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development</id>
+  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development/"/>
+  <title>My Favorite Chrome Extensions for Development</title>
+  <published>2013-06-14T09:20:00-04:00</published>
+  <updated>2013-06-14T09:20:00-04:00</updated>
+  <author>
+    <name>David Ensinger</name>
+    <uri>http://davidensinger.com/</uri>
+  </author>
+  <content type="html"><![CDATA[
+    <p>&lt;p&gt;In keeping with the spirit of &lt;a href=&quot;http://davidensinger.com/2013/05/my-favorite-web-development-software/&quot;&gt;my favorite software for development&lt;/a&gt;, I present my favorite &lt;a href=&quot;http://www.google.com/chrome&quot;&gt;Google Chrome&lt;/a&gt; extensions. While there are no shortage of blog posts about &lt;a href=&quot;https://chrome.google.com/webstore/category/extensions&quot;&gt;Chrome extensions&lt;/a&gt;, I’ll only list the ones I actually use to keep this post from turning into a bloated roundup of links.&lt;/p&gt;</p>
+
+<p>&lt;p&gt;I currently have six extensions enabled for development and I suspect that I rely on so few because Chrome comes with such powerful &lt;a href=&quot;https://developers.google.com/chrome-developer-tools/&quot;&gt;DevTools&lt;/a&gt;. The vast majority of the in-browser functionality I use is provided out of the box, so I only need to supplement with a smattering of extensions. So without further ado…&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;PageSpeed Insights (by Google)&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;The &lt;a href=&quot;https://chrome.google.com/webstore/detail/pagespeed-insights-by-goo/gplegfbjlmmehdoakndmohflojccocli?hl=en&quot;&gt;PageSpeed Insights&lt;/a&gt; extension is actually an extension for the aforementioned Developer Tools. It evaluates the performance of websites and gives suggestions for improvement. It’s useful for diagnosing problems and I find that it often reminds me to optimize when I forget.&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;Resolution Test&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/resolution-test/idhfcdbheobinplaamokffboaccidbal&quot;&gt;Resolution Test&lt;/a&gt; allows for quick changes to the dimensions of the browser window, which lets developers easily preview their websites in different screen resolutions. It also includes a list of commonly used resolutions with the added ability to customize that list. I often use it while debugging CSS within media queries.&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;Responsive Inspector&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;The &lt;a href=&quot;https://chrome.google.com/webstore/detail/responsive-inspector/memcdolmmnmnleeiodllgpibdjlkbpim&quot;&gt;Responsive Inspector&lt;/a&gt; extension displays website media queries. It’s really helpful when developing responsively as it shows what resolutions are defined in the stylesheets. It’s also quick and easy to resize the browser to fit the media queries.&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;User-Agent Switcher for Chrome&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg&quot;&gt;User-Agent Switcher for Chrome&lt;/a&gt; quickly and easily switches between user-agent strings. The extension modifies the user-agent sent via HTTP requests as well as any JavaScript objects in the page. It’s much easier to test mobile only sites on desktop with this extension enabled.&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;Web Developer&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;The &lt;a href=&quot;http://chrispederick.com/work/web-developer/&quot;&gt;Web Developer&lt;/a&gt; extension adds various tools to the browser, some of which are also native to Chrome and the Developer Tools. Even so, it’s helpful to have all the options in one convenient toolbar.&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;YSlow&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/yslow/ninejjcohidippngpapiilnmkgllmakh&quot;&gt;YSlow&lt;/a&gt; analyzes websites and suggests ways to improve their performance based on a set of rules for high performance sites. It also offers suggestions for improving performance and displays statistics about the site too. It’s a nice tool to use in conjunction with PageSpeed Insights.&lt;/p&gt;</p>
+
+<p>&lt;p&gt;Like always, if anyone has any suggestions for good extensions, please don’t hesitate to &lt;a href=&quot;http://twitter.com/DavidEnsinger&quot;&gt;tweet&lt;/a&gt; at me!&lt;/p&gt;</p>
+
+  ]]></content>
+</entry>
+  
+
   
     <entry>
   <id>http://davidensinger.com/2013/05/my-favorite-web-development-software</id>
@@ -715,56 +761,6 @@ lastmod: 2013-03-29T12:49:30-05:00
 </entry>
   
 
-  
-    <entry>
-  <id>http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/"/>
-  <title>Setting the DNS for GitHub Pages on Namecheap</title>
-  <published>2013-03-27T16:05:00-04:00</published>
-  <updated>2013-03-27T16:05:00-04:00</updated>
-  <author>
-    <name>David Ensinger</name>
-    <uri>http://davidensinger.com/</uri>
-  </author>
-  <content type="html"><![CDATA[
-    <p>&lt;p&gt;After pushing my site to &lt;strong&gt;GitHub&lt;/strong&gt; and verifying that it worked at &lt;a href=&quot;http://davidensinger.github.io/&quot;&gt;davidensinger.github.io&lt;/a&gt;, I then went to set up my custom domain name. The &lt;a href=&quot;https://help.github.com/articles/setting-up-a-custom-domain-with-pages&quot;&gt;documentation&lt;/a&gt; provided by GitHub is clear on the subject, but I still managed to forget about my subdomains. For more than eight hours, anyone who attempted to visit &lt;a href=&quot;http://davidensinger.com/&quot;&gt;davidensinger.com&lt;/a&gt; was served with a 404, which is &lt;a href=&quot;https://twitter.com/DavidEnsinger/status/316642135216619522&quot;&gt;rather embarrassing&lt;/a&gt; for one who makes a living as a developer.&lt;/p&gt;</p>
-
-<p>&lt;p&gt;In the interest of helping others avoid the mistakes I made, here’s a guide to setting up the DNS for GitHub pages on &lt;a href=&quot;http://www.namecheap.com/?aff=32887&quot;&gt;Namecheap&lt;/a&gt;, my registrar of choice.&lt;/p&gt;</p>
-
-<p>&lt;div class=&quot;yellow-box&quot;&gt;
-  &lt;p&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; This guide assumes that you’re using a top-level domain (TLD).&lt;/p&gt;
-&lt;/div&gt;</p>
-
-<p>&lt;h2&gt;Add a CNAME File to your Repo&lt;/h2&gt;</p>
-
-<p>&lt;p&gt;Create a new file and put your domain name in it. Save it as CNAME.&lt;/p&gt;</p>
-
-<p>&lt;pre&gt;&lt;code&gt;yourtlddomainname.com
-&lt;/code&gt;&lt;/pre&gt;</p>
-
-<p>&lt;h2&gt;Find your Host Records&lt;/h2&gt;</p>
-
-<p>&lt;p&gt;&lt;img src=&quot;http://davidensinger.com/assets/img/posts/2013-03-27-namecheap-all-host-records.png&quot; alt=&quot;Image of All Host Records&quot; class=&quot;media-right img-border&quot; /&gt;&lt;/p&gt;</p>
-
-<p>&lt;p&gt;Log into your Namecheap account, select the appropriate domain name, and then go to &lt;strong&gt;All Host Records&lt;/strong&gt;.&lt;/p&gt;</p>
-
-<p>&lt;h2&gt;Set up the DNS&lt;/h2&gt;</p>
-
-<p>&lt;ol&gt;
-&lt;li&gt;Set the &lt;strong&gt;@&lt;/strong&gt; (used to denote the domain name for which you’re configuring the DNS) &lt;strong&gt;IP Address/URL&lt;/strong&gt; to &lt;code&gt;204.232.175.78&lt;/code&gt; and the &lt;strong&gt;Record Type&lt;/strong&gt; to &lt;code&gt;A (Address)&lt;/code&gt; with a &lt;strong&gt;TTL&lt;/strong&gt; (an acronym for &lt;strong&gt;Time To Live&lt;/strong&gt; that refers to the capability of the DNS servers to cache DNS records) of &lt;code&gt;1800&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Set the &lt;strong&gt;www&lt;/strong&gt; (the subdomain www) &lt;strong&gt;IP Address/URL&lt;/strong&gt; to &lt;code&gt;username.github.io&lt;/code&gt; and the &lt;strong&gt;Record Type&lt;/strong&gt; to &lt;code&gt;CNAME (Alias)&lt;/code&gt; with a &lt;strong&gt;TTL&lt;/strong&gt; of &lt;code&gt;1800&lt;/code&gt;.&lt;/li&gt;
-&lt;/ol&gt;</p>
-
-<p>&lt;p&gt;&lt;img src=&quot;http://davidensinger.com/assets/img/posts/2013-03-27-namecheap-dns-settings.png&quot; alt=&quot;Image of DNS settings&quot; class=&quot;media-center img-border&quot; /&gt;&lt;/p&gt;</p>
-
-<p>&lt;p&gt;Save and then you’re all set! Please note, however that it may take some time for the changes to the DNS to propagate.&lt;/p&gt;</p>
-
-<p>&lt;div class=&quot;gray-box&quot;&gt;
-  &lt;p&gt;&lt;strong&gt;More Info:&lt;/strong&gt; Google has a pretty good &lt;a href=&quot;http://support.google.com/a/bin/answer.py?hl=en&amp;answer=48090&quot;&gt;Basic Guide to DNS&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;</p>
-
-  ]]></content>
-</entry>
   
 
   
