@@ -5,7 +5,7 @@
 </div>
 {% elsif page.grouptype == 'category' %}
 <div class="gray-box">
-  <p>Posts Categorized <strong>“{{ page.category }}”</strong></p>
+  <p>Posts Categorized <strong>“{{ page.category | titlecase }}”</strong></p>
 </div>
 {% endif %}
 

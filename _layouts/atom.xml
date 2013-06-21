@@ -3,7 +3,7 @@
   {% if page.grouptype == 'tag' %}
     <title>Posts Tagged “{{ page.tag }}” &ndash; {{ site.title }}</title>
   {% elsif page.grouptype == 'category' %}
-   <title>Posts Categorized “{{ page.category }}” &ndash; {{ site.title }}</title>
+   <title>Posts Categorized “{{ page.category | titlecase }}” &ndash; {{ site.title }}</title>
   {% else %}
    <title>{{ site.title }}</title>
   {% endif %}

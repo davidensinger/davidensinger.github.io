@@ -18,9 +18,9 @@
       <meta content="Posts Tagged “{{ page.tag }}” &ndash; {{ site.title }}" property="og:title">
       <meta content="Posts Tagged “{{ page.tag }}” &ndash; {{ site.title }}" name="twitter:title">
     {% elsif page.grouptype == "category" %}
-      <title>Posts Categorized “{{ page.category }}” &ndash; {{ site.title }}</title>
-      <meta content="Posts Categorized “{{ page.category }}” &ndash; {{ site.title }}" property="og:title">
-      <meta content="Posts Categorized “{{ page.category }}” &ndash; {{ site.title }}" name="twitter:title">
+      <title>Posts Categorized “{{ page.category | titlecase }}” &ndash; {{ site.title }}</title>
+      <meta content="Posts Categorized “{{ page.category | titlecase }}” &ndash; {{ site.title }}" property="og:title">
+      <meta content="Posts Categorized “{{ page.category | titlecase }}” &ndash; {{ site.title }}" name="twitter:title">
     {% else %}
       <title>{{ site.title }}</title>
       <meta content="{{ site.title }}" property="og:title">
