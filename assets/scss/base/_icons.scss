@@ -20,6 +20,7 @@
 
 .icon-left {
   &:before {
+    font-weight: $base-font-weight-bold;
     @include rem(margin-right, 0.25); } }
 
 .icon-right {
