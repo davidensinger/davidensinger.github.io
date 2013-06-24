@@ -7,7 +7,7 @@ tab :name => 'Jekyll' do
 end
 
 tab :name => 'Sass' do
-  run 'sass --style compressed --watch assets/scss/styles.scss:assets/css/styles.min.css --debug-info'
+  run 'sass --style compressed --watch assets/scss/styles.scss:assets/css/styles.min.css'
 end
 
 tab :name => 'Git' do
