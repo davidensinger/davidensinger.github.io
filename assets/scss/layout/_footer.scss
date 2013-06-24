@@ -3,6 +3,7 @@
 // ==========================================================================
 
 .site-footer {
+  @extend %clearfix;
   color: $footer-color;
   text-shadow: 0 1px 1px rgba($text-color, 0.25);
   @include breakpoint(smaller-than-small-desktop) {
@@ -10,39 +11,105 @@
 
 .footer-icons {
   float: right;
-  @include rem(margin-top, -0.4);
+  position: relative;
+  @include rem(top, -1.5);
+  list-style: none;
+  text-align: center;
   @include breakpoint(smaller-than-small-desktop) {
-    @include rem(margin, 0 0 1.5);
+    position: static;
+    top: 0;
+    @include rem(margin, 0 0 3);
     float: none; } }
 
-.footer-icon-link {
-  @include rem(margin-left, 1);
-  &:first-child {
-    margin: 0; } }
+.footer-icon-item {
+  display: inline-block; }
 
-.footer-icon-link,
-.link-rss {
+.footer-icon-anchor {
+  display: block;
+  @include rem(width, 5);
+  @include rem(height, 5);
+  @include rem(border-radius, 50%);
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
   &:link,
   &:visited {
-    color: $link-footer-icon-color; }
-  &:hover {
-    color: $link-footer-icon-color-hover; }
-  &:focus,
-  &:active {
-    color: $link-footer-icon-color-focus; } }
-
-.icon-rss,
-.footer-icon {
-  font-weight: 400; }
-
-.footer-icon {
-  line-height: 0;
-  &:before {
-    @extend %gamma-font-size;
-    -webkit-transition: all .25s ease-in-out;
-    transition: all .25s ease-in-out; }
-  &:hover {
+    color: inherit; }
+  &:hover,
+  &:active,
+  &:focus {
+    color: $white-dark;
+    background: $white-dark;
+    box-shadow: 0 0 3em 0 rgba($green-darkest, 0.25);
+    .footer-icon-title {
+      opacity: 1; }
     &:before {
       -webkit-transform: scale(1.5);
       -ms-transform: scale(1.5);
       transform: scale(1.5); } } }
+
+.icon-twitter {
+  &:hover,
+  &:focus,
+  &:active {
+    &:before {
+      color: #00acee; } } }
+
+.icon-github {
+  &:hover,
+  &:focus,
+  &:active {
+    &:before {
+      color: #4183c4; } } }
+
+.icon-tumblr {
+  &:hover,
+  &:focus,
+  &:active {
+    &:before {
+      color: #364d6d; } } }
+
+.footer-icon {
+  display: block;
+  @include rem(line-height, 5);
+  &:before {
+    @extend %beta-font-size;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; } }
+
+.footer-icon-title {
+  opacity: 0;
+  display: block;
+  @extend %epsilon-font-size;
+  @include rem(line-height, 2);
+  font-weight: $base-font-weight-bold;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+
+.footer-icon,
+.icon-blank,
+.icon-rss {
+  font-weight: normal !important; }
+
+.link-rss {
+  position: relative;
+  z-index: 1;
+  @include rem(left, 0.5);
+  &:link,
+  &:visited {
+    color: inherit; }
+  .icon-blank,
+  .icon-rss {
+    position: absolute; }
+  .icon-rss {
+    z-index: 1; }
+  .icon-blank {
+    display: none;
+    z-index: 0;
+    color: $white-dark; }
+  &:hover,
+  &:focus,
+  &:active {
+    .icon-rss {
+      color: #FF6600; }
+    .icon-blank {
+      display: inline; } } }

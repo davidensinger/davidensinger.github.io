@@ -11,7 +11,8 @@
 
 [class^="icon-"],
 [class*=" icon-"] {
-  &:before {
+  &:before,
+  &:after {
     font-family: 'fontello';
     -webkit-font-smoothing: antialiased;
     speak: none;
@@ -29,8 +30,9 @@
 
 .icon-tag:before { content: '\e70c'; }
 .icon-category:before { content: '\e738'; }
-.icon-rss:before { content: '\e73b'; }
+.icon-rss:before { content: '\e801'; }
+.icon-blank:after { content: '\e802'; }
 .icon-github:before { content: '\f300'; }
 .icon-twitter:before { content: '\f309'; }
-.icon-tumblr:before { content: '\f310'; }
+.icon-tumblr:before { content: '\e803'; }
 .icon-entry-date:before { content: '🕔'; }

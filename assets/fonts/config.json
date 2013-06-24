@@ -1,103 +1,55 @@
 {
   "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
   "glyphs": [
     {
-      "search": [
-        "tag",
-        "category",
-        "price",
-        "offer"
-      ],
-      "code": 59148,
-      "from": 59148,
       "uid": "3db5347bd219f3bce6025780f5d9ef45",
       "css": "tag",
-      "orig_css": "tag",
-      "orig_code": 59148,
+      "code": 59148,
       "src": "fontawesome"
     },
     {
-      "search": [
-        "archive"
-      ],
-      "code": 59192,
-      "from": 59192,
+      "uid": "de5f0a564ccf8816325330e292e11533",
+      "css": "rss",
+      "code": 59393,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "2c2ca8a96b31781c9c8056d05c0a8980",
+      "css": "blank",
+      "code": 59394,
+      "src": "fontawesome"
+    },
+    {
       "uid": "96ea1be71f597a5bdfc8f791ada4f651",
       "css": "category",
-      "orig_css": "archive",
-      "orig_code": 59192,
+      "code": 59192,
       "src": "entypo"
     },
     {
-      "search": [
-        "rss"
-      ],
-      "code": 59195,
-      "from": 59195,
-      "uid": "7645346d5ab8b17f69a9c765c180aca3",
-      "css": "rss",
-      "orig_css": "rss-alt",
-      "orig_code": 59195,
-      "src": "websymbols"
-    },
-    {
-      "search": [
-        "github",
-        "social",
-        "logo"
-      ],
-      "code": 62208,
-      "uid": "d94334f23acba022bfd68e49d76b31bb",
-      "css": "github",
-      "orig_css": "github",
-      "orig_code": 62208,
-      "src": "entypo",
-      "from": 62208
-    },
-    {
-      "search": [
-        "twitter",
-        "social",
-        "logo"
-      ],
-      "code": 62217,
-      "uid": "d090355c31f497b61d676416c1fd39fb",
-      "css": "twitter",
-      "orig_css": "twitter",
-      "orig_code": 62217,
-      "src": "entypo",
-      "from": 62217
-    },
-    {
-      "search": [
-        "tumblr"
-      ],
-      "code": 62224,
-      "meta": {
-        "twitter": "https://twitter.com/puzrin",
-        "github": "https://github.com/puzrin",
-        "author": "Vitaly Puzrin"
-      },
-      "uid": "9e6a3483242474b6a1f77739ae3fdfdc",
-      "file": "tumblr-rect",
-      "css": "tumblr",
-      "orig_css": "tumblr-rect",
-      "orig_code": 62224,
-      "src": "brandico",
-      "from": 62224
-    },
-    {
-      "search": [
-        "clock",
-        "time"
-      ],
-      "code": 128340,
       "uid": "8663320a860b00f26e94d3d15c9ba99a",
       "css": "entry-date",
-      "orig_css": "clock",
-      "orig_code": 128340,
-      "src": "entypo",
-      "from": 128340
+      "code": 128340,
+      "src": "entypo"
+    },
+    {
+      "uid": "d94334f23acba022bfd68e49d76b31bb",
+      "css": "github",
+      "code": 62208,
+      "src": "entypo"
+    },
+    {
+      "uid": "d090355c31f497b61d676416c1fd39fb",
+      "css": "twitter",
+      "code": 62217,
+      "src": "entypo"
+    },
+    {
+      "uid": "d491462e64eb5b8c4f064108a2ff1780",
+      "css": "tumblr",
+      "code": 59395,
+      "src": "entypo"
     }
   ]
 }
