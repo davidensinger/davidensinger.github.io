@@ -53,7 +53,7 @@
 // usage: @include rem(font-size, 14px)
 // usage: @include rem(margin, 0 12px 2 1.2)
 // usage: @include rem(padding, 1.5 24px)
-// 
+//
 // thanks to Eric Meyer for https://github.com/ericam/susy
 // and Hans Christian Reinl for http://drublic.de/blog/rem-fallback-sass-less/
 
@@ -62,7 +62,7 @@
   $font-size: $base-font-size;
   $px-values: ();
   $rem-values: ();
- 
+
   // Loop through the $values list
   @each $value in $values {
     // For each property value, if it's in rem or px, derive both rem and
@@ -91,7 +91,7 @@
       $rem-values: join($rem-values, #{$value}rem);
     }
   }
- 
+
   // output the converted rules
   #{$property}: $px-values;
   #{$property}: $rem-values;

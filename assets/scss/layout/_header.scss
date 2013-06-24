@@ -3,11 +3,13 @@
 // ==========================================================================
 
 .site-header {
-  @extend %clearfix; }
+  @extend %clearfix;
+}
 
 .site-logo {
   float: left;
-  @include rem(margin-right, 2); }
+  @include rem(margin-right, 2);
+}
 
 .svg-logo {
   @include rem(width, 6);
@@ -17,4 +19,6 @@
   &:hover {
   	-webkit-transform: scale(1.125) rotate(2deg);
   	-ms-transform: scale(1.125) rotate(2deg);
-  	transform: scale(1.125) rotate(2deg); } }
+  	transform: scale(1.125) rotate(2deg);
+  }
+}

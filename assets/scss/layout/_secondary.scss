@@ -5,7 +5,9 @@
 .secondary {
   @extend %clearfix;
   @include breakpoint(smaller-than-small-desktop) {
-    background: $background-gray-light; } }
+    background: $background-gray-light;
+  }
+}
 
 .secondary-photo {
   @extend %margin-bottom;
@@ -14,9 +16,12 @@
   @include breakpoint(smaller-than-small-desktop) {
     @include rem(margin, 0 0 0 1.5);
     float: right;
-    width: 100px; }
+    width: 100px;
+  }
   @include breakpoint(mobile-portrait-to-mobile-landscape) {
     @include rem(margin, 0 auto 1.5);
     display: block;
     float: none;
-    width: 75%; } }
+    width: 75%;
+  }
+}

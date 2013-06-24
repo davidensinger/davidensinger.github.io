@@ -5,11 +5,15 @@
 html {
   font: 106.25%/#{$line-height-ratio} $base-font-face; // 17px
   @include breakpoint(desktop) {
-    font-size: 112.5%; } // 18px
+    font-size: 112.5%; // 18px
+  }
   @include breakpoint(large-desktop) {
-    font-size: 118.75%; } // 19px
+    font-size: 118.75%; // 19px
+  }
   @include breakpoint(smaller-than-small-desktop) {
-    font-size: 100%; } } // 16px
+    font-size: 100%; // 16px
+  }
+}
 
 body,
 button,
@@ -19,7 +23,8 @@ textarea {
   font-family: $base-font-face;
   font-weight: $base-font-weight;
   line-height: $line-height-ratio;
-  color: $text-color; }
+  color: $text-color;
+}
 
 // Remove text-shadow in selection highlight: h5bp.com/i
 // These selection declarations have to be separate.
@@ -27,129 +32,162 @@ textarea {
 ::-moz-selection {
   color: $selection-color;
   background: $selection-background;
-  text-shadow: none; }
+  text-shadow: none;
+}
 
 ::selection {
   color: $selection-color;
   background: $selection-background;
-  text-shadow: none; }
+  text-shadow: none;
+}
 
 // Font sizes
 %giga-font-size {
-  @include rem(font-size, 3); }
+  @include rem(font-size, 3);
+}
 
 %giga-line-height,
 %gamma-line-height {
-  line-height: 1; }
+  line-height: 1;
+}
 
 %giga-margin,
 %gamma-margin {
-  @include rem(margin, 1.5 0 0.5); }
+  @include rem(margin, 1.5 0 0.5);
+}
 
 %giga {
   @extend %giga-font-size;
   @extend %giga-line-height;
-  @extend %giga-margin; }
+  @extend %giga-margin;
+}
 
 %mega-font-size {
-  @include rem(font-size, 2.5); }
+  @include rem(font-size, 2.5);
+}
 
 %mega-line-height,
 %delta-line-height {
-  line-height: 1.2; }
+  line-height: 1.2;
+}
 
 %mega-margin,
 %delta-margin {
-  @include rem(margin, 1.8 0 0.6); }
+  @include rem(margin, 1.8 0 0.6);
+}
 
 %mega {
   @extend %mega-font-size;
   @extend %mega-line-height;
-  @extend %mega-margin; }
+  @extend %mega-margin;
+}
 
 %alpha-font-size {
-  @include rem(font-size, 2.25); }
+  @include rem(font-size, 2.25);
+}
 
 %alpha-line-height {
-  line-height: 1.3333; }
+  line-height: 1.3333;
+}
 
 %alpha-margin {
-  @include rem(margin, 1.995 0 0.665); }
+  @include rem(margin, 1.995 0 0.665);
+}
 
 %alpha {
   @extend %alpha-font-size;
   @extend %alpha-line-height;
-  @extend %alpha-margin; }
+  @extend %alpha-margin;
+}
 
 %beta-font-size {
-  @include rem(font-size, 2); }
+  @include rem(font-size, 2);
+}
 
 %beta-line-height,
 %epsilon-line-height {
-  line-height: 1.5; }
+  line-height: 1.5;
+}
 
 %beta-margin {
-  @include rem(margin, 2.25 0 0.75); }
+  @include rem(margin, 2.25 0 0.75);
+}
 
 %beta {
   @extend %beta-font-size;
   @extend %beta-line-height;
-  @extend %beta-margin; }
+  @extend %beta-margin;
+}
 
 %gamma-font-size {
-  @include rem(font-size, 1.5); }
+  @include rem(font-size, 1.5);
+}
 
 %gamma {
   @extend %gamma-font-size;
   @extend %gamma-line-height;
-  @extend %gamma-margin; }
+  @extend %gamma-margin;
+}
 
 %delta-font-size {
-  @include rem(font-size, 1.25); }
+  @include rem(font-size, 1.25);
+}
 
 %delta {
   @extend %delta-font-size;
   @extend %delta-line-height;
-  @extend %delta-margin; }
+  @extend %delta-margin;
+}
 
 %epsilon-font-size {
-  @include rem(font-size, 1); }
+  @include rem(font-size, 1);
+}
 
 %epsilon-margin {
-  @include rem(margin-top, 1.5); }
+  @include rem(margin-top, 1.5);
+}
 
 %epsilon {
   @extend %epsilon-font-size;
   @extend %epsilon-line-height;
-  @extend %epsilon-margin; }
+  @extend %epsilon-margin;
+}
 
 %zeta-font-size {
-  @include rem(font-size, 0.875); }
+  @include rem(font-size, 0.875);
+}
 
 %zeta-line-height {
-  line-height: 1.7143; }
+  line-height: 1.7143;
+}
 
 %zeta-margin {
-  @include rem(margin, 2.57145 0.85715); }
+  @include rem(margin, 2.57145 0.85715);
+}
 
 %zeta {
   @extend %zeta-font-size;
   @extend %zeta-line-height;
-  @extend %zeta-margin; }
+  @extend %zeta-margin;
+}
 
 %eta-font-size {
-  @include rem(font-size, 0.75); }
+  @include rem(font-size, 0.75);
+}
 
 %eta-line-height {
-  line-height: 2; }
+  line-height: 2;
+}
 
 %eta-margin {
-  @include rem(margin, 3 0 1); }
+  @include rem(margin, 3 0 1);
+}
 
 %eta {
   @extend %eta-font-size;
   @extend %eta-line-height;
-  @extend %eta-margin; }
+  @extend %eta-margin;
+}
 
 // Headings
 h1,
@@ -163,43 +201,54 @@ h6 {
   padding: 0;
   color: $heading-color;
   letter-spacing: 1px;
-  font-weight: $base-font-weight-bold; }
+  font-weight: $base-font-weight-bold;
+}
 
 p {
   margin-top: 0;
   @extend %epsilon-font-size;
   @extend %epsilon-line-height;
-  @extend %margin-bottom; }
+  @extend %margin-bottom;
+}
 
 ul {
-  list-style: disc; }
+  list-style: disc;
+}
 
 ol {
-  list-style: decimal; }
+  list-style: decimal;
+}
 
 ul,
 ol,
 dd {
   padding: 0;
   @include rem(margin-left, 1.5);
-  @extend %margin-bottom; }
+  @extend %margin-bottom;
+}
 
 dt {
-  font-weight: $base-font-weight-bold; }
+  font-weight: $base-font-weight-bold;
+}
 
 // No top margins on first children or bottom margins on last children
 p, ul, ol, dl,
 blockquote, pre {
   &:first-child {
-    margin-top: 0; }
+    margin-top: 0;
+  }
   &:last-child {
-    margin-bottom: 0; } }
+    margin-bottom: 0;
+  }
+}
 
 // No margins on nested elements
 li {
   p, ul, ol {
     margin-top: 0;
-    margin-bottom: 0; } }
+    margin-bottom: 0;
+  }
+}
 
 // A better looking default horizontal rule
 hr {
@@ -209,19 +258,22 @@ hr {
   @include rem(margin-top, 1.5);
   @include border(hr,top);
   @extend %margin-bottom;
-  padding: 0; }
+  padding: 0;
+}
 
 // Font weights
 b,
 strong,
 th {
-  font-weight: $base-font-weight-bold; }
+  font-weight: $base-font-weight-bold;
+}
 
 // Font styles
 cite,
 em,
 i {
-  font-style: italic; }
+  font-style: italic;
+}
 
 blockquote {
   position: relative;
@@ -243,11 +295,13 @@ blockquote {
     font-weight: $base-font-weight-bold;
     color: #3c3c3c;
     text-shadow: none;
-    line-height: 0.7; }
+    line-height: 0.7;
+  }
   code {
     padding: 0;
     color: $gray-lightest;
-    background: none; }
+    background: none;
+  }
   cite {
     color: $gray-lightest;
     font-weight: $base-font-weight-bold;
@@ -255,34 +309,45 @@ blockquote {
     a {
       &:link,
       &:visited {
-        color: inherit; }
+        color: inherit;
+      }
       &:hover {
-        color: $white-dark; }
+        color: $white-dark;
+      }
       &:focus,
       &:active {
-        color: $white; } } } }
+        color: $white;
+      }
+    }
+  }
+}
 
 address {
-  @extend %margin-bottom; } 
+  @extend %margin-bottom;
+}
 
 abbr,
 acronym {
   border-bottom: 1px dotted $text-color;
-  cursor: help; }
+  cursor: help;
+}
 
 mark,
 ins {
   background: $yellow-lighter;
   color: $yellow-darker;
   text-shadow: 0 1px 0 $yellow-lightest;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 pre {
   @extend %gray-box;
   overflow: auto;
   max-width: 100%;
   code {
-    padding: 0; } }
+    padding: 0;
+  }
+}
 
 code,
 kbd,
@@ -292,41 +357,51 @@ var {
   @include rem(border-radius, 0.5);
   background: $white-dark;
   color: $gray-dark;
-  font-weight: $base-font-weight; } 
+  font-weight: $base-font-weight;
+}
 
 strike,
 s,
 del {
   text-decoration: line-through;
-  text-shadow: none; }
+  text-shadow: none;
+}
 
 sup,
 sub {
   height: 0;
   line-height: 0;
   position: relative;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 sup {
-  bottom: 1ex; }
+  bottom: 1ex;
+}
 
 sub {
-  top: .5ex; }
+  top: .5ex;
+}
 
 small,
 sup,
 sub {
-  @include rem(font-size, 75%); }
+  @include rem(font-size, 75%);
+}
 
 big {
-  @include rem(font-size, 125%); }
+  @include rem(font-size, 125%);
+}
 
 figure {
-  margin: 0; }
+  margin: 0;
+}
 
 table {
   width: 100%;
   @extend %margin-bottom;
   caption {
     text-align: left;
-    font-weight: $base-font-weight-bold; } }
+    font-weight: $base-font-weight-bold;
+  }
+}

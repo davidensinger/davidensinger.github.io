@@ -2,7 +2,7 @@
 // Normalize.scss
 // https://github.com/kristerkari/normalize.scss
 // ==========================================================================
-// So since we're using Sass to compile our Normalize, 
+// So since we're using Sass to compile our Normalize,
 // We can have some actual settings here, so we don't do more than we have to
 
 
@@ -29,7 +29,7 @@ $h2_margin: 0.83em 0 !default;
 $h3_margin: 1em 0 !default;
 $h4_margin: 1.33em 0 !default;
 $h5_margin: 1.67em 0 !default;
-$h6_margin: 2.33em 0 !default;    
+$h6_margin: 2.33em 0 !default;
 
 // =============================================================================
 // HTML5 display definitions
@@ -182,9 +182,9 @@ abbr[title] {
 
 // Addresses style set to 'bolder' in FF3+, S4/5, Chrome
 
-b, 
-strong { 
-    font-weight: bold; 
+b,
+strong {
+    font-weight: bold;
 }
 
 @if $legacy_support_for_ie {
@@ -224,7 +224,7 @@ samp {
     font-family: monospace, serif;
     @if $legacy_support_for_ie {
         _font-family: 'courier new', monospace;
-    }    
+    }
     font-size: 1em;
 }
 
@@ -314,7 +314,7 @@ nav {
         list-style: none;
         @if $legacy_support_for_ie {
             list-style-image: none;
-        }    
+        }
     }
 }
 
@@ -330,7 +330,7 @@ img {
     border: 0; // 1
     @if $legacy_support_for_ie {
         -ms-interpolation-mode: bicubic; // 2
-    }    
+    }
 }
 
 // Corrects overflow displayed oddly in IE9
@@ -369,7 +369,7 @@ fieldset {
 }
 
 // 1. Corrects color not being inherited in IE6/7/8/9
-// 2. Corrects text not wrapping in FF3 
+// 2. Corrects text not wrapping in FF3
 // 3. Corrects alignment displayed oddly in IE6/7
 
 legend {
@@ -378,7 +378,7 @@ legend {
     white-space: normal; // 2
     @if $legacy_support_for_ie {
         *margin-left: -7px; // 3
-    }    
+    }
 }
 
 // 1. Corrects font size not being inherited in all browsers
@@ -394,7 +394,7 @@ textarea {
     vertical-align: baseline; // 3
     @if $legacy_support_for_ie {
         *vertical-align: middle; // 3
-    }    
+    }
 }
 
 // Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
@@ -414,13 +414,13 @@ input {
 
 button,
 html input[type="button"], // 1
-input[type="reset"], 
+input[type="reset"],
 input[type="submit"] {
     -webkit-appearance: button; // 2
     cursor: pointer; // 3
     @if $legacy_support_for_ie {
         *overflow: visible;  // 4
-    }    
+    }
 }
 
 // Re-set default cursor for disabled elements
@@ -480,7 +480,7 @@ textarea {
 // =============================================================================
 // Tables
 // =============================================================================
- 
+
 // Remove most spacing between table cells
 
 table {

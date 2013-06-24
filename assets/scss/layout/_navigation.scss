@@ -8,60 +8,82 @@ nav {
   a {
     &:link,
     &:visited {
-      color: $link-nav-color; }
+      color: $link-nav-color;
+    }
     &:hover {
-      color: $link-nav-color-hover; }
+      color: $link-nav-color-hover;
+    }
     &:focus,
     &:active {
-      color: $link-nav-color-focus; } } }
+      color: $link-nav-color-focus;
+    }
+  }
+}
 
 // Main navigation
 .main-navigation {
   float: left;
   @include rem(margin-top, 2.25);
   ul {
-    margin: 0; }
+    margin: 0;
+  }
   li {
     float: left;
     @include rem(margin-left, 2);
     &:first-child {
-      margin-left: 0; } }
+      margin-left: 0;
+    }
+  }
   a {
     @include rem(padding-bottom, 0.25);
     &:hover {
-      border-bottom: 2px solid $link-color-focus; } } }
+      border-bottom: 2px solid $link-color-focus;
+    }
+  }
+}
 
 // Current page
 %current-page-cursor {
-  cursor: text; }
+  cursor: text;
+}
 
 @each $page in home, about {
   .page-#{$page} .nav-#{$page} {
     color: $link-nav-color-hover;
     @extend %current-page-cursor;
-    border-bottom: none !important; } }
+    border-bottom: none !important;
+  }
+}
 
 // Post and page navigation
 .post-navigation,
 .paging-navigation {
   @extend %clearfix;
-  @include rem(padding-top, 3); }
+  @include rem(padding-top, 3);
+}
 
 .post-navigation {
-  @include border(hr,top); }
+  @include border(hr,top);
+}
 
 .nav-previous {
-  float: left; }
+  float: left;
+}
 
 .nav-previous-link {
   &:before {
     content: "\2190";
-    @include rem(margin-right, 0.25); } }
+    @include rem(margin-right, 0.25);
+  }
+}
 
 .nav-next {
-  float: right; }
+  float: right;
+}
 
 .nav-next-link {
   &:after {
     content: "\2192";
-    @include rem(margin-left, 0.25); } }
+    @include rem(margin-left, 0.25);
+  }
+}

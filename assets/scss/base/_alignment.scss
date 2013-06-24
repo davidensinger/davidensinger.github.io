@@ -4,37 +4,47 @@
 
 // Text
 .text-left {
-  text-align: left; }
+  text-align: left;
+ }
 
 .text-center {
-  text-align: center; }
+  text-align: center;
+ }
 
 .text-right {
-  text-align: right; }
+  text-align: right;
+ }
 
 .text-justify {
-  text-align: justify; }
+  text-align: justify;
+ }
 
 // Media
 .media-left {
   float: left;
-  @include rem(margin-right, 1.5); }
+  @include rem(margin-right, 1.5);
+ }
 
 .media-right {
   float: right;
-  @include rem(margin-left, 1.5); }
+  @include rem(margin-left, 1.5);
+ }
 
 .media-center {
   clear: both;
   display: block;
-  margin: 0 auto; }
+  margin: 0 auto;
+ }
 
 // Floats
 .float-left {
-  float: left; }
+  float: left;
+ }
 
 .float-right {
-  float: right; }
+  float: right;
+ }
 
 .float-none {
-  float: none; }
+  float: none;
+ }

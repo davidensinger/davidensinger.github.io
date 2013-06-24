@@ -7,7 +7,9 @@
   color: $footer-color;
   text-shadow: 0 1px 1px rgba($text-color, 0.25);
   @include breakpoint(smaller-than-small-desktop) {
-    text-align: center; } }
+    text-align: center;
+  }
+}
 
 .footer-icons {
   float: right;
@@ -19,10 +21,13 @@
     position: static;
     top: 0;
     @include rem(margin, 0 0 3);
-    float: none; } }
+    float: none;
+  }
+}
 
 .footer-icon-item {
-  display: inline-block; }
+  display: inline-block;
+}
 
 .footer-icon-anchor {
   display: block;
@@ -33,7 +38,8 @@
   transition: all 0.5s ease-in;
   &:link,
   &:visited {
-    color: inherit; }
+    color: inherit;
+  }
   &:hover,
   &:active,
   &:focus {
@@ -41,18 +47,25 @@
     background: $white-dark;
     box-shadow: 0 0 3em 0 rgba($green-darkest, 0.25);
     .footer-icon-title {
-      opacity: 1; }
+      opacity: 1;
+    }
     &:before {
       -webkit-transform: scale(1.5);
       -ms-transform: scale(1.5);
-      transform: scale(1.5); } } }
+      transform: scale(1.5);
+    }
+  }
+}
 
 .icon-twitter {
   &:hover,
   &:focus,
   &:active {
     &:before {
-      color: #00acee; } } }
+      color: #00acee;
+    }
+  }
+}
 
 .icon-github {
   &:hover,
@@ -66,7 +79,10 @@
   &:focus,
   &:active {
     &:before {
-      color: #364d6d; } } }
+      color: #364d6d;
+    }
+  }
+}
 
 .footer-icon {
   display: block;
@@ -74,7 +90,9 @@
   &:before {
     @extend %beta-font-size;
     -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out; } }
+    transition: all 0.5s ease-in-out;
+  }
+}
 
 .footer-icon-title {
   opacity: 0;
@@ -83,12 +101,14 @@
   @include rem(line-height, 2);
   font-weight: $base-font-weight-bold;
   -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out;
+}
 
 .footer-icon,
 .icon-blank,
 .icon-rss {
-  font-weight: normal !important; }
+  font-weight: normal !important;
+}
 
 .link-rss {
   position: relative;
@@ -96,20 +116,28 @@
   @include rem(left, 0.5);
   &:link,
   &:visited {
-    color: inherit; }
+    color: inherit;
+  }
   .icon-blank,
   .icon-rss {
-    position: absolute; }
+    position: absolute;
+  }
   .icon-rss {
-    z-index: 1; }
+    z-index: 1;
+  }
   .icon-blank {
     display: none;
     z-index: 0;
-    color: $white-dark; }
+    color: $white-dark;
+  }
   &:hover,
   &:focus,
   &:active {
     .icon-rss {
-      color: #FF6600; }
+      color: #FF6600;
+    }
     .icon-blank {
-      display: inline; } } }
+      display: inline;
+    }
+  }
+}

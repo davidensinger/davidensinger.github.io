@@ -7,12 +7,16 @@ a {
   &:visited {
     color: $link-color;
     font-weight: $base-font-weight-bold;
-    text-decoration: none; }
+    text-decoration: none;
+  }
   &:hover {
-    color: $link-color-hover; }
+    color: $link-color-hover;
+  }
   &:focus,
   &:active {
-    color: $link-color-focus; } }
+    color: $link-color-focus;
+  }
+}
 
 h1,
 h2,
@@ -23,9 +27,14 @@ h6 {
   a {
     &:link,
     &:visited {
-      color: inherit; }
+      color: inherit;
+    }
     &:hover {
-      color: $link-heading-color-hover; }
+      color: $link-heading-color-hover;
+    }
     &:focus,
     &:active {
-      color: $link-heading-color-focus; } } }
+      color: $link-heading-color-focus;
+    }
+  }
+}

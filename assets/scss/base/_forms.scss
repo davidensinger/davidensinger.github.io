@@ -5,7 +5,8 @@
 fieldset {
   border: 0;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+ }
 
 input[type="text"],
 textarea {
@@ -21,29 +22,38 @@ textarea {
   @extend %transitions-all;
   &:hover {
     color: $gray;
-    background: $background-gray-light; }
+    background: $background-gray-light;
+  }
   &:focus,
   &:active {
     color: $gray-dark;
     background: $white;
-    box-shadow: inset 0 0 0.33em $white-dark; } }
+    box-shadow: inset 0 0 0.33em $white-dark;
+  }
+}
 
 textarea {
-  resize: vertical; }
+  resize: vertical;
+}
 
 label {
   font-weight: $base-font-weight-bold;
-  color: $gray-darker; }
+  color: $gray-darker;
+}
 
 // Placeholder styling
 input::-webkit-input-placeholder {
-    color: $gray-light; }
+  color: $gray-light;
+}
 
 input:hover::-webkit-input-placeholder {
-    color: $gray; }
+  color: $gray;
+}
 
 input:-moz-placeholder {
-    color: $gray-light; }
+  color: $gray-light;
+}
 
 input:hover:-moz-placeholder {
-    color: $gray; }
+  color: $gray;
+}

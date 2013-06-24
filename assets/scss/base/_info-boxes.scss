@@ -7,7 +7,10 @@
   @extend %margin-bottom;
   a {
     &:hover {
-      text-decoration: underline; } } }
+      text-decoration: underline;
+    }
+  }
+}
 
 %red-box,
 .red-box {
@@ -18,12 +21,17 @@
   a {
     &:link,
     &:visited {
-      color: inherit; }
+      color: inherit;
+    }
     &:hover {
-      color: $red-darkest; }
+      color: $red-darkest;
+    }
     &:focus,
     &:active {
-      color: $link-color-focus; } } }
+      color: $link-color-focus;
+    }
+  }
+}
 
 %yellow-box,
 .yellow-box {
@@ -34,12 +42,17 @@
   a {
     &:link,
     &:visited {
-      color: inherit; }
+      color: inherit;
+    }
     &:hover {
-      color: $yellow-darkest; }
+      color: $yellow-darkest;
+    }
     &:focus,
     &:active {
-      color: $link-color-focus; } } }
+      color: $link-color-focus;
+    }
+  }
+}
 
 %green-box,
 .green-box {
@@ -50,24 +63,35 @@
   a {
     &:link,
     &:visited {
-      color: inherit; }
+      color: inherit;
+    }
     &:hover {
-      color: $green-darkest; }
+      color: $green-darkest;
+    }
     &:focus,
     &:active {
-      color: $link-color-focus; } } }
+      color: $link-color-focus;
+    }
+  }
+}
 
 %gray-box,
 .gray-box {
   @extend %info-box-base;
   background: $white-dark;
   color: $gray-dark;
-  border-left: 0.33em solid $gray-lightest;  a {
+  border-left: 0.33em solid $gray-lightest;
+  a {
     &:link,
     &:visited {
-      color: inherit; }
+      color: inherit;
+    }
     &:hover {
-      color: $gray-darker; }
+      color: $gray-darker;
+    }
     &:focus,
     &:active {
-      color: $link-color-focus; } } }
+      color: $link-color-focus;
+    }
+  }
+}

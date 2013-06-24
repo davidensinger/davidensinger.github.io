@@ -12,10 +12,13 @@
   cursor: pointer;
   &:hover,
   &:focus {
-    text-decoration: none !important; }
+    text-decoration: none !important;
+  }
   &:active {
     position: relative;
-    top: 1px; } }
+    top: 1px;
+  }
+}
 
 %button-blue,
 .button-blue {
@@ -25,28 +28,34 @@
   text-shadow: 0 1px 0 $blue;
   box-shadow: 0 0.25em 0 0 $blue-dark;
   &:visited {
-    color: $white-dark !important; }
+    color: $white-dark !important;
+  }
   &:hover,
   &:active {
     background: $blue-dark;
     color: $white !important;
     text-shadow: 0 1px 0 $blue-darker;
-    box-shadow: 0 0.25em 0 0 $blue-darker; }
+    box-shadow: 0 0.25em 0 0 $blue-darker;
+  }
   &:focus {
     background: $green;
     color: $white !important;
     text-shadow: 0 1px 0 $green-dark;
-    box-shadow: 0 0.25em 0 0 $green-dark; } }
-
+    box-shadow: 0 0.25em 0 0 $green-dark;
+  }
+}
 
 %button-mini,
 .button-mini {
-  @include rem(font-size, 0.5); }
+  @include rem(font-size, 0.5);
+}
 
 %button-small,
 .button-small {
-  @include rem(font-size, 0.75); }
+  @include rem(font-size, 0.75);
+}
 
 %button-large,
 .button-large {
-  @include rem(font-size, 1.25); }
+  @include rem(font-size, 1.25);
+}
