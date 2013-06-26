@@ -14,6 +14,14 @@ tab :name => 'Git' do
   run 'git status'
 end
 
-run 'sublime .' #Opens project directory in Sublime Text 2
+# Open project directory in Finder
+run 'open .'
+
+# Open project in Sublime Text 2
+run 'sublime .'
+
+# Open website in browser
 run 'open http://0.0.0.0:4000'
+
+# Close tab
 run 'exit'
