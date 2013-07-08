@@ -49,10 +49,10 @@ import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_p
 
 ### Favorite Packages
 
-- [AllAutocomplete](https://github.com/alienhard/SublimeAllAutocomplete) - Allows autocompletion across open files
-- [BrowserRefresh-Sublime](http://gcollazo.github.io/BrowserRefresh-Sublime/) - Refresh your browser from within the editor
-- [GitGutter](https://github.com/jisaacks/GitGutter) - See git diffs in the gutter
-- [GoldenRatio](https://github.com/speilberg0/GoldenRatio) - Resize active group by the golden ratio
+- [All Autocomplete](https://github.com/alienhard/SublimeAllAutocomplete) - Allows autocompletion across open files
+- [Browser Refresh](http://gcollazo.github.io/BrowserRefresh-Sublime/) - Refresh your browser from within the editor
+- [EditorConfig](https://github.com/sindresorhus/editorconfig-sublime) - [Editor Config](http://editorconfig.org/) helps define and maintain consistent coding styles between different editors and IDEs
+- [Modific](https://github.com/gornostal/Modific) -Highlight lines changed since the last commit
 - [SideBarEnhancements](https://github.com/titoBouzout/SideBarEnhancements) - Adds useful file operations to the sidebar, such as “New file”, “New folder”, etc
 - [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter) - Lint code as you type
 - [TrailingSpaces](https://github.com/SublimeText/TrailingSpaces) - Strips trailing whitespace from files
