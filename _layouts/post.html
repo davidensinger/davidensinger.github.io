@@ -18,14 +18,13 @@ page-class: page-post
     <footer class="entry-meta entry-meta-footer">
       <span class="icon-left entry-meta-icon icon-tag">
         {% for tag in page.tags %}
-        <a class="nav-link-tag" href="/tag/{{ tag | replace:' ','-' | downcase }}" rel="tag">{{ tag }}</a>
-        {% if forloop.last == false %}, {% endif %}{% endfor %}
+          <a class="nav-link-tag" href="/tag/{{ tag | replace:' ','-' | downcase }}" rel="tag">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}
+        {% endfor %}
       </span>
       {% if page.categories != empty %}
         <span class="icon-left entry-meta-icon icon-category">
           {% for category in page.categories %}
-            <a class="nav-link-category" href="/category/{{ category | replace:' ','-' }}" rel="category">{{ category | titlecase }}</a>
-            {% if forloop.last == false %}, {% endif %}
+            <a class="nav-link-category" href="/category/{{ category | replace:' ','-' }}" rel="category">{{ category | titlecase }}</a>{% if forloop.last == false %}, {% endif %}
           {% endfor %}
         </span>
       {% endif %}
