@@ -11,4 +11,4 @@ email: hello@davidensinger.com
 description: David Ensinger is a Front End Developer from Columbus, OH
 url: http://davidensinger.com
 
-exclude: ["config.json", "Gemfile", "Gemfile.lock", "README.md", "scss", "Termfile"]
+exclude: ["config.json", "Gemfile", "Gemfile.lock", "Rakefile", "README.md", "scss", "Termfile"]

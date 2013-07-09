@@ -24,6 +24,12 @@ indent_size = 2
 [Gemfile*]
 indent_size = 2
 
+[Rakefile]
+indent_size = 2
+
+[Termfile]
+indent_size = 2
+
 [*.scss]
 indent_size = 2
 

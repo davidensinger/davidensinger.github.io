@@ -8,3 +8,4 @@ gem 'consular' # Terminal automation
 gem 'consular-iterm'
 gem 'consular-osx'
 gem 'jekyll-press' # Minify CSS, HTML, and JS
+gem 'rake'
