@@ -31,11 +31,11 @@
 
 .footer-icon-anchor {
   display: block;
-  @include rem(width, 5);
-  @include rem(height, 5);
+  @include rem(width, 4);
+  @include rem(height, 4);
   @include rem(border-radius, 50%);
-  -webkit-transition: all 0.5s ease-in;
-  transition: all 0.5s ease-in;
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
   &:link,
   &:visited {
     color: inherit;
@@ -44,53 +44,24 @@
   &:active,
   &:focus {
     color: $white-dark;
-    background: $white-dark;
-    box-shadow: 0 0 3em 0 rgba($green-darkest, 0.25);
     .footer-icon-title {
       opacity: 1;
     }
     &:before {
-      -webkit-transform: scale(1.5);
-      -ms-transform: scale(1.5);
-      transform: scale(1.5);
-    }
-  }
-}
-
-.icon-twitter {
-  &:hover,
-  &:focus,
-  &:active {
-    &:before {
-      color: #00acee;
-    }
-  }
-}
-
-.icon-github {
-  &:hover,
-  &:focus,
-  &:active {
-    &:before {
-      color: #4183c4; } } }
-
-.icon-tumblr {
-  &:hover,
-  &:focus,
-  &:active {
-    &:before {
-      color: #364d6d;
+      -webkit-transform: scale(1.25);
+      -ms-transform: scale(1.25);
+      transform: scale(1.25);
     }
   }
 }
 
 .footer-icon {
   display: block;
-  @include rem(line-height, 5);
+  @include rem(line-height, 4);
   &:before {
     @extend %beta-font-size;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
   }
 }
 
@@ -98,10 +69,10 @@
   opacity: 0;
   display: block;
   @extend %epsilon-font-size;
-  @include rem(line-height, 2);
+  line-height: 0;
   font-weight: $base-font-weight-bold;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 
 .footer-icon,
