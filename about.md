@@ -5,8 +5,8 @@ permalink: /about/
 page-class: page-about
 sitemap:
   priority: 0.7
-  changefreq: weekly
-  lastmod: 2013-03-26T18:55:00-04:00
+  changefreq: monthly
+  lastmod: 2013-07-09T18:55:00-04:00
 ---
 
 Hi, my name is __David Ensinger__ and I’m a __Front End Developer__ with equal parts interest in design, development, and writing.
@@ -25,13 +25,14 @@ If you have any questions, comments, or would just like to say hello, please don
 
 ## Colophon
 
-This website was made on a [MacBook Air](http://www.apple.com/macbookair/), designed in browser with [Chrome](http://www.google.com/chrome/), and marked up in [Haml](http://haml.info/) and [Sass](http://sass-lang.com/) in [Sublime Text 2](http://www.sublimetext.com/). Type is set in [Open Sans](http://www.google.com/webfonts/specimen/Open+Sans), which is served by [Google Web Fonts](http://www.google.com/webfonts). Posts are composed in [Markdown](http://daringfireball.net/projects/markdown/) and syntax is highlighted with [Pygments](http://pygments.org/).
+This website is made on a [MacBook Air](http://www.apple.com/macbookair/), designed in browser with [Chrome](http://www.google.com/chrome/), and styled with [Sass](http://sass-lang.com/). All code is written in [Sublime Text 2](http://www.sublimetext.com/) with an accompanying [EditorConfig](http://editorconfig.org/) [file](https://github.com/davidensinger/davidensinger.github.io/blob/source/.editorconfig) to maintain consistency between coding styles and IDEs. The type is set in [Open Sans](http://www.google.com/webfonts/specimen/Open+Sans), which is served by [Google Web Fonts](http://www.google.com/webfonts). Posts are composed in [Markdown](http://daringfireball.net/projects/markdown/) and syntax is highlighted with [Pygments](http://pygments.org/).
 
-The site is published with [Jekyll](http://jekyllrb.com/) and hosted on [GitHub Pages](http://pages.github.com/) ([view the code](https://github.com/davidensinger/davidensinger.github.io)), while the code was compiled and committed into version control by [iTerm2](http://www.iterm2.com/) and [Git](http://git-scm.com/), respectively. [Consular](https://github.com/achiu/consular) was used to automate development workflow setup.
+The site is published with [Jekyll](http://jekyllrb.com/), with dependencies managed by [Bundler](http://bundler.io/). Hosting is kindly provided by [GitHub Pages](http://pages.github.com/) ([view the code](https://github.com/davidensinger/davidensinger.github.io)), while the code is compiled and committed into version control by [iTerm2](http://www.iterm2.com/) and [Git](http://git-scm.com/), respectively. [Consular](https://github.com/achiu/consular) is used to automate development workflow setup.
 
 A number of supporting plugins and code snippets for Jekyll are used with the site:
 
 - [Jekyll Templates for Atom, RSS](http://davecoyle.com/tech-notes/jekyll-templates-for-atom-rss/) by [Dave Coyle](http://davecoyle.com/)
+- [jekyll-press](https://github.com/stereobooster/jekyll-press) by [stereobooster](https://github.com/stereobooster)
 - [Open Graph for Jekyll](https://gist.github.com/pathawks/1406355) by [Pat Hawks](http://alt.pathawks.com/)
 - [Paginate Like a Boss](http://schmidt-happens.com/articles/2012/01/11/setup-pagination-for-jekyll-driven-sites.html) by [Terry Schmidt](http://schmidt-happens.com/)
 - [Jekyll: Category and Tag Paging and Feeds](http://realjenius.com/2012/12/01/jekyll-category-tag-paging-feeds/) by [R.J. Lorimer](http://realjenius.com/)
