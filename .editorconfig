@@ -1,6 +1,7 @@
-; This file is for unifying the coding style for different editors and IDEs.
-; More information at http://EditorConfig.org
+# This file is for unifying the coding style for different editors and IDEs.
+# More information at http://EditorConfig.org
 
+# No .editorconfig files above the root directory
 root = true
 
 [*]
@@ -10,33 +11,18 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-; Use 2 spaces for indentation in HTML, JavaScript, Ruby, SCSS, and XML
+# Use 2 spaces for indentation in HTML, JavaScript, Ruby, SCSS, and XML
 
-[*.html]
-indent_size = 2
-
-[*.js]
-indent_size = 2
-
-[*.rb]
+[*.{html,js,rb,scss,xml}]
 indent_size = 2
 
 [Gemfile*]
 indent_size = 2
 
-[Rakefile]
+[{Rakefile,Termfile}]
 indent_size = 2
 
-[Termfile]
-indent_size = 2
-
-[*.scss]
-indent_size = 2
-
-[*.xml]
-indent_size = 2
-
-; Use 4 spaces for indentation in Markdown files
+# Use 4 spaces for indentation in Markdown files
 
 [*.md]
 indent_size = 4
