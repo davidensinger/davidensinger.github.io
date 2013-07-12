@@ -10,6 +10,27 @@ tags: [Sublime Text 2]
 
 Although I switched to [Sublime Text 2](http://www.sublimetext.com/) more than a year ago, I only recently decided to take a good look at my configuration, with the end goal of increasing my productivity. What follows are my settings, which will hopefully help others work a bit smarter. If you’ve got any useful tips, please [tweet](https://twitter.com/davidensinger) at me!
 
+## Hide Folders
+It’s often helpful to hide folders so they’re not found when searching or using the Go to File shortcut (⌘ + T). Add the following line to your User Preferences (Preferences › Settings - User or ⌘,) to do so:
+
+{% highlight json %}
+"folder_exclude_patterns": [".git", ".svn", ".sass-cache"]
+{% endhighlight %}
+
+You can also use an asterisk to match file types instead of directories:
+
+{% highlight json %}
+"folder_exclude_patterns": ["*.psd"]
+{% endhighlight %}
+
+## Open Files as Tabs
+
+The default behavior is to open a file in a new window. If you'd prefer tabs, add this line to your  User Preferences (Preferences › Settings - User or ⌘,):
+
+{% highlight json %}
+"open_files_in_new_window": false
+{% endhighlight %}
+
 ## Pasting
 Some projects use tabs, while others use spaces. It’s nice to easily copy and paste snippets of code between the two, without worrying about the indentation.
 
