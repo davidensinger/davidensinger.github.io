@@ -1,4 +1,11 @@
-desc "Commit most recent _site/ build"
+desc "Delete _site/"
+task :delete do
+  puts "\## Deleting _site/"
+  status = system("rm -r _site")
+  puts status ? "Success" : "Failed"
+end
+
+desc "Commit _site/"
 task :commit do
   puts "\n## Staging modified files"
   status = system("git add -A")
