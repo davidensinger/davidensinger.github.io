@@ -32,7 +32,6 @@ The site is published with [Jekyll](http://jekyllrb.com/), with dependencies man
 A number of supporting plugins and code snippets for Jekyll are used with the site:
 
 - [Jekyll Templates for Atom, RSS](http://davecoyle.com/tech-notes/jekyll-templates-for-atom-rss/) by [Dave Coyle](http://davecoyle.com/)
-- [jekyll-press](https://github.com/stereobooster/jekyll-press) by [stereobooster](https://github.com/stereobooster)
 - [Open Graph for Jekyll](https://gist.github.com/pathawks/1406355) by [Pat Hawks](http://alt.pathawks.com/)
 - [Paginate Like a Boss](http://schmidt-happens.com/articles/2012/01/11/setup-pagination-for-jekyll-driven-sites.html) by [Terry Schmidt](http://schmidt-happens.com/)
 - [Jekyll: Category and Tag Paging and Feeds](http://realjenius.com/2012/12/01/jekyll-category-tag-paging-feeds/) by [R.J. Lorimer](http://realjenius.com/)

@@ -22,20 +22,9 @@ GEM
     consular-osx (1.0.1)
       consular
       rb-appscript
-    css_press (0.3.2)
-      csspool-st (= 3.1.2)
-      json
-    csspool-st (3.1.2)
     directory_watcher (1.4.1)
-    execjs (1.4.0)
-      multi_json (~> 1.0)
     fast-stemmer (1.0.2)
     highline (1.6.19)
-    html_press (0.8.2)
-      htmlentities
-      multi_css (>= 0.1.0)
-      multi_js (>= 0.1.0)
-    htmlentities (4.3.1)
     i18n (0.6.4)
     jekyll (1.0.3)
       classifier (~> 1.3)
@@ -47,22 +36,12 @@ GEM
       maruku (~> 0.5)
       pygments.rb (~> 0.5.0)
       safe_yaml (~> 0.7.0)
-    jekyll-press (0.2.1)
-      html_press (>= 0.8.2)
-      jekyll
-      multi_css (>= 0.1.0)
-      multi_js (>= 0.1.0)
-    json (1.8.0)
     kramdown (1.0.2)
     liquid (2.5.0)
     listen (0.7.3)
     maruku (0.6.1)
       syntax (>= 1.0.0)
     minitest (4.7.5)
-    multi_css (0.1.0)
-      css_press
-    multi_js (0.1.0)
-      uglifier (~> 2)
     multi_json (1.7.7)
     posix-spawn (0.3.6)
     pygments.rb (0.5.1)
@@ -79,9 +58,6 @@ GEM
     thread_safe (0.1.0)
       atomic
     tzinfo (0.3.37)
-    uglifier (2.1.1)
-      execjs (>= 0.3.0)
-      multi_json (~> 1.0, >= 1.0.2)
     yajl-ruby (1.1.0)
 
 PLATFORMS
@@ -92,7 +68,6 @@ DEPENDENCIES
   consular-iterm
   consular-osx
   jekyll
-  jekyll-press
   rb-fsevent (~> 0.9)
   rdiscount
   sass (~> 3.3.0.alpha.195)
