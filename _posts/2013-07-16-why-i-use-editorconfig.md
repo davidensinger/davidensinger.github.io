@@ -44,7 +44,7 @@ indent_size = 2
 [Gemfile*]
 indent_size = 2
 
-[{Rakefile,Termfile}]
+[Rakefile]
 indent_size = 2
 
 # Use 4 spaces for indentation in Markdown files
