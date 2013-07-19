@@ -1,1 +1,60 @@
-<?xml version="1.0"?> <feed xmlns="http://www.w3.org/2005/Atom"><title>Posts Tagged “Google Chrome” – Development, design, and more by David Ensinger</title><link href="http://davidensinger.com/"/><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/> <updated>2013-07-16T14:50:49-04:00</updated> <id>http://davidensinger.com/</id> <author> <name>David Ensinger</name> <email>hello@davidensinger.com</email> </author> <rights>Copyright © 2013 David Ensinger. All rights reserved.</rights> <entry> <id>http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development/"/><title>My Favorite Chrome Extensions for Development</title> <published>2013-06-14T09:20:00-04:00</published> <updated>2013-06-14T09:20:00-04:00</updated> <author> <name>David Ensinger</name> <uri>http://davidensinger.com/</uri> </author> <content type="html"><![CDATA[<p>&lt;p&gt;In keeping with the spirit of &lt;a href="http://davidensinger.com/2013/05/my-favorite-web-development-software/"&gt;my favorite software for development&lt;/a&gt;, I present my favorite &lt;a href="http://www.google.com/chrome"&gt;Google Chrome&lt;/a&gt; extensions. While there are no shortage of blog posts about &lt;a href="https://chrome.google.com/webstore/category/extensions"&gt;Chrome extensions&lt;/a&gt;, I’ll only list the ones I actually use to keep this post from turning into a bloated roundup of links.&lt;/p&gt;</p><p>&lt;p&gt;I currently have six extensions enabled for development and I suspect that I rely on so few because Chrome comes with such powerful &lt;a href="https://developers.google.com/chrome-developer-tools/"&gt;DevTools&lt;/a&gt;. The vast majority of the in-browser functionality I use is provided out of the box, so I only need to supplement with a smattering of extensions. So without further ado…&lt;/p&gt;</p><p>&lt;h2&gt;PageSpeed Insights (by Google)&lt;/h2&gt;</p><p>&lt;p&gt;The &lt;a href="https://chrome.google.com/webstore/detail/pagespeed-insights-by-goo/gplegfbjlmmehdoakndmohflojccocli?hl=en"&gt;PageSpeed Insights&lt;/a&gt; extension is actually an extension for the aforementioned Developer Tools. It evaluates the performance of websites and gives suggestions for improvement. It’s useful for diagnosing problems and I find that it often reminds me to optimize when I forget.&lt;/p&gt;</p><p>&lt;h2&gt;Resolution Test&lt;/h2&gt;</p><p>&lt;p&gt;&lt;a href="https://chrome.google.com/webstore/detail/resolution-test/idhfcdbheobinplaamokffboaccidbal"&gt;Resolution Test&lt;/a&gt; allows for quick changes to the dimensions of the browser window, which lets developers easily preview their websites in different screen resolutions. It also includes a list of commonly used resolutions with the added ability to customize that list. I often use it while debugging CSS within media queries.&lt;/p&gt;</p><p>&lt;h2&gt;Responsive Inspector&lt;/h2&gt;</p><p>&lt;p&gt;The &lt;a href="https://chrome.google.com/webstore/detail/responsive-inspector/memcdolmmnmnleeiodllgpibdjlkbpim"&gt;Responsive Inspector&lt;/a&gt; extension displays website media queries. It’s really helpful when developing responsively as it shows what resolutions are defined in the stylesheets. It’s also quick and easy to resize the browser to fit the media queries.&lt;/p&gt;</p><p>&lt;h2&gt;User-Agent Switcher for Chrome&lt;/h2&gt;</p><p>&lt;p&gt;&lt;a href="https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg"&gt;User-Agent Switcher for Chrome&lt;/a&gt; quickly and easily switches between user-agent strings. The extension modifies the user-agent sent via HTTP requests as well as any JavaScript objects in the page. It’s much easier to test mobile only sites on desktop with this extension enabled.&lt;/p&gt;</p><p>&lt;h2&gt;Web Developer&lt;/h2&gt;</p><p>&lt;p&gt;The &lt;a href="http://chrispederick.com/work/web-developer/"&gt;Web Developer&lt;/a&gt; extension adds various tools to the browser, some of which are also native to Chrome and the Developer Tools. Even so, it’s helpful to have all the options in one convenient toolbar.&lt;/p&gt;</p><p>&lt;h2&gt;YSlow&lt;/h2&gt;</p><p>&lt;p&gt;&lt;a href="https://chrome.google.com/webstore/detail/yslow/ninejjcohidippngpapiilnmkgllmakh"&gt;YSlow&lt;/a&gt; analyzes websites and suggests ways to improve their performance based on a set of rules for high performance sites. It also offers suggestions for improving performance and displays statistics about the site too. It’s a nice tool to use in conjunction with PageSpeed Insights.&lt;/p&gt;</p><p>&lt;p&gt;Like always, if anyone has any suggestions for good extensions, please don’t hesitate to &lt;a href="http://twitter.com/DavidEnsinger"&gt;tweet&lt;/a&gt; at me!&lt;/p&gt;</p>]]></content> </entry></feed>
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  
+    <title>Posts Tagged “Google Chrome” &ndash; Development, design, and more by David Ensinger</title>
+  
+  <link href="http://davidensinger.com/"/>
+  <link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/>
+  <updated>2013-07-19T15:39:31-04:00</updated>
+  <id>http://davidensinger.com/</id>
+  <author>
+    <name>David Ensinger</name>
+    <email>hello@davidensinger.com</email>
+  </author>
+  <rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights>
+  
+	<entry>
+  <id>http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development</id>
+  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development/"/>
+  <title>My Favorite Chrome Extensions for Development</title>
+  <published>2013-06-14T09:20:00-04:00</published>
+  <updated>2013-06-14T09:20:00-04:00</updated>
+  <author>
+    <name>David Ensinger</name>
+    <uri>http://davidensinger.com/</uri>
+  </author>
+  <content type="html"><![CDATA[
+    <p>&lt;p&gt;In keeping with the spirit of &lt;a href=&quot;http://davidensinger.com/2013/05/my-favorite-web-development-software/&quot;&gt;my favorite software for development&lt;/a&gt;, I present my favorite &lt;a href=&quot;http://www.google.com/chrome&quot;&gt;Google Chrome&lt;/a&gt; extensions. While there are no shortage of blog posts about &lt;a href=&quot;https://chrome.google.com/webstore/category/extensions&quot;&gt;Chrome extensions&lt;/a&gt;, I’ll only list the ones I actually use to keep this post from turning into a bloated roundup of links.&lt;/p&gt;</p>
+
+<p>&lt;p&gt;I currently have six extensions enabled for development and I suspect that I rely on so few because Chrome comes with such powerful &lt;a href=&quot;https://developers.google.com/chrome-developer-tools/&quot;&gt;DevTools&lt;/a&gt;. The vast majority of the in-browser functionality I use is provided out of the box, so I only need to supplement with a smattering of extensions. So without further ado…&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;PageSpeed Insights (by Google)&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;The &lt;a href=&quot;https://chrome.google.com/webstore/detail/pagespeed-insights-by-goo/gplegfbjlmmehdoakndmohflojccocli?hl=en&quot;&gt;PageSpeed Insights&lt;/a&gt; extension is actually an extension for the aforementioned Developer Tools. It evaluates the performance of websites and gives suggestions for improvement. It’s useful for diagnosing problems and I find that it often reminds me to optimize when I forget.&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;Resolution Test&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/resolution-test/idhfcdbheobinplaamokffboaccidbal&quot;&gt;Resolution Test&lt;/a&gt; allows for quick changes to the dimensions of the browser window, which lets developers easily preview their websites in different screen resolutions. It also includes a list of commonly used resolutions with the added ability to customize that list. I often use it while debugging CSS within media queries.&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;Responsive Inspector&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;The &lt;a href=&quot;https://chrome.google.com/webstore/detail/responsive-inspector/memcdolmmnmnleeiodllgpibdjlkbpim&quot;&gt;Responsive Inspector&lt;/a&gt; extension displays website media queries. It’s really helpful when developing responsively as it shows what resolutions are defined in the stylesheets. It’s also quick and easy to resize the browser to fit the media queries.&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;User-Agent Switcher for Chrome&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg&quot;&gt;User-Agent Switcher for Chrome&lt;/a&gt; quickly and easily switches between user-agent strings. The extension modifies the user-agent sent via HTTP requests as well as any JavaScript objects in the page. It’s much easier to test mobile only sites on desktop with this extension enabled.&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;Web Developer&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;The &lt;a href=&quot;http://chrispederick.com/work/web-developer/&quot;&gt;Web Developer&lt;/a&gt; extension adds various tools to the browser, some of which are also native to Chrome and the Developer Tools. Even so, it’s helpful to have all the options in one convenient toolbar.&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;YSlow&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/yslow/ninejjcohidippngpapiilnmkgllmakh&quot;&gt;YSlow&lt;/a&gt; analyzes websites and suggests ways to improve their performance based on a set of rules for high performance sites. It also offers suggestions for improving performance and displays statistics about the site too. It’s a nice tool to use in conjunction with PageSpeed Insights.&lt;/p&gt;</p>
+
+<p>&lt;p&gt;Like always, if anyone has any suggestions for good extensions, please don’t hesitate to &lt;a href=&quot;http://twitter.com/DavidEnsinger&quot;&gt;tweet&lt;/a&gt; at me!&lt;/p&gt;</p>
+
+  ]]></content>
+</entry>
+
+</feed>

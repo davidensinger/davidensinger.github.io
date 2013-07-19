@@ -1,1 +1,46 @@
-<?xml version="1.0"?> <feed xmlns="http://www.w3.org/2005/Atom"><title>Posts Tagged “Agile” – Development, design, and more by David Ensinger</title><link href="http://davidensinger.com/"/><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/> <updated>2013-07-16T14:50:49-04:00</updated> <id>http://davidensinger.com/</id> <author> <name>David Ensinger</name> <email>hello@davidensinger.com</email> </author> <rights>Copyright © 2013 David Ensinger. All rights reserved.</rights> <entry> <id>http://davidensinger.com/2013/03/selling-agile</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/03/selling-agile/"/><title>Selling Agile</title> <published>2013-03-20T18:58:00-04:00</published> <updated>2013-03-20T18:58:00-04:00</updated> <author> <name>David Ensinger</name> <uri>http://davidensinger.com/</uri> </author> <content type="html"><![CDATA[<p>&lt;p&gt;Throughout the last year my team has been trying out a smattering of &lt;strong&gt;Agile&lt;/strong&gt; approaches to software development. We’re largely self-taught and as a result, we’ve had mixed success with the framework (although that’s by no means an indictment against it). It’s fair to say that our successes (or occasionally our lack thereof) are usually in direct relation to our efforts.&lt;/p&gt;</p><p>&lt;p&gt;We’ve lately become more disciplined about our approach, as a result of a push from our recently hired manager. She is a proponent of Agile development and has encouraged us to not only adopt, but to really own such methods and tools as the &lt;strong&gt;daily stand-up&lt;/strong&gt;, &lt;strong&gt;test driven development&lt;/strong&gt;, &lt;strong&gt;pair programming&lt;/strong&gt;, and &lt;strong&gt;weekly sprints&lt;/strong&gt;, amongst others.&lt;/p&gt;</p><p>&lt;h2&gt;The Problem&lt;/h2&gt;</p><p>&lt;p&gt;There’s always a problem, right? We’ve often been applying these techniques without appropriate buy in from our business users. We&amp;rsquo;ve also experienced some unexpected (and sometimes unsolicited) involvement from our stakeholders, which makes me wonder if our efforts can be considered Agile at all? Is this all or nothing? Or can we continue to develop without full buy in from management and our product owners?&lt;/p&gt;</p><p>&lt;p&gt;My concerns were a popular topic of conversation at a two day &lt;strong&gt;Deploying Enterprise Agile&lt;/strong&gt; training that our team completed today. The consensus was that it would be difficult to sell Agile to the entire organization, although we certainly should try. We’ll invariably have our share of resistance, but there’d be easy converts to the cause as well.&lt;/p&gt;</p><p>&lt;h2&gt;A Solution?&lt;/h2&gt;</p><p>&lt;p&gt;We’ll need to explain the benefits of using Agile, the steps we’ll take to implement it, and manage the expectations of both our stakeholders and business owners all the while. We’ll then need to &lt;strong&gt;do work&lt;/strong&gt; and prove the worth of the framework by successfully completing projects in a satisfactory manner to all who are involved.&lt;/p&gt;</p><p>&lt;p&gt;I look forward to the progress that we’re going to make in using Agile techniques for our development. Time to get to work!&lt;/p&gt;</p>]]></content> </entry></feed>
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  
+    <title>Posts Tagged “Agile” &ndash; Development, design, and more by David Ensinger</title>
+  
+  <link href="http://davidensinger.com/"/>
+  <link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/>
+  <updated>2013-07-19T15:39:31-04:00</updated>
+  <id>http://davidensinger.com/</id>
+  <author>
+    <name>David Ensinger</name>
+    <email>hello@davidensinger.com</email>
+  </author>
+  <rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights>
+  
+	<entry>
+  <id>http://davidensinger.com/2013/03/selling-agile</id>
+  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/03/selling-agile/"/>
+  <title>Selling Agile</title>
+  <published>2013-03-20T18:58:00-04:00</published>
+  <updated>2013-03-20T18:58:00-04:00</updated>
+  <author>
+    <name>David Ensinger</name>
+    <uri>http://davidensinger.com/</uri>
+  </author>
+  <content type="html"><![CDATA[
+    <p>&lt;p&gt;Throughout the last year my team has been trying out a smattering of &lt;strong&gt;Agile&lt;/strong&gt; approaches to software development. We’re largely self-taught and as a result, we’ve had mixed success with the framework (although that’s by no means an indictment against it). It’s fair to say that our successes (or occasionally our lack thereof) are usually in direct relation to our efforts.&lt;/p&gt;</p>
+
+<p>&lt;p&gt;We’ve lately become more disciplined about our approach, as a result of a push from our recently hired manager. She is a proponent of Agile development and has encouraged us to not only adopt, but to really own such methods and tools as the &lt;strong&gt;daily stand-up&lt;/strong&gt;, &lt;strong&gt;test driven development&lt;/strong&gt;, &lt;strong&gt;pair programming&lt;/strong&gt;, and &lt;strong&gt;weekly sprints&lt;/strong&gt;, amongst others.&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;The Problem&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;There’s always a problem, right? We’ve often been applying these techniques without appropriate buy in from our business users. We&amp;rsquo;ve also experienced some unexpected (and sometimes unsolicited) involvement from our stakeholders, which makes me wonder if our efforts can be considered Agile at all? Is this all or nothing? Or can we continue to develop without full buy in from management and our product owners?&lt;/p&gt;</p>
+
+<p>&lt;p&gt;My concerns were a popular topic of conversation at a two day &lt;strong&gt;Deploying Enterprise Agile&lt;/strong&gt; training that our team completed today. The consensus was that it would be difficult to sell Agile to the entire organization, although we certainly should try. We’ll invariably have our share of resistance, but there’d be easy converts to the cause as well.&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;A Solution?&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;We’ll need to explain the benefits of using Agile, the steps we’ll take to implement it, and manage the expectations of both our stakeholders and business owners all the while. We’ll then need to &lt;strong&gt;do work&lt;/strong&gt; and prove the worth of the framework by successfully completing projects in a satisfactory manner to all who are involved.&lt;/p&gt;</p>
+
+<p>&lt;p&gt;I look forward to the progress that we’re going to make in using Agile techniques for our development. Time to get to work!&lt;/p&gt;</p>
+
+  ]]></content>
+</entry>
+
+</feed>
