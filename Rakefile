@@ -5,6 +5,43 @@ task :delete do
   puts status ? "Success" : "Failed"
 end
 
+desc "Preview _site/"
+task :preview do
+  puts "\n## Opening _site/ in browser"
+  status = system("open http://0.0.0.0:4000/")
+  puts status ? "Success" : "Failed"
+end
+
+namespace :build do
+  desc "Build _site/ for development"
+  task :dev do
+    puts "\n##  Starting Jekyll and Sass"
+    pids = [
+      spawn("jekyll serve -w"),
+      spawn("sass --sourcemap --watch assets/scss/styles.scss:assets/css/styles.css")
+    ]
+
+    trap "INT" do
+      Process.kill "INT", *pids
+      exit 1
+    end
+
+    loop do
+      sleep 1
+    end
+  end
+
+  desc "Build _site/ for production"
+  task :pro do
+    puts "\n## Building Jekyll to _site/"
+    status = system("jekyll build")
+    puts status ? "Success" : "Failed"
+    puts "\n## Compiling Sass"
+    status = system("sass --style compressed assets/scss/styles.scss:assets/css/styles.css")
+    puts status ? "Success" : "Failed"
+  end
+end
+
 desc "Commit _site/"
 task :commit do
   puts "\n## Staging modified files"
