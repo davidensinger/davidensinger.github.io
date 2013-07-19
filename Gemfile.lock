@@ -44,7 +44,7 @@ GEM
     minitest (4.7.5)
     multi_json (1.7.7)
     posix-spawn (0.3.6)
-    pygments.rb (0.5.1)
+    pygments.rb (0.5.2)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
     rb-appscript (0.6.1)
