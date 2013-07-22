@@ -15,10 +15,13 @@ end
 namespace :build do
   desc "Build _site/ for development"
   task :dev do
-    puts "\n##  Starting Jekyll and Sass"
+    puts "\n## Changing Sass modification time to force recompile"
+    status = system("touch -m assets/scss/styles.scss")
+    puts status ? "Success" : "Failed"
+    puts "\n##  Starting Jekyll and recompiling Sass with source map"
     pids = [
-      spawn("jekyll serve -w"),
-      spawn("sass --sourcemap --watch assets/scss/styles.scss:assets/css/styles.css")
+      spawn("sass --sourcemap --watch assets/scss/styles.scss:assets/css/styles.css"),
+      spawn("jekyll serve -w")
     ]
 
     trap "INT" do
@@ -33,11 +36,17 @@ namespace :build do
 
   desc "Build _site/ for production"
   task :pro do
-    puts "\n## Building Jekyll to _site/"
-    status = system("jekyll build")
+    puts "\n## Changing Sass modification time to force recompile"
+    status = system("touch -m assets/scss/styles.scss")
     puts status ? "Success" : "Failed"
     puts "\n## Compiling Sass"
     status = system("sass --style compressed assets/scss/styles.scss:assets/css/styles.css")
+    puts status ? "Success" : "Failed"
+    puts "\n## Building Jekyll to _site/"
+    status = system("jekyll build")
+    puts status ? "Success" : "Failed"
+    puts "\n## Deleting compiled CSS and Sass source map"
+    status = system("rm -f _site/assets/css/*.map")
     puts status ? "Success" : "Failed"
   end
 end
