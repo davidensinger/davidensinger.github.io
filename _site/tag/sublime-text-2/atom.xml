@@ -1,29 +1,4 @@
-<?xml version="1.0"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  
-    <title>Posts Tagged “Sublime Text 2” &ndash; Development, design, and more by David Ensinger</title>
-  
-  <link href="http://davidensinger.com/"/>
-  <link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/>
-  <updated>2013-07-22T12:35:45-04:00</updated>
-  <id>http://davidensinger.com/</id>
-  <author>
-    <name>David Ensinger</name>
-    <email>hello@davidensinger.com</email>
-  </author>
-  <rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights>
-  
-	<entry>
-  <id>http://davidensinger.com/2013/07/why-i-use-editorconfig</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/07/why-i-use-editorconfig/"/>
-  <title>Why I use EditorConfig</title>
-  <published>2013-07-16T06:12:00-04:00</published>
-  <updated>2013-07-16T06:12:00-04:00</updated>
-  <author>
-    <name>David Ensinger</name>
-    <uri>http://davidensinger.com/</uri>
-  </author>
-  <content type="html"><![CDATA[
+<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Posts Tagged “Sublime Text 2” &ndash; Development, design, and more by David Ensinger</title><link href="http://davidensinger.com/"/><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><updated>2013-07-23T13:00:57-04:00</updated><id>http://davidensinger.com/</id><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights><entry><id>http://davidensinger.com/2013/07/why-i-use-editorconfig</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/07/why-i-use-editorconfig/"/><title>Why I use EditorConfig</title><published>2013-07-16T06:12:00-04:00</published><updated>2013-07-16T06:12:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;Have you ever found yourself switching between projects with vastly different &lt;a href=&quot;http://en.wikipedia.org/wiki/Programming_style&quot;&gt;coding styles&lt;/a&gt; or (gasp!) no consistent style at all? Most editors and IDEs allow for settings at both the user and project level, but neither of those options are ideal. Often there isn’t a settings file for the project and even if there were, it’s probably for an editor that you don’t use. The only other option is to have the editor auto-detect the settings, but that’s far from perfect.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Enter EditorConfig&lt;/h2&gt;</p>
@@ -88,20 +63,7 @@
 
 <p>&lt;p&gt;It’s 2013, so why are we still debating tabs versus spaces?! Set a standard and stick with it.&lt;/p&gt;</p>
 
-  ]]></content>
-</entry>
-
-	<entry>
-  <id>http://davidensinger.com/2013/05/getting-started-with-sublime-text-2</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/05/getting-started-with-sublime-text-2/"/>
-  <title>Getting Started with Sublime Text 2</title>
-  <published>2013-05-14T12:12:00-04:00</published>
-  <updated>2013-05-14T12:12:00-04:00</updated>
-  <author>
-    <name>David Ensinger</name>
-    <uri>http://davidensinger.com/</uri>
-  </author>
-  <content type="html"><![CDATA[
+  ]]></content></entry><entry><id>http://davidensinger.com/2013/05/getting-started-with-sublime-text-2</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/05/getting-started-with-sublime-text-2/"/><title>Getting Started with Sublime Text 2</title><published>2013-05-14T12:12:00-04:00</published><updated>2013-05-14T12:12:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;Although I switched to &lt;a href=&quot;http://www.sublimetext.com/&quot;&gt;Sublime Text 2&lt;/a&gt; more than a year ago, I only recently decided to take a good look at my configuration, with the end goal of increasing my productivity. What follows are my settings, which will hopefully help others work a bit smarter. If you’ve got any useful tips, please &lt;a href=&quot;https://twitter.com/davidensinger&quot;&gt;tweet&lt;/a&gt; at me!&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Hide Folders&lt;/h2&gt;</p>
@@ -211,7 +173,4 @@
 &lt;li&gt;&lt;a href=&quot;http://whiletruecode.com/post/7-handy-text-manipulation-tricks-sublime-text-2&quot;&gt;7 handy text manipulation tricks in Sublime Text 2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</p>
 
-  ]]></content>
-</entry>
-
-</feed>
+  ]]></content></entry></feed>

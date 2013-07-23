@@ -1,29 +1,4 @@
-<?xml version="1.0"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  
-    <title>Posts Tagged “Jekyll” &ndash; Development, design, and more by David Ensinger</title>
-  
-  <link href="http://davidensinger.com/"/>
-  <link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/>
-  <updated>2013-07-22T12:35:45-04:00</updated>
-  <id>http://davidensinger.com/</id>
-  <author>
-    <name>David Ensinger</name>
-    <email>hello@davidensinger.com</email>
-  </author>
-  <rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights>
-  
-	<entry>
-  <id>http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll/"/>
-  <title>Adding Open Graph Tags to Jekyll</title>
-  <published>2013-04-21T16:05:00-04:00</published>
-  <updated>2013-04-21T16:05:00-04:00</updated>
-  <author>
-    <name>David Ensinger</name>
-    <uri>http://davidensinger.com/</uri>
-  </author>
-  <content type="html"><![CDATA[
+<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Posts Tagged “Jekyll” &ndash; Development, design, and more by David Ensinger</title><link href="http://davidensinger.com/"/><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><updated>2013-07-23T13:00:57-04:00</updated><id>http://davidensinger.com/</id><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights><entry><id>http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll/"/><title>Adding Open Graph Tags to Jekyll</title><published>2013-04-21T16:05:00-04:00</published><updated>2013-04-21T16:05:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;What is the &lt;a href=&quot;http://ogp.me/&quot;&gt;Open Graph&lt;/a&gt; protocol? Per &lt;strong&gt;Facebook&lt;/strong&gt;, it “enables any web page to become a rich object in a social graph.” The documentation goes on to state that “to turn your web pages into graph objects, you need to add basic metadata to your page.” Put more simply, add &lt;strong&gt;Open Graph meta tags&lt;/strong&gt; to your website to have greater control over how your content is displayed when shared via Facebook.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Basic Metadata&lt;/h2&gt;</p>
@@ -122,20 +97,7 @@
 
 <p>&lt;p&gt;To verify that your code validates, see the &lt;a href=&quot;https://developers.facebook.com/tools/debug&quot;&gt;Facebook Debugger&lt;/a&gt;.&lt;/p&gt;</p>
 
-  ]]></content>
-</entry>
-
-	<entry>
-  <id>http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll/"/>
-  <title>Supporting Twitter Cards with Jekyll</title>
-  <published>2013-04-17T18:16:00-04:00</published>
-  <updated>2013-04-17T18:16:00-04:00</updated>
-  <author>
-    <name>David Ensinger</name>
-    <uri>http://davidensinger.com/</uri>
-  </author>
-  <content type="html"><![CDATA[
+  ]]></content></entry><entry><id>http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll/"/><title>Supporting Twitter Cards with Jekyll</title><published>2013-04-17T18:16:00-04:00</published><updated>2013-04-17T18:16:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;I just added support for &lt;a href=&quot;https://dev.twitter.com/docs/cards&quot;&gt;Twitter Cards&lt;/a&gt; to my website because I wanted more control over how my site displays on Twitter. There are six different card types, although the only one that’s appropriate for my site is the &lt;a href=&quot;http://dev.twitter.com/docs/cards/types/summary-card&quot;&gt;Summary Card&lt;/a&gt;, which lets users preview site content within a tweet.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Summary Card&lt;/h2&gt;</p>
@@ -242,20 +204,7 @@
   &lt;p&gt;&lt;strong&gt;More Info:&lt;/strong&gt; David Walsh has a really great overview of &lt;a href=&quot;http://davidwalsh.name/twitter-cards&quot;&gt;Twitter Cards&lt;/a&gt;, which is well worth a read.&lt;/p&gt;
 &lt;/div&gt;</p>
 
-  ]]></content>
-</entry>
-
-	<entry>
-  <id>http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/"/>
-  <title>Deploying Jekyll with Plugins to GitHub Pages</title>
-  <published>2013-04-08T06:30:00-04:00</published>
-  <updated>2013-04-08T06:30:00-04:00</updated>
-  <author>
-    <name>David Ensinger</name>
-    <uri>http://davidensinger.com/</uri>
-  </author>
-  <content type="html"><![CDATA[
+  ]]></content></entry><entry><id>http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/"/><title>Deploying Jekyll with Plugins to GitHub Pages</title><published>2013-04-08T06:30:00-04:00</published><updated>2013-04-08T06:30:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;In spite of my resolution to design and develop this website simply, I’ve decided to run &lt;strong&gt;Jekyll&lt;/strong&gt; with plugins. This complicates my deployment because &lt;strong&gt;GitHub Pages&lt;/strong&gt; runs Jekyll in &lt;code&gt;&mdash;safe&lt;/code&gt; mode, which quite reasonably prevents the running of arbitrary Ruby code on the GitHub servers.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;To work around this limitation, the consensus amongst developers is to create two branches: one for development (that I’ve named &lt;em&gt;source&lt;/em&gt;) and the other solely for the compiled &lt;strong&gt;_site&lt;/strong&gt;. In the former branch I’ll add additionally functionality via custom plugins, while the latter branch will serve as the &lt;em&gt;master&lt;/em&gt; that GitHub uses to publish the site.&lt;/p&gt;</p>
@@ -293,20 +242,7 @@
 
 <p>&lt;p&gt;I’d like to automate this by including these deployment commands into a build script that concatenates, minifies, and (when applicable) optimizes my assets after Jekyll compiles the site. Still working on that, though!&lt;/p&gt;</p>
 
-  ]]></content>
-</entry>
-
-	<entry>
-  <id>http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/"/>
-  <title>Generating a Sitemap in Jekyll without a Plugin</title>
-  <published>2013-03-29T06:26:00-04:00</published>
-  <updated>2013-03-29T06:26:00-04:00</updated>
-  <author>
-    <name>David Ensinger</name>
-    <uri>http://davidensinger.com/</uri>
-  </author>
-  <content type="html"><![CDATA[
+  ]]></content></entry><entry><id>http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/"/><title>Generating a Sitemap in Jekyll without a Plugin</title><published>2013-03-29T06:26:00-04:00</published><updated>2013-03-29T06:26:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;During my switch from &lt;strong&gt;WordPress&lt;/strong&gt; to &lt;strong&gt;Jekyll&lt;/strong&gt;, I decided to simplify the scope of my site. One of the changes I made was to remove my portfolio, as I’d like to put more of an emphasis on my writing than on my past projects. As a result, I culled many pages that were indexed by search engines. This meant that I needed a proper &lt;strong&gt;sitemap.xml&lt;/strong&gt;, principally for use with Google’s &lt;a href=&quot;www.google.com/webmasters/tools&quot;&gt;Webmaster Tools&lt;/a&gt;.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;My initial thought was to find a plugin, but I then realized that wasn’t possible. I host the site on &lt;strong&gt;GitHub Pages&lt;/strong&gt;, which runs Jekyll in &lt;code&gt;&mdash;safe&lt;/code&gt; mode. This means that I can’t use any custom plugins and that precludes the implementation of the most popular plugin, which is the &lt;a href=&quot;http://www.kinnetica.com/projects/jekyll-sitemap-generator/&quot;&gt;Sitemap.xml Generator&lt;/a&gt;.&lt;/p&gt;</p>
@@ -373,20 +309,7 @@ lastmod: 2013-03-29T12:49:30-05:00
   &lt;p&gt;&lt;strong&gt;More Info:&lt;/strong&gt; Visit the official &lt;a href=&quot;http://www.sitemaps.org/&quot;&gt;sitemaps.org&lt;/a&gt; to learn more about the protocol.&lt;/p&gt;
 &lt;/div&gt;</p>
 
-  ]]></content>
-</entry>
-
-	<entry>
-  <id>http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/"/>
-  <title>Setting the DNS for GitHub Pages on Namecheap</title>
-  <published>2013-03-27T16:05:00-04:00</published>
-  <updated>2013-03-27T16:05:00-04:00</updated>
-  <author>
-    <name>David Ensinger</name>
-    <uri>http://davidensinger.com/</uri>
-  </author>
-  <content type="html"><![CDATA[
+  ]]></content></entry><entry><id>http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/"/><title>Setting the DNS for GitHub Pages on Namecheap</title><published>2013-03-27T16:05:00-04:00</published><updated>2013-03-27T16:05:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;After pushing my site to &lt;strong&gt;GitHub&lt;/strong&gt; and verifying that it worked at &lt;a href=&quot;http://davidensinger.github.io/&quot;&gt;davidensinger.github.io&lt;/a&gt;, I then went to set up my custom domain name. The &lt;a href=&quot;https://help.github.com/articles/setting-up-a-custom-domain-with-pages&quot;&gt;documentation&lt;/a&gt; provided by GitHub is clear on the subject, but I still managed to forget about my subdomains. For more than eight hours, anyone who attempted to visit &lt;a href=&quot;http://davidensinger.com/&quot;&gt;davidensinger.com&lt;/a&gt; was served with a 404, which is &lt;a href=&quot;https://twitter.com/DavidEnsinger/status/316642135216619522&quot;&gt;rather embarrassing&lt;/a&gt; for one who makes a living as a developer.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;In the interest of helping others avoid the mistakes I made, here’s a guide to setting up the DNS for GitHub pages on &lt;a href=&quot;http://www.namecheap.com/?aff=32887&quot;&gt;Namecheap&lt;/a&gt;, my registrar of choice.&lt;/p&gt;</p>
@@ -423,20 +346,7 @@ lastmod: 2013-03-29T12:49:30-05:00
   &lt;p&gt;&lt;strong&gt;More Info:&lt;/strong&gt; Google has a pretty good &lt;a href=&quot;http://support.google.com/a/bin/answer.py?hl=en&amp;answer=48090&quot;&gt;Basic Guide to DNS&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;</p>
 
-  ]]></content>
-</entry>
-
-	<entry>
-  <id>http://davidensinger.com/2013/03/installing-jekyll</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/03/installing-jekyll/"/>
-  <title>Installing Jekyll</title>
-  <published>2013-03-19T18:55:00-04:00</published>
-  <updated>2013-03-19T18:55:00-04:00</updated>
-  <author>
-    <name>David Ensinger</name>
-    <uri>http://davidensinger.com/</uri>
-  </author>
-  <content type="html"><![CDATA[
+  ]]></content></entry><entry><id>http://davidensinger.com/2013/03/installing-jekyll</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/03/installing-jekyll/"/><title>Installing Jekyll</title><published>2013-03-19T18:55:00-04:00</published><updated>2013-03-19T18:55:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;After much deliberation, I decided to simplify my blogging workflow. To that end I made the switch from &lt;strong&gt;WordPress to Jekyll&lt;/strong&gt;, which is ”a simple, blog aware, static site generator.” Although Jekyll is easy to maintain, it can be confusing to set up, especially for one with a dearth of experience with Ruby.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;Thankfully, there is a wealth of documentation available from developers who have also made the switch. With that in mind, I’d like to contribute my experience with installing &lt;strong&gt;Jekyll on OS X Mountain Lion 10.8.3&lt;/strong&gt;.&lt;/p&gt;</p>
@@ -488,7 +398,4 @@ lastmod: 2013-03-29T12:49:30-05:00
 
 <p>&lt;p&gt;That wasn’t so bad, was it? It feels good to work through the install with the satisfaction of knowing that you did it without any help, save for the goodwill efforts of fellow developers and their documentation. High fives to that!&lt;/p&gt;</p>
 
-  ]]></content>
-</entry>
-
-</feed>
+  ]]></content></entry></feed>

@@ -1,29 +1,4 @@
-<?xml version="1.0"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  
-    <title>Posts Tagged “Rem” &ndash; Development, design, and more by David Ensinger</title>
-  
-  <link href="http://davidensinger.com/"/>
-  <link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/>
-  <updated>2013-07-22T12:35:45-04:00</updated>
-  <id>http://davidensinger.com/</id>
-  <author>
-    <name>David Ensinger</name>
-    <email>hello@davidensinger.com</email>
-  </author>
-  <rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights>
-  
-	<entry>
-  <id>http://davidensinger.com/2013/03/using-rems-with-sass</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/03/using-rems-with-sass/"/>
-  <title>Using Rems with Sass</title>
-  <published>2013-03-21T14:24:00-04:00</published>
-  <updated>2013-03-21T14:24:00-04:00</updated>
-  <author>
-    <name>David Ensinger</name>
-    <uri>http://davidensinger.com/</uri>
-  </author>
-  <content type="html"><![CDATA[
+<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Posts Tagged “Rem” &ndash; Development, design, and more by David Ensinger</title><link href="http://davidensinger.com/"/><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><updated>2013-07-23T13:00:57-04:00</updated><id>http://davidensinger.com/</id><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights><entry><id>http://davidensinger.com/2013/03/using-rems-with-sass</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/03/using-rems-with-sass/"/><title>Using Rems with Sass</title><published>2013-03-21T14:24:00-04:00</published><updated>2013-03-21T14:24:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;I used &lt;strong&gt;rems&lt;/strong&gt; quite liberally with this redesign, especially with the typographic elements. Even though I initially shied away from them, I have since decided that any potential drawbacks are easily mitigated by using &lt;strong&gt;Sass&lt;/strong&gt; to preprocess my CSS.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;Before we discuss rems, we need to first talk a little about ems.&lt;/p&gt;</p>
@@ -114,7 +89,4 @@
 
 <p>&lt;p&gt;I’m now able to use rems without worrying about browser support, which affords me more time to design and write.&lt;/p&gt;</p>
 
-  ]]></content>
-</entry>
-
-</feed>
+  ]]></content></entry></feed>

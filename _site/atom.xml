@@ -1,30 +1,4 @@
-<?xml version="1.0"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  
-   <title>Development, design, and more by David Ensinger</title>
-  
-  <link href="http://davidensinger.com/"/>
-  <link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/>
-  <updated>2013-07-22T12:35:45-04:00</updated>
-  <id>http://davidensinger.com/</id>
-  <author>
-    <name>David Ensinger</name>
-    <email>hello@davidensinger.com</email>
-  </author>
-  <rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights>
-  
-  
-    <entry>
-  <id>http://davidensinger.com/2013/07/why-i-use-editorconfig</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/07/why-i-use-editorconfig/"/>
-  <title>Why I use EditorConfig</title>
-  <published>2013-07-16T06:12:00-04:00</published>
-  <updated>2013-07-16T06:12:00-04:00</updated>
-  <author>
-    <name>David Ensinger</name>
-    <uri>http://davidensinger.com/</uri>
-  </author>
-  <content type="html"><![CDATA[
+<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Development, design, and more by David Ensinger</title><link href="http://davidensinger.com/"/><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><updated>2013-07-23T13:00:57-04:00</updated><id>http://davidensinger.com/</id><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights><entry><id>http://davidensinger.com/2013/07/why-i-use-editorconfig</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/07/why-i-use-editorconfig/"/><title>Why I use EditorConfig</title><published>2013-07-16T06:12:00-04:00</published><updated>2013-07-16T06:12:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;Have you ever found yourself switching between projects with vastly different &lt;a href=&quot;http://en.wikipedia.org/wiki/Programming_style&quot;&gt;coding styles&lt;/a&gt; or (gasp!) no consistent style at all? Most editors and IDEs allow for settings at both the user and project level, but neither of those options are ideal. Often there isn’t a settings file for the project and even if there were, it’s probably for an editor that you don’t use. The only other option is to have the editor auto-detect the settings, but that’s far from perfect.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Enter EditorConfig&lt;/h2&gt;</p>
@@ -89,22 +63,7 @@
 
 <p>&lt;p&gt;It’s 2013, so why are we still debating tabs versus spaces?! Set a standard and stick with it.&lt;/p&gt;</p>
 
-  ]]></content>
-</entry>
-  
-
-  
-    <entry>
-  <id>http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development/"/>
-  <title>My Favorite Chrome Extensions for Development</title>
-  <published>2013-06-14T09:20:00-04:00</published>
-  <updated>2013-06-14T09:20:00-04:00</updated>
-  <author>
-    <name>David Ensinger</name>
-    <uri>http://davidensinger.com/</uri>
-  </author>
-  <content type="html"><![CDATA[
+  ]]></content></entry><entry><id>http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development/"/><title>My Favorite Chrome Extensions for Development</title><published>2013-06-14T09:20:00-04:00</published><updated>2013-06-14T09:20:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;In keeping with the spirit of &lt;a href=&quot;http://davidensinger.com/2013/05/my-favorite-web-development-software/&quot;&gt;my favorite software for development&lt;/a&gt;, I present my favorite &lt;a href=&quot;http://www.google.com/chrome&quot;&gt;Google Chrome&lt;/a&gt; extensions. While there are no shortage of blog posts about &lt;a href=&quot;https://chrome.google.com/webstore/category/extensions&quot;&gt;Chrome extensions&lt;/a&gt;, I’ll only list the ones I actually use to keep this post from turning into a bloated roundup of links.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;I currently have six extensions enabled for development and I suspect that I rely on so few because Chrome comes with such powerful &lt;a href=&quot;https://developers.google.com/chrome-developer-tools/&quot;&gt;DevTools&lt;/a&gt;. The vast majority of the in-browser functionality I use is provided out of the box, so I only need to supplement with a smattering of extensions. So without further ado…&lt;/p&gt;</p>
@@ -135,22 +94,7 @@
 
 <p>&lt;p&gt;Like always, if anyone has any suggestions for good extensions, please don’t hesitate to &lt;a href=&quot;http://twitter.com/DavidEnsinger&quot;&gt;tweet&lt;/a&gt; at me!&lt;/p&gt;</p>
 
-  ]]></content>
-</entry>
-  
-
-  
-    <entry>
-  <id>http://davidensinger.com/2013/05/my-favorite-web-development-software</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/05/my-favorite-web-development-software/"/>
-  <title>My Favorite Web Development Software</title>
-  <published>2013-05-24T08:48:00-04:00</published>
-  <updated>2013-05-24T08:48:00-04:00</updated>
-  <author>
-    <name>David Ensinger</name>
-    <uri>http://davidensinger.com/</uri>
-  </author>
-  <content type="html"><![CDATA[
+  ]]></content></entry><entry><id>http://davidensinger.com/2013/05/my-favorite-web-development-software</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/05/my-favorite-web-development-software/"/><title>My Favorite Web Development Software</title><published>2013-05-24T08:48:00-04:00</published><updated>2013-05-24T08:48:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;I’m always interested in learning about the tools other developers use during the course of their workday. What follows is a list of my preferred software with accompanying explanations on how I use it. Hopefully this list will prove helpful to someone else! If you’ve got a suggestion for a better program, please let me know.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Console&lt;/h2&gt;</p>
@@ -200,22 +144,7 @@
 
 <p>&lt;p&gt;While not exactly an application for development, I use &lt;a href=&quot;http://www.iawriter.com/mac/&quot;&gt;iA Writer&lt;/a&gt; to write all my posts. It’s especially nice that &lt;strong&gt;Jekyll&lt;/strong&gt; comes with built in support for &lt;strong&gt;Markdown&lt;/strong&gt;, so using iA Writer only makes sense.&lt;/p&gt;</p>
 
-  ]]></content>
-</entry>
-  
-
-  
-    <entry>
-  <id>http://davidensinger.com/2013/05/getting-started-with-sublime-text-2</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/05/getting-started-with-sublime-text-2/"/>
-  <title>Getting Started with Sublime Text 2</title>
-  <published>2013-05-14T12:12:00-04:00</published>
-  <updated>2013-05-14T12:12:00-04:00</updated>
-  <author>
-    <name>David Ensinger</name>
-    <uri>http://davidensinger.com/</uri>
-  </author>
-  <content type="html"><![CDATA[
+  ]]></content></entry><entry><id>http://davidensinger.com/2013/05/getting-started-with-sublime-text-2</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/05/getting-started-with-sublime-text-2/"/><title>Getting Started with Sublime Text 2</title><published>2013-05-14T12:12:00-04:00</published><updated>2013-05-14T12:12:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;Although I switched to &lt;a href=&quot;http://www.sublimetext.com/&quot;&gt;Sublime Text 2&lt;/a&gt; more than a year ago, I only recently decided to take a good look at my configuration, with the end goal of increasing my productivity. What follows are my settings, which will hopefully help others work a bit smarter. If you’ve got any useful tips, please &lt;a href=&quot;https://twitter.com/davidensinger&quot;&gt;tweet&lt;/a&gt; at me!&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Hide Folders&lt;/h2&gt;</p>
@@ -325,22 +254,7 @@
 &lt;li&gt;&lt;a href=&quot;http://whiletruecode.com/post/7-handy-text-manipulation-tricks-sublime-text-2&quot;&gt;7 handy text manipulation tricks in Sublime Text 2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</p>
 
-  ]]></content>
-</entry>
-  
-
-  
-    <entry>
-  <id>http://davidensinger.com/2013/05/setting-up-google-author-rich-snippets</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/05/setting-up-google-author-rich-snippets/"/>
-  <title>Setting Up Google Author Rich Snippets</title>
-  <published>2013-05-03T06:49:00-04:00</published>
-  <updated>2013-05-03T06:49:00-04:00</updated>
-  <author>
-    <name>David Ensinger</name>
-    <uri>http://davidensinger.com/</uri>
-  </author>
-  <content type="html"><![CDATA[
+  ]]></content></entry><entry><id>http://davidensinger.com/2013/05/setting-up-google-author-rich-snippets</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/05/setting-up-google-author-rich-snippets/"/><title>Setting Up Google Author Rich Snippets</title><published>2013-05-03T06:49:00-04:00</published><updated>2013-05-03T06:49:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;It turns out that it’s rather easy to display your photo alongside your content in Google’s search results. All you need to do is add support for &lt;a href=&quot;https://support.google.com/webmasters/bin/answer.py?hl=en&amp;amp;answer=99170&quot;&gt;Rich Snippets&lt;/a&gt; to your website, in particular those for authorship. This results in the addition of some minor markup to your HTML, which will then interface with your &lt;a href=&quot;http://plus.google.com/&quot;&gt;Google+&lt;/a&gt; account.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Advantages&lt;/h2&gt;</p>
@@ -412,22 +326,7 @@
 
 <p>&lt;p&gt;Use the &lt;a href=&quot;https://www.google.com/webmasters/tools/richsnippets&quot;&gt;Structured Data Testing Tool&lt;/a&gt; to verify that Google has associated your content with your Google+ profile.&lt;/p&gt;</p>
 
-  ]]></content>
-</entry>
-  
-
-  
-    <entry>
-  <id>http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll/"/>
-  <title>Adding Open Graph Tags to Jekyll</title>
-  <published>2013-04-21T16:05:00-04:00</published>
-  <updated>2013-04-21T16:05:00-04:00</updated>
-  <author>
-    <name>David Ensinger</name>
-    <uri>http://davidensinger.com/</uri>
-  </author>
-  <content type="html"><![CDATA[
+  ]]></content></entry><entry><id>http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll/"/><title>Adding Open Graph Tags to Jekyll</title><published>2013-04-21T16:05:00-04:00</published><updated>2013-04-21T16:05:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;What is the &lt;a href=&quot;http://ogp.me/&quot;&gt;Open Graph&lt;/a&gt; protocol? Per &lt;strong&gt;Facebook&lt;/strong&gt;, it “enables any web page to become a rich object in a social graph.” The documentation goes on to state that “to turn your web pages into graph objects, you need to add basic metadata to your page.” Put more simply, add &lt;strong&gt;Open Graph meta tags&lt;/strong&gt; to your website to have greater control over how your content is displayed when shared via Facebook.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Basic Metadata&lt;/h2&gt;</p>
@@ -526,22 +425,7 @@
 
 <p>&lt;p&gt;To verify that your code validates, see the &lt;a href=&quot;https://developers.facebook.com/tools/debug&quot;&gt;Facebook Debugger&lt;/a&gt;.&lt;/p&gt;</p>
 
-  ]]></content>
-</entry>
-  
-
-  
-    <entry>
-  <id>http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll/"/>
-  <title>Supporting Twitter Cards with Jekyll</title>
-  <published>2013-04-17T18:16:00-04:00</published>
-  <updated>2013-04-17T18:16:00-04:00</updated>
-  <author>
-    <name>David Ensinger</name>
-    <uri>http://davidensinger.com/</uri>
-  </author>
-  <content type="html"><![CDATA[
+  ]]></content></entry><entry><id>http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll/"/><title>Supporting Twitter Cards with Jekyll</title><published>2013-04-17T18:16:00-04:00</published><updated>2013-04-17T18:16:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;I just added support for &lt;a href=&quot;https://dev.twitter.com/docs/cards&quot;&gt;Twitter Cards&lt;/a&gt; to my website because I wanted more control over how my site displays on Twitter. There are six different card types, although the only one that’s appropriate for my site is the &lt;a href=&quot;http://dev.twitter.com/docs/cards/types/summary-card&quot;&gt;Summary Card&lt;/a&gt;, which lets users preview site content within a tweet.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Summary Card&lt;/h2&gt;</p>
@@ -648,22 +532,7 @@
   &lt;p&gt;&lt;strong&gt;More Info:&lt;/strong&gt; David Walsh has a really great overview of &lt;a href=&quot;http://davidwalsh.name/twitter-cards&quot;&gt;Twitter Cards&lt;/a&gt;, which is well worth a read.&lt;/p&gt;
 &lt;/div&gt;</p>
 
-  ]]></content>
-</entry>
-  
-
-  
-    <entry>
-  <id>http://davidensinger.com/2013/04/inline-svg-with-png-fallback</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/inline-svg-with-png-fallback/"/>
-  <title>Inline SVG with PNG Fallback</title>
-  <published>2013-04-10T17:41:00-04:00</published>
-  <updated>2013-04-10T17:41:00-04:00</updated>
-  <author>
-    <name>David Ensinger</name>
-    <uri>http://davidensinger.com/</uri>
-  </author>
-  <content type="html"><![CDATA[
+  ]]></content></entry><entry><id>http://davidensinger.com/2013/04/inline-svg-with-png-fallback</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/inline-svg-with-png-fallback/"/><title>Inline SVG with PNG Fallback</title><published>2013-04-10T17:41:00-04:00</published><updated>2013-04-10T17:41:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;Notice anything different about my balloon logo? Probably not, as the change is subtle, but the image is now an &lt;strong&gt;inline SVG&lt;/strong&gt; instead of an &lt;strong&gt;SVG background image&lt;/strong&gt;. I did this to allow the colors of the balloon to darken on hover.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;Using an inline SVG is the only way to do this, as the browser regards the other implementations of SVG as externally linked files. That prevents the browser from respecting any inline CSS pseudo classes within the SVG.&lt;/p&gt;</p>
@@ -721,22 +590,7 @@ different user agent.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;Unfortunately, both the SVG and the image fallback will be loaded by the browser. This isn’t such a big deal, so long as the image is optimized and then converted to a &lt;strong&gt;base64 string&lt;/strong&gt;, thus saving another HTTP request. I recommend my &lt;a href=&quot;http://webcodertools.com/imagetobase64converter&quot;&gt;favorite converter&lt;/a&gt; for the task!&lt;/p&gt;</p>
 
-  ]]></content>
-</entry>
-  
-
-  
-    <entry>
-  <id>http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages</id>
-  <link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/"/>
-  <title>Deploying Jekyll with Plugins to GitHub Pages</title>
-  <published>2013-04-08T06:30:00-04:00</published>
-  <updated>2013-04-08T06:30:00-04:00</updated>
-  <author>
-    <name>David Ensinger</name>
-    <uri>http://davidensinger.com/</uri>
-  </author>
-  <content type="html"><![CDATA[
+  ]]></content></entry><entry><id>http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/"/><title>Deploying Jekyll with Plugins to GitHub Pages</title><published>2013-04-08T06:30:00-04:00</published><updated>2013-04-08T06:30:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;In spite of my resolution to design and develop this website simply, I’ve decided to run &lt;strong&gt;Jekyll&lt;/strong&gt; with plugins. This complicates my deployment because &lt;strong&gt;GitHub Pages&lt;/strong&gt; runs Jekyll in &lt;code&gt;&mdash;safe&lt;/code&gt; mode, which quite reasonably prevents the running of arbitrary Ruby code on the GitHub servers.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;To work around this limitation, the consensus amongst developers is to create two branches: one for development (that I’ve named &lt;em&gt;source&lt;/em&gt;) and the other solely for the compiled &lt;strong&gt;_site&lt;/strong&gt;. In the former branch I’ll add additionally functionality via custom plugins, while the latter branch will serve as the &lt;em&gt;master&lt;/em&gt; that GitHub uses to publish the site.&lt;/p&gt;</p>
@@ -774,18 +628,4 @@ different user agent.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;I’d like to automate this by including these deployment commands into a build script that concatenates, minifies, and (when applicable) optimizes my assets after Jekyll compiles the site. Still working on that, though!&lt;/p&gt;</p>
 
-  ]]></content>
-</entry>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-</feed>
+  ]]></content></entry></feed>
