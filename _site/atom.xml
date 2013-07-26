@@ -1,4 +1,141 @@
-<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Development, design, and more by David Ensinger</title><link href="http://davidensinger.com/"/><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><updated>2013-07-23T15:50:00-04:00</updated><id>http://davidensinger.com/</id><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights><entry><id>http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/"/><title>Automating Jekyll Deployment to GitHub Pages with Rake</title><published>2013-07-23T09:24:00-04:00</published><updated>2013-07-23T09:24:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Development, design, and more by David Ensinger</title><link href="http://davidensinger.com/"/><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><updated>2013-07-26T16:26:51-04:00</updated><id>http://davidensinger.com/</id><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights><entry><id>http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/"/><title>Easy Sass Source Maps with Development Environments and Rake</title><published>2013-07-26T09:26:00-04:00</published><updated>2013-07-26T09:26:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+    <p>&lt;p&gt;In addition to &lt;a href=&quot;http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/&quot;&gt;automating the deployment of Jekyll&lt;/a&gt;, I also wrote a couple Rake tasks to streamline the building of my site. They’re quite simple, but they allow me to have environments for both development and production. It’s now just as easy to use Sass source maps in my development environment as it is to build compressed assets for production.&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;Source Maps in Sass&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;So what are &lt;a href=&quot;http://net.tutsplus.com/tutorials/tools-and-tips/source-maps-101/&quot;&gt;Source Maps&lt;/a&gt;? Basically they’re what link the compiled code that you see in your browser to the original source files that live in your development environment. This makes it really simple to debug code that may otherwise be quite difficult to work through.&lt;/p&gt;</p>
+
+<p>&lt;h3&gt;How to&lt;/h3&gt;</p>
+
+<p>&lt;p&gt;It’s fairly straightforward to set up source maps in Sass for viewing in Chrome. Thankfully, the process has been well documented by Tim Lucas in his article, “&lt;a href=&quot;https://medium.com/what-i-learned-building/b4daab987fb0&quot;&gt;Getting started with CSS sourcemaps and in-browser Sass editing&lt;/a&gt;.” I’ll still lay out the high-level steps here, though:&lt;/p&gt;</p>
+
+<p>&lt;ol&gt;
+&lt;li&gt;Install &lt;strong&gt;Sass 3.3+&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run Sass with the &lt;code&gt;&mdash;sourcemap&lt;/code&gt; flag&lt;/li&gt;
+&lt;li&gt;Enable &lt;strong&gt;CSS Source Maps&lt;/strong&gt; support in &lt;a href=&quot;https://www.google.com/intl/en/chrome/browser/canary.html&quot;&gt;Chrome Canary&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</p>
+
+<p>&lt;p&gt;Once you’ve followed those steps you should be able to inspect CSS properties in DevTools and then click them to go straight to their source. Pretty neat, right?&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;Setting up Environments with Rake&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;Now that the source maps are working, it’s time to set up a way to switch between the compiled Sass for development and for production. To do this, I’ve created a couple tasks with Rake:&lt;/p&gt;</p>
+
+<p>&lt;h3&gt;Development&lt;/h3&gt;</p>
+
+<p>&lt;p&gt;To start my development, I use the following Rake task, which is based off the work of Nick Quaranto in “&lt;a href=&quot;http://quaran.to/blog/2013/01/09/use-jekyll-scss-coffeescript-without-plugins/&quot;&gt;Use Jekyll, SCSS, and CoffeeScript without plugins&lt;/a&gt;.” The task starts Sass and Jekyll with the desired flags, although note that it must first run the &lt;code&gt;:recompile_sass&lt;/code&gt; task, which I’ll go over shortly.&lt;/p&gt;</p>
+
+<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Build _site/ for development&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:dev&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:recompile_sass&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;##  Starting Jekyll and compiling Sass with source map&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;pids&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;</p>
+
+<pre><code>&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;spawn&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;sass --sourcemap --watch assets/scss/styles.scss:assets/css/styles.css&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;),&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;spawn&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;jekyll serve -w&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt;
+</code></pre>
+
+<p>  &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;</p>
+
+<p>  &lt;span class=&quot;nb&quot;&gt;trap&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;INT&amp;quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;</p>
+
+<pre><code>&amp;lt;span class=&amp;quot;no&amp;quot;&amp;gt;Process&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;.&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;kill&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;INT&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;,&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;*&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;pids&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;exit&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;mi&amp;quot;&amp;gt;1&amp;lt;/span&amp;gt;
+</code></pre>
+
+<p>  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;</p>
+
+<p>  &lt;span class=&quot;kp&quot;&gt;loop&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;</p>
+
+<pre><code>&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;sleep&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;mi&amp;quot;&amp;gt;1&amp;lt;/span&amp;gt;
+</code></pre>
+
+<p>  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+
+<p>&lt;h3&gt;Production&lt;/h3&gt;</p>
+
+<p>&lt;p&gt;To build for production, I use the following task, which compiles the Sass (note the &lt;code&gt;&mdash;style compressed&lt;/code&gt;), builds Jekyll, and then deletes the leftover source map file for Sass. Again, the task must &lt;code&gt;:recompile_sass&lt;/code&gt; before starting.&lt;/p&gt;</p>
+
+<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Build <em>site/ for production&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:pro&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:recompile_sass&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Compiling Sass&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;sass &mdash;style compressed assets/scss/styles.scss:assets/css/styles.css&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Building Jekyll to </em>site/&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;jekyll build&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Deleting Sass source map&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;rm -f _site/assets/css/*.map&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+
+<p>&lt;h2&gt;Force Sass to Recompile&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;For both my development and production Rake tasks I force Sass to recompile. I do this because Sass recompiles only when the compiled CSS has been deleted or when the Sass has been modified.&lt;/p&gt;</p>
+
+<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Recompile Sass&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:recompile_sass&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Forcing Sass to recompile&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;touch -m assets/scss/styles.scss&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+
+<p>&lt;h2&gt;Complete Tasks&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;The following are the complete Rake tasks. You’ll notice that I’ve namespaced the build tasks, as well as invoked a minify task, which I’ll go over in a future post.&lt;/p&gt;</p>
+
+<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Recompile Sass&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:recompile_sass&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Forcing Sass to recompile&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;touch -m assets/scss/styles.scss&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;</p>
+
+<p>&lt;span class=&quot;n&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:build&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Build _site/ for development&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:dev&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:recompile_sass&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;</p>
+
+<pre><code>&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;puts&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;se&amp;quot;&amp;gt;\n&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;##  Starting Jekyll and recompiling Sass with source map&amp;amp;quot;&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;pids&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;=&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;[&amp;lt;/span&amp;gt;
+  &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;spawn&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;sass --sourcemap --watch assets/scss/styles.scss:assets/css/styles.css&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;),&amp;lt;/span&amp;gt;
+  &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;spawn&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;jekyll serve -w&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;]&amp;lt;/span&amp;gt;
+
+&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;trap&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;INT&amp;amp;quot;&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;k&amp;quot;&amp;gt;do&amp;lt;/span&amp;gt;
+  &amp;lt;span class=&amp;quot;no&amp;quot;&amp;gt;Process&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;.&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;kill&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;INT&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;,&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;*&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;pids&amp;lt;/span&amp;gt;
+  &amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;exit&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;mi&amp;quot;&amp;gt;1&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;k&amp;quot;&amp;gt;end&amp;lt;/span&amp;gt;
+
+&amp;lt;span class=&amp;quot;kp&amp;quot;&amp;gt;loop&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;k&amp;quot;&amp;gt;do&amp;lt;/span&amp;gt;
+  &amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;sleep&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;mi&amp;quot;&amp;gt;1&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;k&amp;quot;&amp;gt;end&amp;lt;/span&amp;gt;
+</code></pre>
+
+<p>  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;</p>
+
+<p>  &lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Build _site/ for production&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:pro&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:recompile_sass&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;</p>
+
+<pre><code>&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;puts&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;se&amp;quot;&amp;gt;\n&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;## Compiling Sass&amp;amp;quot;&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;status&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;=&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;system&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;sass --style compressed assets/scss/styles.scss:assets/css/styles.css&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;puts&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;status&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;?&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;Success&amp;amp;quot;&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;Failed&amp;amp;quot;&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;puts&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;se&amp;quot;&amp;gt;\n&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;## Building Jekyll to _site/&amp;amp;quot;&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;status&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;=&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;system&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;jekyll build&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;puts&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;status&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;?&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;Success&amp;amp;quot;&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;Failed&amp;amp;quot;&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;ss&amp;quot;&amp;gt;Rake&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;ss&amp;quot;&amp;gt;:Task&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;[&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;minify&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;].&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;invoke&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;puts&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;se&amp;quot;&amp;gt;\n&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;## Deleting Sass source map&amp;amp;quot;&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;status&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;=&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;system&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;rm -f _site/assets/css/*.map&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;puts&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;status&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;?&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;Success&amp;amp;quot;&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;Failed&amp;amp;quot;&amp;lt;/span&amp;gt;
+</code></pre>
+
+<p>  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+
+  ]]></content></entry><entry><id>http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/"/><title>Automating Jekyll Deployment to GitHub Pages with Rake</title><published>2013-07-23T09:24:00-04:00</published><updated>2013-07-23T09:24:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;I recently automated the deployment of my site to &lt;strong&gt;GitHub Pages&lt;/strong&gt;, which is something that &lt;a href=&quot;http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/&quot;&gt;I’ve wanted to do for awhile&lt;/a&gt;. Whereas I would previously enter a string of commands into the terminal, I now use &lt;strong&gt;Rake&lt;/strong&gt; to handle those commands for me.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;What is Rake&lt;/h2&gt;</p>
@@ -604,63 +741,5 @@
 <p>&lt;div class=&quot;gray-box&quot;&gt;
   &lt;p&gt;&lt;strong&gt;More Info:&lt;/strong&gt; David Walsh has a really great overview of &lt;a href=&quot;http://davidwalsh.name/twitter-cards&quot;&gt;Twitter Cards&lt;/a&gt;, which is well worth a read.&lt;/p&gt;
 &lt;/div&gt;</p>
-
-  ]]></content></entry><entry><id>http://davidensinger.com/2013/04/inline-svg-with-png-fallback</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/inline-svg-with-png-fallback/"/><title>Inline SVG with PNG Fallback</title><published>2013-04-10T17:41:00-04:00</published><updated>2013-04-10T17:41:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
-    <p>&lt;p&gt;Notice anything different about my balloon logo? Probably not, as the change is subtle, but the image is now an &lt;strong&gt;inline SVG&lt;/strong&gt; instead of an &lt;strong&gt;SVG background image&lt;/strong&gt;. I did this to allow the colors of the balloon to darken on hover.&lt;/p&gt;</p>
-
-<p>&lt;p&gt;Using an inline SVG is the only way to do this, as the browser regards the other implementations of SVG as externally linked files. That prevents the browser from respecting any inline CSS pseudo classes within the SVG.&lt;/p&gt;</p>
-
-<p>&lt;p&gt;As an added benefit, an HTTP request is saved, although this boon to page load optimization is at the expense of the tidiness of the markup. It’s not such a drawback, especially if the HTML will be minified before being deployed.&lt;/p&gt;</p>
-
-<p>&lt;p&gt;As for browser support, &lt;a href=&quot;http://caniuse.com/#feat=svg-html5&quot;&gt;inline SVGs are supported by all modern browsers&lt;/a&gt;, so long as the proper &lt;strong&gt;HTML5 DOCTYPE&lt;/strong&gt; (&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/code&gt;) is declared. Not surprisingly, IE8 doesn’t support inline SVGs, so a fallback is needed for the small percentage of visitors who use that browser.&lt;/p&gt;</p>
-
-<p>&lt;p&gt;The obvious choice for an image fallback is a PNG since they support alpha transparency and are easily optimized for file size with &lt;a href=&quot;http://pngmini.com/&quot;&gt;ImageAlpha&lt;/a&gt; and &lt;a href=&quot;http://imageoptim.com/&quot;&gt;ImageOptim&lt;/a&gt;.&lt;/p&gt;</p>
-
-<p>&lt;h2&gt;How Best to Fallback?&lt;/h2&gt;</p>
-
-<p>&lt;p&gt;I initially considered replacing the inline SVG markup with an &lt;code&gt;img&lt;/code&gt; tag via either &lt;strong&gt;JavaScript&lt;/strong&gt; or &lt;strong&gt;jQuery&lt;/strong&gt;, but decided against it. The user may have JavaScript disabled and if I elect to use jQuery I’ll need to make an additional HTTP request to load the library.&lt;/p&gt;</p>
-
-<p>&lt;p&gt;Thankfully, I stumbled upon &lt;a href=&quot;http://www.kaizou.org/2009/03/inline-svg-fallback/&quot;&gt;a better solution&lt;/a&gt; that makes use of &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/SVG/Element/foreignObject&quot;&gt;foreignObject&lt;/a&gt; and &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/SVG/Element/switch&quot;&gt;switch&lt;/a&gt;, which are both elements specific to SVG.&lt;/p&gt;</p>
-
-<p>&lt;blockquote&gt;&lt;p&gt;The &lt;code&gt;foreignObject&lt;/code&gt; element allows for inclusion of a foreign
-XML namespace which has its graphical content drawn by a
-different user agent.&lt;/p&gt;</p>
-
-<p>&lt;p&gt;&lt;cite&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/SVG/Element/foreignObject&quot;&gt;Mozilla Developer Network&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;&lt;/blockquote&gt;</p>
-
-<p>&lt;p&gt;With &lt;code&gt;foreignObject&lt;/code&gt; I can insert fallback &lt;strong&gt;HTML&lt;/strong&gt; into the SVG, which will look like this:&lt;/p&gt;</p>
-
-<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;svg&amp;gt;&lt;/span&gt;
-  SVG
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;foreignObject&amp;gt;&lt;/span&gt;</p>
-
-<pre><code>Fallback HTML
-</code></pre>
-
-<p>  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/foreignObject&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/svg&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
-
-<p>&lt;p&gt;The final step is to put the SVG code into a &lt;strong&gt;group&lt;/strong&gt; (&lt;code&gt;g&lt;/code&gt;) and then wrap the group and foreignObject in a &lt;strong&gt;switch&lt;/strong&gt; (&lt;code&gt;switch&lt;/code&gt;) element. The switch will then evaluate the children elements in order. The first element that has the proper attributes will be rendered, which will be the the group with the SVG.&lt;/p&gt;</p>
-
-<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;svg&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;g&amp;gt;&lt;/span&gt;</p>
-
-<pre><code>SVG
-</code></pre>
-
-<p>  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/g&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;foreignObject&amp;gt;&lt;/span&gt;</p>
-
-<pre><code>Fallback
-</code></pre>
-
-<p>  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/foreignObject&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/svg&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
-
-<p>&lt;p&gt;Browsers that support SVG will render the inline SVG, while older browsers will instead display the foreignObject, which contains the fallback PNG. Easy and efficient, right?&lt;/p&gt;</p>
-
-<p>&lt;p&gt;Unfortunately, both the SVG and the image fallback will be loaded by the browser. This isn’t such a big deal, so long as the image is optimized and then converted to a &lt;strong&gt;base64 string&lt;/strong&gt;, thus saving another HTTP request. I recommend my &lt;a href=&quot;http://webcodertools.com/imagetobase64converter&quot;&gt;favorite converter&lt;/a&gt; for the task!&lt;/p&gt;</p>
 
   ]]></content></entry></feed>
