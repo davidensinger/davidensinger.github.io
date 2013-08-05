@@ -2,7 +2,7 @@
 date: 2013-08-04 12:19:00
 layout: post
 slug: how-i-use-reduce-to-minify-and-optimize-assets-for-production
-title: How I use Reduce to Minify and Optimize Assets for Production
+title: How I Use Reduce to Minify and Optimize Assets for Production
 description: An easy way to both minify CSS, JavaScript, and HTML and optimize images.
 categories: [Development]
 tags: [CSS, HTML, Images, JavaScript, Minify, Optimize, Rake, Reduce]
@@ -16,7 +16,7 @@ The obvious benefit to minifying text and optimizing images is that it reduces f
 ## My Set Up
 To use Reduce I added it to my site’s project with **Bundler** so that I may then invoke it in my **Rake** task to build for production. A benefit to having separate environments for development and production is that I can delay all optimization to my production build, which saves considerable time during development.
 
-I previously tried several Jekyll plugins to manage this, but didn’t like the delay between saving a file and then waiting for Jekyll to rebuild. Invariably, the bottleneck was the file compression, especially in regards to the minification of the HTML, which is perhaps due to the sheer quantity of files involved.
+I previously tried several **Jekyll** plugins to manage this, but didn’t like the delay between saving a file and then waiting for Jekyll to rebuild. Invariably, the bottleneck was the file compression, especially in regards to the minification of the HTML, which is perhaps due to the sheer quantity of files involved.
 
 The task I invoke to minify the assets is courtesy of [Emanuele Bardelli](http://www.pacbard.tk/), who added the HTML compression functionality to Reduce. See [his rake task](https://github.com/pacbard/blog/blob/master/_rake/minify.rake), which I’ve only superficially modified:
 
