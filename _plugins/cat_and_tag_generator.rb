@@ -29,7 +29,7 @@ module Jekyll
     def paginate(site, type, posts)
       pages = Pager.calculate_pages(posts[1], site.config['paginate'].to_i)
       (1..pages).each do |num_page|
-        pager = Pager.new(site.config, num_page, posts[1], pages)
+        pager = Pager.new(site, num_page, posts[1], pages)
         path = "/#{type}/#{posts[0]}".downcase.strip.gsub(' ', '-')
         if num_page > 1
           path = path + "/page#{num_page}"
@@ -37,6 +37,7 @@ module Jekyll
         newpage = GroupSubPage.new(site, site.source, path, type, posts[0])
         newpage.pager = pager
         site.pages << newpage
+
       end
     end
   end
