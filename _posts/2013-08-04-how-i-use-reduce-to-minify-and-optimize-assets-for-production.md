@@ -2,7 +2,7 @@
 date: 2013-08-04 12:19:00
 layout: post
 slug: how-i-use-reduce-to-minify-and-optimize-assets-for-production
-title: How I Use Reduce to Minify and Optimize Assets for Production
+title: How I use Reduce to Minify and Optimize Assets for Production
 description: An easy way to both minify CSS, JavaScript, and HTML and optimize images.
 categories: [Development]
 tags: [CSS, HTML, Images, JavaScript, Minify, Optimize, Rake, Reduce]
