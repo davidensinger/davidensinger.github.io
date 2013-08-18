@@ -1,4 +1,4 @@
-<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Posts Categorized “Development” &ndash; Development, design, and more by David Ensinger</title><link href="http://davidensinger.com/"/><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><updated>2013-08-05T09:04:59-04:00</updated><id>http://davidensinger.com/</id><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights><entry><id>http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production/"/><title>How I Use Reduce to Minify and Optimize Assets for Production</title><published>2013-08-04T08:19:00-04:00</published><updated>2013-08-04T08:19:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Posts Categorized “Development” &ndash; Development, design, and more by David Ensinger</title><link href="http://davidensinger.com/"/><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><updated>2013-08-18T14:47:04-04:00</updated><id>http://davidensinger.com/</id><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights><entry><id>http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production/"/><title>How I use Reduce to Minify and Optimize Assets for Production</title><published>2013-08-04T08:19:00-04:00</published><updated>2013-08-04T08:19:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;Now that I’ve set up &lt;a href=&quot;http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/&quot;&gt;my development environment with Rake&lt;/a&gt;, I’m able to easily minify and optimize the assets I use for my site. To do this I use &lt;a href=&quot;https://github.com/grosser/reduce&quot;&gt;Reduce&lt;/a&gt;, which is a fantastic Ruby gem by &lt;a href=&quot;http://grosser.it/&quot;&gt;Michael Grosser&lt;/a&gt; to minify and compress CSS, HTML, JavaScript and Jpeg and PNG, amongst other formats.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Why Compress Assets?&lt;/h2&gt;</p>
@@ -400,23 +400,30 @@
   ]]></content></entry><entry><id>http://davidensinger.com/2013/05/getting-started-with-sublime-text-2</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/05/getting-started-with-sublime-text-2/"/><title>Getting Started with Sublime Text 2</title><published>2013-05-14T12:12:00-04:00</published><updated>2013-05-14T12:12:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;Although I switched to &lt;a href=&quot;http://www.sublimetext.com/&quot;&gt;Sublime Text 2&lt;/a&gt; more than a year ago, I only recently decided to take a good look at my configuration, with the end goal of increasing my productivity. What follows are my settings, which will hopefully help others work a bit smarter. If you’ve got any useful tips, please &lt;a href=&quot;https://twitter.com/davidensinger&quot;&gt;tweet&lt;/a&gt; at me!&lt;/p&gt;</p>
 
-<p>&lt;h2&gt;Hide Folders&lt;/h2&gt;</p>
+<p>&lt;h2&gt;Hide Files and Folders&lt;/h2&gt;</p>
 
-<p>&lt;p&gt;It’s often helpful to hide folders so they’re not found when searching or using the Go to File shortcut (⌘ + T). Add the following line to your User Preferences (Preferences › Settings &amp;ndash; User or ⌘,) to do so:&lt;/p&gt;</p>
+<p>&lt;p&gt;It’s often helpful to hide folders so they’re not found when searching or using the &lt;strong&gt;Go to File&lt;/strong&gt; shortcut (&lt;strong&gt;⌘ + T&lt;/strong&gt;). Add the following line to your User Preferences (&lt;strong&gt;Preferences › Settings &amp;ndash; User&lt;/strong&gt; or &lt;strong&gt;⌘,&lt;/strong&gt;) to do so:&lt;/p&gt;</p>
 
 <p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;folder_exclude_patterns&amp;quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;.git&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;.svn&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;.sass-cache&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
 
-<p>&lt;p&gt;You can also use an asterisk to match file types instead of directories:&lt;/p&gt;</p>
+<p>&lt;p&gt;You can also use exclude file types (with asterisk), instead of directories:&lt;/p&gt;</p>
 
-<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;folder_exclude_patterns&amp;quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;*.psd&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;file_exclude_patterns&amp;quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;.DS_Store&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;<em>.log&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;</em>.psd&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
 
 <p>&lt;h2&gt;Open Files as Tabs&lt;/h2&gt;</p>
 
-<p>&lt;p&gt;The default behavior is to open a file in a new window. If you&amp;rsquo;d prefer tabs, add this line to your  User Preferences (Preferences › Settings &amp;ndash; User or ⌘,):&lt;/p&gt;</p>
+<p>&lt;p&gt;The default behavior is to open a file in a new window. If you&amp;rsquo;d prefer tabs, add this line to your User Preferences (&lt;strong&gt;Preferences › Settings &amp;ndash; User&lt;/strong&gt; or &lt;strong&gt;⌘,&lt;/strong&gt;):&lt;/p&gt;</p>
 
 <p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;open_files_in_new_window&amp;quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+
+<p>&lt;h2&gt;Close Windows when Empty&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;To close the window when there are only empty tabs, add this line to your User Preferences (&lt;strong&gt;Preferences › Settings &amp;ndash; User&lt;/strong&gt; or &lt;strong&gt;⌘,&lt;/strong&gt;):&lt;/p&gt;</p>
+
+<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;close_windows_when_empty&amp;quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
 
 <p>&lt;h2&gt;Pasting&lt;/h2&gt;</p>
@@ -489,10 +496,18 @@
 
 <p>&lt;h2&gt;Tabs to Spaces&lt;/h2&gt;</p>
 
-<p>&lt;p&gt;The default indentation style uses tabs instead of spaces. If you want to change this, go to your user preferences (&lt;strong&gt;Preferences › Settings &amp;ndash; User&lt;/strong&gt; or &lt;strong&gt;⌘,&lt;/strong&gt;) and add:&lt;/p&gt;</p>
+<p>&lt;p&gt;The default indentation style uses tabs instead of spaces. If you want to change this, go to your User Preferences (&lt;strong&gt;Preferences › Settings &amp;ndash; User&lt;/strong&gt; or &lt;strong&gt;⌘,&lt;/strong&gt;) and add:&lt;/p&gt;</p>
 
 <p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;tab_size&amp;quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;
 &lt;span class=&quot;s2&quot;&gt;&amp;quot;translate_tabs_to_spaces&amp;quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+
+<p>&lt;h2&gt;Scroll&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;To scroll past the end of the file, add this to your User Preferences (&lt;strong&gt;Preferences › Settings &amp;ndash; User&lt;/strong&gt; or &lt;strong&gt;⌘,&lt;/strong&gt;):&lt;/p&gt;</p>
+
+<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;scroll_past_end&amp;quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;&amp;quot;scroll_speed&amp;quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
 
 <p>&lt;h2&gt;Other Resources&lt;/h2&gt;</p>
