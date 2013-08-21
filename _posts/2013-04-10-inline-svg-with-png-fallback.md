@@ -45,12 +45,14 @@ The final step is to put the SVG code into a **group** (`g`) and then wrap the g
 
 {% highlight xml %}
 <svg>
-  <g>
-    SVG
-  </g>
-  <foreignObject>
-    Fallback
-  </foreignObject>
+  <switch>
+    <g>
+      SVG
+    </g>
+    <foreignObject>
+      Fallback
+    </foreignObject>
+  </switch>
 </svg>
 {% endhighlight %}
 
