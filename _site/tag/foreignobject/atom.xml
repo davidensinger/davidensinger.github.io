@@ -1,4 +1,4 @@
-<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Posts Tagged “foreignObject” &ndash; Development, design, and more by David Ensinger</title><link href="http://davidensinger.com/"/><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><updated>2013-08-18T15:47:52-04:00</updated><id>http://davidensinger.com/</id><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights><entry><id>http://davidensinger.com/2013/04/inline-svg-with-png-fallback</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/inline-svg-with-png-fallback/"/><title>Inline SVG with PNG Fallback</title><published>2013-04-10T17:41:00-04:00</published><updated>2013-04-10T17:41:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Posts Tagged “foreignObject” &ndash; Development, design, and more by David Ensinger</title><link href="http://davidensinger.com/"/><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><updated>2013-08-20T21:33:54-04:00</updated><id>http://davidensinger.com/</id><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights><entry><id>http://davidensinger.com/2013/04/inline-svg-with-png-fallback</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/inline-svg-with-png-fallback/"/><title>Inline SVG with PNG Fallback</title><published>2013-04-10T17:41:00-04:00</published><updated>2013-04-10T17:41:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
     <p>&lt;p&gt;Notice anything different about my balloon logo? Probably not, as the change is subtle, but the image is now an &lt;strong&gt;inline SVG&lt;/strong&gt; instead of an &lt;strong&gt;SVG background image&lt;/strong&gt;. I did this to allow the colors of the balloon to darken on hover.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;Using an inline SVG is the only way to do this, as the browser regards the other implementations of SVG as externally linked files. That prevents the browser from respecting any inline CSS pseudo classes within the SVG.&lt;/p&gt;</p>
@@ -37,18 +37,17 @@ different user agent.&lt;/p&gt;</p>
 <p>&lt;p&gt;The final step is to put the SVG code into a &lt;strong&gt;group&lt;/strong&gt; (&lt;code&gt;g&lt;/code&gt;) and then wrap the group and foreignObject in a &lt;strong&gt;switch&lt;/strong&gt; (&lt;code&gt;switch&lt;/code&gt;) element. The switch will then evaluate the children elements in order. The first element that has the proper attributes will be rendered, which will be the the group with the SVG.&lt;/p&gt;</p>
 
 <p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;svg&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;g&amp;gt;&lt;/span&gt;</p>
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;switch&amp;gt;&lt;/span&gt;</p>
 
-<pre><code>SVG
+<pre><code>&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;g&amp;amp;gt;&amp;lt;/span&amp;gt;
+  SVG
+&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;/g&amp;amp;gt;&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;foreignObject&amp;amp;gt;&amp;lt;/span&amp;gt;
+  Fallback
+&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;/foreignObject&amp;amp;gt;&amp;lt;/span&amp;gt;
 </code></pre>
 
-<p>  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/g&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;foreignObject&amp;gt;&lt;/span&gt;</p>
-
-<pre><code>Fallback
-</code></pre>
-
-<p>  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/foreignObject&amp;gt;&lt;/span&gt;
+<p>  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/switch&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/svg&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
 
