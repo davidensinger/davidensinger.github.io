@@ -31,7 +31,7 @@ module Jekyll
 
   class SuggestedTweet < Liquid::Tag
 
-    safe true
+    # safe true
 
     def initialize(tag_name, text, tokens)
       super
