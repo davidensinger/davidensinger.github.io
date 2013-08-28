@@ -24,6 +24,9 @@
 # https://github.com/scottwb/jekyll-tweet-tag/blob/master/tweet_tag.rb
 # http://tech.pro/tutorial/1299/getting-started-with-jekyll-plugins
 
+# https://gist.github.com/rjz/4012584
+# https://github.com/richhollis/twitter_web_intents
+
 module Jekyll
 
   class SuggestedTweet < Liquid::Tag
