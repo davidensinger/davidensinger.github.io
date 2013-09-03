@@ -20,11 +20,7 @@
 # https://dev.twitter.com/docs/intents
 # http://jekyllrb.com/docs/plugins/#tags
 # http://jekyllrb.com/docs/templates/#filters
-# https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
-# https://github.com/scottwb/jekyll-tweet-tag/blob/master/tweet_tag.rb
-# http://tech.pro/tutorial/1299/getting-started-with-jekyll-plugins
-
-# https://gist.github.com/rjz/4012584
+# https://github.com/ericdfields/Jekyll-Dribbble-Set-Tag/blob/master/_plugins/dribbble_set.rb (for _config.yml stuff)
 # https://github.com/richhollis/twitter_web_intents
 
 require 'twitter_web_intents'
