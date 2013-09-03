@@ -27,11 +27,11 @@
 # https://gist.github.com/rjz/4012584
 # https://github.com/richhollis/twitter_web_intents
 
+require 'twitter_web_intents'
+
 module Jekyll
 
   class SuggestedTweet < Liquid::Tag
-
-    # safe true
 
     def initialize(tag_name, text, tokens)
       super
