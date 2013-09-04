@@ -50,6 +50,7 @@
 # http://jekyllrb.com/docs/plugins/#tags
 # https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
 # https://github.com/ericdfields/Jekyll-Dribbble-Set-Tag/blob/master/_plugins/dribbble_set.rb (for _config.yml stuff)
+# https://github.com/nicolashery/nicolashery.com/blob/master/_plugins/image_tag.rb
 # https://github.com/richhollis/twitter_web_intents
 
 require 'twitter_web_intents'
@@ -58,9 +59,27 @@ module Jekyll
 
   class SuggestedTweet < Liquid::Tag
 
-    def initialize(tag_name, text, tokens)
+    def initialize(tag_name, config, tokens)
       super
-      @text = text
+
+      @config = Jekyll.configuration({})['suggested_tweet'] || {}
+
+      @url                       ||= @config['url']
+      @via                       ||= @config['via']
+      @text                      ||= @config['text']
+      @in_reply_to               ||= @config['in_reply_to']
+      @hashtags                  ||= @config['hashtags']
+      @related                   ||= @config['related']
+      @container_tag             ||= @config['container_tag']
+      @container_class           ||= @config['container_class']
+      @anchor_class              ||= @config['anchor_class']
+
+      @default_inheritance       ||= @config['default_inheritance']
+      @default_inheritance       ||= true
+
+      @inline_inheritance        ||= @config['inline_inheritance']
+      @inline_inheritance        ||= false
+
     end
 
     def render(context)
