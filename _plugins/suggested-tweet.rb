@@ -55,14 +55,21 @@
 
 require 'twitter_web_intents'
 
-module Jekyll
+module Jekyll #maybe don't include this in Jekyll module? http://blog.darkrefraction.com/2012/jekyll-excerpt-plugin.html
 
   class SuggestedTweet < Liquid::Tag
 
     def initialize(tag_name, config, tokens)
       super
 
+      # http://stackoverflow.com/questions/11410611/get-jekyll-configuration-inside-plugin#answer-11448879
       @config = Jekyll.configuration({})['suggested_tweet'] || {}
+
+      # Maybe helps with getting parameters from YAML front-matter: page.data['']
+      # https://github.com/vimberlin/vimberlin.de/blob/master/_plugins/location_tag.rb
+      # https://github.com/stroan/Website/blob/273a55d998e0b656a3dedce85cad04b46e26d108/_plugins/projects.rb
+      # http://realjenius.com/2012/11/04/jekyll-series-list-2/
+      # http://simon.heimlicher.com/articles/2012/02/01/jekyll-directory-listing
 
       @url                       ||= @config['url']
       @via                       ||= @config['via']
@@ -83,7 +90,7 @@ module Jekyll
     end
 
     def render(context)
-      "#{@text}"
+
     end
   end
 
