@@ -52,6 +52,7 @@
 # https://github.com/ericdfields/Jekyll-Dribbble-Set-Tag/blob/master/_plugins/dribbble_set.rb (for _config.yml stuff)
 # https://github.com/nicolashery/nicolashery.com/blob/master/_plugins/image_tag.rb
 # https://github.com/richhollis/twitter_web_intents
+# http://stackoverflow.com/questions/6734955/jekyll-liquid-how-to-add-large-blocks-of-text-to-yaml-front-matter
 
 require 'twitter_web_intents'
 
