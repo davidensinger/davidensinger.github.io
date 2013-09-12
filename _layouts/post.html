@@ -31,6 +31,9 @@ page-class: page-post
     </footer>
   {% endif %}
 </article>
+{% if page.suggested_tweet %}
+  <a href="{% suggested_tweet %}">{{ page.suggested_tweet.text }}</a>
+{% endif %}
 <nav class="post-navigation" role="navigation">
   <h1 class="visuallyhidden">Post navigation</h1>
   {% if page.previous %}
