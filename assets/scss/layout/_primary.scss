@@ -13,13 +13,8 @@
   }
 }
 
-.entry-title {
-  @extend %mega-font-size;
-  @extend %mega-line-height;
-  @include rem(margin-bottom, 0.9);
-}
-
-.entry-meta {
+.entry-meta-header,
+.entry-meta-footer-bottom {
   color: $link-meta-color;
   a {
     &:link,
@@ -72,18 +67,6 @@
 
 .entry-content {
   @include rem(margin-bottom, 3);
-  h2 {
-    @extend %beta; }
-  h3 {
-    @extend %gamma; }
-  h4 {
-    @extend %delta; }
-  h5 {
-    @extend %epsilon;
-    text-transform: uppercase; }
-  h6 {
-    @extend %epsilon;
-    font-weight: $base-font-weight-bold; }
   >p {
     &:first-child {
       @extend %delta-font-size;

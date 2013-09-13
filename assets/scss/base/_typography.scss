@@ -197,12 +197,32 @@ h4,
 h5,
 h6 {
   clear: left;
-  margin: 0;
   padding: 0;
   color: $heading-color;
-  letter-spacing: 1px;
   font-weight: $base-font-weight-bold;
 }
+
+h1 {
+  @extend %mega-font-size;
+  @extend %mega-line-height;
+  @include rem(margin-bottom, 0.9);
+}
+
+h2 {
+  @extend %beta; }
+
+h3 {
+  @extend %gamma; }
+
+h4 {
+  @extend %delta; }
+
+h5 {
+  @extend %epsilon;
+  text-transform: uppercase; }
+
+h6 {
+  @extend %epsilon; }
 
 p {
   margin-top: 0;

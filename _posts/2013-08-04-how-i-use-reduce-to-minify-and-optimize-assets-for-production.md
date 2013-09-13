@@ -7,7 +7,8 @@ description: An easy way to both minify CSS, JavaScript, and HTML and optimize i
 categories: [Development]
 tags: [CSS, HTML, Images, JavaScript, Minify, Optimize, Rake, Reduce]
 suggested_tweet:
-  text: 'How to use Reduce to minify and optimize assets for Jekyll: http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production/ #Jekyll #jekyllrb'
+  url: 'http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production/'
+  text: 'How to use Reduce to minify and optimize assets for Jekyll #Jekyll #jekyllrb'
   related: ['grosser‎','pacbard']
 ---
 

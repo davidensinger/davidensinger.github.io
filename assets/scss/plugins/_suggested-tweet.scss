@@ -1,0 +1,57 @@
+// ==========================================================================
+// Suggested Tweet
+// ==========================================================================
+
+.entry-meta-suggested-tweet {
+  @include rem(margin-bottom, 3);
+}
+
+.suggested-tweet-title {
+  @extend %margin-bottom;
+}
+
+.suggested-tweet-bubble {
+  display: inline-block;
+  position: relative;
+  @include rem(padding, 1);
+  @extend %margin-bottom;
+  @include rem(border-radius, 1);
+  background: $white-dark;
+  &:hover {
+    background: $white-darker;
+    &:after {
+      border-color: $white-darker transparent;
+    }
+  }
+  &:focus {
+    color: $white;
+    background: $link-color-focus;
+    &:after {
+      border-color: $link-color-focus transparent;
+    }
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -15px; // value = - border-top-width - border-bottom-width
+    left: 50px; // controls horizontal position
+    border-width: 15px 15px 0; // vary these values to change the angle of the vertex
+    border-style: solid;
+    border-color: $white-dark transparent;
+  }
+}
+
+.suggested-tweet-link {
+  @include rem(margin-left, 1);
+  color: $text-color;
+  a {
+    color: inherit;
+    &:hover {
+      color: $link-color-hover;
+    }
+    &:focus {
+      color: $link-color-focus;
+    }
+  }
+}
+

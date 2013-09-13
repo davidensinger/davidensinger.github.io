@@ -14,26 +14,37 @@ page-class: page-post
   <div class="entry-content">
     {{ content }}
   </div>
-  {% if page.tags != empty %}
+  {% if page.tags != empty or page.categories != empty or page.suggested_tweet %}
     <footer class="entry-meta entry-meta-footer">
-      <span class="icon-left entry-meta-icon icon-tag">
-        {% for tag in page.tags %}
-          <a class="nav-link-tag" href="/tag/{{ tag | replace:' ','-' | downcase }}" rel="tag">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}
-        {% endfor %}
-      </span>
-      {% if page.categories != empty %}
-        <span class="icon-left entry-meta-icon icon-category">
-          {% for category in page.categories %}
-            <a class="nav-link-category" href="/category/{{ category | replace:' ','-' }}" rel="category">{{ category | titlecase }}</a>{% if forloop.last == false %}, {% endif %}
-          {% endfor %}
-        </span>
+      {% if page.suggested_tweet %}
+        <div class="entry-meta-suggested-tweet">
+          <h3 class="suggested-tweet-title">Spread the Word</h3>
+          <a href="{% suggested_tweet %}" class="suggested-tweet-bubble">{{ page.suggested_tweet.text }}</a>
+          </a>
+          <p class="suggested-tweet-link"><a href="{% suggested_tweet %}">Click to Tweet</a> <small>(you may edit before posting.)</small></p>
+        </div>
+      {% endif %}
+      {% if page.tags != empty or page.categories != empty %}
+      <div class="entry-meta-footer-bottom">
+        {% if page.tags != empty %}
+          <span class="icon-left entry-meta-icon icon-tag">
+            {% for tag in page.tags %}
+              <a class="nav-link-tag" href="/tag/{{ tag | replace:' ','-' | downcase }}" rel="tag">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}
+            {% endfor %}
+          </span>
+        {% endif %}
+        {% if page.categories != empty %}
+          <span class="icon-left entry-meta-icon icon-category">
+            {% for category in page.categories %}
+              <a class="nav-link-category" href="/category/{{ category | replace:' ','-' }}" rel="category">{{ category | titlecase }}</a>{% if forloop.last == false %}, {% endif %}
+            {% endfor %}
+          </span>
+        {% endif %}
+      </div>
       {% endif %}
     </footer>
   {% endif %}
 </article>
-{% if page.suggested_tweet %}
-  <a href="{% suggested_tweet %}">{{ page.suggested_tweet.text }}</a>
-{% endif %}
 <nav class="post-navigation" role="navigation">
   <h1 class="visuallyhidden">Post navigation</h1>
   {% if page.previous %}
