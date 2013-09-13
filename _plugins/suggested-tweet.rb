@@ -36,11 +36,11 @@
 # Output:
 #   https://twitter.com/intent/tweet?hashtags=Jekyll,Twitter&in_reply_to=331434728957833218&related=davidensinger,richhollis,2john4tv&text=Hello+world&url=http%3A%2F%2Fdavidensinger.com&via=davidensinger
 #
-# Liquid Output for Parameters (using text as an example):
+# Liquid Output for Parameters (with the text parameter as an example):
 #    _config.yml: {{ site.suggested_tweet.text }}
 #    YAML front matter: {{ page.suggested_tweet.text }}
 #
-# Todo: If hashtags and related are both set in _config.yml and YAML front matter then combine arrays
+# Todo: If hashtags and/or related are both set in _config.yml and YAML front matter then combine arrays
 
 require 'twitter_web_intents'
 
