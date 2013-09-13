@@ -203,6 +203,7 @@ h6 {
 }
 
 h1 {
+  margin-top: 0;
   @extend %mega-font-size;
   @extend %mega-line-height;
   @include rem(margin-bottom, 0.9);

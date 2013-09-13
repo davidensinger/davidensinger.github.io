@@ -3,12 +3,9 @@
 // ==========================================================================
 
 a {
-  &:link,
-  &:visited {
-    color: $link-color;
-    font-weight: $base-font-weight-bold;
-    text-decoration: none;
-  }
+  color: $link-color;
+  font-weight: $base-font-weight-bold;
+  text-decoration: none;
   &:hover {
     color: $link-color-hover;
   }
@@ -25,10 +22,7 @@ h4,
 h5,
 h6 {
   a {
-    &:link,
-    &:visited {
-      color: inherit;
-    }
+    color: inherit;
     &:hover {
       color: $link-heading-color-hover;
     }
