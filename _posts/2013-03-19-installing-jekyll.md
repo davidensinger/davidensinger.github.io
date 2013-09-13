@@ -6,6 +6,10 @@ title: Installing Jekyll
 description: How to install Jekyll on OS X Mountain Lion 10.8.3.
 category: Development
 tags: [Jekyll, RVM, Ruby]
+suggested_tweet:
+  url: 'http://davidensinger.com/2013/03/installing-jekyll/'
+  text: 'How to install Jekyll on OS X Mountain Lion 10.8.3 by @DavidEnsinger #jekyllrb #Jekyll #RVM #Ruby'
+  related: ['jekyllrb']
 ---
 
 After much deliberation, I decided to simplify my blogging workflow. To that end I made the switch from __WordPress to Jekyll__, which is ”a simple, blog aware, static site generator.” Although Jekyll is easy to maintain, it can be confusing to set up, especially for one with a dearth of experience with Ruby.

@@ -6,6 +6,9 @@ title: Setting Up Google Author Rich Snippets
 description: Steps for setting up Google Author Rich Snippets on your site.
 categories: [Social Media]
 tags: [Google, Rich Snippets]
+suggested_tweet:
+  url: 'http://davidensinger.com/2013/05/setting-up-google-author-rich-snippets/'
+  text: 'Setting Up Google Author Rich Snippets by @DavidEnsinger #GooglePlus'
 ---
 
 It turns out that it’s rather easy to display your photo alongside your content in Google’s search results. All you need to do is add support for [Rich Snippets](https://support.google.com/webmasters/bin/answer.py?hl=en&answer=99170) to your website, in particular those for authorship. This results in the addition of some minor markup to your HTML, which will then interface with your [Google+](http://plus.google.com/) account.

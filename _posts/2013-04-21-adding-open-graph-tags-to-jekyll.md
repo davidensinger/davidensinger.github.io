@@ -6,6 +6,10 @@ title: Adding Open Graph Tags to Jekyll
 description: A guide to adding Open Graph meta tags to Jekyll.
 categories: [Development, Social Media]
 tags: [Jekyll, Open Graph, Facebook]
+suggested_tweet:
+  url: 'http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll/'
+  text: 'A Guide to Adding Open Graph Tags to Jekyll by @DavidEnsinger #OpenGraph #Jekyll #jekyllrb'
+  related: ['jekyllrb']
 ---
 
 What is the [Open Graph](http://ogp.me/) protocol? Per **Facebook**, it “enables any web page to become a rich object in a social graph.” The documentation goes on to state that “to turn your web pages into graph objects, you need to add basic metadata to your page.” Put more simply, add **Open Graph meta tags** to your website to have greater control over how your content is displayed when shared via Facebook.

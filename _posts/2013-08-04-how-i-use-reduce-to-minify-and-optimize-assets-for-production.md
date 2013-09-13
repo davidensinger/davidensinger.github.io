@@ -8,8 +8,8 @@ categories: [Development]
 tags: [CSS, HTML, Images, JavaScript, Minify, Optimize, Rake, Reduce]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production/'
-  text: 'How to use Reduce to minify and optimize assets for Jekyll #Jekyll #jekyllrb'
-  related: ['grosser‎','pacbard']
+  text: 'How to use Reduce to minify and optimize assets for Jekyll by @DavidEnsinger #Jekyll #jekyllrb'
+  related: ['grosser‎','pacbard','jekyllrb']
 ---
 
 Now that I’ve set up [my development environment with Rake](http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/), I’m able to easily minify and optimize the assets I use for my site. To do this I use [Reduce](https://github.com/grosser/reduce), which is a fantastic Ruby gem by [Michael Grosser](http://grosser.it/) to minify and compress CSS, HTML, JavaScript and Jpeg and PNG, amongst other formats.

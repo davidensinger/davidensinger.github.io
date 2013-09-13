@@ -7,6 +7,10 @@ description: How to properly set up the DNS on Namecheap for your custom domain 
 image: 2013-03-27-namecheap-all-host-records.png
 category: Development
 tags: [DNS, GitHub, Jekyll, Namecheap]
+suggested_tweet:
+  url: 'http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/'
+  text: 'Setting the DNS for GitHub Pages on Namecheap by @DavidEnsinger #Namecheap #jekyllrb #Jekyll'
+  related: ['jekyllrb','Namecheap']
 ---
 
 After pushing my site to **GitHub** and verifying that it worked at [davidensinger.github.io](http://davidensinger.github.io/), I then went to set up my custom domain name. The [documentation](https://help.github.com/articles/setting-up-a-custom-domain-with-pages) provided by GitHub is clear on the subject, but I still managed to forget about my subdomains. For more than eight hours, anyone who attempted to visit [davidensinger.com](http://davidensinger.com/) was served with a 404, which is [rather embarrassing](https://twitter.com/DavidEnsinger/status/316642135216619522) for one who makes a living as a developer.

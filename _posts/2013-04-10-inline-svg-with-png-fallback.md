@@ -6,6 +6,9 @@ title: Inline SVG with PNG Fallback
 description: How to use inline SVG with PNG fallback, courtesy of foreignObject and base64.
 category: Development
 tags: [base64, foreignObject, PNG, SVG]
+suggested_tweet:
+  url: 'http://davidensinger.com/2013/04/inline-svg-with-png-fallback/'
+  text: 'Inline SVG with PNG Fallback, courtesy of foreignObject and base64 by @DavidEnsinger #TwitterCards #SVG #PNG'
 ---
 
 Notice anything different about my balloon logo? Probably not, as the change is subtle, but the image is now an **inline SVG** instead of an **SVG background image**. I did this to allow the colors of the balloon to darken on hover.

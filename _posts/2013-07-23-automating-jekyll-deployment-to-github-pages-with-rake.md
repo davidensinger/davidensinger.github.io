@@ -6,6 +6,10 @@ title: Automating Jekyll Deployment to GitHub Pages with Rake
 description: Use Rake to easily deploy your site to GitHub Pages.
 categories: [Development]
 tags: [GitHub, Jekyll, Rake]
+suggested_tweet:
+  url: 'http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/'
+  text: 'Automating Jekyll Deployment to GitHub Pages with Rake by @DavidEnsinger #Jekyll #jekyllrb #GitHub'
+  related: ['jekyllrb']
 ---
 
 I recently automated the deployment of my site to **GitHub Pages**, which is something that [I’ve wanted to do for awhile](http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/). Whereas I would previously enter a string of commands into the terminal, I now use **Rake** to handle those commands for me.

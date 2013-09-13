@@ -6,6 +6,9 @@ title: My Favorite Chrome Extensions for Development
 description: A short list of my favorite Chrome extensions for development.
 categories: [Development]
 tags: [Google Chrome]
+suggested_tweet:
+  url: 'http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development/'
+  text: 'My Favorite Chrome Extensions for Development by @DavidEnsinger'
 ---
 
 In keeping with the spirit of [my favorite software for development](http://davidensinger.com/2013/05/my-favorite-web-development-software/), I present my favorite [Google Chrome](http://www.google.com/chrome) extensions. While there are no shortage of blog posts about [Chrome extensions](https://chrome.google.com/webstore/category/extensions), I’ll only list the ones I actually use to keep this post from turning into a bloated roundup of links.
@@ -16,7 +19,7 @@ I currently have six extensions enabled for development and I suspect that I rel
 The [PageSpeed Insights](https://chrome.google.com/webstore/detail/pagespeed-insights-by-goo/gplegfbjlmmehdoakndmohflojccocli?hl=en) extension is actually an extension for the aforementioned Developer Tools. It evaluates the performance of websites and gives suggestions for improvement. It’s useful for diagnosing problems and I find that it often reminds me to optimize when I forget.
 
 ## Resolution Test
-[Resolution Test](https://chrome.google.com/webstore/detail/resolution-test/idhfcdbheobinplaamokffboaccidbal) allows for quick changes to the dimensions of the browser window, which lets developers easily preview their websites in different screen resolutions. It also includes a list of commonly used resolutions with the added ability to customize that list. I often use it while debugging CSS within media queries. 
+[Resolution Test](https://chrome.google.com/webstore/detail/resolution-test/idhfcdbheobinplaamokffboaccidbal) allows for quick changes to the dimensions of the browser window, which lets developers easily preview their websites in different screen resolutions. It also includes a list of commonly used resolutions with the added ability to customize that list. I often use it while debugging CSS within media queries.
 
 ## Responsive Inspector
 The [Responsive Inspector](https://chrome.google.com/webstore/detail/responsive-inspector/memcdolmmnmnleeiodllgpibdjlkbpim) extension displays website media queries. It’s really helpful when developing responsively as it shows what resolutions are defined in the stylesheets. It’s also quick and easy to resize the browser to fit the media queries.

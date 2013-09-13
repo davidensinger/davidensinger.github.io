@@ -6,6 +6,9 @@ title: Using Rems with Sass
 description: An argument for using a Sass mixin with pixel fallback to easily implement rems.
 category: Development
 tags: [Mixin, Rem, Sass]
+suggested_tweet:
+  url: 'http://davidensinger.com/2013/03/using-rems-with-sass/'
+  text: 'Using Rems with Sass, with Mixin by @DavidEnsinger #Sass #scss'
 ---
 
 I used **rems** quite liberally with this redesign, especially with the typographic elements. Even though I initially shied away from them, I have since decided that any potential drawbacks are easily mitigated by using **Sass** to preprocess my CSS.
