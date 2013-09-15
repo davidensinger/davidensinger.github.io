@@ -7,7 +7,7 @@
 # Site: http://davidensinger.com/ and http://2john4tv.biz/
 # Twitter: @DavidEnsinger and @2john4tv
 # Email: hello@davidensinger.com and 2john4tv@gmail.com
-# Source: Forthcoming
+# Source: https://github.com/davidensinger/suggested-tweet
 #
 # Really John did all the Ruby work. I just bought him pizza and told him what I wanted :)
 #
