@@ -19,9 +19,17 @@ page-class: page-post
       {% if page.suggested_tweet %}
         <div class="entry-meta-suggested-tweet">
           <h3 class="suggested-tweet-title">Spread the Word</h3>
-          <a href="{% suggested_tweet %}" class="suggested-tweet-bubble">{{ page.suggested_tweet.text }}</a>
+          <a href="{% suggested_tweet %}" class="suggested-tweet-bubble">
+            {% if page.suggested_tweet.text != empty %}
+              <span class="suggested-tweet-text">{{ page.suggested_tweet.text }}</span>
+            {% endif %}
+            {% if page.suggested_tweet.hashtags != empty %}
+              {% for hashtag in page.suggested_tweet.hashtags %}
+                <span class="suggested-tweet-hashtag">#{{ hashtag }}</span>
+              {% endfor %}
+            {% endif %}
           </a>
-          <p class="suggested-tweet-link"><a href="{% suggested_tweet %}">Click to Tweet</a> <small>(you may edit before posting.)</small></p>
+          <p class="suggested-tweet-link"><a href="{% suggested_tweet %}" class="icon-left icon-twitter">Click to Tweet</a> <small>(you may edit before posting.)</small></p>
         </div>
       {% endif %}
       {% if page.tags != empty or page.categories != empty %}

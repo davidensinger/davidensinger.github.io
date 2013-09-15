@@ -40,7 +40,6 @@
 #    _config.yml: {{ site.suggested_tweet.text }}
 #    YAML front matter: {{ page.suggested_tweet.text }}
 #
-# Todo: If hashtags and/or related are both set in _config.yml and YAML front matter then combine arrays
 
 require 'twitter_web_intents'
 
