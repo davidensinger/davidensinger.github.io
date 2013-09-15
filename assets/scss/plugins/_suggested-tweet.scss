@@ -16,8 +16,8 @@
   @include rem(padding, 1 1 1.125);
   @extend %margin-bottom;
   @include rem(border-radius, 1);
-  background: $white-dark;
   color: $text-color;
+  background: $white-dark;
   &:hover {
     background: $white-darker;
     &:after {
@@ -34,9 +34,10 @@
   &:after {
     content: "";
     position: absolute;
-    bottom: -15px; // value = - border-top-width - border-bottom-width
-    left: 50px; // controls horizontal position
-    border-width: 15px 15px 0; // vary these values to change the angle of the vertex
+    bottom: -18px;
+    left: 50px;
+    z-index: 2;
+    border-width: 20px 20px 0;
     border-style: solid;
     border-color: $white-dark transparent;
   }
