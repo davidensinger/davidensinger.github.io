@@ -8,7 +8,8 @@ categories: [Development, Social Media]
 tags: [Jekyll, Twitter, Twitter Cards]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll/'
-  text: 'Supporting Twitter Cards with Jekyll by @DavidEnsinger #TwitterCards #Jekyll #jekyllrb'
+  text: 'Supporting Twitter Cards with Jekyll by @DavidEnsinger'
+  hashtags: ['TwitterCards', 'Jekyll', 'jekyllrb']
   related: ['jekyllrb']
 ---
 

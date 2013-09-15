@@ -8,7 +8,8 @@ category: Development
 tags: [Jekyll, Sitemap, XML]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/'
-  text: 'Generating a Sitemap in Jekyll without a Plugin by @DavidEnsinger #jekyllrb #Jekyll'
+  text: 'Generating a Sitemap in Jekyll without a Plugin by @DavidEnsinger'
+  hashtags: ['Jekyll', 'jekyllrb']
   related: ['jekyllrb','havvg']
 ---
 

@@ -8,7 +8,8 @@ category: Development
 tags: [GitHub, Jekyll]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/'
-  text: 'Deploying Jekyll with Plugins to GitHub Pages by @DavidEnsinger #GitHub #jekyllrb #Jekyll'
+  text: 'Deploying Jekyll with Plugins to GitHub Pages by @DavidEnsinger'
+  hashtags: ['GitHub', 'Jekyll', 'jekyllrb', 'git']
   related: ['jekyllrb','github']
 ---
 

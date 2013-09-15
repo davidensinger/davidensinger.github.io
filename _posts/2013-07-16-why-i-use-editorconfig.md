@@ -8,7 +8,8 @@ categories: [Development]
 tags: [EditorConfig, Sublime Text 2]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/07/why-i-use-editorconfig/'
-  text: 'Why I use EditorConfig: An argument for using EditorConfig in projects by @DavidEnsinger #EditorConfig'
+  text: 'Why I use EditorConfig: An argument for using EditorConfig in projects by @DavidEnsinger'
+  hashtags: ['EditorConfig', 'SublimeText2']
   related: ['EditorConfig','sublimehq']
 ---
 

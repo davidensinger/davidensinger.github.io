@@ -8,7 +8,8 @@ category: Development
 tags: [Agile]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/03/selling-agile/'
-  text: 'Selling Agile: Thoughts on Generating Buy In by @DavidEnsinger #Agile'
+  text: 'Selling Agile: Thoughts on Generating Buy In by @DavidEnsinger'
+  hashtags: ['Agile']
 ---
 
 Throughout the last year my team has been trying out a smattering of **Agile** approaches to software development. We’re largely self-taught and as a result, we’ve had mixed success with the framework (although that’s by no means an indictment against it). It’s fair to say that our successes (or occasionally our lack thereof) are usually in direct relation to our efforts.

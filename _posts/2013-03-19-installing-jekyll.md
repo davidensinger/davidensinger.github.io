@@ -8,7 +8,8 @@ category: Development
 tags: [Jekyll, RVM, Ruby]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/03/installing-jekyll/'
-  text: 'How to install Jekyll on OS X Mountain Lion 10.8.3 by @DavidEnsinger #jekyllrb #Jekyll #RVM #Ruby'
+  text: 'How to install Jekyll on OS X Mountain Lion 10.8.3 by @DavidEnsinger'
+  hashtags: ['Jekyll', 'jekyllrb', 'RVM', 'Ruby']
   related: ['jekyllrb']
 ---
 

@@ -8,7 +8,8 @@ categories: [Development]
 tags: [Rake, Sass]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/'
-  text: 'Easy Sass Source Maps with Development Environments and Rake by @DavidEnsinger #Sass #Rake'
+  text: 'Easy Sass Source Maps with Development Environments and Rake by @DavidEnsinger'
+  hashtags: ['Sass', 'SCSS', 'Rake', 'CSS']
 ---
 
 In addition to [automating the deployment of Jekyll](http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/), I also wrote a couple Rake tasks to streamline the building of my site. They’re quite simple, but they allow me to have environments for both development and production. It’s now just as easy to use Sass source maps in my development environment as it is to build compressed assets for production.

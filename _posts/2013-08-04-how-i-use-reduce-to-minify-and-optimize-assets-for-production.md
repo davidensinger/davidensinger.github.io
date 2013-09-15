@@ -8,7 +8,8 @@ categories: [Development]
 tags: [CSS, HTML, Images, JavaScript, Minify, Optimize, Rake, Reduce]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production/'
-  text: 'How to use Reduce to minify and optimize assets for Jekyll by @DavidEnsinger #Jekyll #jekyllrb'
+  text: 'How to use Reduce to minify and optimize assets for Jekyll by @DavidEnsinger'
+  hashtags: ['Jekyll', 'jekyllrb']
   related: ['grosser‎','pacbard','jekyllrb']
 ---
 

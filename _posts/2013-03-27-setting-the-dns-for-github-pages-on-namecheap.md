@@ -9,7 +9,8 @@ category: Development
 tags: [DNS, GitHub, Jekyll, Namecheap]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/'
-  text: 'Setting the DNS for GitHub Pages on Namecheap by @DavidEnsinger #Namecheap #jekyllrb #Jekyll'
+  text: 'Setting the DNS for GitHub Pages on Namecheap by @DavidEnsinger'
+  hashtags: ['Namecheap, 'Jekyll', 'jekyllrb']
   related: ['jekyllrb','Namecheap']
 ---
 

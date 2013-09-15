@@ -8,7 +8,8 @@ categories: [Development]
 tags: [GitHub, Jekyll, Rake]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/'
-  text: 'Automating Jekyll Deployment to GitHub Pages with Rake by @DavidEnsinger #Jekyll #jekyllrb #GitHub'
+  text: 'Automating Jekyll Deployment to GitHub Pages with Rake by @DavidEnsinger'
+  hashtags: ['Jekyll', 'jekyllrb', 'GitHub', 'Git']
   related: ['jekyllrb']
 ---
 
