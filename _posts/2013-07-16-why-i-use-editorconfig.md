@@ -10,7 +10,7 @@ suggested_tweet:
   url: 'http://davidensinger.com/2013/07/why-i-use-editorconfig/'
   text: 'Why I use EditorConfig: An argument for using EditorConfig in projects by @DavidEnsinger'
   hashtags: ['EditorConfig', 'SublimeText2']
-  related: ['EditorConfig','sublimehq']
+  related: ['EditorConfig', 'sublimehq']
 ---
 
 Have you ever found yourself switching between projects with vastly different [coding styles](http://en.wikipedia.org/wiki/Programming_style) or (gasp!) no consistent style at all? Most editors and IDEs allow for settings at both the user and project level, but neither of those options are ideal. Often there isn’t a settings file for the project and even if there were, it’s probably for an editor that you don’t use. The only other option is to have the editor auto-detect the settings, but that’s far from perfect.

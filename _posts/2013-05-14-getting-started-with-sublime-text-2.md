@@ -9,8 +9,8 @@ tags: [Sublime Text 2]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/05/getting-started-with-sublime-text-2/'
   text: 'Getting Started with Sublime Text 2: A Quick Start Guide by @DavidEnsinger'
-  hashtags: [#SublimeText2']
-  related: [sublimehq']
+  hashtags: ['SublimeText2']
+  related: ['sublimehq']
 ---
 
 Although I switched to [Sublime Text 2](http://www.sublimetext.com/) more than a year ago, I only recently decided to take a good look at my configuration, with the end goal of increasing my productivity. What follows are my settings, which will hopefully help others work a bit smarter. If you’ve got any useful tips, please [tweet](https://twitter.com/davidensinger) at me!
