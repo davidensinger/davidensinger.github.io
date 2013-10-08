@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   {% if page.grouptype == 'tag' %}
-    <title type="html" xml:lang="en"><![CDATA[Posts Tagged “{{ page.tag }}” &#8211; {{ site.title }}]]></title>
+    <title type="text" xml:lang="en">Posts Tagged “{{ page.tag }}” – {{ site.title }}</title>
     <link type="application/atom+xml" rel="self" href="{{ site.url }}/tag/{{ page.tag | replace:' ','-' | downcase }}/atom.xml"/>
   {% elsif page.grouptype == 'category' %}
-    <title type="html" xml:lang="en"><![CDATA[Posts Categorized “{{ page.category | titlecase }}” &#8211; {{ site.title }}]]></title>
+    <title type="text" xml:lang="en">Posts Categorized “{{ page.category | titlecase }}” – {{ site.title }}</title>
     <link type="application/atom+xml" rel="self" href="{{ site.url }}/category/{{ page.category | replace:' ','-' | downcase }}/atom.xml"/>
   {% else %}
-    <title type="text" xml:lang="en"><![CDATA[{{ site.title }}]]></title>
+    <title type="text" xml:lang="en">{{ site.title }}</title>
     <link type="application/atom+xml" rel="self" href="{{ site.url }}/atom.xml"/>
   {% endif %}
   <link href="{{ site.url }}/"/>
@@ -17,6 +17,6 @@
     <name>{{ site.author }}</name>
     <email>{{ site.email }}</email>
   </author>
-  <rights type="html"><![CDATA[Copyright &#169; {{ site.time | date: "%Y" }} {{ site.author }}. All rights reserved.]]></rights>
+  <rights type="text">Copyright © {{ site.time | date: "%Y" }} {{ site.author }}. All rights reserved.</rights>
   {{ content }}
 </feed>
