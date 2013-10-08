@@ -1,8 +1,6 @@
 ---
 layout: atom
 ---
-{% for post in site.posts %}
-  {% if forloop.index < 10 %}
-    {% include atom_post.xml %}
-  {% endif %}
+{% for post in site.posts limit:25 %}
+  {% include feed-detail.xml %}
 {% endfor %}

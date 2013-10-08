@@ -1,6 +1,6 @@
 ---
 layout: atom
 ---
-{% for post in page.posts %}
-	{% include atom_post.xml %}
+{% for post in page.posts limit:25 %}
+	{% include feed-detail.xml %}
 {% endfor %}
