@@ -11,11 +11,12 @@
     <link type="application/atom+xml" rel="self" href="{{ site.url }}/atom.xml"/>
   {% endif %}
   <link href="{{ site.url }}/"/>
-  <updated>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</updated>
+  <id>{{ site.url }}/</id>
+  <updated>{{ site.time | date: "%Y-%m-%dT%H:%M:%SZ" }}</updated>
   <author>
     <name>{{ site.author }}</name>
     <email>{{ site.email }}</email>
   </author>
-  <rights><![CDATA[Copyright &#169; {{ site.time | date: "%Y" }} {{ site.author }}. All rights reserved.]]></rights>
+  <rights type="html"><![CDATA[Copyright &#169; {{ site.time | date: "%Y" }} {{ site.author }}. All rights reserved.]]></rights>
   {{ content }}
 </feed>
