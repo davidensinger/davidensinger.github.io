@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en"><![CDATA[Development, design, and more by David Ensinger]]></title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><link href="http://davidensinger.com/"/><updated>Mon, 07 Oct 2013 21:15:31 -0400</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights><![CDATA[Copyright &#169; 2013 David Ensinger. All rights reserved.]]></rights><entry><id>http://davidensinger.com/2013/09/suggested-tweet-plugin-for-jekyll</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/09/suggested-tweet-plugin-for-jekyll/"/><title>Suggested Tweet Plugin for Jekyll</title><published>2013-09-16T12:50:00-04:00</published><updated>2013-09-16T12:50:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en"><![CDATA[Development, design, and more by David Ensinger]]></title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2013-10-07T21:48:58Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="html"><![CDATA[Copyright &#169; 2013 David Ensinger. All rights reserved.]]></rights><entry><title type="html"><![CDATA[Suggested Tweet Plugin for Jekyll]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/09/suggested-tweet-plugin-for-jekyll/"/><id>http://davidensinger.com/2013/09/suggested-tweet-plugin-for-jekyll</id><updated>2013-09-16T12:50:00Z</updated><content type="html"><![CDATA[
     <p>&lt;p&gt;It’s always a really nice feeling when one sees one’s posts shared with others, usually via blog post or Tweet. In the spirit of encouraging more of this, I present to you the &lt;a href=&quot;https://github.com/davidensinger/jekyll-suggested-tweet&quot;&gt;Suggested Tweet&lt;/a&gt; plugin for &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;. With this plugin, visitors to your site need no longer grope for words while they attempt to share your content!&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;About the Plugin&lt;/h2&gt;</p>
@@ -80,8 +80,8 @@
 &lt;li&gt;Add an option to allow for parameters to be combined if 1) they’ve been set in both &lt;strong&gt;_config.yml&lt;/strong&gt; and &lt;strong&gt;YAML front-matter&lt;/strong&gt; of a page and 2) they accept multiple values, such as hashtags and related&lt;/li&gt;
 &lt;li&gt;Allow for parameters to be set within the tag itself, but without using a regular expression to do so. Possible? Yay or nay?&lt;/li&gt;
 &lt;/ul&gt;</p>
-
-  ]]></content></entry><entry><id>http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production/"/><title>How I use Reduce to Minify and Optimize Assets for Production</title><published>2013-08-04T08:19:00-04:00</published><updated>2013-08-04T08:19:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+]]>
+  </content></entry><entry><title type="html"><![CDATA[How I use Reduce to Minify and Optimize Assets for Production]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production/"/><id>http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production</id><updated>2013-08-04T08:19:00Z</updated><content type="html"><![CDATA[
     <p>&lt;p&gt;Now that I’ve set up &lt;a href=&quot;http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/&quot;&gt;my development environment with Rake&lt;/a&gt;, I’m able to easily minify and optimize the assets I use for my site. To do this I use &lt;a href=&quot;https://github.com/grosser/reduce&quot;&gt;Reduce&lt;/a&gt;, which is a fantastic Ruby gem by &lt;a href=&quot;http://grosser.it/&quot;&gt;Michael Grosser&lt;/a&gt; to minify and compress CSS, HTML, JavaScript and Jpeg and PNG, amongst other formats.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Why Compress Assets?&lt;/h2&gt;</p>
@@ -123,8 +123,8 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
 
 <p>&lt;p&gt;How easy is that? With a simple &lt;code&gt;rake build:pro&lt;/code&gt; command I’m able to build my site with production ready assets, which I then commit and deploy to GitHub.&lt;/p&gt;</p>
-
-  ]]></content></entry><entry><id>http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/"/><title>Easy Sass Source Maps with Development Environments and Rake</title><published>2013-07-26T09:26:00-04:00</published><updated>2013-07-26T09:26:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+]]>
+  </content></entry><entry><title type="html"><![CDATA[Easy Sass Source Maps with Development Environments and Rake]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/"/><id>http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake</id><updated>2013-07-26T09:26:00Z</updated><content type="html"><![CDATA[
     <p>&lt;p&gt;In addition to &lt;a href=&quot;http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/&quot;&gt;automating the deployment of Jekyll&lt;/a&gt;, I also wrote a couple Rake tasks to streamline the building of my site. They’re quite simple, but they allow me to have environments for both development and production. It’s now just as easy to use Sass source maps in my development environment as it is to build compressed assets for production.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Source Maps in Sass&lt;/h2&gt;</p>
@@ -260,8 +260,8 @@
 <p>  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
-
-  ]]></content></entry><entry><id>http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/"/><title>Automating Jekyll Deployment to GitHub Pages with Rake</title><published>2013-07-23T09:24:00-04:00</published><updated>2013-07-23T09:24:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+]]>
+  </content></entry><entry><title type="html"><![CDATA[Automating Jekyll Deployment to GitHub Pages with Rake]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/"/><id>http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake</id><updated>2013-07-23T09:24:00Z</updated><content type="html"><![CDATA[
     <p>&lt;p&gt;I recently automated the deployment of my site to &lt;strong&gt;GitHub Pages&lt;/strong&gt;, which is something that &lt;a href=&quot;http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/&quot;&gt;I’ve wanted to do for awhile&lt;/a&gt;. Whereas I would previously enter a string of commands into the terminal, I now use &lt;strong&gt;Rake&lt;/strong&gt; to handle those commands for me.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;What is Rake&lt;/h2&gt;</p>
@@ -333,8 +333,8 @@
 <p>&lt;h2&gt;What’s Next?&lt;/h2&gt;</p>
 
 <p>&lt;p&gt;Not only have I automated the deployment of my site, but I’ve also used Rake to create development and production builds. This has allowed me to implement Sass source maps and easily minify my assets, which I’ll detail in subsequent posts! Stay tuned :)&lt;/p&gt;</p>
-
-  ]]></content></entry><entry><id>http://davidensinger.com/2013/07/why-i-use-editorconfig</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/07/why-i-use-editorconfig/"/><title>Why I use EditorConfig</title><published>2013-07-16T06:12:00-04:00</published><updated>2013-07-16T06:12:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+]]>
+  </content></entry><entry><title type="html"><![CDATA[Why I use EditorConfig]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/why-i-use-editorconfig/"/><id>http://davidensinger.com/2013/07/why-i-use-editorconfig</id><updated>2013-07-16T06:12:00Z</updated><content type="html"><![CDATA[
     <p>&lt;p&gt;Have you ever found yourself switching between projects with vastly different &lt;a href=&quot;http://en.wikipedia.org/wiki/Programming_style&quot;&gt;coding styles&lt;/a&gt; or (gasp!) no consistent style at all? Most editors and IDEs allow for settings at both the user and project level, but neither of those options are ideal. Often there isn’t a settings file for the project and even if there were, it’s probably for an editor that you don’t use. The only other option is to have the editor auto-detect the settings, but that’s far from perfect.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Enter EditorConfig&lt;/h2&gt;</p>
@@ -398,8 +398,8 @@
 <p>&lt;p&gt;There are plugins available for a host of editors and IDEs, although there are unfortunately some notable exceptions. I’m glad that my preferred editor, Sublime Text 2, &lt;a href=&quot;https://github.com/sindresorhus/editorconfig-sublime&quot;&gt;is supported&lt;/a&gt;. It will be a glorious day in development land when there’s universal support for EditorConfig.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;It’s 2013, so why are we still debating tabs versus spaces?! Set a standard and stick with it.&lt;/p&gt;</p>
-
-  ]]></content></entry><entry><id>http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development/"/><title>My Favorite Chrome Extensions for Development</title><published>2013-06-14T09:20:00-04:00</published><updated>2013-06-14T09:20:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+]]>
+  </content></entry><entry><title type="html"><![CDATA[My Favorite Chrome Extensions for Development]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development/"/><id>http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development</id><updated>2013-06-14T09:20:00Z</updated><content type="html"><![CDATA[
     <p>&lt;p&gt;In keeping with the spirit of &lt;a href=&quot;http://davidensinger.com/2013/05/my-favorite-web-development-software/&quot;&gt;my favorite software for development&lt;/a&gt;, I present my favorite &lt;a href=&quot;http://www.google.com/chrome&quot;&gt;Google Chrome&lt;/a&gt; extensions. While there are no shortage of blog posts about &lt;a href=&quot;https://chrome.google.com/webstore/category/extensions&quot;&gt;Chrome extensions&lt;/a&gt;, I’ll only list the ones I actually use to keep this post from turning into a bloated roundup of links.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;I currently have six extensions enabled for development and I suspect that I rely on so few because Chrome comes with such powerful &lt;a href=&quot;https://developers.google.com/chrome-developer-tools/&quot;&gt;DevTools&lt;/a&gt;. The vast majority of the in-browser functionality I use is provided out of the box, so I only need to supplement with a smattering of extensions. So without further ado…&lt;/p&gt;</p>
@@ -429,8 +429,8 @@
 <p>&lt;p&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/yslow/ninejjcohidippngpapiilnmkgllmakh&quot;&gt;YSlow&lt;/a&gt; analyzes websites and suggests ways to improve their performance based on a set of rules for high performance sites. It also offers suggestions for improving performance and displays statistics about the site too. It’s a nice tool to use in conjunction with PageSpeed Insights.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;Like always, if anyone has any suggestions for good extensions, please don’t hesitate to &lt;a href=&quot;http://twitter.com/DavidEnsinger&quot;&gt;tweet&lt;/a&gt; at me!&lt;/p&gt;</p>
-
-  ]]></content></entry><entry><id>http://davidensinger.com/2013/05/my-favorite-web-development-software</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/05/my-favorite-web-development-software/"/><title>My Favorite Web Development Software</title><published>2013-05-24T08:48:00-04:00</published><updated>2013-05-24T08:48:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+]]>
+  </content></entry><entry><title type="html"><![CDATA[My Favorite Web Development Software]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/05/my-favorite-web-development-software/"/><id>http://davidensinger.com/2013/05/my-favorite-web-development-software</id><updated>2013-05-24T08:48:00Z</updated><content type="html"><![CDATA[
     <p>&lt;p&gt;I’m always interested in learning about the tools other developers use during the course of their workday. What follows is a list of my preferred software with accompanying explanations on how I use it. Hopefully this list will prove helpful to someone else! If you’ve got a suggestion for a better program, please let me know.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Console&lt;/h2&gt;</p>
@@ -479,8 +479,8 @@
 <p>&lt;h2&gt;Writing&lt;/h2&gt;</p>
 
 <p>&lt;p&gt;While not exactly an application for development, I use &lt;a href=&quot;http://www.iawriter.com/mac/&quot;&gt;iA Writer&lt;/a&gt; to write all my posts. It’s especially nice that &lt;strong&gt;Jekyll&lt;/strong&gt; comes with built in support for &lt;strong&gt;Markdown&lt;/strong&gt;, so using iA Writer only makes sense.&lt;/p&gt;</p>
-
-  ]]></content></entry><entry><id>http://davidensinger.com/2013/05/getting-started-with-sublime-text-2</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/05/getting-started-with-sublime-text-2/"/><title>Getting Started with Sublime Text 2</title><published>2013-05-14T12:12:00-04:00</published><updated>2013-05-14T12:12:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+]]>
+  </content></entry><entry><title type="html"><![CDATA[Getting Started with Sublime Text 2]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/05/getting-started-with-sublime-text-2/"/><id>http://davidensinger.com/2013/05/getting-started-with-sublime-text-2</id><updated>2013-05-14T12:12:00Z</updated><content type="html"><![CDATA[
     <p>&lt;p&gt;Although I switched to &lt;a href=&quot;http://www.sublimetext.com/&quot;&gt;Sublime Text 2&lt;/a&gt; more than a year ago, I only recently decided to take a good look at my configuration, with the end goal of increasing my productivity. What follows are my settings, which will hopefully help others work a bit smarter. If you’ve got any useful tips, please &lt;a href=&quot;https://twitter.com/davidensinger&quot;&gt;tweet&lt;/a&gt; at me!&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Hide Files and Folders&lt;/h2&gt;</p>
@@ -604,8 +604,8 @@
 &lt;li&gt;&lt;a href=&quot;http://robdodson.me/blog/2012/06/23/sublime-text-2-tips-and-shortcuts/&quot;&gt;Sublime Text 2 Tips and Shortcuts&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://whiletruecode.com/post/7-handy-text-manipulation-tricks-sublime-text-2&quot;&gt;7 handy text manipulation tricks in Sublime Text 2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</p>
-
-  ]]></content></entry><entry><id>http://davidensinger.com/2013/05/setting-up-google-author-rich-snippets</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/05/setting-up-google-author-rich-snippets/"/><title>Setting Up Google Author Rich Snippets</title><published>2013-05-03T06:49:00-04:00</published><updated>2013-05-03T06:49:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+]]>
+  </content></entry><entry><title type="html"><![CDATA[Setting Up Google Author Rich Snippets]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/05/setting-up-google-author-rich-snippets/"/><id>http://davidensinger.com/2013/05/setting-up-google-author-rich-snippets</id><updated>2013-05-03T06:49:00Z</updated><content type="html"><![CDATA[
     <p>&lt;p&gt;It turns out that it’s rather easy to display your photo alongside your content in Google’s search results. All you need to do is add support for &lt;a href=&quot;https://support.google.com/webmasters/bin/answer.py?hl=en&amp;amp;answer=99170&quot;&gt;Rich Snippets&lt;/a&gt; to your website, in particular those for authorship. This results in the addition of some minor markup to your HTML, which will then interface with your &lt;a href=&quot;http://plus.google.com/&quot;&gt;Google+&lt;/a&gt; account.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Advantages&lt;/h2&gt;</p>
@@ -676,8 +676,8 @@
 <p>&lt;h2&gt;Test to Confirm&lt;/h2&gt;</p>
 
 <p>&lt;p&gt;Use the &lt;a href=&quot;https://www.google.com/webmasters/tools/richsnippets&quot;&gt;Structured Data Testing Tool&lt;/a&gt; to verify that Google has associated your content with your Google+ profile.&lt;/p&gt;</p>
-
-  ]]></content></entry><entry><id>http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll/"/><title>Adding Open Graph Tags to Jekyll</title><published>2013-04-21T16:05:00-04:00</published><updated>2013-04-21T16:05:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+]]>
+  </content></entry><entry><title type="html"><![CDATA[Adding Open Graph Tags to Jekyll]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll/"/><id>http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll</id><updated>2013-04-21T16:05:00Z</updated><content type="html"><![CDATA[
     <p>&lt;p&gt;What is the &lt;a href=&quot;http://ogp.me/&quot;&gt;Open Graph&lt;/a&gt; protocol? Per &lt;strong&gt;Facebook&lt;/strong&gt;, it “enables any web page to become a rich object in a social graph.” The documentation goes on to state that “to turn your web pages into graph objects, you need to add basic metadata to your page.” Put more simply, add &lt;strong&gt;Open Graph meta tags&lt;/strong&gt; to your website to have greater control over how your content is displayed when shared via Facebook.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Basic Metadata&lt;/h2&gt;</p>
@@ -775,8 +775,8 @@
 <p>&lt;h2&gt;Validate&lt;/h2&gt;</p>
 
 <p>&lt;p&gt;To verify that your code validates, see the &lt;a href=&quot;https://developers.facebook.com/tools/debug&quot;&gt;Facebook Debugger&lt;/a&gt;.&lt;/p&gt;</p>
-
-  ]]></content></entry><entry><id>http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll/"/><title>Supporting Twitter Cards with Jekyll</title><published>2013-04-17T18:16:00-04:00</published><updated>2013-04-17T18:16:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+]]>
+  </content></entry><entry><title type="html"><![CDATA[Supporting Twitter Cards with Jekyll]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll/"/><id>http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll</id><updated>2013-04-17T18:16:00Z</updated><content type="html"><![CDATA[
     <p>&lt;p&gt;I just added support for &lt;a href=&quot;https://dev.twitter.com/docs/cards&quot;&gt;Twitter Cards&lt;/a&gt; to my website because I wanted more control over how my site displays on Twitter. There are six different card types, although the only one that’s appropriate for my site is the &lt;a href=&quot;http://dev.twitter.com/docs/cards/types/summary-card&quot;&gt;Summary Card&lt;/a&gt;, which lets users preview site content within a tweet.&lt;/p&gt;</p>
 
 <p>&lt;h2&gt;Summary Card&lt;/h2&gt;</p>
@@ -882,8 +882,8 @@
 <p>&lt;div class=&quot;gray-box&quot;&gt;
   &lt;p&gt;&lt;strong&gt;More Info:&lt;/strong&gt; David Walsh has a really great overview of &lt;a href=&quot;http://davidwalsh.name/twitter-cards&quot;&gt;Twitter Cards&lt;/a&gt;, which is well worth a read.&lt;/p&gt;
 &lt;/div&gt;</p>
-
-  ]]></content></entry><entry><id>http://davidensinger.com/2013/04/inline-svg-with-png-fallback</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/inline-svg-with-png-fallback/"/><title>Inline SVG with PNG Fallback</title><published>2013-04-10T17:41:00-04:00</published><updated>2013-04-10T17:41:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+]]>
+  </content></entry><entry><title type="html"><![CDATA[Inline SVG with PNG Fallback]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/04/inline-svg-with-png-fallback/"/><id>http://davidensinger.com/2013/04/inline-svg-with-png-fallback</id><updated>2013-04-10T17:41:00Z</updated><content type="html"><![CDATA[
     <p>&lt;p&gt;Notice anything different about my balloon logo? Probably not, as the change is subtle, but the image is now an &lt;strong&gt;inline SVG&lt;/strong&gt; instead of an &lt;strong&gt;SVG background image&lt;/strong&gt;. I did this to allow the colors of the balloon to darken on hover.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;Using an inline SVG is the only way to do this, as the browser regards the other implementations of SVG as externally linked files. That prevents the browser from respecting any inline CSS pseudo classes within the SVG.&lt;/p&gt;</p>
@@ -939,8 +939,8 @@ different user agent.&lt;/p&gt;</p>
 <p>&lt;p&gt;Browsers that support SVG will render the inline SVG, while older browsers will instead display the foreignObject, which contains the fallback PNG. Easy and efficient, right?&lt;/p&gt;</p>
 
 <p>&lt;p&gt;Unfortunately, both the SVG and the image fallback will be loaded by the browser. This isn’t such a big deal, so long as the image is optimized and then converted to a &lt;strong&gt;base64 string&lt;/strong&gt;, thus saving another HTTP request. I recommend my &lt;a href=&quot;http://webcodertools.com/imagetobase64converter&quot;&gt;favorite converter&lt;/a&gt; for the task!&lt;/p&gt;</p>
-
-  ]]></content></entry><entry><id>http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/"/><title>Deploying Jekyll with Plugins to GitHub Pages</title><published>2013-04-08T06:30:00-04:00</published><updated>2013-04-08T06:30:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+]]>
+  </content></entry><entry><title type="html"><![CDATA[Deploying Jekyll with Plugins to GitHub Pages]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/"/><id>http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages</id><updated>2013-04-08T06:30:00Z</updated><content type="html"><![CDATA[
     <p>&lt;p&gt;In spite of my resolution to design and develop this website simply, I’ve decided to run &lt;strong&gt;Jekyll&lt;/strong&gt; with plugins. This complicates my deployment because &lt;strong&gt;GitHub Pages&lt;/strong&gt; runs Jekyll in &lt;code&gt;&mdash;safe&lt;/code&gt; mode, which quite reasonably prevents the running of arbitrary Ruby code on the GitHub servers.&lt;/p&gt;</p>
 
 <p>&lt;div class=&quot;yellow-box&quot;&gt;
@@ -981,8 +981,8 @@ different user agent.&lt;/p&gt;</p>
 <p>&lt;h2&gt;Next Steps&lt;/h2&gt;</p>
 
 <p>&lt;p&gt;I’d like to automate this by including these deployment commands into a build script that concatenates, minifies, and (when applicable) optimizes my assets after Jekyll compiles the site. Still working on that, though!&lt;/p&gt;</p>
-
-  ]]></content></entry><entry><id>http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/"/><title>Generating a Sitemap in Jekyll without a Plugin</title><published>2013-03-29T06:26:00-04:00</published><updated>2013-03-29T06:26:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+]]>
+  </content></entry><entry><title type="html"><![CDATA[Generating a Sitemap in Jekyll without a Plugin]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/"/><id>http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin</id><updated>2013-03-29T06:26:00Z</updated><content type="html"><![CDATA[
     <p>&lt;p&gt;During my switch from &lt;strong&gt;WordPress&lt;/strong&gt; to &lt;strong&gt;Jekyll&lt;/strong&gt;, I decided to simplify the scope of my site. One of the changes I made was to remove my portfolio, as I’d like to put more of an emphasis on my writing than on my past projects. As a result, I culled many pages that were indexed by search engines. This meant that I needed a proper &lt;strong&gt;sitemap.xml&lt;/strong&gt;, principally for use with Google’s &lt;a href=&quot;www.google.com/webmasters/tools&quot;&gt;Webmaster Tools&lt;/a&gt;.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;My initial thought was to find a plugin, but I then realized that wasn’t possible. I host the site on &lt;strong&gt;GitHub Pages&lt;/strong&gt;, which runs Jekyll in &lt;code&gt;&mdash;safe&lt;/code&gt; mode. This means that I can’t use any custom plugins and that precludes the implementation of the most popular plugin, which is the &lt;a href=&quot;http://www.kinnetica.com/projects/jekyll-sitemap-generator/&quot;&gt;Sitemap.xml Generator&lt;/a&gt;.&lt;/p&gt;</p>
@@ -1048,8 +1048,8 @@ lastmod: 2013-03-29T12:49:30-05:00
 <p>&lt;div class=&quot;gray-box&quot;&gt;
   &lt;p&gt;&lt;strong&gt;More Info:&lt;/strong&gt; Visit the official &lt;a href=&quot;http://www.sitemaps.org/&quot;&gt;sitemaps.org&lt;/a&gt; to learn more about the protocol.&lt;/p&gt;
 &lt;/div&gt;</p>
-
-  ]]></content></entry><entry><id>http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/"/><title>Setting the DNS for GitHub Pages on Namecheap</title><published>2013-03-27T16:05:00-04:00</published><updated>2013-03-27T16:05:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+]]>
+  </content></entry><entry><title type="html"><![CDATA[Setting the DNS for GitHub Pages on Namecheap]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/"/><id>http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap</id><updated>2013-03-27T16:05:00Z</updated><content type="html"><![CDATA[
     <p>&lt;p&gt;After pushing my site to &lt;strong&gt;GitHub&lt;/strong&gt; and verifying that it worked at &lt;a href=&quot;http://davidensinger.github.io/&quot;&gt;davidensinger.github.io&lt;/a&gt;, I then went to set up my custom domain name. The &lt;a href=&quot;https://help.github.com/articles/setting-up-a-custom-domain-with-pages&quot;&gt;documentation&lt;/a&gt; provided by GitHub is clear on the subject, but I still managed to forget about my subdomains. For more than eight hours, anyone who attempted to visit &lt;a href=&quot;http://davidensinger.com/&quot;&gt;davidensinger.com&lt;/a&gt; was served with a 404, which is &lt;a href=&quot;https://twitter.com/DavidEnsinger/status/316642135216619522&quot;&gt;rather embarrassing&lt;/a&gt; for one who makes a living as a developer.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;In the interest of helping others avoid the mistakes I made, here’s a guide to setting up the DNS for GitHub pages on &lt;a href=&quot;http://www.namecheap.com/?aff=32887&quot;&gt;Namecheap&lt;/a&gt;, my registrar of choice.&lt;/p&gt;</p>
@@ -1085,8 +1085,8 @@ lastmod: 2013-03-29T12:49:30-05:00
 <p>&lt;div class=&quot;gray-box&quot;&gt;
   &lt;p&gt;&lt;strong&gt;More Info:&lt;/strong&gt; Google has a pretty good &lt;a href=&quot;http://support.google.com/a/bin/answer.py?hl=en&amp;answer=48090&quot;&gt;Basic Guide to DNS&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;</p>
-
-  ]]></content></entry><entry><id>http://davidensinger.com/2013/03/using-rems-with-sass</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/03/using-rems-with-sass/"/><title>Using Rems with Sass</title><published>2013-03-21T14:24:00-04:00</published><updated>2013-03-21T14:24:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+]]>
+  </content></entry><entry><title type="html"><![CDATA[Using Rems with Sass]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/03/using-rems-with-sass/"/><id>http://davidensinger.com/2013/03/using-rems-with-sass</id><updated>2013-03-21T14:24:00Z</updated><content type="html"><![CDATA[
     <p>&lt;p&gt;I used &lt;strong&gt;rems&lt;/strong&gt; quite liberally with this redesign, especially with the typographic elements. Even though I initially shied away from them, I have since decided that any potential drawbacks are easily mitigated by using &lt;strong&gt;Sass&lt;/strong&gt; to preprocess my CSS.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;Before we discuss rems, we need to first talk a little about ems.&lt;/p&gt;</p>
@@ -1176,8 +1176,8 @@ lastmod: 2013-03-29T12:49:30-05:00
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
 
 <p>&lt;p&gt;I’m now able to use rems without worrying about browser support, which affords me more time to design and write.&lt;/p&gt;</p>
-
-  ]]></content></entry><entry><id>http://davidensinger.com/2013/03/selling-agile</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/03/selling-agile/"/><title>Selling Agile</title><published>2013-03-20T18:58:00-04:00</published><updated>2013-03-20T18:58:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+]]>
+  </content></entry><entry><title type="html"><![CDATA[Selling Agile]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/03/selling-agile/"/><id>http://davidensinger.com/2013/03/selling-agile</id><updated>2013-03-20T18:58:00Z</updated><content type="html"><![CDATA[
     <p>&lt;p&gt;Throughout the last year my team has been trying out a smattering of &lt;strong&gt;Agile&lt;/strong&gt; approaches to software development. We’re largely self-taught and as a result, we’ve had mixed success with the framework (although that’s by no means an indictment against it). It’s fair to say that our successes (or occasionally our lack thereof) are usually in direct relation to our efforts.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;We’ve lately become more disciplined about our approach, as a result of a push from our recently hired manager. She is a proponent of Agile development and has encouraged us to not only adopt, but to really own such methods and tools as the &lt;strong&gt;daily stand-up&lt;/strong&gt;, &lt;strong&gt;test driven development&lt;/strong&gt;, &lt;strong&gt;pair programming&lt;/strong&gt;, and &lt;strong&gt;weekly sprints&lt;/strong&gt;, amongst others.&lt;/p&gt;</p>
@@ -1193,8 +1193,8 @@ lastmod: 2013-03-29T12:49:30-05:00
 <p>&lt;p&gt;We’ll need to explain the benefits of using Agile, the steps we’ll take to implement it, and manage the expectations of both our stakeholders and business owners all the while. We’ll then need to &lt;strong&gt;do work&lt;/strong&gt; and prove the worth of the framework by successfully completing projects in a satisfactory manner to all who are involved.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;I look forward to the progress that we’re going to make in using Agile techniques for our development. Time to get to work!&lt;/p&gt;</p>
-
-  ]]></content></entry><entry><id>http://davidensinger.com/2013/03/installing-jekyll</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/03/installing-jekyll/"/><title>Installing Jekyll</title><published>2013-03-19T18:55:00-04:00</published><updated>2013-03-19T18:55:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+]]>
+  </content></entry><entry><title type="html"><![CDATA[Installing Jekyll]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/03/installing-jekyll/"/><id>http://davidensinger.com/2013/03/installing-jekyll</id><updated>2013-03-19T18:55:00Z</updated><content type="html"><![CDATA[
     <p>&lt;p&gt;After much deliberation, I decided to simplify my blogging workflow. To that end I made the switch from &lt;strong&gt;WordPress to Jekyll&lt;/strong&gt;, which is ”a simple, blog aware, static site generator.” Although Jekyll is easy to maintain, it can be confusing to set up, especially for one with a dearth of experience with Ruby.&lt;/p&gt;</p>
 
 <p>&lt;p&gt;Thankfully, there is a wealth of documentation available from developers who have also made the switch. With that in mind, I’d like to contribute my experience with installing &lt;strong&gt;Jekyll on OS X Mountain Lion 10.8.3&lt;/strong&gt;.&lt;/p&gt;</p>
@@ -1245,5 +1245,5 @@ lastmod: 2013-03-29T12:49:30-05:00
 <p>&lt;h2&gt;Whew!&lt;/h2&gt;</p>
 
 <p>&lt;p&gt;That wasn’t so bad, was it? It feels good to work through the install with the satisfaction of knowing that you did it without any help, save for the goodwill efforts of fellow developers and their documentation. High fives to that!&lt;/p&gt;</p>
-
-  ]]></content></entry></feed>
+]]>
+  </content></entry></feed>
