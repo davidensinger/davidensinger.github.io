@@ -1,58 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="html" xml:lang="en"><![CDATA[Posts Tagged “foreignObject” &#8211; Development, design, and more by David Ensinger]]></title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/tag/foreignobject/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2013-10-07T22:02:06Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="html"><![CDATA[Copyright &#169; 2013 David Ensinger. All rights reserved.]]></rights><entry><title type="html"><![CDATA[Inline SVG with PNG Fallback]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/04/inline-svg-with-png-fallback/"/><id>http://davidensinger.com/2013/04/inline-svg-with-png-fallback</id><updated>2013-04-10T17:41:00Z</updated><content type="html"><![CDATA[
-    <p>&lt;p&gt;Notice anything different about my balloon logo? Probably not, as the change is subtle, but the image is now an &lt;strong&gt;inline SVG&lt;/strong&gt; instead of an &lt;strong&gt;SVG background image&lt;/strong&gt;. I did this to allow the colors of the balloon to darken on hover.&lt;/p&gt;</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Posts Tagged “foreignObject” – Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/tag/foreignobject/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2013-10-07T22:18:50Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2013 David Ensinger. All rights reserved.</rights><entry><title type="text">Inline SVG with PNG Fallback</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/04/inline-svg-with-png-fallback/"/><id>http://davidensinger.com/2013/04/inline-svg-with-png-fallback</id><updated>2013-04-10T17:41:00Z</updated><content type="html"><![CDATA[ <p>Notice anything different about my balloon logo? Probably not, as the change is subtle, but the image is now an <strong>inline SVG</strong> instead of an <strong>SVG background image</strong>. I did this to allow the colors of the balloon to darken on hover.</p>
 
-<p>&lt;p&gt;Using an inline SVG is the only way to do this, as the browser regards the other implementations of SVG as externally linked files. That prevents the browser from respecting any inline CSS pseudo classes within the SVG.&lt;/p&gt;</p>
+<p>Using an inline SVG is the only way to do this, as the browser regards the other implementations of SVG as externally linked files. That prevents the browser from respecting any inline CSS pseudo classes within the SVG.</p>
 
-<p>&lt;p&gt;As an added benefit, an HTTP request is saved, although this boon to page load optimization is at the expense of the tidiness of the markup. It’s not such a drawback, especially if the HTML will be minified before being deployed.&lt;/p&gt;</p>
+<p>As an added benefit, an HTTP request is saved, although this boon to page load optimization is at the expense of the tidiness of the markup. It’s not such a drawback, especially if the HTML will be minified before being deployed.</p>
 
-<p>&lt;p&gt;As for browser support, &lt;a href=&quot;http://caniuse.com/#feat=svg-html5&quot;&gt;inline SVGs are supported by all modern browsers&lt;/a&gt;, so long as the proper &lt;strong&gt;HTML5 DOCTYPE&lt;/strong&gt; (&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/code&gt;) is declared. Not surprisingly, IE8 doesn’t support inline SVGs, so a fallback is needed for the small percentage of visitors who use that browser.&lt;/p&gt;</p>
+<p>As for browser support, <a href="http://caniuse.com/#feat=svg-html5">inline SVGs are supported by all modern browsers</a>, so long as the proper <strong>HTML5 DOCTYPE</strong> (<code>&lt;!DOCTYPE html&gt;</code>) is declared. Not surprisingly, IE8 doesn’t support inline SVGs, so a fallback is needed for the small percentage of visitors who use that browser.</p>
 
-<p>&lt;p&gt;The obvious choice for an image fallback is a PNG since they support alpha transparency and are easily optimized for file size with &lt;a href=&quot;http://pngmini.com/&quot;&gt;ImageAlpha&lt;/a&gt; and &lt;a href=&quot;http://imageoptim.com/&quot;&gt;ImageOptim&lt;/a&gt;.&lt;/p&gt;</p>
+<p>The obvious choice for an image fallback is a PNG since they support alpha transparency and are easily optimized for file size with <a href="http://pngmini.com/">ImageAlpha</a> and <a href="http://imageoptim.com/">ImageOptim</a>.</p>
 
-<p>&lt;h2&gt;How Best to Fallback?&lt;/h2&gt;</p>
+<h2>How Best to Fallback?</h2>
 
-<p>&lt;p&gt;I initially considered replacing the inline SVG markup with an &lt;code&gt;img&lt;/code&gt; tag via either &lt;strong&gt;JavaScript&lt;/strong&gt; or &lt;strong&gt;jQuery&lt;/strong&gt;, but decided against it. The user may have JavaScript disabled and if I elect to use jQuery I’ll need to make an additional HTTP request to load the library.&lt;/p&gt;</p>
+<p>I initially considered replacing the inline SVG markup with an <code>img</code> tag via either <strong>JavaScript</strong> or <strong>jQuery</strong>, but decided against it. The user may have JavaScript disabled and if I elect to use jQuery I’ll need to make an additional HTTP request to load the library.</p>
 
-<p>&lt;p&gt;Thankfully, I stumbled upon &lt;a href=&quot;http://www.kaizou.org/2009/03/inline-svg-fallback/&quot;&gt;a better solution&lt;/a&gt; that makes use of &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/SVG/Element/foreignObject&quot;&gt;foreignObject&lt;/a&gt; and &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/SVG/Element/switch&quot;&gt;switch&lt;/a&gt;, which are both elements specific to SVG.&lt;/p&gt;</p>
+<p>Thankfully, I stumbled upon <a href="http://www.kaizou.org/2009/03/inline-svg-fallback/">a better solution</a> that makes use of <a href="https://developer.mozilla.org/en-US/docs/SVG/Element/foreignObject">foreignObject</a> and <a href="https://developer.mozilla.org/en-US/docs/SVG/Element/switch">switch</a>, which are both elements specific to SVG.</p>
 
-<p>&lt;blockquote&gt;&lt;p&gt;The &lt;code&gt;foreignObject&lt;/code&gt; element allows for inclusion of a foreign
+<blockquote><p>The <code>foreignObject</code> element allows for inclusion of a foreign
 XML namespace which has its graphical content drawn by a
-different user agent.&lt;/p&gt;</p>
+different user agent.</p>
 
-<p>&lt;p&gt;&lt;cite&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/SVG/Element/foreignObject&quot;&gt;Mozilla Developer Network&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;&lt;/blockquote&gt;</p>
+<p><cite><a href="https://developer.mozilla.org/en-US/docs/SVG/Element/foreignObject">Mozilla Developer Network</a></cite></p></blockquote>
 
-<p>&lt;p&gt;With &lt;code&gt;foreignObject&lt;/code&gt; I can insert fallback &lt;strong&gt;HTML&lt;/strong&gt; into the SVG, which will look like this:&lt;/p&gt;</p>
+<p>With <code>foreignObject</code> I can insert fallback <strong>HTML</strong> into the SVG, which will look like this:</p>
 
-<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;svg&amp;gt;&lt;/span&gt;
+<div class="highlight"><pre><code class="xml"><span class="nt">&lt;svg&gt;</span>
   SVG
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;foreignObject&amp;gt;&lt;/span&gt;</p>
+  <span class="nt">&lt;foreignObject&gt;</span>
+    Fallback HTML
+  <span class="nt">&lt;/foreignObject&gt;</span>
+<span class="nt">&lt;/svg&gt;</span>
+</code></pre></div>
 
-<pre><code>Fallback HTML
-</code></pre>
 
-<p>  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/foreignObject&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/svg&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+<p>The final step is to put the SVG code into a <strong>group</strong> (<code>g</code>) and then wrap the group and foreignObject in a <strong>switch</strong> (<code>switch</code>) element. The switch will then evaluate the children elements in order. The first element that has the proper attributes will be rendered, which will be the the group with the SVG.</p>
 
-<p>&lt;p&gt;The final step is to put the SVG code into a &lt;strong&gt;group&lt;/strong&gt; (&lt;code&gt;g&lt;/code&gt;) and then wrap the group and foreignObject in a &lt;strong&gt;switch&lt;/strong&gt; (&lt;code&gt;switch&lt;/code&gt;) element. The switch will then evaluate the children elements in order. The first element that has the proper attributes will be rendered, which will be the the group with the SVG.&lt;/p&gt;</p>
+<div class="highlight"><pre><code class="xml"><span class="nt">&lt;svg&gt;</span>
+  <span class="nt">&lt;switch&gt;</span>
+    <span class="nt">&lt;g&gt;</span>
+      SVG
+    <span class="nt">&lt;/g&gt;</span>
+    <span class="nt">&lt;foreignObject&gt;</span>
+      Fallback
+    <span class="nt">&lt;/foreignObject&gt;</span>
+  <span class="nt">&lt;/switch&gt;</span>
+<span class="nt">&lt;/svg&gt;</span>
+</code></pre></div>
 
-<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;svg&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;switch&amp;gt;&lt;/span&gt;</p>
 
-<pre><code>&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;g&amp;amp;gt;&amp;lt;/span&amp;gt;
-  SVG
-&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;/g&amp;amp;gt;&amp;lt;/span&amp;gt;
-&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;foreignObject&amp;amp;gt;&amp;lt;/span&amp;gt;
-  Fallback
-&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;/foreignObject&amp;amp;gt;&amp;lt;/span&amp;gt;
-</code></pre>
+<p>Browsers that support SVG will render the inline SVG, while older browsers will instead display the foreignObject, which contains the fallback PNG. Easy and efficient, right?</p>
 
-<p>  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/switch&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/svg&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
-
-<p>&lt;p&gt;Browsers that support SVG will render the inline SVG, while older browsers will instead display the foreignObject, which contains the fallback PNG. Easy and efficient, right?&lt;/p&gt;</p>
-
-<p>&lt;p&gt;Unfortunately, both the SVG and the image fallback will be loaded by the browser. This isn’t such a big deal, so long as the image is optimized and then converted to a &lt;strong&gt;base64 string&lt;/strong&gt;, thus saving another HTTP request. I recommend my &lt;a href=&quot;http://webcodertools.com/imagetobase64converter&quot;&gt;favorite converter&lt;/a&gt; for the task!&lt;/p&gt;</p>
-]]>
-  </content></entry></feed>
+<p>Unfortunately, both the SVG and the image fallback will be loaded by the browser. This isn’t such a big deal, so long as the image is optimized and then converted to a <strong>base64 string</strong>, thus saving another HTTP request. I recommend my <a href="http://webcodertools.com/imagetobase64converter">favorite converter</a> for the task!</p>
+ ]]></content></entry></feed>

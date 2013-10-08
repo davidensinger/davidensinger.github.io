@@ -1,153 +1,155 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="html" xml:lang="en"><![CDATA[Posts Tagged “GitHub” &#8211; Development, design, and more by David Ensinger]]></title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/tag/github/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2013-10-07T22:02:06Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="html"><![CDATA[Copyright &#169; 2013 David Ensinger. All rights reserved.]]></rights><entry><title type="html"><![CDATA[Automating Jekyll Deployment to GitHub Pages with Rake]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/"/><id>http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake</id><updated>2013-07-23T09:24:00Z</updated><content type="html"><![CDATA[
-    <p>&lt;p&gt;I recently automated the deployment of my site to &lt;strong&gt;GitHub Pages&lt;/strong&gt;, which is something that &lt;a href=&quot;http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/&quot;&gt;I’ve wanted to do for awhile&lt;/a&gt;. Whereas I would previously enter a string of commands into the terminal, I now use &lt;strong&gt;Rake&lt;/strong&gt; to handle those commands for me.&lt;/p&gt;</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Posts Tagged “GitHub” – Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/tag/github/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2013-10-07T22:18:50Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2013 David Ensinger. All rights reserved.</rights><entry><title type="text">Automating Jekyll Deployment to GitHub Pages with Rake</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/"/><id>http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake</id><updated>2013-07-23T09:24:00Z</updated><content type="html"><![CDATA[ <p>I recently automated the deployment of my site to <strong>GitHub Pages</strong>, which is something that <a href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/">I’ve wanted to do for awhile</a>. Whereas I would previously enter a string of commands into the terminal, I now use <strong>Rake</strong> to handle those commands for me.</p>
 
-<p>&lt;h2&gt;What is Rake&lt;/h2&gt;</p>
+<h2>What is Rake</h2>
 
-<p>&lt;p&gt;For those who don’t know (and this was me until recently), &lt;a href=&quot;http://rake.rubyforge.org/&quot;&gt;Rake&lt;/a&gt; is “a simple ruby build program with capabilities similar to make.” In other words, it’s a tool that helps automate the tedium that often comes with managing a website.&lt;/p&gt;</p>
+<p>For those who don’t know (and this was me until recently), <a href="http://rake.rubyforge.org/">Rake</a> is “a simple ruby build program with capabilities similar to make.” In other words, it’s a tool that helps automate the tedium that often comes with managing a website.</p>
 
-<p>&lt;div class=&quot;gray-box&quot;&gt;
-  &lt;p&gt;&lt;strong&gt;More Info:&lt;/strong&gt; Jason Seifer has a pretty good &lt;a href=&quot;http://jasonseifer.com/2010/04/06/rake-tutorial&quot;&gt;Rake Tutorial&lt;/a&gt; for developers new to Rake.&lt;/p&gt;
-&lt;/div&gt;</p>
+<div class="gray-box">
+  <p><strong>More Info:</strong> Jason Seifer has a pretty good <a href="http://jasonseifer.com/2010/04/06/rake-tutorial">Rake Tutorial</a> for developers new to Rake.</p>
+</div>
 
-<p>&lt;h2&gt;My Workflow&lt;/h2&gt;</p>
 
-<p>&lt;p&gt;I’ve set up Jekyll to consist of two branches: &lt;strong&gt;source&lt;/strong&gt; and &lt;strong&gt;master&lt;/strong&gt;. The source branch consists of the entire project and as such tracks all changes, while the master branch consists solely of the compiled site, which can be found in the &lt;strong&gt;_site&lt;/strong&gt; subdirectory.&lt;/p&gt;</p>
+<h2>My Workflow</h2>
 
-<p>&lt;p&gt;My typical workflow is to write a post (or modify the site design) and then commit whatever I’ve changed until the only files that remain uncommitted are in the &lt;strong&gt;_site&lt;/strong&gt; subdirectory. I then stage and commit those files with a generic message that includes the current time.&lt;/p&gt;</p>
+<p>I’ve set up Jekyll to consist of two branches: <strong>source</strong> and <strong>master</strong>. The source branch consists of the entire project and as such tracks all changes, while the master branch consists solely of the compiled site, which can be found in the <strong>_site</strong> subdirectory.</p>
 
-<p>&lt;h2&gt;Commit&lt;/h2&gt;</p>
+<p>My typical workflow is to write a post (or modify the site design) and then commit whatever I’ve changed until the only files that remain uncommitted are in the <strong>_site</strong> subdirectory. I then stage and commit those files with a generic message that includes the current time.</p>
 
-<p>&lt;p&gt;Here’s what my commit rake task currently looks like, although I’d consult the &lt;a href=&quot;https://github.com/davidensinger/davidensinger.github.io/blob/source/Rakefile&quot;&gt;Rakefile&lt;/a&gt; for a more future-proof version.&lt;/p&gt;</p>
+<h2>Commit</h2>
 
-<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Commit _site/&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:commit&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Staging modified files&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git add -A&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Committing a site build at &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utc&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Build site at &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utc&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git commit -m &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;&amp;amp;quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;&amp;amp;quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Pushing commits to remote&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git push origin source&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+<p>Here’s what my commit rake task currently looks like, although I’d consult the <a href="https://github.com/davidensinger/davidensinger.github.io/blob/source/Rakefile">Rakefile</a> for a more future-proof version.</p>
 
-<p>&lt;h1&gt;Deploy&lt;/h1&gt;</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s2">&quot;Commit _site/&quot;</span>
+<span class="n">task</span> <span class="ss">:commit</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Staging modified files&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git add -A&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Committing a site build at </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Build site at </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git commit -m </span><span class="se">\&quot;</span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Pushing commits to remote&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git push origin source&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+<span class="k">end</span>
+</code></pre></div>
 
-<p>&lt;p&gt;Once everything is committed I go through the steps I outlined in &lt;a href=&quot;http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/&quot;&gt;Deploying Jekyll with Plugins to GitHub Pages&lt;/a&gt;. Again, I’d check the &lt;a href=&quot;https://github.com/davidensinger/davidensinger.github.io/blob/source/Rakefile&quot;&gt;Rakefile&lt;/a&gt; in the event I change something and forget to update this post.&lt;/p&gt;</p>
 
-<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Deploy <em>site/ to master branch&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:deploy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Deleting master branch&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git branch -D master&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Creating new master branch and switching to it&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git checkout -b master&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Forcing the </em>site subdirectory to be project root&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git filter-branch &mdash;subdirectory-filter _site/ -f&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Switching back to source branch&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git checkout source&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Pushing all branches to origin&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git push &mdash;all origin&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+<h1>Deploy</h1>
 
-<p>&lt;h2&gt;Commit and Deploy&lt;/h2&gt;</p>
+<p>Once everything is committed I go through the steps I outlined in <a href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/">Deploying Jekyll with Plugins to GitHub Pages</a>. Again, I’d check the <a href="https://github.com/davidensinger/davidensinger.github.io/blob/source/Rakefile">Rakefile</a> in the event I change something and forget to update this post.</p>
 
-<p>&lt;p&gt;Finally, I’ve gone ahead and combined them into one task to save myself the burden of typing two separate commands everytime I want to update my website.&lt;/p&gt;</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s2">&quot;Deploy _site/ to master branch&quot;</span>
+<span class="n">task</span> <span class="ss">:deploy</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Deleting master branch&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git branch -D master&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Creating new master branch and switching to it&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git checkout -b master&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Forcing the _site subdirectory to be project root&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git filter-branch --subdirectory-filter _site/ -f&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Switching back to source branch&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git checkout source&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Pushing all branches to origin&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git push --all origin&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+<span class="k">end</span>
+</code></pre></div>
 
-<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Commit and deploy _site/&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:commit_deploy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:commit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:deploy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
 
-<p>&lt;h2&gt;What’s Next?&lt;/h2&gt;</p>
+<h2>Commit and Deploy</h2>
 
-<p>&lt;p&gt;Not only have I automated the deployment of my site, but I’ve also used Rake to create development and production builds. This has allowed me to implement Sass source maps and easily minify my assets, which I’ll detail in subsequent posts! Stay tuned :)&lt;/p&gt;</p>
-]]>
-  </content></entry><entry><title type="html"><![CDATA[Deploying Jekyll with Plugins to GitHub Pages]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/"/><id>http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages</id><updated>2013-04-08T06:30:00Z</updated><content type="html"><![CDATA[
-    <p>&lt;p&gt;In spite of my resolution to design and develop this website simply, I’ve decided to run &lt;strong&gt;Jekyll&lt;/strong&gt; with plugins. This complicates my deployment because &lt;strong&gt;GitHub Pages&lt;/strong&gt; runs Jekyll in &lt;code&gt;&mdash;safe&lt;/code&gt; mode, which quite reasonably prevents the running of arbitrary Ruby code on the GitHub servers.&lt;/p&gt;</p>
+<p>Finally, I’ve gone ahead and combined them into one task to save myself the burden of typing two separate commands everytime I want to update my website.</p>
 
-<p>&lt;div class=&quot;yellow-box&quot;&gt;
-  &lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; I’ve since succeeded in automating this, which I detail in &lt;a href=&quot;http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/&quot;&gt;Automating Jekyll Deployment to GitHub Pages with Rake&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s2">&quot;Commit and deploy _site/&quot;</span>
+<span class="n">task</span> <span class="ss">:commit_deploy</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:commit</span><span class="p">,</span> <span class="ss">:deploy</span><span class="o">]</span> <span class="k">do</span>
+<span class="k">end</span>
+</code></pre></div>
 
-<p>&lt;p&gt;To work around this limitation, the consensus amongst developers is to create two branches: one for development (that I’ve named &lt;em&gt;source&lt;/em&gt;) and the other solely for the compiled &lt;strong&gt;_site&lt;/strong&gt;. In the former branch I’ll add additionally functionality via custom plugins, while the latter branch will serve as the &lt;em&gt;master&lt;/em&gt; that GitHub uses to publish the site.&lt;/p&gt;</p>
 
-<p>&lt;p&gt;I’ve chosen to follow these &lt;a href=&quot;https://github.com/rson/rson.github.com&quot;&gt;excellent deployment steps&lt;/a&gt; by &lt;a href=&quot;http://rsontech.net/&quot;&gt;Randy Morris&lt;/a&gt;, which I’ll list below with brief explanations as to what each command does.&lt;/p&gt;</p>
+<h2>What’s Next?</h2>
 
-<p>&lt;p&gt;Delete &lt;em&gt;master&lt;/em&gt; branch:&lt;/p&gt;</p>
+<p>Not only have I automated the deployment of my site, but I’ve also used Rake to create development and production builds. This has allowed me to implement Sass source maps and easily minify my assets, which I’ll detail in subsequent posts! Stay tuned :)</p>
+ ]]></content></entry><entry><title type="text">Deploying Jekyll with Plugins to GitHub Pages</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/"/><id>http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages</id><updated>2013-04-08T06:30:00Z</updated><content type="html"><![CDATA[ <p>In spite of my resolution to design and develop this website simply, I’ve decided to run <strong>Jekyll</strong> with plugins. This complicates my deployment because <strong>GitHub Pages</strong> runs Jekyll in <code>--safe</code> mode, which quite reasonably prevents the running of arbitrary Ruby code on the GitHub servers.</p>
 
-<p>&lt;pre&gt;&lt;code&gt;git branch -D master
-&lt;/code&gt;&lt;/pre&gt;</p>
+<div class="yellow-box">
+  <p><strong>Update:</strong> I’ve since succeeded in automating this, which I detail in <a href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/">Automating Jekyll Deployment to GitHub Pages with Rake</a>.</p>
+</div>
 
-<p>&lt;p&gt;Check out a new &lt;em&gt;master&lt;/em&gt; branch:&lt;/p&gt;</p>
 
-<p>&lt;pre&gt;&lt;code&gt;git checkout -b master
-&lt;/code&gt;&lt;/pre&gt;</p>
+<p>To work around this limitation, the consensus amongst developers is to create two branches: one for development (that I’ve named <em>source</em>) and the other solely for the compiled <strong>_site</strong>. In the former branch I’ll add additionally functionality via custom plugins, while the latter branch will serve as the <em>master</em> that GitHub uses to publish the site.</p>
 
-<p>&lt;p&gt;Force the &lt;em&gt;_site/&lt;/em&gt; subdirectory to be project root:&lt;/p&gt;</p>
+<p>I’ve chosen to follow these <a href="https://github.com/rson/rson.github.com">excellent deployment steps</a> by <a href="http://rsontech.net/">Randy Morris</a>, which I’ll list below with brief explanations as to what each command does.</p>
 
-<p>&lt;pre&gt;&lt;code&gt;git filter-branch &mdash;subdirectory-filter _site/ -f
-&lt;/code&gt;&lt;/pre&gt;</p>
+<p>Delete <em>master</em> branch:</p>
 
-<p>&lt;p&gt;Checkout the &lt;em&gt;source&lt;/em&gt; branch:&lt;/p&gt;</p>
+<pre><code>git branch -D master
+</code></pre>
 
-<p>&lt;pre&gt;&lt;code&gt;git checkout source
-&lt;/code&gt;&lt;/pre&gt;</p>
+<p>Check out a new <em>master</em> branch:</p>
 
-<p>&lt;p&gt;Push all branches to origin:&lt;/p&gt;</p>
+<pre><code>git checkout -b master
+</code></pre>
 
-<p>&lt;pre&gt;&lt;code&gt;git push &mdash;all origin
-&lt;/code&gt;&lt;/pre&gt;</p>
+<p>Force the <em>_site/</em> subdirectory to be project root:</p>
 
-<p>&lt;p&gt;Pretty simple, right? I’m glad that I’ll now be able to add categories and tags to my site, which is next on my todo list!&lt;/p&gt;</p>
+<pre><code>git filter-branch --subdirectory-filter _site/ -f
+</code></pre>
 
-<p>&lt;h2&gt;Next Steps&lt;/h2&gt;</p>
+<p>Checkout the <em>source</em> branch:</p>
 
-<p>&lt;p&gt;I’d like to automate this by including these deployment commands into a build script that concatenates, minifies, and (when applicable) optimizes my assets after Jekyll compiles the site. Still working on that, though!&lt;/p&gt;</p>
-]]>
-  </content></entry><entry><title type="html"><![CDATA[Setting the DNS for GitHub Pages on Namecheap]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/"/><id>http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap</id><updated>2013-03-27T16:05:00Z</updated><content type="html"><![CDATA[
-    <p>&lt;p&gt;After pushing my site to &lt;strong&gt;GitHub&lt;/strong&gt; and verifying that it worked at &lt;a href=&quot;http://davidensinger.github.io/&quot;&gt;davidensinger.github.io&lt;/a&gt;, I then went to set up my custom domain name. The &lt;a href=&quot;https://help.github.com/articles/setting-up-a-custom-domain-with-pages&quot;&gt;documentation&lt;/a&gt; provided by GitHub is clear on the subject, but I still managed to forget about my subdomains. For more than eight hours, anyone who attempted to visit &lt;a href=&quot;http://davidensinger.com/&quot;&gt;davidensinger.com&lt;/a&gt; was served with a 404, which is &lt;a href=&quot;https://twitter.com/DavidEnsinger/status/316642135216619522&quot;&gt;rather embarrassing&lt;/a&gt; for one who makes a living as a developer.&lt;/p&gt;</p>
+<pre><code>git checkout source
+</code></pre>
 
-<p>&lt;p&gt;In the interest of helping others avoid the mistakes I made, here’s a guide to setting up the DNS for GitHub pages on &lt;a href=&quot;http://www.namecheap.com/?aff=32887&quot;&gt;Namecheap&lt;/a&gt;, my registrar of choice.&lt;/p&gt;</p>
+<p>Push all branches to origin:</p>
 
-<p>&lt;div class=&quot;yellow-box&quot;&gt;
-  &lt;p&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; This guide assumes that you’re using a top-level domain (TLD).&lt;/p&gt;
-&lt;/div&gt;</p>
+<pre><code>git push --all origin
+</code></pre>
 
-<p>&lt;h2&gt;Add a CNAME File to your Repo&lt;/h2&gt;</p>
+<p>Pretty simple, right? I’m glad that I’ll now be able to add categories and tags to my site, which is next on my todo list!</p>
 
-<p>&lt;p&gt;Create a new file and put your domain name in it. Save it as CNAME.&lt;/p&gt;</p>
+<h2>Next Steps</h2>
 
-<p>&lt;pre&gt;&lt;code&gt;yourtlddomainname.com
-&lt;/code&gt;&lt;/pre&gt;</p>
+<p>I’d like to automate this by including these deployment commands into a build script that concatenates, minifies, and (when applicable) optimizes my assets after Jekyll compiles the site. Still working on that, though!</p>
+ ]]></content></entry><entry><title type="text">Setting the DNS for GitHub Pages on Namecheap</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/"/><id>http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap</id><updated>2013-03-27T16:05:00Z</updated><content type="html"><![CDATA[ <p>After pushing my site to <strong>GitHub</strong> and verifying that it worked at <a href="http://davidensinger.github.io/">davidensinger.github.io</a>, I then went to set up my custom domain name. The <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">documentation</a> provided by GitHub is clear on the subject, but I still managed to forget about my subdomains. For more than eight hours, anyone who attempted to visit <a href="http://davidensinger.com/">davidensinger.com</a> was served with a 404, which is <a href="https://twitter.com/DavidEnsinger/status/316642135216619522">rather embarrassing</a> for one who makes a living as a developer.</p>
 
-<p>&lt;h2&gt;Find your Host Records&lt;/h2&gt;</p>
+<p>In the interest of helping others avoid the mistakes I made, here’s a guide to setting up the DNS for GitHub pages on <a href="http://www.namecheap.com/?aff=32887">Namecheap</a>, my registrar of choice.</p>
 
-<p>&lt;p&gt;&lt;img src=&quot;/assets/img/posts/2013-03-27-namecheap-all-host-records.png&quot; alt=&quot;Image of All Host Records&quot; class=&quot;media-right img-border&quot; /&gt;&lt;/p&gt;</p>
+<div class="yellow-box">
+  <p><strong>Please Note:</strong> This guide assumes that you’re using a top-level domain (TLD).</p>
+</div>
 
-<p>&lt;p&gt;Log into your Namecheap account, select the appropriate domain name, and then go to &lt;strong&gt;All Host Records&lt;/strong&gt;.&lt;/p&gt;</p>
 
-<p>&lt;h2&gt;Set up the DNS&lt;/h2&gt;</p>
+<h2>Add a CNAME File to your Repo</h2>
 
-<p>&lt;ol&gt;
-&lt;li&gt;Set the &lt;strong&gt;@&lt;/strong&gt; (used to denote the domain name for which you’re configuring the DNS) &lt;strong&gt;IP Address/URL&lt;/strong&gt; to &lt;code&gt;204.232.175.78&lt;/code&gt; and the &lt;strong&gt;Record Type&lt;/strong&gt; to &lt;code&gt;A (Address)&lt;/code&gt; with a &lt;strong&gt;TTL&lt;/strong&gt; (an acronym for &lt;strong&gt;Time To Live&lt;/strong&gt; that refers to the capability of the DNS servers to cache DNS records) of &lt;code&gt;1800&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Set the &lt;strong&gt;www&lt;/strong&gt; (the subdomain www) &lt;strong&gt;IP Address/URL&lt;/strong&gt; to &lt;code&gt;username.github.io&lt;/code&gt; and the &lt;strong&gt;Record Type&lt;/strong&gt; to &lt;code&gt;CNAME (Alias)&lt;/code&gt; with a &lt;strong&gt;TTL&lt;/strong&gt; of &lt;code&gt;1800&lt;/code&gt;.&lt;/li&gt;
-&lt;/ol&gt;</p>
+<p>Create a new file and put your domain name in it. Save it as CNAME.</p>
 
-<p>&lt;p&gt;&lt;img src=&quot;/assets/img/posts/2013-03-27-namecheap-dns-settings.png&quot; alt=&quot;Image of DNS settings&quot; class=&quot;media-center img-border&quot; /&gt;&lt;/p&gt;</p>
+<pre><code>yourtlddomainname.com
+</code></pre>
 
-<p>&lt;p&gt;Save and then you’re all set! Please note, however that it may take some time for the changes to the DNS to propagate.&lt;/p&gt;</p>
+<h2>Find your Host Records</h2>
 
-<p>&lt;div class=&quot;gray-box&quot;&gt;
-  &lt;p&gt;&lt;strong&gt;More Info:&lt;/strong&gt; Google has a pretty good &lt;a href=&quot;http://support.google.com/a/bin/answer.py?hl=en&amp;answer=48090&quot;&gt;Basic Guide to DNS&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;</p>
-]]>
-  </content></entry></feed>
+<p><img src="/assets/img/posts/2013-03-27-namecheap-all-host-records.png" alt="Image of All Host Records" class="media-right img-border" /></p>
+
+<p>Log into your Namecheap account, select the appropriate domain name, and then go to <strong>All Host Records</strong>.</p>
+
+<h2>Set up the DNS</h2>
+
+<ol>
+<li>Set the <strong>@</strong> (used to denote the domain name for which you’re configuring the DNS) <strong>IP Address/URL</strong> to <code>204.232.175.78</code> and the <strong>Record Type</strong> to <code>A (Address)</code> with a <strong>TTL</strong> (an acronym for <strong>Time To Live</strong> that refers to the capability of the DNS servers to cache DNS records) of <code>1800</code>.</li>
+<li>Set the <strong>www</strong> (the subdomain www) <strong>IP Address/URL</strong> to <code>username.github.io</code> and the <strong>Record Type</strong> to <code>CNAME (Alias)</code> with a <strong>TTL</strong> of <code>1800</code>.</li>
+</ol>
+
+
+<p><img src="/assets/img/posts/2013-03-27-namecheap-dns-settings.png" alt="Image of DNS settings" class="media-center img-border" /></p>
+
+<p>Save and then you’re all set! Please note, however that it may take some time for the changes to the DNS to propagate.</p>
+
+<div class="gray-box">
+  <p><strong>More Info:</strong> Google has a pretty good <a href="http://support.google.com/a/bin/answer.py?hl=en&answer=48090">Basic Guide to DNS</a>.</p>
+</div>
+
+ ]]></content></entry></feed>

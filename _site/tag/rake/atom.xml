@@ -1,254 +1,242 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="html" xml:lang="en"><![CDATA[Posts Tagged “Rake” &#8211; Development, design, and more by David Ensinger]]></title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/tag/rake/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2013-10-07T22:02:06Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="html"><![CDATA[Copyright &#169; 2013 David Ensinger. All rights reserved.]]></rights><entry><title type="html"><![CDATA[How I use Reduce to Minify and Optimize Assets for Production]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production/"/><id>http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production</id><updated>2013-08-04T08:19:00Z</updated><content type="html"><![CDATA[
-    <p>&lt;p&gt;Now that I’ve set up &lt;a href=&quot;http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/&quot;&gt;my development environment with Rake&lt;/a&gt;, I’m able to easily minify and optimize the assets I use for my site. To do this I use &lt;a href=&quot;https://github.com/grosser/reduce&quot;&gt;Reduce&lt;/a&gt;, which is a fantastic Ruby gem by &lt;a href=&quot;http://grosser.it/&quot;&gt;Michael Grosser&lt;/a&gt; to minify and compress CSS, HTML, JavaScript and Jpeg and PNG, amongst other formats.&lt;/p&gt;</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Posts Tagged “Rake” – Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/tag/rake/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2013-10-07T22:18:50Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2013 David Ensinger. All rights reserved.</rights><entry><title type="text">How I use Reduce to Minify and Optimize Assets for Production</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production/"/><id>http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production</id><updated>2013-08-04T08:19:00Z</updated><content type="html"><![CDATA[ <p>Now that I’ve set up <a href="http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/">my development environment with Rake</a>, I’m able to easily minify and optimize the assets I use for my site. To do this I use <a href="https://github.com/grosser/reduce">Reduce</a>, which is a fantastic Ruby gem by <a href="http://grosser.it/">Michael Grosser</a> to minify and compress CSS, HTML, JavaScript and Jpeg and PNG, amongst other formats.</p>
 
-<p>&lt;h2&gt;Why Compress Assets?&lt;/h2&gt;</p>
+<h2>Why Compress Assets?</h2>
 
-<p>&lt;p&gt;The obvious benefit to minifying text and optimizing images is that it reduces filesize, so the assets load faster. This is the low hanging fruit of front end optimization and usually quite impactful on performance, despite being so easy to do.&lt;/p&gt;</p>
+<p>The obvious benefit to minifying text and optimizing images is that it reduces filesize, so the assets load faster. This is the low hanging fruit of front end optimization and usually quite impactful on performance, despite being so easy to do.</p>
 
-<p>&lt;h2&gt;My Set Up&lt;/h2&gt;</p>
+<h2>My Set Up</h2>
 
-<p>&lt;p&gt;To use Reduce I added it to my site’s project with &lt;strong&gt;Bundler&lt;/strong&gt; so that I may then invoke it in my &lt;strong&gt;Rake&lt;/strong&gt; task to build for production. A benefit to having separate environments for development and production is that I can delay all optimization to my production build, which saves considerable time during development.&lt;/p&gt;</p>
+<p>To use Reduce I added it to my site’s project with <strong>Bundler</strong> so that I may then invoke it in my <strong>Rake</strong> task to build for production. A benefit to having separate environments for development and production is that I can delay all optimization to my production build, which saves considerable time during development.</p>
 
-<p>&lt;p&gt;I previously tried several &lt;strong&gt;Jekyll&lt;/strong&gt; plugins to manage this, but didn’t like the delay between saving a file and then waiting for Jekyll to rebuild. Invariably, the bottleneck was the file compression, especially in regards to the minification of the HTML, which is perhaps due to the sheer quantity of files involved.&lt;/p&gt;</p>
+<p>I previously tried several <strong>Jekyll</strong> plugins to manage this, but didn’t like the delay between saving a file and then waiting for Jekyll to rebuild. Invariably, the bottleneck was the file compression, especially in regards to the minification of the HTML, which is perhaps due to the sheer quantity of files involved.</p>
 
-<p>&lt;p&gt;The task I invoke to minify the assets is courtesy of &lt;a href=&quot;http://www.pacbard.tk/&quot;&gt;Emanuele Bardelli&lt;/a&gt;, who added the HTML compression functionality to Reduce. See &lt;a href=&quot;https://github.com/pacbard/blog/blob/master/_rake/minify.rake&quot;&gt;his rake task&lt;/a&gt;, which I’ve only superficially modified:&lt;/p&gt;</p>
+<p>The task I invoke to minify the assets is courtesy of <a href="http://www.pacbard.tk/">Emanuele Bardelli</a>, who added the HTML compression functionality to Reduce. See <a href="https://github.com/pacbard/blog/blob/master/_rake/minify.rake">his rake task</a>, which I’ve only superficially modified:</p>
 
-<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Minify <em>site/&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:minify&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Compressing static assets&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;original&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;compressed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-  &lt;span class=&quot;no&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;glob&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;</em>site/<em><em>/</em>.</em>&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s2">&quot;Minify _site/&quot;</span>
+<span class="n">task</span> <span class="ss">:minify</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Compressing static assets&quot;</span>
+  <span class="n">original</span> <span class="o">=</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span>
+  <span class="n">compressed</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="no">Dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;_site/**/*.*&quot;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">file</span><span class="o">|</span>
+    <span class="k">case</span> <span class="no">File</span><span class="o">.</span><span class="n">extname</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+      <span class="k">when</span> <span class="s2">&quot;.css&quot;</span><span class="p">,</span> <span class="s2">&quot;.gif&quot;</span><span class="p">,</span> <span class="s2">&quot;.html&quot;</span><span class="p">,</span> <span class="s2">&quot;.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;.jpeg&quot;</span><span class="p">,</span> <span class="s2">&quot;.js&quot;</span><span class="p">,</span> <span class="s2">&quot;.png&quot;</span><span class="p">,</span> <span class="s2">&quot;.xml&quot;</span>
+        <span class="nb">puts</span> <span class="s2">&quot;Processing: </span><span class="si">#{</span><span class="n">file</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">original</span> <span class="o">+=</span> <span class="no">File</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">to_f</span>
+        <span class="n">min</span> <span class="o">=</span> <span class="no">Reduce</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+        <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
+          <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">min</span><span class="p">)</span>
+        <span class="k">end</span>
+        <span class="n">compressed</span> <span class="o">+=</span> <span class="no">File</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+      <span class="k">else</span>
+        <span class="nb">puts</span> <span class="s2">&quot;Skipping: </span><span class="si">#{</span><span class="n">file</span><span class="si">}</span><span class="s2">&quot;</span>
+      <span class="k">end</span>
+  <span class="k">end</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Total compression %0.2f\%&quot;</span> <span class="o">%</span> <span class="p">(((</span><span class="n">original</span><span class="o">-</span><span class="n">compressed</span><span class="p">)</span><span class="o">/</span><span class="n">original</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div>
 
-<pre><code>&amp;lt;span class=&amp;quot;k&amp;quot;&amp;gt;case&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;no&amp;quot;&amp;gt;File&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;.&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;extname&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;file&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt;
-  &amp;lt;span class=&amp;quot;k&amp;quot;&amp;gt;when&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;.css&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;,&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;.gif&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;,&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;.html&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;,&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;.jpg&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;,&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;.jpeg&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;,&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;.js&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;,&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;.png&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;,&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;.xml&amp;amp;quot;&amp;lt;/span&amp;gt;
-    &amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;puts&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;Processing: &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;si&amp;quot;&amp;gt;#{&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;file&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;si&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;&amp;lt;/span&amp;gt;
-    &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;original&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;+=&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;no&amp;quot;&amp;gt;File&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;.&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;size&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;file&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;.&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;to_f&amp;lt;/span&amp;gt;
-    &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;min&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;=&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;no&amp;quot;&amp;gt;Reduce&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;.&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;reduce&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;file&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt;
-    &amp;lt;span class=&amp;quot;no&amp;quot;&amp;gt;File&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;.&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;open&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;file&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;,&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;w&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;k&amp;quot;&amp;gt;do&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;|&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;f&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;|&amp;lt;/span&amp;gt;
-      &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;f&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;.&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;write&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;min&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt;
-    &amp;lt;span class=&amp;quot;k&amp;quot;&amp;gt;end&amp;lt;/span&amp;gt;
-    &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;compressed&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;+=&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;no&amp;quot;&amp;gt;File&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;.&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;size&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;file&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt;
-  &amp;lt;span class=&amp;quot;k&amp;quot;&amp;gt;else&amp;lt;/span&amp;gt;
-    &amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;puts&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;Skipping: &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;si&amp;quot;&amp;gt;#{&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;file&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;si&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;&amp;lt;/span&amp;gt;
-  &amp;lt;span class=&amp;quot;k&amp;quot;&amp;gt;end&amp;lt;/span&amp;gt;
-</code></pre>
 
-<p>  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Total compression %0.2f\%&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&ndash;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;compressed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+<p>How easy is that? With a simple <code>rake build:pro</code> command I’m able to build my site with production ready assets, which I then commit and deploy to GitHub.</p>
+ ]]></content></entry><entry><title type="text">Easy Sass Source Maps with Development Environments and Rake</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/"/><id>http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake</id><updated>2013-07-26T09:26:00Z</updated><content type="html"><![CDATA[ <p>In addition to <a href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/">automating the deployment of Jekyll</a>, I also wrote a couple Rake tasks to streamline the building of my site. They’re quite simple, but they allow me to have environments for both development and production. It’s now just as easy to use Sass source maps in my development environment as it is to build compressed assets for production.</p>
 
-<p>&lt;p&gt;How easy is that? With a simple &lt;code&gt;rake build:pro&lt;/code&gt; command I’m able to build my site with production ready assets, which I then commit and deploy to GitHub.&lt;/p&gt;</p>
-]]>
-  </content></entry><entry><title type="html"><![CDATA[Easy Sass Source Maps with Development Environments and Rake]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/"/><id>http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake</id><updated>2013-07-26T09:26:00Z</updated><content type="html"><![CDATA[
-    <p>&lt;p&gt;In addition to &lt;a href=&quot;http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/&quot;&gt;automating the deployment of Jekyll&lt;/a&gt;, I also wrote a couple Rake tasks to streamline the building of my site. They’re quite simple, but they allow me to have environments for both development and production. It’s now just as easy to use Sass source maps in my development environment as it is to build compressed assets for production.&lt;/p&gt;</p>
+<h2>Source Maps in Sass</h2>
 
-<p>&lt;h2&gt;Source Maps in Sass&lt;/h2&gt;</p>
+<p>So what are <a href="http://net.tutsplus.com/tutorials/tools-and-tips/source-maps-101/">Source Maps</a>? Basically they’re what link the compiled code that you see in your browser to the original source files that live in your development environment. This makes it really simple to debug code that may otherwise be quite difficult to work through.</p>
 
-<p>&lt;p&gt;So what are &lt;a href=&quot;http://net.tutsplus.com/tutorials/tools-and-tips/source-maps-101/&quot;&gt;Source Maps&lt;/a&gt;? Basically they’re what link the compiled code that you see in your browser to the original source files that live in your development environment. This makes it really simple to debug code that may otherwise be quite difficult to work through.&lt;/p&gt;</p>
+<h3>How to</h3>
 
-<p>&lt;h3&gt;How to&lt;/h3&gt;</p>
+<p>It’s fairly straightforward to set up source maps in Sass for viewing in Chrome. Thankfully, the process has been well documented by Tim Lucas in his article, “<a href="https://medium.com/what-i-learned-building/b4daab987fb0">Getting started with CSS sourcemaps and in-browser Sass editing</a>.” I’ll still lay out the high-level steps here, though:</p>
 
-<p>&lt;p&gt;It’s fairly straightforward to set up source maps in Sass for viewing in Chrome. Thankfully, the process has been well documented by Tim Lucas in his article, “&lt;a href=&quot;https://medium.com/what-i-learned-building/b4daab987fb0&quot;&gt;Getting started with CSS sourcemaps and in-browser Sass editing&lt;/a&gt;.” I’ll still lay out the high-level steps here, though:&lt;/p&gt;</p>
+<ol>
+<li>Install <strong>Sass 3.3+</strong></li>
+<li>Run Sass with the <code>--sourcemap</code> flag</li>
+<li>Enable <strong>CSS Source Maps</strong> support in <a href="https://www.google.com/intl/en/chrome/browser/canary.html">Chrome Canary</a></li>
+</ol>
 
-<p>&lt;ol&gt;
-&lt;li&gt;Install &lt;strong&gt;Sass 3.3+&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Run Sass with the &lt;code&gt;&mdash;sourcemap&lt;/code&gt; flag&lt;/li&gt;
-&lt;li&gt;Enable &lt;strong&gt;CSS Source Maps&lt;/strong&gt; support in &lt;a href=&quot;https://www.google.com/intl/en/chrome/browser/canary.html&quot;&gt;Chrome Canary&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</p>
 
-<p>&lt;p&gt;Once you’ve followed those steps you should be able to inspect CSS properties in DevTools and then click them to go straight to their source. Pretty neat, right?&lt;/p&gt;</p>
+<p>Once you’ve followed those steps you should be able to inspect CSS properties in DevTools and then click them to go straight to their source. Pretty neat, right?</p>
 
-<p>&lt;h2&gt;Setting up Environments with Rake&lt;/h2&gt;</p>
+<h2>Setting up Environments with Rake</h2>
 
-<p>&lt;p&gt;Now that the source maps are working, it’s time to set up a way to switch between the compiled Sass for development and for production. To do this, I’ve created a couple tasks with Rake:&lt;/p&gt;</p>
+<p>Now that the source maps are working, it’s time to set up a way to switch between the compiled Sass for development and for production. To do this, I’ve created a couple tasks with Rake:</p>
 
-<p>&lt;h3&gt;Development&lt;/h3&gt;</p>
+<h3>Development</h3>
 
-<p>&lt;p&gt;To start my development, I use the following Rake task, which is based off the work of Nick Quaranto in “&lt;a href=&quot;http://quaran.to/blog/2013/01/09/use-jekyll-scss-coffeescript-without-plugins/&quot;&gt;Use Jekyll, SCSS, and CoffeeScript without plugins&lt;/a&gt;.” The task starts Sass and Jekyll with the desired flags, although note that it must first run the &lt;code&gt;:recompile_sass&lt;/code&gt; task, which I’ll go over shortly.&lt;/p&gt;</p>
+<p>To start my development, I use the following Rake task, which is based off the work of Nick Quaranto in “<a href="http://quaran.to/blog/2013/01/09/use-jekyll-scss-coffeescript-without-plugins/">Use Jekyll, SCSS, and CoffeeScript without plugins</a>.” The task starts Sass and Jekyll with the desired flags, although note that it must first run the <code>:recompile_sass</code> task, which I’ll go over shortly.</p>
 
-<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Build _site/ for development&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:dev&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:recompile_sass&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;##  Starting Jekyll and compiling Sass with source map&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;pids&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s2">&quot;Build _site/ for development&quot;</span>
+<span class="n">task</span> <span class="ss">:dev</span> <span class="o">=&gt;</span> <span class="ss">:recompile_sass</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">##  Starting Jekyll and compiling Sass with source map&quot;</span>
+  <span class="n">pids</span> <span class="o">=</span> <span class="o">[</span>
+    <span class="n">spawn</span><span class="p">(</span><span class="s2">&quot;sass --sourcemap --watch assets/scss/styles.scss:assets/css/styles.css&quot;</span><span class="p">),</span>
+    <span class="n">spawn</span><span class="p">(</span><span class="s2">&quot;jekyll serve -w&quot;</span><span class="p">)</span>
+  <span class="o">]</span>
 
-<pre><code>&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;spawn&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;sass --sourcemap --watch assets/scss/styles.scss:assets/css/styles.css&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;),&amp;lt;/span&amp;gt;
-&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;spawn&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;jekyll serve -w&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt;
-</code></pre>
+  <span class="nb">trap</span> <span class="s2">&quot;INT&quot;</span> <span class="k">do</span>
+    <span class="no">Process</span><span class="o">.</span><span class="n">kill</span> <span class="s2">&quot;INT&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">pids</span>
+    <span class="nb">exit</span> <span class="mi">1</span>
+  <span class="k">end</span>
 
-<p>  &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;</p>
+  <span class="kp">loop</span> <span class="k">do</span>
+    <span class="nb">sleep</span> <span class="mi">1</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
 
-<p>  &lt;span class=&quot;nb&quot;&gt;trap&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;INT&amp;quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;</p>
 
-<pre><code>&amp;lt;span class=&amp;quot;no&amp;quot;&amp;gt;Process&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;.&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;kill&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;INT&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;,&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;*&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;pids&amp;lt;/span&amp;gt;
-&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;exit&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;mi&amp;quot;&amp;gt;1&amp;lt;/span&amp;gt;
-</code></pre>
+<h3>Production</h3>
 
-<p>  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;</p>
+<p>To build for production, I use the following task, which compiles the Sass (note the <code>--style compressed</code>), builds Jekyll, and then deletes the leftover source map file for Sass. Again, the task must <code>:recompile_sass</code> before starting.</p>
 
-<p>  &lt;span class=&quot;kp&quot;&gt;loop&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s2">&quot;Build _site/ for production&quot;</span>
+<span class="n">task</span> <span class="ss">:pro</span> <span class="o">=&gt;</span> <span class="ss">:recompile_sass</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Compiling Sass&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;sass --style compressed assets/scss/styles.scss:assets/css/styles.css&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Building Jekyll to _site/&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;jekyll build&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Deleting Sass source map&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;rm -f _site/assets/css/*.map&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+<span class="k">end</span>
+</code></pre></div>
 
-<pre><code>&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;sleep&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;mi&amp;quot;&amp;gt;1&amp;lt;/span&amp;gt;
-</code></pre>
 
-<p>  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+<h2>Force Sass to Recompile</h2>
 
-<p>&lt;h3&gt;Production&lt;/h3&gt;</p>
+<p>For both my development and production Rake tasks I force Sass to recompile. I do this because Sass recompiles only when the compiled CSS has been deleted or when the Sass has been modified.</p>
 
-<p>&lt;p&gt;To build for production, I use the following task, which compiles the Sass (note the &lt;code&gt;&mdash;style compressed&lt;/code&gt;), builds Jekyll, and then deletes the leftover source map file for Sass. Again, the task must &lt;code&gt;:recompile_sass&lt;/code&gt; before starting.&lt;/p&gt;</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s2">&quot;Recompile Sass&quot;</span>
+<span class="n">task</span> <span class="ss">:recompile_sass</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Forcing Sass to recompile&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;touch -m assets/scss/styles.scss&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+<span class="k">end</span>
+</code></pre></div>
 
-<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Build <em>site/ for production&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:pro&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:recompile_sass&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Compiling Sass&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;sass &mdash;style compressed assets/scss/styles.scss:assets/css/styles.css&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Building Jekyll to </em>site/&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;jekyll build&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Deleting Sass source map&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;rm -f _site/assets/css/*.map&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
 
-<p>&lt;h2&gt;Force Sass to Recompile&lt;/h2&gt;</p>
+<h2>Complete Tasks</h2>
 
-<p>&lt;p&gt;For both my development and production Rake tasks I force Sass to recompile. I do this because Sass recompiles only when the compiled CSS has been deleted or when the Sass has been modified.&lt;/p&gt;</p>
+<p>The following are the complete Rake tasks. You’ll notice that I’ve namespaced the build tasks, as well as invoked a minify task, which I’ll go over in a future post.</p>
 
-<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Recompile Sass&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:recompile_sass&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Forcing Sass to recompile&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;touch -m assets/scss/styles.scss&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s2">&quot;Recompile Sass&quot;</span>
+<span class="n">task</span> <span class="ss">:recompile_sass</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Forcing Sass to recompile&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;touch -m assets/scss/styles.scss&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+<span class="k">end</span>
 
-<p>&lt;h2&gt;Complete Tasks&lt;/h2&gt;</p>
+<span class="n">namespace</span> <span class="ss">:build</span> <span class="k">do</span>
+  <span class="n">desc</span> <span class="s2">&quot;Build _site/ for development&quot;</span>
+  <span class="n">task</span> <span class="ss">:dev</span> <span class="o">=&gt;</span> <span class="ss">:recompile_sass</span> <span class="k">do</span>
+    <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">##  Starting Jekyll and recompiling Sass with source map&quot;</span>
+    <span class="n">pids</span> <span class="o">=</span> <span class="o">[</span>
+      <span class="n">spawn</span><span class="p">(</span><span class="s2">&quot;sass --sourcemap --watch assets/scss/styles.scss:assets/css/styles.css&quot;</span><span class="p">),</span>
+      <span class="n">spawn</span><span class="p">(</span><span class="s2">&quot;jekyll serve -w&quot;</span><span class="p">)</span>
+    <span class="o">]</span>
 
-<p>&lt;p&gt;The following are the complete Rake tasks. You’ll notice that I’ve namespaced the build tasks, as well as invoked a minify task, which I’ll go over in a future post.&lt;/p&gt;</p>
+    <span class="nb">trap</span> <span class="s2">&quot;INT&quot;</span> <span class="k">do</span>
+      <span class="no">Process</span><span class="o">.</span><span class="n">kill</span> <span class="s2">&quot;INT&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">pids</span>
+      <span class="nb">exit</span> <span class="mi">1</span>
+    <span class="k">end</span>
 
-<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Recompile Sass&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:recompile_sass&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Forcing Sass to recompile&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;touch -m assets/scss/styles.scss&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;</p>
+    <span class="kp">loop</span> <span class="k">do</span>
+      <span class="nb">sleep</span> <span class="mi">1</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
 
-<p>&lt;span class=&quot;n&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:build&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Build _site/ for development&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:dev&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:recompile_sass&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;</p>
+  <span class="n">desc</span> <span class="s2">&quot;Build _site/ for production&quot;</span>
+  <span class="n">task</span> <span class="ss">:pro</span> <span class="o">=&gt;</span> <span class="ss">:recompile_sass</span> <span class="k">do</span>
+    <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Compiling Sass&quot;</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;sass --style compressed assets/scss/styles.scss:assets/css/styles.css&quot;</span><span class="p">)</span>
+    <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+    <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Building Jekyll to _site/&quot;</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;jekyll build&quot;</span><span class="p">)</span>
+    <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+    <span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">[</span><span class="s2">&quot;minify&quot;</span><span class="o">].</span><span class="n">invoke</span>
+    <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Deleting Sass source map&quot;</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;rm -f _site/assets/css/*.map&quot;</span><span class="p">)</span>
+    <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
 
-<pre><code>&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;puts&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;se&amp;quot;&amp;gt;\n&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;##  Starting Jekyll and recompiling Sass with source map&amp;amp;quot;&amp;lt;/span&amp;gt;
-&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;pids&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;=&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;[&amp;lt;/span&amp;gt;
-  &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;spawn&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;sass --sourcemap --watch assets/scss/styles.scss:assets/css/styles.css&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;),&amp;lt;/span&amp;gt;
-  &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;spawn&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;jekyll serve -w&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt;
-&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;]&amp;lt;/span&amp;gt;
 
-&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;trap&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;INT&amp;amp;quot;&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;k&amp;quot;&amp;gt;do&amp;lt;/span&amp;gt;
-  &amp;lt;span class=&amp;quot;no&amp;quot;&amp;gt;Process&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;.&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;kill&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;INT&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;,&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;*&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;pids&amp;lt;/span&amp;gt;
-  &amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;exit&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;mi&amp;quot;&amp;gt;1&amp;lt;/span&amp;gt;
-&amp;lt;span class=&amp;quot;k&amp;quot;&amp;gt;end&amp;lt;/span&amp;gt;
 
-&amp;lt;span class=&amp;quot;kp&amp;quot;&amp;gt;loop&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;k&amp;quot;&amp;gt;do&amp;lt;/span&amp;gt;
-  &amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;sleep&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;mi&amp;quot;&amp;gt;1&amp;lt;/span&amp;gt;
-&amp;lt;span class=&amp;quot;k&amp;quot;&amp;gt;end&amp;lt;/span&amp;gt;
-</code></pre>
+ ]]></content></entry><entry><title type="text">Automating Jekyll Deployment to GitHub Pages with Rake</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/"/><id>http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake</id><updated>2013-07-23T09:24:00Z</updated><content type="html"><![CDATA[ <p>I recently automated the deployment of my site to <strong>GitHub Pages</strong>, which is something that <a href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/">I’ve wanted to do for awhile</a>. Whereas I would previously enter a string of commands into the terminal, I now use <strong>Rake</strong> to handle those commands for me.</p>
 
-<p>  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;</p>
+<h2>What is Rake</h2>
 
-<p>  &lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Build _site/ for production&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:pro&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:recompile_sass&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;</p>
+<p>For those who don’t know (and this was me until recently), <a href="http://rake.rubyforge.org/">Rake</a> is “a simple ruby build program with capabilities similar to make.” In other words, it’s a tool that helps automate the tedium that often comes with managing a website.</p>
 
-<pre><code>&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;puts&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;se&amp;quot;&amp;gt;\n&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;## Compiling Sass&amp;amp;quot;&amp;lt;/span&amp;gt;
-&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;status&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;=&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;system&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;sass --style compressed assets/scss/styles.scss:assets/css/styles.css&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt;
-&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;puts&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;status&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;?&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;Success&amp;amp;quot;&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;Failed&amp;amp;quot;&amp;lt;/span&amp;gt;
-&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;puts&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;se&amp;quot;&amp;gt;\n&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;## Building Jekyll to _site/&amp;amp;quot;&amp;lt;/span&amp;gt;
-&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;status&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;=&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;system&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;jekyll build&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt;
-&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;puts&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;status&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;?&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;Success&amp;amp;quot;&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;Failed&amp;amp;quot;&amp;lt;/span&amp;gt;
-&amp;lt;span class=&amp;quot;ss&amp;quot;&amp;gt;Rake&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;ss&amp;quot;&amp;gt;:Task&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;[&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;minify&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;].&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;invoke&amp;lt;/span&amp;gt;
-&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;puts&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;se&amp;quot;&amp;gt;\n&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;## Deleting Sass source map&amp;amp;quot;&amp;lt;/span&amp;gt;
-&amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;status&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;=&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;system&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;rm -f _site/assets/css/*.map&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt;
-&amp;lt;span class=&amp;quot;nb&amp;quot;&amp;gt;puts&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;status&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;?&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;Success&amp;amp;quot;&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;p&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;s2&amp;quot;&amp;gt;&amp;amp;quot;Failed&amp;amp;quot;&amp;lt;/span&amp;gt;
-</code></pre>
+<div class="gray-box">
+  <p><strong>More Info:</strong> Jason Seifer has a pretty good <a href="http://jasonseifer.com/2010/04/06/rake-tutorial">Rake Tutorial</a> for developers new to Rake.</p>
+</div>
 
-<p>  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
-]]>
-  </content></entry><entry><title type="html"><![CDATA[Automating Jekyll Deployment to GitHub Pages with Rake]]></title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/"/><id>http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake</id><updated>2013-07-23T09:24:00Z</updated><content type="html"><![CDATA[
-    <p>&lt;p&gt;I recently automated the deployment of my site to &lt;strong&gt;GitHub Pages&lt;/strong&gt;, which is something that &lt;a href=&quot;http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/&quot;&gt;I’ve wanted to do for awhile&lt;/a&gt;. Whereas I would previously enter a string of commands into the terminal, I now use &lt;strong&gt;Rake&lt;/strong&gt; to handle those commands for me.&lt;/p&gt;</p>
 
-<p>&lt;h2&gt;What is Rake&lt;/h2&gt;</p>
+<h2>My Workflow</h2>
 
-<p>&lt;p&gt;For those who don’t know (and this was me until recently), &lt;a href=&quot;http://rake.rubyforge.org/&quot;&gt;Rake&lt;/a&gt; is “a simple ruby build program with capabilities similar to make.” In other words, it’s a tool that helps automate the tedium that often comes with managing a website.&lt;/p&gt;</p>
+<p>I’ve set up Jekyll to consist of two branches: <strong>source</strong> and <strong>master</strong>. The source branch consists of the entire project and as such tracks all changes, while the master branch consists solely of the compiled site, which can be found in the <strong>_site</strong> subdirectory.</p>
 
-<p>&lt;div class=&quot;gray-box&quot;&gt;
-  &lt;p&gt;&lt;strong&gt;More Info:&lt;/strong&gt; Jason Seifer has a pretty good &lt;a href=&quot;http://jasonseifer.com/2010/04/06/rake-tutorial&quot;&gt;Rake Tutorial&lt;/a&gt; for developers new to Rake.&lt;/p&gt;
-&lt;/div&gt;</p>
+<p>My typical workflow is to write a post (or modify the site design) and then commit whatever I’ve changed until the only files that remain uncommitted are in the <strong>_site</strong> subdirectory. I then stage and commit those files with a generic message that includes the current time.</p>
 
-<p>&lt;h2&gt;My Workflow&lt;/h2&gt;</p>
+<h2>Commit</h2>
 
-<p>&lt;p&gt;I’ve set up Jekyll to consist of two branches: &lt;strong&gt;source&lt;/strong&gt; and &lt;strong&gt;master&lt;/strong&gt;. The source branch consists of the entire project and as such tracks all changes, while the master branch consists solely of the compiled site, which can be found in the &lt;strong&gt;_site&lt;/strong&gt; subdirectory.&lt;/p&gt;</p>
+<p>Here’s what my commit rake task currently looks like, although I’d consult the <a href="https://github.com/davidensinger/davidensinger.github.io/blob/source/Rakefile">Rakefile</a> for a more future-proof version.</p>
 
-<p>&lt;p&gt;My typical workflow is to write a post (or modify the site design) and then commit whatever I’ve changed until the only files that remain uncommitted are in the &lt;strong&gt;_site&lt;/strong&gt; subdirectory. I then stage and commit those files with a generic message that includes the current time.&lt;/p&gt;</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s2">&quot;Commit _site/&quot;</span>
+<span class="n">task</span> <span class="ss">:commit</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Staging modified files&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git add -A&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Committing a site build at </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Build site at </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git commit -m </span><span class="se">\&quot;</span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Pushing commits to remote&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git push origin source&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+<span class="k">end</span>
+</code></pre></div>
 
-<p>&lt;h2&gt;Commit&lt;/h2&gt;</p>
 
-<p>&lt;p&gt;Here’s what my commit rake task currently looks like, although I’d consult the &lt;a href=&quot;https://github.com/davidensinger/davidensinger.github.io/blob/source/Rakefile&quot;&gt;Rakefile&lt;/a&gt; for a more future-proof version.&lt;/p&gt;</p>
+<h1>Deploy</h1>
 
-<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Commit _site/&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:commit&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Staging modified files&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git add -A&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Committing a site build at &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utc&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Build site at &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utc&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git commit -m &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;&amp;amp;quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;&amp;amp;quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Pushing commits to remote&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git push origin source&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+<p>Once everything is committed I go through the steps I outlined in <a href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/">Deploying Jekyll with Plugins to GitHub Pages</a>. Again, I’d check the <a href="https://github.com/davidensinger/davidensinger.github.io/blob/source/Rakefile">Rakefile</a> in the event I change something and forget to update this post.</p>
 
-<p>&lt;h1&gt;Deploy&lt;/h1&gt;</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s2">&quot;Deploy _site/ to master branch&quot;</span>
+<span class="n">task</span> <span class="ss">:deploy</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Deleting master branch&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git branch -D master&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Creating new master branch and switching to it&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git checkout -b master&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Forcing the _site subdirectory to be project root&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git filter-branch --subdirectory-filter _site/ -f&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Switching back to source branch&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git checkout source&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Pushing all branches to origin&quot;</span>
+  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git push --all origin&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
+<span class="k">end</span>
+</code></pre></div>
 
-<p>&lt;p&gt;Once everything is committed I go through the steps I outlined in &lt;a href=&quot;http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/&quot;&gt;Deploying Jekyll with Plugins to GitHub Pages&lt;/a&gt;. Again, I’d check the &lt;a href=&quot;https://github.com/davidensinger/davidensinger.github.io/blob/source/Rakefile&quot;&gt;Rakefile&lt;/a&gt; in the event I change something and forget to update this post.&lt;/p&gt;</p>
 
-<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Deploy <em>site/ to master branch&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:deploy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Deleting master branch&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git branch -D master&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Creating new master branch and switching to it&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git checkout -b master&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Forcing the </em>site subdirectory to be project root&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git filter-branch &mdash;subdirectory-filter _site/ -f&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Switching back to source branch&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git checkout source&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;## Pushing all branches to origin&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git push &mdash;all origin&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Success&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Failed&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+<h2>Commit and Deploy</h2>
 
-<p>&lt;h2&gt;Commit and Deploy&lt;/h2&gt;</p>
+<p>Finally, I’ve gone ahead and combined them into one task to save myself the burden of typing two separate commands everytime I want to update my website.</p>
 
-<p>&lt;p&gt;Finally, I’ve gone ahead and combined them into one task to save myself the burden of typing two separate commands everytime I want to update my website.&lt;/p&gt;</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s2">&quot;Commit and deploy _site/&quot;</span>
+<span class="n">task</span> <span class="ss">:commit_deploy</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:commit</span><span class="p">,</span> <span class="ss">:deploy</span><span class="o">]</span> <span class="k">do</span>
+<span class="k">end</span>
+</code></pre></div>
 
-<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Commit and deploy _site/&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:commit_deploy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:commit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:deploy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
 
-<p>&lt;h2&gt;What’s Next?&lt;/h2&gt;</p>
+<h2>What’s Next?</h2>
 
-<p>&lt;p&gt;Not only have I automated the deployment of my site, but I’ve also used Rake to create development and production builds. This has allowed me to implement Sass source maps and easily minify my assets, which I’ll detail in subsequent posts! Stay tuned :)&lt;/p&gt;</p>
-]]>
-  </content></entry></feed>
+<p>Not only have I automated the deployment of my site, but I’ve also used Rake to create development and production builds. This has allowed me to implement Sass source maps and easily minify my assets, which I’ll detail in subsequent posts! Stay tuned :)</p>
+ ]]></content></entry></feed>
