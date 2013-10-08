@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2013-10-07T22:18:50Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2013 David Ensinger. All rights reserved.</rights><entry><title type="text">Suggested Tweet Plugin for Jekyll</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/09/suggested-tweet-plugin-for-jekyll/"/><id>http://davidensinger.com/2013/09/suggested-tweet-plugin-for-jekyll</id><updated>2013-09-16T12:50:00Z</updated><content type="html"><![CDATA[ <p>It’s always a really nice feeling when one sees one’s posts shared with others, usually via blog post or Tweet. In the spirit of encouraging more of this, I present to you the <a href="https://github.com/davidensinger/jekyll-suggested-tweet">Suggested Tweet</a> plugin for <a href="http://jekyllrb.com/">Jekyll</a>. With this plugin, visitors to your site need no longer grope for words while they attempt to share your content!</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2013-10-07T22:38:01Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2013 David Ensinger. All rights reserved.</rights><entry><title type="text">Suggested Tweet Plugin for Jekyll</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/09/suggested-tweet-plugin-for-jekyll/"/><id>http://davidensinger.com/2013/09/suggested-tweet-plugin-for-jekyll</id><published>2013-09-16T12:50:00Z</published><updated>2013-09-16T12:50:00Z</updated><content type="html"><![CDATA[ <p>It’s always a really nice feeling when one sees one’s posts shared with others, usually via blog post or Tweet. In the spirit of encouraging more of this, I present to you the <a href="https://github.com/davidensinger/jekyll-suggested-tweet">Suggested Tweet</a> plugin for <a href="http://jekyllrb.com/">Jekyll</a>. With this plugin, visitors to your site need no longer grope for words while they attempt to share your content!</p>
 
 <h2>About the Plugin</h2>
 
@@ -81,7 +81,7 @@
 <li>Allow for parameters to be set within the tag itself, but without using a regular expression to do so. Possible? Yay or nay?</li>
 </ul>
 
- ]]></content></entry><entry><title type="text">How I use Reduce to Minify and Optimize Assets for Production</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production/"/><id>http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production</id><updated>2013-08-04T08:19:00Z</updated><content type="html"><![CDATA[ <p>Now that I’ve set up <a href="http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/">my development environment with Rake</a>, I’m able to easily minify and optimize the assets I use for my site. To do this I use <a href="https://github.com/grosser/reduce">Reduce</a>, which is a fantastic Ruby gem by <a href="http://grosser.it/">Michael Grosser</a> to minify and compress CSS, HTML, JavaScript and Jpeg and PNG, amongst other formats.</p>
+ ]]></content></entry><entry><title type="text">How I use Reduce to Minify and Optimize Assets for Production</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production/"/><id>http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production</id><published>2013-08-04T08:19:00Z</published><updated>2013-08-04T08:19:00Z</updated><content type="html"><![CDATA[ <p>Now that I’ve set up <a href="http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/">my development environment with Rake</a>, I’m able to easily minify and optimize the assets I use for my site. To do this I use <a href="https://github.com/grosser/reduce">Reduce</a>, which is a fantastic Ruby gem by <a href="http://grosser.it/">Michael Grosser</a> to minify and compress CSS, HTML, JavaScript and Jpeg and PNG, amongst other formats.</p>
 
 <h2>Why Compress Assets?</h2>
 
@@ -120,7 +120,7 @@
 
 
 <p>How easy is that? With a simple <code>rake build:pro</code> command I’m able to build my site with production ready assets, which I then commit and deploy to GitHub.</p>
- ]]></content></entry><entry><title type="text">Easy Sass Source Maps with Development Environments and Rake</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/"/><id>http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake</id><updated>2013-07-26T09:26:00Z</updated><content type="html"><![CDATA[ <p>In addition to <a href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/">automating the deployment of Jekyll</a>, I also wrote a couple Rake tasks to streamline the building of my site. They’re quite simple, but they allow me to have environments for both development and production. It’s now just as easy to use Sass source maps in my development environment as it is to build compressed assets for production.</p>
+ ]]></content></entry><entry><title type="text">Easy Sass Source Maps with Development Environments and Rake</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/"/><id>http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake</id><published>2013-07-26T09:26:00Z</published><updated>2013-07-26T09:26:00Z</updated><content type="html"><![CDATA[ <p>In addition to <a href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/">automating the deployment of Jekyll</a>, I also wrote a couple Rake tasks to streamline the building of my site. They’re quite simple, but they allow me to have environments for both development and production. It’s now just as easy to use Sass source maps in my development environment as it is to build compressed assets for production.</p>
 
 <h2>Source Maps in Sass</h2>
 
@@ -247,7 +247,7 @@
 
 
 
- ]]></content></entry><entry><title type="text">Automating Jekyll Deployment to GitHub Pages with Rake</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/"/><id>http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake</id><updated>2013-07-23T09:24:00Z</updated><content type="html"><![CDATA[ <p>I recently automated the deployment of my site to <strong>GitHub Pages</strong>, which is something that <a href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/">I’ve wanted to do for awhile</a>. Whereas I would previously enter a string of commands into the terminal, I now use <strong>Rake</strong> to handle those commands for me.</p>
+ ]]></content></entry><entry><title type="text">Automating Jekyll Deployment to GitHub Pages with Rake</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/"/><id>http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake</id><published>2013-07-23T09:24:00Z</published><updated>2013-07-23T09:24:00Z</updated><content type="html"><![CDATA[ <p>I recently automated the deployment of my site to <strong>GitHub Pages</strong>, which is something that <a href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/">I’ve wanted to do for awhile</a>. Whereas I would previously enter a string of commands into the terminal, I now use <strong>Rake</strong> to handle those commands for me.</p>
 
 <h2>What is Rake</h2>
 
@@ -322,7 +322,7 @@
 <h2>What’s Next?</h2>
 
 <p>Not only have I automated the deployment of my site, but I’ve also used Rake to create development and production builds. This has allowed me to implement Sass source maps and easily minify my assets, which I’ll detail in subsequent posts! Stay tuned :)</p>
- ]]></content></entry><entry><title type="text">Why I use EditorConfig</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/why-i-use-editorconfig/"/><id>http://davidensinger.com/2013/07/why-i-use-editorconfig</id><updated>2013-07-16T06:12:00Z</updated><content type="html"><![CDATA[ <p>Have you ever found yourself switching between projects with vastly different <a href="http://en.wikipedia.org/wiki/Programming_style">coding styles</a> or (gasp!) no consistent style at all? Most editors and IDEs allow for settings at both the user and project level, but neither of those options are ideal. Often there isn’t a settings file for the project and even if there were, it’s probably for an editor that you don’t use. The only other option is to have the editor auto-detect the settings, but that’s far from perfect.</p>
+ ]]></content></entry><entry><title type="text">Why I use EditorConfig</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/why-i-use-editorconfig/"/><id>http://davidensinger.com/2013/07/why-i-use-editorconfig</id><published>2013-07-16T06:12:00Z</published><updated>2013-07-16T06:12:00Z</updated><content type="html"><![CDATA[ <p>Have you ever found yourself switching between projects with vastly different <a href="http://en.wikipedia.org/wiki/Programming_style">coding styles</a> or (gasp!) no consistent style at all? Most editors and IDEs allow for settings at both the user and project level, but neither of those options are ideal. Often there isn’t a settings file for the project and even if there were, it’s probably for an editor that you don’t use. The only other option is to have the editor auto-detect the settings, but that’s far from perfect.</p>
 
 <h2>Enter EditorConfig</h2>
 
@@ -387,7 +387,7 @@
 <p>There are plugins available for a host of editors and IDEs, although there are unfortunately some notable exceptions. I’m glad that my preferred editor, Sublime Text 2, <a href="https://github.com/sindresorhus/editorconfig-sublime">is supported</a>. It will be a glorious day in development land when there’s universal support for EditorConfig.</p>
 
 <p>It’s 2013, so why are we still debating tabs versus spaces?! Set a standard and stick with it.</p>
- ]]></content></entry><entry><title type="text">My Favorite Chrome Extensions for Development</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development/"/><id>http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development</id><updated>2013-06-14T09:20:00Z</updated><content type="html"><![CDATA[ <p>In keeping with the spirit of <a href="http://davidensinger.com/2013/05/my-favorite-web-development-software/">my favorite software for development</a>, I present my favorite <a href="http://www.google.com/chrome">Google Chrome</a> extensions. While there are no shortage of blog posts about <a href="https://chrome.google.com/webstore/category/extensions">Chrome extensions</a>, I’ll only list the ones I actually use to keep this post from turning into a bloated roundup of links.</p>
+ ]]></content></entry><entry><title type="text">My Favorite Chrome Extensions for Development</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development/"/><id>http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development</id><published>2013-06-14T09:20:00Z</published><updated>2013-06-14T09:20:00Z</updated><content type="html"><![CDATA[ <p>In keeping with the spirit of <a href="http://davidensinger.com/2013/05/my-favorite-web-development-software/">my favorite software for development</a>, I present my favorite <a href="http://www.google.com/chrome">Google Chrome</a> extensions. While there are no shortage of blog posts about <a href="https://chrome.google.com/webstore/category/extensions">Chrome extensions</a>, I’ll only list the ones I actually use to keep this post from turning into a bloated roundup of links.</p>
 
 <p>I currently have six extensions enabled for development and I suspect that I rely on so few because Chrome comes with such powerful <a href="https://developers.google.com/chrome-developer-tools/">DevTools</a>. The vast majority of the in-browser functionality I use is provided out of the box, so I only need to supplement with a smattering of extensions. So without further ado…</p>
 
@@ -416,7 +416,7 @@
 <p><a href="https://chrome.google.com/webstore/detail/yslow/ninejjcohidippngpapiilnmkgllmakh">YSlow</a> analyzes websites and suggests ways to improve their performance based on a set of rules for high performance sites. It also offers suggestions for improving performance and displays statistics about the site too. It’s a nice tool to use in conjunction with PageSpeed Insights.</p>
 
 <p>Like always, if anyone has any suggestions for good extensions, please don’t hesitate to <a href="http://twitter.com/DavidEnsinger">tweet</a> at me!</p>
- ]]></content></entry><entry><title type="text">My Favorite Web Development Software</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/05/my-favorite-web-development-software/"/><id>http://davidensinger.com/2013/05/my-favorite-web-development-software</id><updated>2013-05-24T08:48:00Z</updated><content type="html"><![CDATA[ <p>I’m always interested in learning about the tools other developers use during the course of their workday. What follows is a list of my preferred software with accompanying explanations on how I use it. Hopefully this list will prove helpful to someone else! If you’ve got a suggestion for a better program, please let me know.</p>
+ ]]></content></entry><entry><title type="text">My Favorite Web Development Software</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/05/my-favorite-web-development-software/"/><id>http://davidensinger.com/2013/05/my-favorite-web-development-software</id><published>2013-05-24T08:48:00Z</published><updated>2013-05-24T08:48:00Z</updated><content type="html"><![CDATA[ <p>I’m always interested in learning about the tools other developers use during the course of their workday. What follows is a list of my preferred software with accompanying explanations on how I use it. Hopefully this list will prove helpful to someone else! If you’ve got a suggestion for a better program, please let me know.</p>
 
 <h2>Console</h2>
 
@@ -464,7 +464,7 @@
 <h2>Writing</h2>
 
 <p>While not exactly an application for development, I use <a href="http://www.iawriter.com/mac/">iA Writer</a> to write all my posts. It’s especially nice that <strong>Jekyll</strong> comes with built in support for <strong>Markdown</strong>, so using iA Writer only makes sense.</p>
- ]]></content></entry><entry><title type="text">Getting Started with Sublime Text 2</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/05/getting-started-with-sublime-text-2/"/><id>http://davidensinger.com/2013/05/getting-started-with-sublime-text-2</id><updated>2013-05-14T12:12:00Z</updated><content type="html"><![CDATA[ <p>Although I switched to <a href="http://www.sublimetext.com/">Sublime Text 2</a> more than a year ago, I only recently decided to take a good look at my configuration, with the end goal of increasing my productivity. What follows are my settings, which will hopefully help others work a bit smarter. If you’ve got any useful tips, please <a href="https://twitter.com/davidensinger">tweet</a> at me!</p>
+ ]]></content></entry><entry><title type="text">Getting Started with Sublime Text 2</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/05/getting-started-with-sublime-text-2/"/><id>http://davidensinger.com/2013/05/getting-started-with-sublime-text-2</id><published>2013-05-14T12:12:00Z</published><updated>2013-05-14T12:12:00Z</updated><content type="html"><![CDATA[ <p>Although I switched to <a href="http://www.sublimetext.com/">Sublime Text 2</a> more than a year ago, I only recently decided to take a good look at my configuration, with the end goal of increasing my productivity. What follows are my settings, which will hopefully help others work a bit smarter. If you’ve got any useful tips, please <a href="https://twitter.com/davidensinger">tweet</a> at me!</p>
 
 <h2>Hide Files and Folders</h2>
 
@@ -602,7 +602,7 @@
 <li><a href="http://whiletruecode.com/post/7-handy-text-manipulation-tricks-sublime-text-2">7 handy text manipulation tricks in Sublime Text 2</a></li>
 </ul>
 
- ]]></content></entry><entry><title type="text">Setting Up Google Author Rich Snippets</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/05/setting-up-google-author-rich-snippets/"/><id>http://davidensinger.com/2013/05/setting-up-google-author-rich-snippets</id><updated>2013-05-03T06:49:00Z</updated><content type="html"><![CDATA[ <p>It turns out that it’s rather easy to display your photo alongside your content in Google’s search results. All you need to do is add support for <a href="https://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=99170">Rich Snippets</a> to your website, in particular those for authorship. This results in the addition of some minor markup to your HTML, which will then interface with your <a href="http://plus.google.com/">Google+</a> account.</p>
+ ]]></content></entry><entry><title type="text">Setting Up Google Author Rich Snippets</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/05/setting-up-google-author-rich-snippets/"/><id>http://davidensinger.com/2013/05/setting-up-google-author-rich-snippets</id><published>2013-05-03T06:49:00Z</published><updated>2013-05-03T06:49:00Z</updated><content type="html"><![CDATA[ <p>It turns out that it’s rather easy to display your photo alongside your content in Google’s search results. All you need to do is add support for <a href="https://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=99170">Rich Snippets</a> to your website, in particular those for authorship. This results in the addition of some minor markup to your HTML, which will then interface with your <a href="http://plus.google.com/">Google+</a> account.</p>
 
 <h2>Advantages</h2>
 
@@ -678,7 +678,7 @@
 <h2>Test to Confirm</h2>
 
 <p>Use the <a href="https://www.google.com/webmasters/tools/richsnippets">Structured Data Testing Tool</a> to verify that Google has associated your content with your Google+ profile.</p>
- ]]></content></entry><entry><title type="text">Adding Open Graph Tags to Jekyll</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll/"/><id>http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll</id><updated>2013-04-21T16:05:00Z</updated><content type="html"><![CDATA[ <p>What is the <a href="http://ogp.me/">Open Graph</a> protocol? Per <strong>Facebook</strong>, it “enables any web page to become a rich object in a social graph.” The documentation goes on to state that “to turn your web pages into graph objects, you need to add basic metadata to your page.” Put more simply, add <strong>Open Graph meta tags</strong> to your website to have greater control over how your content is displayed when shared via Facebook.</p>
+ ]]></content></entry><entry><title type="text">Adding Open Graph Tags to Jekyll</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll/"/><id>http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll</id><published>2013-04-21T16:05:00Z</published><updated>2013-04-21T16:05:00Z</updated><content type="html"><![CDATA[ <p>What is the <a href="http://ogp.me/">Open Graph</a> protocol? Per <strong>Facebook</strong>, it “enables any web page to become a rich object in a social graph.” The documentation goes on to state that “to turn your web pages into graph objects, you need to add basic metadata to your page.” Put more simply, add <strong>Open Graph meta tags</strong> to your website to have greater control over how your content is displayed when shared via Facebook.</p>
 
 <h2>Basic Metadata</h2>
 
@@ -781,459 +781,4 @@
 <h2>Validate</h2>
 
 <p>To verify that your code validates, see the <a href="https://developers.facebook.com/tools/debug">Facebook Debugger</a>.</p>
- ]]></content></entry><entry><title type="text">Supporting Twitter Cards with Jekyll</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll/"/><id>http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll</id><updated>2013-04-17T18:16:00Z</updated><content type="html"><![CDATA[ <p>I just added support for <a href="https://dev.twitter.com/docs/cards">Twitter Cards</a> to my website because I wanted more control over how my site displays on Twitter. There are six different card types, although the only one that’s appropriate for my site is the <a href="http://dev.twitter.com/docs/cards/types/summary-card">Summary Card</a>, which lets users preview site content within a tweet.</p>
-
-<h2>Summary Card</h2>
-
-<p>The Summary Card is the default and includes a title, description, thumbnail, and Twitter account attribution. The following markup is provided by the developer docs:</p>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content=</span><span class="s">&quot;summary&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:site&quot;</span> <span class="na">content=</span><span class="s">&quot;@site_username&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:title&quot;</span> <span class="na">content=</span><span class="s">&quot;Title&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:url&quot;</span> <span class="na">content=</span><span class="s">&quot;URL&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content=</span><span class="s">&quot;Up than 200 characters.&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:creator&quot;</span> <span class="na">content=</span><span class="s">&quot;@creator_username&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:image:src&quot;</span> <span class="na">content=</span><span class="s">&quot;http://path/to/image.jpg&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
-
-
-<h3>Card, Site, and Creator</h3>
-
-<p>These three meta tags and their values stay constant, regardless of page content. I use my Twitter handle for both <em>site</em> and <em>creator</em>, although I’m not sure that I need to. I figure that it can’t hurt to do so, though.</p>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content=</span><span class="s">&quot;summary&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:site&quot;</span> <span class="na">content=</span><span class="s">&quot;@site_username&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:creator&quot;</span> <span class="na">content=</span><span class="s">&quot;@creator_username&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
-
-
-<h3>Title</h3>
-
-<p>I’ve denoted a site title in my <strong>_config.yml</strong> and a page title in the <strong>YAML Front Matter</strong> block that’s specific to every page and post on my site.</p>
-
-<div class="highlight"><pre><code class="html">{% if page.title %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:title&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ page.title }}&quot;</span><span class="nt">&gt;</span>
-{% else %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:title&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.title }}&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-</code></pre></div>
-
-
-<h3>URL</h3>
-
-<p>I’ve also specified a <em>site.url</em> output as an absolute path in my in my <strong>_config.yml</strong>, as well as a <em>page.url</em> output in my <strong>YAML Front Matter</strong> block.</p>
-
-<div class="highlight"><pre><code class="html">{% if page.url %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:url&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}{{ page.url }}&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-</code></pre></div>
-
-
-<h3>Description</h3>
-
-<p>Likewise, I have a general site description and a page specific description:</p>
-
-<div class="highlight"><pre><code class="html">{% if page.description %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ page.description }}&quot;</span><span class="nt">&gt;</span>
-{% else %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.description }}&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-</code></pre></div>
-
-
-<p>A different approach to the page description is to escape and truncate the page content, which is how <a href="http://paulstamatiou.com/responsive-retina-blog-development-part-1">Paul Stamatiou handles it</a>:</p>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ page.content | strip_html | xml_escape | truncate: 200 }}&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
-
-
-<h3>Image</h3>
-
-<p>I’ve also set a default image, if there’s not an image for the current page.</p>
-
-<div class="highlight"><pre><code class="html">{% if page.image %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:image:src&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}/path/to/image/{{ page.image }}&quot;</span><span class="nt">&gt;</span>
-{% else %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:image:src&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}/path/to/image/logo.png&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-</code></pre></div>
-
-
-<h2>All Together Now</h2>
-
-<p>Here’s what my final block of code looks like:</p>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content=</span><span class="s">&quot;summary&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:site&quot;</span> <span class="na">content=</span><span class="s">&quot;@site_username&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:creator&quot;</span> <span class="na">content=</span><span class="s">&quot;@creator_username&quot;</span><span class="nt">&gt;</span>
-{% if page.title %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:title&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ page.title }}&quot;</span><span class="nt">&gt;</span>
-{% else %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:title&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.title }}&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-{% if page.url %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:url&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}{{ page.url }}&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-{% if page.description %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ page.description }}&quot;</span><span class="nt">&gt;</span>
-{% else %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.description }}&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-{% if page.image %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:image:src&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}/path/to/image/{{ page.image }}&quot;</span><span class="nt">&gt;</span>
-{% else %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:image:src&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}/path/to/image/logo.png&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-</code></pre></div>
-
-
-<h2>Validate</h2>
-
-<p>If you’re curious if your code validates, Twitter has provided a <a href="https://dev.twitter.com/docs/cards/validation/validator">validator</a> so you can easily check. You’ll need to pass the validation test before you can submit a <strong>Domain Approval Request</strong>, which will whitelist your website for inclusion with the service. It shouldn’t take much time at all to be approved.</p>
-
-<div class="gray-box">
-  <p><strong>More Info:</strong> David Walsh has a really great overview of <a href="http://davidwalsh.name/twitter-cards">Twitter Cards</a>, which is well worth a read.</p>
-</div>
-
- ]]></content></entry><entry><title type="text">Inline SVG with PNG Fallback</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/04/inline-svg-with-png-fallback/"/><id>http://davidensinger.com/2013/04/inline-svg-with-png-fallback</id><updated>2013-04-10T17:41:00Z</updated><content type="html"><![CDATA[ <p>Notice anything different about my balloon logo? Probably not, as the change is subtle, but the image is now an <strong>inline SVG</strong> instead of an <strong>SVG background image</strong>. I did this to allow the colors of the balloon to darken on hover.</p>
-
-<p>Using an inline SVG is the only way to do this, as the browser regards the other implementations of SVG as externally linked files. That prevents the browser from respecting any inline CSS pseudo classes within the SVG.</p>
-
-<p>As an added benefit, an HTTP request is saved, although this boon to page load optimization is at the expense of the tidiness of the markup. It’s not such a drawback, especially if the HTML will be minified before being deployed.</p>
-
-<p>As for browser support, <a href="http://caniuse.com/#feat=svg-html5">inline SVGs are supported by all modern browsers</a>, so long as the proper <strong>HTML5 DOCTYPE</strong> (<code>&lt;!DOCTYPE html&gt;</code>) is declared. Not surprisingly, IE8 doesn’t support inline SVGs, so a fallback is needed for the small percentage of visitors who use that browser.</p>
-
-<p>The obvious choice for an image fallback is a PNG since they support alpha transparency and are easily optimized for file size with <a href="http://pngmini.com/">ImageAlpha</a> and <a href="http://imageoptim.com/">ImageOptim</a>.</p>
-
-<h2>How Best to Fallback?</h2>
-
-<p>I initially considered replacing the inline SVG markup with an <code>img</code> tag via either <strong>JavaScript</strong> or <strong>jQuery</strong>, but decided against it. The user may have JavaScript disabled and if I elect to use jQuery I’ll need to make an additional HTTP request to load the library.</p>
-
-<p>Thankfully, I stumbled upon <a href="http://www.kaizou.org/2009/03/inline-svg-fallback/">a better solution</a> that makes use of <a href="https://developer.mozilla.org/en-US/docs/SVG/Element/foreignObject">foreignObject</a> and <a href="https://developer.mozilla.org/en-US/docs/SVG/Element/switch">switch</a>, which are both elements specific to SVG.</p>
-
-<blockquote><p>The <code>foreignObject</code> element allows for inclusion of a foreign
-XML namespace which has its graphical content drawn by a
-different user agent.</p>
-
-<p><cite><a href="https://developer.mozilla.org/en-US/docs/SVG/Element/foreignObject">Mozilla Developer Network</a></cite></p></blockquote>
-
-<p>With <code>foreignObject</code> I can insert fallback <strong>HTML</strong> into the SVG, which will look like this:</p>
-
-<div class="highlight"><pre><code class="xml"><span class="nt">&lt;svg&gt;</span>
-  SVG
-  <span class="nt">&lt;foreignObject&gt;</span>
-    Fallback HTML
-  <span class="nt">&lt;/foreignObject&gt;</span>
-<span class="nt">&lt;/svg&gt;</span>
-</code></pre></div>
-
-
-<p>The final step is to put the SVG code into a <strong>group</strong> (<code>g</code>) and then wrap the group and foreignObject in a <strong>switch</strong> (<code>switch</code>) element. The switch will then evaluate the children elements in order. The first element that has the proper attributes will be rendered, which will be the the group with the SVG.</p>
-
-<div class="highlight"><pre><code class="xml"><span class="nt">&lt;svg&gt;</span>
-  <span class="nt">&lt;switch&gt;</span>
-    <span class="nt">&lt;g&gt;</span>
-      SVG
-    <span class="nt">&lt;/g&gt;</span>
-    <span class="nt">&lt;foreignObject&gt;</span>
-      Fallback
-    <span class="nt">&lt;/foreignObject&gt;</span>
-  <span class="nt">&lt;/switch&gt;</span>
-<span class="nt">&lt;/svg&gt;</span>
-</code></pre></div>
-
-
-<p>Browsers that support SVG will render the inline SVG, while older browsers will instead display the foreignObject, which contains the fallback PNG. Easy and efficient, right?</p>
-
-<p>Unfortunately, both the SVG and the image fallback will be loaded by the browser. This isn’t such a big deal, so long as the image is optimized and then converted to a <strong>base64 string</strong>, thus saving another HTTP request. I recommend my <a href="http://webcodertools.com/imagetobase64converter">favorite converter</a> for the task!</p>
- ]]></content></entry><entry><title type="text">Deploying Jekyll with Plugins to GitHub Pages</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/"/><id>http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages</id><updated>2013-04-08T06:30:00Z</updated><content type="html"><![CDATA[ <p>In spite of my resolution to design and develop this website simply, I’ve decided to run <strong>Jekyll</strong> with plugins. This complicates my deployment because <strong>GitHub Pages</strong> runs Jekyll in <code>--safe</code> mode, which quite reasonably prevents the running of arbitrary Ruby code on the GitHub servers.</p>
-
-<div class="yellow-box">
-  <p><strong>Update:</strong> I’ve since succeeded in automating this, which I detail in <a href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/">Automating Jekyll Deployment to GitHub Pages with Rake</a>.</p>
-</div>
-
-
-<p>To work around this limitation, the consensus amongst developers is to create two branches: one for development (that I’ve named <em>source</em>) and the other solely for the compiled <strong>_site</strong>. In the former branch I’ll add additionally functionality via custom plugins, while the latter branch will serve as the <em>master</em> that GitHub uses to publish the site.</p>
-
-<p>I’ve chosen to follow these <a href="https://github.com/rson/rson.github.com">excellent deployment steps</a> by <a href="http://rsontech.net/">Randy Morris</a>, which I’ll list below with brief explanations as to what each command does.</p>
-
-<p>Delete <em>master</em> branch:</p>
-
-<pre><code>git branch -D master
-</code></pre>
-
-<p>Check out a new <em>master</em> branch:</p>
-
-<pre><code>git checkout -b master
-</code></pre>
-
-<p>Force the <em>_site/</em> subdirectory to be project root:</p>
-
-<pre><code>git filter-branch --subdirectory-filter _site/ -f
-</code></pre>
-
-<p>Checkout the <em>source</em> branch:</p>
-
-<pre><code>git checkout source
-</code></pre>
-
-<p>Push all branches to origin:</p>
-
-<pre><code>git push --all origin
-</code></pre>
-
-<p>Pretty simple, right? I’m glad that I’ll now be able to add categories and tags to my site, which is next on my todo list!</p>
-
-<h2>Next Steps</h2>
-
-<p>I’d like to automate this by including these deployment commands into a build script that concatenates, minifies, and (when applicable) optimizes my assets after Jekyll compiles the site. Still working on that, though!</p>
- ]]></content></entry><entry><title type="text">Generating a Sitemap in Jekyll without a Plugin</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/"/><id>http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin</id><updated>2013-03-29T06:26:00Z</updated><content type="html"><![CDATA[ <p>During my switch from <strong>WordPress</strong> to <strong>Jekyll</strong>, I decided to simplify the scope of my site. One of the changes I made was to remove my portfolio, as I’d like to put more of an emphasis on my writing than on my past projects. As a result, I culled many pages that were indexed by search engines. This meant that I needed a proper <strong>sitemap.xml</strong>, principally for use with Google’s <a href="www.google.com/webmasters/tools">Webmaster Tools</a>.</p>
-
-<p>My initial thought was to find a plugin, but I then realized that wasn’t possible. I host the site on <strong>GitHub Pages</strong>, which runs Jekyll in <code>--safe</code> mode. This means that I can’t use any custom plugins and that precludes the implementation of the most popular plugin, which is the <a href="http://www.kinnetica.com/projects/jekyll-sitemap-generator/">Sitemap.xml Generator</a>.</p>
-
-<p>One way around this limitation would be to generate the site locally with a source branch and then compile the pages on a master branch to push to GitHub. There are clear benefits to doing it this way, but for the time being I’d prefer to keep my site simple and let GitHub do the compiling.</p>
-
-<p>My cursory search for a plugin-less solution led to this <a href="https://github.com/havvg/havvg.github.com/blob/master/sitemap.xml">sitemap.xml</a> by <a href="https://github.com/havvg">havvg</a>.</p>
-
-<div class="highlight"><pre><code class="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;urlset</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd&quot;</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;</span><span class="nt">&gt;</span>
-
-  {% for post in site.posts %}
-  <span class="nt">&lt;url&gt;</span>
-    <span class="nt">&lt;loc&gt;</span>{{ site.baseurl }}{{ post.url }}<span class="nt">&lt;/loc&gt;</span>
-    {% if post.lastmod == null %}
-    <span class="nt">&lt;lastmod&gt;</span>{{ post.date | date_to_xmlschema }}<span class="nt">&lt;/lastmod&gt;</span>
-    {% else %}
-    <span class="nt">&lt;lastmod&gt;</span>{{ post.lastmod | date_to_xmlschema }}<span class="nt">&lt;/lastmod&gt;</span>
-    {% endif %}
-    <span class="nt">&lt;changefreq&gt;</span>weekly<span class="nt">&lt;/changefreq&gt;</span>
-    <span class="nt">&lt;priority&gt;</span>1.0<span class="nt">&lt;/priority&gt;</span>
-  <span class="nt">&lt;/url&gt;</span>
-  {% endfor %}
-  {% for page in site.pages %}
-  {% if page.sitemap != null and page.sitemap != empty %}
-  <span class="nt">&lt;url&gt;</span>
-    <span class="nt">&lt;loc&gt;</span>{{ site.baseurl }}{{ page.url }}<span class="nt">&lt;/loc&gt;</span>
-    <span class="nt">&lt;lastmod&gt;</span>{{ page.sitemap.lastmod | date_to_xmlschema }}<span class="nt">&lt;/lastmod&gt;</span>
-    <span class="nt">&lt;changefreq&gt;</span>{{ page.sitemap.changefreq }}<span class="nt">&lt;/changefreq&gt;</span>
-    <span class="nt">&lt;priority&gt;</span>{{ page.sitemap.priority }}<span class="nt">&lt;/priority&gt;</span>
-  <span class="nt">&lt;/url&gt;</span>
-  {% endif %}
-  {% endfor %}
-
-<span class="nt">&lt;/urlset&gt;</span>
-</code></pre></div>
-
-
-<p>The <code>{% for post in site.posts %}</code> loops through the posts and finds the pertinent metadata for the sitemap. The same looping method is used for pages, but with a conditional statement to include only the pages with the <code>sitemap</code> variable (and its corresponding values) present.</p>
-
-<pre><code>---
-layout: default
-sitemap:
-    priority: 0.7
-    changefreq: monthly
-    lastmod: 2013-03-29T12:49:30-05:00
----
-</code></pre>
-
-<p>The <code>lastmod</code> variable uses the <a href="http://wwp.greenwichmeantime.com/info/iso.htm">ISO format</a>, which allows for YYYY-MM-DD. It’s bit simpler than including the notation for hours, minutes, seconds, and time zone.</p>
-
-<p>In summary, it’s easy to generate a sitemap.xml for use with Jekyll on GitHub Pages. Thanks again to <a href="https://github.com/havvg">havvg</a> for making available such a great example <a href="https://github.com/havvg/havvg.github.com/blob/master/sitemap.xml">sitemap.xml</a>.</p>
-
-<div class="gray-box">
-  <p><strong>More Info:</strong> Visit the official <a href="http://www.sitemaps.org/">sitemaps.org</a> to learn more about the protocol.</p>
-</div>
-
- ]]></content></entry><entry><title type="text">Setting the DNS for GitHub Pages on Namecheap</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/"/><id>http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap</id><updated>2013-03-27T16:05:00Z</updated><content type="html"><![CDATA[ <p>After pushing my site to <strong>GitHub</strong> and verifying that it worked at <a href="http://davidensinger.github.io/">davidensinger.github.io</a>, I then went to set up my custom domain name. The <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">documentation</a> provided by GitHub is clear on the subject, but I still managed to forget about my subdomains. For more than eight hours, anyone who attempted to visit <a href="http://davidensinger.com/">davidensinger.com</a> was served with a 404, which is <a href="https://twitter.com/DavidEnsinger/status/316642135216619522">rather embarrassing</a> for one who makes a living as a developer.</p>
-
-<p>In the interest of helping others avoid the mistakes I made, here’s a guide to setting up the DNS for GitHub pages on <a href="http://www.namecheap.com/?aff=32887">Namecheap</a>, my registrar of choice.</p>
-
-<div class="yellow-box">
-  <p><strong>Please Note:</strong> This guide assumes that you’re using a top-level domain (TLD).</p>
-</div>
-
-
-<h2>Add a CNAME File to your Repo</h2>
-
-<p>Create a new file and put your domain name in it. Save it as CNAME.</p>
-
-<pre><code>yourtlddomainname.com
-</code></pre>
-
-<h2>Find your Host Records</h2>
-
-<p><img src="/assets/img/posts/2013-03-27-namecheap-all-host-records.png" alt="Image of All Host Records" class="media-right img-border" /></p>
-
-<p>Log into your Namecheap account, select the appropriate domain name, and then go to <strong>All Host Records</strong>.</p>
-
-<h2>Set up the DNS</h2>
-
-<ol>
-<li>Set the <strong>@</strong> (used to denote the domain name for which you’re configuring the DNS) <strong>IP Address/URL</strong> to <code>204.232.175.78</code> and the <strong>Record Type</strong> to <code>A (Address)</code> with a <strong>TTL</strong> (an acronym for <strong>Time To Live</strong> that refers to the capability of the DNS servers to cache DNS records) of <code>1800</code>.</li>
-<li>Set the <strong>www</strong> (the subdomain www) <strong>IP Address/URL</strong> to <code>username.github.io</code> and the <strong>Record Type</strong> to <code>CNAME (Alias)</code> with a <strong>TTL</strong> of <code>1800</code>.</li>
-</ol>
-
-
-<p><img src="/assets/img/posts/2013-03-27-namecheap-dns-settings.png" alt="Image of DNS settings" class="media-center img-border" /></p>
-
-<p>Save and then you’re all set! Please note, however that it may take some time for the changes to the DNS to propagate.</p>
-
-<div class="gray-box">
-  <p><strong>More Info:</strong> Google has a pretty good <a href="http://support.google.com/a/bin/answer.py?hl=en&answer=48090">Basic Guide to DNS</a>.</p>
-</div>
-
- ]]></content></entry><entry><title type="text">Using Rems with Sass</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/03/using-rems-with-sass/"/><id>http://davidensinger.com/2013/03/using-rems-with-sass</id><updated>2013-03-21T14:24:00Z</updated><content type="html"><![CDATA[ <p>I used <strong>rems</strong> quite liberally with this redesign, especially with the typographic elements. Even though I initially shied away from them, I have since decided that any potential drawbacks are easily mitigated by using <strong>Sass</strong> to preprocess my CSS.</p>
-
-<p>Before we discuss rems, we need to first talk a little about ems.</p>
-
-<h2>What’s an Em?</h2>
-
-<p>”An em is a unit of measurement in the field of typography, equal to the currently specified point size,” as per <a href="http://en.wikipedia.org/wiki/Em_(typography">Wikipedia</a>. But for our purposes as web developers, it’s a measurement that’s equal to the font size of the parent element. Simple, right?</p>
-
-<p>Not as simple as we’d like! Ems can be difficult to use in a manner that’s both efficient and predictable because changes in the font size are compounded by the cascade. In the past, this has been somewhat mitigated by setting the <a href="http://clagnut.com/blog/348/">font size of the body to 62.5%</a>, which ostensibly <a href="http://pxtoem.com/">makes the math easier</a> to calculate.</p>
-
-<p>While that solution works moderately well, it seems rather convoluted in light of advances in modern web development. We are now able to use the rem unit, which stands for ”root em” and is just that, an em that is relative to the root element (<code>html</code>).</p>
-
-<h2>Why Use Rems</h2>
-
-<p>By using rems we’re afforded the benefit of avoiding values that are compounded by the cascade. A heading that’s set to <code>1rem</code> is always <code>1rem</code>, regardless of the font size of its parent. This is much simpler than using ems, especially with elements that are nested several levels deep.</p>
-
-<p>It should be noted that <a href="http://caniuse.com/#search=rem">browser support for rems</a> is surprisingly good, save for IE 8. That shouldn’t deter us, so long as we provide the necessary pixel (<code>px</code>) fallback. We could hand code that, but there&rsquo;s a better way.</p>
-
-<h2>Sass to the Rescue</h2>
-
-<p>Thankfully <a href="http://sass-lang.com/">Sass</a> allows for mixins, which allows ”re-use of styles – properties or even selectors – without having to copy and paste them or move them into a non-semantic class.” Pretty neat!</p>
-
-<p>When writing my SCSS, I initially did a cursory search for a rem mixin with pixel fallback. I found many that varied markedly in complexity and scope, although none of them fit my exact needs.</p>
-
-<h3>A Selection of Available Mixins</h3>
-
-<ul>
-<li><a href="http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/">Mixins for Rem Font Sizing</a> via <a href="http://www.css-tricks.com/">CSS-Tricks</a></li>
-<li><a href="http://intuio.at/en/blog/an-improved-sass-rem-mixin-for-unitless-numbers/">An Improved Sass Rem Mixin</a> with unitless numbers by <a href="http://twitter.com/xon1c">@xon1c</a> at <a href="http://intuio.at/">intuio.at</a></li>
-<li><a href="https://github.com/bitmanic/rem">Rem mixin</a> by <a href="https://github.com/bitmanic/">bitmanic</a></li>
-<li><a href="https://gist.github.com/webgefrickel/4530526">Rem mixin</a> by <a href="https://github.com/webgefrickel">webgefrickel</a></li>
-</ul>
-
-
-<p>I wanted a rem mixin that would support the input of a property with any number, type, and mix of values, such as:</p>
-
-<div class="highlight"><pre><code class="scss"><span class="k">@include</span><span class="nd"> rem</span><span class="p">(</span><span class="no">font-size</span><span class="o">,</span> <span class="mi">14</span><span class="kt">px</span><span class="p">);</span>
-<span class="k">@include</span><span class="nd"> rem</span><span class="p">(</span><span class="no">margin</span><span class="o">,</span> <span class="mi">0</span> <span class="no">auto</span> <span class="mi">1</span><span class="p">);</span>
-<span class="k">@include</span><span class="nd"> rem</span><span class="p">(</span><span class="no">padding-bottom</span><span class="o">,</span> <span class="mi">3</span><span class="kt">%</span><span class="p">);</span>
-</code></pre></div>
-
-
-<p>The nearest to that ideal was the <a href="https://gist.github.com/webgefrickel/4530526">Rem mixin</a> by <a href="https://github.com/webgefrickel">webgefrickel</a>, but that mixin doesn’t allow for auto or percentage (<code>%</code>) values. No matter, he graciously posted it as a Gist, which <a href="https://gist.github.com/davidensinger/5217667">I forked to make the small revisions</a> I needed.</p>
-
-<p>My modified version of the mixin:</p>
-
-<div class="highlight"><pre><code class="scss"><span class="k">@mixin</span><span class="nf"> rem</span><span class="p">(</span><span class="nv">$property</span><span class="o">,</span> <span class="nv">$values</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// Create a couple of empty lists as output buffers.</span>
-  <span class="nv">$font-size</span><span class="o">:</span> <span class="nv">$base-font-size</span><span class="p">;</span>
-  <span class="nv">$px-values</span><span class="o">:</span> <span class="p">();</span>
-  <span class="nv">$rem-values</span><span class="o">:</span> <span class="p">();</span>
-
-  <span class="c1">// Loop through the $values list</span>
-  <span class="k">@each</span> <span class="err">$</span><span class="nt">value</span> <span class="nt">in</span> <span class="err">$</span><span class="nt">values</span> <span class="p">{</span>
-    <span class="c1">// For each property value, if it&#39;s in rem or px, derive both rem and</span>
-    <span class="c1">// px values for it and add those to the end of the appropriate buffer.</span>
-    <span class="c1">// Ensure all pixel values are rounded to the nearest pixel.</span>
-    <span class="k">@if</span> <span class="nv">$value</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nv">$value</span> <span class="o">==</span> <span class="mi">0</span><span class="kt">px</span> <span class="p">{</span>
-      <span class="c1">// 0 -- use it without a unit</span>
-      <span class="nv">$px-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$px-values</span><span class="o">,</span> <span class="mi">0</span><span class="p">);</span>
-      <span class="nv">$rem-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$rem-values</span><span class="o">,</span> <span class="mi">0</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">@else</span> <span class="nt">if</span> <span class="nt">type-of</span><span class="o">(</span><span class="err">$</span><span class="nt">value</span><span class="o">)</span> <span class="o">==</span> <span class="nt">number</span> <span class="nt">and</span> <span class="nt">not</span> <span class="nt">unitless</span><span class="o">(</span><span class="err">$</span><span class="nt">value</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">unit</span><span class="o">(</span><span class="err">$</span><span class="nt">value</span><span class="o">)</span> <span class="o">==</span> <span class="nt">px</span><span class="o">)</span> <span class="p">{</span>
-      <span class="c1">// px value given - calculate rem value from font-size</span>
-      <span class="nv">$new-rem-value</span><span class="o">:</span> <span class="nv">$value</span> <span class="o">/</span> <span class="nv">$font-size</span><span class="p">;</span>
-      <span class="nv">$px-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$px-values</span><span class="o">,</span> <span class="nf">round</span><span class="p">(</span><span class="nv">$value</span><span class="p">));</span>
-      <span class="nv">$rem-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$rem-values</span><span class="o">,</span> <span class="si">#{</span><span class="nv">$new-rem-value</span><span class="si">}</span><span class="n">rem</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">@else</span> <span class="nt">if</span> <span class="nt">type-of</span><span class="o">(</span><span class="err">$</span><span class="nt">value</span><span class="o">)</span> <span class="o">==</span> <span class="nt">number</span> <span class="nt">and</span> <span class="nt">not</span> <span class="nt">unitless</span><span class="o">(</span><span class="err">$</span><span class="nt">value</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">unit</span><span class="o">(</span><span class="err">$</span><span class="nt">value</span><span class="o">)</span> <span class="o">==</span> <span class="s2">&quot;%&quot;</span><span class="o">)</span> <span class="p">{</span>
-      <span class="c1">// % value given - don&#39;t add px or rem</span>
-      <span class="nv">$px-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$px-values</span><span class="o">,</span> <span class="si">#{</span><span class="nv">$value</span><span class="si">}</span><span class="p">);</span>
-      <span class="nv">$rem-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$rem-values</span><span class="o">,</span> <span class="si">#{</span><span class="nv">$value</span><span class="si">}</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">value</span> <span class="o">==</span> <span class="nt">auto</span> <span class="p">{</span>
-      <span class="c1">// auto - don&#39;t add px or rem</span>
-      <span class="nv">$px-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$px-values</span><span class="o">,</span> <span class="no">auto</span><span class="p">);</span>
-      <span class="nv">$rem-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$rem-values</span><span class="o">,</span> <span class="no">auto</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">@else</span> <span class="p">{</span>
-      <span class="c1">// unitless value - use those directly as rem and calculate the px-fallback</span>
-      <span class="nv">$px-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$px-values</span><span class="o">,</span> <span class="nf">round</span><span class="p">(</span><span class="nv">$value</span> <span class="o">*</span> <span class="nv">$font-size</span><span class="p">));</span>
-      <span class="nv">$rem-values</span><span class="o">:</span> <span class="nf">join</span><span class="p">(</span><span class="nv">$rem-values</span><span class="o">,</span> <span class="si">#{</span><span class="nv">$value</span><span class="si">}</span><span class="n">rem</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="c1">// output the converted rules</span>
-  <span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">property</span><span class="p">}</span><span class="nd">:</span> <span class="err">$</span><span class="nt">px-values</span><span class="o">;</span>
-  <span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">property</span><span class="p">}</span><span class="nd">:</span> <span class="err">$</span><span class="nt">rem-values</span><span class="o">;</span>
-<span class="p">}</span>
-</code></pre></div>
-
-
-<p>I’m now able to use rems without worrying about browser support, which affords me more time to design and write.</p>
- ]]></content></entry><entry><title type="text">Selling Agile</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/03/selling-agile/"/><id>http://davidensinger.com/2013/03/selling-agile</id><updated>2013-03-20T18:58:00Z</updated><content type="html"><![CDATA[ <p>Throughout the last year my team has been trying out a smattering of <strong>Agile</strong> approaches to software development. We’re largely self-taught and as a result, we’ve had mixed success with the framework (although that’s by no means an indictment against it). It’s fair to say that our successes (or occasionally our lack thereof) are usually in direct relation to our efforts.</p>
-
-<p>We’ve lately become more disciplined about our approach, as a result of a push from our recently hired manager. She is a proponent of Agile development and has encouraged us to not only adopt, but to really own such methods and tools as the <strong>daily stand-up</strong>, <strong>test driven development</strong>, <strong>pair programming</strong>, and <strong>weekly sprints</strong>, amongst others.</p>
-
-<h2>The Problem</h2>
-
-<p>There’s always a problem, right? We’ve often been applying these techniques without appropriate buy in from our business users. We&rsquo;ve also experienced some unexpected (and sometimes unsolicited) involvement from our stakeholders, which makes me wonder if our efforts can be considered Agile at all? Is this all or nothing? Or can we continue to develop without full buy in from management and our product owners?</p>
-
-<p>My concerns were a popular topic of conversation at a two day <strong>Deploying Enterprise Agile</strong> training that our team completed today. The consensus was that it would be difficult to sell Agile to the entire organization, although we certainly should try. We’ll invariably have our share of resistance, but there’d be easy converts to the cause as well.</p>
-
-<h2>A Solution?</h2>
-
-<p>We’ll need to explain the benefits of using Agile, the steps we’ll take to implement it, and manage the expectations of both our stakeholders and business owners all the while. We’ll then need to <strong>do work</strong> and prove the worth of the framework by successfully completing projects in a satisfactory manner to all who are involved.</p>
-
-<p>I look forward to the progress that we’re going to make in using Agile techniques for our development. Time to get to work!</p>
- ]]></content></entry><entry><title type="text">Installing Jekyll</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/03/installing-jekyll/"/><id>http://davidensinger.com/2013/03/installing-jekyll</id><updated>2013-03-19T18:55:00Z</updated><content type="html"><![CDATA[ <p>After much deliberation, I decided to simplify my blogging workflow. To that end I made the switch from <strong>WordPress to Jekyll</strong>, which is ”a simple, blog aware, static site generator.” Although Jekyll is easy to maintain, it can be confusing to set up, especially for one with a dearth of experience with Ruby.</p>
-
-<p>Thankfully, there is a wealth of documentation available from developers who have also made the switch. With that in mind, I’d like to contribute my experience with installing <strong>Jekyll on OS X Mountain Lion 10.8.3</strong>.</p>
-
-<h2>Getting Started</h2>
-
-<p>The consensus on the internet is to first install <a href="http://developer.apple.com/xcode/">Xcode</a>, which I had (thankfully) already installed (all 1.65 GB of it). Xcode is readily available from the <a href="http://itunes.apple.com/us/app/xcode/id497799835?ls=1&amp;mt=12">App Store</a>, although it does take a bit of time to download and install.</p>
-
-<p>Once you’ve installed Xcode, the next step is to download <strong>Command Line Tools</strong>, which is available through the <strong>Download</strong> tab of the the <strong>Xcode Preferences</strong>. It is through the command line that you&rsquo;ll be installing Jekyll.</p>
-
-<p>After installing the Command Line Tools, open up <strong>Terminal</strong> (or the console of your choice) and install <a href="http://mxcl.github.com/homebrew/">Homebrew</a>, which will make downloading and installing Unix software packages on OS X much easier than without.</p>
-
-<pre><code>ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-</code></pre>
-
-<p>The next step is to install <a href="https://rvm.io">RVM</a>, which is an acronym for <strong>Ruby Version Manager</strong>. With this you’ll be able to better manage different versions and implementations of Ruby on your computer.</p>
-
-<pre><code>\curl -#L https://get.rvm.io | bash -s stable --ruby
-</code></pre>
-
-<p>I had some difficulty installing Ruby from RVM, which was due to missing dependencies. To remedy this I had to find the missing packages:</p>
-
-<pre><code>rvm requirements
-</code></pre>
-
-<p>Which then necessitated running the following:</p>
-
-<pre><code>brew doctor
-</code></pre>
-
-<p>That led to <a href="http://stackoverflow.com/questions/10343834/homebrew-wants-me-to-amend-my-path-no-clue-how">a fix for a warning about my paths</a>.</p>
-
-<p>After sorting that out, I was then able to install the list of missing dependencies:</p>
-
-<pre><code>brew install (and then the list of missing packages)
-</code></pre>
-
-<p>And then I was able to install Ruby 2.0.0:</p>
-
-<pre><code>rvm install 2.0.0
-</code></pre>
-
-<p>Which finally allowed me <a href="https://github.com/mojombo/jekyll/wiki/Install">to install Jekyll</a>:</p>
-
-<pre><code>gem install jekyll
-</code></pre>
-
-<h2>Whew!</h2>
-
-<p>That wasn’t so bad, was it? It feels good to work through the install with the satisfaction of knowing that you did it without any help, save for the goodwill efforts of fellow developers and their documentation. High fives to that!</p>
  ]]></content></entry></feed>
