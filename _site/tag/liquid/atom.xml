@@ -1,1 +1,84 @@
-<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Posts Tagged “Liquid” &ndash; Development, design, and more by David Ensinger</title><link href="http://davidensinger.com/"/><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><updated>2013-09-16T18:34:51-04:00</updated><id>http://davidensinger.com/</id><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en"><![CDATA[Posts Tagged “Liquid” &#8211; Development, design, and more by David Ensinger]]></title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/tag/liquid/atom.xml"/><link href="http://davidensinger.com/"/><updated>Mon, 07 Oct 2013 21:15:31 -0400</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights><![CDATA[Copyright &#169; 2013 David Ensinger. All rights reserved.]]></rights><entry><id>http://davidensinger.com/2013/09/suggested-tweet-plugin-for-jekyll</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/09/suggested-tweet-plugin-for-jekyll/"/><title>Suggested Tweet Plugin for Jekyll</title><published>2013-09-16T12:50:00-04:00</published><updated>2013-09-16T12:50:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+    <p>&lt;p&gt;It’s always a really nice feeling when one sees one’s posts shared with others, usually via blog post or Tweet. In the spirit of encouraging more of this, I present to you the &lt;a href=&quot;https://github.com/davidensinger/jekyll-suggested-tweet&quot;&gt;Suggested Tweet&lt;/a&gt; plugin for &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;. With this plugin, visitors to your site need no longer grope for words while they attempt to share your content!&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;About the Plugin&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;The &lt;strong&gt;Suggested Tweet&lt;/strong&gt; plugin is a custom &lt;a href=&quot;http://wiki.shopify.com/Liquid&quot;&gt;Liquid Tag&lt;/a&gt; for &lt;strong&gt;Jekyll&lt;/strong&gt; that allows for the embedding of suggested tweets via &lt;a href=&quot;https://dev.twitter.com/docs/intents&quot;&gt;Twitter’s Web Intents API&lt;/a&gt;. It makes liberal use of &lt;a href=&quot;http://richhollis.co.uk/&quot;&gt;Rich Hollis’s&lt;/a&gt; &lt;a href=&quot;https://github.com/richhollis/twitter_web_intents&quot;&gt;Twitter Web Intents Ruby Gem&lt;/a&gt; and was lovingly made by &lt;a href=&quot;http://2john4tv.biz/&quot;&gt;John Colvin&lt;/a&gt; and me.&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;Installation&lt;/h2&gt;</p>
+
+<p>&lt;ol&gt;
+&lt;li&gt;Copy &lt;strong&gt;suggested-tweet.rb&lt;/strong&gt; into your site’s &lt;strong&gt;<em>plugins&lt;/strong&gt; directory&lt;/li&gt;
+&lt;li&gt;Install &lt;strong&gt;twitter_web_intents gem&lt;/strong&gt;, either manually or via &lt;strong&gt;Bundler&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Add desired parameters to &lt;strong&gt;</em>config.yml&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Add desired parameters to &lt;strong&gt;YAML front-matter&lt;/strong&gt; of page&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;{% suggested_tweet %}&lt;/code&gt; tag to your post or template.&lt;/li&gt;
+&lt;/ol&gt;</p>
+
+<p>&lt;h2&gt;Configuration&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;The following parameters may be set globally in &lt;strong&gt;<em>config.yml&lt;/strong&gt; or on a per page basis in the &lt;strong&gt;YAML front-matter&lt;/strong&gt;. Parameters set in the &lt;strong&gt;YAML front-matter&lt;/strong&gt; take precedence over those set in &lt;strong&gt;</em>config.yml&lt;/strong&gt;. Note that all parameters are optional, although be sure to set at least one!&lt;/p&gt;</p>
+
+<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;yaml&quot;&gt;&lt;span class=&quot;l-Scalar-Plain&quot;&gt;suggested_tweet&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;                  &lt;span class=&quot;s&quot;&gt;&amp;#39;http://davidensinger.com/&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;via&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;                  &lt;span class=&quot;s&quot;&gt;&amp;#39;davidensinger&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;                 &lt;span class=&quot;s&quot;&gt;&amp;#39;Hello&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;world&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;in_reply_to&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;          &lt;span class=&quot;l-Scalar-Plain&quot;&gt;331434728957833218&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;hashtags&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;             &lt;span class=&quot;p-Indicator&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Jekyll&amp;#39;&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Twitter&amp;#39;&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;related&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;              &lt;span class=&quot;p-Indicator&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;davidensinger&amp;#39;&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;richhollis&amp;#39;&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;2john4tv&amp;#39;&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+
+<p>&lt;h2&gt;Usage&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;Put the custom Liquid tag anywhere you want, whether that be within a post, layout, or include:&lt;/p&gt;</p>
+
+<p>&lt;p&gt;&lt;code&gt;{% suggested_tweet %}&lt;/code&gt;&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;Output&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;The tag renders as a properly encoded URL:&lt;/p&gt;</p>
+
+<p>&lt;p&gt;&lt;code&gt;https://twitter.com/intent/tweet?hashtags=Jekyll,Twitter&amp;amp;in_reply_to=331434728957833218&amp;amp;related=davidensinger,richhollis,2john4tv&amp;amp;text=Hello+world&amp;amp;url=http%3A%2F%2Fdavidensinger.com&amp;amp;via=davidensinger&lt;/code&gt;&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;Liquid Output for Parameters&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;Any (and all) of the parameters may be used together with the &lt;strong&gt;Suggested Tweet&lt;/strong&gt; tag. These may be helpful if decide to include the tag outside of a post and in a template:&lt;/p&gt;</p>
+
+<p>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;_config.yml:&lt;/strong&gt; &lt;code&gt;{{ site.suggested_tweet.text }}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;YAML front matter:&lt;/strong&gt; &lt;code&gt;{{ page.suggested_tweet.text }}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</p>
+
+<p>&lt;h2&gt;A Practical Example&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;The following block of code can be found in the footer of my &lt;a href=&quot;https://github.com/davidensinger/davidensinger.github.io/blob/source/_layouts/post.html&quot;&gt;posts template&lt;/a&gt;. You’ll see that I only print out the &lt;strong&gt;text&lt;/strong&gt; and &lt;strong&gt;hashtags&lt;/strong&gt; parameters, even though all six variables are available to me. This is due to parameters not displaying to my liking (&lt;strong&gt;url&lt;/strong&gt; and &lt;strong&gt;via&lt;/strong&gt;) or not displaying at all (&lt;strong&gt;in_reply_to&lt;/strong&gt; and &lt;strong&gt;related&lt;/strong&gt;) and for styling purposes as well.&lt;/p&gt;</p>
+
+<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;{% if page.suggested_tweet %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;entry-meta-suggested-tweet&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;</p>
+
+<pre><code>&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;h3&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;na&amp;quot;&amp;gt;class=&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s&amp;quot;&amp;gt;&amp;amp;quot;suggested-tweet-title&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;gt;&amp;lt;/span&amp;gt;Spread the Word&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;/h3&amp;amp;gt;&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;a&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;na&amp;quot;&amp;gt;href=&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s&amp;quot;&amp;gt;&amp;amp;quot;{% suggested_tweet %}&amp;amp;quot;&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;na&amp;quot;&amp;gt;class=&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s&amp;quot;&amp;gt;&amp;amp;quot;suggested-tweet-bubble&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;gt;&amp;lt;/span&amp;gt;
+  {% if page.suggested_tweet.text != empty %}
+    &amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;span&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;na&amp;quot;&amp;gt;class=&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s&amp;quot;&amp;gt;&amp;amp;quot;suggested-tweet-text&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;gt;&amp;lt;/span&amp;gt;{{ page.suggested_tweet.text }}&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;lt;/span&amp;gt;
+  {% endif %}
+  {% if page.suggested_tweet.hashtags != empty %}
+    {% for hashtag in page.suggested_tweet.hashtags %}
+      &amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;span&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;na&amp;quot;&amp;gt;class=&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s&amp;quot;&amp;gt;&amp;amp;quot;suggested-tweet-hashtag&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;gt;&amp;lt;/span&amp;gt;#{{ hashtag }}&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;lt;/span&amp;gt;
+    {% endfor %}
+  {% endif %}
+&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;/a&amp;amp;gt;&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;p&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;na&amp;quot;&amp;gt;class=&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s&amp;quot;&amp;gt;&amp;amp;quot;suggested-tweet-link&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;gt;&amp;amp;lt;a&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;na&amp;quot;&amp;gt;href=&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s&amp;quot;&amp;gt;&amp;amp;quot;{% suggested_tweet %}&amp;amp;quot;&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;na&amp;quot;&amp;gt;class=&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;s&amp;quot;&amp;gt;&amp;amp;quot;icon-left icon-twitter&amp;amp;quot;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;gt;&amp;lt;/span&amp;gt;Click to Tweet&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;/a&amp;amp;gt;&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;small&amp;amp;gt;&amp;lt;/span&amp;gt;(you may edit before posting.)&amp;lt;span class=&amp;quot;nt&amp;quot;&amp;gt;&amp;amp;lt;/small&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&amp;lt;/span&amp;gt;
+</code></pre>
+
+<p>  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+{% endif %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+
+<p>&lt;h2&gt;Roadmap&lt;/h2&gt;</p>
+
+<p>&lt;ul&gt;
+&lt;li&gt;Add an option to allow for parameters to be combined if 1) they’ve been set in both &lt;strong&gt;_config.yml&lt;/strong&gt; and &lt;strong&gt;YAML front-matter&lt;/strong&gt; of a page and 2) they accept multiple values, such as hashtags and related&lt;/li&gt;
+&lt;li&gt;Allow for parameters to be set within the tag itself, but without using a regular expression to do so. Possible? Yay or nay?&lt;/li&gt;
+&lt;/ul&gt;</p>
+
+  ]]></content></entry></feed>

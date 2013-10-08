@@ -1,1 +1,73 @@
-<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Posts Tagged “Rich Snippets” &ndash; Development, design, and more by David Ensinger</title><link href="http://davidensinger.com/"/><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><updated>2013-09-16T18:34:51-04:00</updated><id>http://davidensinger.com/</id><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights>Copyright &#169; 2013 David Ensinger. All rights reserved.</rights></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en"><![CDATA[Posts Tagged “Rich Snippets” &#8211; Development, design, and more by David Ensinger]]></title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/tag/rich-snippets/atom.xml"/><link href="http://davidensinger.com/"/><updated>Mon, 07 Oct 2013 21:15:31 -0400</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights><![CDATA[Copyright &#169; 2013 David Ensinger. All rights reserved.]]></rights><entry><id>http://davidensinger.com/2013/05/setting-up-google-author-rich-snippets</id><link type="text/html" rel="alternate" href="http://davidensinger.com/2013/05/setting-up-google-author-rich-snippets/"/><title>Setting Up Google Author Rich Snippets</title><published>2013-05-03T06:49:00-04:00</published><updated>2013-05-03T06:49:00-04:00</updated><author><name>David Ensinger</name><uri>http://davidensinger.com/</uri></author><content type="html"><![CDATA[
+    <p>&lt;p&gt;It turns out that it’s rather easy to display your photo alongside your content in Google’s search results. All you need to do is add support for &lt;a href=&quot;https://support.google.com/webmasters/bin/answer.py?hl=en&amp;amp;answer=99170&quot;&gt;Rich Snippets&lt;/a&gt; to your website, in particular those for authorship. This results in the addition of some minor markup to your HTML, which will then interface with your &lt;a href=&quot;http://plus.google.com/&quot;&gt;Google+&lt;/a&gt; account.&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;Advantages&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;When you prove ownership of your content with Google, you’ll reap the following benefits:&lt;/p&gt;</p>
+
+<p>&lt;ul&gt;
+&lt;li&gt;A listing with an image is more visible, which should result in greater click-through rate&lt;/li&gt;
+&lt;li&gt;You’ll further your personal branding as your image is displayed in more places&lt;/li&gt;
+&lt;li&gt;The search result displays the number of people in your circles, which will help those with a large number of followers.&lt;/li&gt;
+&lt;/ul&gt;</p>
+
+<p>&lt;h2&gt;First Steps&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;As per Google, the first step is to have a Google+ profile:&lt;/p&gt;</p>
+
+<p>&lt;blockquote&gt;&lt;p&gt;If you want your authorship information to appear in search results for the content you create, you&amp;rsquo;ll need a Google+ Profile with a good, recognizable headshot as your profile photo. Then, verify authorship of your content by associating it with your profile.&lt;/p&gt;</p>
+
+<p>&lt;p&gt;&lt;cite&gt;&lt;a href=&quot;https://support.google.com/webmasters/bin/answer.py?hl=en&amp;amp;answer=1408986&quot;&gt;Google Support&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;&lt;/blockquote&gt;</p>
+
+<p>&lt;h2&gt;Prove Ownership&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;There are several ways to prove ownership of your site to Google. You can verify your email address, add a link to your Google+ profile, and also include a link tag to your Google+ profile in the head of your site.&lt;/p&gt;</p>
+
+<p>&lt;h3&gt;Use your Email Address&lt;/h3&gt;</p>
+
+<p>&lt;p&gt;You can &lt;a href=&quot;https://plus.google.com/authorship&quot;&gt;link your email address&lt;/a&gt; to your Google+ profile, so long as the domain name matches. You’ll need to ensure that your posts have a byline with your name for this to work too.&lt;/p&gt;</p>
+
+<p>&lt;h3&gt;Link to your Google+ Profile&lt;/h3&gt;</p>
+
+<p>&lt;p&gt;Create a link to your Google+ profile from your webpage:&lt;/p&gt;</p>
+
+<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;[profile_url]?rel=author&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Google&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+
+<p>&lt;p&gt;Replace &lt;strong&gt;[profile_url]&lt;/strong&gt; with the your Google+ profile URL:&lt;/p&gt;</p>
+
+<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://plus.google.com/111951762509840042073?rel=author&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Google&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+
+<p>&lt;p&gt;Please note that the preceeding link goes to my profile. Be sure to change it to your profile! Also be sure that your link contains the &lt;code&gt;?rel=author&lt;/code&gt; parameter. If it&amp;rsquo;s missing, Google won&amp;rsquo;t be able to associate your content with your Google+ profile.&lt;/p&gt;</p>
+
+<p>&lt;p&gt;Add a reciprocal link back from your Google+ profile to your site:&lt;/p&gt;</p>
+
+<p>&lt;p&gt;&lt;img src=&quot;/assets/img/posts/2013-05-03-google-author-contributor-to.png&quot; alt=&quot;Image of Contributor To settings for Google+&quot; class=&quot;media-center img-border&quot; /&gt;&lt;/p&gt;</p>
+
+<p>&lt;ol&gt;
+&lt;li&gt;Edit the &lt;a href=&quot;http://plus.google.com/me/about/edit/co&quot;&gt;Contributor To&lt;/a&gt; section.&lt;/li&gt;
+&lt;li&gt;In the dialog that appears, click &lt;strong&gt;Add custom link&lt;/strong&gt;, and then enter the website URL.&lt;/li&gt;
+&lt;li&gt;If you want, click the drop-down list to specify who can see the link.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;Save&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;</p>
+
+<p>&lt;h3&gt;Add a Link to your Head&lt;/h3&gt;</p>
+
+<p>&lt;p&gt;Add a link tag to your Google+ profile from your document head:&lt;/p&gt;</p>
+
+<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;[profile_url]&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;author&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+
+<p>&lt;p&gt;Replace &lt;strong&gt;[profile_url]&lt;/strong&gt; with the your Google+ profile URL:&lt;/p&gt;</p>
+
+<p>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://plus.google.com/111951762509840042073/&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;author&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</p>
+
+<p>&lt;p&gt;Again, please note that the preceeding link goes to my profile. Change it to your profile!&lt;/p&gt;</p>
+
+<p>&lt;h2&gt;Test to Confirm&lt;/h2&gt;</p>
+
+<p>&lt;p&gt;Use the &lt;a href=&quot;https://www.google.com/webmasters/tools/richsnippets&quot;&gt;Structured Data Testing Tool&lt;/a&gt; to verify that Google has associated your content with your Google+ profile.&lt;/p&gt;</p>
+
+  ]]></content></entry></feed>
