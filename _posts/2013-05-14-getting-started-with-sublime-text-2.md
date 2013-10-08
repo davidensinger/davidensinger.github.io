@@ -1,6 +1,5 @@
 ---
 date: 2013-05-14 16:12:00
-layout: post
 slug: getting-started-with-sublime-text-2
 title: Getting Started with Sublime Text 2
 description: A quick start guide to configuring Sublime Text 2.

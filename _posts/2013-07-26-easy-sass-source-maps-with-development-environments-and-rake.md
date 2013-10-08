@@ -1,7 +1,6 @@
 ---
 date: 2013-07-26 13:26:00
 layout: post
-slug: easy-sass-source-maps-with-development-environments-and-rake
 title: Easy Sass Source Maps with Development Environments and Rake
 description: Create development environments with Rake to easily switch between development and production builds of Sass.
 categories: [Development]

@@ -1,7 +1,6 @@
 ---
 date: 2013-07-23 13:24:00
 layout: post
-slug: automating-jekyll-deployment-to-github-pages-with-rake
 title: Automating Jekyll Deployment to GitHub Pages with Rake
 description: Use Rake to easily deploy your site to GitHub Pages.
 categories: [Development]

@@ -1,7 +1,6 @@
 ---
 date: 2013-05-24 12:48:00
 layout: post
-slug: my-favorite-web-development-software
 title: My Favorite Web Development Software
 description: A list, with descriptions, of my favorite web development software.
 categories: [Development]

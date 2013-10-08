@@ -1,7 +1,6 @@
 ---
 date: 2013-05-03 10:49:00
 layout: post
-slug: setting-up-google-author-rich-snippets
 title: Setting Up Google Author Rich Snippets
 description: Steps for setting up Google Author Rich Snippets on your site.
 categories: [Social Media]

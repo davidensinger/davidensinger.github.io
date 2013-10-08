@@ -1,7 +1,6 @@
 ---
 date: 2013-06-14 13:20:00
 layout: post
-slug: my-favorite-chrome-extensions-for-development
 title: My Favorite Chrome Extensions for Development
 description: A short list of my favorite Chrome extensions for development.
 categories: [Development]

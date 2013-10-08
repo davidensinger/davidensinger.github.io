@@ -1,7 +1,6 @@
 ---
 date: 2013-03-29 10:26:00
 layout: post
-slug: generating-a-sitemap-in-jekyll-without-a-plugin
 title: Generating a Sitemap in Jekyll without a Plugin
 description: A guide to generating a sitemap.xml in Jekyll without using a plugin.
 category: Development

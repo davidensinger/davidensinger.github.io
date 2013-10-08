@@ -1,7 +1,6 @@
 ---
 date: 2013-03-20 22:58:00
 layout: post
-slug: selling-agile
 title: Selling Agile
 description: Thoughts on generating buy in for Agile development techniques in an organization.
 category: Development

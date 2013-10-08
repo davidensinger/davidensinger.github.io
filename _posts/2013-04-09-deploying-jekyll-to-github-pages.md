@@ -1,7 +1,6 @@
 ---
 date: 2013-04-08 10:30:00
 layout: post
-slug: deploying-jekyll-with-plugins-to-github-pages
 title: Deploying Jekyll with Plugins to GitHub Pages
 description: Steps to deploying Jekyll with plugins to GitHub Pages.
 category: Development

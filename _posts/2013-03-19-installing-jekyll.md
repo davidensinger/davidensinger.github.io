@@ -1,7 +1,6 @@
 ---
 date: 2013-03-19 22:55:00
 layout: post
-slug: installing-jekyll
 title: Installing Jekyll
 description: How to install Jekyll on OS X Mountain Lion 10.8.3.
 category: Development

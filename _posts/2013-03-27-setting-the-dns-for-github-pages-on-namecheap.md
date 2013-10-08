@@ -1,7 +1,6 @@
 ---
 date: 2013-03-27 20:05:00
 layout: post
-slug: setting-the-dns-for-github-pages-on-namecheap
 title: Setting the DNS for GitHub Pages on Namecheap
 description: How to properly set up the DNS on Namecheap for your custom domain with GitHub Pages.
 image: 2013-03-27-namecheap-all-host-records.png

@@ -1,7 +1,6 @@
 ---
 date: 2013-04-21 20:05:00
 layout: post
-slug: adding-open-graph-tags-to-jekyll
 title: Adding Open Graph Tags to Jekyll
 description: A guide to adding Open Graph meta tags to Jekyll.
 categories: [Development, Social Media]

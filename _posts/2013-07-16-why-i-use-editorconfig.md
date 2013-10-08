@@ -1,7 +1,6 @@
 ---
 date: 2013-07-16 10:12:00
 layout: post
-slug: why-i-use-editorconfig
 title: Why I use EditorConfig
 description: An argument for using EditorConfig in projects.
 categories: [Development]
