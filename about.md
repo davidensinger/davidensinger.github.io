@@ -6,7 +6,6 @@ page-class: page-about
 sitemap:
   priority: 0.7
   changefreq: monthly
-  lastmod: 2013-07-09T18:55:00-04:00
 ---
 
 Hi, my name is __David Ensinger__ and I’m a __Front End Developer__ with equal parts interest in design, development, and writing.
