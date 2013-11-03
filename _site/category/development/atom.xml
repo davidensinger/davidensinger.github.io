@@ -1,4 +1,103 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Posts Categorized “Development” – Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/category/development/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2013-10-14T11:39:50Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2013 David Ensinger. All rights reserved.</rights><entry><title type="text">Suggested Tweet Plugin for Jekyll</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/09/suggested-tweet-plugin-for-jekyll/"/><id>http://davidensinger.com/2013/09/suggested-tweet-plugin-for-jekyll</id><published>2013-09-16T12:50:00Z</published><updated>2013-09-16T12:50:00Z</updated><content type="html"><![CDATA[ <p>It’s always a really nice feeling when one sees one’s posts shared with others, usually via blog post or Tweet. In the spirit of encouraging more of this, I present to you the <a href="https://github.com/davidensinger/jekyll-suggested-tweet">Suggested Tweet</a> plugin for <a href="http://jekyllrb.com/">Jekyll</a>. With this plugin, visitors to your site need no longer grope for words while they attempt to share your content!</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Posts Categorized “Development” – Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/category/development/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2013-11-03T16:18:05Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2013 David Ensinger. All rights reserved.</rights><entry><title type="text">Building a Better Sitemap.xml with Jekyll</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/11/building-a-better-sitemap-xml-with-jekyll/"/><id>http://davidensinger.com/2013/11/building-a-better-sitemap-xml-with-jekyll</id><published>2013-11-03T11:50:00Z</published><updated>2013-11-03T11:50:00Z</updated><content type="html"><![CDATA[ <p>In the past several months I’ve made many incremental improvements to this website, including how I generate my <a href="http://davidensinger.com/sitemap.xml">Sitemap.xml</a>. While my revisions are certainly not jaw dropping, they have definitely improved the quality of my sitemap and are thus worth writing about, if only to provide a reference point to other developers. To that end, here’s a note about the changes I’ve made in my current implementation.</p>
+
+<h2>Previous Configuration</h2>
+
+<p>In an earlier post, <a href="http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/">Generating a Sitemap in Jekyll without a Plugin</a>, I went over the configuration of my previous sitemap, which looked like this:</p>
+
+<div class="highlight"><pre><code class="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;urlset</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd&quot;</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;</span><span class="nt">&gt;</span>
+  {% for post in site.posts %}
+    <span class="nt">&lt;url&gt;</span>
+      <span class="nt">&lt;loc&gt;</span>{{ site.baseurl }}{{ post.url }}<span class="nt">&lt;/loc&gt;</span>
+      {% if post.lastmod == null %}
+        <span class="nt">&lt;lastmod&gt;</span>{{ post.date | date_to_xmlschema }}<span class="nt">&lt;/lastmod&gt;</span>
+      {% else %}
+        <span class="nt">&lt;lastmod&gt;</span>{{ post.lastmod | date_to_xmlschema }}<span class="nt">&lt;/lastmod&gt;</span>
+      {% endif %}
+      <span class="nt">&lt;changefreq&gt;</span>weekly<span class="nt">&lt;/changefreq&gt;</span>
+      <span class="nt">&lt;priority&gt;</span>1.0<span class="nt">&lt;/priority&gt;</span>
+    <span class="nt">&lt;/url&gt;</span>
+  {% endfor %}
+  {% for page in site.pages %}
+    {% if page.sitemap != null and page.sitemap != empty %}
+      <span class="nt">&lt;url&gt;</span>
+        <span class="nt">&lt;loc&gt;</span>{{ site.baseurl }}{{ page.url }}<span class="nt">&lt;/loc&gt;</span>
+        <span class="nt">&lt;lastmod&gt;</span>{{ page.sitemap.lastmod | date_to_xmlschema }}<span class="nt">&lt;/lastmod&gt;</span>
+        <span class="nt">&lt;changefreq&gt;</span>{{ page.sitemap.changefreq }}<span class="nt">&lt;/changefreq&gt;</span>
+        <span class="nt">&lt;priority&gt;</span>{{ page.sitemap.priority }}<span class="nt">&lt;/priority&gt;</span>
+       <span class="nt">&lt;/url&gt;</span>
+    {% endif %}
+  {% endfor %}
+<span class="nt">&lt;/urlset&gt;</span>
+</code></pre></div>
+
+
+<h2>Current Configuration</h2>
+
+<p>For my current implementation, I made the following changes:</p>
+
+<ul>
+<li>The <code>urlset</code> is much more terse as I stripped away all the attributes, save for <strong>xmlns</strong></li>
+<li>My top level page is now included, although the <code>changefreq</code> is admittedly wishful thinking on my part :)</li>
+<li>The <code>changefreq</code> and <code>priority</code> elements for my <strong>site.pages</strong> may be omitted from the pages themselves, as those elements now have fallback values.</li>
+</ul>
+
+
+<div class="highlight"><pre><code class="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;urlset</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;url&gt;</span>
+    <span class="nt">&lt;loc&gt;</span>{{ site.url }}/<span class="nt">&lt;/loc&gt;</span>
+    <span class="nt">&lt;lastmod&gt;</span>{{ site.time | date_to_xmlschema }}<span class="nt">&lt;/lastmod&gt;</span>
+    <span class="nt">&lt;changefreq&gt;</span>weekly<span class="nt">&lt;/changefreq&gt;</span>
+    <span class="nt">&lt;priority&gt;</span>1.0<span class="nt">&lt;/priority&gt;</span>
+  <span class="nt">&lt;/url&gt;</span>
+  {% for post in site.posts %}
+    <span class="nt">&lt;url&gt;</span>
+      <span class="nt">&lt;loc&gt;</span>{{ site.url }}{{ post.url }}<span class="nt">&lt;/loc&gt;</span>
+      {% if post.lastmod == null %}
+        <span class="nt">&lt;lastmod&gt;</span>{{ post.date | date_to_xmlschema }}<span class="nt">&lt;/lastmod&gt;</span>
+      {% else %}
+        <span class="nt">&lt;lastmod&gt;</span>{{ post.lastmod | date_to_xmlschema }}<span class="nt">&lt;/lastmod&gt;</span>
+      {% endif %}
+      <span class="nt">&lt;changefreq&gt;</span>monthly<span class="nt">&lt;/changefreq&gt;</span>
+      <span class="nt">&lt;priority&gt;</span>0.5<span class="nt">&lt;/priority&gt;</span>
+    <span class="nt">&lt;/url&gt;</span>
+  {% endfor %}
+  {% for page in site.pages %}
+  <span class="nt">&lt;url&gt;</span>
+    <span class="nt">&lt;loc&gt;</span>{{ site.url }}{{ page.url }}<span class="nt">&lt;/loc&gt;</span>
+    {% if page.sitemap.lastmod %}
+      <span class="nt">&lt;lastmod&gt;</span>{{ page.sitemap.lastmod | date: &quot;%Y-%m-%d&quot; }}<span class="nt">&lt;/lastmod&gt;</span>
+    {% elsif page.lastmod %}
+      <span class="nt">&lt;lastmod&gt;</span>{{ page.lastmod | date: &quot;%Y-%m-%d&quot; }}<span class="nt">&lt;/lastmod&gt;</span>
+    {% elsif page.date %}
+      <span class="nt">&lt;lastmod&gt;</span>{{ page.date | date: &quot;%Y-%m-%d&quot; }}<span class="nt">&lt;/lastmod&gt;</span>
+    {% else %}
+      <span class="nt">&lt;lastmod&gt;</span>{{ site.time | date: &quot;%Y-%m-%d&quot; }}<span class="nt">&lt;/lastmod&gt;</span>
+    {% endif %}
+    {% if page.sitemap.changefreq %}
+      <span class="nt">&lt;changefreq&gt;</span>{{ page.sitemap.changefreq }}<span class="nt">&lt;/changefreq&gt;</span>
+    {% else %}
+      <span class="nt">&lt;changefreq&gt;</span>monthly<span class="nt">&lt;/changefreq&gt;</span>
+    {% endif %}
+    {% if page.sitemap.priority %}
+      <span class="nt">&lt;priority&gt;</span>{{ page.sitemap.priority }}<span class="nt">&lt;/priority&gt;</span>
+    {% else %}
+      <span class="nt">&lt;priority&gt;</span>0.3<span class="nt">&lt;/priority&gt;</span>
+    {% endif %}
+  <span class="nt">&lt;/url&gt;</span>
+  {% endfor %}
+<span class="nt">&lt;/urlset&gt;</span>
+</code></pre></div>
+
+
+<p>As you can see, the changes I made are simple, but put together they make for a much more flexible implementation.</p>
+
+<div class="gray-box">
+  <p><strong>More Info:</strong> Visit the official <a href="http://www.sitemaps.org/">sitemaps.org</a> to learn more about the protocol.</p>
+</div>
+
+ ]]></content></entry><entry><title type="text">Suggested Tweet Plugin for Jekyll</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/09/suggested-tweet-plugin-for-jekyll/"/><id>http://davidensinger.com/2013/09/suggested-tweet-plugin-for-jekyll</id><published>2013-09-16T12:50:00Z</published><updated>2013-09-16T12:50:00Z</updated><content type="html"><![CDATA[ <p>It’s always a really nice feeling when one sees one’s posts shared with others, usually via blog post or Tweet. In the spirit of encouraging more of this, I present to you the <a href="https://github.com/davidensinger/jekyll-suggested-tweet">Suggested Tweet</a> plugin for <a href="http://jekyllrb.com/">Jekyll</a>. With this plugin, visitors to your site need no longer grope for words while they attempt to share your content!</p>
 
 <h2>About the Plugin</h2>
 
@@ -708,118 +807,4 @@
 <h2>Validate</h2>
 
 <p>To verify that your code validates, see the <a href="https://developers.facebook.com/tools/debug">Facebook Debugger</a>.</p>
- ]]></content></entry><entry><title type="text">Supporting Twitter Cards with Jekyll</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll/"/><id>http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll</id><published>2013-04-17T18:16:00Z</published><updated>2013-04-17T18:16:00Z</updated><content type="html"><![CDATA[ <p>I just added support for <a href="https://dev.twitter.com/docs/cards">Twitter Cards</a> to my website because I wanted more control over how my site displays on Twitter. There are six different card types, although the only one that’s appropriate for my site is the <a href="http://dev.twitter.com/docs/cards/types/summary-card">Summary Card</a>, which lets users preview site content within a tweet.</p>
-
-<h2>Summary Card</h2>
-
-<p>The Summary Card is the default and includes a title, description, thumbnail, and Twitter account attribution. The following markup is provided by the developer docs:</p>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content=</span><span class="s">&quot;summary&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:site&quot;</span> <span class="na">content=</span><span class="s">&quot;@site_username&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:title&quot;</span> <span class="na">content=</span><span class="s">&quot;Title&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:url&quot;</span> <span class="na">content=</span><span class="s">&quot;URL&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content=</span><span class="s">&quot;Up than 200 characters.&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:creator&quot;</span> <span class="na">content=</span><span class="s">&quot;@creator_username&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:image:src&quot;</span> <span class="na">content=</span><span class="s">&quot;http://path/to/image.jpg&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
-
-
-<h3>Card, Site, and Creator</h3>
-
-<p>These three meta tags and their values stay constant, regardless of page content. I use my Twitter handle for both <em>site</em> and <em>creator</em>, although I’m not sure that I need to. I figure that it can’t hurt to do so, though.</p>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content=</span><span class="s">&quot;summary&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:site&quot;</span> <span class="na">content=</span><span class="s">&quot;@site_username&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:creator&quot;</span> <span class="na">content=</span><span class="s">&quot;@creator_username&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
-
-
-<h3>Title</h3>
-
-<p>I’ve denoted a site title in my <strong>_config.yml</strong> and a page title in the <strong>YAML Front Matter</strong> block that’s specific to every page and post on my site.</p>
-
-<div class="highlight"><pre><code class="html">{% if page.title %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:title&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ page.title }}&quot;</span><span class="nt">&gt;</span>
-{% else %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:title&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.title }}&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-</code></pre></div>
-
-
-<h3>URL</h3>
-
-<p>I’ve also specified a <em>site.url</em> output as an absolute path in my in my <strong>_config.yml</strong>, as well as a <em>page.url</em> output in my <strong>YAML Front Matter</strong> block.</p>
-
-<div class="highlight"><pre><code class="html">{% if page.url %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:url&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}{{ page.url }}&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-</code></pre></div>
-
-
-<h3>Description</h3>
-
-<p>Likewise, I have a general site description and a page specific description:</p>
-
-<div class="highlight"><pre><code class="html">{% if page.description %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ page.description }}&quot;</span><span class="nt">&gt;</span>
-{% else %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.description }}&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-</code></pre></div>
-
-
-<p>A different approach to the page description is to escape and truncate the page content, which is how <a href="http://paulstamatiou.com/responsive-retina-blog-development-part-1">Paul Stamatiou handles it</a>:</p>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ page.content | strip_html | xml_escape | truncate: 200 }}&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
-
-
-<h3>Image</h3>
-
-<p>I’ve also set a default image, if there’s not an image for the current page.</p>
-
-<div class="highlight"><pre><code class="html">{% if page.image %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:image:src&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}/path/to/image/{{ page.image }}&quot;</span><span class="nt">&gt;</span>
-{% else %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:image:src&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}/path/to/image/logo.png&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-</code></pre></div>
-
-
-<h2>All Together Now</h2>
-
-<p>Here’s what my final block of code looks like:</p>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content=</span><span class="s">&quot;summary&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:site&quot;</span> <span class="na">content=</span><span class="s">&quot;@site_username&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:creator&quot;</span> <span class="na">content=</span><span class="s">&quot;@creator_username&quot;</span><span class="nt">&gt;</span>
-{% if page.title %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:title&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ page.title }}&quot;</span><span class="nt">&gt;</span>
-{% else %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:title&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.title }}&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-{% if page.url %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:url&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}{{ page.url }}&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-{% if page.description %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ page.description }}&quot;</span><span class="nt">&gt;</span>
-{% else %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.description }}&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-{% if page.image %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:image:src&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}/path/to/image/{{ page.image }}&quot;</span><span class="nt">&gt;</span>
-{% else %}
-  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:image:src&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}/path/to/image/logo.png&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-</code></pre></div>
-
-
-<h2>Validate</h2>
-
-<p>If you’re curious if your code validates, Twitter has provided a <a href="https://dev.twitter.com/docs/cards/validation/validator">validator</a> so you can easily check. You’ll need to pass the validation test before you can submit a <strong>Domain Approval Request</strong>, which will whitelist your website for inclusion with the service. It shouldn’t take much time at all to be approved.</p>
-
-<div class="gray-box">
-  <p><strong>More Info:</strong> David Walsh has a really great overview of <a href="http://davidwalsh.name/twitter-cards">Twitter Cards</a>, which is well worth a read.</p>
-</div>
-
  ]]></content></entry></feed>
