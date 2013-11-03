@@ -4,7 +4,7 @@ layout: post
 title: 'Building a Better Sitemap.xml with Jekyll'
 description: 'How to make a more flexible Sitemap.xml with Jekyll'
 categories: Development
-tags: [Jekyll, Sitemap.xml, XML]
+tags: [Jekyll, Sitemap, XML]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/11/building-a-better-sitemap-xml-with-jekyll/'
   text: 'Building a Better Sitemap.xml with Jekyll by @DavidEnsinger'
