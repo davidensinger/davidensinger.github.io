@@ -2,7 +2,7 @@
 date: 2013-12-02 10:44:00
 layout: post
 title: Quick Mobile Testing Tips and Tricks
-description: A roundup of tools to ensure that your website looks good and functions well on mobile.
+description: A roundup of tools to help with mobile debugging when the needed browser, operating system, and/or device isn’t available.
 categories: [Development]
 tags: [Mobile]
 suggested_tweet:
