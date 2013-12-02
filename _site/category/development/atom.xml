@@ -1,4 +1,76 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Posts Categorized “Development” – Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/category/development/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2013-11-03T16:27:22Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2013 David Ensinger. All rights reserved.</rights><entry><title type="text">Building a Better Sitemap.xml with Jekyll</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/11/building-a-better-sitemap-xml-with-jekyll/"/><id>http://davidensinger.com/2013/11/building-a-better-sitemap-xml-with-jekyll</id><published>2013-11-03T11:50:00Z</published><updated>2013-11-03T11:50:00Z</updated><content type="html"><![CDATA[ <p>In the past several months I’ve made many incremental improvements to this website, including how I generate my <a href="http://davidensinger.com/sitemap.xml">Sitemap.xml</a>. While my revisions are certainly not jaw dropping, they have definitely improved the quality of my sitemap and are thus worth writing about, if only to provide a reference point to other developers. To that end, here’s a note about the changes I’ve made in my current implementation.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Posts Categorized “Development” – Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/category/development/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2013-12-02T15:03:24Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2013 David Ensinger. All rights reserved.</rights><entry><title type="text">Quick Mobile Testing Tips and Tricks</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/12/quick-mobile-testing-tips-and-tricks/"/><id>http://davidensinger.com/2013/12/quick-mobile-testing-tips-and-tricks</id><published>2013-12-02T05:44:00Z</published><updated>2013-12-02T05:44:00Z</updated><content type="html"><![CDATA[ <p>Have you ever needed to track down a bug in mobile, but due to circumstances found yourself without the needed browser, operating system, and/or device? It can be really frustrating, especially when working with an ever approaching deadline. Thankfully, there are many tools available to help debug in such a situation, even if using them isn’t a proper substitute for the actual device.</p>
+
+<div class="red-box">
+  <p><strong>Warning:</strong> For real, the following tools are definitely not a proper substitute for actual devices.</p>
+</div>
+
+
+<h2>iOS Simulator</h2>
+
+<p>For debugging on iOS, check out the <a href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html">iOS Simulator</a>, which comes packaged within <a href="https://developer.apple.com/xcode/">Xcode</a>. The simulator has different versions of both the <strong>iPhone</strong> and <strong>iPad</strong>, which can easily be rotated and scaled, to test in portrait and landscape orientations and fit onto your monitor, respectively.</p>
+
+<p><img src="/assets/img/posts/2013-12-02-safari.jpg" alt="Image of the iOS Simulator" class="media-center img-border" /></p>
+
+<p>To open, go to <code>Applications &gt; Xcode (right click and “Show Package Contents”) &gt; Contents &gt; Applications &gt; iPhone Simulator</code>. Once the program is opened, you can easily add it to your the Dock.</p>
+
+<h3>Integration with Safari Web Inspector</h3>
+
+<p>The iOS Simulator also has integration with the <a href="https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/Introduction/Introduction.html">Safari Web Inspector</a>, which can be accessed from <code>Develop &gt; iPhone (or iPad) Simulator</code>.</p>
+
+<div class="yellow-box">
+  <p><strong>More Info:</strong> Here’s a great guide to <a href="http://webdesign.tutsplus.com/tutorials/workflow-tutorials/quick-tip-using-web-inspector-to-debug-mobile-safari/">Using Web Inspector to Debug Mobile Safari</a> by <a href="https://twitter.com/jimniels">@jimniels</a>.</p>
+</div>
+
+
+<h2>Opera Mobile Emulator</h2>
+
+<p>Opera supports mobile debugging via their <a href="http://www.opera.com/developer/mobile-emulator">Opera Mobile Emulator</a>, which comes ready with more than a dozen presets to mimic the “defined resolution, pixel density, user interface” of popular devices. It can be paired with <a href="http://www.opera.com/dragonfly/">Opera Dragonfly</a>, a suite of developer tools.</p>
+
+<p><img src="/assets/img/posts/2013-12-02-opera.jpg" alt="Image of the Opera Mobile Emulator" class="media-center img-border" /></p>
+
+<h2>Firefox</h2>
+
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Tools">Firefox Developer Tools</a> have come a long way in the past year. Amongst the many recent additions is the <a href="https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_View">Responsive Design View</a>, a tool to easily switch between viewport widths and device orientations. For additional resolutions, see <a href="https://addons.mozilla.org/en-US/firefox/addon/more-display-resolutions/">More Display Resolutions</a>.</p>
+
+<p><img src="/assets/img/posts/2013-12-02-firefox.jpg" alt="Image of the Responsive Design View within Firefox" class="media-center img-border" /></p>
+
+<h3>Extensions for Firefox</h3>
+
+<p>These extensions may be helpful as well:</p>
+
+<ul>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/more-display-resolutions/">More Display Resolutions</a>: Adds additional resolutions to the Responsive Design View</li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/user-agent-switcher/">User Agent Switcher</a>: Adds a menu and toolbar button to switch the browser’s user-agent string.</li>
+</ul>
+
+
+<h2>Chrome</h2>
+
+<p>The <a href="https://developers.google.com/chrome-developer-tools/">Chrome Developer Tools</a> come with a several features that are helpful when <a href="https://developers.google.com/chrome-developer-tools/docs/mobile-emulation">emulating mobile</a>:</p>
+
+<ul>
+<li>Emulate touch events (usally not present on traditional desktop devices, although this is changing)</li>
+<li>Emulate device viewports</li>
+<li>Network bandwidth throttling (simulate a slow connection)</li>
+<li>Device orientation overrides, amongst others</li>
+</ul>
+
+
+<p><img src="/assets/img/posts/2013-12-02-chrome.jpg" alt="Image of the Mobile Emulation overrides within Chrome" class="media-center img-border" /></p>
+
+<h3>Extensions for Chrome</h3>
+
+<p>These extensions may be helpful as well:</p>
+
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/resolution-test/idhfcdbheobinplaamokffboaccidbal">Resolution Test</a>: Views for different screen resolutions, with an option to define your own resolutions</li>
+<li><a href="https://chrome.google.com/webstore/detail/responsive-inspector/memcdolmmnmnleeiodllgpibdjlkbpim">Responsive Inspector</a>: Inspects media queries</li>
+<li><a href="https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg">User-Agent Switcher for Chrome</a>: Spoofs and mimics user-agent strings.</li>
+</ul>
+
+
+<p>That’s it. May your mobile debugging be better, especially when ill-equipped and under pressure!</p>
+ ]]></content></entry><entry><title type="text">Building a Better Sitemap.xml with Jekyll</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/11/building-a-better-sitemap-xml-with-jekyll/"/><id>http://davidensinger.com/2013/11/building-a-better-sitemap-xml-with-jekyll</id><published>2013-11-03T11:50:00Z</published><updated>2013-11-03T11:50:00Z</updated><content type="html"><![CDATA[ <p>In the past several months I’ve made many incremental improvements to this website, including how I generate my <a href="http://davidensinger.com/sitemap.xml">Sitemap.xml</a>. While my revisions are certainly not jaw dropping, they have definitely improved the quality of my sitemap and are thus worth writing about, if only to provide a reference point to other developers. To that end, here’s a note about the changes I’ve made in my current implementation.</p>
 
 <h2>Previous Configuration</h2>
 
@@ -704,107 +776,4 @@
 <li><a href="http://whiletruecode.com/post/7-handy-text-manipulation-tricks-sublime-text-2">7 handy text manipulation tricks in Sublime Text 2</a></li>
 </ul>
 
- ]]></content></entry><entry><title type="text">Adding Open Graph Tags to Jekyll</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll/"/><id>http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll</id><published>2013-04-21T16:05:00Z</published><updated>2013-04-21T16:05:00Z</updated><content type="html"><![CDATA[ <p>What is the <a href="http://ogp.me/">Open Graph</a> protocol? Per <strong>Facebook</strong>, it “enables any web page to become a rich object in a social graph.” The documentation goes on to state that “to turn your web pages into graph objects, you need to add basic metadata to your page.” Put more simply, add <strong>Open Graph meta tags</strong> to your website to have greater control over how your content is displayed when shared via Facebook.</p>
-
-<h2>Basic Metadata</h2>
-
-<p>The basic metadata includes a <strong>title</strong>, <strong>object type</strong>, <strong>image</strong>, and <strong>url</strong>, as per the documentation:</p>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Title&quot;</span> <span class="na">property=</span><span class="s">&quot;og:title&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Type&quot;</span> <span class="na">property=</span><span class="s">&quot;og:type&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Image&quot;</span> <span class="na">property=</span><span class="s">&quot;og:image&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;URL&quot;</span> <span class="na">property=</span><span class="s">&quot;og:url&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
-
-
-<p>I’ve also included a <strong>site name</strong> and <strong>description</strong>:</p>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Site Name&quot;</span> <span class="na">property=</span><span class="s">&quot;og:site_name&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Description&quot;</span> <span class="na">property=</span><span class="s">&quot;og:description&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
-
-
-<h3>Object Types</h3>
-
-<p>There are many different <a href="http://ogp.me/#types">object types</a> to which you may categorize your page: music, video, article, book, profile, and website, amongst others. The two types that are relevant to my site are <strong>article</strong> and <strong>website</strong>, the latter being the object type that I’ll fall back upon for every page that isn’t a post.</p>
-
-<h4>Article</h4>
-
-<p>The article object type has several possible values, but I’m only using <strong>article:published_time</strong>, <strong>article:author</strong>, <strong>article:section</strong>, and <strong>article:tag</strong> for my site:</p>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Time&quot;</span> <span class="na">property=</span><span class="s">&quot;article:published_time&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Author&quot;</span> <span class="na">property=</span><span class="s">&quot;article:author&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Category&quot;</span> <span class="na">property=</span><span class="s">&quot;article:section&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;Tag&quot;</span> <span class="na">property=</span><span class="s">&quot;article:tag&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
-
-
-<h2>Code</h2>
-
-<div class="yellow-box">
-  <p><strong>Please Note:</strong> I’ve skipped the explanations for some of the following conditional statements because they’re identical to those that I wrote about in my <a href="http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll/">Supporting Twitter Cards with Jekyll</a> post. See that post for further information.</p>
-</div>
-
-
-<p>For the categories and tags, I’m using a for loop to output the appropriate meta tags. Open Graph tags only allow for one section, so I limit that to the first category. It’s rather arbitrary, but it works.</p>
-
-<div class="highlight"><pre><code class="html">{% if page.categories %}
-  {% for category in page.categories limit:1 %}
-  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ category }}&quot;</span> <span class="na">property=</span><span class="s">&quot;article:section&quot;</span><span class="nt">&gt;</span>
-  {% endfor %}
-{% endif %}
-{% if page.tags %}
-  {% for tag in page.tags %}
-  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ tag }}&quot;</span> <span class="na">property=</span><span class="s">&quot;article:tag&quot;</span><span class="nt">&gt;</span>
-  {% endfor %}
-{% endif %}
-</code></pre></div>
-
-
-<p>Here’s the final snippet of code with the appropriate meta data:</p>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ site.title }}&quot;</span> <span class="na">property=</span><span class="s">&quot;og:site_name&quot;</span><span class="nt">&gt;</span>
-{% if page.title %}
-  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ page.title }}&quot;</span> <span class="na">property=</span><span class="s">&quot;og:title&quot;</span><span class="nt">&gt;</span>
-{% else %}
-  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ site.title }}&quot;</span> <span class="na">property=</span><span class="s">&quot;og:title&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-{% if page.title %}
-  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;article&quot;</span> <span class="na">property=</span><span class="s">&quot;og:type&quot;</span><span class="nt">&gt;</span>
-{% else %}
-  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;website&quot;</span> <span class="na">property=</span><span class="s">&quot;og:type&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-{% if page.description %}
-  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ page.description }}&quot;</span> <span class="na">property=</span><span class="s">&quot;og:description&quot;</span><span class="nt">&gt;</span>
-{% else %}
-  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ site.description }}&quot;</span> <span class="na">property=</span><span class="s">&quot;og:description&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-{% if page.url %}
-  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}{{ page.url }}&quot;</span> <span class="na">property=</span><span class="s">&quot;og:url&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-{% if page.date %}
-  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ page.date | date_to_xmlschema }}&quot;</span> <span class="na">property=</span><span class="s">&quot;article:published_time&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}/about/&quot;</span> <span class="na">property=</span><span class="s">&quot;article:author&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-{% if page.image %}
-  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}/assets/img/posts/{{ page.image }}&quot;</span> <span class="na">property=</span><span class="s">&quot;og:image&quot;</span><span class="nt">&gt;</span>
-{% else %}
-  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ site.url }}/assets/img/logo-high-resolution.png&quot;</span> <span class="na">property=</span><span class="s">&quot;og:image&quot;</span><span class="nt">&gt;</span>
-{% endif %}
-{% if page.categories %}
-  {% for category in page.categories limit:1 %}
-  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ category }}&quot;</span> <span class="na">property=</span><span class="s">&quot;article:section&quot;</span><span class="nt">&gt;</span>
-  {% endfor %}
-{% endif %}
-{% if page.tags %}
-  {% for tag in page.tags %}
-  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;{{ tag }}&quot;</span> <span class="na">property=</span><span class="s">&quot;article:tag&quot;</span><span class="nt">&gt;</span>
-  {% endfor %}
-{% endif %}
-</code></pre></div>
-
-
-<h2>Validate</h2>
-
-<p>To verify that your code validates, see the <a href="https://developers.facebook.com/tools/debug">Facebook Debugger</a>.</p>
  ]]></content></entry></feed>
