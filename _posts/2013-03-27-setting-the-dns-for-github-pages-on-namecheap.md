@@ -18,11 +18,11 @@ After pushing my site to **GitHub** and verifying that it worked at [davidensing
 In the interest of helping others avoid the mistakes I made, here’s a guide to setting up the DNS for GitHub pages on [Namecheap](http://www.namecheap.com/?aff=32887), my registrar of choice.
 
 <div class="yellow-box">
-  <p><strong>Please Note:</strong> This guide has been updated on January 7th, 2014 with new settings to support <a href="https://github.com/blog/1715-faster-more-awesome-github-pages">Faster, More Awesome GitHub Pages</a>.</p>
+  <p><strong>Please Note:</strong> This guide has been updated on January 7th, 2014 with new settings to support <a href="https://github.com/blog/1715-faster-more-awesome-github-pages">Faster, More Awesome GitHub Pages</a>. Be aware that Namecheap DNS doesn’t seem to support an <strong>ALIAS</strong> record for the APEX domain, so we’ll need to use two <strong>A</strong> records for our DNS, per the instructions in the <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">Setting up a custom domain with Pages</a>. This will not allow us to use the content delivery network, but will still help protect the site against denial of service attacks.</p>
 </div>
 
 <div class="red-box">
-  <p><strong>Please Note:</strong> This guide assumes that you’re using an APEX top-level domain (TLD).</p>
+  <p><strong>Also:</strong> This guide assumes that you’re using an APEX domain.</p>
 </div>
 
 ## Add a CNAME File to your Repo
@@ -39,8 +39,9 @@ Log into your Namecheap account, select the appropriate domain name, and then go
 
 ## Set up the DNS
 
-1. Set the **@** (used to denote the domain name for which you’re configuring the DNS) **IP Address/URL** to `username.github.io` and the **Record Type** to `CNAME (Alias)` with a **TTL** (an acronym for **Time To Live** that refers to the capability of the DNS servers to cache DNS records) of `1800`.
-2. Set the **www** (the subdomain www) **IP Address/URL** to `username.github.io` and the **Record Type** to `CNAME (Alias)` with a **TTL** of `1800`.
+1. Set the **@** (used to denote the domain name for which you’re configuring the DNS) **IP Address/URL** to `192.30.252.153` and the **Record Type** to `A (Address)` with a **TTL** (an acronym for **Time To Live** that refers to the capability of the DNS servers to cache DNS records) of `1800`.
+2. Set the **www** (the subdomain www) **IP Address/URL** to `username.github.io.` (with trailing period) and the **Record Type** to `CNAME (Alias)` with a **TTL** of `1800`.
+3. In **SUB-DOMAIN SETTINGS**, add an `@` in the first field, and duplicate the settings in Step 1, save for the **IP Address/URL**, which should be `192.30.252.154`.
 
 <img src="/assets/img/posts/2014-01-07-namecheap-dns-settings.png" alt="Image of DNS settings" class="media-center img-border" />
 
