@@ -5,6 +5,8 @@ title: 'Building a Better Sitemap.xml with Jekyll'
 description: 'How to make a more flexible Sitemap.xml with Jekyll.'
 categories: Development
 tags: [Jekyll, Sitemap, XML]
+sitemap:
+  lastmod: 2014-01-23
 suggested_tweet:
   url: 'http://davidensinger.com/2013/11/building-a-better-sitemap-xml-with-jekyll/'
   text: 'Building a Better Sitemap.xml with Jekyll by @DavidEnsinger'
@@ -52,7 +54,7 @@ For my current implementation, I made the following changes:
 
 - The `urlset` is much more terse as I stripped away all the attributes, save for **xmlns**
 - My top level page is now included, although the `changefreq` is admittedly wishful thinking on my part :)
-- The `changefreq` and `priority` elements for my **site.pages** may be omitted from the pages themselves, as those elements now have fallback values.
+- The `changefreq` and `priority` elements for my pages and posts may be omitted, as those elements now have fallback values.
 
 {% highlight xml %}
 {% raw %}
@@ -67,13 +69,23 @@ For my current implementation, I made the following changes:
   {% for post in site.posts %}
     <url>
       <loc>{{ site.url }}{{ post.url }}</loc>
-      {% if post.lastmod == null %}
+      {% if post.sitemap.lastmod %}
+        <lastmod>{{ post.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
+      {% elsif post.date %}
         <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
       {% else %}
-        <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
       {% endif %}
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
+      {% if post.sitemap.changefreq %}
+        <changefreq>{{ post.sitemap.changefreq }}</changefreq>
+      {% else %}
+        <changefreq>monthly</changefreq>
+      {% endif %}
+      {% if post.sitemap.priority %}
+        <priority>{{ post.sitemap.priority }}</priority>
+      {% else %}
+        <priority>0.5</priority>
+      {% endif %}
     </url>
   {% endfor %}
   {% for page in site.pages %}
@@ -81,12 +93,10 @@ For my current implementation, I made the following changes:
     <loc>{{ site.url }}{{ page.url }}</loc>
     {% if page.sitemap.lastmod %}
       <lastmod>{{ page.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
-    {% elsif page.lastmod %}
-      <lastmod>{{ page.lastmod | date: "%Y-%m-%d" }}</lastmod>
     {% elsif page.date %}
-      <lastmod>{{ page.date | date: "%Y-%m-%d" }}</lastmod>
+      <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
     {% else %}
-      <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
+      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     {% endif %}
     {% if page.sitemap.changefreq %}
       <changefreq>{{ page.sitemap.changefreq }}</changefreq>
@@ -101,7 +111,18 @@ For my current implementation, I made the following changes:
   </url>
   {% endfor %}
 </urlset>
+
 {% endraw %}
+{% endhighlight %}
+
+## Front Matter
+I can now add the following variables, all of which are optional, to the front matter of my posts and pages:
+
+{% highlight yaml %}
+sitemap:
+  lastmod: 2014-01-23
+  priority: 0.7
+  changefreq: monthly
 {% endhighlight %}
 
 As you can see, the changes I made are simple, but put together they make for a much more flexible implementation.
