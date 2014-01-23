@@ -86,11 +86,12 @@ import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_p
 - [Color Highlighter](https://sublime.wbond.net/packages/Color%20Highlighter) - Underlays selected hexadecimal color codes (like "#FFFFFF", "rgb(255,255,255)", "white", etc.) with their real color
 - [CSS Color Converter](https://sublime.wbond.net/packages/CSS%20Color%20Converter) - Convert hex to rgb to back
 - [EditorConfig](https://sublime.wbond.net/packages/EditorConfig) - [Editor Config](http://editorconfig.org/) helps define and maintain consistent coding styles between different editors and IDEs
+- [HTML-CSS-JS Prettify](https://sublime.wbond.net/packages/HTML-CSS-JS%20Prettify) - HTML, CSS, JavaScript and JSON code formatter via node.js
 - [LESS](https://sublime.wbond.net/packages/LESS) - LESS syntax highlighting
 - [Modific](https://sublime.wbond.net/packages/Modific) - Highlight lines changed since the last commit
-- [Sass](https://sublime.wbond.net/packages/Sass) - Sass syntax highlighting
 - [SideBarEnhancements](https://sublime.wbond.net/packages/SideBarEnhancements) - Adds useful file operations to the sidebar, such as “New file”, “New folder”, etc
 - [SublimeLinter](https://sublime.wbond.net/packages/SublimeLinter) - Lint code as you type
+- [Syntax Highlighting for Sass](https://sublime.wbond.net/packages/Syntax%20Highlighting%20for%20Sass) - Sass syntax highlighting
 - [TrailingSpaces](https://sublime.wbond.net/packages/TrailingSpaces) - Strips trailing whitespace from files
 
 There are also innumerable packages to support syntax highlighting, linting, and snippets in any and all languages. You can easily [discover these via Package Control](http://wbond.net/sublime_packages/community).
