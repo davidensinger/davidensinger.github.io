@@ -1,4 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2014-02-06T17:22:30Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2014 David Ensinger. All rights reserved.</rights><entry><title type="text">Quick Mobile Testing Tips and Tricks</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/12/quick-mobile-testing-tips-and-tricks/"/><id>http://davidensinger.com/2013/12/quick-mobile-testing-tips-and-tricks</id><published>2013-12-02T05:44:00Z</published><updated>2013-12-02T05:44:00Z</updated><content type="html"><![CDATA[ <p>Have you ever needed to track down a bug in mobile, but due to circumstances found yourself without the needed browser, operating system, and/or device? It can be really frustrating, especially when working with an ever approaching deadline. Thankfully, there are many tools available to help debug in such a situation, even if using them isn’t a proper substitute for the actual device.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2014-02-07T16:59:11Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2014 David Ensinger. All rights reserved.</rights><entry><title type="text">Current Favicon Icon Stack</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/02/current-favicon-icon-stack/"/><id>http://davidensinger.com/2014/02/current-favicon-icon-stack</id><published>2014-02-06T10:00:00Z</published><updated>2014-02-06T10:00:00Z</updated><content type="html"><![CDATA[ <p>Whether it’s the file format, dimensions, or browser support (amongst other concerns), it’s confusing to figure out the best icon stack for one’s website. What follows is my current preferred markup, with some recommended tools and resources.</p>
+
+<div class="yellow-box">
+  <p><strong>Please Note:</strong> This is not an exhaustive list and surely I don’t cover all possible browsers and devices. Hopefully I get the majority, though :)</p>
+</div>
+
+
+<h2>Favicon</h2>
+
+<p>For the favicon, I use <a href="http://www.kodlian.com/apps/icon-slate">Icon Slate</a> to combine a 32x32px PNG with a 16x16px PNG to form the ICO, which gives me support for HiDPI devices. For optimal browser support I drop the resulting ICO into the site root with the following markup:</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;shortcut icon&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon.ico&quot;</span> <span class="nt">&gt;</span>
+</code></pre></div>
+
+
+<h2>iOS</h2>
+
+<p>There are <a href="https://developer.apple.com/library/ios/documentation/userexperience/conceptual/MobileHIG/IconMatrix.html">half a dozen icon dimensions</a> required to support all the different iOS devices. Previously you needed to follow Apple’s naming conventions for the filenames, but these days the following markup works:</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-icon-precomposed&quot;</span> <span class="na">sizes=</span><span class="s">&quot;152x152&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon-152x152.png&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-icon-precomposed&quot;</span> <span class="na">sizes=</span><span class="s">&quot;144x144&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon-144x144.png&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-icon-precomposed&quot;</span> <span class="na">sizes=</span><span class="s">&quot;120x120&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon-120x120.png&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-icon-precomposed&quot;</span> <span class="na">sizes=</span><span class="s">&quot;114x114&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon-114x114.png&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-icon-precomposed&quot;</span> <span class="na">sizes=</span><span class="s">&quot;76x76&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon-76x76.png&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-icon-precomposed&quot;</span> <span class="na">sizes=</span><span class="s">&quot;72x72&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon-72x72.png&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-icon-precomposed&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon-57x57.png&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+
+
+<h2>Android</h2>
+
+<p>Seemingly older versions of Android will fallback to use the <code>apple-touch-icon-precomposed</code> icons. <a href="https://developers.google.com/chrome/mobile/docs/installtohomescreen">Newer versions of Chrome on Android</a> will use the “largest icon found in one of the following <code>&lt;link&gt;</code> tags”:</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;shortcut icon&quot;</span> <span class="na">sizes=</span><span class="s">&quot;196x196&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon-196x196.png&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+
+
+<h2>IE</h2>
+
+<p>For <a href="http://msdn.microsoft.com/en-us/library/ie/dn255024%28v=vs.85%29.aspx">Internet Explorer</a>, I followed the Windows 8 Tiles section of <a href="http://viget.com/inspire/designing-device-assets-templates-techniques-and-tips">Designing Device Assets: Templates and Tips</a> and came up with the following:</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-TileColor&quot;</span> <span class="na">content=</span><span class="s">&quot;#FFFFFF&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-TileImage&quot;</span> <span class="na">content=</span><span class="s">&quot;/favicon-144x144-ie10.png&quot;</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-square70x70logo&quot;</span> <span class="na">content=</span><span class="s">&quot;/favicon-128x128-ie11.png&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-square150x150logo&quot;</span> <span class="na">content=</span><span class="s">&quot;/favicon-270x270-ie11.png&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-wide310x150logo&quot;</span> <span class="na">content=</span><span class="s">&quot;/favicon-558x270-ie11.png&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-square310x310logo&quot;</span> <span class="na">content=</span><span class="s">&quot;/favicon-558x558-ie11.png&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+
+
+<p>The former two lines of markup are for IE10, while the latter four are for IE11. See the aforementioned blog post for very helpful PSD templates.</p>
+
+<p>That’s it! If any of this is incorrect, I’d like to know. Send me <a href="https://twitter.com/davidensinger">a tweet about it</a>!</p>
+ ]]></content></entry><entry><title type="text">Quick Mobile Testing Tips and Tricks</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/12/quick-mobile-testing-tips-and-tricks/"/><id>http://davidensinger.com/2013/12/quick-mobile-testing-tips-and-tricks</id><published>2013-12-02T05:44:00Z</published><updated>2013-12-02T05:44:00Z</updated><content type="html"><![CDATA[ <p>Have you ever needed to track down a bug in mobile, but due to circumstances found yourself without the needed browser, operating system, and/or device? It can be really frustrating, especially when working with an ever approaching deadline. Thankfully, there are many tools available to help debug in such a situation, even if using them isn’t a proper substitute for the actual device.</p>
 
 <div class="red-box">
   <p><strong>Warning:</strong> For real, the following tools are definitely not a proper substitute for actual devices.</p>
@@ -654,146 +708,4 @@
 <h2>Writing</h2>
 
 <p>While not exactly an application for development, I use <a href="http://www.iawriter.com/mac/">iA Writer</a> to write all my posts. It’s especially nice that <strong>Jekyll</strong> comes with built in support for <strong>Markdown</strong>, so using iA Writer only makes sense.</p>
- ]]></content></entry><entry><title type="text">Getting Started with Sublime Text 2</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/05/getting-started-with-sublime-text-2/"/><id>http://davidensinger.com/2013/05/getting-started-with-sublime-text-2</id><published>2013-05-14T12:12:00Z</published><updated>2013-05-14T12:12:00Z</updated><content type="html"><![CDATA[ <p>Although I switched to <a href="http://www.sublimetext.com/">Sublime Text 2</a> more than a year ago, I only recently decided to take a good look at my configuration, with the end goal of increasing my productivity. What follows are my settings, which will hopefully help others work a bit smarter. If you’ve got any useful tips, please <a href="https://twitter.com/davidensinger">tweet</a> at me!</p>
-
-<h2>Hide Files and Folders</h2>
-
-<p>It’s often helpful to hide folders so they’re not found when searching or using the <strong>Go to File</strong> shortcut (<strong>⌘ + T</strong>). Add the following line to your User Preferences (<strong>Preferences › Settings &ndash; User</strong> or <strong>⌘,</strong>) to do so:</p>
-
-<div class="highlight"><pre><code class="json"><span class="s2">&quot;folder_exclude_patterns&quot;</span><span class="err">:</span> <span class="p">[</span><span class="s2">&quot;.git&quot;</span><span class="p">,</span> <span class="s2">&quot;.svn&quot;</span><span class="p">,</span> <span class="s2">&quot;.sass-cache&quot;</span><span class="p">]</span>
-</code></pre></div>
-
-
-<p>You can also use exclude file types (with asterisk), instead of directories:</p>
-
-<div class="highlight"><pre><code class="json"><span class="s2">&quot;file_exclude_patterns&quot;</span><span class="err">:</span> <span class="p">[</span><span class="s2">&quot;.DS_Store&quot;</span><span class="p">,</span> <span class="s2">&quot;*.log&quot;</span><span class="p">,</span> <span class="s2">&quot;*.psd&quot;</span><span class="p">]</span>
-</code></pre></div>
-
-
-<h2>Open Files as Tabs</h2>
-
-<p>The default behavior is to open a file in a new window. If you&rsquo;d prefer tabs, add this line to your User Preferences (<strong>Preferences › Settings &ndash; User</strong> or <strong>⌘,</strong>):</p>
-
-<div class="highlight"><pre><code class="json"><span class="s2">&quot;open_files_in_new_window&quot;</span><span class="err">:</span> <span class="kc">false</span>
-</code></pre></div>
-
-
-<h2>Close Windows when Empty</h2>
-
-<p>To close the window when there are only empty tabs, add this line to your User Preferences (<strong>Preferences › Settings &ndash; User</strong> or <strong>⌘,</strong>):</p>
-
-<div class="highlight"><pre><code class="json"><span class="s2">&quot;close_windows_when_empty&quot;</span><span class="err">:</span> <span class="kc">true</span><span class="err">,</span>
-</code></pre></div>
-
-
-<h2>Pasting</h2>
-
-<p>Some projects use tabs, while others use spaces. It’s nice to easily copy and paste snippets of code between the two, without worrying about the indentation.</p>
-
-<p>To adjust your indentation to match the context in which it’s pasted, use “Paste and Indent” for <strong>⌘V</strong> instead of the standard “Paste.”</p>
-
-<p>To do this, add the following in your <strong>Key Bindings &ndash; User file</strong>:</p>
-
-<div class="highlight"><pre><code class="json"><span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;super+v&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;paste_and_indent&quot;</span> <span class="p">}</span><span class="err">,</span>
-<span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;super+shift+v&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;paste&quot;</span> <span class="p">}</span>
-</code></pre></div>
-
-
-<h2>Shortcuts</h2>
-
-<p>There are a lot of really useful keyboard shortcuts in Sublime Text 2. Instead of listing them all, I’m going to list some favorites. With a quick search of the internet you’ll surely find more to integrate into your workflow.</p>
-
-<ul>
-<li><strong>⌘L</strong> &ndash; Select line</li>
-<li><strong>⌘D</strong> &ndash; Select word (use this to select other occurrences, which is great for multiple editing)</li>
-<li><strong>⌘P</strong> &ndash; Goto anything (use <strong>#</strong> to search within file and <strong>:</strong> to go to a line number)</li>
-<li><strong>⌘⌃G</strong> &ndash; Select all occurrences of current word (again, helpful for multiple editing)</li>
-<li><strong>⌃⌘↑ (up) or ↓(down)</strong> &ndash; Swap lines either up or down</li>
-</ul>
-
-
-<div class="yellow-box">
-  <p><strong>More Info:</strong> Here’s a <a href="https://gist.github.com/lucasfais/1207002">Gist of Useful Shortcuts</a> by <a href="https://twitter.com/lucasfais">@lucasfais</a>.</p>
-</div>
-
-
-<h2>Package Control</h2>
-
-<p>One of the best things about Sublime Text 2 is how extensible it is. There are hundreds of community developed plugins and with <a href="http://wbond.net/sublime_packages/package_control">Package Control</a> it’s quick and easy to install, update, and remove them from your installation.</p>
-
-<h3>Installation</h3>
-
-<ol>
-<li>Open Sublime Text 2 and press <strong>ctrl `</strong> (control backtick) to open the editor’s console.</li>
-<li>Paste in the following code:</li>
-</ol>
-
-
-<div class="highlight"><pre><code class="python"><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span><span class="nn">os</span><span class="p">;</span> <span class="n">pf</span><span class="o">=</span><span class="s">&#39;Package Control.sublime-package&#39;</span><span class="p">;</span> <span class="n">ipp</span><span class="o">=</span><span class="n">sublime</span><span class="o">.</span><span class="n">installed_packages_path</span><span class="p">();</span> <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">ipp</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">ipp</span><span class="p">)</span> <span class="k">else</span> <span class="bp">None</span><span class="p">;</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">install_opener</span><span class="p">(</span><span class="n">urllib2</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">urllib2</span><span class="o">.</span><span class="n">ProxyHandler</span><span class="p">()));</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ipp</span><span class="p">,</span><span class="n">pf</span><span class="p">),</span><span class="s">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://sublime.wbond.net/&#39;</span><span class="o">+</span><span class="n">pf</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;%20&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">read</span><span class="p">());</span> <span class="k">print</span><span class="p">(</span><span class="s">&#39;Please restart Sublime Text to finish installation&#39;</span><span class="p">)</span>
-</code></pre></div>
-
-
-<h3>Favorite Packages</h3>
-
-<ul>
-<li><a href="https://sublime.wbond.net/packages/All%20Autocomplete">All Autocomplete</a> &ndash; Allows autocompletion across open files</li>
-<li><a href="https://sublime.wbond.net/packages/Color%20Highlighter">Color Highlighter</a> &ndash; Underlays selected hexadecimal color codes (like &ldquo;#FFFFFF&rdquo;, &ldquo;rgb(255,255,255)&rdquo;, &ldquo;white&rdquo;, etc.) with their real color</li>
-<li><a href="https://sublime.wbond.net/packages/CSS%20Color%20Converter">CSS Color Converter</a> &ndash; Convert hex to rgb to back</li>
-<li><a href="https://sublime.wbond.net/packages/EditorConfig">EditorConfig</a> &ndash; <a href="http://editorconfig.org/">Editor Config</a> helps define and maintain consistent coding styles between different editors and IDEs</li>
-<li><a href="https://sublime.wbond.net/packages/HTML-CSS-JS%20Prettify">HTML-CSS-JS Prettify</a> &ndash; HTML, CSS, JavaScript and JSON code formatter via node.js</li>
-<li><a href="https://sublime.wbond.net/packages/LESS">LESS</a> &ndash; LESS syntax highlighting</li>
-<li><a href="https://sublime.wbond.net/packages/Modific">Modific</a> &ndash; Highlight lines changed since the last commit</li>
-<li><a href="https://sublime.wbond.net/packages/SideBarEnhancements">SideBarEnhancements</a> &ndash; Adds useful file operations to the sidebar, such as “New file”, “New folder”, etc</li>
-<li><a href="https://sublime.wbond.net/packages/SublimeLinter">SublimeLinter</a> &ndash; Lint code as you type</li>
-<li><a href="https://sublime.wbond.net/packages/Syntax%20Highlighting%20for%20Sass">Syntax Highlighting for Sass</a> &ndash; Sass syntax highlighting</li>
-<li><a href="https://sublime.wbond.net/packages/TrailingSpaces">TrailingSpaces</a> &ndash; Strips trailing whitespace from files</li>
-</ul>
-
-
-<p>There are also innumerable packages to support syntax highlighting, linting, and snippets in any and all languages. You can easily <a href="http://wbond.net/sublime_packages/community">discover these via Package Control</a>.</p>
-
-<h2>Spaces</h2>
-
-<p>Open <strong>TrailingSpace&rsquo;s</strong> preferences (<strong>Preferences › Package Settings › TrailingSpaces › Settings &ndash; User</strong>), and add:</p>
-
-<div class="highlight"><pre><code class="json"><span class="s2">&quot;trailing_spaces_include_current_line&quot;</span><span class="err">:</span> <span class="kc">false</span>
-</code></pre></div>
-
-
-<p>Also add this to your global user preferences (<strong>⌘,</strong>):</p>
-
-<div class="highlight"><pre><code class="json"><span class="s2">&quot;trim_trailing_white_space_on_save&quot;</span><span class="err">:</span> <span class="kc">true</span>
-</code></pre></div>
-
-
-<h2>Tabs to Spaces</h2>
-
-<p>The default indentation style uses tabs instead of spaces. If you want to change this, go to your User Preferences (<strong>Preferences › Settings &ndash; User</strong> or <strong>⌘,</strong>) and add:</p>
-
-<div class="highlight"><pre><code class="json"><span class="s2">&quot;tab_size&quot;</span><span class="err">:</span> <span class="mi">2</span><span class="err">,</span>
-<span class="s2">&quot;translate_tabs_to_spaces&quot;</span><span class="err">:</span> <span class="kc">true</span>
-</code></pre></div>
-
-
-<h2>Scroll</h2>
-
-<p>To scroll past the end of the file, add this to your User Preferences (<strong>Preferences › Settings &ndash; User</strong> or <strong>⌘,</strong>):</p>
-
-<div class="highlight"><pre><code class="json"><span class="s2">&quot;scroll_past_end&quot;</span><span class="err">:</span> <span class="kc">true</span><span class="err">,</span>
-<span class="s2">&quot;scroll_speed&quot;</span><span class="err">:</span> <span class="mi">2</span>
-</code></pre></div>
-
-
-<h2>Other Resources</h2>
-
-<p>There are a multitude of resources available to users of Sublime Text 2. Here are some good ones to read through:</p>
-
-<ul>
-<li><a href="http://www.sublimetext.com/docs/2/">Official Documentation</a></li>
-<li><a href="http://docs.sublimetext.info/en/latest/index.html">Unofficial Documentation</a></li>
-<li><a href="http://blog.alexmaccaw.com/sublime-text">Setting up Sublime Text 2</a></li>
-<li><a href="http://robdodson.me/blog/2012/06/23/sublime-text-2-tips-and-shortcuts/">Sublime Text 2 Tips and Shortcuts</a></li>
-<li><a href="http://whiletruecode.com/post/7-handy-text-manipulation-tricks-sublime-text-2">7 handy text manipulation tricks in Sublime Text 2</a></li>
-</ul>
-
  ]]></content></entry></feed>
