@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Posts Categorized “Development” – Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/category/development/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2014-02-07T16:59:11Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2014 David Ensinger. All rights reserved.</rights><entry><title type="text">Current Favicon Icon Stack</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/02/current-favicon-icon-stack/"/><id>http://davidensinger.com/2014/02/current-favicon-icon-stack</id><published>2014-02-06T10:00:00Z</published><updated>2014-02-06T10:00:00Z</updated><content type="html"><![CDATA[ <p>Whether it’s the file format, dimensions, or browser support (amongst other concerns), it’s confusing to figure out the best icon stack for one’s website. What follows is my current preferred markup, with some recommended tools and resources.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Posts Categorized “Development” – Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/category/development/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2014-02-15T16:25:09Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2014 David Ensinger. All rights reserved.</rights><entry><title type="text">Image Optimization Tools Overview</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/02/image-optimization-tools-overview/"/><id>http://davidensinger.com/2014/02/image-optimization-tools-overview</id><published>2014-02-15T09:42:00Z</published><updated>2014-02-15T09:42:00Z</updated><content type="html"><![CDATA[ <p>Invariably, the average website gets heavier with each passing year, which results in slower page loads for visitors. Most of this increase in page weight is due to the large file sizes of images. Odds are, as a developer, you’re guilty of this slow creep too, so you should take care to optimize your images to be as lightweight as possible.</p>
+
+<h2>Online Tools</h2>
+
+<p>The following are available to use online, for free:</p>
+
+<ul>
+<li><a href="http://www.jpegmini.com/main/shrink_photo">JPEGmini</a>: Per the docs, “Reduces the file size of JPEG photos by up to 5X”</li>
+<li><a href="http://www.smushit.com/ysmush.it/">Smush.it</a>: Process JPG, GIF, and PNG images that are up to one megabyte in size</li>
+<li><a href="http://compresspng.com/">Compress PNG</a>: Automatically converts BMP, ICO, GIF, and JPG to PNG</li>
+<li><a href="http://compressjpeg.com/">Compress JPEG</a>: Automatically converts BMP and PNG to JPG</li>
+<li><a href="https://tinypng.com/">TinyPNG</a>: In addition, has premium plugin for Photoshop</li>
+<li><a href="http://b64.io/">b64.io</a>: Optimizes PNG, JPG, GIF or SVG and then converts to Base64</li>
+</ul>
+
+
+<h2>Desktop Tools</h2>
+
+<p>These are my preferred applications when optimizing images. Also I can’t believe that <strong>ImageOptim</strong> and <strong>ImageAlpha</strong> are free because <strong>they’re that good</strong>.</p>
+
+<ul>
+<li><a href="http://www.jpegmini.com/">JPEGmini</a>: An application, as well as an online tool</li>
+<li><a href="http://imageoptim.com/">ImageOptim</a>: Losslessly optimizes PNG, JPG, and GIF</li>
+<li><a href="http://pngmini.com/">ImageAlpha</a>: Lossy compression of 24-bit PNG</li>
+</ul>
+
+
+<h2>Tooling with Grunt</h2>
+
+<p>If you’re using <a href="http://gruntjs.com/">Grunt</a> then check out <a href="http://blog.grayghostvisuals.com/grunt/image-optimization/">Optimizing Images with Grunt</a> and these plugins:</p>
+
+<ul>
+<li><a href="https://github.com/gruntjs/grunt-contrib-imagemin">grunt-contrib-imagemin</a>: Minify PNG, JPG, and GIF</li>
+<li><a href="http://jamiemason.github.io/ImageOptim-CLI/">ImageOptim-CLI</a>: Uses <strong>ImageOptim</strong>, <strong>ImageAlpha</strong>, and <strong>JPEGmini</strong></li>
+<li><a href="https://github.com/JamieMason/grunt-imageoptim">grunt-imageoptim</a>: A plugin for Grunt for <strong>ImageOptim-CLI</strong></li>
+</ul>
+
+ ]]></content></entry><entry><title type="text">Current Favicon Icon Stack</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/02/current-favicon-icon-stack/"/><id>http://davidensinger.com/2014/02/current-favicon-icon-stack</id><published>2014-02-06T10:00:00Z</published><updated>2014-02-06T10:00:00Z</updated><content type="html"><![CDATA[ <p>Whether it’s the file format, dimensions, or browser support (amongst other concerns), it’s confusing to figure out the best icon stack for one’s website. What follows is my current preferred markup, with some recommended tools and resources.</p>
 
 <div class="yellow-box">
   <p><strong>Please Note:</strong> This is not an exhaustive list and surely I don’t cover all possible browsers and devices. Hopefully I get the majority, though :)</p>
@@ -660,52 +697,4 @@
 <p><a href="https://chrome.google.com/webstore/detail/yslow/ninejjcohidippngpapiilnmkgllmakh">YSlow</a> analyzes websites and suggests ways to improve their performance based on a set of rules for high performance sites. It also offers suggestions for improving performance and displays statistics about the site too. It’s a nice tool to use in conjunction with PageSpeed Insights.</p>
 
 <p>Like always, if anyone has any suggestions for good extensions, please don’t hesitate to <a href="http://twitter.com/DavidEnsinger">tweet</a> at me!</p>
- ]]></content></entry><entry><title type="text">My Favorite Web Development Software</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/05/my-favorite-web-development-software/"/><id>http://davidensinger.com/2013/05/my-favorite-web-development-software</id><published>2013-05-24T08:48:00Z</published><updated>2013-05-24T08:48:00Z</updated><content type="html"><![CDATA[ <p>I’m always interested in learning about the tools other developers use during the course of their workday. What follows is a list of my preferred software with accompanying explanations on how I use it. Hopefully this list will prove helpful to someone else! If you’ve got a suggestion for a better program, please let me know.</p>
-
-<h2>Console</h2>
-
-<p>My preferred terminal emulator is <a href="http://www.iterm2.com/">iTerm2</a>, which I mainly use for the split panes and history playback (when I do something that I shouldn’t have). I’m sure I’m just scratching the surface in regards to features, though.</p>
-
-<h2>FTP Client</h2>
-
-<p>It’s not so often that I need to transfer files via FTP, but when I do I always use <a href="http://cyberduck.ch/">Cyberduck</a>. I can’t say that it’s any better than any other popular alternative, but it’s my favorite merely for the fact that I’ve been reliably using it for a long time.</p>
-
-<h2>Icons</h2>
-
-<p>I use <a href="http://www.kodlian.com/apps/icon-slate">Icon Slate</a> for creating, exporting, and packaging icons. The latter point is especially helpful for the creation of retina versions of favicons.</p>
-
-<h2>Image Optimization</h2>
-
-<p>To optimize images I use several different programs, the use of which depends on the file format.</p>
-
-<p>For alpha transparent PNGs I use <a href="http://pngmini.com/">ImageAlpha</a>, which allows for the conversion of “24-bit PNG to paletted 8-bit with full alpha channel.” This markedly reduces the size of large images, with no perceptible loss of quality.</p>
-
-<p>For JPEGs I use <a href="http://jpegmini.com/">JPEGmini</a>, which also reduces file size rather dramatically. Their proprietary algorithm is superior to Photoshop’s ”Save for Web”, so I usually process the file in JPEGmini in lieu of compressing it via Photoshop.</p>
-
-<p>Once I’ve processed the images with the aforementioned programs, I then make an attempt to further reduce the file size with <a href="http://imageoptim.com/">ImageOptim</a>, which supports GIFs too. This latter step often reduces file size by another few percent.</p>
-
-<h2>Mobile</h2>
-
-<p>I have yet to do any native app development, but I do often create responsive designs. To test these in mobile browsers I use the <strong>iOS Simulator</strong> (via <a href="https://developer.apple.com/xcode/">Xcode</a>) and the <a href="http://www.opera.com/developer/mobile-emulator">Opera Mobile Emulator</a>. These programs aren’t a substitute for the actual devices, but they are a close approximation and work well for the majority of the work I do.</p>
-
-<h2>Preprocessor</h2>
-
-<p>I use <a href="http://incident57.com/codekit/">CodeKit</a> to compile my <strong>Sass</strong> on the occasions that I don’t feel like using the command line. The program supports a multitude of languages, including Haml, Less, and CoffeeScript. It’s also really helpful for the live browser reloads. I’m looking forward to the 2.0 release, which should be out sometime soon!</p>
-
-<h2>Productivity</h2>
-
-<p>For productivity gains within OS X, I highly recommend <a href="http://mizage.com/divvy/">Divvy</a> for window management and
-<a href="https://itunes.apple.com/us/app/flycut-clipboard-manager/id442160987?mt=12">Flycut</a> for clipboard management. Divvy makes it easy to resize windows, which is especially useful when using multiple monitors (what a first world problem, right?). Flycut saves everything that you recently copied to the clipboard and makes it easy to cycle through to paste anew.</p>
-
-<h2>Source Control</h2>
-
-<p>For version control I prefer to use a GUI to the command line, since some tasks are easier to do through an application. I use <a href="http://www.zennaware.com/cornerstone/">Cornerstone</a> to manage <strong>Subversion</strong> repositories and <a href="http://www.git-tower.com/">Tower</a> to manage <strong>Git</strong> repositories. I’ve tried several other well known Git clients, but I like Tower the best.</p>
-
-<h2>Text Editor</h2>
-
-<p>As a front end developer I don’t typically need an integrated developing environment, so <a href="http://www.sublimetext.com/2">Sublime Text 2</a> is my text editor of choice. It’s lightning fast, easily extensible, and enables me to efficiently write code with split editing and multiple selections. I’m definitely looking forward to the 3.0 release!</p>
-
-<h2>Writing</h2>
-
-<p>While not exactly an application for development, I use <a href="http://www.iawriter.com/mac/">iA Writer</a> to write all my posts. It’s especially nice that <strong>Jekyll</strong> comes with built in support for <strong>Markdown</strong>, so using iA Writer only makes sense.</p>
  ]]></content></entry></feed>
