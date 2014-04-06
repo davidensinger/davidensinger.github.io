@@ -67,7 +67,7 @@
     <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Building Jekyll to _site/&quot;</span>
     <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;jekyll build&quot;</span><span class="p">)</span>
     <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
-    <span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">[</span><span class="s2">&quot;minify&quot;</span><span class="o">].</span><span class="n">invoke</span>
+    <span class="no">Rake</span><span class="o">::</span><span class="no">Task</span><span class="o">[</span><span class="s2">&quot;minify&quot;</span><span class="o">].</span><span class="n">invoke</span>
     <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Deleting Sass source map&quot;</span>
     <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;rm -f _site/assets/css/*.map&quot;</span><span class="p">)</span>
     <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
