@@ -1,5 +1,7 @@
 ---
 layout: atom
+sitemap:
+  exclude: 'yes'
 ---
 {% for post in page.posts limit:10 %}
 	{% include feed-detail.xml %}

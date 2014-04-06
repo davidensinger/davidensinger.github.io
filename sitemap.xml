@@ -1,5 +1,7 @@
 ---
 layout: none
+sitemap:
+  exclude: 'yes'
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -10,6 +12,7 @@ layout: none
     <priority>1.0</priority>
   </url>
   {% for post in site.posts %}
+    {% unless post.published == false %}
     <url>
       <loc>{{ site.url }}{{ post.url }}</loc>
       {% if post.sitemap.lastmod %}
@@ -30,27 +33,30 @@ layout: none
         <priority>0.5</priority>
       {% endif %}
     </url>
+    {% endunless %}
   {% endfor %}
   {% for page in site.pages %}
-  <url>
-    <loc>{{ site.url }}{{ page.url }}</loc>
-    {% if page.sitemap.lastmod %}
-      <lastmod>{{ page.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
-    {% elsif page.date %}
-      <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
-    {% else %}
-      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
-    {% endif %}
-    {% if page.sitemap.changefreq %}
-      <changefreq>{{ page.sitemap.changefreq }}</changefreq>
-    {% else %}
-      <changefreq>monthly</changefreq>
-    {% endif %}
-    {% if page.sitemap.priority %}
-      <priority>{{ page.sitemap.priority }}</priority>
-    {% else %}
-      <priority>0.3</priority>
-    {% endif %}
-  </url>
+    {% unless page.sitemap.exclude == "yes" %}
+    <url>
+      <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>
+      {% if page.sitemap.lastmod %}
+        <lastmod>{{ page.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
+      {% elsif page.date %}
+        <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+      {% else %}
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      {% endif %}
+      {% if page.sitemap.changefreq %}
+        <changefreq>{{ page.sitemap.changefreq }}</changefreq>
+      {% else %}
+        <changefreq>monthly</changefreq>
+      {% endif %}
+      {% if page.sitemap.priority %}
+        <priority>{{ page.sitemap.priority }}</priority>
+      {% else %}
+        <priority>0.3</priority>
+      {% endif %}
+    </url>
+    {% endunless %}
   {% endfor %}
 </urlset>
