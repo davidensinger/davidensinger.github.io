@@ -23,15 +23,10 @@
     {% endif %}
   {% endfor %}
 <span class="nt">&lt;/urlset&gt;</span>
-</code></pre></div> <h2>Current Configuration</h2> <p>For my current implementation, I made the following changes:</p> <ul> <li>The <code>urlset</code> is much more terse as I stripped away all the attributes, save for <strong>xmlns</strong></li> <li>My top level page is now included, although the <code>changefreq</code> is admittedly wishful thinking on my part :)</li> <li>The <code>changefreq</code> and <code>priority</code> elements for my pages and posts may be omitted, as those elements now have fallback values.</li> </ul> <div class="highlight"><pre><code class="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+</code></pre></div> <h2>Current Configuration</h2> <p>For my current implementation, I made the following changes:</p> <ul> <li>The <code>urlset</code> is much more terse as I stripped away all the attributes, save for <strong>xmlns</strong></li> <li>All posts and pages are added to the sitemap, unless they’ve been explicitly set to be unpublished and excluded, respectively</li> <li>The <code>changefreq</code> and <code>priority</code> elements for pages and posts may be omitted, as those elements now have fallback values.</li> </ul> <div class="highlight"><pre><code class="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;urlset</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;url&gt;</span>
-    <span class="nt">&lt;loc&gt;</span>{{ site.url }}/<span class="nt">&lt;/loc&gt;</span>
-    <span class="nt">&lt;lastmod&gt;</span>{{ site.time | date_to_xmlschema }}<span class="nt">&lt;/lastmod&gt;</span>
-    <span class="nt">&lt;changefreq&gt;</span>weekly<span class="nt">&lt;/changefreq&gt;</span>
-    <span class="nt">&lt;priority&gt;</span>1.0<span class="nt">&lt;/priority&gt;</span>
-  <span class="nt">&lt;/url&gt;</span>
   {% for post in site.posts %}
+    {% unless post.published == false %}
     <span class="nt">&lt;url&gt;</span>
       <span class="nt">&lt;loc&gt;</span>{{ site.url }}{{ post.url }}<span class="nt">&lt;/loc&gt;</span>
       {% if post.sitemap.lastmod %}
@@ -52,32 +47,36 @@
         <span class="nt">&lt;priority&gt;</span>0.5<span class="nt">&lt;/priority&gt;</span>
       {% endif %}
     <span class="nt">&lt;/url&gt;</span>
+    {% endunless %}
   {% endfor %}
   {% for page in site.pages %}
-  <span class="nt">&lt;url&gt;</span>
-    <span class="nt">&lt;loc&gt;</span>{{ site.url }}{{ page.url }}<span class="nt">&lt;/loc&gt;</span>
-    {% if page.sitemap.lastmod %}
-      <span class="nt">&lt;lastmod&gt;</span>{{ page.sitemap.lastmod | date: &quot;%Y-%m-%d&quot; }}<span class="nt">&lt;/lastmod&gt;</span>
-    {% elsif page.date %}
-      <span class="nt">&lt;lastmod&gt;</span>{{ page.date | date_to_xmlschema }}<span class="nt">&lt;/lastmod&gt;</span>
-    {% else %}
-      <span class="nt">&lt;lastmod&gt;</span>{{ site.time | date_to_xmlschema }}<span class="nt">&lt;/lastmod&gt;</span>
-    {% endif %}
-    {% if page.sitemap.changefreq %}
-      <span class="nt">&lt;changefreq&gt;</span>{{ page.sitemap.changefreq }}<span class="nt">&lt;/changefreq&gt;</span>
-    {% else %}
-      <span class="nt">&lt;changefreq&gt;</span>monthly<span class="nt">&lt;/changefreq&gt;</span>
-    {% endif %}
-    {% if page.sitemap.priority %}
-      <span class="nt">&lt;priority&gt;</span>{{ page.sitemap.priority }}<span class="nt">&lt;/priority&gt;</span>
-    {% else %}
-      <span class="nt">&lt;priority&gt;</span>0.3<span class="nt">&lt;/priority&gt;</span>
-    {% endif %}
-  <span class="nt">&lt;/url&gt;</span>
+    {% unless page.sitemap.exclude == &quot;yes&quot; %}
+    <span class="nt">&lt;url&gt;</span>
+      <span class="nt">&lt;loc&gt;</span>{{ site.url }}{{ page.url | remove: &quot;index.html&quot; }}<span class="nt">&lt;/loc&gt;</span>
+      {% if page.sitemap.lastmod %}
+        <span class="nt">&lt;lastmod&gt;</span>{{ page.sitemap.lastmod | date: &quot;%Y-%m-%d&quot; }}<span class="nt">&lt;/lastmod&gt;</span>
+      {% elsif page.date %}
+        <span class="nt">&lt;lastmod&gt;</span>{{ page.date | date_to_xmlschema }}<span class="nt">&lt;/lastmod&gt;</span>
+      {% else %}
+        <span class="nt">&lt;lastmod&gt;</span>{{ site.time | date_to_xmlschema }}<span class="nt">&lt;/lastmod&gt;</span>
+      {% endif %}
+      {% if page.sitemap.changefreq %}
+        <span class="nt">&lt;changefreq&gt;</span>{{ page.sitemap.changefreq }}<span class="nt">&lt;/changefreq&gt;</span>
+      {% else %}
+        <span class="nt">&lt;changefreq&gt;</span>monthly<span class="nt">&lt;/changefreq&gt;</span>
+      {% endif %}
+      {% if page.sitemap.priority %}
+        <span class="nt">&lt;priority&gt;</span>{{ page.sitemap.priority }}<span class="nt">&lt;/priority&gt;</span>
+      {% else %}
+        <span class="nt">&lt;priority&gt;</span>0.3<span class="nt">&lt;/priority&gt;</span>
+      {% endif %}
+    <span class="nt">&lt;/url&gt;</span>
+    {% endunless %}
   {% endfor %}
 <span class="nt">&lt;/urlset&gt;</span>
 </code></pre></div> <h2>Front Matter</h2> <p>I can now add the following variables, all of which are optional, to the front matter of my posts and pages:</p> <div class="highlight"><pre><code class="yaml"><span class="l-Scalar-Plain">sitemap</span><span class="p-Indicator">:</span>
   <span class="l-Scalar-Plain">lastmod</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2014-01-23</span>
   <span class="l-Scalar-Plain">priority</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">0.7</span>
   <span class="l-Scalar-Plain">changefreq</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">monthly</span>
+  <span class="l-Scalar-Plain">exclude</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">yes</span>
 </code></pre></div> <p>As you can see, the changes I made are simple, but put together they make for a much more flexible implementation.</p> <div class="gray-box"> <p><strong>More Info:</strong> Visit the official <a href="http://www.sitemaps.org/">sitemaps.org</a> to learn more about the protocol.</p> </div> </div> <footer class="entry-meta entry-meta-footer"> <div class="entry-meta-suggested-tweet"> <h3 class="suggested-tweet-title">Spread the Word</h3> <a href="https://twitter.com/intent/tweet?hashtags=Jekyll%2Cjekyllrb%2CSitemap&related=jekyllrb&text=Building+a+Better+Sitemap.xml+with+Jekyll+by+%40DavidEnsinger&url=http%3A%2F%2Fdavidensinger.com%2F2013%2F11%2Fbuilding-a-better-sitemap-xml-with-jekyll%2F" class="suggested-tweet-bubble"> <span class="suggested-tweet-text">Building a Better Sitemap.xml with Jekyll by @DavidEnsinger</span> <span class="suggested-tweet-hashtag">#Jekyll</span> <span class="suggested-tweet-hashtag">#jekyllrb</span> <span class="suggested-tweet-hashtag">#Sitemap</span> </a> <p class="suggested-tweet-link"><a href="https://twitter.com/intent/tweet?hashtags=Jekyll%2Cjekyllrb%2CSitemap&related=jekyllrb&text=Building+a+Better+Sitemap.xml+with+Jekyll+by+%40DavidEnsinger&url=http%3A%2F%2Fdavidensinger.com%2F2013%2F11%2Fbuilding-a-better-sitemap-xml-with-jekyll%2F" class="icon-left icon-twitter">Click to Tweet</a> <small>(you may edit before posting.)</small></p> </div> <div class="entry-meta-footer-bottom"> <span class="icon-left entry-meta-icon icon-tag"> <a class="nav-link-tag" href="/tag/jekyll" rel="tag">Jekyll</a>, <a class="nav-link-tag" href="/tag/sitemap" rel="tag">Sitemap</a>, <a class="nav-link-tag" href="/tag/xml" rel="tag">XML</a> </span> <span class="icon-left entry-meta-icon icon-category"> <a class="nav-link-category" href="/category/development" rel="category">Development</a> </span> </div> </footer> </article> <nav class="post-navigation" role="navigation"> <h1 class="visuallyhidden">Post navigation</h1> <div class="nav-previous"> <a class="nav-previous-link" href="http://davidensinger.com/2013/09/suggested-tweet-plugin-for-jekyll/" rel="prev">Suggested Tweet Plugin for Jekyll</a> </div> <div class="nav-next"> <a class="nav-next-link" href="http://davidensinger.com/2013/12/quick-mobile-testing-tips-and-tricks/" rel="next">Quick Mobile Testing Tips and Tricks</a> </div> </nav> </div> <aside class="secondary vcard author" role="complementary"> <img alt="A photo of David Ensinger" class="secondary-photo photo" src="/assets/img/david-ensinger.jpg"> <p>Hi, I’m <strong class="fn">David Ensinger</strong> and I’m a <strong>Front End Developer</strong>. Learn more <a href="/about/" class="url">about me</a>.</p> <p>Have a look around and please don’t hesitate to <a href="mailto:hello@davidensinger.com" class="email">contact me</a> with any comments, questions, or just to say hello!</p> <a class="icon-left icon-twitter" href="https://twitter.com/intent/user?screen_name=DavidEnsinger" title="Follow @DavidEnsinger on Twitter">Follow me on Twitter</a> </aside> </div> <footer class="site-footer" role="contentinfo"> <ul class="footer-icons"> <li class="footer-icon-item"> <a class="footer-icon-anchor footer-icon icon-twitter" href="http://twitter.com/DavidEnsinger" title="Follow me on Twitter"> <span class="footer-icon-title">Twitter</span> </a> </li> <li class="footer-icon-item"> <a class="footer-icon-anchor footer-icon icon-github" href="http://github.com/davidensinger" title="Follow me on GitHub"> <span class="footer-icon-title">GitHub</span> </a> </li> <li class="footer-icon-item"> <a class="footer-icon-anchor footer-icon icon-tumblr" href="http://www.republicofthespirit.com/" title="Follow me on Tumblr"> <span class="footer-icon-title">Tumblr</span> </a> </li> </ul> <p> &copy; 2014 David Ensinger. All rights reserved. <a class="link-rss" href="/atom.xml" title="Subscribe to my RSS feed"> <span aria-hidden="true" class="icon-blank"></span> <span aria-hidden="true" class="icon-rss"></span> <span class="visuallyhidden">RSS Feed</span> </a> </p> </footer> </div> <script>var _gaq=[["_setAccount","UA-26697016-1"],["_trackPageview"],["_trackPageLoadTime"]];(function(e,a){var c=e.createElement(a),b=e.getElementsByTagName(a)[0];c.async=1;c.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";b.parentNode.insertBefore(c,b)}(document,"script"));</script> </body> </html>
