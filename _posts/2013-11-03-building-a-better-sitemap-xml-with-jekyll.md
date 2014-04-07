@@ -120,7 +120,7 @@ sitemap:
   lastmod: 2014-01-23
   priority: 0.7
   changefreq: monthly
-  exclude: yes
+  exclude: 'yes'
 {% endhighlight %}
 
 As you can see, the changes I made are simple, but put together they make for a much more flexible implementation.
