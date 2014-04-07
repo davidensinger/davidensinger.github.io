@@ -53,20 +53,15 @@ In an earlier post, [Generating a Sitemap in Jekyll without a Plugin](http://dav
 For my current implementation, I made the following changes:
 
 - The `urlset` is much more terse as I stripped away all the attributes, save for **xmlns**
-- My top level page is now included, although the `changefreq` is admittedly wishful thinking on my part :)
-- The `changefreq` and `priority` elements for my pages and posts may be omitted, as those elements now have fallback values.
+- All posts and pages are added to the sitemap, unless they’ve been explicitly set to be unpublished and excluded, respectively
+- The `changefreq` and `priority` elements for pages and posts may be omitted, as those elements now have fallback values.
 
 {% highlight xml %}
 {% raw %}
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>{{ site.url }}/</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
   {% for post in site.posts %}
+    {% unless post.published == false %}
     <url>
       <loc>{{ site.url }}{{ post.url }}</loc>
       {% if post.sitemap.lastmod %}
@@ -87,31 +82,33 @@ For my current implementation, I made the following changes:
         <priority>0.5</priority>
       {% endif %}
     </url>
+    {% endunless %}
   {% endfor %}
   {% for page in site.pages %}
-  <url>
-    <loc>{{ site.url }}{{ page.url }}</loc>
-    {% if page.sitemap.lastmod %}
-      <lastmod>{{ page.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
-    {% elsif page.date %}
-      <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
-    {% else %}
-      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
-    {% endif %}
-    {% if page.sitemap.changefreq %}
-      <changefreq>{{ page.sitemap.changefreq }}</changefreq>
-    {% else %}
-      <changefreq>monthly</changefreq>
-    {% endif %}
-    {% if page.sitemap.priority %}
-      <priority>{{ page.sitemap.priority }}</priority>
-    {% else %}
-      <priority>0.3</priority>
-    {% endif %}
-  </url>
+    {% unless page.sitemap.exclude == "yes" %}
+    <url>
+      <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>
+      {% if page.sitemap.lastmod %}
+        <lastmod>{{ page.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
+      {% elsif page.date %}
+        <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+      {% else %}
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      {% endif %}
+      {% if page.sitemap.changefreq %}
+        <changefreq>{{ page.sitemap.changefreq }}</changefreq>
+      {% else %}
+        <changefreq>monthly</changefreq>
+      {% endif %}
+      {% if page.sitemap.priority %}
+        <priority>{{ page.sitemap.priority }}</priority>
+      {% else %}
+        <priority>0.3</priority>
+      {% endif %}
+    </url>
+    {% endunless %}
   {% endfor %}
 </urlset>
-
 {% endraw %}
 {% endhighlight %}
 
@@ -123,6 +120,7 @@ sitemap:
   lastmod: 2014-01-23
   priority: 0.7
   changefreq: monthly
+  exclude: yes
 {% endhighlight %}
 
 As you can see, the changes I made are simple, but put together they make for a much more flexible implementation.
