@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Posts Tagged “Namecheap” – Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/tag/namecheap/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2014-04-20T12:08:28Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2014 David Ensinger. All rights reserved.</rights><entry><title type="text">Transferring the DNS from Namecheap to CloudFlare for GitHub Pages</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages/"/><id>http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages</id><published>2014-04-19T12:42:00Z</published><updated>2014-04-19T12:42:00Z</updated><content type="html"><![CDATA[ <p>A couple weeks ago <a href="https://twitter.com/rose_ian">@rose_ian</a> reached out to let me know that our websites, which have the identical setup, were suffering from slow initial connection times. With some legwork Ian figured out how to markedly reduce the load time for his site by hosting his DNS with <a href="https://www.cloudflare.com/">CloudFlare</a>. What follows are the steps I took to understand the issue and make the switch to CloudFlare. I’d like to give a big thanks to Ian for his initial efforts.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Posts Tagged “CloudFlare” – Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/tag/cloudflare/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2014-04-20T12:08:28Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2014 David Ensinger. All rights reserved.</rights><entry><title type="text">Transferring the DNS from Namecheap to CloudFlare for GitHub Pages</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages/"/><id>http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages</id><published>2014-04-19T12:42:00Z</published><updated>2014-04-19T12:42:00Z</updated><content type="html"><![CDATA[ <p>A couple weeks ago <a href="https://twitter.com/rose_ian">@rose_ian</a> reached out to let me know that our websites, which have the identical setup, were suffering from slow initial connection times. With some legwork Ian figured out how to markedly reduce the load time for his site by hosting his DNS with <a href="https://www.cloudflare.com/">CloudFlare</a>. What follows are the steps I took to understand the issue and make the switch to CloudFlare. I’d like to give a big thanks to Ian for his initial efforts.</p>
 
 <div class="yellow-box">
   <p><strong>Hat Tip:</strong> <a href="http://ianrose.me/blog/2014/03/30/permanent-rediect-github-project-page/">Permanent Redirect GitHub Project Page to Custom Domain</a> by <a href="https://twitter.com/rose_ian">@rose_ian</a></p>
@@ -77,52 +77,6 @@
 
 <div class="gray-box">
   <p><strong>More Info:</strong> DNSimple has a good write up about the <a href="http://support.dnsimple.com/articles/differences-between-a-cname-alias-url/">Differences between the A, CNAME, ALIAS and URL records</a>.</p>
-</div>
-
- ]]></content></entry><entry><title type="text">Setting the DNS for GitHub Pages on Namecheap</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/"/><id>http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap</id><published>2013-03-27T16:05:00Z</published><updated>2013-03-27T16:05:00Z</updated><content type="html"><![CDATA[ <p>After pushing my site to <strong>GitHub</strong> and verifying that it worked at <a href="http://davidensinger.github.io/">davidensinger.github.io</a>, I then went to set up my custom domain name. The <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">documentation</a> provided by GitHub is clear on the subject, but I still managed to forget about my subdomains. For more than eight hours, anyone who attempted to visit <a href="http://davidensinger.com/">davidensinger.com</a> was served with a 404, which is <a href="https://twitter.com/DavidEnsinger/status/316642135216619522">rather embarrassing</a> for one who makes a living as a developer.</p>
-
-<p>In the interest of helping others avoid the mistakes I made, here’s a guide to setting up the DNS for GitHub pages on <a href="http://www.namecheap.com/?aff=32887">Namecheap</a>, my registrar of choice.</p>
-
-<div class="yellow-box">
-  <p><strong>Please Note:</strong> This guide has been updated on January 7th, 2014 with new settings to support <a href="https://github.com/blog/1715-faster-more-awesome-github-pages">Faster, More Awesome GitHub Pages</a>. Be aware that Namecheap DNS doesn’t seem to support an <strong>ALIAS</strong> record for the APEX domain, so we’ll need to use two <strong>A</strong> records for our DNS, per the instructions in the <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">Setting up a custom domain with Pages</a>. This will not allow us to use the content delivery network, but will still help protect the site against denial of service attacks.</p>
-</div>
-
-
-
-
-<div class="red-box">
-  <p><strong>Also:</strong> This guide assumes that you’re using an APEX domain.</p>
-</div>
-
-
-<h2>Add a CNAME File to your Repo</h2>
-
-<p>Create a new file and put your domain name in it. Save it as CNAME.</p>
-
-<pre><code>yourtlddomainname.com
-</code></pre>
-
-<h2>Find your Host Records</h2>
-
-<p><img src="/assets/img/posts/2013-03-27-namecheap-all-host-records.png" alt="Image of All Host Records" class="media-right img-border" /></p>
-
-<p>Log into your Namecheap account, select the appropriate domain name, and then go to <strong>All Host Records</strong>.</p>
-
-<h2>Set up the DNS</h2>
-
-<ol>
-<li>Set the <strong>@</strong> (used to denote the domain name for which you’re configuring the DNS) <strong>IP Address/URL</strong> to <code>192.30.252.153</code> and the <strong>Record Type</strong> to <code>A (Address)</code> with a <strong>TTL</strong> (an acronym for <strong>Time To Live</strong> that refers to the capability of the DNS servers to cache DNS records) of <code>1800</code>.</li>
-<li>Set the <strong>www</strong> (the subdomain www) <strong>IP Address/URL</strong> to <code>username.github.io.</code> (with trailing period) and the <strong>Record Type</strong> to <code>CNAME (Alias)</code> with a <strong>TTL</strong> of <code>1800</code>.</li>
-<li>In <strong>SUB-DOMAIN SETTINGS</strong>, add an <code>@</code> in the first field, and duplicate the settings in Step 1, save for the <strong>IP Address/URL</strong>, which should be <code>192.30.252.154</code>.</li>
-</ol>
-
-
-<p><img src="/assets/img/posts/2014-01-07-namecheap-dns-settings.png" alt="Image of DNS settings" class="media-center img-border" /></p>
-
-<p>Save and then you’re all set! Please note, however that it may take some time for the changes to the DNS to propagate.</p>
-
-<div class="gray-box">
-  <p><strong>More Info:</strong> Google has a pretty good <a href="http://support.google.com/a/bin/answer.py?hl=en&answer=48090">Basic Guide to DNS</a>.</p>
 </div>
 
  ]]></content></entry></feed>
