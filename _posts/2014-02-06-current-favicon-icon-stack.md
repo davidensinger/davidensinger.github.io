@@ -2,7 +2,7 @@
 date: 2014-02-06 15:00:00
 layout: post
 title: Current Favicon Icon Stack
-description: A quick code snippet of the favicon icon stack I’ve been lately using with some recommended tools and resources as well.
+description: My current favicon icon stack with recommended tools and resources too.
 categories: [Development]
 tags: [Favicon]
 suggested_tweet:
