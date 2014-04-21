@@ -4,5 +4,5 @@
   <id>{{ site.url }}{{ post.id }}</id>
   <published>{{ post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}</published>
   <updated>{{ post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}</updated>
-  <content type="html"><![CDATA[ {{ post.content }} ]]></content>
+  <content type="html"><![CDATA[ {{ post.content }} {% include feed-footer.html %} ]]></content>
 </entry>
