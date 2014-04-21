@@ -3,6 +3,7 @@ date: 2014-04-19 16:42:00
 layout: post
 title: Transferring the DNS from Namecheap to CloudFlare for GitHub Pages
 description: Speed up your site by taking advantage of CloudFlare’s CNAME Flattening.
+image: 2014-04-19-current-webpagetest-waterfall.png
 categories: [Development]
 tags: [CloudFlare, DNS, Namecheap]
 suggested_tweet:

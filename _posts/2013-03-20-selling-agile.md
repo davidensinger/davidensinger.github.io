@@ -3,7 +3,7 @@ date: 2013-03-20 22:58:00
 layout: post
 title: Selling Agile
 description: Thoughts on generating buy in for Agile development techniques in an organization.
-category: Development
+categories: [Development]
 tags: [Agile]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/03/selling-agile/'

@@ -3,7 +3,7 @@ date: 2013-03-21 18:24:00
 layout: post
 title: Using Rems with Sass
 description: An argument for using a Sass mixin with pixel fallback to easily implement rems.
-category: Development
+categories: [Development]
 tags: [Mixin, Rem, Sass]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/03/using-rems-with-sass/'
