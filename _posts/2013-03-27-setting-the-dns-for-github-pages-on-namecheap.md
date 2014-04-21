@@ -37,7 +37,7 @@ Create a new file and put your domain name in it. Save it as CNAME.
 
 ## Find your Host Records
 
-<img src="/assets/img/posts/2013-03-27-namecheap-all-host-records.png" alt="Image of All Host Records" class="media-right img-border" />
+<img src="{{ site.url }}/assets/img/posts/2013-03-27-namecheap-all-host-records.png" alt="Image of All Host Records" class="media-right img-border" />
 
 Log into your Namecheap account, select the appropriate domain name, and then go to **All Host Records**.
 
@@ -47,7 +47,7 @@ Log into your Namecheap account, select the appropriate domain name, and then go
 2. Set the **www** (the subdomain www) **IP Address/URL** to `username.github.io.` (with trailing period) and the **Record Type** to `CNAME (Alias)` with a **TTL** of `1800`.
 3. In **SUB-DOMAIN SETTINGS**, add an `@` in the first field, and duplicate the settings in Step 1, save for the **IP Address/URL**, which should be `192.30.252.154`.
 
-<img src="/assets/img/posts/2014-01-07-namecheap-dns-settings.png" alt="Image of DNS settings" class="media-center img-border" />
+<img src="{{ site.url }}/assets/img/posts/2014-01-07-namecheap-dns-settings.png" alt="Image of DNS settings" class="media-center img-border" />
 
 Save and then you’re all set! Please note, however that it may take some time for the changes to the DNS to propagate.
 
