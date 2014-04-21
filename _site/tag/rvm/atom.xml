@@ -1,24 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Posts Tagged “RVM” – Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/tag/rvm/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2014-04-21T15:29:51Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2014 David Ensinger. All rights reserved.</rights><entry><title type="text">Installing Jekyll</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/03/installing-jekyll/"/><id>http://davidensinger.com/2013/03/installing-jekyll</id><published>2013-03-19T18:55:00Z</published><updated>2013-03-19T18:55:00Z</updated><content type="html"><![CDATA[ <p>After much deliberation, I decided to simplify my blogging workflow. To that end I made the switch from <strong>WordPress to Jekyll</strong>, which is ”a simple, blog aware, static site generator.” Although Jekyll is easy to maintain, it can be confusing to set up, especially for one with a dearth of experience with Ruby.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Posts Tagged “RVM” – Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/tag/rvm/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2014-04-21T19:39:25Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2014 David Ensinger. All rights reserved.</rights><entry><title type="text">Installing Jekyll</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/03/installing-jekyll/"/><id>http://davidensinger.com/2013/03/installing-jekyll</id><published>2013-03-19T18:55:00Z</published><updated>2013-03-19T18:55:00Z</updated><content type="html"><![CDATA[ <p>After much deliberation, I decided to simplify my blogging workflow. To that end I made the switch from <strong>WordPress to Jekyll</strong>, which is ”a simple, blog aware, static site generator.” Although Jekyll is easy to maintain, it can be confusing to set up. Thankfully, there is a wealth of documentation available from developers who have also made the switch. With that in mind, I’d like to contribute my experience with installing <strong>Jekyll on OS X</strong>.</p>
 
-<p>Thankfully, there is a wealth of documentation available from developers who have also made the switch. With that in mind, I’d like to contribute my experience with installing <strong>Jekyll on OS X Mountain Lion 10.8.3</strong>.</p>
+<div class="yellow-box">
+  <p><strong>Please Note:</strong> This post has been updated on March 21st, 2014, but it is still more than a year old, so it may be inaccurate in parts. Proceed with caution.</p>
+</div>
+
 
 <h2>Getting Started</h2>
 
-<p>The consensus on the internet is to first install <a href="http://developer.apple.com/xcode/">Xcode</a>, which I had (thankfully) already installed (all 1.65 GB of it). Xcode is readily available from the <a href="http://itunes.apple.com/us/app/xcode/id497799835?ls=1&amp;mt=12">App Store</a>, although it does take a bit of time to download and install.</p>
+<p>The consensus on the internet is to first install <a href="http://developer.apple.com/xcode/">Xcode</a>, which is available from the <a href="http://itunes.apple.com/us/app/xcode/id497799835?ls=1&amp;mt=12">App Store</a>. It will take a bit of time to download and install.</p>
 
-<p>Once you’ve installed Xcode, the next step is to download <strong>Command Line Tools</strong>, which is available through the <strong>Download</strong> tab of the the <strong>Xcode Preferences</strong>. It is through the command line that you&rsquo;ll be installing Jekyll.</p>
+<p>Once you’ve installed Xcode, the next step is to install <a href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/">Command Line Tools</a>, which is available via the command line (naturally). Open up <strong>Terminal</strong> (or <a href="http://www.iterm2.com/#/section/home">iTerm2</a>) and enter the following:</p>
 
-<p>After installing the Command Line Tools, open up <strong>Terminal</strong> (or the console of your choice) and install <a href="http://mxcl.github.com/homebrew/">Homebrew</a>, which will make downloading and installing Unix software packages on OS X much easier than without.</p>
-
-<pre><code>ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+<pre><code>xcode-select --install
 </code></pre>
 
-<p>The next step is to install <a href="https://rvm.io">RVM</a>, which is an acronym for <strong>Ruby Version Manager</strong>. With this you’ll be able to better manage different versions and implementations of Ruby on your computer.</p>
+<p>After installing the Command Line Tools, install <a href="http://brew.sh/">Homebrew</a>, which is the missing package manager for OS X:</p>
 
-<pre><code>\curl -#L https://get.rvm.io | bash -s stable --ruby
+<pre><code>ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 </code></pre>
 
-<p>I had some difficulty installing Ruby from RVM, which was due to missing dependencies. To remedy this I had to find the missing packages:</p>
+<p>The next step is to install <a href="https://rvm.io">RVM</a> to help manage different versions of Ruby (although you won’t necessarily need to switch between versions):</p>
+
+<pre><code>\curl -sSL https://get.rvm.io | bash -s stable
+</code></pre>
+
+<p>I had some difficulty installing Ruby from RVM, due to some missing dependencies. To fix this I had to find the missing packages:</p>
 
 <pre><code>rvm requirements
 </code></pre>
@@ -35,12 +41,12 @@
 <pre><code>brew install (and then the list of missing packages)
 </code></pre>
 
-<p>And then I was able to install Ruby 2.0.0:</p>
+<p>And then I was able to install Ruby 2.1.1:</p>
 
-<pre><code>rvm install 2.0.0
+<pre><code>rvm install 2.1.1
 </code></pre>
 
-<p>Which finally allowed me <a href="https://github.com/mojombo/jekyll/wiki/Install">to install Jekyll</a>:</p>
+<p>Which finally allowed me <a href="http://jekyllrb.com/docs/installation/">to install Jekyll</a>:</p>
 
 <pre><code>gem install jekyll
 </code></pre>
