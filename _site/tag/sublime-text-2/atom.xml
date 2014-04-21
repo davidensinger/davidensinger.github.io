@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Posts Tagged “Sublime Text 2” – Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/tag/sublime-text-2/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2014-04-20T22:06:20Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2014 David Ensinger. All rights reserved.</rights><entry><title type="text">Why I use EditorConfig</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/why-i-use-editorconfig/"/><id>http://davidensinger.com/2013/07/why-i-use-editorconfig</id><published>2013-07-16T06:12:00Z</published><updated>2013-07-16T06:12:00Z</updated><content type="html"><![CDATA[ <p>Have you ever found yourself switching between projects with vastly different <a href="http://en.wikipedia.org/wiki/Programming_style">coding styles</a> or (gasp!) no consistent style at all? Most editors and IDEs allow for settings at both the user and project level, but neither of those options are ideal. Often there isn’t a settings file for the project and even if there were, it’s probably for an editor that you don’t use. The only other option is to have the editor auto-detect the settings, but that’s far from perfect.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Posts Tagged “Sublime Text 2” – Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/tag/sublime-text-2/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2014-04-21T14:38:36Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2014 David Ensinger. All rights reserved.</rights><entry><title type="text">Why I use EditorConfig</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/why-i-use-editorconfig/"/><id>http://davidensinger.com/2013/07/why-i-use-editorconfig</id><published>2013-07-16T06:12:00Z</published><updated>2013-07-16T06:12:00Z</updated><content type="html"><![CDATA[ <p>Have you ever found yourself switching between projects with vastly different <a href="http://en.wikipedia.org/wiki/Programming_style">coding styles</a> or (gasp!) no consistent style at all? Most editors and IDEs allow for settings at both the user and project level, but neither of those options are ideal. Often there isn’t a settings file for the project and even if there were, it’s probably for an editor that you don’t use. The only other option is to have the editor auto-detect the settings, but that’s far from perfect.</p>
 
 <h2>Enter EditorConfig</h2>
 
@@ -63,11 +63,15 @@
 <p>There are plugins available for a host of editors and IDEs, although there are unfortunately some notable exceptions. I’m glad that my preferred editor, Sublime Text 2, <a href="https://github.com/sindresorhus/editorconfig-sublime">is supported</a>. It will be a glorious day in development land when there’s universal support for EditorConfig.</p>
 
 <p>It’s 2013, so why are we still debating tabs versus spaces?! Set a standard and stick with it.</p>
+ <br>
+<hr>
+<p>You’ve just read about <strong><a href="http://davidensinger.com/2013/07/why-i-use-editorconfig/">Why I use EditorConfig</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
+<p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
  ]]></content></entry><entry><title type="text">Getting Started with Sublime Text 2</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/05/getting-started-with-sublime-text-2/"/><id>http://davidensinger.com/2013/05/getting-started-with-sublime-text-2</id><published>2013-05-14T12:12:00Z</published><updated>2013-05-14T12:12:00Z</updated><content type="html"><![CDATA[ <p>Although I switched to <a href="http://www.sublimetext.com/">Sublime Text 2</a> more than a year ago, I only recently decided to take a good look at my configuration, with the end goal of increasing my productivity. What follows are my settings, which will hopefully help others work a bit smarter. If you’ve got any useful tips, please <a href="https://twitter.com/davidensinger">tweet</a> at me!</p>
 
 <h2>Hide Files and Folders</h2>
 
-<p>It’s often helpful to hide folders so they’re not found when searching or using the <strong>Go to File</strong> shortcut (<strong>⌘ + T</strong>). Add the following line to your User Preferences (<strong>Preferences › Settings - User</strong> or <strong>⌘,</strong>) to do so:</p>
+<p>It’s often helpful to hide folders so they’re not found when searching or using the <strong>Go to File</strong> shortcut (<strong>⌘ + T</strong>). Add the following line to your User Preferences (<strong>Preferences › Settings &ndash; User</strong> or <strong>⌘,</strong>) to do so:</p>
 
 <div class="highlight"><pre><code class="json"><span class="s2">&quot;folder_exclude_patterns&quot;</span><span class="err">:</span> <span class="p">[</span><span class="s2">&quot;.git&quot;</span><span class="p">,</span> <span class="s2">&quot;.svn&quot;</span><span class="p">,</span> <span class="s2">&quot;.sass-cache&quot;</span><span class="p">]</span>
 </code></pre></div>
@@ -81,7 +85,7 @@
 
 <h2>Open Files as Tabs</h2>
 
-<p>The default behavior is to open a file in a new window. If you&rsquo;d prefer tabs, add this line to your User Preferences (<strong>Preferences › Settings - User</strong> or <strong>⌘,</strong>):</p>
+<p>The default behavior is to open a file in a new window. If you&rsquo;d prefer tabs, add this line to your User Preferences (<strong>Preferences › Settings &ndash; User</strong> or <strong>⌘,</strong>):</p>
 
 <div class="highlight"><pre><code class="json"><span class="s2">&quot;open_files_in_new_window&quot;</span><span class="err">:</span> <span class="kc">false</span>
 </code></pre></div>
@@ -89,7 +93,7 @@
 
 <h2>Close Windows when Empty</h2>
 
-<p>To close the window when there are only empty tabs, add this line to your User Preferences (<strong>Preferences › Settings - User</strong> or <strong>⌘,</strong>):</p>
+<p>To close the window when there are only empty tabs, add this line to your User Preferences (<strong>Preferences › Settings &ndash; User</strong> or <strong>⌘,</strong>):</p>
 
 <div class="highlight"><pre><code class="json"><span class="s2">&quot;close_windows_when_empty&quot;</span><span class="err">:</span> <span class="kc">true</span><span class="err">,</span>
 </code></pre></div>
@@ -101,7 +105,7 @@
 
 <p>To adjust your indentation to match the context in which it’s pasted, use “Paste and Indent” for <strong>⌘V</strong> instead of the standard “Paste.”</p>
 
-<p>To do this, add the following in your <strong>Key Bindings - User file</strong>:</p>
+<p>To do this, add the following in your <strong>Key Bindings &ndash; User file</strong>:</p>
 
 <div class="highlight"><pre><code class="json"><span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;super+v&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;paste_and_indent&quot;</span> <span class="p">}</span><span class="err">,</span>
 <span class="p">{</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;super+shift+v&quot;</span><span class="p">],</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;paste&quot;</span> <span class="p">}</span>
@@ -113,11 +117,11 @@
 <p>There are a lot of really useful keyboard shortcuts in Sublime Text 2. Instead of listing them all, I’m going to list some favorites. With a quick search of the internet you’ll surely find more to integrate into your workflow.</p>
 
 <ul>
-<li><strong>⌘L</strong> - Select line</li>
-<li><strong>⌘D</strong> - Select word (use this to select other occurrences, which is great for multiple editing)</li>
-<li><strong>⌘P</strong> - Goto anything (use <strong>#</strong> to search within file and <strong>:</strong> to go to a line number)</li>
-<li><strong>⌘⌃G</strong> - Select all occurrences of current word (again, helpful for multiple editing)</li>
-<li><strong>⌃⌘↑ (up) or ↓(down)</strong> - Swap lines either up or down</li>
+<li><strong>⌘L</strong> &ndash; Select line</li>
+<li><strong>⌘D</strong> &ndash; Select word (use this to select other occurrences, which is great for multiple editing)</li>
+<li><strong>⌘P</strong> &ndash; Goto anything (use <strong>#</strong> to search within file and <strong>:</strong> to go to a line number)</li>
+<li><strong>⌘⌃G</strong> &ndash; Select all occurrences of current word (again, helpful for multiple editing)</li>
+<li><strong>⌃⌘↑ (up) or ↓(down)</strong> &ndash; Swap lines either up or down</li>
 </ul>
 
 
@@ -145,17 +149,17 @@
 <h3>Favorite Packages</h3>
 
 <ul>
-<li><a href="https://sublime.wbond.net/packages/All%20Autocomplete">All Autocomplete</a> - Allows autocompletion across open files</li>
-<li><a href="https://sublime.wbond.net/packages/Color%20Highlighter">Color Highlighter</a> - Underlays selected hexadecimal color codes (like &ldquo;#FFFFFF&rdquo;, &ldquo;rgb(255,255,255)&rdquo;, &ldquo;white&rdquo;, etc.) with their real color</li>
-<li><a href="https://sublime.wbond.net/packages/CSS%20Color%20Converter">CSS Color Converter</a> - Convert hex to rgb to back</li>
-<li><a href="https://sublime.wbond.net/packages/EditorConfig">EditorConfig</a> - <a href="http://editorconfig.org/">Editor Config</a> helps define and maintain consistent coding styles between different editors and IDEs</li>
-<li><a href="https://sublime.wbond.net/packages/HTML-CSS-JS%20Prettify">HTML-CSS-JS Prettify</a> - HTML, CSS, JavaScript and JSON code formatter via node.js</li>
-<li><a href="https://sublime.wbond.net/packages/LESS">LESS</a> - LESS syntax highlighting</li>
-<li><a href="https://sublime.wbond.net/packages/Modific">Modific</a> - Highlight lines changed since the last commit</li>
-<li><a href="https://sublime.wbond.net/packages/SideBarEnhancements">SideBarEnhancements</a> - Adds useful file operations to the sidebar, such as “New file”, “New folder”, etc</li>
-<li><a href="https://sublime.wbond.net/packages/SublimeLinter">SublimeLinter</a> - Lint code as you type</li>
-<li><a href="https://sublime.wbond.net/packages/Syntax%20Highlighting%20for%20Sass">Syntax Highlighting for Sass</a> - Sass syntax highlighting</li>
-<li><a href="https://sublime.wbond.net/packages/TrailingSpaces">TrailingSpaces</a> - Strips trailing whitespace from files</li>
+<li><a href="https://sublime.wbond.net/packages/All%20Autocomplete">All Autocomplete</a> &ndash; Allows autocompletion across open files</li>
+<li><a href="https://sublime.wbond.net/packages/Color%20Highlighter">Color Highlighter</a> &ndash; Underlays selected hexadecimal color codes (like &ldquo;#FFFFFF&rdquo;, &ldquo;rgb(255,255,255)&rdquo;, &ldquo;white&rdquo;, etc.) with their real color</li>
+<li><a href="https://sublime.wbond.net/packages/CSS%20Color%20Converter">CSS Color Converter</a> &ndash; Convert hex to rgb to back</li>
+<li><a href="https://sublime.wbond.net/packages/EditorConfig">EditorConfig</a> &ndash; <a href="http://editorconfig.org/">Editor Config</a> helps define and maintain consistent coding styles between different editors and IDEs</li>
+<li><a href="https://sublime.wbond.net/packages/HTML-CSS-JS%20Prettify">HTML-CSS-JS Prettify</a> &ndash; HTML, CSS, JavaScript and JSON code formatter via node.js</li>
+<li><a href="https://sublime.wbond.net/packages/LESS">LESS</a> &ndash; LESS syntax highlighting</li>
+<li><a href="https://sublime.wbond.net/packages/Modific">Modific</a> &ndash; Highlight lines changed since the last commit</li>
+<li><a href="https://sublime.wbond.net/packages/SideBarEnhancements">SideBarEnhancements</a> &ndash; Adds useful file operations to the sidebar, such as “New file”, “New folder”, etc</li>
+<li><a href="https://sublime.wbond.net/packages/SublimeLinter">SublimeLinter</a> &ndash; Lint code as you type</li>
+<li><a href="https://sublime.wbond.net/packages/Syntax%20Highlighting%20for%20Sass">Syntax Highlighting for Sass</a> &ndash; Sass syntax highlighting</li>
+<li><a href="https://sublime.wbond.net/packages/TrailingSpaces">TrailingSpaces</a> &ndash; Strips trailing whitespace from files</li>
 </ul>
 
 
@@ -163,7 +167,7 @@
 
 <h2>Spaces</h2>
 
-<p>Open <strong>TrailingSpace&rsquo;s</strong> preferences (<strong>Preferences › Package Settings › TrailingSpaces › Settings - User</strong>), and add:</p>
+<p>Open <strong>TrailingSpace&rsquo;s</strong> preferences (<strong>Preferences › Package Settings › TrailingSpaces › Settings &ndash; User</strong>), and add:</p>
 
 <div class="highlight"><pre><code class="json"><span class="s2">&quot;trailing_spaces_include_current_line&quot;</span><span class="err">:</span> <span class="kc">false</span>
 </code></pre></div>
@@ -177,7 +181,7 @@
 
 <h2>Tabs to Spaces</h2>
 
-<p>The default indentation style uses tabs instead of spaces. If you want to change this, go to your User Preferences (<strong>Preferences › Settings - User</strong> or <strong>⌘,</strong>) and add:</p>
+<p>The default indentation style uses tabs instead of spaces. If you want to change this, go to your User Preferences (<strong>Preferences › Settings &ndash; User</strong> or <strong>⌘,</strong>) and add:</p>
 
 <div class="highlight"><pre><code class="json"><span class="s2">&quot;tab_size&quot;</span><span class="err">:</span> <span class="mi">2</span><span class="err">,</span>
 <span class="s2">&quot;translate_tabs_to_spaces&quot;</span><span class="err">:</span> <span class="kc">true</span>
@@ -186,7 +190,7 @@
 
 <h2>Scroll</h2>
 
-<p>To scroll past the end of the file, add this to your User Preferences (<strong>Preferences › Settings - User</strong> or <strong>⌘,</strong>):</p>
+<p>To scroll past the end of the file, add this to your User Preferences (<strong>Preferences › Settings &ndash; User</strong> or <strong>⌘,</strong>):</p>
 
 <div class="highlight"><pre><code class="json"><span class="s2">&quot;scroll_past_end&quot;</span><span class="err">:</span> <span class="kc">true</span><span class="err">,</span>
 <span class="s2">&quot;scroll_speed&quot;</span><span class="err">:</span> <span class="mi">2</span>
@@ -205,4 +209,8 @@
 <li><a href="http://whiletruecode.com/post/7-handy-text-manipulation-tricks-sublime-text-2">7 handy text manipulation tricks in Sublime Text 2</a></li>
 </ul>
 
+ <br>
+<hr>
+<p>You’ve just read about <strong><a href="http://davidensinger.com/2013/05/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
+<p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
  ]]></content></entry></feed>

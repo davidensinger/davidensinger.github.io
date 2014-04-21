@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Posts Categorized “Development” – Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/category/development/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2014-04-20T22:06:20Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2014 David Ensinger. All rights reserved.</rights><entry><title type="text">Transferring the DNS from Namecheap to CloudFlare for GitHub Pages</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages/"/><id>http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages</id><published>2014-04-19T12:42:00Z</published><updated>2014-04-19T12:42:00Z</updated><content type="html"><![CDATA[ <p>A couple weeks ago <a href="https://twitter.com/rose_ian">@rose_ian</a> reached out to let me know that our websites, which have the identical setup, were suffering from slow initial connection times. With some legwork Ian figured out how to markedly reduce the load time for his site by hosting his DNS with <a href="https://www.cloudflare.com/">CloudFlare</a>. What follows are the steps I took to understand the issue and make the switch to CloudFlare. I’d like to give a big thanks to Ian for his initial efforts.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Posts Categorized “Development” – Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/category/development/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2014-04-21T14:38:36Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2014 David Ensinger. All rights reserved.</rights><entry><title type="text">Transferring the DNS from Namecheap to CloudFlare for GitHub Pages</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages/"/><id>http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages</id><published>2014-04-19T12:42:00Z</published><updated>2014-04-19T12:42:00Z</updated><content type="html"><![CDATA[ <p>A couple weeks ago <a href="https://twitter.com/rose_ian">@rose_ian</a> reached out to let me know that our websites, which have the identical setup, were suffering from slow initial connection times. With some legwork Ian figured out how to markedly reduce the load time for his site by hosting his DNS with <a href="https://www.cloudflare.com/">CloudFlare</a>. What follows are the steps I took to understand the issue and make the switch to CloudFlare. I’d like to give a big thanks to Ian for his initial efforts.</p>
 
 <div class="yellow-box">
   <p><strong>Hat Tip:</strong> <a href="http://ianrose.me/blog/2014/03/30/permanent-rediect-github-project-page/">Permanent Redirect GitHub Project Page to Custom Domain</a> by <a href="https://twitter.com/rose_ian">@rose_ian</a></p>
@@ -79,6 +79,10 @@
   <p><strong>More Info:</strong> DNSimple has a good write up about the <a href="http://support.dnsimple.com/articles/differences-between-a-cname-alias-url/">Differences between the A, CNAME, ALIAS and URL records</a>.</p>
 </div>
 
+ <br>
+<hr>
+<p>You’ve just read about <strong><a href="http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages/">Transferring the DNS from Namecheap to CloudFlare for GitHub Pages</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
+<p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
  ]]></content></entry><entry><title type="text">Image Optimization Tools Overview</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/02/image-optimization-tools-overview/"/><id>http://davidensinger.com/2014/02/image-optimization-tools-overview</id><published>2014-02-15T09:42:00Z</published><updated>2014-02-15T09:42:00Z</updated><content type="html"><![CDATA[ <p>Invariably, the average website gets heavier with each passing year, which results in slower page loads for visitors. Most of this increase in page weight is due to the large file sizes of images. Odds are, as a developer, you’re guilty of this slow creep too, so you should take care to optimize your images to be as lightweight as possible.</p>
 
 <h2>Online Tools</h2>
@@ -116,6 +120,10 @@
 <li><a href="https://github.com/JamieMason/grunt-imageoptim">grunt-imageoptim</a>: A plugin for Grunt for <strong>ImageOptim-CLI</strong></li>
 </ul>
 
+ <br>
+<hr>
+<p>You’ve just read about <strong><a href="http://davidensinger.com/2014/02/image-optimization-tools-overview/">Image Optimization Tools Overview</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
+<p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
  ]]></content></entry><entry><title type="text">Current Favicon Icon Stack</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/02/current-favicon-icon-stack/"/><id>http://davidensinger.com/2014/02/current-favicon-icon-stack</id><published>2014-02-06T10:00:00Z</published><updated>2014-02-06T10:00:00Z</updated><content type="html"><![CDATA[ <p>Whether it’s the file format, dimensions, or browser support (amongst other concerns), it’s confusing to figure out the best icon stack for one’s website. What follows is my current preferred markup, with some recommended tools and resources.</p>
 
 <div class="yellow-box">
@@ -170,6 +178,10 @@
 <p>The former two lines of markup are for IE10, while the latter four are for IE11. See the aforementioned blog post for very helpful PSD templates.</p>
 
 <p>That’s it! If any of this is incorrect, I’d like to know. Send me <a href="https://twitter.com/davidensinger">a tweet about it</a>!</p>
+ <br>
+<hr>
+<p>You’ve just read about <strong><a href="http://davidensinger.com/2014/02/current-favicon-icon-stack/">Current Favicon Icon Stack</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
+<p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
  ]]></content></entry><entry><title type="text">Quick Mobile Testing Tips and Tricks</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/12/quick-mobile-testing-tips-and-tricks/"/><id>http://davidensinger.com/2013/12/quick-mobile-testing-tips-and-tricks</id><published>2013-12-02T05:44:00Z</published><updated>2013-12-02T05:44:00Z</updated><content type="html"><![CDATA[ <p>Have you ever needed to track down a bug in mobile, but due to circumstances found yourself without the needed browser, operating system, and/or device? It can be really frustrating, especially when working with an ever approaching deadline. Thankfully, there are many tools available to help debug in such a situation, even if using them isn’t a proper substitute for the actual device.</p>
 
 <div class="red-box">
@@ -242,6 +254,10 @@
 
 
 <p>That’s it. May your mobile debugging be better, especially when ill-equipped and under pressure!</p>
+ <br>
+<hr>
+<p>You’ve just read about <strong><a href="http://davidensinger.com/2013/12/quick-mobile-testing-tips-and-tricks/">Quick Mobile Testing Tips and Tricks</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
+<p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
  ]]></content></entry><entry><title type="text">Building a Better Sitemap.xml with Jekyll</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/11/building-a-better-sitemap-xml-with-jekyll/"/><id>http://davidensinger.com/2013/11/building-a-better-sitemap-xml-with-jekyll</id><published>2013-11-03T11:50:00Z</published><updated>2013-11-03T11:50:00Z</updated><content type="html"><![CDATA[ <p>In the past several months I’ve made many incremental improvements to this website, including how I generate my <a href="http://davidensinger.com/sitemap.xml">Sitemap.xml</a>. While my revisions are certainly not jaw dropping, they have definitely improved the quality of my sitemap and are thus worth writing about, if only to provide a reference point to other developers. To that end, here’s a note about the changes I’ve made in my current implementation.</p>
 
 <h2>Previous Configuration</h2>
@@ -359,6 +375,10 @@
   <p><strong>More Info:</strong> Visit the official <a href="http://www.sitemaps.org/">sitemaps.org</a> to learn more about the protocol.</p>
 </div>
 
+ <br>
+<hr>
+<p>You’ve just read about <strong><a href="http://davidensinger.com/2013/11/building-a-better-sitemap-xml-with-jekyll/">Building a Better Sitemap.xml with Jekyll</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
+<p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
  ]]></content></entry><entry><title type="text">Suggested Tweet Plugin for Jekyll</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/09/suggested-tweet-plugin-for-jekyll/"/><id>http://davidensinger.com/2013/09/suggested-tweet-plugin-for-jekyll</id><published>2013-09-16T12:50:00Z</published><updated>2013-09-16T12:50:00Z</updated><content type="html"><![CDATA[ <p>It’s always a really nice feeling when one sees one’s posts shared with others, usually via blog post or Tweet. In the spirit of encouraging more of this, I present to you the <a href="https://github.com/davidensinger/jekyll-suggested-tweet">Suggested Tweet</a> plugin for <a href="http://jekyllrb.com/">Jekyll</a>. With this plugin, visitors to your site need no longer grope for words while they attempt to share your content!</p>
 
 <h2>About the Plugin</h2>
@@ -442,6 +462,10 @@
 <li>Allow for parameters to be set within the tag itself, but without using a regular expression to do so. Possible? Yay or nay?</li>
 </ul>
 
+ <br>
+<hr>
+<p>You’ve just read about <strong><a href="http://davidensinger.com/2013/09/suggested-tweet-plugin-for-jekyll/">Suggested Tweet Plugin for Jekyll</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
+<p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
  ]]></content></entry><entry><title type="text">How I use Reduce to Minify and Optimize Assets for Production</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production/"/><id>http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production</id><published>2013-08-04T08:19:00Z</published><updated>2013-08-04T08:19:00Z</updated><content type="html"><![CDATA[ <p>Now that I’ve set up <a href="http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/">my development environment with Rake</a>, I’m able to easily minify and optimize the assets I use for my site. To do this I use <a href="https://github.com/grosser/reduce">Reduce</a>, which is a fantastic Ruby gem by <a href="http://grosser.it/">Michael Grosser</a> to minify and compress CSS, HTML, JavaScript and Jpeg and PNG, amongst other formats.</p>
 
 <h2>Why Compress Assets?</h2>
@@ -481,6 +505,10 @@
 
 
 <p>How easy is that? With a simple <code>rake build:pro</code> command I’m able to build my site with production ready assets, which I then commit and deploy to GitHub.</p>
+ <br>
+<hr>
+<p>You’ve just read about <strong><a href="http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production/">How I use Reduce to Minify and Optimize Assets for Production</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
+<p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
  ]]></content></entry><entry><title type="text">Easy Sass Source Maps with Development Environments and Rake</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/"/><id>http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake</id><published>2013-07-26T09:26:00Z</published><updated>2013-07-26T09:26:00Z</updated><content type="html"><![CDATA[ <p>In addition to <a href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/">automating the deployment of Jekyll</a>, I also wrote a couple Rake tasks to streamline the building of my site. They’re quite simple, but they allow me to have environments for both development and production. It’s now just as easy to use Sass source maps in my development environment as it is to build compressed assets for production.</p>
 
 <h2>Source Maps in Sass</h2>
@@ -608,6 +636,10 @@
 
 
 
+ <br>
+<hr>
+<p>You’ve just read about <strong><a href="http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/">Easy Sass Source Maps with Development Environments and Rake</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
+<p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
  ]]></content></entry><entry><title type="text">Automating Jekyll Deployment to GitHub Pages with Rake</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/"/><id>http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake</id><published>2013-07-23T09:24:00Z</published><updated>2013-07-23T09:24:00Z</updated><content type="html"><![CDATA[ <p>I recently automated the deployment of my site to <strong>GitHub Pages</strong>, which is something that <a href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/">I’ve wanted to do for awhile</a>. Whereas I would previously enter a string of commands into the terminal, I now use <strong>Rake</strong> to handle those commands for me.</p>
 
 <h2>What is Rake</h2>
@@ -683,6 +715,10 @@
 <h2>What’s Next?</h2>
 
 <p>Not only have I automated the deployment of my site, but I’ve also used Rake to create development and production builds. This has allowed me to implement Sass source maps and easily minify my assets, which I’ll detail in subsequent posts! Stay tuned :)</p>
+ <br>
+<hr>
+<p>You’ve just read about <strong><a href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/">Automating Jekyll Deployment to GitHub Pages with Rake</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
+<p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
  ]]></content></entry><entry><title type="text">Why I use EditorConfig</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/why-i-use-editorconfig/"/><id>http://davidensinger.com/2013/07/why-i-use-editorconfig</id><published>2013-07-16T06:12:00Z</published><updated>2013-07-16T06:12:00Z</updated><content type="html"><![CDATA[ <p>Have you ever found yourself switching between projects with vastly different <a href="http://en.wikipedia.org/wiki/Programming_style">coding styles</a> or (gasp!) no consistent style at all? Most editors and IDEs allow for settings at both the user and project level, but neither of those options are ideal. Often there isn’t a settings file for the project and even if there were, it’s probably for an editor that you don’t use. The only other option is to have the editor auto-detect the settings, but that’s far from perfect.</p>
 
 <h2>Enter EditorConfig</h2>
@@ -748,4 +784,8 @@
 <p>There are plugins available for a host of editors and IDEs, although there are unfortunately some notable exceptions. I’m glad that my preferred editor, Sublime Text 2, <a href="https://github.com/sindresorhus/editorconfig-sublime">is supported</a>. It will be a glorious day in development land when there’s universal support for EditorConfig.</p>
 
 <p>It’s 2013, so why are we still debating tabs versus spaces?! Set a standard and stick with it.</p>
+ <br>
+<hr>
+<p>You’ve just read about <strong><a href="http://davidensinger.com/2013/07/why-i-use-editorconfig/">Why I use EditorConfig</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
+<p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
  ]]></content></entry></feed>
