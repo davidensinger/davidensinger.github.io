@@ -2,7 +2,7 @@
 date: 2014-04-19 16:42:00
 layout: post
 title: Transferring the DNS from Namecheap to CloudFlare for GitHub Pages
-description: Take advantage of CloudFlare’s CNAME Flattening.
+description: Speed up your site by taking advantage of CloudFlare’s CNAME Flattening.
 categories: [Development]
 tags: [CloudFlare, DNS, Namecheap]
 suggested_tweet:
@@ -34,14 +34,14 @@ After a quick search, I found [Analyzing the GitHub Pages Waterfall Chart](http:
 
 This is our exact setup since [Namecheap](http://www.namecheap.com/?aff=32887) doesn’t support the `ALIAS` record, which is suggested by [Setting up a custom domain with Pages](https://help.github.com/articles/setting-up-a-custom-domain-with-pages). For more info see my previous post on [Setting the DNS for GitHub Pages on Namecheap](http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/).
 
-That said, the `ALIAS` record doesn’t have robust support amongst registrars. I don’t have a good technical understanding of DNS, so I defer to the following post for a better explanation of the pitfalls of this new type of DNS record.
+That said, the `ALIAS` record doesn’t have robust support amongst registrars. I don’t have a good technical understanding of DNS, so I defer to the following post for a better explanation of the potential pitfalls of the `ALIAS` record.
 
 <div class="yellow-box">
   <p><strong>Warning:</strong> <a href="https://iwantmyname.com/blog/2014/01/why-alias-type-records-break-the-internet.html">Why ALIAS-type DNS Records Break The Internet</a> by <a href="https://twitter.com/norbu09">@norbu09</a></p>
 </div>
 
 ## CloudFlare to the Rescue
-Through his research, Ian came across [a post at Higher Order Heroku](http://www.higherorderheroku.com/articles/cloudflare-dns-heroku/) that subsequently led him to CloudFlare. It seems that a common request amongst users was for an Alias-type record to use with AWS, Heroku, and GitHub Pages. In response, CloudFlare introduced CNAME Flattening earlier this year, which they introduced with this blog post: [Introducing CNAME Flattening](http://blog.cloudflare.com/introducing-cname-flattening-rfc-compliant-cnames-at-a-domains-root).
+Through his research, Ian came across [a post at Higher Order Heroku](http://www.higherorderheroku.com/articles/cloudflare-dns-heroku/) that subsequently led him to CloudFlare. It seems that a common request amongst users was for an Alias-type record to use with AWS, Heroku, and GitHub Pages. In response, CloudFlare rolled out CNAME Flattening earlier this year, which they introduced with this blog post: [Introducing CNAME Flattening](http://blog.cloudflare.com/introducing-cname-flattening-rfc-compliant-cnames-at-a-domains-root).
 
 As previously stated, I don’t understand the DNS specification as well as I’d like, but CloudFlare seems confident that their new CNAME Flattening feature won’t break the Internet. It also won’t interfere with your `MX` records, so you need not worry about receiving your emails either. Ask Ian, as I questioned him on this point several times: “Hey still no email problems?”, to which his reply was always in the affirmative.
 
