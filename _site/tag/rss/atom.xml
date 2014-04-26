@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Posts Tagged “RSS” – Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/tag/rss/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2014-04-26T13:30:09Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2014 David Ensinger. All rights reserved.</rights><entry><title type="text">How to Include a Footer in your Site’s Feed for Jekyll</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/03/how-to-include-a-footer-in-your-sites-feed-for-jekyll/"/><id>http://davidensinger.com/2014/03/how-to-include-a-footer-in-your-sites-feed-for-jekyll</id><published>2014-03-17T08:46:00Z</published><updated>2014-03-17T08:46:00Z</updated><content type="html"><![CDATA[ <p>Lots of folks read blogs via syndicated feeds, so it can’t hurt to provide them with a little additional content, whether it be a link to the original post, a copyright statement, or even links your social media profiles, in the footer of each feed entry.</p>
+
+<h2>Example Footer for Feed Entry</h2>
+
+<p>The first step is to create an include for your entry footer, within which you’ll put whatever content you’d like your readers to see.</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;br&gt;</span>
+<span class="nt">&lt;hr&gt;</span>
+<span class="nt">&lt;p&gt;</span>You’ve just read about <span class="nt">&lt;strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ site.url }}{{ post.url }}&quot;</span><span class="nt">&gt;</span>{{ post.title }}<span class="nt">&lt;/a&gt;&lt;/strong&gt;</span> on <span class="nt">&lt;strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ site.url }}/&quot;</span><span class="nt">&gt;</span>{{ site.title }}<span class="nt">&lt;/a&gt;&lt;/strong&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>If you’d prefer to receive your updates in tweet form, please follow me on <span class="nt">&lt;strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://twitter.com/DavidEnsinger&quot;</span><span class="nt">&gt;</span>Twitter<span class="nt">&lt;/a&gt;&lt;/strong&gt;</span>, otherwise I hope you’re enjoying the feed!<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>
+
+
+<p>You’ll then want to include your feed footer within the include for your feed’s entries, which will probably look a lot like the following (see the <code>{% include feed-footer.html %}</code>):</p>
+
+<div class="highlight"><pre><code class="xml"><span class="nt">&lt;entry&gt;</span>
+  <span class="nt">&lt;title</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>{{ post.title | xml_escape }}<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;alternate&quot;</span> <span class="na">type=</span><span class="s">&quot;text/html&quot;</span> <span class="na">href=</span><span class="s">&quot;{{ site.url }}{{ post.url }}&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;id&gt;</span>{{ site.url }}{{ post.id }}<span class="nt">&lt;/id&gt;</span>
+  <span class="nt">&lt;published&gt;</span>{{ post.date | date: &quot;%Y-%m-%dT%H:%M:%SZ&quot; }}<span class="nt">&lt;/published&gt;</span>
+  <span class="nt">&lt;updated&gt;</span>{{ post.date | date: &quot;%Y-%m-%dT%H:%M:%SZ&quot; }}<span class="nt">&lt;/updated&gt;</span>
+  <span class="nt">&lt;content</span> <span class="na">type=</span><span class="s">&quot;html&quot;</span><span class="nt">&gt;</span><span class="cp">&lt;![CDATA[ {{ post.content }} {% include feed-footer.html %} ]]&gt;</span><span class="nt">&lt;/content&gt;</span>
+<span class="nt">&lt;/entry&gt;</span>
+</code></pre></div>
+
+
+<p>Also be sure to properly escape the data in your posts. I prefer to use <code>CDATA</code>, but Jekyll also comes with <a href="http://jekyllrb.com/docs/templates/#filters">a Liquid filter to escape XML</a>: <code>{{ post.content | xml_escape }}</code>.</p>
+ <br>
+<hr>
+<p>You’ve just read about <strong><a href="http://davidensinger.com/2014/03/how-to-include-a-footer-in-your-sites-feed-for-jekyll/">How to Include a Footer in your Site’s Feed for Jekyll</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
+<p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
+ ]]></content></entry></feed>

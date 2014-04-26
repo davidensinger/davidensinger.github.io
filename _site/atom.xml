@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2014-04-21T19:39:25Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2014 David Ensinger. All rights reserved.</rights><entry><title type="text">Transferring the DNS from Namecheap to CloudFlare for GitHub Pages</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages/"/><id>http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages</id><published>2014-04-19T12:42:00Z</published><updated>2014-04-19T12:42:00Z</updated><content type="html"><![CDATA[ <p>A couple weeks ago <a href="https://twitter.com/rose_ian">@rose_ian</a> reached out to let me know that our websites, which have the identical setup, were suffering from slow initial connection times. With some legwork Ian figured out how to markedly reduce the load time for his site by hosting his DNS with <a href="https://www.cloudflare.com/">CloudFlare</a>. What follows are the steps I took to understand the issue and make the switch to CloudFlare. I’d like to give a big thanks to Ian for his initial efforts.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2014-04-26T13:30:09Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2014 David Ensinger. All rights reserved.</rights><entry><title type="text">Transferring the DNS from Namecheap to CloudFlare for GitHub Pages</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages/"/><id>http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages</id><published>2014-04-19T12:42:00Z</published><updated>2014-04-19T12:42:00Z</updated><content type="html"><![CDATA[ <p>A couple weeks ago <a href="https://twitter.com/rose_ian">@rose_ian</a> reached out to let me know that our websites, which have the identical setup, were suffering from slow initial connection times. With some legwork Ian figured out how to markedly reduce the load time for his site by hosting his DNS with <a href="https://www.cloudflare.com/">CloudFlare</a>. What follows are the steps I took to understand the issue and make the switch to CloudFlare. I’d like to give a big thanks to Ian for his initial efforts.</p>
 
 <div class="yellow-box">
   <p><strong>Hat Tip:</strong> <a href="http://ianrose.me/blog/2014/03/30/permanent-rediect-github-project-page/">Permanent Redirect GitHub Project Page to Custom Domain</a> by <a href="https://twitter.com/rose_ian">@rose_ian</a></p>
@@ -82,6 +82,37 @@
  <br>
 <hr>
 <p>You’ve just read about <strong><a href="http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages/">Transferring the DNS from Namecheap to CloudFlare for GitHub Pages</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
+<p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
+ ]]></content></entry><entry><title type="text">How to Include a Footer in your Site’s Feed for Jekyll</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/03/how-to-include-a-footer-in-your-sites-feed-for-jekyll/"/><id>http://davidensinger.com/2014/03/how-to-include-a-footer-in-your-sites-feed-for-jekyll</id><published>2014-03-17T08:46:00Z</published><updated>2014-03-17T08:46:00Z</updated><content type="html"><![CDATA[ <p>Lots of folks read blogs via syndicated feeds, so it can’t hurt to provide them with a little additional content, whether it be a link to the original post, a copyright statement, or even links your social media profiles, in the footer of each feed entry.</p>
+
+<h2>Example Footer for Feed Entry</h2>
+
+<p>The first step is to create an include for your entry footer, within which you’ll put whatever content you’d like your readers to see.</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;br&gt;</span>
+<span class="nt">&lt;hr&gt;</span>
+<span class="nt">&lt;p&gt;</span>You’ve just read about <span class="nt">&lt;strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ site.url }}{{ post.url }}&quot;</span><span class="nt">&gt;</span>{{ post.title }}<span class="nt">&lt;/a&gt;&lt;/strong&gt;</span> on <span class="nt">&lt;strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ site.url }}/&quot;</span><span class="nt">&gt;</span>{{ site.title }}<span class="nt">&lt;/a&gt;&lt;/strong&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>If you’d prefer to receive your updates in tweet form, please follow me on <span class="nt">&lt;strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://twitter.com/DavidEnsinger&quot;</span><span class="nt">&gt;</span>Twitter<span class="nt">&lt;/a&gt;&lt;/strong&gt;</span>, otherwise I hope you’re enjoying the feed!<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>
+
+
+<p>You’ll then want to include your feed footer within the include for your feed’s entries, which will probably look a lot like the following (see the <code>{% include feed-footer.html %}</code>):</p>
+
+<div class="highlight"><pre><code class="xml"><span class="nt">&lt;entry&gt;</span>
+  <span class="nt">&lt;title</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>{{ post.title | xml_escape }}<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;alternate&quot;</span> <span class="na">type=</span><span class="s">&quot;text/html&quot;</span> <span class="na">href=</span><span class="s">&quot;{{ site.url }}{{ post.url }}&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;id&gt;</span>{{ site.url }}{{ post.id }}<span class="nt">&lt;/id&gt;</span>
+  <span class="nt">&lt;published&gt;</span>{{ post.date | date: &quot;%Y-%m-%dT%H:%M:%SZ&quot; }}<span class="nt">&lt;/published&gt;</span>
+  <span class="nt">&lt;updated&gt;</span>{{ post.date | date: &quot;%Y-%m-%dT%H:%M:%SZ&quot; }}<span class="nt">&lt;/updated&gt;</span>
+  <span class="nt">&lt;content</span> <span class="na">type=</span><span class="s">&quot;html&quot;</span><span class="nt">&gt;</span><span class="cp">&lt;![CDATA[ {{ post.content }} {% include feed-footer.html %} ]]&gt;</span><span class="nt">&lt;/content&gt;</span>
+<span class="nt">&lt;/entry&gt;</span>
+</code></pre></div>
+
+
+<p>Also be sure to properly escape the data in your posts. I prefer to use <code>CDATA</code>, but Jekyll also comes with <a href="http://jekyllrb.com/docs/templates/#filters">a Liquid filter to escape XML</a>: <code>{{ post.content | xml_escape }}</code>.</p>
+ <br>
+<hr>
+<p>You’ve just read about <strong><a href="http://davidensinger.com/2014/03/how-to-include-a-footer-in-your-sites-feed-for-jekyll/">How to Include a Footer in your Site’s Feed for Jekyll</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
 <p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
  ]]></content></entry><entry><title type="text">Image Optimization Tools Overview</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/02/image-optimization-tools-overview/"/><id>http://davidensinger.com/2014/02/image-optimization-tools-overview</id><published>2014-02-15T09:42:00Z</published><updated>2014-02-15T09:42:00Z</updated><content type="html"><![CDATA[ <p>Invariably, the average website gets heavier with each passing year, which results in slower page loads for visitors. Most of this increase in page weight is due to the large file sizes of images. Odds are, as a developer, you’re guilty of this slow creep too, so you should take care to optimize your images to be as lightweight as possible.</p>
 
@@ -718,74 +749,5 @@
  <br>
 <hr>
 <p>You’ve just read about <strong><a href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/">Automating Jekyll Deployment to GitHub Pages with Rake</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
-<p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
- ]]></content></entry><entry><title type="text">Why I use EditorConfig</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/why-i-use-editorconfig/"/><id>http://davidensinger.com/2013/07/why-i-use-editorconfig</id><published>2013-07-16T06:12:00Z</published><updated>2013-07-16T06:12:00Z</updated><content type="html"><![CDATA[ <p>Have you ever found yourself switching between projects with vastly different <a href="http://en.wikipedia.org/wiki/Programming_style">coding styles</a> or (gasp!) no consistent style at all? Most editors and IDEs allow for settings at both the user and project level, but neither of those options are ideal. Often there isn’t a settings file for the project and even if there were, it’s probably for an editor that you don’t use. The only other option is to have the editor auto-detect the settings, but that’s far from perfect.</p>
-
-<h2>Enter EditorConfig</h2>
-
-<p>Thankfully, help has arrived in the form of <a href="http://editorconfig.org/">EditorConfig</a>, which is a file wherein one may define and then maintain a consistent coding style.</p>
-
-<p>A description of the project:</p>
-
-<blockquote><p>EditorConfig helps developers define and maintain consistent coding styles between different editors and IDEs. The EditorConfig project consists of <strong>a file format</strong> for defining coding styles and a collection of <strong>text editor plugins</strong> that enable editors to read the file format and adhere to defined styles. EditorConfig files are easily readable and they work nicely with version control systems.</p>
-
-<p><cite><a href="http://editorconfig.org/#overview">EditorConfig</a></cite></p></blockquote>
-
-<h2>Example EditorConfig file</h2>
-
-<p>The following is the <a href="https://github.com/davidensinger/davidensinger.github.io/blob/source/.editorconfig"><code>.editorconfig</code></a> file for this website:</p>
-
-<div class="highlight"><pre><code class="ini"><span class="c1"># This file is for unifying the coding style for different editors and IDEs.</span>
-<span class="c1"># More information at http://EditorConfig.org</span>
-
-<span class="c1"># No .editorconfig files above the root directory</span>
-<span class="na">root</span> <span class="o">=</span> <span class="s">true</span>
-
-<span class="k">[*]</span>
-<span class="na">indent_style</span> <span class="o">=</span> <span class="s">space</span>
-<span class="na">end_of_line</span> <span class="o">=</span> <span class="s">lf</span>
-<span class="na">charset</span> <span class="o">=</span> <span class="s">utf-8</span>
-<span class="na">trim_trailing_whitespace</span> <span class="o">=</span> <span class="s">true</span>
-<span class="na">insert_final_newline</span> <span class="o">=</span> <span class="s">true</span>
-
-<span class="c1"># Use 2 spaces for indentation in HTML, JavaScript, Ruby, SCSS, and XML</span>
-
-<span class="k">[*.{html,js,rb,scss,xml}]</span>
-<span class="na">indent_size</span> <span class="o">=</span> <span class="s">2</span>
-
-<span class="k">[Gemfile*]</span>
-<span class="na">indent_size</span> <span class="o">=</span> <span class="s">2</span>
-
-<span class="k">[Rakefile]</span>
-<span class="na">indent_size</span> <span class="o">=</span> <span class="s">2</span>
-
-<span class="c1"># Use 4 spaces for indentation in Markdown files</span>
-
-<span class="k">[*.md]</span>
-<span class="na">indent_size</span> <span class="o">=</span> <span class="s">4</span>
-</code></pre></div>
-
-
-<h2>Supported Properties</h2>
-
-<p>Here’s a shortlist of supported properties. See the <a href="http://editorconfig.org/#supported-properties">project’s website</a> for an exhaustive list, although note that not all browser plugins support all properties.</p>
-
-<ul>
-<li>Indent style</li>
-<li>Indent size</li>
-<li>End of line</li>
-<li>Trim trailing whitespace</li>
-<li>Insert final newline</li>
-</ul>
-
-
-<h2>Editor and IDE Support</h2>
-
-<p>There are plugins available for a host of editors and IDEs, although there are unfortunately some notable exceptions. I’m glad that my preferred editor, Sublime Text 2, <a href="https://github.com/sindresorhus/editorconfig-sublime">is supported</a>. It will be a glorious day in development land when there’s universal support for EditorConfig.</p>
-
-<p>It’s 2013, so why are we still debating tabs versus spaces?! Set a standard and stick with it.</p>
- <br>
-<hr>
-<p>You’ve just read about <strong><a href="http://davidensinger.com/2013/07/why-i-use-editorconfig/">Why I use EditorConfig</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
 <p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
  ]]></content></entry></feed>
