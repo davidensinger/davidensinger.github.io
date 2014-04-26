@@ -46,7 +46,7 @@ GEM
       yajl-ruby (~> 1.1.0)
     rake (10.3.1)
     rb-fsevent (0.9.4)
-    rb-inotify (0.9.3)
+    rb-inotify (0.9.4)
       ffi (>= 0.5.0)
     rb-kqueue (0.2.2)
       ffi (>= 0.5.0)
@@ -54,8 +54,8 @@ GEM
     redcarpet (2.3.0)
     reduce (0.3.0)
       smusher
-    safe_yaml (1.0.2)
-    sass (3.3.5)
+    safe_yaml (1.0.3)
+    sass (3.3.6)
     smusher (0.4.9)
       httpclient (>= 2.2)
       json
@@ -76,5 +76,5 @@ DEPENDENCIES
   rake
   rdiscount
   reduce
-  sass (~> 3.3.4)
+  sass (~> 3.3.6)
   twitter_web_intents
