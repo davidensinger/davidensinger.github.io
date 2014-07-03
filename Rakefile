@@ -47,9 +47,9 @@ end
 namespace :build do
   desc "Build _site/ for development"
   task :dev => :recompile_sass do
-    puts "\n##  Starting Jekyll and recompiling Sass with source map"
+    puts "\n##  Starting Sass and Jekyll"
     pids = [
-      spawn("sass --sourcemap --watch assets/scss/styles.scss:assets/css/styles.css"),
+      spawn("sass --watch assets/scss/styles.scss:assets/css/styles.css"),
       spawn("jekyll serve -w")
     ]
 
@@ -72,9 +72,6 @@ namespace :build do
     status = system("jekyll build")
     puts status ? "Success" : "Failed"
     Rake::Task["minify"].invoke
-    puts "\n## Deleting Sass source map"
-    status = system("rm -f _site/assets/css/*.map")
-    puts status ? "Success" : "Failed"
   end
 end
 
