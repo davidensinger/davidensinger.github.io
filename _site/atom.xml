@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2014-04-26T13:30:09Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2014 David Ensinger. All rights reserved.</rights><entry><title type="text">Transferring the DNS from Namecheap to CloudFlare for GitHub Pages</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages/"/><id>http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages</id><published>2014-04-19T12:42:00Z</published><updated>2014-04-19T12:42:00Z</updated><content type="html"><![CDATA[ <p>A couple weeks ago <a href="https://twitter.com/rose_ian">@rose_ian</a> reached out to let me know that our websites, which have the identical setup, were suffering from slow initial connection times. With some legwork Ian figured out how to markedly reduce the load time for his site by hosting his DNS with <a href="https://www.cloudflare.com/">CloudFlare</a>. What follows are the steps I took to understand the issue and make the switch to CloudFlare. I’d like to give a big thanks to Ian for his initial efforts.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2014-07-03T14:21:55Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2014 David Ensinger. All rights reserved.</rights><entry><title type="text">Transferring the DNS from Namecheap to CloudFlare for GitHub Pages</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages/"/><id>http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages</id><published>2014-04-19T12:42:00Z</published><updated>2014-04-19T12:42:00Z</updated><content type="html"><![CDATA[ <p>A couple weeks ago <a href="https://twitter.com/rose_ian">@rose_ian</a> reached out to let me know that our websites, which have the identical setup, were suffering from slow initial connection times. With some legwork Ian figured out how to markedly reduce the load time for his site by hosting his DNS with <a href="https://www.cloudflare.com/">CloudFlare</a>. What follows are the steps I took to understand the issue and make the switch to CloudFlare. I’d like to give a big thanks to Ian for his initial efforts.</p>
 
 <div class="yellow-box">
   <p><strong>Hat Tip:</strong> <a href="http://ianrose.me/blog/2014/03/30/permanent-rediect-github-project-page/">Permanent Redirect GitHub Project Page to Custom Domain</a> by <a href="https://twitter.com/rose_ian">@rose_ian</a></p>
@@ -89,24 +89,22 @@
 
 <p>The first step is to create an include for your entry footer, within which you’ll put whatever content you’d like your readers to see.</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;br&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;br&gt;</span>
 <span class="nt">&lt;hr&gt;</span>
 <span class="nt">&lt;p&gt;</span>You’ve just read about <span class="nt">&lt;strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ site.url }}{{ post.url }}&quot;</span><span class="nt">&gt;</span>{{ post.title }}<span class="nt">&lt;/a&gt;&lt;/strong&gt;</span> on <span class="nt">&lt;strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ site.url }}/&quot;</span><span class="nt">&gt;</span>{{ site.title }}<span class="nt">&lt;/a&gt;&lt;/strong&gt;</span>.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p&gt;</span>If you’d prefer to receive your updates in tweet form, please follow me on <span class="nt">&lt;strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://twitter.com/DavidEnsinger&quot;</span><span class="nt">&gt;</span>Twitter<span class="nt">&lt;/a&gt;&lt;/strong&gt;</span>, otherwise I hope you’re enjoying the feed!<span class="nt">&lt;/p&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;p&gt;</span>If you’d prefer to receive your updates in tweet form, please follow me on <span class="nt">&lt;strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://twitter.com/DavidEnsinger&quot;</span><span class="nt">&gt;</span>Twitter<span class="nt">&lt;/a&gt;&lt;/strong&gt;</span>, otherwise I hope you’re enjoying the feed!<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
 
 <p>You’ll then want to include your feed footer within the include for your feed’s entries, which will probably look a lot like the following (see the <code>{% include feed-footer.html %}</code>):</p>
 
-<div class="highlight"><pre><code class="xml"><span class="nt">&lt;entry&gt;</span>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;entry&gt;</span>
   <span class="nt">&lt;title</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>{{ post.title | xml_escape }}<span class="nt">&lt;/title&gt;</span>
   <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;alternate&quot;</span> <span class="na">type=</span><span class="s">&quot;text/html&quot;</span> <span class="na">href=</span><span class="s">&quot;{{ site.url }}{{ post.url }}&quot;</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;id&gt;</span>{{ site.url }}{{ post.id }}<span class="nt">&lt;/id&gt;</span>
   <span class="nt">&lt;published&gt;</span>{{ post.date | date: &quot;%Y-%m-%dT%H:%M:%SZ&quot; }}<span class="nt">&lt;/published&gt;</span>
   <span class="nt">&lt;updated&gt;</span>{{ post.date | date: &quot;%Y-%m-%dT%H:%M:%SZ&quot; }}<span class="nt">&lt;/updated&gt;</span>
   <span class="nt">&lt;content</span> <span class="na">type=</span><span class="s">&quot;html&quot;</span><span class="nt">&gt;</span><span class="cp">&lt;![CDATA[ {{ post.content }} {% include feed-footer.html %} ]]&gt;</span><span class="nt">&lt;/content&gt;</span>
-<span class="nt">&lt;/entry&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;/entry&gt;</span></code></pre></div>
 
 
 <p>Also be sure to properly escape the data in your posts. I prefer to use <code>CDATA</code>, but Jekyll also comes with <a href="http://jekyllrb.com/docs/templates/#filters">a Liquid filter to escape XML</a>: <code>{{ post.content | xml_escape }}</code>.</p>
@@ -166,44 +164,40 @@
 
 <p>For the favicon, I use <a href="http://www.kodlian.com/apps/icon-slate">Icon Slate</a> to combine a 32x32px PNG with a 16x16px PNG to form the ICO, which gives me support for HiDPI devices. For optimal browser support I drop the resulting ICO into the site root with the following markup:</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;shortcut icon&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon.ico&quot;</span> <span class="nt">&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;shortcut icon&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon.ico&quot;</span> <span class="nt">&gt;</span></code></pre></div>
 
 
 <h2>iOS</h2>
 
 <p>There are <a href="https://developer.apple.com/library/ios/documentation/userexperience/conceptual/MobileHIG/IconMatrix.html">half a dozen icon dimensions</a> required to support all the different iOS devices. Previously you needed to follow Apple’s naming conventions for the filenames, but these days the following markup works:</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-icon-precomposed&quot;</span> <span class="na">sizes=</span><span class="s">&quot;152x152&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon-152x152.png&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-icon-precomposed&quot;</span> <span class="na">sizes=</span><span class="s">&quot;152x152&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon-152x152.png&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-icon-precomposed&quot;</span> <span class="na">sizes=</span><span class="s">&quot;144x144&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon-144x144.png&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-icon-precomposed&quot;</span> <span class="na">sizes=</span><span class="s">&quot;120x120&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon-120x120.png&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-icon-precomposed&quot;</span> <span class="na">sizes=</span><span class="s">&quot;114x114&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon-114x114.png&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-icon-precomposed&quot;</span> <span class="na">sizes=</span><span class="s">&quot;76x76&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon-76x76.png&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-icon-precomposed&quot;</span> <span class="na">sizes=</span><span class="s">&quot;72x72&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon-72x72.png&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-icon-precomposed&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon-57x57.png&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-icon-precomposed&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon-57x57.png&quot;</span><span class="nt">&gt;</span></code></pre></div>
 
 
 <h2>Android</h2>
 
 <p>Seemingly older versions of Android will fallback to use the <code>apple-touch-icon-precomposed</code> icons. <a href="https://developers.google.com/chrome/mobile/docs/installtohomescreen">Newer versions of Chrome on Android</a> will use the “largest icon found in one of the following <code>&lt;link&gt;</code> tags”:</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;shortcut icon&quot;</span> <span class="na">sizes=</span><span class="s">&quot;196x196&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon-196x196.png&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;shortcut icon&quot;</span> <span class="na">sizes=</span><span class="s">&quot;196x196&quot;</span> <span class="na">href=</span><span class="s">&quot;/favicon-196x196.png&quot;</span><span class="nt">&gt;</span></code></pre></div>
 
 
 <h2>IE</h2>
 
 <p>For <a href="http://msdn.microsoft.com/en-us/library/ie/dn255024%28v=vs.85%29.aspx">Internet Explorer</a>, I followed the Windows 8 Tiles section of <a href="http://viget.com/inspire/designing-device-assets-templates-techniques-and-tips">Designing Device Assets: Templates and Tips</a> and came up with the following:</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-TileColor&quot;</span> <span class="na">content=</span><span class="s">&quot;#FFFFFF&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-TileColor&quot;</span> <span class="na">content=</span><span class="s">&quot;#FFFFFF&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-TileImage&quot;</span> <span class="na">content=</span><span class="s">&quot;/favicon-144x144-ie10.png&quot;</span><span class="nt">&gt;</span>
 
 <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-square70x70logo&quot;</span> <span class="na">content=</span><span class="s">&quot;/favicon-128x128-ie11.png&quot;</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-square150x150logo&quot;</span> <span class="na">content=</span><span class="s">&quot;/favicon-270x270-ie11.png&quot;</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-wide310x150logo&quot;</span> <span class="na">content=</span><span class="s">&quot;/favicon-558x270-ie11.png&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-square310x310logo&quot;</span> <span class="na">content=</span><span class="s">&quot;/favicon-558x558-ie11.png&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-square310x310logo&quot;</span> <span class="na">content=</span><span class="s">&quot;/favicon-558x558-ie11.png&quot;</span><span class="nt">/&gt;</span></code></pre></div>
 
 
 <p>The former two lines of markup are for IE10, while the latter four are for IE11. See the aforementioned blog post for very helpful PSD templates.</p>
@@ -295,11 +289,11 @@
 
 <p>In an earlier post, <a href="http://davidensinger.com/2013/03/generating-a-sitemap-in-jekyll-without-a-plugin/">Generating a Sitemap in Jekyll without a Plugin</a>, I went over the configuration of my previous sitemap, which looked like this:</p>
 
-<div class="highlight"><pre><code class="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;urlset</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd&quot;</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;</span><span class="nt">&gt;</span>
   {% for post in site.posts %}
     <span class="nt">&lt;url&gt;</span>
-      <span class="nt">&lt;loc&gt;</span>{{ site.baseurl }}{{ post.url }}<span class="nt">&lt;/loc&gt;</span>
+      <span class="nt">&lt;loc&gt;</span>{{ site.url }}{{ post.url }}<span class="nt">&lt;/loc&gt;</span>
       {% if post.lastmod == null %}
         <span class="nt">&lt;lastmod&gt;</span>{{ post.date | date_to_xmlschema }}<span class="nt">&lt;/lastmod&gt;</span>
       {% else %}
@@ -312,15 +306,14 @@
   {% for page in site.pages %}
     {% if page.sitemap != null and page.sitemap != empty %}
       <span class="nt">&lt;url&gt;</span>
-        <span class="nt">&lt;loc&gt;</span>{{ site.baseurl }}{{ page.url }}<span class="nt">&lt;/loc&gt;</span>
+        <span class="nt">&lt;loc&gt;</span>{{ site.url }}{{ page.url }}<span class="nt">&lt;/loc&gt;</span>
         <span class="nt">&lt;lastmod&gt;</span>{{ page.sitemap.lastmod | date_to_xmlschema }}<span class="nt">&lt;/lastmod&gt;</span>
         <span class="nt">&lt;changefreq&gt;</span>{{ page.sitemap.changefreq }}<span class="nt">&lt;/changefreq&gt;</span>
         <span class="nt">&lt;priority&gt;</span>{{ page.sitemap.priority }}<span class="nt">&lt;/priority&gt;</span>
        <span class="nt">&lt;/url&gt;</span>
     {% endif %}
   {% endfor %}
-<span class="nt">&lt;/urlset&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;/urlset&gt;</span></code></pre></div>
 
 
 <h2>Current Configuration</h2>
@@ -334,7 +327,7 @@
 </ul>
 
 
-<div class="highlight"><pre><code class="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;urlset</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;</span><span class="nt">&gt;</span>
   {% for post in site.posts %}
     {% unless post.published == false %}
@@ -384,20 +377,18 @@
     <span class="nt">&lt;/url&gt;</span>
     {% endunless %}
   {% endfor %}
-<span class="nt">&lt;/urlset&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;/urlset&gt;</span></code></pre></div>
 
 
 <h2>Front Matter</h2>
 
 <p>I can now add the following variables, all of which are optional, to the front matter of my posts and pages:</p>
 
-<div class="highlight"><pre><code class="yaml"><span class="l-Scalar-Plain">sitemap</span><span class="p-Indicator">:</span>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">sitemap</span><span class="p-Indicator">:</span>
   <span class="l-Scalar-Plain">lastmod</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2014-01-23</span>
   <span class="l-Scalar-Plain">priority</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">0.7</span>
   <span class="l-Scalar-Plain">changefreq</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">monthly</span>
-  <span class="l-Scalar-Plain">exclude</span><span class="p-Indicator">:</span> <span class="s">&#39;yes&#39;</span>
-</code></pre></div>
+  <span class="l-Scalar-Plain">exclude</span><span class="p-Indicator">:</span> <span class="s">&#39;yes&#39;</span></code></pre></div>
 
 
 <p>As you can see, the changes I made are simple, but put together they make for a much more flexible implementation.</p>
@@ -431,14 +422,13 @@
 
 <p>The following parameters may be set globally in <strong>_config.yml</strong> or on a per page basis in the <strong>YAML front-matter</strong>. Parameters set in the <strong>YAML front-matter</strong> take precedence over those set in <strong>_config.yml</strong>. Note that all parameters are optional, although be sure to set at least one!</p>
 
-<div class="highlight"><pre><code class="yaml"><span class="l-Scalar-Plain">suggested_tweet</span><span class="p-Indicator">:</span>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">suggested_tweet</span><span class="p-Indicator">:</span>
   <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span>                  <span class="s">&#39;http://davidensinger.com/&#39;</span>
   <span class="l-Scalar-Plain">via</span><span class="p-Indicator">:</span>                  <span class="s">&#39;davidensinger&#39;</span>
   <span class="l-Scalar-Plain">text</span><span class="p-Indicator">:</span>                 <span class="s">&#39;Hello</span><span class="nv"> </span><span class="s">world&#39;</span>
   <span class="l-Scalar-Plain">in_reply_to</span><span class="p-Indicator">:</span>          <span class="l-Scalar-Plain">331434728957833218</span>
   <span class="l-Scalar-Plain">hashtags</span><span class="p-Indicator">:</span>             <span class="p-Indicator">[</span><span class="s">&#39;Jekyll&#39;</span><span class="p-Indicator">,</span> <span class="s">&#39;Twitter&#39;</span><span class="p-Indicator">]</span>
-  <span class="l-Scalar-Plain">related</span><span class="p-Indicator">:</span>              <span class="p-Indicator">[</span><span class="s">&#39;davidensinger&#39;</span><span class="p-Indicator">,</span> <span class="s">&#39;richhollis&#39;</span><span class="p-Indicator">,</span> <span class="s">&#39;2john4tv&#39;</span><span class="p-Indicator">]</span>
-</code></pre></div>
+  <span class="l-Scalar-Plain">related</span><span class="p-Indicator">:</span>              <span class="p-Indicator">[</span><span class="s">&#39;davidensinger&#39;</span><span class="p-Indicator">,</span> <span class="s">&#39;richhollis&#39;</span><span class="p-Indicator">,</span> <span class="s">&#39;2john4tv&#39;</span><span class="p-Indicator">]</span></code></pre></div>
 
 
 <h2>Usage</h2>
@@ -467,7 +457,7 @@
 
 <p>The following block of code can be found in the footer of my <a href="https://github.com/davidensinger/davidensinger.github.io/blob/source/_layouts/post.html">posts template</a>. You’ll see that I only print out the <strong>text</strong> and <strong>hashtags</strong> parameters, even though all six variables are available to me. This is due to parameters not displaying to my liking (<strong>url</strong> and <strong>via</strong>) or not displaying at all (<strong>in_reply_to</strong> and <strong>related</strong>) and for styling purposes as well.</p>
 
-<div class="highlight"><pre><code class="html">{% if page.suggested_tweet %}
+<div class="highlight"><pre><code class="language-html" data-lang="html">{% if page.suggested_tweet %}
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;entry-meta-suggested-tweet&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">&quot;suggested-tweet-title&quot;</span><span class="nt">&gt;</span>Spread the Word<span class="nt">&lt;/h3&gt;</span>
     <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{% suggested_tweet %}&quot;</span> <span class="na">class=</span><span class="s">&quot;suggested-tweet-bubble&quot;</span><span class="nt">&gt;</span>
@@ -482,8 +472,7 @@
     <span class="nt">&lt;/a&gt;</span>
     <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;suggested-tweet-link&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;{% suggested_tweet %}&quot;</span> <span class="na">class=</span><span class="s">&quot;icon-left icon-twitter&quot;</span><span class="nt">&gt;</span>Click to Tweet<span class="nt">&lt;/a&gt;</span> <span class="nt">&lt;small&gt;</span>(you may edit before posting.)<span class="nt">&lt;/small&gt;&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
-{% endif %}
-</code></pre></div>
+{% endif %}</code></pre></div>
 
 
 <h2>Roadmap</h2>
@@ -511,7 +500,7 @@
 
 <p>The task I invoke to minify the assets is courtesy of <a href="http://www.pacbard.tk/">Emanuele Bardelli</a>, who added the HTML compression functionality to Reduce. See <a href="https://github.com/pacbard/blog/blob/master/_rake/minify.rake">his rake task</a>, which I’ve only superficially modified:</p>
 
-<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s2">&quot;Minify _site/&quot;</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">desc</span> <span class="s2">&quot;Minify _site/&quot;</span>
 <span class="n">task</span> <span class="ss">:minify</span> <span class="k">do</span>
   <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Compressing static assets&quot;</span>
   <span class="n">original</span> <span class="o">=</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span>
@@ -531,8 +520,7 @@
       <span class="k">end</span>
   <span class="k">end</span>
   <span class="nb">puts</span> <span class="s2">&quot;Total compression %0.2f\%&quot;</span> <span class="o">%</span> <span class="p">(((</span><span class="n">original</span><span class="o">-</span><span class="n">compressed</span><span class="p">)</span><span class="o">/</span><span class="n">original</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
-<span class="k">end</span>
-</code></pre></div>
+<span class="k">end</span></code></pre></div>
 
 
 <p>How easy is that? With a simple <code>rake build:pro</code> command I’m able to build my site with production ready assets, which I then commit and deploy to GitHub.</p>
@@ -567,7 +555,7 @@
 
 <p>To start my development, I use the following Rake task, which is based off the work of Nick Quaranto in “<a href="http://quaran.to/blog/2013/01/09/use-jekyll-scss-coffeescript-without-plugins/">Use Jekyll, SCSS, and CoffeeScript without plugins</a>.” The task starts Sass and Jekyll with the desired flags, although note that it must first run the <code>:recompile_sass</code> task, which I’ll go over shortly.</p>
 
-<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s2">&quot;Build _site/ for development&quot;</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">desc</span> <span class="s2">&quot;Build _site/ for development&quot;</span>
 <span class="n">task</span> <span class="ss">:dev</span> <span class="o">=&gt;</span> <span class="ss">:recompile_sass</span> <span class="k">do</span>
   <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">##  Starting Jekyll and compiling Sass with source map&quot;</span>
   <span class="n">pids</span> <span class="o">=</span> <span class="o">[</span>
@@ -583,15 +571,14 @@
   <span class="kp">loop</span> <span class="k">do</span>
     <span class="nb">sleep</span> <span class="mi">1</span>
   <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div>
+<span class="k">end</span></code></pre></div>
 
 
 <h3>Production</h3>
 
 <p>To build for production, I use the following task, which compiles the Sass (note the <code>--style compressed</code>), builds Jekyll, and then deletes the leftover source map file for Sass. Again, the task must <code>:recompile_sass</code> before starting.</p>
 
-<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s2">&quot;Build _site/ for production&quot;</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">desc</span> <span class="s2">&quot;Build _site/ for production&quot;</span>
 <span class="n">task</span> <span class="ss">:pro</span> <span class="o">=&gt;</span> <span class="ss">:recompile_sass</span> <span class="k">do</span>
   <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Compiling Sass&quot;</span>
   <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;sass --style compressed assets/scss/styles.scss:assets/css/styles.css&quot;</span><span class="p">)</span>
@@ -602,28 +589,26 @@
   <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Deleting Sass source map&quot;</span>
   <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;rm -f _site/assets/css/*.map&quot;</span><span class="p">)</span>
   <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
-<span class="k">end</span>
-</code></pre></div>
+<span class="k">end</span></code></pre></div>
 
 
 <h2>Force Sass to Recompile</h2>
 
 <p>For both my development and production Rake tasks I force Sass to recompile. I do this because Sass recompiles only when the compiled CSS has been deleted or when the Sass has been modified.</p>
 
-<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s2">&quot;Recompile Sass&quot;</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">desc</span> <span class="s2">&quot;Recompile Sass&quot;</span>
 <span class="n">task</span> <span class="ss">:recompile_sass</span> <span class="k">do</span>
   <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Forcing Sass to recompile&quot;</span>
   <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;touch -m assets/scss/styles.scss&quot;</span><span class="p">)</span>
   <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
-<span class="k">end</span>
-</code></pre></div>
+<span class="k">end</span></code></pre></div>
 
 
 <h2>Complete Tasks</h2>
 
 <p>The following are the complete Rake tasks. You’ll notice that I’ve namespaced the build tasks, as well as invoked a minify task, which I’ll go over in a future post.</p>
 
-<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s2">&quot;Recompile Sass&quot;</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">desc</span> <span class="s2">&quot;Recompile Sass&quot;</span>
 <span class="n">task</span> <span class="ss">:recompile_sass</span> <span class="k">do</span>
   <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Forcing Sass to recompile&quot;</span>
   <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;touch -m assets/scss/styles.scss&quot;</span><span class="p">)</span>
@@ -662,8 +647,7 @@
     <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;rm -f _site/assets/css/*.map&quot;</span><span class="p">)</span>
     <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
   <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div>
+<span class="k">end</span></code></pre></div>
 
 
 
@@ -692,7 +676,7 @@
 
 <p>Here’s what my commit rake task currently looks like, although I’d consult the <a href="https://github.com/davidensinger/davidensinger.github.io/blob/source/Rakefile">Rakefile</a> for a more future-proof version.</p>
 
-<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s2">&quot;Commit _site/&quot;</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">desc</span> <span class="s2">&quot;Commit _site/&quot;</span>
 <span class="n">task</span> <span class="ss">:commit</span> <span class="k">do</span>
   <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Staging modified files&quot;</span>
   <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git add -A&quot;</span><span class="p">)</span>
@@ -704,15 +688,14 @@
   <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Pushing commits to remote&quot;</span>
   <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git push origin source&quot;</span><span class="p">)</span>
   <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
-<span class="k">end</span>
-</code></pre></div>
+<span class="k">end</span></code></pre></div>
 
 
 <h1>Deploy</h1>
 
 <p>Once everything is committed I go through the steps I outlined in <a href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/">Deploying Jekyll with Plugins to GitHub Pages</a>. Again, I’d check the <a href="https://github.com/davidensinger/davidensinger.github.io/blob/source/Rakefile">Rakefile</a> in the event I change something and forget to update this post.</p>
 
-<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s2">&quot;Deploy _site/ to master branch&quot;</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">desc</span> <span class="s2">&quot;Deploy _site/ to master branch&quot;</span>
 <span class="n">task</span> <span class="ss">:deploy</span> <span class="k">do</span>
   <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Deleting master branch&quot;</span>
   <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git branch -D master&quot;</span><span class="p">)</span>
@@ -729,18 +712,16 @@
   <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Pushing all branches to origin&quot;</span>
   <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git push --all origin&quot;</span><span class="p">)</span>
   <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
-<span class="k">end</span>
-</code></pre></div>
+<span class="k">end</span></code></pre></div>
 
 
 <h2>Commit and Deploy</h2>
 
 <p>Finally, I’ve gone ahead and combined them into one task to save myself the burden of typing two separate commands everytime I want to update my website.</p>
 
-<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s2">&quot;Commit and deploy _site/&quot;</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">desc</span> <span class="s2">&quot;Commit and deploy _site/&quot;</span>
 <span class="n">task</span> <span class="ss">:commit_deploy</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:commit</span><span class="p">,</span> <span class="ss">:deploy</span><span class="o">]</span> <span class="k">do</span>
-<span class="k">end</span>
-</code></pre></div>
+<span class="k">end</span></code></pre></div>
 
 
 <h2>What’s Next?</h2>
