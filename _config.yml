@@ -1,7 +1,7 @@
 markdown: rdiscount
 rdiscount:
   extensions: [smart]
-pygments: true
+highlighter: pygments
 permalink: /:year/:month/:title/
 paginate: 5
 
