@@ -9,7 +9,7 @@
     <link href="//fonts.googleapis.com" rel="dns-prefetch">
     <link href="//themes.googleusercontent.com" rel="dns-prefetch">
     <link href="//www.google-analytics.com" rel="dns-prefetch">
-    {% if page.title %}
+    {% if page.title and page.grouptype != "tag" and page.grouptype != "category" %}
       <title>{{ page.title }} &ndash; {{ site.title }}</title>
       <meta content="{{ page.title }}" property="og:title">
       <meta content="{{ page.title }}" name="twitter:title">

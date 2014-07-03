@@ -1,73 +1,61 @@
 module Jekyll
 
-  class CatsAndTags < Generator
-
-    safe true
-
-    def generate(site)
-      site.categories.each do |category|
-        build_subpages(site, "category", category)
-      end
-
-      site.tags.each do |tag|
-        build_subpages(site, "tag", tag)
-      end
-    end
-
-    def build_subpages(site, type, posts)
-      posts[1] = posts[1].sort_by { |p| -p.date.to_f }
-      atomize(site, type, posts)
-      paginate(site, type, posts)
-    end
-
-    def atomize(site, type, posts)
-      path = "/#{type}/#{posts[0]}".downcase.strip.gsub(' ', '-')
-      atom = AtomPage.new(site, site.source, path, type, posts[0], posts[1])
-      site.pages << atom
-    end
-
-    def paginate(site, type, posts)
-      pages = Pager.calculate_pages(posts[1], site.config['paginate'].to_i)
-      (1..pages).each do |num_page|
-        pager = Pager.new(site, num_page, posts[1], pages)
-        path = "/#{type}/#{posts[0]}".downcase.strip.gsub(' ', '-')
-        if num_page > 1
-          path = path + "/page#{num_page}"
-        end
-        newpage = GroupSubPage.new(site, site.source, path, type, posts[0])
-        newpage.pager = pager
-        site.pages << newpage
-
-      end
-    end
-  end
-
-  class GroupSubPage < Page
-    def initialize(site, base, dir, type, val)
+  class CategoryPage < Page
+    def initialize(site, base, dir, category)
       @site = site
       @base = base
       @dir = dir
       @name = 'index.html'
 
       self.process(@name)
-      self.read_yaml(File.join(base, '_layouts'), "group_index.html")
-      self.data["grouptype"] = type
-      self.data[type] = val
+      self.read_yaml(File.join(base, '_layouts'), 'group_index.html')
+      self.data['category'] = category
+
+      self.data['title'] = "#{category}"
+      self.data['grouptype'] = 'category'
     end
   end
 
-  class AtomPage < Page
-    def initialize(site, base, dir, type, val, posts)
+  class CategoryPageGenerator < Generator
+    safe true
+
+    def generate(site)
+      if site.layouts.key? 'group_index'
+        dir = 'category'
+        site.categories.keys.each do |category|
+          site.pages << CategoryPage.new(site, site.source, File.join(dir, category.gsub(/\s+/, '-')), category)
+        end
+      end
+    end
+  end
+
+  class TagPage < Page
+    def initialize(site, base, dir, tag)
       @site = site
       @base = base
       @dir = dir
-      @name = 'atom.xml'
+      @name = 'index.html'
 
       self.process(@name)
-      self.read_yaml(File.join(base, '_layouts'), "group_atom.xml")
-      self.data[type] = val
-      self.data["grouptype"] = type
-      self.data["posts"] = posts[0..9]
+      self.read_yaml(File.join(base, '_layouts'), 'group_index.html')
+      self.data['tag'] = tag
+
+      self.data['title'] = "#{tag}"
+      self.data['grouptype'] = 'tag'
     end
   end
+
+  class TagPageGenerator < Generator
+    safe true
+
+    def generate(site)
+      if site.layouts.key? 'group_index'
+        dir = 'tag'
+        site.tags.keys.each do |tag|
+          site.pages << TagPage.new(site, site.source, File.join(dir, tag.gsub(/\s+/, '-')), tag)
+        end
+      end
+    end
+  end
+
 end
