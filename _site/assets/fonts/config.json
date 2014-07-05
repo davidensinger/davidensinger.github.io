@@ -2,6 +2,9 @@
   "name": "",
   "css_prefix_text": "icon-",
   "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
   "glyphs": [
     {
       "uid": "3db5347bd219f3bce6025780f5d9ef45",
@@ -20,12 +23,6 @@
       "css": "blank",
       "code": 59394,
       "src": "fontawesome"
-    },
-    {
-      "uid": "96ea1be71f597a5bdfc8f791ada4f651",
-      "css": "category",
-      "code": 59192,
-      "src": "entypo"
     },
     {
       "uid": "8663320a860b00f26e94d3d15c9ba99a",
