@@ -3,7 +3,6 @@ date: 2013-04-17 22:16:00
 layout: post
 title: Supporting Twitter Cards with Jekyll
 description: How to add support for Summary Twitter Cards to Jekyll.
-categories: [Development, Social Media]
 tags: [Jekyll, Twitter, Twitter Cards]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/04/supporting-twitter-cards-with-jekyll/'

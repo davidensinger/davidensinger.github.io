@@ -3,7 +3,6 @@ date: 2014-02-15 14:42:00
 layout: post
 title: Image Optimization Tools Overview
 description: A run down of tools to optimize images for file size.
-categories: [Development]
 tags: [Image Optimization]
 suggested_tweet:
   url: 'http://davidensinger.com/2014/02/image-optimization-tools-overview/'

@@ -4,12 +4,6 @@
   <div class="gray-box">
     <p>Posts Tagged <strong>“{{ page.tag }}”</strong></p>
   </div>
-{% elsif page.grouptype == 'category' %}
-  {% assign cat = page.category | downcase %}
-  {% assign loop = site.categories.[cat] %}
-  <div class="gray-box">
-    <p>Posts Categorized <strong>“{{ page.category | titlecase }}”</strong></p>
-  </div>
 {% endif %}
 
 {% for post in loop %}

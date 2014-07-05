@@ -33,7 +33,6 @@ A number of supporting plugins and code snippets for Jekyll are used with the si
 - [Jekyll Templates for Atom, RSS](http://davecoyle.com/tech-notes/jekyll-templates-for-atom-rss/) by [Dave Coyle](http://davecoyle.com/)
 - [Open Graph for Jekyll](https://gist.github.com/pathawks/1406355) by [Pat Hawks](http://alt.pathawks.com/)
 - [Paginate Like a Boss](http://schmidt-happens.com/articles/2012/01/11/setup-pagination-for-jekyll-driven-sites.html) by [Terry Schmidt](http://schmidt-happens.com/)
-- [Jekyll: Category and Tag Paging and Feeds](http://realjenius.com/2012/12/01/jekyll-category-tag-paging-feeds/) by [R.J. Lorimer](http://realjenius.com/)
 - [sitemap.xml](https://github.com/havvg/havvg.github.com/blob/master/sitemap.xml) by [Toni Uebernickel](http://toni.uebernickel.info/)
 
 A couple Sass mixins proved integral to the scaffolding of the site:

@@ -3,7 +3,6 @@ date: 2013-11-03 16:50:00
 layout: post
 title: 'Building a Better Sitemap.xml with Jekyll'
 description: 'How to make a more flexible Sitemap.xml with Jekyll.'
-categories: [Development]
 tags: [Jekyll, Sitemap, XML]
 sitemap:
   lastmod: 2014-01-23

@@ -3,7 +3,6 @@ date: 2013-05-03 10:49:00
 layout: post
 title: Setting Up Google Author Rich Snippets
 description: Steps for setting up Google Author Rich Snippets on your site.
-categories: [Social Media]
 tags: [Google, Rich Snippets]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/05/setting-up-google-author-rich-snippets/'

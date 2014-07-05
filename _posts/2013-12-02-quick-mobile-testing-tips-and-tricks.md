@@ -4,7 +4,6 @@ layout: post
 title: Quick Mobile Testing Tips and Tricks
 description: Tools to help with mobile debugging when the needed browser, operating system, and/or device isn’t available.
 image: 2013-12-02-safari.jpg
-categories: [Development]
 tags: [Mobile]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/12/quick-mobile-testing-tips-and-tricks/'

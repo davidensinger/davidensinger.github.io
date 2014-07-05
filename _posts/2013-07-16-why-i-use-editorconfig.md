@@ -3,7 +3,6 @@ date: 2013-07-16 10:12:00
 layout: post
 title: Why I use EditorConfig
 description: An argument for using EditorConfig in projects.
-categories: [Development]
 tags: [EditorConfig, Sublime Text 2]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/07/why-i-use-editorconfig/'

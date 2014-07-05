@@ -3,7 +3,6 @@ date: 2013-05-24 12:48:00
 layout: post
 title: My Favorite Web Development Software
 description: A list, with descriptions, of my favorite web development software.
-categories: [Development]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/05/my-favorite-web-development-software/'
   text: 'A list, with descriptions, of my favorite web development software by @DavidEnsinger'

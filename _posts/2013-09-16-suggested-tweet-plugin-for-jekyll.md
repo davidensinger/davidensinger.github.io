@@ -3,7 +3,6 @@ date: 2013-09-16 16:50:00
 layout: post
 title: Suggested Tweet Plugin for Jekyll
 description: A Liquid tag for Jekyll that allows for the embedding of suggested tweets via Twitter’s Web Intents API.
-categories: [Development]
 tags: [Jekyll, Liquid, Twitter]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/09/suggested-tweet-plugin-for-jekyll/'

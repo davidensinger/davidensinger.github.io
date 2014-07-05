@@ -9,7 +9,7 @@
     <link href="//fonts.googleapis.com" rel="dns-prefetch">
     <link href="//themes.googleusercontent.com" rel="dns-prefetch">
     <link href="//www.google-analytics.com" rel="dns-prefetch">
-    {% if page.title and page.grouptype != "tag" and page.grouptype != "category" %}
+    {% if page.title and page.grouptype != "tag" %}
       <title>{{ page.title }} &ndash; {{ site.title }}</title>
       <meta content="{{ page.title }}" property="og:title">
       <meta content="{{ page.title }}" name="twitter:title">
@@ -17,10 +17,6 @@
       <title>Posts Tagged “{{ page.tag }}” &ndash; {{ site.title }}</title>
       <meta content="Posts Tagged “{{ page.tag }}” &ndash; {{ site.title }}" property="og:title">
       <meta content="Posts Tagged “{{ page.tag }}” &ndash; {{ site.title }}" name="twitter:title">
-    {% elsif page.grouptype == "category" %}
-      <title>Posts Categorized “{{ page.category | titlecase }}” &ndash; {{ site.title }}</title>
-      <meta content="Posts Categorized “{{ page.category | titlecase }}” &ndash; {{ site.title }}" property="og:title">
-      <meta content="Posts Categorized “{{ page.category | titlecase }}” &ndash; {{ site.title }}" name="twitter:title">
     {% else %}
       <title>{{ site.title }}</title>
       <meta content="{{ site.title }}" property="og:title">
@@ -86,11 +82,6 @@
     {% else %}
       <meta property="og:image" content="{{ site.url }}/assets/img/logo-high-resolution.png">
       <meta name="twitter:image:src" content="{{ site.url }}/assets/img/logo-high-resolution.png">
-    {% endif %}
-    {% if page.categories %}
-      {% for category in page.categories limit:1 %}
-      <meta property="article:section" content="{{ category }}">
-      {% endfor %}
     {% endif %}
     {% if page.tags %}
       {% for tag in page.tags %}

@@ -3,7 +3,6 @@ date: 2013-06-14 13:20:00
 layout: post
 title: My Favorite Chrome Extensions for Development
 description: A short list of my favorite Chrome extensions for development.
-categories: [Development]
 tags: [Google Chrome]
 suggested_tweet:
   url: 'http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development/'
