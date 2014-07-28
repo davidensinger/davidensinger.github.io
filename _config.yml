@@ -15,5 +15,7 @@ url: http://davidensinger.com
 
 exclude: ['config.json', 'Gemfile', 'Gemfile.lock', 'Rakefile', 'README.md', '*.scss']
 
+show_drafts: true
+
 suggested_tweet:
   related: ['davidensinger']
