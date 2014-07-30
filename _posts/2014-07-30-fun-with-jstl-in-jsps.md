@@ -1,4 +1,5 @@
 ---
+date: 2014-07-30 15:57:00
 layout: post
 title: Fun with JSTL in JSPs
 description: 'And now for something completely different.'
