@@ -33,7 +33,7 @@
   display: block;
   @include rem(width, 4);
   @include rem(height, 4);
-  @include rem(border-radius, 50%);
+  border-radius: 50%;
   -webkit-transition: all 0.25s ease-in;
   transition: all 0.25s ease-in;
   &:link,
