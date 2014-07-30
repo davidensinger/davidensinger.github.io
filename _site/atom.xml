@@ -1,4 +1,514 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2014-07-14T14:50:28Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2014 David Ensinger. All rights reserved.</rights><entry><title type="text">Transferring the DNS from Namecheap to CloudFlare for GitHub Pages</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages/"/><id>http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages</id><published>2014-04-19T12:42:00Z</published><updated>2014-04-19T12:42:00Z</updated><content type="html"><![CDATA[ <p>A couple weeks ago <a href="https://twitter.com/rose_ian">@rose_ian</a> reached out to let me know that our websites, which have the identical setup, were suffering from slow initial connection times. With some legwork Ian figured out how to markedly reduce the load time for his site by hosting his DNS with <a href="https://www.cloudflare.com/">CloudFlare</a>. What follows are the steps I took to understand the issue and make the switch to CloudFlare. I’d like to give a big thanks to Ian for his initial efforts.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text" xml:lang="en">Development, design, and more by David Ensinger</title><link type="application/atom+xml" rel="self" href="http://davidensinger.com/atom.xml"/><link href="http://davidensinger.com/"/><id>http://davidensinger.com/</id><updated>2014-07-30T15:58:30Z</updated><author><name>David Ensinger</name><email>hello@davidensinger.com</email></author><rights type="text">Copyright © 2014 David Ensinger. All rights reserved.</rights><entry><title type="text">Fun with JSTL in JSPs</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/07/fun-with-jstl-in-jsps/"/><id>http://davidensinger.com/2014/07/fun-with-jstl-in-jsps</id><published>2014-07-30T11:57:00Z</published><updated>2014-07-30T11:57:00Z</updated><content type="html"><![CDATA[ <p>It’s often difficult to find good documentation for JSTL. It’s either too technical or is so poorly designed that you swear you’re browsing within an enterprise Java intranet (is anyone surprised?). Since I’ve often found myself searching for the same information over and again, I’ve taken the time to write down the features I use most frequently.</p>
+
+<h2>Comments</h2>
+
+<p>To comment out code, it’s preferable to use hidden comments, which don’t get printed:</p>
+
+<pre><code>&lt;%-- This will never been seen on production. --%&gt;
+&lt;!-- But this will, although why would you want that? --&gt;
+</code></pre>
+
+<h2>Operators</h2>
+
+<p>Both arithmetic and logical operators are supported:</p>
+
+<table>
+  <caption>Table of Operators:</caption>
+  <thead>
+    <tr>
+      <th>Operator</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.</td>
+      <td>Access a bean property or Map entry</td>
+    </tr>
+    <tr>
+      <td>[]</td>
+      <td> Access an array or List element</td>
+    </tr>
+    <tr>
+      <td>( )</td>
+      <td> Group a subexpression to change the evaluation order</td>
+    </tr>
+    <tr>
+      <td>+</td>
+      <td>Addition</td>
+    </tr>
+    <tr>
+      <td>-</td>
+      <td> Subtraction or negation of a value</td>
+    </tr>
+    <tr>
+      <td>*</td>
+      <td> Multiplication</td>
+    </tr>
+    <tr>
+      <td>/ or div</td>
+      <td> Division</td>
+    </tr>
+    <tr>
+      <td>% or mod</td>
+      <td> Modulo (remainder)</td>
+    </tr>
+    <tr>
+      <td>== or eq</td>
+      <td> Test for equality</td>
+    </tr>
+    <tr>
+      <td>!= or ne</td>
+      <td> Test for inequality</td>
+    </tr>
+    <tr>
+      <td>&lt; or lt</td>
+      <td>Test for less than</td>
+    </tr>
+    <tr>
+      <td>&gt; or gt</td>
+      <td> Test for greater than</td>
+    </tr>
+    <tr>
+      <td>&lt;= or le</td>
+      <td>Test for less than or equal</td>
+    </tr>
+    <tr>
+      <td>&gt;= or gt</td>
+      <td>Test for greater than or equal</td>
+    </tr>
+    <tr>
+      <td>&amp;&amp; or and</td>
+      <td>Test for logical AND</td>
+    </tr>
+    <tr>
+      <td>|| or or</td>
+      <td> Test for logical OR</td>
+    </tr>
+    <tr>
+      <td>! or not</td>
+      <td> Unary Boolean complement</td>
+    </tr>
+    <tr>
+      <td>empty </td>
+      <td>Test for empty variable values</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h2>Set</h2>
+
+<p>Use the <code>set</code> tag to create a new variable or assign a value to a new or existing variable.</p>
+
+<table>
+  <caption>Table of Attributes:</caption>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description </th>
+      <th>Required</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>value</td>
+      <td>Information to save</td>
+      <td>No</td>
+      <td>body</td>
+    </tr>
+    <tr>
+      <td>target</td>
+      <td>Name of the variable whose property should be modified</td>
+      <td>No</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>property</td>
+      <td>Property to modify</td>
+      <td>No</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>var</td>
+      <td>Name of the variable to store information</td>
+      <td>No</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>scope</td>
+      <td>Scope of variable to store information</td>
+      <td>No</td>
+      <td>Page</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>An Example</h3>
+
+<p>The following two variables have their respective values assigned with <code>set</code>:</p>
+
+<pre><code>&lt;c:set var="maxTopics" value="3" /&gt;
+&lt;c:set var="displayClass" value="hiddenTablet" /&gt;
+</code></pre>
+
+<p>We’d then be able to use the variables like so, <code>${maxTopics}</code> and <code>${displayClass}</code> within our JSP.</p>
+
+<h2>If</h2>
+
+<p>To evaluate an expression, use an <code>if</code> tag. If the condition is true, it will display the body content.</p>
+
+<table>
+  <caption>Table of Attributes:</caption>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description </th>
+      <th>Required</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>test</td>
+      <td>Condition to evaluate</td>
+      <td>Yes</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>var</td>
+      <td>Name of the variable to store the condition's result</td>
+      <td>No</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>scope</td>
+      <td>Scope of the variable to store the condition's result</td>
+      <td>No</td>
+      <td>page</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>An Example</h3>
+
+<p>In the following example of an author profile component, we test if the author has a photo and if so, we print it out:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;c c-authorProfile&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;authorProfile-heading&quot;</span><span class="nt">&gt;</span>${authorProfile.fullName}<span class="nt">&lt;/h4&gt;</span>
+  <span class="nt">&lt;c:if</span> <span class="na">test=</span><span class="s">&quot;${authorHasPhoto}&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;${authorProfile.photo}&quot;</span> <span class="na">alt=</span><span class="s">&quot;A photo of ${authorProfile.fullName}&quot;</span> <span class="na">class=</span><span class="s">&quot;authorProfile-photo&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/c:if&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;authorProfile-biography&quot;</span><span class="nt">&gt;</span>
+    ${authorProfile.biography}
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+
+<h2>Choose</h2>
+
+<p>Much like a <strong>switch</strong> of <strong>if else</strong> statement, <code>choose</code> allows you to evaluate multiple conditions by using a combination of <code>when</code> and <code>otherwise</code> tags.</p>
+
+<h3>An Example</h3>
+
+<p>This media object component tests if there’s a photo, or a video, or neither and then prints out the appropriate markup:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;c c-mediaObject&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;mediaObject-heading&quot;</span><span class="nt">&gt;</span>${mediaObject.heading}<span class="nt">&lt;/h4&gt;</span>
+  <span class="nt">&lt;c:choose&gt;</span>
+    <span class="nt">&lt;c:when</span> <span class="na">test=</span><span class="s">&quot;${mediaObject.hasPhoto}&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;${mediaObject.photo}&quot;</span> <span class="na">alt=</span><span class="s">&quot;${mediaObject.description}&quot;</span> <span class="na">class=</span><span class="s">&quot;mediaObject-photo&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/c:when&gt;</span>
+    <span class="nt">&lt;c:when</span> <span class="na">test=</span><span class="s">&quot;${mediaObject.hasVideo}&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;video</span> <span class="na">controls</span> <span class="na">class=</span><span class="s">&quot;mediaObject-video&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">&quot;${mediaObject.video}&quot;</span> <span class="na">type=</span><span class="s">&quot;video/mp4&quot;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/video&gt;</span>
+    <span class="nt">&lt;/c:when&gt;</span>
+    <span class="nt">&lt;c:otherwise&gt;</span>
+      <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;author-warning&quot;</span><span class="nt">&gt;</span>Hey did you forget to author a photo or video? If not, perhaps a different component would be more appropriate.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/c:otherwise&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;mediaObject-text&quot;</span><span class="nt">&gt;</span>
+      ${mediaObject.text}
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/c:choose&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+
+<h2>Ternary Operations</h2>
+
+<p>A ternary operator, which allows for an inline condition that evaluates to true or false:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html">${condition ? &#39;when_true&#39; : &#39;when_false&#39;}</code></pre></div>
+
+
+<h3>A Couple Examples</h3>
+
+<p>Using a ternary operator is useful within a template because it allows for the addition of classes for use as styling hooks.</p>
+
+<p>Here we use a ternary operator to print classes that denote whether the layout is one or two columns:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;body</span> <span class="na">class=</span><span class="s">&quot;t t-${templateName} ${hasTwoColumnsLayout ? &#39;l-twoColumns&#39; : &#39;l-oneColumn&#39;}&quot;</span><span class="nt">&gt;</span>
+  …
+<span class="nt">&lt;/body&gt;</span></code></pre></div>
+
+
+<p>It may also be helpful to print out inline styles, although be weary about relying on this too often, as CSS should really be kept in stylesheets.</p>
+
+<p>In this example we change the background color of the component to red when it’s not authored:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;c c-${componentName}&quot;</span> <span class="na">style=</span><span class="s">&quot;${componentNeedsAuthoring ? &#39;background-color: red&#39; : &#39;&#39;}&quot;</span><span class="nt">&gt;</span>
+  …
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+
+<h2>For Each</h2>
+
+<p>To iterate over a collection, use a <code>forEach</code> tag. There are a half-dozen attributes for use with the <code>forEach</code> tag and they can provide quite a bit of flexibility.</p>
+
+<table>
+  <caption>Table of Attributes:</caption>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description </th>
+      <th>Required</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>items</td>
+      <td>Information to loop over</td>
+      <td>No</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>begin</td>
+      <td>Element to start with (0 = first item, 1 = second item, …)</td>
+      <td>No</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>end</td>
+      <td>Element to end with (0 = first item, 1 = second item, …)</td>
+      <td>No</td>
+      <td>Last element</td>
+    </tr>
+    <tr>
+      <td>step</td>
+      <td>Process every step items</td>
+      <td>No</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>var</td>
+      <td>Name of the variable to expose the current item</td>
+      <td>No</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>varStatus</td>
+      <td>Name of the variable to expose the loop status</td>
+      <td>No</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>An Example</h3>
+
+<p>Here we have a component that displays an unordered list of links:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;c c-linkList&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;linkList-heading&quot;</span><span class="nt">&gt;</span>${linkList.heading}<span class="nt">&lt;/h4&gt;</span>
+  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;linkList-list&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;c:forEach</span> <span class="na">var=</span><span class="s">&quot;link&quot;</span> <span class="na">items=</span><span class="s">&quot;${linkList.links}&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;linkList-item&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;${link.href}&quot;</span> <span class="na">class=</span><span class="s">&quot;linkList-link&quot;</span><span class="nt">&gt;</span>${link.text}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/c:forEach&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+
+<h2>forEach varStatus Properties</h2>
+
+<p>The <code>varStatus</code> attribute comes with some helpful properties.</p>
+
+<table>
+  <caption>Table of varStatus Properties:</caption>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Getter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>current</td>
+      <td>getCurrent()</td>
+      <td>The item (from the collection) for the current round of iteration</td>
+    </tr>
+    <tr>
+      <td>index</td>
+      <td>getIndex()</td>
+      <td>The zero-based index for the current round of iteration</td>
+    </tr>
+    <tr>
+      <td>count</td>
+      <td>getCount()</td>
+      <td>The one-based count for the current round of iteration</td>
+    </tr>
+    <tr>
+      <td>first</td>
+      <td>isFirst()</td>
+      <td>Flag indicating whether the current round is the first pass through the iteration</td>
+    </tr>
+    <tr>
+      <td>last</td>
+      <td>isLast()</td>
+      <td>Flag indicating whether the current round is the last pass through the iteration</td>
+    </tr>
+    <tr>
+      <td>begin</td>
+      <td>getBegin()</td>
+      <td>The value of the begin attribute</td>
+    </tr>
+    <tr>
+      <td>end</td>
+      <td>getEnd()</td>
+      <td>The value of the end attribute</td>
+    </tr>
+    <tr>
+      <td>step</td>
+      <td>getStep()</td>
+      <td>The value of the step attribute</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>An Example</h3>
+
+<p>A couple useful properties are <code>first</code> and <code>last</code>, which are used to delimit a list of authors in the following example from a byline component:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;c c-authorByline&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;c:forEach</span> <span class="na">var=</span><span class="s">&quot;author&quot;</span> <span class="na">items=</span><span class="s">&quot;${site.authors}&quot;</span> <span class="na">varStatus=</span><span class="s">&quot;status&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;author-byline&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;c:if</span> <span class="na">test=</span><span class="s">&quot;${status.first and not status.last}&quot;</span><span class="nt">&gt;</span>by<span class="nt">&lt;/c:if&gt;</span>
+      <span class="nt">&lt;c:if</span> <span class="na">test=</span><span class="s">&quot;${not status.first and status.last}&quot;</span><span class="nt">&gt;</span>and<span class="nt">&lt;/c:if&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;${author.linkHref}&quot;</span> <span class="na">class=</span><span class="s">&quot;author-byline--link&quot;</span><span class="nt">&gt;</span>${author.fullName}<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;c:if</span> <span class="na">test=</span><span class="s">&quot;${not status.first and not status.last}&quot;</span><span class="nt">&gt;</span>,<span class="nt">&lt;/c:if&gt;</span>
+    <span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/c:forEach&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+
+<h2>Functions</h2>
+
+<p>There are a lot of standard functions included in JSTL, although you probably shouldn’t use them. The majority of the functionality they provide is either better done in the model (and not the view) or can be accomplished with CSS. I very seldom find myself using anything other <code>fn:length()</code>, which I use to find the number of items in a collection.</p>
+
+<table>
+  <caption>Table of Functions:</caption>
+  <thead>
+    <tr>
+      <th>Function</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>fn:contains()</td>
+      <td>Tests if an input string contains the specified substring.</td>
+    </tr>
+    <tr>
+      <td>fn:containsIgnoreCase()</td>
+      <td>Tests if an input string contains the specified substring in a case insensitive way.</td>
+    </tr>
+    <tr>
+      <td>fn:endsWith()</td>
+      <td>Tests if an input string ends with the specified suffix.</td>
+    </tr>
+    <tr>
+      <td>fn:escapeXml()</td>
+      <td>Escapes characters that could be interpreted as XML markup.</td>
+    </tr>
+    <tr>
+      <td>fn:indexOf()</td>
+      <td>Returns the index withing a string of the first occurrence of a specified substring.</td>
+    </tr>
+    <tr>
+      <td>fn:join()</td>
+      <td>Joins all elements of an array into a string.</td>
+    </tr>
+    <tr>
+      <td>fn:length()</td>
+      <td>Returns the number of items in a collection, or the number of characters in a string.</td>
+    </tr>
+    <tr>
+      <td>fn:replace()</td>
+      <td>Returns a string resulting from replacing in an input string all occurrences with a given string.</td>
+    </tr>
+    <tr>
+      <td>fn:split()</td>
+      <td>Splits a string into an array of substrings.</td>
+    </tr>
+    <tr>
+      <td>fn:startsWith()</td>
+      <td>Tests if an input string starts with the specified prefix.</td>
+    </tr>
+    <tr>
+      <td>fn:substring()</td>
+      <td>Returns a subset of a string.</td>
+    </tr>
+    <tr>
+      <td>fn:substringAfter()</td>
+      <td>Returns a subset of a string following a specific substring.</td>
+    </tr>
+    <tr>
+      <td>fn:substringBefore()</td>
+      <td>Returns a subset of a string before a specific substring.</td>
+    </tr>
+    <tr>
+      <td>fn:toLowerCase()</td>
+      <td>Converts all of the characters of a string to lower case.</td>
+    </tr>
+    <tr>
+      <td>fn:toUpperCase()</td>
+      <td>Converts all of the characters of a string to upper case.</td>
+    </tr>
+    <tr>
+      <td>fn:trim()</td>
+      <td>Removes white spaces from both ends of a string.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>An Example</h3>
+
+<p>In the following example we only print out the search results if there are more than zero, otherwise we tell the user to try a different search term.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;c c-siteSearch&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;siteSearch-heading&quot;</span><span class="nt">&gt;</span>${siteSearch.heading}<span class="nt">&lt;/h4&gt;</span>
+  <span class="nt">&lt;c:choose&gt;</span>
+    <span class="nt">&lt;c:when</span> <span class="na">test=</span><span class="s">&quot;${fn:length(siteSearch.queryResults) &gt; 0}&quot;</span><span class="nt">&gt;</span>
+      …
+    <span class="nt">&lt;/c:when&gt;</span>
+    <span class="nt">&lt;c:otherwise&gt;</span>
+      <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;siteSearch-warning&quot;</span><span class="nt">&gt;</span>Sorry your search has found no results. Please try a different query!<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/c:otherwise&gt;</span>
+  <span class="nt">&lt;/c:choose&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+ <br>
+<hr>
+<p>You’ve just read about <strong><a href="http://davidensinger.com/2014/07/fun-with-jstl-in-jsps/">Fun with JSTL in JSPs</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
+<p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
+ ]]></content></entry><entry><title type="text">Transferring the DNS from Namecheap to CloudFlare for GitHub Pages</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages/"/><id>http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages</id><published>2014-04-19T12:42:00Z</published><updated>2014-04-19T12:42:00Z</updated><content type="html"><![CDATA[ <p>A couple weeks ago <a href="https://twitter.com/rose_ian">@rose_ian</a> reached out to let me know that our websites, which have the identical setup, were suffering from slow initial connection times. With some legwork Ian figured out how to markedly reduce the load time for his site by hosting his DNS with <a href="https://www.cloudflare.com/">CloudFlare</a>. What follows are the steps I took to understand the issue and make the switch to CloudFlare. I’d like to give a big thanks to Ian for his initial efforts.</p>
 
 <div class="yellow-box">
   <p><strong>Hat Tip:</strong> <a href="http://ianrose.me/blog/2014/03/30/permanent-rediect-github-project-page/">Permanent Redirect GitHub Project Page to Custom Domain</a> by <a href="https://twitter.com/rose_ian">@rose_ian</a></p>
@@ -654,81 +1164,5 @@
  <br>
 <hr>
 <p>You’ve just read about <strong><a href="http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/">Easy Sass Source Maps with Development Environments and Rake</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
-<p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
- ]]></content></entry><entry><title type="text">Automating Jekyll Deployment to GitHub Pages with Rake</title><link rel="alternate" type="text/html" href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/"/><id>http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake</id><published>2013-07-23T09:24:00Z</published><updated>2013-07-23T09:24:00Z</updated><content type="html"><![CDATA[ <p>I recently automated the deployment of my site to <strong>GitHub Pages</strong>, which is something that <a href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/">I’ve wanted to do for awhile</a>. Whereas I would previously enter a string of commands into the terminal, I now use <strong>Rake</strong> to handle those commands for me.</p>
-
-<h2>What is Rake</h2>
-
-<p>For those who don’t know (and this was me until recently), <a href="http://rake.rubyforge.org/">Rake</a> is “a simple ruby build program with capabilities similar to make.” In other words, it’s a tool that helps automate the tedium that often comes with managing a website.</p>
-
-<div class="gray-box">
-  <p><strong>More Info:</strong> Jason Seifer has a pretty good <a href="http://jasonseifer.com/2010/04/06/rake-tutorial">Rake Tutorial</a> for developers new to Rake.</p>
-</div>
-
-
-<h2>My Workflow</h2>
-
-<p>I’ve set up Jekyll to consist of two branches: <strong>source</strong> and <strong>master</strong>. The source branch consists of the entire project and as such tracks all changes, while the master branch consists solely of the compiled site, which can be found in the <strong>_site</strong> subdirectory.</p>
-
-<p>My typical workflow is to write a post (or modify the site design) and then commit whatever I’ve changed until the only files that remain uncommitted are in the <strong>_site</strong> subdirectory. I then stage and commit those files with a generic message that includes the current time.</p>
-
-<h2>Commit</h2>
-
-<p>Here’s what my commit rake task currently looks like, although I’d consult the <a href="https://github.com/davidensinger/davidensinger.github.io/blob/source/Rakefile">Rakefile</a> for a more future-proof version.</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">desc</span> <span class="s2">&quot;Commit _site/&quot;</span>
-<span class="n">task</span> <span class="ss">:commit</span> <span class="k">do</span>
-  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Staging modified files&quot;</span>
-  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git add -A&quot;</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
-  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Committing a site build at </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="si">}</span><span class="s2">&quot;</span>
-  <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Build site at </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="si">}</span><span class="s2">&quot;</span>
-  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git commit -m </span><span class="se">\&quot;</span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
-  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Pushing commits to remote&quot;</span>
-  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git push origin source&quot;</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
-<span class="k">end</span></code></pre></div>
-
-
-<h1>Deploy</h1>
-
-<p>Once everything is committed I go through the steps I outlined in <a href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/">Deploying Jekyll with Plugins to GitHub Pages</a>. Again, I’d check the <a href="https://github.com/davidensinger/davidensinger.github.io/blob/source/Rakefile">Rakefile</a> in the event I change something and forget to update this post.</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">desc</span> <span class="s2">&quot;Deploy _site/ to master branch&quot;</span>
-<span class="n">task</span> <span class="ss">:deploy</span> <span class="k">do</span>
-  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Deleting master branch&quot;</span>
-  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git branch -D master&quot;</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
-  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Creating new master branch and switching to it&quot;</span>
-  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git checkout -b master&quot;</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
-  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Forcing the _site subdirectory to be project root&quot;</span>
-  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git filter-branch --subdirectory-filter _site/ -f&quot;</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
-  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Switching back to source branch&quot;</span>
-  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git checkout source&quot;</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
-  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Pushing all branches to origin&quot;</span>
-  <span class="n">status</span> <span class="o">=</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;git push --all origin&quot;</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="n">status</span> <span class="p">?</span> <span class="s2">&quot;Success&quot;</span> <span class="p">:</span> <span class="s2">&quot;Failed&quot;</span>
-<span class="k">end</span></code></pre></div>
-
-
-<h2>Commit and Deploy</h2>
-
-<p>Finally, I’ve gone ahead and combined them into one task to save myself the burden of typing two separate commands everytime I want to update my website.</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">desc</span> <span class="s2">&quot;Commit and deploy _site/&quot;</span>
-<span class="n">task</span> <span class="ss">:commit_deploy</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:commit</span><span class="p">,</span> <span class="ss">:deploy</span><span class="o">]</span> <span class="k">do</span>
-<span class="k">end</span></code></pre></div>
-
-
-<h2>What’s Next?</h2>
-
-<p>Not only have I automated the deployment of my site, but I’ve also used Rake to create development and production builds. This has allowed me to implement Sass source maps and easily minify my assets, which I’ll detail in subsequent posts! Stay tuned :)</p>
- <br>
-<hr>
-<p>You’ve just read about <strong><a href="http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/">Automating Jekyll Deployment to GitHub Pages with Rake</a></strong> on <strong><a href="http://davidensinger.com/">Development, design, and more by David Ensinger</a></strong>.</p>
 <p>If you’d prefer to receive your updates in tweet form, please follow me on <strong><a href="https://twitter.com/DavidEnsinger">Twitter</a></strong>, otherwise I hope you’re enjoying the feed!</p>
  ]]></content></entry></feed>
