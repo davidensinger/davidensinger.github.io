@@ -66,6 +66,7 @@
 }
 
 .entry-content {
+  overflow: hidden;
   @include rem(margin-bottom, 3);
   >p {
     &:first-child {
