@@ -454,4 +454,8 @@ table {
       }
     }
   }
+
+  @include breakpoint(mobile-portrait-to-mobile-landscape) {
+    @include rem(font-size, 0.75);
+  }
 }
