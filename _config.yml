@@ -1,19 +1,13 @@
-markdown: rdiscount
-rdiscount:
-  extensions: [smart]
-
-highlighter: pygments
-
 permalink: /:year/:month/:title/
 paginate: 5
 
-title: Development, design, and more by David Ensinger
-author: David Ensinger
-email: hello@davidensinger.com
-description: David Ensinger is a Front End Developer from Columbus, OH
-url: http://davidensinger.com
+title: 'Development, design, and more by David Ensinger'
+author: 'David Ensinger'
+email: 'hello@davidensinger.com'
+description: 'David Ensinger is a Front End Developer from Columbus, OH'
+url: 'http://davidensinger.com'
 
-exclude: ['config.json', 'Gemfile', 'Gemfile.lock', 'Rakefile', 'README.md', '*.scss']
+exclude: ['config.json', 'Gemfile*', 'Rakefile', 'README.md', '*.scss']
 
 show_drafts: true
 
