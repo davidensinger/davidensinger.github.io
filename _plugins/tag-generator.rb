@@ -23,7 +23,7 @@ module Jekyll
       if site.layouts.key? 'group_index'
         dir = 'tag'
         site.tags.keys.each do |tag|
-          site.pages << TagPage.new(site, site.source, File.join(dir, tag.gsub(/\s+/, '-')), tag)
+          site.pages << TagPage.new(site, site.source, File.join(dir, tag.downcase.gsub(/\s+/, '-')), tag)
         end
       end
     end

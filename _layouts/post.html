@@ -37,7 +37,7 @@ page-class: page-post
         {% if page.tags != empty %}
           <span class="icon-left entry-meta-icon icon-tag">
             {% for tag in page.tags %}
-              <a class="nav-link-tag" href="/tag/{{ tag | replace:' ','-' | downcase }}" rel="tag">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}
+              <a class="nav-link-tag" href="/tag/{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}
             {% endfor %}
           </span>
         {% endif %}
