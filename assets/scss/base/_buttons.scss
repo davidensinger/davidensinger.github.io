@@ -4,7 +4,7 @@
 
 %button-base {
   display: inline-block;
-  @include rem(padding, 0.5 1 0.4);
+  @include rem(padding, 0.5 1);
   text-transform: uppercase;
   font-weight: $base-font-weight-bold;
   border-radius: 0.33em;
@@ -26,7 +26,6 @@
   background: $blue;
   color: $white-dark !important;
   text-shadow: 0 1px 0 $blue;
-  box-shadow: 0 0.25em 0 0 $blue-dark;
   &:visited {
     color: $white-dark !important;
   }
@@ -35,13 +34,11 @@
     background: $blue-dark;
     color: $white !important;
     text-shadow: 0 1px 0 $blue-darker;
-    box-shadow: 0 0.25em 0 0 $blue-darker;
   }
   &:focus {
     background: $green;
     color: $white !important;
     text-shadow: 0 1px 0 $green-dark;
-    box-shadow: 0 0.25em 0 0 $green-dark;
   }
 }
 
