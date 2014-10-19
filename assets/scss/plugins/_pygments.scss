@@ -45,25 +45,25 @@
     color: #c82829;
   }
   .ge { // Generic.Emph
-    font-style: italic;
+    @extend %font-open-sans-italic;
   }
   .gh { // Generic.Heading
     color: #4d4d4c;
-    font-weight: $base-font-weight-bold;
+    @extend %font-open-sans-bold;
   }
   .gi { // Generic.Inserted
     color: #718c00;
   }
   .gp { // Generic.Prompt
     color: #8e908c;
-    font-weight: $base-font-weight-bold;
+    @extend %font-open-sans-bold;
   }
   .gs { // Generic.Strong
-    font-weight: $base-font-weight-bold;
+    @extend %font-open-sans-bold;
   }
   .gu { // Generic.Subheading
     color: #3e999f;
-    font-weight: $base-font-weight-bold;
+    @extend %font-open-sans-bold;
   }
   .kc { // Keyword.Constant
     color: #8959a8;

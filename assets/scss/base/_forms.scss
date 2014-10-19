@@ -37,7 +37,7 @@ textarea {
 }
 
 label {
-  font-weight: $base-font-weight-bold;
+  @extend %font-open-sans-bold;
   color: $gray-darker;
 }
 

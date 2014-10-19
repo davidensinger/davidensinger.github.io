@@ -20,8 +20,7 @@ button,
 input,
 select,
 textarea {
-  font-family: $base-font-face;
-  font-weight: $base-font-weight;
+  @extend %font-open-sans-regular;
   line-height: $line-height-ratio;
   color: $text-color;
 }
@@ -199,7 +198,7 @@ h6 {
   clear: left;
   padding: 0;
   color: $heading-color;
-  font-weight: $base-font-weight-bold;
+  @extend %font-open-sans-bold;
 }
 
 h1 {
@@ -249,7 +248,7 @@ dd {
 }
 
 dt {
-  font-weight: $base-font-weight-bold;
+  @extend %font-open-sans-bold;
 }
 
 // No top margins on first children or bottom margins on last children
@@ -286,14 +285,15 @@ hr {
 b,
 strong,
 th {
-  font-weight: $base-font-weight-bold;
+  @extend %font-open-sans-bold;
 }
 
 // Font styles
 cite,
 em,
-i {
-  font-style: italic;
+i,
+dfn {
+  @extend %font-open-sans-italic;
 }
 
 blockquote {
@@ -313,7 +313,7 @@ blockquote {
     left: 2.5rem;
     z-index: -1;
     @include rem(font-size, 14);
-    font-weight: $base-font-weight-bold;
+    @extend %font-open-sans-bold;
     color: #3c3c3c;
     text-shadow: none;
     line-height: 0.7;
@@ -325,7 +325,7 @@ blockquote {
   }
   cite {
     color: $gray-lightest;
-    font-weight: $base-font-weight-bold;
+    @extend %font-open-sans-bold;
     font-style: normal;
     a {
       &:link,
@@ -381,7 +381,7 @@ var {
   @include rem(border-radius, 0.5);
   background: $white-dark;
   color: $gray-dark;
-  font-weight: $base-font-weight;
+  @extend %font-open-sans-regular;
    -ms-word-break: break-all;
        word-break: break-all;
        // Non standard for webkit
@@ -439,7 +439,7 @@ table {
   caption,
   th {
     text-align: left;
-    font-weight: $base-font-weight-bold;
+    @extend %font-open-sans-bold;
   }
   td,
   th {

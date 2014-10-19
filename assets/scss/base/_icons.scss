@@ -24,7 +24,7 @@
 
 .icon-left {
   &:before {
-    font-weight: $base-font-weight-bold;
+    @extend %font-open-sans-bold;
     @include rem(margin-right, 0.25);
   }
 }

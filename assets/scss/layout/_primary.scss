@@ -33,7 +33,7 @@
 
 .entry-meta-header {
   @include rem(margin-bottom, 0.7);
-  font-weight: $base-font-weight-bold;
+  @extend %font-open-sans-bold;
 }
 
 .entry-meta-icon {

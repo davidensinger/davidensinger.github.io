@@ -4,7 +4,7 @@
 
 a {
   color: $link-color;
-  font-weight: $base-font-weight-bold;
+  @extend %font-open-sans-bold;
   text-decoration: none;
   &:hover {
     color: $link-color-hover;
