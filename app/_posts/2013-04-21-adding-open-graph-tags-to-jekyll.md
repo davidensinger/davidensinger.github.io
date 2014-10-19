@@ -95,9 +95,9 @@ Here’s the final snippet of code with the appropriate meta data:
   <meta content="{{ site.url }}/about/" property="article:author">
 {% endif %}
 {% if page.image %}
-  <meta content="{{ site.url }}/img/posts/{{ page.image }}" property="og:image">
+  <meta content="/img/posts/{{ page.image }}" property="og:image">
 {% else %}
-  <meta content="{{ site.url }}/img/logo-high-resolution.png" property="og:image">
+  <meta content="/img/logo-high-resolution.png" property="og:image">
 {% endif %}
 {% if page.categories %}
   {% for category in page.categories limit:1 %}

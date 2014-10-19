@@ -20,7 +20,7 @@ Have you ever needed to track down a bug in mobile, but due to circumstances fou
 ## iOS Simulator
 For debugging on iOS, check out the [iOS Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html), which comes packaged within [Xcode](https://developer.apple.com/xcode/). The simulator has different versions of both the **iPhone** and **iPad**, which can easily be rotated and scaled, to test in portrait and landscape orientations and fit onto your monitor, respectively.
 
-<img src="{{ site.url }}/img/posts/2013-12-02-safari.jpg" alt="Image of the iOS Simulator" class="media-center img-border" />
+<img src="/img/posts/2013-12-02-safari.jpg" alt="Image of the iOS Simulator" class="media-center img-border" />
 
 To open, go to `Applications > Xcode (right click and “Show Package Contents”) > Contents > Applications > iPhone Simulator`. Once the program is opened, you can easily add it to your the Dock.
 
@@ -34,12 +34,12 @@ The iOS Simulator also has integration with the [Safari Web Inspector](https://d
 ## Opera Mobile Emulator
 Opera supports mobile debugging via their [Opera Mobile Emulator](http://www.opera.com/developer/mobile-emulator), which comes ready with more than a dozen presets to mimic the “defined resolution, pixel density, user interface” of popular devices. It can be paired with [Opera Dragonfly](http://www.opera.com/dragonfly/), a suite of developer tools.
 
-<img src="{{ site.url }}/img/posts/2013-12-02-opera.jpg" alt="Image of the Opera Mobile Emulator" class="media-center img-border" />
+<img src="/img/posts/2013-12-02-opera.jpg" alt="Image of the Opera Mobile Emulator" class="media-center img-border" />
 
 ## Firefox
 The [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools) have come a long way in the past year. Amongst the many recent additions is the [Responsive Design View](https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_View), a tool to easily switch between viewport widths and device orientations. For additional resolutions, see [More Display Resolutions](https://addons.mozilla.org/en-US/firefox/addon/more-display-resolutions/).
 
-<img src="{{ site.url }}/img/posts/2013-12-02-firefox.jpg" alt="Image of the Responsive Design View within Firefox" class="media-center img-border" />
+<img src="/img/posts/2013-12-02-firefox.jpg" alt="Image of the Responsive Design View within Firefox" class="media-center img-border" />
 
 ### Extensions for Firefox
 These extensions may be helpful as well:
@@ -55,7 +55,7 @@ The [Chrome Developer Tools](https://developers.google.com/chrome-developer-tool
 - Network bandwidth throttling (simulate a slow connection)
 - Device orientation overrides, amongst others
 
-<img src="{{ site.url }}/img/posts/2013-12-02-chrome.jpg" alt="Image of the Mobile Emulation overrides within Chrome" class="media-center img-border" />
+<img src="/img/posts/2013-12-02-chrome.jpg" alt="Image of the Mobile Emulation overrides within Chrome" class="media-center img-border" />
 
 ### Extensions for Chrome
 These extensions may be helpful as well:
