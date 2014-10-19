@@ -49,21 +49,21 @@
   }
   .gh { // Generic.Heading
     color: #4d4d4c;
-    @extend %font-open-sans-bold;
+    @extend %font-open-sans-semibold;
   }
   .gi { // Generic.Inserted
     color: #718c00;
   }
   .gp { // Generic.Prompt
     color: #8e908c;
-    @extend %font-open-sans-bold;
+    @extend %font-open-sans-semibold;
   }
   .gs { // Generic.Strong
-    @extend %font-open-sans-bold;
+    @extend %font-open-sans-semibold;
   }
   .gu { // Generic.Subheading
     color: #3e999f;
-    @extend %font-open-sans-bold;
+    @extend %font-open-sans-semibold;
   }
   .kc { // Keyword.Constant
     color: #8959a8;

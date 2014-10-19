@@ -198,7 +198,7 @@ h6 {
   clear: left;
   padding: 0;
   color: $heading-color;
-  @extend %font-open-sans-bold;
+  @extend %font-open-sans-semibold;
 }
 
 h1 {
@@ -248,7 +248,7 @@ dd {
 }
 
 dt {
-  @extend %font-open-sans-bold;
+  @extend %font-open-sans-semibold;
 }
 
 // No top margins on first children or bottom margins on last children
@@ -285,7 +285,7 @@ hr {
 b,
 strong,
 th {
-  @extend %font-open-sans-bold;
+  @extend %font-open-sans-semibold;
 }
 
 // Font styles
@@ -313,7 +313,7 @@ blockquote {
     left: 2.5rem;
     z-index: -1;
     @include rem(font-size, 14);
-    @extend %font-open-sans-bold;
+    @extend %font-open-sans-semibold;
     color: #3c3c3c;
     text-shadow: none;
     line-height: 0.7;
@@ -325,7 +325,7 @@ blockquote {
   }
   cite {
     color: $gray-lightest;
-    @extend %font-open-sans-bold;
+    @extend %font-open-sans-semibold;
     font-style: normal;
     a {
       &:link,
@@ -439,7 +439,7 @@ table {
   caption,
   th {
     text-align: left;
-    @extend %font-open-sans-bold;
+    @extend %font-open-sans-semibold;
   }
   td,
   th {

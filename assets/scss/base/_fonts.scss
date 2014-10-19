@@ -31,15 +31,15 @@
 }
 
 @font-face {
-  font-family: 'open-sans-bold';
-  src: url('../fonts/opensans-bold-webfont.woff2') format('woff2'),
-       url('../fonts/opensans-bold-webfont.woff') format('woff');
+  font-family: 'open-sans-semibold';
+  src: url('../fonts/opensans-semibold-webfont.woff2') format('woff2'),
+       url('../fonts/opensans-semibold-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
-%font-open-sans-bold {
-  font-family: 'open-sans-bold', sans-serif;
+%font-open-sans-semibold {
+  font-family: 'open-sans-semibold', sans-serif;
   font-weight: normal;
   font-style: normal;
 }

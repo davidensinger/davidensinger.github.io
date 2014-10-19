@@ -7,7 +7,7 @@
   margin-bottom: 0.33em; // for &:active { top: 1px; }
   @include rem(padding, 0.5 1);
   text-transform: uppercase;
-  @extend %font-open-sans-bold;
+  @extend %font-open-sans-semibold;
   border-radius: 0.33em;
   border: 0;
   cursor: pointer;
