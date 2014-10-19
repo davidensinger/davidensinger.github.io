@@ -1,0 +1,13 @@
+# Build Jekyll configuration
+# These settings override _config.yml on `grunt build`
+
+# Note: Grunt handles some Jekyll configuration. If you set something here and
+# it doesn't work, check if it is set in the Gruntfile.
+
+url: 'http://davidensinger.com'
+
+# Publish posts with future date.
+future: false
+
+# Compile posts in the _drafts directory.
+show_drafts: false

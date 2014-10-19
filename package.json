@@ -1,0 +1,43 @@
+{
+  "name": "davidensinger.com",
+  "version": "2.0.0",
+  "description": "David Ensinger is a Front End Developer from Columbus, OH",
+  "author": "David Ensinger <hello@davidensinger.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidensinger/davidensinger.github.io"
+  },
+  "bugs": {
+    "url": "https://github.com/davidensinger/davidensinger.github.io/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^1.0.1",
+    "grunt-build-control": "^0.1.3",
+    "grunt-browser-sync": "^1.3.6",
+    "grunt-concurrent": "^1.0.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-htmlmin": "^0.3.0",
+    "grunt-contrib-imagemin": "^0.8.1",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-dev-update": "^0.9.0",
+    "grunt-filerev": "^2.1.0",
+    "grunt-jekyll": "^0.4.2",
+    "grunt-pagespeed": "^0.3.0",
+    "grunt-svgmin": "^1.0.0",
+    "grunt-usemin": "^2.4.0",
+    "grunt-xmlmin": "^0.1.1",
+    "jshint-stylish": "^1.0.0",
+    "load-grunt-tasks": "^0.6.0",
+    "time-grunt": "^1.0.0"
+  },
+  "private": true,
+  "license": "MIT"
+}
