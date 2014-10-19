@@ -12,6 +12,7 @@
   animation-fill-mode: both;
   animation-duration: 1s;
   animation-name: bounceIn;
+  backface-visibility: hidden;
 }
 
 @keyframes bounceIn {
@@ -38,6 +39,7 @@
   @include rem(width, 6);
   @include rem(height, 6);
   transition: all .25s ease-in-out;
+  backface-visibility: hidden;
 
   &:hover {
   	transform: scale(1.125) rotate(2deg);

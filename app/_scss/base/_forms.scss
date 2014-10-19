@@ -20,6 +20,7 @@ textarea {
   outline-color: transparent;
   outline-style: none;
   transition: all 1s;
+  backface-visibility: hidden;
 
   &:hover {
     color: $gray;
