@@ -189,6 +189,18 @@ module.exports = function (grunt) {
     usemin: {
       options: {
         assetsDirs: '<%= yeoman.dist %>',
+        patterns: {
+          html: [
+            [
+              /<link[^\>]+href=['"]([^"']+)["']/gm,
+              'Update the link tags'
+            ],
+            [
+              /<meta[^\>]+content=['"]http?:?\/\/[^\/"']+([^"']+)["']/gm,
+              'Update meta tags'
+            ]
+          ]
+        }
       },
       html: ['<%= yeoman.dist %>/**/*.html'],
       css: ['<%= yeoman.dist %>/css/**/*.css']
@@ -296,8 +308,8 @@ module.exports = function (grunt) {
           src: [
             '<%= yeoman.dist %>/js/**/*.js',
             '<%= yeoman.dist %>/css/**/*.css',
+            '<%= yeoman.dist %>/favicon*.png',
             '<%= yeoman.dist %>/img/**/*.{gif,jpg,jpeg,png,svg}',
-            '!<%= yeoman.dist %>/img/social/**/*.{gif,jpg,jpeg,png,svg}',
             '<%= yeoman.dist %>/fonts/**/*.{woff,woff2}'
           ]
         }]
@@ -394,7 +406,7 @@ module.exports = function (grunt) {
     'autoprefixer:dist',
     'cssmin',
     //'uglify', no JS at the moment
-    'newer:imagemin',
+    'imagemin',
     'svgmin',
     'filerev',
     'usemin',
