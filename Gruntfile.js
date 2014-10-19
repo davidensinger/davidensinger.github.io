@@ -190,7 +190,7 @@ module.exports = function (grunt) {
       options: {
         assetsDirs: '<%= yeoman.dist %>',
         patterns: {
-          html: [
+          head: [
             [
               /<link[^\>]+href=['"]([^"']+)["']/gm,
               'Update the link tags'
@@ -202,8 +202,9 @@ module.exports = function (grunt) {
           ]
         }
       },
+      head: ['<%= yeoman.dist %>/**/*.html'],
       html: ['<%= yeoman.dist %>/**/*.html'],
-      css: ['<%= yeoman.dist %>/css/**/*.css']
+      css: ['<%= yeoman.dist %>/css/**/*.css'],
     },
     htmlmin: {
       dist: {
