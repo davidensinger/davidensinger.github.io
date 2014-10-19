@@ -5,7 +5,9 @@
 %info-box-base {
   @include rem(padding, 1);
   @extend %margin-bottom;
+
   a {
+
     &:hover {
       text-decoration: underline;
     }
@@ -18,14 +20,18 @@
   background: $red-lighter;
   color: $red-darker;
   border-left: 0.33em solid $red;
+
   a {
+
     &:link,
     &:visited {
       color: inherit;
     }
+
     &:hover {
       color: $red-darkest;
     }
+
     &:focus,
     &:active {
       color: $link-color-focus;
@@ -39,14 +45,18 @@
   background: $yellow-lighter;
   color: $yellow-darker;
   border-left: 0.33em solid $yellow;
+
   a {
+
     &:link,
     &:visited {
       color: inherit;
     }
+
     &:hover {
       color: $yellow-darkest;
     }
+
     &:focus,
     &:active {
       color: $link-color-focus;
@@ -60,14 +70,18 @@
   background: $green-lighter;
   color: $green-darker;
   border-left: 0.33em solid $green;
+
   a {
+
     &:link,
     &:visited {
       color: inherit;
     }
+
     &:hover {
       color: $green-darkest;
     }
+
     &:focus,
     &:active {
       color: $link-color-focus;
@@ -82,13 +96,16 @@
   color: $gray-dark;
   border-left: 0.33em solid $gray-lightest;
   a {
+
     &:link,
     &:visited {
       color: inherit;
     }
+
     &:hover {
       color: $gray-darker;
     }
+
     &:focus,
     &:active {
       color: $link-color-focus;

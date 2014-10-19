@@ -7,8 +7,6 @@
 *,
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -16,10 +14,7 @@ html {
   overflow-y: scroll;
   height: 100%;
   background: $green;
-  background: -moz-linear-gradient(top, $green 0%, $blue 100%) fixed;
-  background: -webkit-linear-gradient(top, $green 0%, $blue 100%) fixed;
   background: linear-gradient(to bottom, $green 0%, $blue 100%) fixed;
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2ECC71', endColorstr='#3498DB',GradientType=0 ) fixed;
 }
 
 body {
@@ -34,12 +29,15 @@ body {
 
 .outer-container {
   max-width: 94%;
+
   @include breakpoint(extra-large-desktop) {
     max-width: 1600px;
   }
+
   @include breakpoint(extra-extra-large-desktop) {
     margin: 0 auto;
   }
+
   @include breakpoint(all-mobile) {
     max-width: 100%;
   }
@@ -62,9 +60,11 @@ body {
 .primary {
   padding: 6% 4% 12% 6%;
   width: 70%;
+
   @include breakpoint(large-desktop) {
     width: 64%;
   }
+
   @include breakpoint(smaller-than-small-desktop) {
     padding: 6% 6% 12%;
   }
@@ -75,9 +75,11 @@ body {
 .secondary {
   padding: 6% 6% 12% 4%;
   width: 30%;
+
   @include breakpoint(large-desktop) {
     width: 36%;
   }
+
   @include breakpoint(smaller-than-small-desktop) {
     padding: 6%;
   }
@@ -86,6 +88,7 @@ body {
 .primary,
 .secondary {
   float: left;
+
   @include breakpoint(smaller-than-small-desktop) {
     float: none;
     width: auto;

@@ -11,10 +11,12 @@
   border-radius: 0.33em;
   border: 0;
   cursor: pointer;
+
   &:hover,
   &:focus {
     text-decoration: none !important;
   }
+
   &:active {
     position: relative;
     top: 1px;
@@ -28,9 +30,11 @@
   color: $white-dark !important;
   text-shadow: 0 1px 0 $blue;
   box-shadow: 0 0.25em 0 0 $blue-dark;
+
   &:visited {
     color: $white-dark !important;
   }
+
   &:hover,
   &:active {
     background: $blue-dark;
@@ -38,6 +42,7 @@
     text-shadow: 0 1px 0 $blue-darker;
     box-shadow: 0 0.25em 0 0 $blue-darker;
   }
+
   &:focus {
     background: $green;
     color: $white !important;

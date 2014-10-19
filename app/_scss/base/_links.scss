@@ -6,9 +6,11 @@ a {
   color: $link-color;
   @extend %font-open-sans-semibold;
   text-decoration: none;
+
   &:hover {
     color: $link-color-hover;
   }
+
   &:focus,
   &:active {
     color: $link-color-focus;
@@ -21,11 +23,14 @@ h3,
 h4,
 h5,
 h6 {
+
   a {
     color: inherit;
+
     &:hover {
       color: $link-heading-color-hover;
     }
+
     &:focus,
     &:active {
       color: $link-heading-color-focus;

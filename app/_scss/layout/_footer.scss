@@ -6,6 +6,7 @@
   @extend %clearfix;
   color: $footer-color;
   text-shadow: 0 1px 1px rgba($text-color, 0.25);
+
   @include breakpoint(smaller-than-small-desktop) {
     text-align: center;
   }
@@ -17,6 +18,7 @@
   @include rem(top, -1.5);
   list-style: none;
   text-align: center;
+
   @include breakpoint(smaller-than-small-desktop) {
     position: static;
     top: 0;
@@ -34,22 +36,23 @@
   @include rem(width, 4);
   @include rem(height, 4);
   border-radius: 50%;
-  -webkit-transition: all 0.25s ease-in;
   transition: all 0.25s ease-in;
+
   &:link,
   &:visited {
     color: inherit;
   }
+
   &:hover,
   &:active,
   &:focus {
     color: $white-dark;
+
     .footer-icon-title {
       opacity: 1;
     }
+
     &:before {
-      -webkit-transform: scale(1.25);
-      -ms-transform: scale(1.25);
       transform: scale(1.25);
     }
   }
@@ -58,9 +61,9 @@
 .footer-icon {
   display: block;
   @include rem(line-height, 4);
+
   &:before {
     @extend %beta-font-size;
-    -webkit-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out;
   }
 }
@@ -71,7 +74,6 @@
   @extend %epsilon-font-size;
   line-height: 0;
   @extend %font-open-sans-semibold;
-  -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
 
@@ -85,28 +87,35 @@
   position: relative;
   z-index: 1;
   @include rem(left, 0.5);
+
   &:link,
   &:visited {
     color: inherit;
   }
+
   .icon-blank,
   .icon-rss {
     position: absolute;
   }
+
   .icon-rss {
     z-index: 1;
   }
+
   .icon-blank {
     display: none;
     z-index: 0;
     color: $white-dark;
   }
+
   &:hover,
   &:focus,
   &:active {
+
     .icon-rss {
       color: #FF6600;
     }
+
     .icon-blank {
       display: inline;
     }

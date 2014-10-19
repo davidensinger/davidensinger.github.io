@@ -5,14 +5,18 @@
 // Common navigation
 nav {
   text-transform: uppercase;
+
   a {
+
     &:link,
     &:visited {
       color: $link-nav-color;
     }
+
     &:hover {
       color: $link-nav-color-hover;
     }
+
     &:focus,
     &:active {
       color: $link-nav-color-focus;
@@ -24,18 +28,23 @@ nav {
 .main-navigation {
   float: left;
   @include rem(margin-top, 2.25);
+
   ul {
     margin: 0;
   }
+
   li {
     float: left;
     @include rem(margin-left, 2);
+
     &:first-child {
       margin-left: 0;
     }
   }
+
   a {
     @include rem(padding-bottom, 0.25);
+
     &:hover {
       border-bottom: 2px solid $link-color-focus;
     }
@@ -71,6 +80,7 @@ nav {
 }
 
 .nav-previous-link {
+
   &:before {
     content: "\2190";
     @include rem(margin-right, 0.25);
@@ -82,6 +92,7 @@ nav {
 }
 
 .nav-next-link {
+
   &:after {
     content: "\2192";
     @include rem(margin-left, 0.25);

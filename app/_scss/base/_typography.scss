@@ -4,12 +4,15 @@
 
 html {
   font: 106.25%/#{$line-height-ratio} $base-font-face; // 17px
+
   @include breakpoint(desktop) {
     font-size: 112.5%; // 18px
   }
+
   @include breakpoint(large-desktop) {
     font-size: 118.75%; // 19px
   }
+
   @include breakpoint(smaller-than-small-desktop) {
     font-size: 100%; // 16px
   }
@@ -28,12 +31,6 @@ textarea {
 // Remove text-shadow in selection highlight: h5bp.com/i
 // These selection declarations have to be separate.
 // Customize the background color to match your design.
-::-moz-selection {
-  color: $selection-color;
-  background: $selection-background;
-  text-shadow: none;
-}
-
 ::selection {
   color: $selection-color;
   background: $selection-background;
@@ -306,6 +303,7 @@ blockquote {
   text-align: right;
   color: $gray-lighter;
   text-shadow: 0 1px 0 $gray-darkest;
+
   &:before {
     content: '\201C';
     position: absolute;
@@ -318,23 +316,29 @@ blockquote {
     text-shadow: none;
     line-height: 0.7;
   }
+
   code {
     padding: 0;
     color: $gray-lightest;
     background: none;
   }
+
   cite {
     color: $gray-lightest;
     @extend %font-open-sans-semibold;
     font-style: normal;
+
     a {
+
       &:link,
       &:visited {
         color: inherit;
       }
+
       &:hover {
         color: $white-dark;
       }
+
       &:focus,
       &:active {
         color: $white;
@@ -365,9 +369,11 @@ pre {
   @extend %gray-box;
   overflow: auto;
   max-width: 100%;
+
   code {
     padding: 0;
   }
+
   @include breakpoint(mobile-portrait-to-mobile-landscape) {
     @include rem(font-size, 0.75);
   }
@@ -382,13 +388,8 @@ var {
   background: $white-dark;
   color: $gray-dark;
   @extend %font-open-sans-regular;
-   -ms-word-break: break-all;
        word-break: break-all;
-       // Non standard for webkit
        word-break: break-word;
-  -webkit-hyphens: auto;
-     -moz-hyphens: auto;
-      -ms-hyphens: auto;
           hyphens: auto;
 }
 
@@ -432,25 +433,32 @@ figure {
 table {
   width: 100%;
   @extend %margin-bottom;
+
   caption {
     @extend small;
     @include rem(margin-bottom, 0.25);
   }
+
   caption,
   th {
     text-align: left;
     @extend %font-open-sans-semibold;
   }
+
   td,
   th {
     @include rem(padding, 0.25 0.5);
   }
+
   thead {
+
     tr {
       background-color: $gray-lightest;
     }
   }
+
   tbody {
+
     tr {
       &:nth-child(odd) {
         background-color: $white-darker;

@@ -6,7 +6,7 @@ fieldset {
   border: 0;
   margin: 0;
   padding: 0;
- }
+}
 
 input[type="text"],
 textarea {
@@ -19,11 +19,13 @@ textarea {
   border-radius: 0.33em;
   outline-color: transparent;
   outline-style: none;
-  @extend %transitions-all;
+  transition: all 1s;
+
   &:hover {
     color: $gray;
     background: $background-gray-light;
   }
+
   &:focus,
   &:active {
     color: $gray-dark;
@@ -42,18 +44,10 @@ label {
 }
 
 // Placeholder styling
-input::-webkit-input-placeholder {
+input::placeholder {
   color: $gray-light;
 }
 
-input:hover::-webkit-input-placeholder {
-  color: $gray;
-}
-
-input:-moz-placeholder {
-  color: $gray-light;
-}
-
-input:hover:-moz-placeholder {
+input:hover::placeholder {
   color: $gray;
 }

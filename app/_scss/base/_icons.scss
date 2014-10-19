@@ -12,6 +12,7 @@
 
 [class^="icon-"],
 [class*=" icon-"] {
+
   &:before,
   &:after {
     font-family: 'fontello';
@@ -23,6 +24,7 @@
 }
 
 .icon-left {
+
   &:before {
     @extend %font-open-sans-semibold;
     @include rem(margin-right, 0.25);
@@ -30,6 +32,7 @@
 }
 
 .icon-right {
+
   &:before {
     @include rem(margin-left, 0.25);
   }

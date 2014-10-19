@@ -17,19 +17,24 @@
   @extend %margin-bottom;
   @include rem(border-radius, 1);
   background: $white-dark;
+
   &:hover {
     background: $white-darker;
+
     &:after {
       border-color: $white-darker transparent;
     }
   }
+
   &:focus {
     color: $white;
     background: $link-color-focus;
+
     &:after {
       border-color: $link-color-focus transparent;
     }
   }
+
   &:after {
     content: "";
     position: absolute;
