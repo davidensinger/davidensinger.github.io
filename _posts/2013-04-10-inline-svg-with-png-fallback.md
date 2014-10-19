@@ -12,6 +12,10 @@ suggested_tweet:
 
 Notice anything different about my balloon logo? Probably not, as the change is subtle, but the image is now an **inline SVG** instead of an **SVG background image**. I did this to allow the colors of the balloon to darken on hover.
 
+<div class="yellow-box">
+  <p><strong>Please Note:</strong> As of <a href="https://github.com/davidensinger/davidensinger.github.io/commit/11b34a520f4929312cb74e5985fee3c2be077782">this commit</a>, I’ve stopped using this fallback technique for browsers and devices that don’t support inline SVG. This affects IE8, Opera Mini, and Android 2.3, all of which provide a negligible amount of traffic to my site. In spite of this change, I still feel that this is a good solution for providing a PNG fallback.</p>
+</div>
+
 Using an inline SVG is the only way to do this, as the browser regards the other implementations of SVG as externally linked files. That prevents the browser from respecting any inline CSS pseudo classes within the SVG.
 
 As an added benefit, an HTTP request is saved, although this boon to page load optimization is at the expense of the tidiness of the markup. It’s not such a drawback, especially if the HTML will be minified before being deployed.
