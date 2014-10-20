@@ -67,7 +67,6 @@ nav {
 // Post and page navigation
 .post-navigation,
 .paging-navigation {
-  @extend %clearfix;
   @include rem(padding-top, 3);
 }
 

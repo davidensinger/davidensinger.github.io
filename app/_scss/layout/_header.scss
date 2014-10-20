@@ -2,10 +2,6 @@
 // Header
 // ==========================================================================
 
-.site-header {
-  @extend %clearfix;
-}
-
 .site-logo {
   float: left;
   @include rem(margin-right, 2);

@@ -3,7 +3,6 @@
 // ==========================================================================
 
 .secondary {
-  @extend %clearfix;
 
   @include breakpoint(smaller-than-small-desktop) {
     background: $background-gray-light;

@@ -3,7 +3,6 @@
 // ==========================================================================
 
 .site-footer {
-  @extend %clearfix;
   color: $footer-color;
   text-shadow: 0 1px 1px rgba($text-color, 0.25);
 

@@ -2,7 +2,7 @@
 page-class: page-post
 ---
 {% include header.html %}
-<article class="post hentry">
+<article class="post hentry clearfix">
   <header class="entry-header">
     <h1 class="entry-title">{{ page.title }}</h1>
     <div class="entry-meta entry-meta-header">
@@ -46,7 +46,7 @@ page-class: page-post
     </footer>
   {% endif %}
 </article>
-<nav class="post-navigation" role="navigation">
+<nav class="post-navigation clearfix" role="navigation">
   <h1 class="visuallyhidden">Post navigation</h1>
   {% if page.previous %}
     <div class="nav-previous">
