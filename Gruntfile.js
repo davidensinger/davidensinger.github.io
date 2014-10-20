@@ -30,7 +30,7 @@ module.exports = function (grunt) {
     watch: {
       sass: {
         files: ['<%= yeoman.app %>/_scss/**/*.scss'],
-        tasks: ['sass:server', 'autoprefixer:server']
+        tasks: ['sass', 'autoprefixer:server']
       },
       autoprefixer: {
         files: ['<%= yeoman.app %>/css/**/*.css'],
@@ -115,23 +115,10 @@ module.exports = function (grunt) {
         bundleExec: true
       },
       dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/_scss',
-          src: '**/*.scss',
-          dest: '.tmp/css',
-          ext: '.css'
-        }]
+        files: {
+          '.tmp/css/styles.css': '<%= yeoman.app %>/_scss/styles.scss'
+        }
       },
-      server: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/_scss',
-          src: '**/*.scss',
-          dest: '.tmp/css',
-          ext: '.css'
-        }]
-      }
     },
     autoprefixer: {
       options: {
@@ -356,12 +343,12 @@ module.exports = function (grunt) {
     },
     concurrent: {
       server: [
-        'sass:server',
+        'sass',
         'copy:stageCss',
         'jekyll:server'
       ],
       dist: [
-        'sass:dist',
+        'sass',
         'copy:dist'
       ]
     }
