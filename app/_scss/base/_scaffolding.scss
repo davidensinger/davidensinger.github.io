@@ -4,10 +4,14 @@
 
 // apply a natural box layout model to all elements via http://paulirish.com/2012/box-sizing-border-box-ftw/
 // universal selector doesn't apply to pseudo-elements, so: http://jsfiddle.net/grewis/nHaxL/4/
+// http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+html {
+  box-sizing: border-box;
+}
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 html {
