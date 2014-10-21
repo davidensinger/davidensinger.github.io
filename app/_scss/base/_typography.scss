@@ -387,10 +387,9 @@ var {
   @include rem(border-radius, 0.5);
   background: $white-dark;
   color: $gray-dark;
-  @extend %font-open-sans-regular;
-       word-break: break-all;
-       word-break: break-word;
-          hyphens: auto;
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 strike,
