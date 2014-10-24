@@ -11,7 +11,7 @@ suggested_tweet:
 
 I have been working to simplify this site, which means that I’ve been reevaluating decisions I made more than a year and a half ago. Many of these were based on assumptions that may no longer be valid. Since the initial build of this site, the browser support for **@font-face** file formats has changed dramatically. Previously it was a best practice to include four different file formats to get optimal browser support, but these days one file format suffices (at least so far as I’m concerned).
 
-##My Previous Implementation:
+##My Previous Implementation
 You may know this as the “[Bulletproof @font-face Syntax](http://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/).”
 
 {% highlight css %}
