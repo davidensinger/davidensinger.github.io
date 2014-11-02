@@ -11,11 +11,12 @@ sitemap:
         <a href="{{ post.url }}" rel="bookmark" title="Permalink to {{ post.title }}">{{ post.title }}</a>
       </h1>
       <div class="entry-meta entry-meta-header">
-        <span class="icon-left entry-meta-icon icon-entry-date">
-          <a class="entry-meta-link" href="{{ post.url }}" rel="bookmark" title="{{ post.date }}">
-            <time class="date updated" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-          </a>
-        </span>
+      <span class="entry-meta-icon">
+        {% include icons/icon-clock.svg %}
+      </span>
+        <a class="entry-meta-link" href="{{ post.url }}" rel="bookmark" title="{{ post.date }}">
+          <time class="date updated" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+        </a>
       </div>
     </header>
     <div class="entry-content">

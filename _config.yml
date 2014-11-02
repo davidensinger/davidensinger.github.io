@@ -10,7 +10,7 @@ author: 'David Ensinger'
 email: 'hello@davidensinger.com'
 description: 'David Ensinger is a Front End Developer from Columbus, OH'
 
-exclude: ['config.json', 'css', 'img', 'js', 'fonts', '**.png', '**.jpg', '**.jpeg', '**.gif', '**.svg', '**.ico']
+exclude: ['css', 'img', 'js', 'fonts', '**.png', '**.jpg', '**.jpeg', '**.gif', '**.svg', '**.ico']
 
 # Publish posts with future date.
 # _config.build.yml sets this to false on `grunt build`

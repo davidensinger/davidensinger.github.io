@@ -79,47 +79,53 @@
   backface-visibility: hidden;
 }
 
-.footer-icon,
-.icon-blank,
-.icon-rss {
-  font-weight: normal !important;
+.footer-info {
+  float: left;
+
+  @include breakpoint(smaller-than-small-desktop) {
+    float: none;
+    display: inline-block;
+  }
 }
 
-.link-rss {
+.footer-info--copyright {
+  display: inline-block;
+  margin-right: 2px;
+}
+
+.footer-info--feed {
   position: relative;
-  z-index: 1;
-  @include rem(left, 0.5);
-
-  &:link,
-  &:visited {
-    color: inherit;
-  }
-
-  .icon-blank,
-  .icon-rss {
-    position: absolute;
-  }
-
-  .icon-rss {
-    z-index: 1;
-  }
-
-  .icon-blank {
-    display: none;
-    z-index: 0;
-    color: $white-dark;
-  }
+  top: 2px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  line-height: 0;
+  transition: all 0.25s;
+  backface-visibility: hidden;
 
   &:hover,
-  &:focus,
-  &:active {
+  &:focus {
 
-    .icon-rss {
-      color: #FF6600;
+    .icon-rss--background {
+      opacity: 1;
     }
 
-    .icon-blank {
-      display: inline;
+    .icon-rss--foreground {
+      fill: #FF6600;
     }
+  }
+
+  .icon-rss {
+    width: inherit;
+    height: inherit;
+  }
+
+  .icon-rss--background {
+    fill: $white;
+    opacity: 0;
+  }
+
+  .icon-rss--foreground {
+    fill: $footer-color;
   }
 }

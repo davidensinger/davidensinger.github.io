@@ -56,4 +56,42 @@
 
 .suggested-tweet-link {
   @include rem(margin-left, 1);
+
+  &:hover {
+    .suggested-tweet-icon {
+      .icon-foreground {
+        fill: $link-color-hover;
+      }
+    }
+  }
+
+  &:focus,
+  &:active {
+    .suggested-tweet-icon {
+      .icon-foreground {
+        fill: $link-color-focus;
+      }
+    }
+  }
+}
+
+.suggested-tweet-icon {
+  position: relative;
+  top: 5px;
+  display: inline-block;
+  margin-right: 4px;
+  width: 20px;
+  height: 20px;
+  line-height: 0;
+  transition: all 0.25s;
+  backface-visibility: hidden;
+
+  .icon {
+    width: inherit;
+    height: inherit;
+  }
+
+  .icon-foreground {
+    fill: $link-color;
+  }
 }

@@ -38,21 +38,23 @@
 }
 
 .entry-meta-icon {
-  @include rem(margin-left, 0.5);
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  margin-right: 2px;
+  width: 15px;
+  height: 15px;
+  line-height: 0;
+  transition: all 0.25s;
+  backface-visibility: hidden;
 
-  &:first-child {
-    margin-left: 0;
+  .icon {
+    width: inherit;
+    height: inherit;
   }
 
-  &:before {
-    color: $icon-meta-color;
-  }
-
-  &:hover {
-
-    &:before {
-      color: $icon-meta-color-hover;
-    }
+  .icon-foreground {
+    fill: $icon-meta-color;
   }
 }
 
