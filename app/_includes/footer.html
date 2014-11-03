@@ -1,4 +1,5 @@
         </div>
+
         <aside class="secondary vcard author clearfix" role="complementary">
           <img alt="A photo of David Ensinger" class="secondary-photo photo" src="/img/david-ensinger.jpg">
           <p>Hi, I’m <strong class="fn">David Ensinger</strong> and I’m a <strong>Front End Developer</strong>. Learn more <a href="/about/" class="url">about me</a>.</p>
@@ -6,31 +7,38 @@
           <a class="secondary-twitter--link"href="https://twitter.com/intent/user?screen_name=DavidEnsinger" title="Follow @DavidEnsinger on Twitter"><span class="secondary-twitter--icon">{% include icons/icon-twitter.svg %}</span>Follow me on Twitter</a>
         </aside>
       </div>
-      <footer class="site-footer clearfix" role="contentinfo">
-        <ul class="footer-icons">
-          <li class="footer-icon-item">
-            <a class="footer-icon-anchor footer-icon icon-twitter" href="http://twitter.com/DavidEnsinger" title="Follow me on Twitter">
-              <span class="footer-icon-title">Twitter</span>
-            </a>
-          </li>
-          <li class="footer-icon-item">
-            <a class="footer-icon-anchor footer-icon icon-github" href="http://github.com/davidensinger" title="Follow me on GitHub">
-              <span class="footer-icon-title">GitHub</span>
-            </a>
-          </li>
-          <li class="footer-icon-item">
-            <a class="footer-icon-anchor footer-icon icon-tumblr" href="http://www.republicofthespirit.com/" title="Follow me on Tumblr">
-              <span class="footer-icon-title">Tumblr</span>
-            </a>
-          </li>
-        </ul>
-        <div class="footer-info clearfix">
-          <p class="footer-info--copyright">&copy; {{ site.time | date: "%Y" }} David Ensinger. All rights reserved.</p>
-          <a class="footer-info--feed" href="/atom.xml" title="Subscribe to my RSS feed">
+
+      <footer id="colophon" class="site-footer clearfix" role="contentinfo">
+        <div class="site-footer--secondary">
+          <ul class="site-footer--icons">
+            <li class="site-footer--icons__item">
+              <a class="site-footer--icons__anchor site-footer--icons__icon" href="http://twitter.com/DavidEnsinger" title="Follow me on Twitter">
+                {% include icons/icon-twitter.svg %}
+                <span class="site-footer--icons--title">Twitter</span>
+              </a>
+            </li>
+            <li class="site-footer--icons__item">
+              <a class="site-footer--icons__anchor site-footer--icons__icon" href="http://github.com/davidensinger" title="Follow me on GitHub">
+                {% include icons/icon-github.svg %}
+                <span class="site-footer--icons--title">GitHub</span>
+              </a>
+            </li>
+            <li class="site-footer--icons__item">
+              <a class="site-footer--icons__anchor site-footer--icons__icon" href="http://www.republicofthespirit.com/" title="Follow me on Tumblr">
+                {% include icons/icon-tumblr.svg %}
+                <span class="site-footer--icons--title">Tumblr</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="site-footer--primary clearfix">
+          <p class="site-footer--copyright">&copy; {{ site.time | date: "%Y" }} David Ensinger. All rights reserved.</p>
+          <a class="site-footer--feed" href="/atom.xml" title="Subscribe to my RSS feed">
             {% include icons/icon-rss.svg %}
             <span class="visuallyhidden">RSS Feed</span>
           </a>
       </footer>
     </div>
+
   </body>
 </html>
