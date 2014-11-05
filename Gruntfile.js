@@ -120,6 +120,23 @@ module.exports = function (grunt) {
         }
       },
     },
+    uncss: {
+      options: {
+        htmlroot: '.tmp',
+        // 1. Ignored by UnCSS?
+        // 2. Added by Google Search in 404.html
+        ignore: [
+          'b', // 2
+          /#goog.+/, // 2
+          /h[1-6](.+)?/, // 1
+          /input(.+)?/ // 2
+        ],
+        report: 'min'
+      },
+      dist: {
+        files: {'.tmp/concat/css/styles.css': ['<%= yeoman.dist %>/**/*.html']}
+      }
+    },
     autoprefixer: {
       options: {
         browsers: [
@@ -391,6 +408,7 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'useminPrepare',
     'concat',
+    'uncss',
     'autoprefixer:dist',
     'cssmin',
     //'uglify', no JS at the moment
