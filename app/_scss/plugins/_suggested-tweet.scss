@@ -49,6 +49,7 @@
 
 .suggested-tweet-text {
   color: $text-color;
+
   &:hover {
     color: $text-color-dark;
   }
@@ -58,7 +59,9 @@
   @include rem(margin-left, 1);
 
   &:hover {
+
     .suggested-tweet-icon {
+
       .icon-foreground {
         fill: $link-color-hover;
       }
@@ -67,7 +70,9 @@
 
   &:focus,
   &:active {
+
     .suggested-tweet-icon {
+
       .icon-foreground {
         fill: $link-color-focus;
       }
@@ -83,8 +88,6 @@
   width: 20px;
   height: 20px;
   line-height: 0;
-  transition: all 0.25s;
-  backface-visibility: hidden;
 
   .icon {
     width: inherit;
@@ -93,5 +96,7 @@
 
   .icon-foreground {
     fill: $link-color;
+    transition: fill 0.2s;
+    backface-visibility: hidden;
   }
 }

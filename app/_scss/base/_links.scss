@@ -6,6 +6,8 @@ a {
   color: $link-color;
   @extend %font-open-sans-semibold;
   text-decoration: none;
+  transition: color 0.2s;
+  backface-visibility: hidden;
 
   &:hover {
     color: $link-color-hover;

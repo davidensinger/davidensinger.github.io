@@ -30,6 +30,8 @@
   color: $white-dark !important;
   text-shadow: 0 1px 0 $blue;
   box-shadow: 0 0.25em 0 0 $blue-dark;
+  transition: background 0.2s, color 0.2s, text-shadow 0.2s, box-shadow 0.2s;
+  backface-visibility: hidden;
 
   &:visited {
     color: $white-dark !important;

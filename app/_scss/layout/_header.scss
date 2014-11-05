@@ -31,13 +31,70 @@
   }
 }
 
-.svg-logo {
+%balloon-color {
+  fill-rule: evenodd;
+  transition: fill 0.2s;
+  backface-visibility: hidden;
+}
+
+.site-logo--svg {
   @include rem(width, 6);
   @include rem(height, 6);
-  transition: all .25s ease-in-out;
+  transition: transform 0.2s;
   backface-visibility: hidden;
 
-  &:hover {
+  &:hover,
+  &:focus {
   	transform: scale(1.125) rotate(2deg);
+  }
+
+  .blue {
+    @extend %balloon-color;
+    fill: #2f93d5;
+
+    &:hover,
+    &:focus {
+      fill: #2782bf;
+    }
+  }
+
+  .green {
+    @extend %balloon-color;
+    fill: #35c06a;
+
+    &:hover,
+    &:focus {
+      fill: #2fac5f;
+    }
+  }
+
+  .orange {
+    @extend %balloon-color;
+    fill: #f57a00;
+
+    &:hover,
+    &:focus {
+      fill: #db6d00;
+    }
+  }
+
+  .yellow {
+    @extend %balloon-color;
+    fill: #f5c500;
+
+    &:hover,
+    &:focus {
+      fill: #dbb000;
+    }
+  }
+
+  .red {
+    @extend %balloon-color;
+    fill: #ff330f;
+
+    &:hover,
+    &:focus {
+      fill: #f02400;
+    }
   }
 }

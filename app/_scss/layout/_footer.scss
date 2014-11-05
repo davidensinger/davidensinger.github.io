@@ -26,7 +26,7 @@
 
 .site-footer--copyright {
   display: inline-block;
-  margin-right: 2px;
+  margin-right: 5px;
 }
 
 .site-footer--feed {
@@ -36,8 +36,6 @@
   width: 16px;
   height: 16px;
   line-height: 0;
-  transition: all 0.25s;
-  backface-visibility: hidden;
 
   &:hover,
   &:focus {
@@ -59,10 +57,14 @@
   .icon-rss--background {
     fill: $white;
     opacity: 0;
+    transition: opacity 0.2s;
+    backface-visibility: hidden;
   }
 
   .icon-rss--foreground {
     fill: $footer-color;
+    transition: fill 0.2s;
+    backface-visibility: hidden;
   }
 }
 
@@ -102,6 +104,10 @@
   &:hover,
   &:focus {
 
+    .icon {
+      transform: scale(1.2);
+    }
+
     .site-footer--icons--title {
       opacity: 1;
     }
@@ -113,6 +119,8 @@
   .icon {
     width: 30px;
     height: 30px;
+    transition: transform 0.2s;
+    backface-visibility: hidden;
   }
 
   .icon-foreground {
@@ -121,10 +129,10 @@
 }
 
 .site-footer--icons--title {
-  opacity: 0;
   display: block;
+  opacity: 0;
   @extend %epsilon-font-size;
   @extend %font-open-sans-semibold;
-  transition: opacity 0.25s;
+  transition: opacity 0.2s;
   backface-visibility: hidden;
 }
