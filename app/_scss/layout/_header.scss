@@ -31,7 +31,7 @@
   }
 }
 
-%balloon-color {
+%balloon-properties {
   fill-rule: evenodd;
   transition: fill 0.2s;
   backface-visibility: hidden;
@@ -49,52 +49,52 @@
   }
 
   .blue {
-    @extend %balloon-color;
-    fill: #2f93d5;
+    @extend %balloon-properties;
+    fill: $balloon-blue;
 
     &:hover,
     &:focus {
-      fill: #2782bf;
+      fill: darken($balloon-blue, 5);
     }
   }
 
   .green {
-    @extend %balloon-color;
-    fill: #35c06a;
+    @extend %balloon-properties;
+    fill: $balloon-green;
 
     &:hover,
     &:focus {
-      fill: #2fac5f;
+      fill: darken($balloon-green, 5);
     }
   }
 
   .orange {
-    @extend %balloon-color;
-    fill: #f57a00;
+    @extend %balloon-properties;
+    fill: $balloon-orange;
 
     &:hover,
     &:focus {
-      fill: #db6d00;
+      fill: darken($balloon-orange, 5);
     }
   }
 
   .yellow {
-    @extend %balloon-color;
-    fill: #f5c500;
+    @extend %balloon-properties;
+    fill: $balloon-yellow;
 
     &:hover,
     &:focus {
-      fill: #dbb000;
+      fill: darken($balloon-yellow, 5);
     }
   }
 
   .red {
-    @extend %balloon-color;
-    fill: #ff330f;
+    @extend %balloon-properties;
+    fill: $balloon-red;
 
     &:hover,
     &:focus {
-      fill: #f02400;
+      fill: darken($balloon-red, 5);
     }
   }
 }
