@@ -1,15 +1,17 @@
 ---
 date: 2013-05-14 16:12:00
 layout: post
-title: 'Getting Started with Sublime Text 2'
-description: 'A quick start guide to configuring Sublime Text 2.'
+title: 'Getting Started with Sublime Text'
+description: 'A quick start guide to configuring Sublime Text.'
 tags: ['Sublime Text']
+sitemap:
+  lastmod: 2014-11-07
 suggested_tweet:
   hashtags: ['SublimeText']
   related: ['sublimehq']
 ---
 
-Although I switched to [Sublime Text 2](http://www.sublimetext.com/) more than a year ago, I only recently decided to take a good look at my configuration, with the end goal of increasing my productivity. What follows are my settings, which will hopefully help others work a bit smarter. If you’ve got any useful tips, please [tweet](https://twitter.com/davidensinger) at me!
+Although I switched to [Sublime Text](http://www.sublimetext.com/) more than a year ago, I only recently decided to take a good look at my configuration, with the end goal of increasing my productivity. What follows are my settings, which will hopefully help others work a bit smarter. If you’ve got any useful tips, please [tweet](https://twitter.com/davidensinger) at me!
 
 ## Hide Files and Folders
 It’s often helpful to hide folders so they’re not found when searching or using the **Go to File** shortcut (**⌘ + T**). Add the following line to your User Preferences (**Preferences › Settings - User** or **⌘,**) to do so:
@@ -53,7 +55,7 @@ To do this, add the following in your **Key Bindings - User file**:
 {% endhighlight %}
 
 ## Shortcuts
-There are a lot of really useful keyboard shortcuts in Sublime Text 2. Instead of listing them all, I’m going to list some favorites. With a quick search of the internet you’ll surely find more to integrate into your workflow.
+There are a lot of really useful keyboard shortcuts in Sublime Text. Instead of listing them all, I’m going to list some favorites. With a quick search of the internet you’ll surely find more to integrate into your workflow.
 
 - **⌘L** - Select line
 - **⌘D** - Select word (use this to select other occurrences, which is great for multiple editing)
@@ -62,19 +64,19 @@ There are a lot of really useful keyboard shortcuts in Sublime Text 2. Instead o
 - **⌃⌘↑ (up) or ↓(down)** - Swap lines either up or down
 
 <div class="yellow-box">
-  <p><strong>More Info:</strong> Here’s a <a href="https://gist.github.com/lucasfais/1207002">Gist of Useful Shortcuts</a> by <a href="https://twitter.com/lucasfais">@lucasfais</a>.</p>
+  <p><strong>More Info:</strong> Here’s a <a href="https://gist.github.com/lucasfais/1207002">Gist of Useful Shortcuts</a>.</p>
 </div>
 
 ## Package Control
-One of the best things about Sublime Text 2 is how extensible it is. There are hundreds of community developed plugins and with [Package Control](http://wbond.net/sublime_packages/package_control) it’s quick and easy to install, update, and remove them from your installation.
+One of the best things about Sublime Text is how extensible it is. There are hundreds of community developed plugins and with [Package Control](https://sublime.wbond.net/) it’s quick and easy to install, update, and remove them from your installation.
 
 ### Installation
 
-1. Open Sublime Text 2 and press **ctrl `** (control backtick) to open the editor’s console.
+1. Open Sublime Text and press **ctrl `** (control backtick) to open the editor’s console.
 2. Paste in the following code:
 
 {% highlight python %}
-import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')
+import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
 {% endhighlight %}
 
 ### Favorite Packages
@@ -91,7 +93,7 @@ import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_p
 - [Syntax Highlighting for Sass](https://sublime.wbond.net/packages/Syntax%20Highlighting%20for%20Sass) - Sass syntax highlighting
 - [TrailingSpaces](https://sublime.wbond.net/packages/TrailingSpaces) - Strips trailing whitespace from files
 
-There are also innumerable packages to support syntax highlighting, linting, and snippets in any and all languages. You can easily [discover these via Package Control](http://wbond.net/sublime_packages/community).
+There are also innumerable packages to support syntax highlighting, linting, and snippets in any and all languages. You can easily [discover these via Package Control](https://sublime.wbond.net/).
 
 ## Spaces
 Open **TrailingSpace's** preferences (**Preferences › Package Settings › TrailingSpaces › Settings - User**), and add:
@@ -123,7 +125,7 @@ To scroll past the end of the file, add this to your User Preferences (**Prefere
 {% endhighlight %}
 
 ## Other Resources
-There are a multitude of resources available to users of Sublime Text 2. Here are some good ones to read through:
+There are a multitude of resources available to users of Sublime Text. Here are some good ones to read through:
 
 - [Official Documentation](http://www.sublimetext.com/docs/2/)
 - [Unofficial Documentation](http://docs.sublimetext.info/en/latest/index.html)
