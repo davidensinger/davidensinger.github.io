@@ -4,6 +4,8 @@ layout: post
 title: 'Automating Jekyll Deployment to GitHub Pages with Rake'
 description: 'Use Rake to easily deploy your site to GitHub Pages.'
 tags: ['GitHub', 'Jekyll', 'Rake']
+sitemap:
+  lastmod: 2014-11-07
 suggested_tweet:
   hashtags: ['Jekyll', 'jekyllrb', 'GitHub', 'Git']
   related: ['jekyllrb']
@@ -11,8 +13,12 @@ suggested_tweet:
 
 I recently automated the deployment of my site to **GitHub Pages**, which is something that [I’ve wanted to do for awhile](http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/). Whereas I would previously enter a string of commands into the terminal, I now use **Rake** to handle those commands for me.
 
+<div class="yellow-box">
+  <p><strong>Please Note:</strong> I no longer do this, but instead use <a href="https://github.com/robwierzbowski/grunt-build-control">Grunt Build Control</a> to deploy to GitHub.</p>
+</div>
+
 ## What is Rake
-For those who don’t know (and this was me until recently), [Rake](http://rake.rubyforge.org/) is “a simple ruby build program with capabilities similar to make.” In other words, it’s a tool that helps automate the tedium that often comes with managing a website.
+For those who don’t know (and this was me until recently), [Rake](https://github.com/ruby/rake) is “a simple ruby build program with capabilities similar to make.” In other words, it’s a tool that helps automate the tedium that often comes with managing a website.
 
 <div class="gray-box">
   <p><strong>More Info:</strong> Jason Seifer has a pretty good <a href="http://jasonseifer.com/2010/04/06/rake-tutorial">Rake Tutorial</a> for developers new to Rake.</p>
@@ -24,7 +30,7 @@ I’ve set up Jekyll to consist of two branches: **source** and **master**. The 
 My typical workflow is to write a post (or modify the site design) and then commit whatever I’ve changed until the only files that remain uncommitted are in the **_site** subdirectory. I then stage and commit those files with a generic message that includes the current time.
 
 ## Commit
-Here’s what my commit rake task currently looks like, although I’d consult the [Rakefile](https://github.com/davidensinger/davidensinger.github.io/blob/source/Rakefile) for a more future-proof version.
+Here’s what my commit rake task currently looks like, although I’d consult the [Rakefile](https://github.com/davidensinger/davidensinger.github.io/blob/46ef9188c53dc2da413eb4583ff12b787dd91223/Rakefile) for a more future-proof version.
 
 {% highlight ruby %}
 desc "Commit _site/"
@@ -43,7 +49,7 @@ end
 {% endhighlight %}
 
 # Deploy
-Once everything is committed I go through the steps I outlined in [Deploying Jekyll with Plugins to GitHub Pages](http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/). Again, I’d check the [Rakefile](https://github.com/davidensinger/davidensinger.github.io/blob/source/Rakefile) in the event I change something and forget to update this post.
+Once everything is committed I go through the steps I outlined in [Deploying Jekyll with Plugins to GitHub Pages](http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/). Again, I’d check the [Rakefile](https://github.com/davidensinger/davidensinger.github.io/blob/46ef9188c53dc2da413eb4583ff12b787dd91223/Rakefile) in the event I change something and forget to update this post.
 
 {% highlight ruby %}
 desc "Deploy _site/ to master branch"
