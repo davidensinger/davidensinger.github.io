@@ -4,6 +4,8 @@ layout: post
 title: 'Generating a Sitemap in Jekyll without a Plugin'
 description: 'A guide to generating a sitemap.xml in Jekyll without using a plugin.'
 tags: ['Jekyll', 'Sitemap', 'XML']
+sitemap:
+  lastmod: 2014-11-07
 suggested_tweet:
   hashtags: ['Jekyll', 'jekyllrb', 'Sitemap']
   related: ['jekyllrb', 'havvg']
@@ -11,11 +13,11 @@ suggested_tweet:
 
 During my switch from **WordPress** to **Jekyll**, I decided to simplify the scope of my site. One of the changes I made was to remove my portfolio, as I’d like to put more of an emphasis on my writing than on my past projects. As a result, I culled many pages that were indexed by search engines. This meant that I needed a proper **sitemap.xml**, principally for use with Google’s [Webmaster Tools](www.google.com/webmasters/tools).
 
-<div class="red-box">
+<div class="yellow-box">
   <p><strong>Please Note:</strong> I’ve since updated the configuration of my <strong>Sitemap.xml</strong>, which I’ve written about in <a href="http://davidensinger.com/2013/11/building-a-better-sitemap-xml-with-jekyll/">Building a Better Sitemap.xml with Jekyll</a>.</p>
 </div>
 
-My initial thought was to find a plugin, but I then realized that wasn’t possible. I host the site on **GitHub Pages**, which runs Jekyll in `--safe` mode. This means that I can’t use any custom plugins and that precludes the implementation of the most popular plugin, which is the [Sitemap.xml Generator](http://www.kinnetica.com/projects/jekyll-sitemap-generator/).
+My initial thought was to find a plugin, but I then realized that wasn’t possible. I host the site on **GitHub Pages**, which runs Jekyll in `--safe` mode. This means that I can’t use any custom plugins.
 
 One way around this limitation would be to generate the site locally with a source branch and then compile the pages on a master branch to push to GitHub. There are clear benefits to doing it this way, but for the time being I’d prefer to keep my site simple and let GitHub do the compiling.
 
