@@ -4,17 +4,23 @@ layout: post
 title: 'Using Rems with Sass'
 description: 'An argument for using a Sass mixin with pixel fallback to easily implement rems.'
 tags: ['Mixin', 'Rem', 'Sass']
+sitemap:
+  lastmod: 2014-11-07
 suggested_tweet:
   hashtags: ['Sass', 'SCSS', 'CSS']
 ---
 
 I used **rems** quite liberally with this redesign, especially with the typographic elements. Even though I initially shied away from them, I have since decided that any potential drawbacks are easily mitigated by using **Sass** to preprocess my CSS.
 
+<div class="yellow-box">
+  <p><strong>Please Note:</strong> As of November 7th, 2014 I have removed the rem mixin and no longer provide a pixel fallback for less feature rich browsers.</p>
+</div>
+
 Before we discuss rems, we need to first talk a little about ems.
 
 ## What’s an Em?
 
-”An em is a unit of measurement in the field of typography, equal to the currently specified point size,” as per [Wikipedia](http://en.wikipedia.org/wiki/Em_(typography). But for our purposes as web developers, it’s a measurement that’s equal to the font size of the parent element. Simple, right?
+”An em is a unit of measurement in the field of typography, equal to the currently specified point size,” as per [Wikipedia](http://en.wikipedia.org/wiki/Em_(typography)). But for our purposes as web developers, it’s a measurement that’s equal to the font size of the parent element. Simple, right?
 
 Not as simple as we’d like! Ems can be difficult to use in a manner that’s both efficient and predictable because changes in the font size are compounded by the cascade. In the past, this has been somewhat mitigated by setting the [font size of the body to 62.5%](http://clagnut.com/blog/348/), which ostensibly [makes the math easier](http://pxtoem.com/) to calculate.
 
@@ -24,7 +30,7 @@ While that solution works moderately well, it seems rather convoluted in light o
 
 By using rems we’re afforded the benefit of avoiding values that are compounded by the cascade. A heading that’s set to `1rem` is always `1rem`, regardless of the font size of its parent. This is much simpler than using ems, especially with elements that are nested several levels deep.
 
-It should be noted that [browser support for rems](http://caniuse.com/#search=rem) is surprisingly good, save for IE 8. That shouldn’t deter us, so long as we provide the necessary pixel (`px`) fallback. We could hand code that, but there's a better way.
+It should be noted that [browser support for rems](http://caniuse.com/#feat=rem) is surprisingly good, save for IE 8. That shouldn’t deter us, so long as we provide the necessary pixel (`px`) fallback. We could hand code that, but there's a better way.
 
 ## Sass to the Rescue
 
