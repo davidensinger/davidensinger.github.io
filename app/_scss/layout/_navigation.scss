@@ -27,7 +27,7 @@ nav {
 // Main navigation
 .main-navigation {
   float: left;
-  @include rem(margin-top, 2.25);
+  margin-top: 2.25rem;
 
   ul {
     margin: 0;
@@ -35,7 +35,7 @@ nav {
 
   li {
     float: left;
-    @include rem(margin-left, 2);
+    margin-left: 2rem;
 
     &:first-child {
       margin-left: 0;
@@ -43,7 +43,7 @@ nav {
   }
 
   a {
-    @include rem(padding-bottom, 0.25);
+    padding-bottom: 0.25rem;
 
     &:hover {
       border-bottom: 2px solid $link-color-focus;
@@ -67,7 +67,7 @@ nav {
 // Post and page navigation
 .post-navigation,
 .paging-navigation {
-  @include rem(padding-top, 3);
+  padding-top: 3rem;
 }
 
 .post-navigation {
@@ -82,7 +82,7 @@ nav {
 
   &:before {
     content: "\2190";
-    @include rem(margin-right, 0.25);
+    margin-right: 0.25rem;
   }
 }
 
@@ -94,6 +94,6 @@ nav {
 
   &:after {
     content: "\2192";
-    @include rem(margin-left, 0.25);
+    margin-left: 0.25rem;
   }
 }

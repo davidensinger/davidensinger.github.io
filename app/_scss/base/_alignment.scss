@@ -22,12 +22,12 @@
 // Media
 .media-left {
   float: left;
-  @include rem(margin-right, 1.5);
+  margin-right: 1.5rem;
 }
 
 .media-right {
   float: right;
-  @include rem(margin-left, 1.5);
+  margin-left: 1.5rem;
 }
 
 .media-center {

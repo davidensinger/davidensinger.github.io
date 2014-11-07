@@ -3,7 +3,7 @@
 // ==========================================================================
 
 .entry-meta-suggested-tweet {
-  @include rem(margin-bottom, 3);
+  margin-bottom: 3rem;
 }
 
 .suggested-tweet-title {
@@ -13,9 +13,9 @@
 .suggested-tweet-bubble {
   display: inline-block;
   position: relative;
-  @include rem(padding, 1 1 1.125);
+  padding: 1rem 1rem 1.125rem;
   @extend %margin-bottom;
-  @include rem(border-radius, 1);
+  border-radius: 1rem;
   background: $white-dark;
 
   &:hover {
@@ -56,7 +56,7 @@
 }
 
 .suggested-tweet-link {
-  @include rem(margin-left, 1);
+  margin-left: 1rem;
 
   &:hover {
 

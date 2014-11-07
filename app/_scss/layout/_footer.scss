@@ -78,7 +78,7 @@
 
   @include breakpoint(smaller-than-small-desktop) {
     float: none;
-    @include rem(margin, 0 0 2);
+    margin: 0 0 2rem;
   }
 }
 

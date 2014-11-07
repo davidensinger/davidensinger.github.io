@@ -3,7 +3,7 @@
 // ==========================================================================
 
 %info-box-base {
-  @include rem(padding, 1);
+  padding: 1rem;
   @extend %margin-bottom;
 
   a {

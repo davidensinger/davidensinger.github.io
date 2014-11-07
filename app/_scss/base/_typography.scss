@@ -39,7 +39,7 @@ textarea {
 
 // Font sizes
 %giga-font-size {
-  @include rem(font-size, 3);
+  font-size: 3rem;
 }
 
 %giga-line-height,
@@ -49,7 +49,7 @@ textarea {
 
 %giga-margin,
 %gamma-margin {
-  @include rem(margin, 1.5 0 0.5);
+  margin: 1.5rem 0 0.5rem;
 }
 
 %giga {
@@ -59,7 +59,7 @@ textarea {
 }
 
 %mega-font-size {
-  @include rem(font-size, 2.5);
+  font-size: 2.5rem;
 }
 
 %mega-line-height,
@@ -69,7 +69,7 @@ textarea {
 
 %mega-margin,
 %delta-margin {
-  @include rem(margin, 1.8 0 0.6);
+  margin: 1.8rem 0 0.6rem;
 }
 
 %mega {
@@ -79,7 +79,7 @@ textarea {
 }
 
 %alpha-font-size {
-  @include rem(font-size, 2.25);
+  font-size: 2.25rem;
 }
 
 %alpha-line-height {
@@ -87,7 +87,7 @@ textarea {
 }
 
 %alpha-margin {
-  @include rem(margin, 1.995 0 0.665);
+  margin: 1.995rem 0 0.665rem;
 }
 
 %alpha {
@@ -97,7 +97,7 @@ textarea {
 }
 
 %beta-font-size {
-  @include rem(font-size, 2);
+  font-size: 2rem;
 }
 
 %beta-line-height,
@@ -106,7 +106,7 @@ textarea {
 }
 
 %beta-margin {
-  @include rem(margin, 2.25 0 0.75);
+  margin: 2.25rem 0 0.75rem;
 }
 
 %beta {
@@ -116,7 +116,7 @@ textarea {
 }
 
 %gamma-font-size {
-  @include rem(font-size, 1.5);
+  font-size: 1.5rem;
 }
 
 %gamma {
@@ -126,7 +126,7 @@ textarea {
 }
 
 %delta-font-size {
-  @include rem(font-size, 1.25);
+  font-size: 1.25rem;
 }
 
 %delta {
@@ -136,11 +136,11 @@ textarea {
 }
 
 %epsilon-font-size {
-  @include rem(font-size, 1);
+  font-size: 1rem;
 }
 
 %epsilon-margin {
-  @include rem(margin-top, 1.5);
+  margin-top: 1.5rem;
 }
 
 %epsilon {
@@ -150,7 +150,7 @@ textarea {
 }
 
 %zeta-font-size {
-  @include rem(font-size, 0.875);
+  font-size: 0.875rem;
 }
 
 %zeta-line-height {
@@ -158,7 +158,7 @@ textarea {
 }
 
 %zeta-margin {
-  @include rem(margin, 2.57145 0.85715);
+  margin: 2.57145rem 0.85715rem;
 }
 
 %zeta {
@@ -168,7 +168,7 @@ textarea {
 }
 
 %eta-font-size {
-  @include rem(font-size, 0.75);
+  font-size: 0.75rem;
 }
 
 %eta-line-height {
@@ -176,7 +176,7 @@ textarea {
 }
 
 %eta-margin {
-  @include rem(margin, 3 0 1);
+  margin: 3rem 0 1rem;
 }
 
 %eta {
@@ -202,7 +202,7 @@ h1 {
   margin-top: 0;
   @extend %mega-font-size;
   @extend %mega-line-height;
-  @include rem(margin-bottom, 0.9);
+  margin-bottom: 0.9rem;
 }
 
 h2 {
@@ -240,7 +240,7 @@ ul,
 ol,
 dd {
   padding: 0;
-  @include rem(margin-left, 1.5);
+  margin-left: 1.5rem;
   @extend %margin-bottom;
 }
 
@@ -272,7 +272,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  @include rem(margin-top, 1.5);
+  margin-top: 1.5rem;
   @include border(hr,top);
   @extend %margin-bottom;
   padding: 0;
@@ -296,8 +296,8 @@ dfn {
 blockquote {
   position: relative;
   z-index: 1;
-  @include rem(margin, 0 0 1.5);
-  @include rem(padding, 2 3);
+  margin: 0 0 1.5rem;
+  padding: 2rem 3rem;
   background: $gray-darker;
   border-radius: 5px;
   text-align: right;
@@ -310,7 +310,7 @@ blockquote {
     top: 1.5rem;
     left: 2.5rem;
     z-index: -1;
-    @include rem(font-size, 14);
+    font-size: 14rem;
     @extend %font-open-sans-semibold;
     color: #3c3c3c;
     text-shadow: none;
@@ -375,7 +375,7 @@ pre {
   }
 
   @include breakpoint(mobile-portrait-to-mobile-landscape) {
-    @include rem(font-size, 0.75);
+    font-size: 0.75rem;
   }
 }
 
@@ -383,8 +383,8 @@ code,
 kbd,
 tt,
 var {
-  @include rem(padding, 0.125 0.33);
-  @include rem(border-radius, 0.5);
+  padding: 0.125rem 0.33rem;
+  border-radius: 0.5rem;
   background: $white-dark;
   color: $gray-dark;
   word-break: break-all;
@@ -435,7 +435,7 @@ table {
 
   caption {
     @extend small;
-    @include rem(margin-bottom, 0.25);
+    margin-bottom: 0.25rem;
   }
 
   caption,
@@ -446,7 +446,7 @@ table {
 
   td,
   th {
-    @include rem(padding, 0.25 0.5);
+    padding: 0.25rem 0.5rem;
   }
 
   thead {
@@ -466,6 +466,6 @@ table {
   }
 
   @include breakpoint(mobile-portrait-to-mobile-landscape) {
-    @include rem(font-size, 0.75);
+    font-size: 0.75rem;
   }
 }

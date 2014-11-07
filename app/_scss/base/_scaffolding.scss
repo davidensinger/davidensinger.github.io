@@ -19,7 +19,7 @@ html {
 }
 
 %margin-bottom {
-  @include rem(margin-bottom, 1.5);
+  margin-bottom: 1.5rem;
 }
 
 .outer-container {

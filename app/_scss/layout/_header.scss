@@ -4,7 +4,7 @@
 
 .site-logo {
   float: left;
-  @include rem(margin-right, 2);
+  margin-right: 2rem;
   animation-fill-mode: both;
   animation-duration: 1s;
   animation-name: bounceIn;
@@ -38,8 +38,8 @@
 }
 
 .site-logo--svg {
-  @include rem(width, 6);
-  @include rem(height, 6);
+  width: 6rem;
+  height: 6rem;
   transition: transform 0.2s;
   backface-visibility: hidden;
 
