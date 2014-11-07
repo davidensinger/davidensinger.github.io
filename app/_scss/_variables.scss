@@ -3,7 +3,7 @@
 // ==========================================================================
 
 // Colors
-// Visualize SASS color functions in real-time without compiling:
+// Visualize SASS color functions in real-time without compiling
 // http://sassme.arc90.com/
 // ==========================================================================
 
@@ -74,28 +74,20 @@ $balloon-orange: #f57a00;
 $balloon-yellow: #f5c500;
 $balloon-red: #ff330f;
 
-// Backgrounds
-// ==========================================================================
+// Background colors
 $background-inner-container: $white;
 $background-gray-light: mix($white, $white-dark);
 
-// Blockquotes
-// ==========================================================================
-
-// Borders
-// ==========================================================================
+// Border color
 $border-color: $gray-lighter;
 
-// Horizontal rule
-// ==========================================================================
+// Horizontal rule color
 $hr-color: $gray-lightest;
 
-// Icons
-// ==========================================================================
+// Icon color
 $icon-meta-color: $gray-light;
 
-// Links
-// ==========================================================================
+// Link colors
 $link-color: $blue;
 $link-color-hover: $blue-dark;
 $link-color-focus: $green;
@@ -111,14 +103,7 @@ $link-meta-color: $gray-light;
 $link-meta-color-hover: $gray;
 $link-meta-color-focus: $link-color-focus;
 
-// Margin
-// ==========================================================================
-
-// Padding
-// ==========================================================================
-
 // Typography
-// ==========================================================================
 $base-font-face: 'open-sans-regular', sans-serif!default;
 
 $base-font-size: 16px!default;
