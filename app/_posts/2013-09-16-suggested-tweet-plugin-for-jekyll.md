@@ -4,6 +4,8 @@ layout: post
 title: 'Suggested Tweet Plugin for Jekyll'
 description: 'A Liquid tag for Jekyll that allows for the embedding of suggested tweets via Twitter’s Web Intents API.'
 tags: ['Jekyll', 'Liquid', 'Twitter']
+sitemap:
+  lastmod: 2014-11-07
 suggested_tweet:
   hashtags: ['Jekyll', 'jekyllrb', 'Twitter']
   related: ['jekyllrb', '2john4tv', 'richhollis']
@@ -11,8 +13,12 @@ suggested_tweet:
 
 It’s always a really nice feeling when one sees one’s posts shared with others, usually via blog post or Tweet. In the spirit of encouraging more of this, I present to you the [Suggested Tweet](https://github.com/davidensinger/jekyll-suggested-tweet) plugin for [Jekyll](http://jekyllrb.com/). With this plugin, visitors to your site need no longer grope for words while they attempt to share your content!
 
+<div class="yellow-box">
+  <p><strong>Please Note:</strong> I’ve since gone back to doing my suggested tweeting with DIY Liquid filters, although I still feel like this is a good solution.</p>
+</div>
+
 ## About the Plugin
-The **Suggested Tweet** plugin is a custom [Liquid Tag](http://wiki.shopify.com/Liquid) for **Jekyll** that allows for the embedding of suggested tweets via [Twitter’s Web Intents API](https://dev.twitter.com/docs/intents). It makes liberal use of [Rich Hollis’s](http://richhollis.co.uk/) [Twitter Web Intents Ruby Gem](https://github.com/richhollis/twitter_web_intents) and was lovingly made by [John Colvin](http://2john4tv.biz/) and me.
+The **Suggested Tweet** plugin is a custom [Liquid Tag](http://docs.shopify.com/themes/liquid-documentation/basics) for **Jekyll** that allows for the embedding of suggested tweets via [Twitter’s Web Intents API](https://dev.twitter.com/web/intents). It makes liberal use of [Rich Hollis’s](http://richhollis.co.uk/) [Twitter Web Intents Ruby Gem](https://github.com/richhollis/twitter_web_intents) and was lovingly made by [John Colvin](http://2john4tv.biz/) and me.
 
 ## Installation
 1. Copy **suggested-tweet.rb** into your site’s **_plugins** directory
