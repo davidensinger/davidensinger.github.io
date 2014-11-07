@@ -4,6 +4,8 @@ layout: post
 title: 'Setting Up Google Author Rich Snippets'
 description: 'Steps for setting up Google Author Rich Snippets on your site.'
 tags: ['Google', 'Rich Snippets', 'SEO']
+sitemap:
+  lastmod: 2014-11-07
 suggested_tweet:
   hashtags: ['GooglePlus']
 ---
@@ -36,7 +38,7 @@ There are several ways to prove ownership of your site to Google. You can verify
 
 ### Use your Email Address
 
-You can [link your email address](https://plus.google.com/authorship) to your Google+ profile, so long as the domain name matches. You’ll need to ensure that your posts have a byline with your name for this to work too.
+You can link your email address to your Google+ profile, so long as the domain name matches. You’ll need to ensure that your posts have a byline with your name for this to work too.
 
 ### Link to your Google+ Profile
 
