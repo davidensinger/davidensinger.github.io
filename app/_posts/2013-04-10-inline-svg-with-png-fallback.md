@@ -4,6 +4,8 @@ layout: post
 title: 'Inline SVG with PNG Fallback'
 description: 'How to use inline SVG with PNG fallback, courtesy of foreignObject and base64.'
 tags: ['base64', 'foreignObject', 'PNG', 'SVG']
+sitemap:
+  lastmod: 2014-11-07
 suggested_tweet:
   hashtags: ['SVG', 'PNG']
 ---
@@ -62,6 +64,6 @@ The final step is to put the SVG code into a **group** (`g`) and then wrap the g
 
 Browsers that support SVG will render the inline SVG, while older browsers will instead display the foreignObject, which contains the fallback PNG. Easy and efficient, right?
 
-Unfortunately, both the SVG and the image fallback will be loaded by the browser. This isn’t such a big deal, so long as the image is optimized and then converted to a **base64 string**, thus saving another HTTP request. I recommend my [favorite converter](http://webcodertools.com/imagetobase64converter) for the task!
+Unfortunately, both the SVG and the image fallback will be loaded by the browser. This isn’t such a big deal, so long as the image is optimized and then converted to a **base64 string**, thus saving another HTTP request. I recommend my [favorite converter](http://b64.io/) for the task!
 
 
