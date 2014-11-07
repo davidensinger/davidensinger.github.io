@@ -4,6 +4,8 @@ layout: post
 title: 'Why I use EditorConfig'
 description: 'An argument for using EditorConfig in projects.'
 tags: ['EditorConfig', 'Sublime Text']
+sitemap:
+  lastmod: 2014-11-07
 suggested_tweet:
   hashtags: ['EditorConfig', 'SublimeText']
   related: ['EditorConfig', 'sublimehq']
@@ -64,6 +66,6 @@ Here’s a shortlist of supported properties. See the [project’s website](http
 - Insert final newline
 
 ## Editor and IDE Support
-There are plugins available for a host of editors and IDEs, although there are unfortunately some notable exceptions. I’m glad that my preferred editor, Sublime Text 2, [is supported](https://github.com/sindresorhus/editorconfig-sublime). It will be a glorious day in development land when there’s universal support for EditorConfig.
+There are plugins available for a host of editors and IDEs, although there are unfortunately some notable exceptions. I’m glad that my preferred editor, Sublime Text, [is supported](https://github.com/sindresorhus/editorconfig-sublime). It will be a glorious day in development land when there’s universal support for EditorConfig.
 
 It’s 2013, so why are we still debating tabs versus spaces?! Set a standard and stick with it.
