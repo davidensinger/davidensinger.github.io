@@ -4,12 +4,18 @@ layout: post
 title: 'How I use Reduce to Minify and Optimize Assets for Production'
 description: 'An easy way to both minify CSS, JavaScript, and HTML and optimize images.'
 tags: ['Minify', 'Optimize', 'Rake']
+sitemap:
+  lastmod: 2014-11-07
 suggested_tweet:
   hashtags: ['Jekyll', 'jekyllrb']
   related: ['grosser‎', 'pacbard', 'jekyllrb']
 ---
 
 Now that I’ve set up [my development environment with Rake](http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/), I’m able to easily minify and optimize the assets I use for my site. To do this I use [Reduce](https://github.com/grosser/reduce), which is a fantastic Ruby gem by [Michael Grosser](http://grosser.it/) to minify and compress CSS, HTML, JavaScript and Jpeg and PNG, amongst other formats.
+
+<div class="yellow-box">
+  <p><strong>Please Note:</strong> I no longer use source maps with Sass or use Rake to manage development environments. The following code may still be helpful for some folks, even though I’ve moved on to using Grunt to compile my Sass.</p>
+</div>
 
 ## Why Compress Assets?
 The obvious benefit to minifying text and optimizing images is that it reduces filesize, so the assets load faster. This is the low hanging fruit of front end optimization and usually quite impactful on performance, despite being so easy to do.
