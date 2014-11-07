@@ -5,6 +5,8 @@ title: 'Setting the DNS for GitHub Pages on Namecheap'
 description: 'How to properly set up the DNS on Namecheap for your custom domain with GitHub Pages.'
 image: 2014-01-07-namecheap-dns-settings.png
 tags: ['DNS', 'GitHub', 'Jekyll', 'Namecheap']
+sitemap:
+  lastmod: 2014-11-07
 suggested_tweet:
   hashtags: ['Namecheap', 'Jekyll', 'jekyllrb']
   related: ['jekyllrb', 'Namecheap']
@@ -16,14 +18,8 @@ In the interest of helping others avoid the mistakes I made, here’s a guide to
 
 <div class="yellow-box">
   <p><strong>Please Note:</strong> I no longer use Namecheap to host the DNS for this site. See my new setup at <a href="http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages/">Transferring the DNS from Namecheap to CloudFlare for GitHub Pages</a>.</p>
-</div>
-
-<div class="yellow-box">
-  <p><strong>Please Note:</strong> This guide has been updated on January 7th, 2014 with new settings to support <a href="https://github.com/blog/1715-faster-more-awesome-github-pages">Faster, More Awesome GitHub Pages</a>. Be aware that Namecheap DNS doesn’t seem to support an <strong>ALIAS</strong> record for the APEX domain, so we’ll need to use two <strong>A</strong> records for our DNS, per the instructions in the <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">Setting up a custom domain with Pages</a>. This will not allow us to use the content delivery network, but will still help protect the site against denial of service attacks.</p>
-</div>
-
-<div class="red-box">
-  <p><strong>Also:</strong> This guide assumes that you’re using an APEX domain.</p>
+  <p>This guide was updated on January 7th, 2014 with new settings to support <a href="https://github.com/blog/1715-faster-more-awesome-github-pages">Faster, More Awesome GitHub Pages</a>.</p>
+  <p>Namecheap DNS doesn’t support an <strong>ALIAS</strong> record for the APEX domain, so you’ll need to use two <strong>A</strong> records for our DNS, per the instructions in the <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">Setting up a custom domain with Pages</a>. This will not allow you to use the content delivery network, but will still help protect your site against denial of service attacks.</p>
 </div>
 
 ## Add a CNAME File to your Repo
