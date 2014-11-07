@@ -1,13 +1,11 @@
 ---
 date: 2013-07-16 10:12:00
 layout: post
-title: Why I use EditorConfig
-description: An argument for using EditorConfig in projects.
-tags: [EditorConfig, Sublime Text 2]
+title: 'Why I use EditorConfig'
+description: 'An argument for using EditorConfig in projects.'
+tags: ['EditorConfig', 'Sublime Text']
 suggested_tweet:
-  url: 'http://davidensinger.com/2013/07/why-i-use-editorconfig/'
-  text: 'Why I use EditorConfig: An argument for using EditorConfig in projects by @DavidEnsinger'
-  hashtags: ['EditorConfig', 'SublimeText2']
+  hashtags: ['EditorConfig', 'SublimeText']
   related: ['EditorConfig', 'sublimehq']
 ---
 

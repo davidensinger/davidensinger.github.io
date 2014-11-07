@@ -3,12 +3,10 @@ date: 2013-11-03 16:50:00
 layout: post
 title: 'Building a Better Sitemap.xml with Jekyll'
 description: 'How to make a more flexible Sitemap.xml with Jekyll.'
-tags: [Jekyll, Sitemap, XML]
+tags: ['Jekyll, Sitemap, XML']
 sitemap:
   lastmod: 2014-01-23
 suggested_tweet:
-  url: 'http://davidensinger.com/2013/11/building-a-better-sitemap-xml-with-jekyll/'
-  text: 'Building a Better Sitemap.xml with Jekyll by @DavidEnsinger'
   hashtags: ['Jekyll', 'jekyllrb', 'Sitemap']
   related: ['jekyllrb']
 ---

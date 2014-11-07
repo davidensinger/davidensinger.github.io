@@ -1,12 +1,9 @@
 ---
 date: 2013-06-14 13:20:00
 layout: post
-title: My Favorite Chrome Extensions for Development
-description: A short list of my favorite Chrome extensions for development.
-tags: [Google Chrome]
-suggested_tweet:
-  url: 'http://davidensinger.com/2013/06/my-favorite-chrome-extensions-for-development/'
-  text: 'My Favorite Chrome Extensions for Development by @DavidEnsinger'
+title: 'My Favorite Chrome Extensions for Development'
+description: 'A short list of my favorite Chrome extensions for development.'
+tags: ['Google Chrome']
 ---
 
 In keeping with the spirit of [my favorite software for development](http://davidensinger.com/2013/05/my-favorite-web-development-software/), I present my favorite [Google Chrome](http://www.google.com/chrome) extensions. While there are no shortage of blog posts about [Chrome extensions](https://chrome.google.com/webstore/category/extensions), I’ll only list the ones I actually use to keep this post from turning into a bloated roundup of links.

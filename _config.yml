@@ -7,6 +7,7 @@
 title: 'Development, design, and more by David Ensinger'
 url: 'http://localhost:3000'
 author: 'David Ensinger'
+twitter: 'DavidEnsinger'
 email: 'hello@davidensinger.com'
 description: 'David Ensinger is a Front End Developer from Columbus, OH'
 
@@ -31,6 +32,3 @@ excerpt_separator: ''
 
 # Use Pygments to highlight code blocks
 highlighter: pygments
-
-suggested_tweet:
-  related: ['davidensinger']

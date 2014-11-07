@@ -1,12 +1,10 @@
 ---
 date: 2014-07-30 15:57:00
 layout: post
-title: Fun with JSTL in JSPs
+title: 'Fun with JSTL in JSPs'
 description: 'And now for something completely different.'
 tags: ['JSTL', 'Java', 'JSP']
 suggested_tweet:
-  url: 'http://davidensinger.com/2014/07/fun-with-jstl-in-jsps/'
-  text: 'Fun with JSTL in JSPs by @DavidEnsinger'
   hashtags: ['JSTL', 'Java', 'JSP']
 ---
 

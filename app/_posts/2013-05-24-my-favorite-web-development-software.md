@@ -1,11 +1,8 @@
 ---
 date: 2013-05-24 12:48:00
 layout: post
-title: My Favorite Web Development Software
-description: A list, with descriptions, of my favorite web development software.
-suggested_tweet:
-  url: 'http://davidensinger.com/2013/05/my-favorite-web-development-software/'
-  text: 'A list, with descriptions, of my favorite web development software by @DavidEnsinger'
+title: 'My Favorite Web Development Software'
+description: 'A list, with descriptions, of my favorite web development software.'
 ---
 
 I’m always interested in learning about the tools other developers use during the course of their workday. What follows is a list of my preferred software with accompanying explanations on how I use it. Hopefully this list will prove helpful to someone else! If you’ve got a suggestion for a better program, please let me know.

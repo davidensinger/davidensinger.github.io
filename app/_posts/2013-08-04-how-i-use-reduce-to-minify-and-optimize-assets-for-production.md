@@ -1,12 +1,10 @@
 ---
 date: 2013-08-04 12:19:00
 layout: post
-title: How I use Reduce to Minify and Optimize Assets for Production
-description: An easy way to both minify CSS, JavaScript, and HTML and optimize images.
-tags: [CSS, HTML, Images, JavaScript, Minify, Optimize, Rake, Reduce]
+title: 'How I use Reduce to Minify and Optimize Assets for Production'
+description: 'An easy way to both minify CSS, JavaScript, and HTML and optimize images.'
+tags: ['Minify', 'Optimize', 'Rake']
 suggested_tweet:
-  url: 'http://davidensinger.com/2013/08/how-i-use-reduce-to-minify-and-optimize-assets-for-production/'
-  text: 'How to use Reduce to minify and optimize assets for Jekyll by @DavidEnsinger'
   hashtags: ['Jekyll', 'jekyllrb']
   related: ['grosser‎', 'pacbard', 'jekyllrb']
 ---

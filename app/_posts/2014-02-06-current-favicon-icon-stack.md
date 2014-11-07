@@ -1,12 +1,10 @@
 ---
 date: 2014-02-06 15:00:00
 layout: post
-title: Current Favicon Icon Stack
-description: My current favicon icon stack with recommended tools and resources too.
-tags: [Favicon]
+title: 'Current Favicon Icon Stack'
+description: 'My current favicon icon stack with recommended tools and resources too.'
+tags: ['Favicon']
 suggested_tweet:
-  url: 'http://davidensinger.com/2014/02/current-favicon-icon-stack/'
-  text: 'My Current Favicon Icon Stack by @DavidEnsinger'
   hashtags: ['favicon']
 ---
 

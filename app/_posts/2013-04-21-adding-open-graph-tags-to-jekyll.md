@@ -1,12 +1,10 @@
 ---
 date: 2013-04-21 20:05:00
 layout: post
-title: Adding Open Graph Tags to Jekyll
-description: A guide to adding Open Graph meta tags to Jekyll.
-tags: [Jekyll, Open Graph, Facebook]
+title: 'Adding Open Graph Tags to Jekyll'
+description: 'A guide to adding Open Graph meta tags to Jekyll.'
+tags: ['Jekyll', 'Open Graph', 'Facebook']
 suggested_tweet:
-  url: 'http://davidensinger.com/2013/04/adding-open-graph-tags-to-jekyll/'
-  text: 'A Guide to Adding Open Graph Tags to Jekyll by @DavidEnsinger'
   hashtags: ['OpenGraph', 'Jekyll', 'jekyllrb']
   related: ['jekyllrb']
 ---

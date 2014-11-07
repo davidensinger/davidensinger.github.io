@@ -1,12 +1,10 @@
 ---
 date: 2013-04-10 21:41:00
 layout: post
-title: Inline SVG with PNG Fallback
-description: How to use inline SVG with PNG fallback, courtesy of foreignObject and base64.
-tags: [base64, foreignObject, PNG, SVG]
+title: 'Inline SVG with PNG Fallback'
+description: 'How to use inline SVG with PNG fallback, courtesy of foreignObject and base64.'
+tags: ['base64', 'foreignObject', 'PNG', 'SVG']
 suggested_tweet:
-  url: 'http://davidensinger.com/2013/04/inline-svg-with-png-fallback/'
-  text: 'Inline SVG with PNG Fallback, courtesy of foreignObject and base64 by @DavidEnsinger'
   hashtags: ['SVG', 'PNG']
 ---
 

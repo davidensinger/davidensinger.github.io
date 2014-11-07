@@ -1,12 +1,10 @@
 ---
 date: 2013-03-19 22:55:00
 layout: post
-title: Installing Jekyll
-description: How to install Jekyll on OS X.
-tags: [Jekyll, RVM, Ruby]
+title: 'Installing Jekyll'
+description: 'How to install Jekyll on OS X.'
+tags: ['Jekyll', 'RVM', 'Ruby']
 suggested_tweet:
-  url: 'http://davidensinger.com/2013/03/installing-jekyll/'
-  text: 'How to install Jekyll on OS X by @DavidEnsinger'
   hashtags: ['Jekyll', 'jekyllrb', 'RVM', 'Ruby']
   related: ['jekyllrb']
 ---

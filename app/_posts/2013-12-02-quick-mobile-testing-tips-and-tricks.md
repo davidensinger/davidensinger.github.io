@@ -1,14 +1,12 @@
 ---
 date: 2013-12-02 10:44:00
 layout: post
-title: Quick Mobile Testing Tips and Tricks
-description: Tools to help with mobile debugging when the needed browser, operating system, and/or device isn’t available.
+title: 'Quick Mobile Testing Tips and Tricks'
+description: 'Tools to help with mobile debugging when the needed browser, operating system, and/or device isn’t available.'
 image: 2013-12-02-safari.jpg
-tags: [Mobile]
+tags: ['Mobile', 'RWD']
 suggested_tweet:
-  url: 'http://davidensinger.com/2013/12/quick-mobile-testing-tips-and-tricks/'
-  text: 'Quick Mobile Testing Tips and Tricks by @DavidEnsinger'
-  hashtags: ['mobile']
+  hashtags: ['mobile', 'RWD']
 ---
 
 Have you ever needed to track down a bug in mobile, but due to circumstances found yourself without the needed browser, operating system, and/or device? It can be really frustrating, especially when working with an ever approaching deadline. Thankfully, there are many tools available to help debug in such a situation, even if using them isn’t a proper substitute for the actual device.

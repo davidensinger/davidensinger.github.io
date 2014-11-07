@@ -1,12 +1,10 @@
 ---
 date: 2013-07-26 13:26:00
 layout: post
-title: Easy Sass Source Maps with Development Environments and Rake
-description: Create development environments with Rake to easily switch between development and production builds of Sass.
-tags: [Rake, Sass]
+title: 'Easy Sass Source Maps with Development Environments and Rake'
+description: 'Create development environments with Rake to easily switch between development and production builds of Sass.'
+tags: ['Rake', 'Sass']
 suggested_tweet:
-  url: 'http://davidensinger.com/2013/07/easy-sass-source-maps-with-development-environments-and-rake/'
-  text: 'Easy Sass Source Maps with Development Environments and Rake by @DavidEnsinger'
   hashtags: ['Sass', 'SCSS', 'Rake', 'CSS']
 ---
 

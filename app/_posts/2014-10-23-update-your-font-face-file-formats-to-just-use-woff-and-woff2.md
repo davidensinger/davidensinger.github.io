@@ -1,12 +1,9 @@
 ---
 date: 2014-10-23 19:23:00
 layout: post
-title: Update Your @font-face Definitions to Just Use WOFF (and WOFF2)
+title: 'Update Your @font-face Definitions to Just Use WOFF (and WOFF2)'
 description: 'This is a public service announcement: You probably don’t need the other file formats.'
 tags: ['Fonts']
-suggested_tweet:
-  url: 'http://davidensinger.com/2014/10/update-your-font-face-file-formats-to-just-use-woff-and-woff2/'
-  text: 'Update Your @​font-face Definitions to Just Use WOFF (and WOFF2) by @DavidEnsinger'
 ---
 
 I have been working to simplify this site, which means that I’ve been reevaluating decisions I made more than a year and a half ago. Many of these were based on assumptions that may no longer be valid. Since the initial build of this site, the browser support for **@font-face** file formats has changed dramatically. Previously it was a best practice to include four different file formats to get optimal browser support, but these days one file format suffices (at least so far as I’m concerned).

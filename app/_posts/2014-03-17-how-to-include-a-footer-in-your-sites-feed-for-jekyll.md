@@ -1,12 +1,10 @@
 ---
 date: 2014-03-17 12:46:00
 layout: post
-title: How to Include a Footer in your Site’s Feed for Jekyll
-description: Easily add a note at the bottom of every post for the readers who subscribe to your syndicated feed.
-tags: [Jekyll, RSS, XML]
+title: 'How to Include a Footer in your Site’s Feed for Jekyll'
+description: 'Easily add a note at the bottom of every post for the readers who subscribe to your syndicated feed.'
+tags: ['Jekyll', 'RSS', 'XML']
 suggested_tweet:
-  url: 'http://davidensinger.com/2014/03/how-to-include-a-footer-in-your-sites-feed-for-jekyll/'
-  text: 'How to Include a Footer in your Site’s Feed for Jekyll by @DavidEnsinger'
   hashtags: ['jekyllrb']
 ---
 

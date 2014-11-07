@@ -1,13 +1,11 @@
 ---
 date: 2013-05-14 16:12:00
 layout: post
-title: Getting Started with Sublime Text 2
-description: A quick start guide to configuring Sublime Text 2.
-tags: [Sublime Text 2]
+title: 'Getting Started with Sublime Text 2'
+description: 'A quick start guide to configuring Sublime Text 2.'
+tags: ['Sublime Text']
 suggested_tweet:
-  url: 'http://davidensinger.com/2013/05/getting-started-with-sublime-text-2/'
-  text: 'Getting Started with Sublime Text 2: A Quick Start Guide by @DavidEnsinger'
-  hashtags: ['SublimeText2']
+  hashtags: ['SublimeText']
   related: ['sublimehq']
 ---
 
