@@ -4,12 +4,14 @@ layout: post
 title: 'Supporting Twitter Cards with Jekyll'
 description: 'How to add support for Summary Twitter Cards to Jekyll.'
 tags: ['Jekyll', 'Twitter', 'Twitter Cards']
+sitemap:
+  lastmod: 2014-11-07
 suggested_tweet:
   hashtags: ['TwitterCards', 'Jekyll', 'jekyllrb']
   related: ['jekyllrb']
 ---
 
-I just added support for [Twitter Cards](https://dev.twitter.com/docs/cards) to my website because I wanted more control over how my site displays on Twitter. There are six different card types, although the only one that’s appropriate for my site is the [Summary Card](http://dev.twitter.com/docs/cards/types/summary-card), which lets users preview site content within a tweet.
+I just added support for [Twitter Cards](https://dev.twitter.com/cards/overview) to my website because I wanted more control over how my site displays on Twitter. There are six different card types, although the only one that’s appropriate for my site is the [Summary Card](https://dev.twitter.com/cards/types/summary), which lets users preview site content within a tweet.
 
 ## Summary Card
 
@@ -123,7 +125,7 @@ Here’s what my final block of code looks like:
 
 ## Validate
 
-If you’re curious if your code validates, Twitter has provided a [validator](https://dev.twitter.com/docs/cards/validation/validator) so you can easily check. You’ll need to pass the validation test before you can submit a **Domain Approval Request**, which will whitelist your website for inclusion with the service. It shouldn’t take much time at all to be approved.
+If you’re curious if your code validates, Twitter has provided a [validator](https://cards-dev.twitter.com/validator) so you can easily check. You’ll need to pass the validation test before you can submit a **Domain Approval Request**, which will whitelist your website for inclusion with the service. It shouldn’t take much time at all to be approved.
 
 <div class="gray-box">
   <p><strong>More Info:</strong> David Walsh has a really great overview of <a href="http://davidwalsh.name/twitter-cards">Twitter Cards</a>, which is well worth a read.</p>
