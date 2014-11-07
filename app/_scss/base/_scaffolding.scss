@@ -7,23 +7,15 @@
 // http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 html {
   box-sizing: border-box;
+  background: $blue;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMCIgeT0iMCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDE2MCAxNSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTYwIDE1IiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1vcGFjaXR5PSIwLjMiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZD0iTTAgMC41YzI2LjcgMCA1My4zIDE0IDgwIDE0IDI2LjcgMCA1My4zLTE0IDgwLTE0TTAtNC41YzI2LjcgMCA1My4zIDE0IDgwIDE0IDI2LjcgMCA1My4zLTE0IDgwLTE0TTAtOS41YzI2LjcgMCA1My4zIDE0IDgwIDE0IDI2LjcgMCA1My4zLTE0IDgwLTE0TTAgNS41YzI2LjcgMCA1My4zIDE0IDgwIDE0IDI2LjcgMCA1My4zLTE0IDgwLTE0TTAgMTAuNWMyNi43IDAgNTMuMyAxNCA4MCAxNCAyNi43IDAgNTMuMy0xNCA4MC0xNCIvPjwvc3ZnPg==),
+              linear-gradient(to bottom, $green 0%, $blue 100%) fixed;
+
 }
 *,
 *:before,
 *:after {
   box-sizing: inherit;
-}
-
-html {
-  overflow-y: scroll;
-  height: 100%;
-  background: $green;
-  background: linear-gradient(to bottom, $green 0%, $blue 100%) fixed;
-}
-
-body {
-  min-height: 100%;
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMCIgeT0iMCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDE2MCAxNSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTYwIDE1IiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1vcGFjaXR5PSIwLjMiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZD0iTTAgMC41YzI2LjcgMCA1My4zIDE0IDgwIDE0IDI2LjcgMCA1My4zLTE0IDgwLTE0TTAtNC41YzI2LjcgMCA1My4zIDE0IDgwIDE0IDI2LjcgMCA1My4zLTE0IDgwLTE0TTAtOS41YzI2LjcgMCA1My4zIDE0IDgwIDE0IDI2LjcgMCA1My4zLTE0IDgwLTE0TTAgNS41YzI2LjcgMCA1My4zIDE0IDgwIDE0IDI2LjcgMCA1My4zLTE0IDgwLTE0TTAgMTAuNWMyNi43IDAgNTMuMyAxNCA4MCAxNCAyNi43IDAgNTMuMy0xNCA4MC0xNCIvPjwvc3ZnPg==);
 }
 
 %margin-bottom {
@@ -48,7 +40,6 @@ body {
 
 .inner-container {
   background: $background-inner-container;
-  box-shadow: 0 0 3em 0 rgba($green-darkest, 0.25);
 }
 
 // Common
