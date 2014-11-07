@@ -71,7 +71,7 @@ nav {
 }
 
 .post-navigation {
-  @include border(hr,top);
+  border-top: 2px solid $hr-color;
 }
 
 .nav-previous {

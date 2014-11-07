@@ -2,16 +2,6 @@
 // Mixins
 // ==========================================================================
 
-// Border
-// ==========================================================================
-@mixin border($border-or-hr, $direction) {
-  @if $border-or-hr == 'border' {
-    border-#{$direction}: 1px solid $border-color;
-  } @elseif $border-or-hr == 'hr' {
-    border-#{$direction}: 2px solid $hr-color;
-  }
-}
-
 // Breakpoint
 // http://css-tricks.com/media-queries-sass-3-2-and-codekit/
 // ==========================================================================
