@@ -58,7 +58,7 @@ Please note that the preceeding link goes to my profile. Be sure to change it to
 
 Add a reciprocal link back from your Google+ profile to your site:
 
-<img src="/img/posts/2013-05-03-google-author-contributor-to.png" alt="Image of Contributor To settings for Google+" class="media-center img-border" />
+<img src="/img/posts/2013-05-03-google-author-contributor-to.png" alt="Image of Contributor To settings for Google+" class="media-center media-border" />
 
 1. Edit the [Contributor To](http://plus.google.com/me/about/edit/co) section.
 2. In the dialog that appears, click **Add custom link**, and then enter the website URL.

@@ -25,15 +25,15 @@ select,
 textarea {
   @extend %font-open-sans-regular;
   line-height: $line-height-ratio;
-  color: $text-color;
+  color: $color-text--color;
 }
 
 // Remove text-shadow in selection highlight: h5bp.com/i
 // These selection declarations have to be separate.
 // Customize the background color to match your design.
 ::selection {
-  color: $selection-color;
-  background: $selection-background;
+  color: $color-selection--color;
+  background-color: $color-selection--background__color;
   text-shadow: none;
 }
 
@@ -194,7 +194,7 @@ h5,
 h6 {
   clear: left;
   padding: 0;
-  color: $heading-color;
+  color: $color-headings--color;
   @extend %font-open-sans-semibold;
 }
 
@@ -244,6 +244,19 @@ dd {
   @extend %margin-bottom;
 }
 
+.list-unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+
+.list-inline {
+  @extend .list-unstyled;
+  > li {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
 dt {
   @extend %font-open-sans-semibold;
 }
@@ -273,7 +286,7 @@ hr {
   height: 1px;
   border: 0;
   margin-top: 1.5rem;
-  border-top: 2px solid $hr-color;
+  border-top: 2px solid $color-hr--color;
   @extend %margin-bottom;
   padding: 0;
 }
@@ -339,8 +352,7 @@ blockquote {
         color: $white-dark;
       }
 
-      &:focus,
-      &:active {
+      &:focus {
         color: $white;
       }
     }
@@ -353,7 +365,7 @@ address {
 
 abbr,
 acronym {
-  border-bottom: 1px dotted $text-color;
+  border-bottom: 1px dotted $color-text--color;
   cursor: help;
 }
 

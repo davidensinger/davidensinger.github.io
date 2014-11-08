@@ -3,8 +3,8 @@
 // ==========================================================================
 
 .site-footer {
-  color: $footer-color;
-  text-shadow: 0 1px 1px rgba($text-color, 0.25);
+  color: $color-footer--color;
+  text-shadow: 0 1px 1px rgba($color-text--color, 0.25);
 
   @include breakpoint(smaller-than-small-desktop) {
     text-align: center;
@@ -62,7 +62,7 @@
   }
 
   .icon-rss--foreground {
-    fill: $footer-color;
+    fill: $color-footer--color;
     transition: fill 0.2s;
     backface-visibility: hidden;
   }
@@ -83,14 +83,7 @@
 }
 
 .site-footer--icons {
-  margin-left: 0;
-  list-style: none;
   text-align: center;
-}
-
-.site-footer--icons__item {
-  display: inline-block;
-  vertical-align: middle;
 }
 
 .site-footer--icons__anchor {
@@ -124,7 +117,7 @@
   }
 
   .icon-foreground {
-    fill: $footer-color;
+    fill: $color-footer--color;
   }
 }
 

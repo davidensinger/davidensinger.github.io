@@ -5,14 +5,13 @@
 .secondary {
 
   @include breakpoint(smaller-than-small-desktop) {
-    background: $background-gray-light;
+    background-color: $color-secondary;
   }
 }
 
 .secondary-photo {
   @extend %margin-bottom;
   width: 75%;
-  border-radius: 50%;
 
   @include breakpoint(smaller-than-small-desktop) {
     margin: 0 0 0 1.5rem;
@@ -32,16 +31,15 @@
   &:hover {
     .secondary-twitter--icon {
       .icon-foreground {
-        fill: $link-color-hover;
+        fill: $color-link--color__hover;
       }
     }
   }
 
-  &:focus,
-  &:active {
+  &:focus {
     .secondary-twitter--icon {
       .icon-foreground {
-        fill: $link-color-focus;
+        fill: $color-link--color__focus;
       }
     }
   }
@@ -64,6 +62,6 @@
   }
 
   .icon-foreground {
-    fill: $link-color;
+    fill: $color-link--color;
   }
 }

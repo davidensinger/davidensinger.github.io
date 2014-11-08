@@ -3,8 +3,6 @@
 // ==========================================================================
 
 // Colors
-// Visualize SASS color functions in real-time without compiling
-// http://sassme.arc90.com/
 // ==========================================================================
 
 // Reds
@@ -67,57 +65,104 @@ $black-lighter: #111;
 $black-light: #090909;
 $black: #000;
 
-// Balloon colors
-$balloon-blue: #2f93d5;
-$balloon-green: #35c06a;
-$balloon-orange: #f57a00;
-$balloon-yellow: #f5c500;
-$balloon-red: #ff330f;
 
-// Background colors
-$background-inner-container: $white;
-$background-gray-light: mix($white, $white-dark);
+// Text
+// ==========================================================================
+$color-text--color: mix($blue-dark, $gray-dark, 25%);
+$color-text--color__dark: mix($blue-darker, $gray-darker, 25%);
 
-// Border color
-$border-color: $gray-lighter;
 
-// Horizontal rule color
-$hr-color: $gray-lightest;
+// Selection
+// ==========================================================================
+$color-selection--color: $white-dark;
+$color-selection--background__color: $green-light;
 
-// Icon color
-$icon-meta-color: $gray-light;
 
-// Link colors
-$link-color: $blue;
-$link-color-hover: $blue-dark;
-$link-color-focus: $green;
+// Links
+// ==========================================================================
+$color-link--color: $blue;
+$color-link--color__hover: $blue-dark;
+$color-link--color__focus: $green;
 
-$link-nav-color: $gray;
-$link-nav-color-hover: $blue-dark;
-$link-nav-color-focus: $link-color-focus;
 
-$link-heading-color-hover: $blue-darker;
-$link-heading-color-focus: $link-color-focus;
+// Header
+// ==========================================================================
+$color-inner--container: $white;
 
-$link-meta-color: $gray-light;
-$link-meta-color-hover: $gray;
-$link-meta-color-focus: $link-color-focus;
+
+// Site Logo
+// ==========================================================================
+$color-site--logo__blue: #2f93d5;
+$color-site--logo__green: #35c06a;
+$color-site--logo__orange: #f57a00;
+$color-site--logo__yellow: #f5c500;
+$color-site--logo__red: #ff330f;
+
+
+// Navigation
+// ==========================================================================
+$color-nav--color: $gray;
+$color-nav--color__hover: $blue-dark;
+$color-nav--color__focus: $color-link--color__focus;
+
+
+// Headings
+// ==========================================================================
+$color-headings--color: $color-text--color__dark;
+$color-headings--color__hover: $blue-darker;
+$color-headings--color__focus: $color-link--color__focus;
+
+
+// Meta
+// ==========================================================================
+$color-meta--color: $gray-light;
+$color-meta--color__hover: $gray;
+$color-meta--color__focus: $color-link--color__focus;
+
+
+// Button
+// ==========================================================================
+
+// Button color
+$color-button--color: $white-dark;
+$color-button--color__hover: $white;
+
+// Button background
+$color-button--background: $blue;
+$color-button--background__hover: $blue-dark;
+$color-button--background__focus: $green;
+
+// Button box-shadow
+$color-button--boxShadow: $blue-dark;
+$color-button--boxShadow__hover: $blue-darker;
+$color-button--boxShadow__focus: $green-dark;
+
+
+// Media
+// ==========================================================================
+$color-media--background__color: $gray-lighter;
+$color-media--border__color: $gray-lighter;
+
+
+// Horizontal rule
+// ==========================================================================
+$color-hr--color: $gray-lightest;
+
+
+// Secondary
+// ==========================================================================
+$color-secondary: mix($white, $white-dark);
+
+
+// Footer
+// ==========================================================================
+$color-footer--color: mix($blue-lighter, $white-darker);
+
 
 // Typography
+// ==========================================================================
 $base-font-face: 'open-sans-regular', sans-serif!default;
 
 $base-font-size: 16px!default;
 $base-line-height: 24px!default;
 $line-height-ratio: $base-line-height/$base-font-size!default;
-
-$text-color-lightest: mix($blue-lighter, $gray-lighter, 25%);
-$text-color-lighter: mix($blue-light, $gray-light, 25%);
-$text-color-light: mix($blue, $gray, 25%);
-$text-color: mix($blue-dark, $gray-dark, 25%);
-$text-color-dark: mix($blue-darker, $gray-darker, 25%);
-
-$heading-color: $text-color-dark;
-$footer-color: mix($blue-lighter, $white-darker);
-
-$selection-color: $white-dark;
-$selection-background: $green-light;

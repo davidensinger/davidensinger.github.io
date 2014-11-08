@@ -5,29 +5,13 @@
 .site-logo {
   float: left;
   margin-right: 2rem;
-  animation-fill-mode: both;
-  animation-duration: 1s;
-  animation-name: bounceIn;
-  backface-visibility: hidden;
-}
 
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: scale(.3);
-  }
+  &:hover,
+  &:focus {
 
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-
-  70% {
-    transform: scale(.9);
-  }
-
-  100% {
-    transform: scale(1);
+    .site-logo--svg {
+      transform: scale(1.125) rotate(2deg);
+    }
   }
 }
 
@@ -43,58 +27,53 @@
   transition: transform 0.2s;
   backface-visibility: hidden;
 
-  &:hover,
-  &:focus {
-  	transform: scale(1.125) rotate(2deg);
-  }
-
   .blue {
     @extend %balloon-properties;
-    fill: $balloon-blue;
+    fill: $color-site--logo__blue;
 
     &:hover,
     &:focus {
-      fill: darken($balloon-blue, 5);
+      fill: darken($color-site--logo__blue, 5);
     }
   }
 
   .green {
     @extend %balloon-properties;
-    fill: $balloon-green;
+    fill: $color-site--logo__green;
 
     &:hover,
     &:focus {
-      fill: darken($balloon-green, 5);
+      fill: darken($color-site--logo__green, 5);
     }
   }
 
   .orange {
     @extend %balloon-properties;
-    fill: $balloon-orange;
+    fill: $color-site--logo__orange;
 
     &:hover,
     &:focus {
-      fill: darken($balloon-orange, 5);
+      fill: darken($color-site--logo__orange, 5);
     }
   }
 
   .yellow {
     @extend %balloon-properties;
-    fill: $balloon-yellow;
+    fill: $color-site--logo__yellow;
 
     &:hover,
     &:focus {
-      fill: darken($balloon-yellow, 5);
+      fill: darken($color-site--logo__yellow, 5);
     }
   }
 
   .red {
     @extend %balloon-properties;
-    fill: $balloon-red;
+    fill: $color-site--logo__red;
 
     &:hover,
     &:focus {
-      fill: darken($balloon-red, 5);
+      fill: darken($color-site--logo__red, 5);
     }
   }
 }

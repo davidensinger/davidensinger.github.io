@@ -10,21 +10,21 @@ sitemap:
       <h1 class="entry-title">
         <a href="{{ post.url }}" rel="bookmark" title="Permalink to {{ post.title }}">{{ post.title }}</a>
       </h1>
-      <div class="entry-meta entry-meta-header">
-      <span class="entry-meta-icon">
-        {% include icons/icon-clock.svg %}
-      </span>
-        <a class="entry-meta-link" href="{{ post.url }}" rel="bookmark" title="{{ post.date }}">
+      <div class="entry-meta entry-meta--header">
+        <a class="entry-meta--link" href="{{ post.url }}" rel="bookmark" title="{{ post.date }}">
+          <span class="entry-meta--icon">
+            {% include icons/icon-clock.svg %}
+          </span>
           <time class="date updated" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
         </a>
       </div>
     </header>
     <div class="entry-content">
       {% if post.description %}
-        {{ post.description | markdownify }}
-          <a class="continue-reading" href="{{ post.url }}" rel="bookmark" title="Permalink to {{ post.title }}">Continue Reading</a>
-        {% else %}
-          {{ post.content }}
+        <p>{{ post.description }}</p>
+        <a class="continue-reading" href="{{ post.url }}" rel="bookmark" title="Permalink to {{ post.title }}">Continue Reading</a>
+      {% else %}
+        {{ post.content }}
       {% endif %}
     </div>
   </article>
@@ -35,16 +35,16 @@ sitemap:
   {% if paginator.previous_page %}
     <div class="nav-previous">
       {% if paginator.previous_page == 1 %}
-      <a href="/" class="nav-previous-link">Newer Posts</a>
+      <a href="/" class="nav-previous--link">Newer Posts</a>
       {% else %}
-      <a href="/page{{ paginator.previous_page }}/" class="nav-previous-link">Newer Posts</a>
+      <a href="/page{{ paginator.previous_page }}/" class="nav-previous--link">Newer Posts</a>
       {% endif %}
     </div>
   {% endif %}
 
   {% if paginator.next_page %}
   <div class="nav-next">
-    <a href="/page{{ paginator.next_page }}/" class="nav-next-link">Older Posts</a>
+    <a href="/page{{ paginator.next_page }}/" class="nav-next--link">Older Posts</a>
   </div>
   {% endif %}
 </nav>

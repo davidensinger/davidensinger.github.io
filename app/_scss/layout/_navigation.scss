@@ -10,16 +10,15 @@ nav {
 
     &:link,
     &:visited {
-      color: $link-nav-color;
+      color: $color-nav--color;
     }
 
     &:hover {
-      color: $link-nav-color-hover;
+      color: $color-nav--color__hover;
     }
 
-    &:focus,
-    &:active {
-      color: $link-nav-color-focus;
+    &:focus {
+      color: $color-nav--color__focus;
     }
   }
 }
@@ -28,10 +27,6 @@ nav {
 .main-navigation {
   float: left;
   margin-top: 2.25rem;
-
-  ul {
-    margin: 0;
-  }
 
   li {
     float: left;
@@ -44,23 +39,29 @@ nav {
 
   a {
     padding-bottom: 0.25rem;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+    backface-visibility: hidden;
 
-    &:hover {
-      border-bottom: 2px solid $link-color-focus;
+    &:hover,
+    &:focus {
+      border-bottom-color: $color-link--color__focus;
     }
   }
 }
 
-// Current page
-%current-page-cursor {
-  cursor: text;
-}
-
 @each $page in home, about {
   .page-#{$page} .nav-#{$page} {
-    color: $link-nav-color-hover;
-    @extend %current-page-cursor;
-    border-bottom: none !important;
+    color: $color-nav--color__hover;
+    cursor: text;
+
+    &:hover {
+      border-bottom-color: transparent;
+    }
+
+    &:focus {
+      color: $color-link--color__focus;
+    }
   }
 }
 
@@ -71,14 +72,14 @@ nav {
 }
 
 .post-navigation {
-  border-top: 2px solid $hr-color;
+  border-top: 2px solid $color-hr--color;
 }
 
 .nav-previous {
   float: left;
 }
 
-.nav-previous-link {
+.nav-previous--link {
 
   &:before {
     content: "\2190";
@@ -90,7 +91,7 @@ nav {
   float: right;
 }
 
-.nav-next-link {
+.nav-next--link {
 
   &:after {
     content: "\2192";

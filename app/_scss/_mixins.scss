@@ -3,7 +3,6 @@
 // ==========================================================================
 
 // Breakpoint
-// http://css-tricks.com/media-queries-sass-3-2-and-codekit/
 // ==========================================================================
 @mixin breakpoint($point) {
   @if $point == desktop {

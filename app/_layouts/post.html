@@ -5,8 +5,8 @@ page-class: page-post
 <article class="post hentry clearfix">
   <header class="entry-header">
     <h1 class="entry-title">{{ page.title }}</h1>
-    <div class="entry-meta entry-meta-header">
-      <span class="entry-meta-icon">
+    <div class="entry-meta entry-meta--header">
+      <span class="entry-meta--icon">
         {% include icons/icon-clock.svg %}
       </span>
       <time class="date updated" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
@@ -15,28 +15,28 @@ page-class: page-post
   <div class="entry-content">
     {{ content }}
   </div>
-  <footer class="entry-meta entry-meta-footer">
-    <div class="entry-meta-suggested-tweet">
-      <h3 class="suggested-tweet-title">Spread the Word</h3>
+  <footer class="entry-meta entry-meta--footer">
+    <div class="entry-meta--footer__top entry-meta--suggested__tweet">
+      <h3 class="suggested-tweet--title">Spread the Word</h3>
       {% capture suggested_tweet %}https://twitter.com/intent/tweet?text={% if page.suggested_tweet.text %}{{ page.suggested_tweet.text | cgi_escape }}{% else %}{{ page.title | cgi_escape }}{% endif %}&amp;url={{ site.url }}{{ page.url }}&amp;via={{ site.twitter }}{% if page.suggested_tweet.related %}&amp;related={{ page.suggested_tweet.related | join: ',' | cgi_escape }}{% else %}&amp;related={{ site.twitter }}{% endif %}{% if page.suggested_tweet.hashtags %}&amp;hashtags={{ page.suggested_tweet.hashtags | join: ',' | cgi_escape }}{% endif %}{% if page.suggested_tweet.in_reply_to %}&amp;in_reply_to={{ page.suggested_tweet.in_reply_to }}{% endif %}{% endcapture %}
-      <a href="{{ suggested_tweet }}" class="suggested-tweet-bubble">
-        <span class="suggested-tweet-text">{% if page.suggested_tweet.text %}{{ page.suggested_tweet.text }}{% else %}{{ page.title }}{% endif %}</span>
+      <a href="{{ suggested_tweet }}" class="suggested-tweet--bubble">
+        <span class="suggested-tweet--bubble__text">{% if page.suggested_tweet.text %}{{ page.suggested_tweet.text }}{% else %}{{ page.title }}{% endif %}</span>
         {% if page.suggested_tweet.hashtags %}
           {% for hashtag in page.suggested_tweet.hashtags %}
-            <span class="suggested-tweet-hashtag">#{{ hashtag }}</span>
+            <span class="suggested-tweet--hashtag">#{{ hashtag }}</span>
           {% endfor %}
         {% endif %}
       </a>
-      <p class="suggested-tweet-link"><a href="{{ suggested_tweet }}"><span class="suggested-tweet-icon">{% include icons/icon-twitter.svg %}</span>Click to Tweet</a> <small>(you may edit before posting.)</small></p>
+      <p class="suggested-tweet--text"><a href="{{ suggested_tweet }}" class="suggested-tweet--link"><span class="suggested-tweet--icon">{% include icons/icon-twitter.svg %}</span>Click to Tweet</a> <small>(you may edit before posting.)</small></p>
     </div>
     {% if page.tags != empty %}
-    <div class="entry-meta-footer-bottom">
+    <div class="entry-meta--footer__bottom">
       {% if page.tags != empty %}
-        <span class="entry-meta-icon">
+        <span class="entry-meta--icon">
           {% include icons/icon-tag.svg %}
         </span>
         {% for tag in page.tags %}
-          <a class="nav-link-tag" href="/tag/{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}
+          <a class="nav-link--tag" href="/tag/{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}
         {% endfor %}
       {% endif %}
     </div>
@@ -47,12 +47,12 @@ page-class: page-post
   <h1 class="visuallyhidden">Post navigation</h1>
   {% if page.previous %}
     <div class="nav-previous">
-      <a class="nav-previous-link" href="{{ site.url }}{{ page.previous.url }}" rel="prev">{{ page.previous.title }}</a>
+      <a class="nav-previous--link" href="{{ site.url }}{{ page.previous.url }}" rel="prev">{{ page.previous.title }}</a>
     </div>
   {% endif %}
   {% if page.next %}
     <div class="nav-next">
-      <a class="nav-next-link" href="{{ site.url }}{{ page.next.url }}" rel="next">{{ page.next.title }}</a>
+      <a class="nav-next--link" href="{{ site.url }}{{ page.next.url }}" rel="next">{{ page.next.title }}</a>
     </div>
   {% endif %}
 </nav>

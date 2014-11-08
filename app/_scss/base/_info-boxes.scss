@@ -32,9 +32,8 @@
       color: $red-darkest;
     }
 
-    &:focus,
-    &:active {
-      color: $link-color-focus;
+    &:focus {
+      color: $color-link--color__focus;
     }
   }
 }
@@ -57,9 +56,8 @@
       color: $yellow-darkest;
     }
 
-    &:focus,
-    &:active {
-      color: $link-color-focus;
+    &:focus {
+      color: $color-link--color__focus;
     }
   }
 }
@@ -82,9 +80,8 @@
       color: $green-darkest;
     }
 
-    &:focus,
-    &:active {
-      color: $link-color-focus;
+    &:focus {
+      color: $color-link--color__focus;
     }
   }
 }
@@ -106,9 +103,8 @@
       color: $gray-darker;
     }
 
-    &:focus,
-    &:active {
-      color: $link-color-focus;
+    &:focus {
+      color: $color-link--color__focus;
     }
   }
 }

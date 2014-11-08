@@ -2,36 +2,44 @@
 // Suggested Tweet
 // ==========================================================================
 
-.entry-meta-suggested-tweet {
+.entry-meta--suggested__tweet {
   margin-bottom: 3rem;
 }
 
-.suggested-tweet-title {
+.suggested-tweet--title {
   @extend %margin-bottom;
 }
 
-.suggested-tweet-bubble {
+.suggested-tweet--bubble {
   display: inline-block;
   position: relative;
   padding: 1rem 1rem 1.125rem;
   @extend %margin-bottom;
   border-radius: 1rem;
-  background: $white-dark;
+  background-color: $white-dark;
 
   &:hover {
-    background: $white-darker;
+    background-color: $white-darker;
 
     &:after {
       border-color: $white-darker transparent;
+    }
+
+    .suggested-tweet--bubble__text {
+      color: $color-text--color__dark;
     }
   }
 
   &:focus {
     color: $white;
-    background: $link-color-focus;
+    background-color: $color-link--color__focus;
 
     &:after {
-      border-color: $link-color-focus transparent;
+      border-color: $color-link--color__focus transparent;
+    }
+
+    .suggested-tweet--bubble__text {
+      color: $white;
     }
   }
 
@@ -47,40 +55,40 @@
   }
 }
 
-.suggested-tweet-text {
-  color: $text-color;
-
-  &:hover {
-    color: $text-color-dark;
-  }
+.suggested-tweet--bubble__text {
+  color: $color-text--color;
+  transition: color 0.2s;
+  backface-visibility: hidden;
 }
 
-.suggested-tweet-link {
+.suggested-tweet--text {
   margin-left: 1rem;
+}
+
+.suggested-tweet--link {
 
   &:hover {
 
-    .suggested-tweet-icon {
+    .suggested-tweet--icon {
 
       .icon-foreground {
-        fill: $link-color-hover;
+        fill: $color-link--color__hover;
       }
     }
   }
 
-  &:focus,
-  &:active {
+  &:focus {
 
-    .suggested-tweet-icon {
+    .suggested-tweet--icon {
 
       .icon-foreground {
-        fill: $link-color-focus;
+        fill: $color-link--color__focus;
       }
     }
   }
 }
 
-.suggested-tweet-icon {
+.suggested-tweet--icon {
   position: relative;
   top: 4px;
   display: inline-block;
@@ -95,7 +103,7 @@
   }
 
   .icon-foreground {
-    fill: $link-color;
+    fill: $color-link--color;
     transition: fill 0.2s;
     backface-visibility: hidden;
   }

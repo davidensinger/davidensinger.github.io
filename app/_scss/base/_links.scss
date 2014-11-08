@@ -3,19 +3,19 @@
 // ==========================================================================
 
 a {
-  color: $link-color;
+  color: $color-link--color;
   @extend %font-open-sans-semibold;
   text-decoration: none;
   transition: color 0.2s;
   backface-visibility: hidden;
 
   &:hover {
-    color: $link-color-hover;
+    color: $color-link--color__hover;
   }
 
-  &:focus,
-  &:active {
-    color: $link-color-focus;
+  &:focus {
+    color: $color-link--color__focus;
+    outline: none;
   }
 }
 
@@ -30,12 +30,11 @@ h6 {
     color: inherit;
 
     &:hover {
-      color: $link-heading-color-hover;
+      color: $color-headings--color__hover;
     }
 
-    &:focus,
-    &:active {
-      color: $link-heading-color-focus;
+    &:focus {
+      color: $color-headings--color__focus;
     }
   }
 }
