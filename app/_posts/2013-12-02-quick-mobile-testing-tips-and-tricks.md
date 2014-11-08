@@ -11,8 +11,8 @@ suggested_tweet:
 
 Have you ever needed to track down a bug in mobile, but due to circumstances found yourself without the needed browser, operating system, and/or device? It can be really frustrating, especially when working with an ever approaching deadline. Thankfully, there are many tools available to help debug in such a situation, even if using them isn’t a proper substitute for the actual device.
 
-<div class="red-box">
-  <p><strong>Warning:</strong> For real, the following tools are definitely not a proper substitute for actual devices.</p>
+<div class="yellow-box">
+  <p><strong>Please Note:</strong> The following tools are not a proper substitute for actual devices.</p>
 </div>
 
 ## iOS Simulator
