@@ -2,11 +2,12 @@
 // Info boxes
 // ==========================================================================
 
-%info-box-base {
+%info-box {
   padding: 1rem;
   @extend %margin-bottom;
 
   a {
+    color: inherit;
 
     &:hover {
       text-decoration: underline;
@@ -14,49 +15,36 @@
   }
 }
 
+// yellow
 %yellow-box,
 .yellow-box {
-  @extend %info-box-base;
-  background: $yellow-lighter;
-  color: $yellow-darker;
-  border-left: 0.33em solid $yellow;
+  @extend %info-box;
+  color: $color-infoBox--yellow__color;
+  background-color: $color-infoBox--yellow__backgroundColor;
+  border-left: 0.33em solid $color-infoBox--yellow__border;
 
   a {
 
-    &:link,
-    &:visited {
-      color: inherit;
-    }
-
-    &:hover {
-      color: $yellow-darkest;
-    }
-
+    &:hover,
     &:focus {
-      color: $color-link--color__focus;
+      color: $color-infoBox--yellow__color-hover;
     }
   }
 }
 
+// gray
 %gray-box,
 .gray-box {
-  @extend %info-box-base;
-  background: $white-dark;
-  color: $gray-dark;
-  border-left: 0.33em solid $gray-lightest;
+  @extend %info-box;
+  color: $color-infoBox--gray__color;
+  background-color: $color-infoBox--gray__backgroundColor;
+  border-left: 0.33em solid $color-infoBox--gray__border;
+
   a {
 
-    &:link,
-    &:visited {
-      color: inherit;
-    }
-
-    &:hover {
-      color: $gray-darker;
-    }
-
+    &:hover,
     &:focus {
-      color: $color-link--color__focus;
+      color: $color-infoBox--gray__backgroundColor;
     }
   }
 }

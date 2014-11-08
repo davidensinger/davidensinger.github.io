@@ -26,3 +26,20 @@ img {
 .media-rounded {
   border-radius: 5px;
 }
+
+// alignment
+.media-left {
+  float: left;
+  margin-right: 1.5rem;
+}
+
+.media-right {
+  float: right;
+  margin-left: 1.5rem;
+}
+
+.media-center {
+  clear: both;
+  display: block;
+  margin: 0 auto;
+}

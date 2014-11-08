@@ -88,14 +88,11 @@
 
 .site-footer--icons__anchor {
   display: block;
-
-  &:link,
-  &:visited {
-    color: inherit;
-  }
+  color: inherit;
 
   &:hover,
   &:focus {
+    color: inherit;
 
     .icon {
       transform: scale(1.2);

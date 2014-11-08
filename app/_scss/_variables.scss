@@ -138,6 +138,22 @@ $color-button--boxShadow__hover: $blue-darker;
 $color-button--boxShadow__focus: $green-dark;
 
 
+// Info boxes
+// ==========================================================================
+
+// Yellow
+$color-infoBox--yellow__color: $yellow-darker;
+$color-infoBox--yellow__color-hover: $yellow-darkest;
+$color-infoBox--yellow__backgroundColor: $yellow-lighter;
+$color-infoBox--yellow__border: $yellow;
+
+// Gray
+$color-infoBox--gray__color: $gray-dark;
+$color-infoBox--gray__color-hover: $gray-darker;
+$color-infoBox--gray__backgroundColor: $white-dark;
+$color-infoBox--gray__border: $gray-lightest;
+
+
 // Media
 // ==========================================================================
 $color-media--background__color: $gray-lighter;

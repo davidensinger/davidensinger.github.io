@@ -342,11 +342,7 @@ blockquote {
     font-style: normal;
 
     a {
-
-      &:link,
-      &:visited {
-        color: inherit;
-      }
+      color: inherit;
 
       &:hover {
         color: $white-dark;

@@ -15,11 +15,7 @@
   color: $color-meta--color;
 
   a {
-
-    &:link,
-    &:visited {
-      color: inherit;
-    }
+    color: inherit;
 
     &:hover {
       color: $color-meta--color__hover;
@@ -38,7 +34,7 @@
 
 .entry-meta--icon {
   position: relative;
-  top: 1px;
+  top: 2px;
   display: inline-block;
   margin-right: 2px;
   width: 15px;
@@ -58,11 +54,7 @@
 }
 
 .entry-meta--link {
-
-  &:link,
-  &:visited {
-    color: $color-meta--color;
-  }
+  color: $color-meta--color;
 
   &:hover {
     color: $color-meta--color__hover;

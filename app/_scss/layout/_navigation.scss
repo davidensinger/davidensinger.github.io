@@ -3,15 +3,12 @@
 // ==========================================================================
 
 // Common navigation
+// ==========================================================================
 nav {
   text-transform: uppercase;
 
   a {
-
-    &:link,
-    &:visited {
-      color: $color-nav--color;
-    }
+    color: $color-nav--color;
 
     &:hover {
       color: $color-nav--color__hover;
@@ -24,6 +21,7 @@ nav {
 }
 
 // Main navigation
+// ==========================================================================
 .main-navigation {
   float: left;
   margin-top: 2.25rem;
@@ -45,9 +43,13 @@ nav {
 
     &:hover,
     &:focus {
-      border-bottom-color: $color-link--color__focus;
+      border-bottom-color: $color-nav--color__focus;
     }
   }
+}
+
+.main-navigation--list {
+  margin-top: 0;
 }
 
 @each $page in home, about {
@@ -55,17 +57,14 @@ nav {
     color: $color-nav--color__hover;
     cursor: text;
 
-    &:hover {
-      border-bottom-color: transparent;
-    }
-
     &:focus {
-      color: $color-link--color__focus;
+      color: $color-nav--color__focus;
     }
   }
 }
 
-// Post and page navigation
+// Post and Page navigation
+// ==========================================================================
 .post-navigation,
 .paging-navigation {
   padding-top: 3rem;
