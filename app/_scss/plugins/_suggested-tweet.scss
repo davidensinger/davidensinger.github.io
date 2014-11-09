@@ -7,14 +7,14 @@
 }
 
 .suggested-tweet--title {
-  @extend %margin-bottom;
+  margin-bottom: 1.5rem;
 }
 
 .suggested-tweet--bubble {
   display: inline-block;
   position: relative;
   padding: 1rem 1rem 1.125rem;
-  @extend %margin-bottom;
+  margin-bottom: 1.5rem;
   border-radius: 1rem;
   background-color: $white-dark;
 

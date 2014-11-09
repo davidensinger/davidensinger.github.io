@@ -23,20 +23,25 @@ nav {
 // Main navigation
 // ==========================================================================
 .main-navigation {
-  float: left;
-  margin-top: 2.25rem;
 
   li {
-    float: left;
-    margin-left: 2rem;
+    margin-left: 6%;
 
-    &:first-child {
-      margin-left: 0;
+    @include breakpoint(smaller-than-small-desktop) {
+      margin-left: 8%;
+    }
+
+    @include breakpoint(extra-large-desktop) {
+      margin-left: 4%;
+    }
+
+    @include breakpoint(all-mobile) {
+      margin-left: 10%;
     }
   }
 
   a {
-    padding-bottom: 0.25rem;
+    padding-bottom: 4px;
     border-bottom: 2px solid transparent;
     transition: border-color 0.2s;
     backface-visibility: hidden;
@@ -57,6 +62,10 @@ nav {
     color: $color-nav--color__hover;
     cursor: text;
 
+    &:hover {
+      border-bottom-color: transparent;
+    }
+
     &:focus {
       color: $color-nav--color__focus;
     }
@@ -67,7 +76,7 @@ nav {
 // ==========================================================================
 .post-navigation,
 .paging-navigation {
-  padding-top: 3rem;
+  padding-top: 9%;
 }
 
 .post-navigation {

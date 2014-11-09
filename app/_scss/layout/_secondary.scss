@@ -10,26 +10,28 @@
 }
 
 .secondary-photo {
-  @extend %margin-bottom;
+  display: block;
+  margin-bottom: 3%;
   width: 75%;
 
   @include breakpoint(smaller-than-small-desktop) {
-    margin: 0 0 0 1.5rem;
     float: right;
     width: 100px;
   }
 
   @include breakpoint(mobile-portrait-to-mobile-landscape) {
-    margin: 0 auto 1.5rem;
-    display: block;
+    margin: 0 auto 3%;
     float: none;
     width: 75%;
   }
 }
 
 .secondary-twitter--link {
+
   &:hover {
+
     .secondary-twitter--icon {
+
       .icon-foreground {
         fill: $color-link--color__hover;
       }
@@ -37,7 +39,9 @@
   }
 
   &:focus {
+
     .secondary-twitter--icon {
+
       .icon-foreground {
         fill: $color-link--color__focus;
       }

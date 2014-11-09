@@ -2,9 +2,33 @@
 // Header
 // ==========================================================================
 
+.site-header--outer {
+  padding: 6% 6% 0;
+}
+
+.site-header--inner {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.site-header--primary,
+.site-header--secondary {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+// -------------------------------------
+//  Primary
+// -------------------------------------
+
+.site-header--primary {
+  width: 12%;
+  min-width: 100px;
+}
+
 .site-logo {
-  float: left;
-  margin-right: 2rem;
+  display: block;
 
   &:hover,
   &:focus {
@@ -22,8 +46,8 @@
 }
 
 .site-logo--svg {
-  width: 6rem;
-  height: 6rem;
+  width: 100%;
+  height: 100%;
   transition: transform 0.2s;
   backface-visibility: hidden;
 
@@ -76,4 +100,13 @@
       fill: darken($color-site--logo__red, 5);
     }
   }
+}
+
+
+// -------------------------------------
+//  Secondary
+// -------------------------------------
+
+.site-header--secondary {
+
 }

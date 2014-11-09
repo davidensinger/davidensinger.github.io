@@ -3,7 +3,7 @@
 // ==========================================================================
 
 .post {
-  margin: 4.1rem 0 3rem;
+  margin: 6% 0;
 
   &:first-child {
     margin-top: 0;
@@ -28,7 +28,7 @@
 }
 
 .entry-meta--header {
-  margin-bottom: 0.7rem;
+  margin-bottom: 3%;
   @extend %font-open-sans-semibold;
 }
 
@@ -80,7 +80,7 @@
 }
 
 .entry-content {
-  margin-bottom: 3rem;
+  margin-bottom: 6%;
 
   >p {
 

@@ -18,10 +18,6 @@ html {
   box-sizing: inherit;
 }
 
-%margin-bottom {
-  margin-bottom: 1.5rem;
-}
-
 .outer-container {
   max-width: 94%;
 
@@ -40,12 +36,6 @@ html {
 
 .inner-container {
   background-color: $color-inner--container;
-}
-
-// Common
-// ==========================================================================
-.site-header {
-  padding: 6% 6% 3%;
 }
 
 // Primary
@@ -92,4 +82,11 @@ html {
 // ==========================================================================
 .site-footer {
   padding: 6%;
+
+  @include breakpoint(all-mobile) {
+    padding: 9% 6%;
+  }
+  @include breakpoint(mobile-portrait-to-mobile-landscape) {
+    padding: 12% 6%;
+  }
 }

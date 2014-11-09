@@ -225,7 +225,7 @@ p {
   margin-top: 0;
   @extend %epsilon-font-size;
   @extend %epsilon-line-height;
-  @extend %margin-bottom;
+  margin-bottom: 1.5rem;
 }
 
 ul {
@@ -241,7 +241,7 @@ ol,
 dd {
   padding: 0;
   margin-left: 1.5rem;
-  @extend %margin-bottom;
+  margin-bottom: 1.5rem;
 }
 
 .list-unstyled {
@@ -287,7 +287,7 @@ hr {
   border: 0;
   margin-top: 1.5rem;
   border-top: 2px solid $color-hr--color;
-  @extend %margin-bottom;
+  margin-bottom: 1.5rem;
   padding: 0;
 }
 
@@ -356,7 +356,7 @@ blockquote {
 }
 
 address {
-  @extend %margin-bottom;
+  margin-bottom: 1.5rem;
 }
 
 abbr,
@@ -439,7 +439,7 @@ figure {
 
 table {
   width: 100%;
-  @extend %margin-bottom;
+  margin-bottom: 1.5rem;
 
   caption {
     @extend small;
