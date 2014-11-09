@@ -8,6 +8,7 @@
 
 .site-header--inner {
   display: table;
+  table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
 }
@@ -24,11 +25,21 @@
 
 .site-header--primary {
   width: 12%;
-  min-width: 100px;
+
+  @include breakpoint(smaller-than-small-desktop) {
+    width: 16%;
+  }
+  @include breakpoint(all-mobile) {
+    width: 20%;
+  }
+  @include breakpoint(mobile-portrait-to-mobile-landscape) {
+    width: 100px;
+  }
 }
 
 .site-logo {
   display: block;
+  width: 100%;
 
   &:hover,
   &:focus {
@@ -47,7 +58,7 @@
 
 .site-logo--svg {
   width: 100%;
-  height: auto;
+  height: 100%;
   transition: transform 0.2s;
   backface-visibility: hidden;
 

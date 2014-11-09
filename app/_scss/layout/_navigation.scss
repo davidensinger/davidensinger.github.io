@@ -28,15 +28,11 @@ nav {
     margin-left: 6%;
 
     @include breakpoint(smaller-than-small-desktop) {
-      margin-left: 8%;
+      margin-left: 9%;
     }
 
-    @include breakpoint(extra-large-desktop) {
-      margin-left: 4%;
-    }
-
-    @include breakpoint(all-mobile) {
-      margin-left: 10%;
+    @include breakpoint(mobile-portrait-to-mobile-landscape) {
+      margin-left: 12%;
     }
   }
 
