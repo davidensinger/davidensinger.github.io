@@ -8,6 +8,14 @@
   &:first-child {
     margin-top: 0;
   }
+
+  @include breakpoint(smaller-than-small-desktop) {
+    margin: 9% 0;
+  }
+
+  @include breakpoint(mobile-portrait-to-mobile-landscape) {
+    margin: 12% 0;
+  }
 }
 
 .entry-meta--header,
