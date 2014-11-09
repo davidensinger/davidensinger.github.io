@@ -11,13 +11,13 @@
 
 .secondary-photo {
   display: block;
-  margin: 0 auto 6%;
+  margin-bottom: 6%;
   width: 100%;
 
   @include breakpoint(smaller-than-small-desktop) {
     float: right;
-    margin: 0 0 3%;
-    width: 100px;
+    margin: 0 0 3% 3%;
+    width: 150px;
   }
 
   @include breakpoint(mobile-portrait-to-mobile-landscape) {
