@@ -7,7 +7,7 @@ tags: ['Jekyll', 'Sitemap', 'XML']
 sitemap:
   lastmod: 2014-11-07
 suggested_tweet:
-  hashtags: ['Jekyll', 'jekyllrb', 'Sitemap']
+  hashtags: ['Jekyll', 'jekyllrb']
   related: ['jekyllrb', 'havvg']
 ---
 

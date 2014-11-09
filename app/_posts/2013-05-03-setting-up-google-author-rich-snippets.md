@@ -7,7 +7,7 @@ tags: ['Google', 'Rich Snippets', 'SEO']
 sitemap:
   lastmod: 2014-11-07
 suggested_tweet:
-  hashtags: ['GooglePlus']
+  hashtags: ['GooglePlus', 'SEO']
 ---
 
 It turns out that it’s rather easy to display your photo alongside your content in Google’s search results. All you need to do is add support for [Rich Snippets](https://support.google.com/webmasters/bin/answer.py?hl=en&answer=99170) to your website, in particular those for authorship. This results in the addition of some minor markup to your HTML, which will then interface with your [Google+](http://plus.google.com/) account.

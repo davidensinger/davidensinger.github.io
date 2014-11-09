@@ -3,11 +3,11 @@ date: 2013-03-19 22:55:00
 layout: post
 title: 'Installing Jekyll'
 description: 'How to install Jekyll on OS X.'
-tags: ['Jekyll', 'RVM', 'Ruby']
+tags: ['Jekyll', 'RVM']
 sitemap:
   lastmod: 2014-11-07
 suggested_tweet:
-  hashtags: ['Jekyll', 'jekyllrb', 'RVM', 'Ruby']
+  hashtags: ['Jekyll', 'jekyllrb', 'RVM']
   related: ['jekyllrb']
 ---
 

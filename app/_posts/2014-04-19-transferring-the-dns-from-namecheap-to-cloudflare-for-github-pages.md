@@ -4,7 +4,7 @@ layout: post
 title: 'Transferring the DNS from Namecheap to CloudFlare for GitHub Pages'
 description: 'Speed up your site by taking advantage of CloudFlare’s CNAME Flattening.'
 image: 2014-04-19-current-webpagetest-waterfall.png
-tags: ['CloudFlare', 'DNS', 'Namecheap']
+tags: ['CloudFlare', 'DNS', 'GitHub', 'Namecheap']
 suggested_tweet:
   hashtags: ['CloudFlare', 'DNS', 'Namecheap']
   related: ['CloudFlare', 'Namecheap', 'rose_ian']

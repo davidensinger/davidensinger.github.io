@@ -3,11 +3,11 @@ date: 2013-04-17 22:16:00
 layout: post
 title: 'Supporting Twitter Cards with Jekyll'
 description: 'How to add support for Summary Twitter Cards to Jekyll.'
-tags: ['Jekyll', 'Twitter', 'Twitter Cards']
+tags: ['Jekyll', 'Twitter']
 sitemap:
   lastmod: 2014-11-07
 suggested_tweet:
-  hashtags: ['TwitterCards', 'Jekyll', 'jekyllrb']
+  hashtags: ['Jekyll', 'jekyllrb']
   related: ['jekyllrb']
 ---
 

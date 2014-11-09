@@ -5,7 +5,8 @@ title: 'How to Dynamically Include SVGs Inline with Jekyll'
 description: 'A directory of icons, YAML Front Matter, a Liquid for loop, and before you know it, you’ve dynamically included your inline SVGs.'
 tags: ['Jekyll', 'SVG']
 suggested_tweet:
-  hashtags: ['Jekyllrb', 'SVG']
+  hashtags: ['Jekyll','Jekyllrb', 'SVG']
+  related: ['jekyllrb']
 ---
 
 For [Webworke.rs](http://webworke.rs/) (my website about local folks who make websites), I link to the social media accounts of the people I profile to help promote the work they do. To do this, I dynamically include an SVG icon (and link) for each of their respective social media accounts. The SVG icons are kept in the `_includes/social-icons/` directory and they’re added to the page template with some [YAML Front Matter](http://jekyllrb.com/docs/frontmatter/) and a [Liquid for loop](http://docs.shopify.com/themes/liquid-documentation/tags/iteration-tags#for).
