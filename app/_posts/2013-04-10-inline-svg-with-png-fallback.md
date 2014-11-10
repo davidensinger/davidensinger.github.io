@@ -3,7 +3,7 @@ date: 2013-04-10 21:41:00
 layout: post
 title: 'Inline SVG with PNG Fallback'
 description: 'How to use inline SVG with PNG fallback, courtesy of foreignObject and base64.'
-tags: [SVG']
+tags: ['SVG']
 sitemap:
   lastmod: 2014-11-07
 suggested_tweet:
