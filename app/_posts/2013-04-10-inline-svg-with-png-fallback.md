@@ -47,7 +47,7 @@ With `foreignObject` I can insert fallback **HTML** into the SVG, which will loo
 </svg>
 {% endhighlight %}
 
-The final step is to put the SVG code into a **group** (`g`) and then wrap the group and foreignObject in a **switch** (`switch`) element. The switch will then evaluate the children elements in order. The first element that has the proper attributes will be rendered, which will be the the group with the SVG.
+The final step is to put the SVG code into a **group** (`g`) and then wrap the group and foreignObject in a **switch** (`switch`) element. The switch will then evaluate the children elements in order. The first element that has the proper attributes will be rendered, which will be the group with the SVG.
 
 {% highlight xml %}
 <svg>
