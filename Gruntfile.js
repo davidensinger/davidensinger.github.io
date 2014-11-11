@@ -393,7 +393,7 @@ module.exports = function (grunt) {
     'concat',
     'autoprefixer:dist',
     'cssmin',
-    //'uglify', no JS at the moment
+    'uglify',
     'imagemin',
     'svgmin',
     'filerev',

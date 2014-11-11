@@ -44,15 +44,14 @@ page-class: page-post
   </footer>
 </article>
 <nav class="post-navigation clearfix" role="navigation">
-  <h1 class="visuallyhidden">Post navigation</h1>
   {% if page.previous %}
     <div class="nav-previous">
-      <a class="nav-previous--link" href="{{ site.url }}{{ page.previous.url }}" rel="prev">{{ page.previous.title }}</a>
+      <a id="js-navigation--previous" class="nav-previous--link" href="{{ site.url }}{{ page.previous.url }}" rel="prev">{{ page.previous.title }}</a>
     </div>
   {% endif %}
   {% if page.next %}
     <div class="nav-next">
-      <a class="nav-next--link" href="{{ site.url }}{{ page.next.url }}" rel="next">{{ page.next.title }}</a>
+      <a id="js-navigation--next" class="nav-next--link" href="{{ site.url }}{{ page.next.url }}" rel="next">{{ page.next.title }}</a>
     </div>
   {% endif %}
 </nav>
