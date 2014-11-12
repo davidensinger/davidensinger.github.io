@@ -175,9 +175,16 @@ $color-secondary: mix($white, $white-dark);
 $color-footer--color: mix($blue-lighter, $white-darker);
 
 
-// Typography
+// Typography (for Typesettings)
 // ==========================================================================
-$base-font-face: 'open-sans-regular', sans-serif!default;
+$font-sans: 'open-sans-regular', sans-serif;
+$text-color: #000;
+$base-vertical-unit: 6px;
+$base-line-multi: 4;
+$base-font-size: 16px;
+$ms-ratio: 1.414;
+$paragraph-indent: false;
+$paragraph-justify: false;
 
 $base-font-size: 16px!default;
 $base-line-height: 24px!default;

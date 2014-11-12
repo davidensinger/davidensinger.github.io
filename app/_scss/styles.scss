@@ -11,24 +11,24 @@
 
 // Import partials
 // ==========================================================================
-@import "../_bower_components/typesettings/_typesettings";
 @import "_variables";
 @import "_mixins";
-@import "base/_normalize";
-@import "base/_scaffolding";
-@import "base/_fonts";
-@import "base/_typography";
+@import "vendor/_normalize"; // https://github.com/necolas/normalize.css
+@import "../_bower_components/typesettings/_typesettings"; // http://typesettings.io/
 @import "base/_alignment";
+@import "base/_button";
+@import "base/_fonts";
+@import "base/_helper-classes";
+@import "base/_info-boxes";
 @import "base/_links";
 @import "base/_media";
-@import "base/_button";
-@import "base/_info-boxes";
-@import "base/_helper-classes";
-@import "plugins/_pygments";
-@import "plugins/_suggested-tweet";
+@import "base/_scaffolding";
+@import "base/_suggested-tweet";
+@import "base/_typography";
 @import "layout/_header";
 @import "layout/_navigation";
 @import "layout/_primary";
 @import "layout/_secondary";
 @import "layout/_footer";
+@import "vendor/_pygments";
 @import "template/_404";
