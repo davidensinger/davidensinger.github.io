@@ -33,3 +33,4 @@ Thumbs.db
 dist
 node_modules
 .tmp
+/app/_bower_components/

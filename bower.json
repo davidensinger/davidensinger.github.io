@@ -1,0 +1,12 @@
+{
+  "name": "davidensinger.com",
+  "version": "2.0.0",
+  "homepage": "https://github.com/davidensinger/davidensinger.github.io",
+  "description": "David Ensinger is a Front End Developer from Columbus, OH",
+  "author": "David Ensinger <hello@davidensinger.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "typesettings": "~2.2.0"
+  }
+}
