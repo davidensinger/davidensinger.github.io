@@ -4,7 +4,7 @@
 # Note: Grunt handles some Jekyll configuration. If you set something here and
 # it doesn't work, check if it is set in the Gruntfile.
 
-title: 'Development, design, and more by David Ensinger'
+title: 'Development, design, and more by @DavidEnsinger'
 url: 'http://localhost:3000'
 author: 'David Ensinger'
 twitter: 'DavidEnsinger'
