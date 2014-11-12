@@ -237,8 +237,7 @@ ol {
 }
 
 ul,
-ol,
-dd {
+ol {
   padding: 0;
   margin-left: 1.5rem;
   margin-bottom: 1.5rem;
@@ -257,13 +256,12 @@ dd {
   }
 }
 
-dt {
-  @extend %font-open-sans-semibold;
-}
-
 // No top margins on first children or bottom margins on last children
-p, ul, ol, dl,
-blockquote, pre {
+p,
+ul,
+ol,
+blockquote,
+pre {
   &:first-child {
     margin-top: 0;
   }
@@ -280,17 +278,6 @@ li {
   }
 }
 
-// A better looking default horizontal rule
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  margin-top: 1.5rem;
-  border-top: 2px solid $color-hr--color;
-  margin-bottom: 1.5rem;
-  padding: 0;
-}
-
 // Font weights
 b,
 strong,
@@ -301,8 +288,7 @@ th {
 // Font styles
 cite,
 em,
-i,
-dfn {
+i {
   @extend %font-open-sans-italic;
 }
 
@@ -355,24 +341,6 @@ blockquote {
   }
 }
 
-address {
-  margin-bottom: 1.5rem;
-}
-
-abbr,
-acronym {
-  border-bottom: 1px dotted $color-text--color;
-  cursor: help;
-}
-
-mark,
-ins {
-  background: $yellow-lighter;
-  color: $yellow-darker;
-  text-shadow: 0 1px 0 $yellow-lightest;
-  text-decoration: none;
-}
-
 pre {
   @extend %gray-box;
   overflow: auto;
@@ -387,10 +355,7 @@ pre {
   }
 }
 
-code,
-kbd,
-tt,
-var {
+code {
   padding: 0.125rem 0.33rem;
   border-radius: 0.5rem;
   background: $white-dark;
@@ -400,37 +365,8 @@ var {
   hyphens: auto;
 }
 
-strike,
-s,
-del {
-  text-decoration: line-through;
-  text-shadow: none;
-}
-
-sup,
-sub {
-  height: 0;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  bottom: 1ex;
-}
-
-sub {
-  top: .5ex;
-}
-
-small,
-sup,
-sub {
+small {
   font-size: 75%;
-}
-
-big {
-  font-size: 125%;
 }
 
 figure {
