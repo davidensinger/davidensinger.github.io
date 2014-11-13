@@ -49,10 +49,6 @@ nav {
   }
 }
 
-.main-navigation--list {
-  margin-top: 0;
-}
-
 @each $page in home, about {
   .page-#{$page} .nav-#{$page} {
     color: $color-nav--color__hover;
@@ -87,7 +83,7 @@ nav {
 
   &:before {
     content: "\2190";
-    margin-right: 0.25rem;
+    margin-right: 0.25em;
   }
 }
 
@@ -99,6 +95,6 @@ nav {
 
   &:after {
     content: "\2192";
-    margin-left: 0.25rem;
+    margin-left: 0.25em;
   }
 }

@@ -4,12 +4,10 @@
 
 body,
 button,
-input,
-select,
-textarea {
+input {
   @extend %font-open-sans-regular;
-  line-height: $line-height-ratio;
   color: $color-text--color;
+  @include setType($base-line-multi);
 }
 
 // Remove text-shadow in selection highlight: h5bp.com/i
@@ -21,210 +19,63 @@ textarea {
   text-shadow: none;
 }
 
-// Font sizes
-%giga-font-size {
-  font-size: 3rem;
-}
-
-%giga-line-height,
-%gamma-line-height {
-  line-height: 1;
-}
-
-%giga-margin,
-%gamma-margin {
-  margin: 1.5rem 0 0.5rem;
-}
-
-%giga {
-  @extend %giga-font-size;
-  @extend %giga-line-height;
-  @extend %giga-margin;
-}
-
-%mega-font-size {
-  font-size: 2.5rem;
-}
-
-%mega-line-height,
-%delta-line-height {
-  line-height: 1.2;
-}
-
-%mega-margin,
-%delta-margin {
-  margin: 1.8rem 0 0.6rem;
-}
-
-%mega {
-  @extend %mega-font-size;
-  @extend %mega-line-height;
-  @extend %mega-margin;
-}
-
-%alpha-font-size {
-  font-size: 2.25rem;
-}
-
-%alpha-line-height {
-  line-height: 1.3333;
-}
-
-%alpha-margin {
-  margin: 1.995rem 0 0.665rem;
-}
-
-%alpha {
-  @extend %alpha-font-size;
-  @extend %alpha-line-height;
-  @extend %alpha-margin;
-}
-
-%beta-font-size {
-  font-size: 2rem;
-}
-
-%beta-line-height,
-%epsilon-line-height {
-  line-height: 1.5;
-}
-
-%beta-margin {
-  margin: 2.25rem 0 0.75rem;
-}
-
-%beta {
-  @extend %beta-font-size;
-  @extend %beta-line-height;
-  @extend %beta-margin;
-}
-
-%gamma-font-size {
-  font-size: 1.5rem;
-}
-
-%gamma {
-  @extend %gamma-font-size;
-  @extend %gamma-line-height;
-  @extend %gamma-margin;
-}
-
-%delta-font-size {
-  font-size: 1.25rem;
-}
-
-%delta {
-  @extend %delta-font-size;
-  @extend %delta-line-height;
-  @extend %delta-margin;
-}
-
-%epsilon-font-size {
-  font-size: 1rem;
-}
-
-%epsilon-margin {
-  margin-top: 1.5rem;
-}
-
-%epsilon {
-  @extend %epsilon-font-size;
-  @extend %epsilon-line-height;
-  @extend %epsilon-margin;
-}
-
-%zeta-font-size {
-  font-size: 0.875rem;
-}
-
-%zeta-line-height {
-  line-height: 1.7143;
-}
-
-%zeta-margin {
-  margin: 2.57145rem 0.85715rem;
-}
-
-%zeta {
-  @extend %zeta-font-size;
-  @extend %zeta-line-height;
-  @extend %zeta-margin;
-}
-
-%eta-font-size {
-  font-size: 0.75rem;
-}
-
-%eta-line-height {
-  line-height: 2;
-}
-
-%eta-margin {
-  margin: 3rem 0 1rem;
-}
-
-%eta {
-  @extend %eta-font-size;
-  @extend %eta-line-height;
-  @extend %eta-margin;
-}
-
 // Headings
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, %h1,
+h2, %h2,
+h3, %h3,
+h4, %h4 {
   clear: left;
+  margin: 0;
   padding: 0;
-  color: $color-headings--color;
   @extend %font-open-sans-semibold;
+  color: $color-headings--color;
 }
 
-h1 {
-  margin-top: 0;
-  @extend %mega-font-size;
-  @extend %mega-line-height;
-  margin-bottom: 0.9rem;
+h1, %h1 {
+  margin-bottom: emRhythm(2, $ms-up3);
+  @include setType(10, $ms-up3);
+
+  @include breakpoint(mobile-portrait-to-mobile-landscape) {
+    @include setType(9, $ms-up3);
+  }
 }
 
-h2 {
-  @extend %beta; }
+h2, %h2 {
+  margin-bottom: emRhythm(1, $ms-up2);
+  @include setType(8, $ms-up2);
 
-h3 {
-  @extend %gamma; }
+  @include breakpoint(mobile-portrait-to-mobile-landscape) {
+    @include setType(7, $ms-up2);
+  }
+}
 
-h4 {
-  @extend %delta; }
+h3, %h3 {
+  margin-bottom: emRhythm(1, $ms-up1);
+  @include setType(6, $ms-up1);
 
-h5 {
-  @extend %epsilon;
-  text-transform: uppercase; }
+  @include breakpoint(mobile-portrait-to-mobile-landscape) {
+    @include setType(5, $ms-up1);
+  }
+}
 
-h6 {
-  @extend %epsilon; }
+h4, %h4 {
+  margin-bottom: emRhythm(1);
+  @include setType(4);
+}
 
 p {
   margin-top: 0;
-  @extend %epsilon-font-size;
-  @extend %epsilon-line-height;
-  margin-bottom: 1.5rem;
-}
-
-ul {
-  list-style: disc;
-}
-
-ol {
-  list-style: decimal;
+  margin-bottom: emRhythm($base-line-multi);
+  padding: 0;
+  hyphens: auto;
+  word-wrap: break-word;
 }
 
 ul,
 ol {
   padding: 0;
-  margin-left: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-left: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 .list-unstyled {
@@ -279,8 +130,9 @@ i {
 blockquote {
   position: relative;
   z-index: 1;
-  margin: 0 0 1.5rem;
-  padding: 2rem 3rem;
+  margin: 0;
+  margin-bottom: emRhythm($base-line-multi);
+  padding: 2em 3em;
   background: $gray-darker;
   border-radius: 5px;
   text-align: right;
@@ -290,10 +142,10 @@ blockquote {
   &:before {
     content: '\201C';
     position: absolute;
-    top: 1.5rem;
-    left: 2.5rem;
+    top: 25px;
+    left: 25px;
     z-index: -1;
-    font-size: 14rem;
+    font-size: 14em;
     @extend %font-open-sans-semibold;
     color: #3c3c3c;
     text-shadow: none;
@@ -335,17 +187,16 @@ pre {
   }
 
   @include breakpoint(mobile-portrait-to-mobile-landscape) {
-    font-size: 0.75rem;
+    font-size: 75%;
   }
 }
 
 code {
-  padding: 0.125rem 0.33rem;
-  border-radius: 0.5rem;
+  padding: 0.125em 0.33em;
+  border-radius: 0.5em;
   background: $white-dark;
   color: $gray-dark;
-  word-break: break-all;
-  word-break: break-word;
+  word-wrap: break-word;
   hyphens: auto;
 }
 
@@ -359,11 +210,11 @@ figure {
 
 table {
   width: 100%;
-  margin-bottom: 1.5rem;
+  margin-bottom: emRhythm($base-line-multi);
 
   caption {
     @extend small;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.25em;
   }
 
   caption,
@@ -374,7 +225,7 @@ table {
 
   td,
   th {
-    padding: 0.25rem 0.5rem;
+    padding: 0.25em 0.5em;
   }
 
   thead {
@@ -394,6 +245,6 @@ table {
   }
 
   @include breakpoint(mobile-portrait-to-mobile-landscape) {
-    font-size: 0.75rem;
+    font-size: 75%;
   }
 }

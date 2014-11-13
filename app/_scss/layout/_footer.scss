@@ -121,7 +121,6 @@
 .site-footer--icons--title {
   display: block;
   opacity: 0;
-  @extend %epsilon-font-size;
   @extend %font-open-sans-semibold;
   transition: opacity 0.2s;
   backface-visibility: hidden;

@@ -3,8 +3,8 @@
 // ==========================================================================
 
 %info-box {
-  padding: 1rem;
-  margin-bottom: 1.5rem;
+  padding: 1em;
+  margin-bottom: emRhythm($base-line-multi);
 
   a {
     color: inherit;

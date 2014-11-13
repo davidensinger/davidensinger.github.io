@@ -3,19 +3,15 @@
 // ==========================================================================
 
 .entry-meta--suggested__tweet {
-  margin-bottom: 3rem;
-}
-
-.suggested-tweet--title {
-  margin-bottom: 1.5rem;
+  margin-bottom: emRhythm(8);
 }
 
 .suggested-tweet--bubble {
   display: inline-block;
   position: relative;
-  padding: 1rem 1rem 1.125rem;
-  margin-bottom: 1.5rem;
-  border-radius: 1rem;
+  padding: 1em 1em 1.125em;
+  margin-bottom: emRhythm($base-line-multi);
+  border-radius: 1em;
   background-color: $white-dark;
 
   &:hover {
@@ -62,7 +58,7 @@
 }
 
 .suggested-tweet--text {
-  margin-left: 1rem;
+  margin-left: 1em;
 }
 
 .suggested-tweet--link {

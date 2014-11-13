@@ -36,7 +36,7 @@
 }
 
 .entry-meta--header {
-  margin-bottom: 3%;
+  margin-bottom: emRhythm(2);
   @extend %font-open-sans-semibold;
 }
 
@@ -88,12 +88,13 @@
 }
 
 .entry-content {
-  margin-bottom: 6%;
+  margin-bottom: emRhythm($base-line-multi);
 
   >p {
 
     &:first-child {
-      @extend %delta-font-size;
+      margin-bottom: emRhythm(4, $ms-up1);
+      @include setType(6, $ms-up1);
     }
   }
 }
@@ -103,6 +104,6 @@
 
   &:after {
     content: "\2192";
-    margin-left: 0.5rem;
+    margin-left: 0.5em;
   }
 }
