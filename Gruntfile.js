@@ -341,6 +341,23 @@ module.exports = function (grunt) {
         }
       }
     },
+    yslow: {
+      options: {
+        thresholds: {
+          weight: 180,
+          speed: 3000,
+          score: 80,
+          requests: 15
+        }
+      },
+      pages: {
+        files: [
+          {
+            src: 'http://davidensinger.com'
+          }
+        ]
+      }
+    },
     concurrent: {
       server: [
         'sass',
@@ -369,19 +386,16 @@ module.exports = function (grunt) {
     ]);
   });
 
-  // No real tests yet. Add your own.
-  grunt.registerTask('test', [
-  //   'clean:server',
-  //   'concurrent:test',
-  //   'connect:test'
-  ]);
-
   grunt.registerTask('check', [
     'devUpdate',
     'clean:server',
     'jekyll:check',
     'jshint:all',
-    'pagespeed'
+  ]);
+
+  grunt.registerTask('perf', [
+    'pagespeed',
+    'yslow'
   ]);
 
   grunt.registerTask('build', [
@@ -400,7 +414,7 @@ module.exports = function (grunt) {
     'usemin',
     'htmlmin',
     'xmlmin'
-    ]);
+  ]);
 
   grunt.registerTask('deploy', [
     'build',
