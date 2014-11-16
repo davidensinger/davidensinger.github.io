@@ -81,7 +81,8 @@ module.exports = function (grunt) {
             // Running Jekyll also cleans the target directory.  Exclude any
             // non-standard `keep_files` here (e.g., the generated files
             // directory from Jekyll Picture Tag).
-            '!<%= yeoman.dist %>/.git*'
+            '!<%= yeoman.dist %>/.git*',
+            '!<%= yeoman.dist %>/perf'
           ]
         }]
       },
@@ -321,21 +322,18 @@ module.exports = function (grunt) {
         }
       }
     },
-    yslow: {
-      options: {
-        thresholds: {
-          weight: 180,
-          speed: 3000,
-          score: 80,
-          requests: 15
+    phantomas: {
+      site: {
+        options: {
+          indexPath: '<%= yeoman.dist %>/perf/phantomas/',
+          options   : {
+            'film-strip': false,
+            'no-externals': true,
+            'timeout': 60
+          },
+          url: 'http://davidensinger.com/',
+          buildUi: true
         }
-      },
-      pages: {
-        files: [
-          {
-            src: 'http://davidensinger.com'
-          }
-        ]
       }
     },
     concurrent: {
@@ -374,7 +372,8 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('perf', [
-    'pagespeed'
+    'pagespeed',
+    'phantomas'
   ]);
 
   grunt.registerTask('build', [
@@ -396,6 +395,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('deploy', [
+    'perf',
     'build',
     'buildcontrol'
   ]);
