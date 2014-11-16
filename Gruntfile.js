@@ -374,8 +374,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('perf', [
-    'pagespeed',
-    'yslow'
+    'pagespeed'
   ]);
 
   grunt.registerTask('build', [
@@ -399,7 +398,7 @@ module.exports = function (grunt) {
   grunt.registerTask('deploy', [
     'build',
     'buildcontrol'
-    ]);
+  ]);
 
   grunt.registerTask('default', [
     'check',
