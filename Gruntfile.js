@@ -112,7 +112,8 @@ module.exports = function (grunt) {
     },
     sass: {
       options: {
-        bundleExec: true
+        bundleExec: true,
+        sourcemap: 'none'
       },
       dist: {
         files: {
