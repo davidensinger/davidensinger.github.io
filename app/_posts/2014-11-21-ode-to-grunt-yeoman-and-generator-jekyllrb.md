@@ -2,7 +2,7 @@
 date: 2014-11-21 15:27:00
 layout: post
 title: 'Ode to Grunt, Yeoman, and Generator-jekyllrb'
-description: 'It’s just too easy to develop, build, and deploy this site now.'
+description: 'It’s just too easy to develop, build, and deploy this site.'
 tags: ['Jekyll', 'Grunt']
 suggested_tweet:
   hashtags: ['Jekyll', 'Jekyllrb', 'GruntJS']
