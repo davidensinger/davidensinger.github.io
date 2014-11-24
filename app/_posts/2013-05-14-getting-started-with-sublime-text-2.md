@@ -84,12 +84,18 @@ import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330
 - [All Autocomplete](https://sublime.wbond.net/packages/All%20Autocomplete) - Allows autocompletion across open files
 - [Color Highlighter](https://sublime.wbond.net/packages/Color%20Highlighter) - Underlays selected hexadecimal color codes (like "#FFFFFF", "rgb(255,255,255)", "white", etc.) with their real color
 - [CSS Color Converter](https://sublime.wbond.net/packages/CSS%20Color%20Converter) - Convert hex to rgb to back
+- [CSS3](https://sublime.wbond.net/packages/CSS3) - The most complete CSS support for Sublime Text 3
 - [EditorConfig](https://sublime.wbond.net/packages/EditorConfig) - [Editor Config](http://editorconfig.org/) helps define and maintain consistent coding styles between different editors and IDEs
-- [HTML-CSS-JS Prettify](https://sublime.wbond.net/packages/HTML-CSS-JS%20Prettify) - HTML, CSS, JavaScript and JSON code formatter via node.js
+- [Inc-Dec-Value](https://sublime.wbond.net/packages/Inc-Dec-Value) - increase / decrease of numbers, dates, hex color values, etc.
+- [Java​Script​Next - ES6 Syntax](https://sublime.wbond.net/packages/JavaScriptNext%20-%20ES6%20Syntax) - JavaScript language definition for TextMate and SublimeText2
 - [LESS](https://sublime.wbond.net/packages/LESS) - LESS syntax highlighting
 - [Modific](https://sublime.wbond.net/packages/Modific) - Highlight lines changed since the last commit
 - [SideBarEnhancements](https://sublime.wbond.net/packages/SideBarEnhancements) - Adds useful file operations to the sidebar, such as “New file”, “New folder”, etc
 - [SublimeLinter](https://sublime.wbond.net/packages/SublimeLinter) - Lint code as you type
+- [Sublime​Linter-csslint](https://sublime.wbond.net/packages/SublimeLinter-csslint) - SublimeLinter plugin for CSS, using csslint
+- [Sublime​Linter-contrib-scss-lint](https://sublime.wbond.net/packages/SublimeLinter-contrib-scss-lint) - SublimeLinter plugin for Sass scss syntax, using scss-lint
+- [Sublime​Linter-jshint](https://sublime.wbond.net/packages/SublimeLinter-jshint) - SublimeLinter plugin for JavaScript, using JSHint
+- [Sublime​Linter-json](https://sublime.wbond.net/packages/SublimeLinter-csslint) - SublimeLinter plugin for JSON
 - [Syntax Highlighting for Sass](https://sublime.wbond.net/packages/Syntax%20Highlighting%20for%20Sass) - Sass syntax highlighting
 - [TrailingSpaces](https://sublime.wbond.net/packages/TrailingSpaces) - Strips trailing whitespace from files
 
