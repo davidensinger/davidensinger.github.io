@@ -7,9 +7,10 @@
         6,
         6,
         6,
+        6,
         null
       ],
-      "sum": 24,
+      "sum": 30,
       "min": 6,
       "max": 6,
       "median": 6,
@@ -21,9 +22,10 @@
         3,
         3,
         3,
+        3,
         null
       ],
-      "sum": 12,
+      "sum": 15,
       "min": 3,
       "max": 3,
       "median": 3,
@@ -31,6 +33,7 @@
     },
     "postRequests": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -49,6 +52,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -63,6 +67,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -73,17 +78,18 @@
     },
     "bodySize": {
       "values": [
-        45719,
-        45719,
-        45719,
-        69742,
+        82896,
+        85372,
+        93700,
+        102457,
+        109561,
         null
       ],
-      "sum": 206899,
-      "min": 45719,
-      "max": 69742,
-      "median": 45719,
-      "average": 51724.75
+      "sum": 473986,
+      "min": 82896,
+      "max": 109561,
+      "median": 93700,
+      "average": 94797.2
     },
     "contentLength": {
       "values": [
@@ -91,9 +97,10 @@
         164432,
         164432,
         164432,
+        164432,
         null
       ],
-      "sum": 657728,
+      "sum": 822160,
       "min": 164432,
       "max": 164432,
       "median": 164432,
@@ -101,48 +108,52 @@
     },
     "httpTrafficCompleted": {
       "values": [
-        2519,
-        2558,
-        2655,
-        2691,
+        789,
+        815,
+        824,
+        5293,
+        5495,
         null
       ],
-      "sum": 10423,
-      "min": 2519,
-      "max": 2691,
-      "median": 2606.5,
-      "average": 2605.75
+      "sum": 13216,
+      "min": 789,
+      "max": 5495,
+      "median": 824,
+      "average": 2643.2
     },
     "timeToFirstByte": {
       "values": [
-        471,
-        471,
-        541,
-        543,
+        493,
+        499,
+        538,
+        551,
+        558,
         null
       ],
-      "sum": 2026,
-      "min": 471,
-      "max": 543,
-      "median": 506,
-      "average": 506.5
+      "sum": 2639,
+      "min": 493,
+      "max": 558,
+      "median": 538,
+      "average": 527.8
     },
     "timeToLastByte": {
       "values": [
-        476,
-        476,
-        546,
-        548,
+        502,
+        507,
+        545,
+        560,
+        570,
         null
       ],
-      "sum": 2046,
-      "min": 476,
-      "max": 548,
-      "median": 511,
-      "average": 511.5
+      "sum": 2684,
+      "min": 502,
+      "max": 570,
+      "median": 545,
+      "average": 536.8
     },
     "ajaxRequests": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -161,9 +172,10 @@
         1,
         1,
         1,
+        1,
         null
       ],
-      "sum": 4,
+      "sum": 5,
       "min": 1,
       "max": 1,
       "median": 1,
@@ -175,9 +187,10 @@
         23312,
         23312,
         23312,
+        23312,
         null
       ],
-      "sum": 93248,
+      "sum": 116560,
       "min": 23312,
       "max": 23312,
       "median": 23312,
@@ -189,9 +202,10 @@
         1,
         1,
         1,
+        1,
         null
       ],
-      "sum": 4,
+      "sum": 5,
       "min": 1,
       "max": 1,
       "median": 1,
@@ -203,9 +217,10 @@
         19433,
         19433,
         19433,
+        19433,
         null
       ],
-      "sum": 77732,
+      "sum": 97165,
       "min": 19433,
       "max": 19433,
       "median": 19433,
@@ -217,9 +232,10 @@
         1,
         1,
         1,
+        1,
         null
       ],
-      "sum": 4,
+      "sum": 5,
       "min": 1,
       "max": 1,
       "median": 1,
@@ -231,9 +247,10 @@
         355,
         355,
         355,
+        355,
         null
       ],
-      "sum": 1420,
+      "sum": 1775,
       "min": 355,
       "max": 355,
       "median": 355,
@@ -241,6 +258,7 @@
     },
     "jsonCount": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -259,6 +277,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -273,9 +292,10 @@
         1,
         1,
         1,
+        1,
         null
       ],
-      "sum": 4,
+      "sum": 5,
       "min": 1,
       "max": 1,
       "median": 1,
@@ -287,9 +307,10 @@
         71688,
         71688,
         71688,
+        71688,
         null
       ],
-      "sum": 286752,
+      "sum": 358440,
       "min": 71688,
       "max": 71688,
       "median": 71688,
@@ -297,6 +318,7 @@
     },
     "videoCount": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -315,6 +337,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -329,9 +352,10 @@
         2,
         2,
         2,
+        2,
         null
       ],
-      "sum": 8,
+      "sum": 10,
       "min": 2,
       "max": 2,
       "median": 2,
@@ -343,9 +367,10 @@
         49644,
         49644,
         49644,
+        49644,
         null
       ],
-      "sum": 198576,
+      "sum": 248220,
       "min": 49644,
       "max": 49644,
       "median": 49644,
@@ -353,6 +378,7 @@
     },
     "base64Count": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -371,6 +397,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -381,6 +408,7 @@
     },
     "otherCount": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -399,6 +427,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -409,6 +438,7 @@
     },
     "cacheHits": {
       "values": [
+        0,
         1,
         1,
         1,
@@ -416,10 +446,10 @@
         null
       ],
       "sum": 4,
-      "min": 1,
+      "min": 0,
       "max": 1,
       "median": 1,
-      "average": 1
+      "average": 0.8
     },
     "cacheMisses": {
       "values": [
@@ -427,16 +457,18 @@
         5,
         5,
         5,
+        6,
         null
       ],
-      "sum": 20,
+      "sum": 26,
       "min": 5,
-      "max": 5,
+      "max": 6,
       "median": 5,
-      "average": 5
+      "average": 5.2
     },
     "cachePasses": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -455,6 +487,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -465,6 +498,7 @@
     },
     "cachingTooShort": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -483,6 +517,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -497,9 +532,10 @@
         6,
         6,
         6,
+        6,
         null
       ],
-      "sum": 24,
+      "sum": 30,
       "min": 6,
       "max": 6,
       "median": 6,
@@ -507,6 +543,7 @@
     },
     "consoleMessages": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -525,6 +562,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -539,9 +577,10 @@
         134,
         134,
         134,
+        134,
         null
       ],
-      "sum": 536,
+      "sum": 670,
       "min": 134,
       "max": 134,
       "median": 134,
@@ -553,9 +592,10 @@
         1,
         1,
         1,
+        1,
         null
       ],
-      "sum": 4,
+      "sum": 5,
       "min": 1,
       "max": 1,
       "median": 1,
@@ -563,6 +603,7 @@
     },
     "documentCookiesLength": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -581,9 +622,10 @@
         1,
         1,
         1,
+        1,
         null
       ],
-      "sum": 4,
+      "sum": 5,
       "min": 1,
       "max": 1,
       "median": 1,
@@ -595,9 +637,10 @@
         2408,
         2408,
         2408,
+        2408,
         null
       ],
-      "sum": 9632,
+      "sum": 12040,
       "min": 2408,
       "max": 2408,
       "median": 2408,
@@ -609,9 +652,10 @@
         1,
         1,
         1,
+        1,
         null
       ],
-      "sum": 4,
+      "sum": 5,
       "min": 1,
       "max": 1,
       "median": 1,
@@ -623,9 +667,10 @@
         6,
         6,
         6,
+        6,
         null
       ],
-      "sum": 24,
+      "sum": 30,
       "min": 6,
       "max": 6,
       "median": 6,
@@ -637,9 +682,10 @@
         6,
         6,
         6,
+        6,
         null
       ],
-      "sum": 24,
+      "sum": 30,
       "min": 6,
       "max": 6,
       "median": 6,
@@ -647,6 +693,7 @@
     },
     "commentsSize": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -665,6 +712,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -679,9 +727,10 @@
         10,
         10,
         10,
+        10,
         null
       ],
-      "sum": 40,
+      "sum": 50,
       "min": 10,
       "max": 10,
       "median": 10,
@@ -693,9 +742,10 @@
         131,
         131,
         131,
+        131,
         null
       ],
-      "sum": 524,
+      "sum": 655,
       "min": 131,
       "max": 131,
       "median": 131,
@@ -707,9 +757,10 @@
         10,
         10,
         10,
+        10,
         null
       ],
-      "sum": 40,
+      "sum": 50,
       "min": 10,
       "max": 10,
       "median": 10,
@@ -717,6 +768,7 @@
     },
     "nodesWithInlineCSS": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -735,6 +787,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -745,6 +798,7 @@
     },
     "DOMmutationsRemoves": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -763,6 +817,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -777,9 +832,10 @@
         2,
         2,
         2,
+        2,
         null
       ],
-      "sum": 8,
+      "sum": 10,
       "min": 2,
       "max": 2,
       "median": 2,
@@ -787,6 +843,7 @@
     },
     "DOMqueriesById": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -805,6 +862,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -819,9 +877,10 @@
         2,
         2,
         2,
+        2,
         null
       ],
-      "sum": 8,
+      "sum": 10,
       "min": 2,
       "max": 2,
       "median": 2,
@@ -829,6 +888,7 @@
     },
     "DOMqueriesByQuerySelectorAll": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -847,9 +907,10 @@
         1,
         1,
         1,
+        1,
         null
       ],
-      "sum": 4,
+      "sum": 5,
       "min": 1,
       "max": 1,
       "median": 1,
@@ -857,6 +918,7 @@
     },
     "DOMqueriesDuplicated": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -875,9 +937,10 @@
         1,
         1,
         1,
+        1,
         null
       ],
-      "sum": 4,
+      "sum": 5,
       "min": 1,
       "max": 1,
       "median": 1,
@@ -889,9 +952,10 @@
         2,
         2,
         2,
+        2,
         null
       ],
-      "sum": 8,
+      "sum": 10,
       "min": 2,
       "max": 2,
       "median": 2,
@@ -899,6 +963,7 @@
     },
     "globalVariablesFalsy": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -917,9 +982,10 @@
         120,
         120,
         120,
+        120,
         null
       ],
-      "sum": 480,
+      "sum": 600,
       "min": 120,
       "max": 120,
       "median": 120,
@@ -931,9 +997,10 @@
         17,
         17,
         17,
+        17,
         null
       ],
-      "sum": 68,
+      "sum": 85,
       "min": 17,
       "max": 17,
       "median": 17,
@@ -945,9 +1012,10 @@
         103,
         103,
         103,
+        103,
         null
       ],
-      "sum": 412,
+      "sum": 515,
       "min": 103,
       "max": 103,
       "median": 103,
@@ -955,17 +1023,18 @@
     },
     "headersSize": {
       "values": [
-        3769,
-        3769,
-        3769,
-        3769,
+        3788,
+        3788,
+        3792,
+        3794,
+        3804,
         null
       ],
-      "sum": 15076,
-      "min": 3769,
-      "max": 3769,
-      "median": 3769,
-      "average": 3769
+      "sum": 18966,
+      "min": 3788,
+      "max": 3804,
+      "median": 3792,
+      "average": 3793.2
     },
     "headersSentSize": {
       "values": [
@@ -973,9 +1042,10 @@
         687,
         687,
         687,
+        687,
         null
       ],
-      "sum": 2748,
+      "sum": 3435,
       "min": 687,
       "max": 687,
       "median": 687,
@@ -983,17 +1053,18 @@
     },
     "headersRecvSize": {
       "values": [
-        3082,
-        3082,
-        3082,
-        3082,
+        3101,
+        3101,
+        3105,
+        3107,
+        3117,
         null
       ],
-      "sum": 12328,
-      "min": 3082,
-      "max": 3082,
-      "median": 3082,
-      "average": 3082
+      "sum": 15531,
+      "min": 3101,
+      "max": 3117,
+      "median": 3105,
+      "average": 3106.2
     },
     "headersBiggerThanContent": {
       "values": [
@@ -1001,9 +1072,10 @@
         1,
         1,
         1,
+        1,
         null
       ],
-      "sum": 4,
+      "sum": 5,
       "min": 1,
       "max": 1,
       "median": 1,
@@ -1011,6 +1083,7 @@
     },
     "documentWriteCalls": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -1029,6 +1102,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -1039,6 +1113,7 @@
     },
     "jQueryOnDOMReadyFunctions": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -1057,6 +1132,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -1067,6 +1143,7 @@
     },
     "jsErrors": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -1085,6 +1162,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -1095,6 +1173,7 @@
     },
     "redirects": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -1113,6 +1192,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -1123,6 +1203,7 @@
     },
     "assetsNotGzipped": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -1141,6 +1222,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -1155,9 +1237,10 @@
         3,
         3,
         3,
+        3,
         null
       ],
-      "sum": 12,
+      "sum": 15,
       "min": 3,
       "max": 3,
       "median": 3,
@@ -1165,6 +1248,7 @@
     },
     "smallImages": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -1183,6 +1267,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -1193,129 +1278,138 @@
     },
     "timeToFirstCss": {
       "values": [
-        498,
-        502,
-        579,
-        586,
+        529,
+        548,
+        555,
+        567,
+        584,
         null
       ],
-      "sum": 2165,
-      "min": 498,
-      "max": 586,
-      "median": 540.5,
-      "average": 541.25
+      "sum": 2783,
+      "min": 529,
+      "max": 584,
+      "median": 555,
+      "average": 556.6
     },
     "timeToFirstJs": {
       "values": [
-        513,
-        515,
-        628,
-        634,
+        562,
+        580,
+        587,
+        596,
+        611,
         null
       ],
-      "sum": 2290,
-      "min": 513,
-      "max": 634,
-      "median": 571.5,
-      "average": 572.5
+      "sum": 2936,
+      "min": 562,
+      "max": 611,
+      "median": 587,
+      "average": 587.2
     },
     "timeToFirstImage": {
       "values": [
-        649,
-        693,
-        2670,
-        2706,
+        706,
+        763,
+        890,
+        5328,
+        5531,
         null
       ],
-      "sum": 6718,
-      "min": 649,
-      "max": 2706,
-      "median": 1681.5,
-      "average": 1679.5
+      "sum": 13218,
+      "min": 706,
+      "max": 5531,
+      "median": 890,
+      "average": 2643.6
     },
     "domInteractive": {
       "values": [
-        41,
-        43,
-        85,
-        90,
+        59,
+        60,
+        60,
+        64,
+        82,
         null
       ],
-      "sum": 259,
-      "min": 41,
-      "max": 90,
-      "median": 64,
-      "average": 64.75
+      "sum": 325,
+      "min": 59,
+      "max": 82,
+      "median": 60,
+      "average": 65
     },
     "domContentLoaded": {
       "values": [
-        41,
-        43,
-        86,
-        90,
+        59,
+        60,
+        60,
+        64,
+        82,
         null
       ],
-      "sum": 260,
-      "min": 41,
-      "max": 90,
-      "median": 64.5,
+      "sum": 325,
+      "min": 59,
+      "max": 82,
+      "median": 60,
       "average": 65
     },
     "domContentLoadedEnd": {
       "values": [
-        42,
-        44,
-        87,
-        91,
+        61,
+        62,
+        62,
+        66,
+        83,
         null
       ],
-      "sum": 264,
-      "min": 42,
-      "max": 91,
-      "median": 65.5,
-      "average": 66
+      "sum": 334,
+      "min": 61,
+      "max": 83,
+      "median": 62,
+      "average": 66.8
     },
     "domComplete": {
       "values": [
-        176,
-        220,
-        2126,
-        2161,
+        155,
+        225,
+        361,
+        4823,
+        5032,
         null
       ],
-      "sum": 4683,
-      "min": 176,
-      "max": 2161,
-      "median": 1173,
-      "average": 1170.75
+      "sum": 10596,
+      "min": 155,
+      "max": 5032,
+      "median": 361,
+      "average": 2119.2
     },
     "timeBackend": {
       "values": [
-        20,
-        20,
-        68,
-        73,
+        9,
+        9,
+        60,
+        71,
+        78,
         null
       ],
-      "sum": 181,
-      "min": 20,
-      "max": 73,
-      "median": 44,
-      "average": 45.25
+      "sum": 227,
+      "min": 9,
+      "max": 78,
+      "median": 60,
+      "average": 45.4
     },
     "timeFrontend": {
       "values": [
-        27,
-        32,
-        80,
-        80,
+        22,
+        29,
+        40,
+        91,
+        91,
         null
       ],
-      "sum": 219,
-      "min": 27,
-      "max": 80,
-      "median": 56,
-      "average": 54.75
+      "sum": 273,
+      "min": 22,
+      "max": 91,
+      "median": 40,
+      "average": 54.6
     },
     "blockedRequests": {
       "values": [
@@ -1323,9 +1417,10 @@
         1,
         1,
         1,
+        1,
         null
       ],
-      "sum": 4,
+      "sum": 5,
       "min": 1,
       "max": 1,
       "median": 1,
@@ -1333,6 +1428,7 @@
     },
     "windowAlerts": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -1351,6 +1447,7 @@
         0,
         0,
         0,
+        0,
         null
       ],
       "sum": 0,
@@ -1361,6 +1458,7 @@
     },
     "windowPrompts": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -1379,9 +1477,10 @@
         19967,
         19967,
         19967,
+        19967,
         null
       ],
-      "sum": 79868,
+      "sum": 99835,
       "min": 19967,
       "max": 19967,
       "median": 19967,
@@ -1389,6 +1488,7 @@
     },
     "iframesCount": {
       "values": [
+        0,
         0,
         0,
         0,
@@ -1407,9 +1507,10 @@
         1,
         1,
         1,
+        1,
         null
       ],
-      "sum": 4,
+      "sum": 5,
       "min": 1,
       "max": 1,
       "median": 1,
@@ -1421,9 +1522,10 @@
         355,
         355,
         355,
+        355,
         null
       ],
-      "sum": 1420,
+      "sum": 1775,
       "min": 355,
       "max": 355,
       "median": 355,
@@ -1435,9 +1537,10 @@
         71688,
         71688,
         71688,
+        71688,
         null
       ],
-      "sum": 286752,
+      "sum": 358440,
       "min": 71688,
       "max": 71688,
       "median": 71688,
@@ -1445,87 +1548,93 @@
     },
     "fastestResponse": {
       "values": [
-        26,
-        30,
-        37,
+        29,
+        32,
+        33,
         42,
+        54,
         null
       ],
-      "sum": 135,
-      "min": 26,
-      "max": 42,
-      "median": 33.5,
-      "average": 33.75
+      "sum": 190,
+      "min": 29,
+      "max": 54,
+      "median": 33,
+      "average": 38
     },
     "slowestResponse": {
       "values": [
-        1877,
-        1882,
-        2080,
-        2108,
+        545,
+        560,
+        570,
+        4774,
+        4959,
         null
       ],
-      "sum": 7947,
-      "min": 1877,
-      "max": 2108,
-      "median": 1981,
-      "average": 1986.75
+      "sum": 11408,
+      "min": 545,
+      "max": 4959,
+      "median": 570,
+      "average": 2281.6
     },
     "smallestLatency": {
       "values": [
-        25,
-        30,
-        36,
-        42,
+        28,
+        28,
+        29,
+        32,
+        33,
         null
       ],
-      "sum": 133,
-      "min": 25,
-      "max": 42,
-      "median": 33,
-      "average": 33.25
+      "sum": 150,
+      "min": 28,
+      "max": 33,
+      "median": 29,
+      "average": 30
     },
     "biggestLatency": {
       "values": [
-        471,
-        471,
-        543,
-        1879,
+        493,
+        499,
+        538,
+        551,
+        558,
         null
       ],
-      "sum": 3364,
-      "min": 471,
-      "max": 1879,
-      "median": 507,
-      "average": 841
+      "sum": 2639,
+      "min": 493,
+      "max": 558,
+      "median": 538,
+      "average": 527.8
     },
     "medianResponse": {
       "values": [
-        137,
-        147.5,
-        321.5,
-        340.5,
+        106,
+        109,
+        115.5,
+        116,
+        142,
         null
       ],
-      "sum": 946.5,
-      "min": 137,
-      "max": 340.5,
-      "median": 234.5,
-      "average": 236.63
+      "sum": 588.5,
+      "min": 106,
+      "max": 142,
+      "median": 115.5,
+      "average": 117.7
     },
     "medianLatency": {
       "values": [
-        45.5,
-        48,
-        74,
-        77.5,
+        79,
+        86,
+        86.5,
+        94.5,
+        126.5,
         null
       ],
-      "sum": 245,
-      "min": 45.5,
-      "max": 77.5,
-      "median": 61,
-      "average": 61.25
+      "sum": 472.5,
+      "min": 79,
+      "max": 126.5,
+      "median": 86.5,
+      "average": 94.5
     }
   },
   "offenders": {
@@ -1547,8 +1656,8 @@
       "http://davidensinger.com/img/david-ensinger.24b3.jpg (70.01 kB)"
     ],
     "webfontCount": [
-      "http://davidensinger.com/fonts/opensans-regular-webfont.eb0f.woff (24.17 kB)",
-      "http://davidensinger.com/fonts/opensans-semibold-webfont.27bc.woff (24.31 kB)"
+      "http://davidensinger.com/fonts/opensans-semibold-webfont.27bc.woff (24.31 kB)",
+      "http://davidensinger.com/fonts/opensans-regular-webfont.eb0f.woff (24.17 kB)"
     ],
     "cacheHits": [
       "http://davidensinger.com/"
@@ -1556,17 +1665,18 @@
     "cacheMisses": [
       "http://davidensinger.com/css/styles.323d.css",
       "http://davidensinger.com/js/scripts.6e07.js",
-      "http://davidensinger.com/fonts/opensans-regular-webfont.eb0f.woff",
+      "http://davidensinger.com/img/david-ensinger.24b3.jpg",
       "http://davidensinger.com/fonts/opensans-semibold-webfont.27bc.woff",
-      "http://davidensinger.com/img/david-ensinger.24b3.jpg"
+      "http://davidensinger.com/fonts/opensans-regular-webfont.eb0f.woff",
+      "http://davidensinger.com/"
     ],
     "oldCachingHeaders": [
-      "http://davidensinger.com/ - Expires: Fri, 21 Nov 2014 20:38:24 GMT",
-      "http://davidensinger.com/css/styles.323d.css - Expires: Sat, 21 Nov 2015 20:28:28 GMT",
-      "http://davidensinger.com/js/scripts.6e07.js - Expires: Sat, 21 Nov 2015 20:28:28 GMT",
-      "http://davidensinger.com/fonts/opensans-regular-webfont.eb0f.woff - Expires: Sat, 21 Nov 2015 20:28:28 GMT",
-      "http://davidensinger.com/fonts/opensans-semibold-webfont.27bc.woff - Expires: Sat, 21 Nov 2015 20:28:28 GMT",
-      "http://davidensinger.com/img/david-ensinger.24b3.jpg - Expires: Sat, 21 Nov 2015 20:28:28 GMT"
+      "http://davidensinger.com/ - Expires: Sun, 16 Nov 2014 20:07:09 GMT",
+      "http://davidensinger.com/css/styles.323d.css - Expires: Mon, 16 Nov 2015 19:57:09 GMT",
+      "http://davidensinger.com/js/scripts.6e07.js - Expires: Mon, 16 Nov 2015 19:57:09 GMT",
+      "http://davidensinger.com/img/david-ensinger.24b3.jpg - Expires: Mon, 16 Nov 2015 19:57:09 GMT",
+      "http://davidensinger.com/fonts/opensans-semibold-webfont.27bc.woff - Expires: Mon, 16 Nov 2015 19:57:09 GMT",
+      "http://davidensinger.com/fonts/opensans-regular-webfont.eb0f.woff - Expires: Mon, 16 Nov 2015 19:57:09 GMT"
     ],
     "domainsWithCookies": [
       "davidensinger.com: 1 cookie(s)"
@@ -1589,7 +1699,7 @@
       "ga"
     ],
     "headersBiggerThanContent": [
-      "http://davidensinger.com/js/scripts.6e07.js (body: 0.35 kB / headers: 0.50 kB)"
+      "http://davidensinger.com/js/scripts.6e07.js (body: 0.35 kB / headers: 0.51 kB)"
     ],
     "assetsWithCookies": [
       "http://davidensinger.com/css/styles.323d.css (CSS)",
@@ -1597,22 +1707,25 @@
       "http://davidensinger.com/img/david-ensinger.24b3.jpg (IMAGE)"
     ],
     "timeToFirstCss": [
-      "http://davidensinger.com/css/styles.323d.css received in 579 ms",
-      "http://davidensinger.com/css/styles.323d.css received in 586 ms",
-      "http://davidensinger.com/css/styles.323d.css received in 502 ms",
-      "http://davidensinger.com/css/styles.323d.css received in 498 ms"
+      "http://davidensinger.com/css/styles.323d.css received in 584 ms",
+      "http://davidensinger.com/css/styles.323d.css received in 567 ms",
+      "http://davidensinger.com/css/styles.323d.css received in 548 ms",
+      "http://davidensinger.com/css/styles.323d.css received in 529 ms",
+      "http://davidensinger.com/css/styles.323d.css received in 555 ms"
     ],
     "timeToFirstJs": [
-      "http://davidensinger.com/js/scripts.6e07.js received in 628 ms",
-      "http://davidensinger.com/js/scripts.6e07.js received in 634 ms",
-      "http://davidensinger.com/js/scripts.6e07.js received in 515 ms",
-      "http://davidensinger.com/js/scripts.6e07.js received in 513 ms"
+      "http://davidensinger.com/js/scripts.6e07.js received in 611 ms",
+      "http://davidensinger.com/js/scripts.6e07.js received in 596 ms",
+      "http://davidensinger.com/js/scripts.6e07.js received in 580 ms",
+      "http://davidensinger.com/js/scripts.6e07.js received in 562 ms",
+      "http://davidensinger.com/js/scripts.6e07.js received in 587 ms"
     ],
     "timeToFirstImage": [
-      "http://davidensinger.com/img/david-ensinger.24b3.jpg received in 2670 ms",
-      "http://davidensinger.com/img/david-ensinger.24b3.jpg received in 2706 ms",
-      "http://davidensinger.com/img/david-ensinger.24b3.jpg received in 693 ms",
-      "http://davidensinger.com/img/david-ensinger.24b3.jpg received in 649 ms"
+      "http://davidensinger.com/img/david-ensinger.24b3.jpg received in 706 ms",
+      "http://davidensinger.com/img/david-ensinger.24b3.jpg received in 763 ms",
+      "http://davidensinger.com/img/david-ensinger.24b3.jpg received in 5531 ms",
+      "http://davidensinger.com/img/david-ensinger.24b3.jpg received in 5328 ms",
+      "http://davidensinger.com/img/david-ensinger.24b3.jpg received in 890 ms"
     ],
     "blockedRequests": [
       "http://www.google-analytics.com/analytics.js"
@@ -1627,27 +1740,32 @@
       "http://davidensinger.com/img/david-ensinger.24b3.jpg (70.01 kB)"
     ],
     "fastestResponse": [
-      "http://davidensinger.com/css/styles.323d.css (37 ms)",
       "http://davidensinger.com/css/styles.323d.css (42 ms)",
-      "http://davidensinger.com/css/styles.323d.css (30 ms)",
-      "http://davidensinger.com/css/styles.323d.css (26 ms)"
+      "http://davidensinger.com/css/styles.323d.css (33 ms)",
+      "http://davidensinger.com/css/styles.323d.css (54 ms)",
+      "http://davidensinger.com/css/styles.323d.css (29 ms)",
+      "http://davidensinger.com/css/styles.323d.css (32 ms)"
     ],
     "slowestResponse": [
-      "http://davidensinger.com/img/david-ensinger.24b3.jpg (2080 ms)",
-      "http://davidensinger.com/img/david-ensinger.24b3.jpg (2108 ms)",
-      "http://davidensinger.com/fonts/opensans-semibold-webfont.27bc.woff (1877 ms)",
-      "http://davidensinger.com/fonts/opensans-regular-webfont.eb0f.woff (1882 ms)"
+      "http://davidensinger.com/ (570 ms)",
+      "http://davidensinger.com/ (560 ms)",
+      "http://davidensinger.com/img/david-ensinger.24b3.jpg (4959 ms)",
+      "http://davidensinger.com/img/david-ensinger.24b3.jpg (4774 ms)",
+      "http://davidensinger.com/ (545 ms)"
     ],
     "smallestLatency": [
-      "http://davidensinger.com/css/styles.323d.css (36 ms)",
-      "http://davidensinger.com/css/styles.323d.css (42 ms)",
-      "http://davidensinger.com/css/styles.323d.css (30 ms)",
-      "http://davidensinger.com/css/styles.323d.css (25 ms)"
+      "http://davidensinger.com/img/david-ensinger.24b3.jpg (33 ms)",
+      "http://davidensinger.com/img/david-ensinger.24b3.jpg (29 ms)",
+      "http://davidensinger.com/img/david-ensinger.24b3.jpg (28 ms)",
+      "http://davidensinger.com/css/styles.323d.css (28 ms)",
+      "http://davidensinger.com/css/styles.323d.css (32 ms)"
     ],
     "biggestLatency": [
-      "http://davidensinger.com/fonts/opensans-semibold-webfont.27bc.woff (1879 ms)",
-      "http://davidensinger.com/ (543 ms)",
-      "http://davidensinger.com/ (471 ms)"
+      "http://davidensinger.com/ (558 ms)",
+      "http://davidensinger.com/ (551 ms)",
+      "http://davidensinger.com/ (493 ms)",
+      "http://davidensinger.com/ (499 ms)",
+      "http://davidensinger.com/ (538 ms)"
     ]
   }
 }
