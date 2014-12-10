@@ -62,7 +62,7 @@ The {% raw %}`{% for post in site.posts %}`{% endraw %} loops through the posts 
     layout: default
     sitemap:
         priority: 0.7
-        changefreq: monthly
+        changefreq: 'monthly'
         lastmod: 2013-03-29T12:49:30-05:00
     ---
 

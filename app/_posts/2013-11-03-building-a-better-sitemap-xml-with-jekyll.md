@@ -3,7 +3,7 @@ date: 2013-11-03 16:50:00
 layout: post
 title: 'Building a Better Sitemap.xml with Jekyll'
 description: 'How to make a more flexible Sitemap.xml with Jekyll.'
-tags: ['Jekyll, Sitemap, XML']
+tags: ['Jekyll', 'Sitemap', 'XML']
 sitemap:
   lastmod: 2014-01-23
 suggested_tweet:
@@ -55,6 +55,11 @@ For my current implementation, I made the following changes:
 
 {% highlight xml %}
 {% raw %}
+---
+layout: null
+sitemap:
+  exclude: 'yes'
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {% for post in site.posts %}
@@ -116,7 +121,7 @@ I can now add the following variables, all of which are optional, to the front m
 sitemap:
   lastmod: 2014-01-23
   priority: 0.7
-  changefreq: monthly
+  changefreq: 'monthly'
   exclude: 'yes'
 {% endhighlight %}
 
