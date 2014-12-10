@@ -1,5 +1,5 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 2.4.0"
+gem "jekyll", "~> 2.5.2"
 gem "kramdown"
-gem "sass", "~> 3.4.7"
+gem "sass", "~> 3.4.9"
