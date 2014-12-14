@@ -34,7 +34,7 @@ sitemap:
   {% if paginator.previous_page %}
     <div class="nav-previous">
       {% if paginator.previous_page == 1 %}
-      <a href="/" class="nav-previous--link">Newer Posts</a>
+      <a id="js-navigation--previous" href="/" class="nav-previous--link">Newer Posts</a>
       {% else %}
       <a id="js-navigation--previous" href="/page{{ paginator.previous_page }}/" class="nav-previous--link">Newer Posts</a>
       {% endif %}
