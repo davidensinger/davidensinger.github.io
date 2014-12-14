@@ -3,7 +3,7 @@ date: 2014-02-15 14:42:00
 layout: post
 title: 'Image Optimization Tools Overview'
 description: 'A run down of tools to optimize images for file size.'
-tags: ['Optimization']
+tags: ['Webperf']
 ---
 
 Invariably, the average website gets heavier with each passing year, which results in slower page loads for visitors. Most of this increase in page weight is due to the large file sizes of images. Odds are, as a developer, you’re guilty of this slow creep too, so you should take care to optimize your images to be as lightweight as possible.

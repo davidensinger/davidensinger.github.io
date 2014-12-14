@@ -3,7 +3,7 @@ date: 2014-12-14 15:14:00
 layout: post
 title: 'Critical Path CSS in Jekyll with Penthouse and loadCSS'
 description: 'Say goodbye to render-blocking CSS in above-the-fold content.'
-tags: ['CSS', 'Jekyll', 'Grunt']
+tags: ['Jekyll', 'Grunt', 'Webperf']
 suggested_tweet:
   hashtags: ['CSS', 'Jekyllrb', 'GruntJS']
   related: ['jekyllrb']
