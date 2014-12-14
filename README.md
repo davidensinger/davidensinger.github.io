@@ -25,9 +25,10 @@ Run the following commands to install the dependencies:
 
 ## Grunt Workflow
 - `grunt serve`: Compiles all files and opens the site in your default browser. A watch task watches for changes to files, recompiles if necessary, and injects the changes into the browser with BrowserSync
-- `grunt check`: Checks for outdated dependencies with grunt-dev-update, Javascript code quality with JSHint, Jekyll health with `jekyll doctor`, and then runs the site through Google’s PageSpeed Insights
+- `grunt check`: Checks for outdated dependencies with grunt-dev-update, Javascript code quality with JSHint, and Jekyll health with `jekyll doctor`
 - `grunt build`: Builds an optimized site to the dist directory
-- `grunt deploy`: Builds an optimized site to the dist directory and then deploys it.
+- `grunt deploy`: Runs the perf task, runs the build task, and then deploys it
+- `grunt perf`: Checks Google’s PageSpeed Insights and then runs grunt-phantomas to return and record site metrics.
 
 ## Hat Tip
 The site was scaffolded by [Yeoman](http://yeoman.io/) and [generator-jekyllrb](https://github.com/robwierzbowski/generator-jekyllrb), the latter being a project of [@robwierzbowski](https://github.com/robwierzbowski).
