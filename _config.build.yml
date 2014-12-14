@@ -6,6 +6,8 @@
 
 url: 'http://davidensinger.com'
 
+environment: production
+
 # Publish posts with future date.
 future: false
 

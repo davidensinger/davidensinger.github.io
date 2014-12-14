@@ -11,6 +11,8 @@ twitter: 'DavidEnsinger'
 email: 'hello@davidensinger.com'
 description: 'David Ensinger is a Front End Developer from Columbus, OH'
 
+environment: development
+
 exclude: ['css', 'img', 'js', 'fonts', '**.png', '**.jpg', '**.jpeg', '**.gif', '**.svg', '**.ico']
 keep_files: ['perf']
 

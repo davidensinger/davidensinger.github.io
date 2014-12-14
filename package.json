@@ -31,6 +31,7 @@
     "grunt-filerev": "^2.1.1",
     "grunt-jekyll": "^0.4.2",
     "grunt-pagespeed": "^0.3.0",
+    "grunt-penthouse": "^0.1.2",
     "grunt-phantomas": "^0.11.0",
     "grunt-svgmin": "^2.0.0",
     "grunt-usemin": "^3.0.0",

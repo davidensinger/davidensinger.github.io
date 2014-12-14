@@ -30,16 +30,14 @@ module.exports = function (grunt) {
     watch: {
       sass: {
         files: ['<%= yeoman.app %>/_scss/**/*.scss'],
-        tasks: ['sass', 'autoprefixer:server']
+        tasks: ['sass', 'autoprefixer:server', 'penthouse']
       },
       autoprefixer: {
-        files: ['<%= yeoman.app %>/css/**/*.css'],
+        files: ['<%= yeoman.app %>/css/styles.css'],
         tasks: ['copy:stageCss', 'autoprefixer:server']
       },
       jekyll: {
-        files: [
-          '<%= yeoman.app %>/**/*.{html,md,rb,svg,xml,yml}'
-        ],
+        files: ['<%= yeoman.app %>/**/*.{html,md,rb,svg,xml,yml}'],
         tasks: ['jekyll:server']
       }
     },
@@ -126,6 +124,15 @@ module.exports = function (grunt) {
         dest: '.tmp'
       }
     },
+    penthouse: {
+      server : {
+        outfile : '<%= yeoman.app %>/_includes/critical.css',
+        css : '.tmp/css/styles.css',
+        url : 'http://localhost:3000',
+        width : 1280,
+        height : 800
+      }
+    },
     jekyll: {
       options: {
         bundleExec: true,
@@ -159,19 +166,13 @@ module.exports = function (grunt) {
       options: {
         assetsDirs: '<%= yeoman.dist %>',
         patterns: {
-          head: [
-            [
-              /<link[^\>]+href=['"]([^"']+)["']/gm,
-              'Update the link tags'
-            ],
-            [
-              /<meta[^\>]+content=['"]http?:?\/\/[^\/"']+([^"']+)["']/gm,
-              'Update meta tags'
-            ]
+          html: [
+            [/<link[^\>]+href=['"]([^"']+)["']/gm, 'Update the link tags'],
+            [/<meta[^\>]+content=['"]http?:?\/\/[^\/"']+([^"']+)["']/gm,'Update meta tags'],
+            [/loadCSS\(['"]([^"']+)['"]\)/gm, 'Replacing reference to CSS within loadCSS']
           ]
         }
       },
-      head: ['<%= yeoman.dist %>/**/*.html'],
       html: ['<%= yeoman.dist %>/**/*.html'],
       css: ['<%= yeoman.dist %>/css/**/*.css'],
     },
@@ -267,6 +268,11 @@ module.exports = function (grunt) {
           src: '**/*.css',
           dest: '.tmp/css'
         }]
+      },
+      stageLoadCSS: {
+        files: {
+          '<%= yeoman.app %>/_includes/loadCSS.js': '<%= yeoman.app %>/_bower_components/loadCSS/loadCSS.js'
+        }
       }
     },
     filerev: {
@@ -378,7 +384,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean',
-    // Jekyll cleans files from the target directory, so must run first
+    'copy:stageLoadCSS',
     'jekyll:dist',
     'concurrent:dist',
     'useminPrepare',

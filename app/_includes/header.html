@@ -85,9 +85,22 @@
       {% endfor %}
     {% endif %}
 
+    {% if site.environment == 'production' %}
+      <style>{% include critical.css %}</style>
+      <script>
+        {% include loadCSS.js %}
+        loadCSS("/css/styles.css");
+      </script>
+      <noscript>
+    {% endif %}
+
     <!-- build:css({app,.tmp}) /css/styles.css -->
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
     <!-- endbuild -->
+
+    {% if site.environment == 'production' %}
+      </noscript>
+    {% endif %}
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
