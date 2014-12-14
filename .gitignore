@@ -1,13 +1,7 @@
-# Ignore hidden folders #
-# This takes care of .tmp, .sass-cache, and many others #
 .*/
-
-# Ignore OS generated files #
 .DS_Store*
 ehthumbs.db
 Thumbs.db
-
-# Always-ignore files and folders #
 *.diff
 *.err
 *.log
@@ -18,8 +12,6 @@ Thumbs.db
 *.swp
 ._*
 *~
-
-# Ignore packages #
 *.7z
 *.dmg
 *.gz
@@ -28,9 +20,8 @@ Thumbs.db
 *.rar
 *.tar
 *.zip
-
-# Ignore for Grunt Jekyll projects #
 dist
 node_modules
 .tmp
-/app/_bower_components/
+app/_bower_components/
+app/_includes/critical.css
