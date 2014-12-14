@@ -118,7 +118,12 @@
         <header class="site-header--outer" role="banner">
           <div class="site-header--inner">
             <div class="site-header--primary">
-              <a class="site-logo" href="/">{% include logo.svg %}</a>
+              <a class="site-logo FlexEmbed" href="/">
+                <div class="FlexEmbed-ratio site-logo--ratio"></div>
+                <div class="FlexEmbed-content">
+                  {% include logo.svg %}
+                </div>
+              </a>
             </div>
             <div class="site-header--secondary">
               <nav class="main-navigation" role="navigation">

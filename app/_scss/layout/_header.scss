@@ -37,17 +37,8 @@
   }
 }
 
-.site-logo {
-  display: block;
-  width: 100%;
-
-  &:hover,
-  &:focus {
-
-    .site-logo--svg {
-      transform: scale(1.125) rotate(2deg);
-    }
-  }
+.site-logo--ratio {
+  padding-bottom: 105.36%; // for FlexEmbed
 }
 
 %balloon-properties {
