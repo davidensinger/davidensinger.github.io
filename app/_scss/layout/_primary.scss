@@ -95,6 +95,10 @@
     &:first-child {
       margin-bottom: emRhythm(4, $ms-up1);
       @include setType(6, $ms-up1);
+
+      @include breakpoint(mobile-portrait-to-mobile-landscape) {
+        @include setType(4);
+      }
     }
   }
 }
