@@ -37,71 +37,68 @@
   }
 }
 
+.site-logo {
+
+  &:focus {
+
+    .site-logo--svg__path {
+      fill: $color-site--logo__focus;
+    }
+  }
+}
+
 .site-logo--ratio {
   padding-bottom: 105.36%; // for FlexEmbed
 }
 
-%balloon-properties {
-  fill-rule: evenodd;
-  transition: fill 0.2s;
-  backface-visibility: hidden;
-}
-
 .site-logo--svg {
   width: 100%;
-  height: 100%;
-  transition: transform 0.2s;
-  backface-visibility: hidden;
 
   .blue {
-    @extend %balloon-properties;
     fill: $color-site--logo__blue;
 
-    &:hover,
-    &:focus {
+    &:hover {
       fill: darken($color-site--logo__blue, 5);
     }
   }
 
   .green {
-    @extend %balloon-properties;
     fill: $color-site--logo__green;
 
-    &:hover,
-    &:focus {
+    &:hover {
       fill: darken($color-site--logo__green, 5);
     }
   }
 
   .orange {
-    @extend %balloon-properties;
     fill: $color-site--logo__orange;
 
-    &:hover,
-    &:focus {
+    &:hover {
       fill: darken($color-site--logo__orange, 5);
     }
   }
 
   .yellow {
-    @extend %balloon-properties;
     fill: $color-site--logo__yellow;
 
-    &:hover,
-    &:focus {
+    &:hover {
       fill: darken($color-site--logo__yellow, 5);
     }
   }
 
   .red {
-    @extend %balloon-properties;
     fill: $color-site--logo__red;
 
-    &:hover,
-    &:focus {
+    &:hover {
       fill: darken($color-site--logo__red, 5);
     }
   }
+}
+
+.site-logo--svg__path {
+  fill-rule: evenodd;
+  transition: fill 0.2s;
+  backface-visibility: hidden;
 }
 
 
