@@ -1,8 +1,7 @@
-# Default application configuration that all configurations inherit from.
-
-scss_files: "**/*.scss"
+# For SCSS-Lint v0.31.0
 
 linters:
+
   BangFormat:
     enabled: true
     space_before_bang: true
@@ -28,7 +27,7 @@ linters:
 
   ElsePlacement:
     enabled: true
-    style: same_line # or 'new_line'
+    style: new_line
 
   EmptyLineBetweenBlocks:
     enabled: true
@@ -42,12 +41,11 @@ linters:
     present: true
 
   HexLength:
-    enabled: true
-    style: short # or 'long'
+    enabled: false
 
   HexNotation:
     enabled: true
-    style: lowercase # or 'uppercase'
+    style: lowercase
 
   HexValidation:
     enabled: true
@@ -62,32 +60,28 @@ linters:
 
   Indentation:
     enabled: true
-    character: space # or 'tab'
+    character: space
     width: 2
 
   LeadingZero:
     enabled: true
-    style: exclude_zero # or 'include_zero'
+    style: include_zero
 
   MergeableSelector:
-    enabled: true
-    force_nesting: true
+    enabled: false
 
   NameFormat:
-    enabled: true
-    allow_leading_underscore: true
-    convention: hyphenated_lowercase # or 'BEM', or a regex pattern
+    enabled: false
 
   NestingDepth:
     enabled: true
-    max_depth: 3
+    max_depth: 4
 
   PlaceholderInExtend:
     enabled: true
 
   PropertySortOrder:
-    enabled: true
-    ignore_unspecified: false
+    enabled: false
 
   PropertySpelling:
     enabled: true
@@ -104,15 +98,14 @@ linters:
     max_depth: 3
 
   SelectorFormat:
-    enabled: true
-    convention: hyphenated_lowercase # or 'BEM', or 'snake_case', or 'camel_case', or a regex pattern
+    enabled: false
 
   Shorthand:
     enabled: true
 
   SingleLinePerProperty:
     enabled: true
-    allow_single_line_rule_sets: true
+    allow_single_line_rule_sets: false
 
   SingleLinePerSelector:
     enabled: true
@@ -122,7 +115,7 @@ linters:
 
   SpaceAfterPropertyColon:
     enabled: true
-    style: one_space # or 'no_space', or 'at_least_one_space', or 'aligned'
+    style: one_space
 
   SpaceAfterPropertyName:
     enabled: true
@@ -130,7 +123,7 @@ linters:
   SpaceBeforeBrace:
     enabled: true
     style: space
-    allow_single_line_padding: false
+    allow_single_line_padding: true
 
   SpaceBetweenParens:
     enabled: true
@@ -138,19 +131,19 @@ linters:
 
   StringQuotes:
     enabled: true
-    style: single_quotes # or double_quotes
+    style: single_quotes
 
   TrailingSemicolon:
     enabled: true
 
   TrailingZero:
-    enabled: false
+    enabled: true
 
   UnnecessaryMantissa:
     enabled: true
 
   UnnecessaryParentReference:
-    enabled: true
+    enabled: false
 
   UrlFormat:
     enabled: true

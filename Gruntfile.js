@@ -93,11 +93,14 @@ module.exports = function (grunt) {
       options: {
         bundleExec: true,
         config: '.scss-lint.yml',
-        colorizeOutput: true
+        colorizeOutput: true,
+        exclude: [
+          '<%= yeoman.app %>/_scss/vendor/_flex-embed.scss',
+          '<%= yeoman.app %>/_scss/vendor/_normalize.scss',
+          '<%= yeoman.app %>/_scss/vendor/_pygments.scss'
+        ]
       },
-      server: [
-        'test/fixtures/*.scss',
-      ]
+      server: '<%= yeoman.app %>/_scss/**/*.scss'
     },
     sass: {
       options: {
@@ -384,7 +387,8 @@ module.exports = function (grunt) {
     'devUpdate',
     'clean:server',
     'jekyll:check',
-    'jshint:all',
+    'scsslint',
+    'jshint',
   ]);
 
   grunt.registerTask('perf', [

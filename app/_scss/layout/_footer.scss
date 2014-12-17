@@ -45,7 +45,7 @@
     }
 
     .icon-rss--foreground {
-      fill: #FF6600;
+      fill: #ff6600;
     }
   }
 
@@ -119,9 +119,9 @@
 }
 
 .site-footer--icons--title {
+  @extend %font-open-sans-semibold;
   display: block;
   opacity: 0;
-  @extend %font-open-sans-semibold;
   transition: opacity 0.2s;
   backface-visibility: hidden;
 }

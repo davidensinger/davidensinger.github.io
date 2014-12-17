@@ -9,7 +9,7 @@
   overflow: hidden;
 
   &:before {
-    content: "";
+    content: '';
     display: block;
     width: 0;
     height: 100%;
@@ -65,7 +65,7 @@
 
   &:before,
   &:after {
-    content: " "; // 1
+    content: ' '; // 1
     display: table; // 2
   }
 

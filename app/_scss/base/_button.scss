@@ -3,11 +3,11 @@
 // ==========================================================================
 
 %button {
+  @extend %font-open-sans-semibold;
   display: inline-block;
   padding: 0.5em 1em;
   margin-bottom: 0.25em; // for box-shadow
   text-transform: uppercase;
-  @extend %font-open-sans-semibold;
   border-radius: 0.33em;
   border: 0;
   cursor: pointer;

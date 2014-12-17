@@ -6,8 +6,8 @@ body,
 button,
 input {
   @extend %font-open-sans-regular;
-  color: $color-text--color;
   @include setType($base-line-multi);
+  color: $color-text--color;
 }
 
 // Remove text-shadow in selection highlight: h5bp.com/i
@@ -20,47 +20,55 @@ input {
 }
 
 // Headings
-h1, %h1,
-h2, %h2,
-h3, %h3,
-h4, %h4 {
+h1,
+%h1,
+h2,
+%h2,
+h3,
+%h3,
+h4,
+%h4 {
+  @extend %font-open-sans-semibold;
   clear: left;
   margin: 0;
   padding: 0;
-  @extend %font-open-sans-semibold;
   color: $color-headings--color;
 }
 
-h1, %h1 {
-  margin-bottom: emRhythm(2, $ms-up3);
+h1,
+%h1 {
   @include setType(10, $ms-up3);
+  margin-bottom: emRhythm(2, $ms-up3);
 
   @include breakpoint(mobile-portrait-to-mobile-landscape) {
     @include setType(7, $ms-up2);
   }
 }
 
-h2, %h2 {
-  margin-bottom: emRhythm(1, $ms-up2);
+h2,
+%h2 {
   @include setType(8, $ms-up2);
+  margin-bottom: emRhythm(1, $ms-up2);
 
   @include breakpoint(mobile-portrait-to-mobile-landscape) {
     @include setType(5, $ms-up1);
   }
 }
 
-h3, %h3 {
-  margin-bottom: emRhythm(1, $ms-up1);
+h3,
+%h3 {
   @include setType(6, $ms-up1);
+  margin-bottom: emRhythm(1, $ms-up1);
 
   @include breakpoint(mobile-portrait-to-mobile-landscape) {
     @include setType(4);
   }
 }
 
-h4, %h4 {
+h4,
+%h4 {
+  @include seType(4);
   margin-bottom: emRhythm(1);
-  @include setType(4);
 }
 
 p {
@@ -78,13 +86,15 @@ ol {
   margin-bottom: emRhythm($base-line-multi);
 }
 
-.list-unstyled {
+.list-unstyled,
+%list-unstyled {
   margin-left: 0;
   list-style: none;
 }
 
 .list-inline {
-  @extend .list-unstyled;
+  @extend %list-unstyled;
+
   > li {
     display: inline-block;
     vertical-align: middle;
@@ -104,7 +114,9 @@ pre {
 
 // No margins on nested elements
 li {
-  p, ul, ol {
+  p,
+  ul,
+  ol {
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -137,13 +149,13 @@ blockquote {
   text-shadow: 0 1px 0 $gray-darkest;
 
   &:before {
+    @extend %font-open-sans-semibold;
     content: '\201C';
     position: absolute;
     top: 25px;
     left: 25px;
     z-index: -1;
     font-size: 14em;
-    @extend %font-open-sans-semibold;
     color: #3c3c3c;
     text-shadow: none;
     line-height: 0.7;
@@ -156,8 +168,8 @@ blockquote {
   }
 
   cite {
-    color: $gray-lightest;
     @extend %font-open-sans-semibold;
+    color: $gray-lightest;
     font-style: normal;
 
     a {
@@ -179,12 +191,12 @@ pre {
   overflow: auto;
   max-width: 100%;
 
-  code {
-    padding: 0;
-  }
-
   @include breakpoint(mobile-portrait-to-mobile-landscape) {
     font-size: 75%;
+  }
+
+  code {
+    padding: 0;
   }
 }
 
@@ -197,7 +209,8 @@ code {
   hyphens: auto;
 }
 
-small {
+small,
+%small {
   font-size: 75%;
 }
 
@@ -209,15 +222,19 @@ table {
   width: 100%;
   margin-bottom: emRhythm($base-line-multi);
 
+  @include breakpoint(mobile-portrait-to-mobile-landscape) {
+    font-size: 75%;
+  }
+
   caption {
-    @extend small;
+    @extend %small;
     margin-bottom: 0.25em;
   }
 
   caption,
   th {
-    text-align: left;
     @extend %font-open-sans-semibold;
+    text-align: left;
   }
 
   td,
@@ -235,13 +252,10 @@ table {
   tbody {
 
     tr {
+
       &:nth-child(odd) {
         background-color: $white-darker;
       }
     }
-  }
-
-  @include breakpoint(mobile-portrait-to-mobile-landscape) {
-    font-size: 75%;
   }
 }

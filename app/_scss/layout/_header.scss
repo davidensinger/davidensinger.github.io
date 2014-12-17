@@ -29,9 +29,11 @@
   @include breakpoint(smaller-than-small-desktop) {
     width: 16%;
   }
+
   @include breakpoint(all-mobile) {
     width: 20%;
   }
+
   @include breakpoint(mobile-portrait-to-mobile-landscape) {
     width: 100px;
   }
@@ -100,13 +102,4 @@
   fill-rule: evenodd;
   transition: fill 0.2s;
   backface-visibility: hidden;
-}
-
-
-// -------------------------------------
-//  Secondary
-// -------------------------------------
-
-.site-header--secondary {
-
 }

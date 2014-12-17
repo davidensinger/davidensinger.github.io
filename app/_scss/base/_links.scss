@@ -3,8 +3,8 @@
 // ==========================================================================
 
 a {
-  color: $color-link--color;
   @extend %font-open-sans-semibold;
+  color: $color-link--color;
   text-decoration: none;
   transition: color 0.2s;
   backface-visibility: hidden;
