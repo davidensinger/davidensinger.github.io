@@ -89,6 +89,16 @@ module.exports = function (grunt) {
         '.jekyll'
       ]
     },
+    scsslint: {
+      options: {
+        bundleExec: true,
+        config: '.scss-lint.yml',
+        colorizeOutput: true
+      },
+      server: [
+        'test/fixtures/*.scss',
+      ]
+    },
     sass: {
       options: {
         bundleExec: true,
