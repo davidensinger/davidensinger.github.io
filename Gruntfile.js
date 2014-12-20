@@ -127,7 +127,7 @@ module.exports = function (grunt) {
       dist: {
         expand: true,
         cwd: '.tmp',
-        src: 'concat/css/*.css',
+        src: 'concat/css/styles.css',
         dest: '.tmp'
       },
       server: {
@@ -149,7 +149,7 @@ module.exports = function (grunt) {
     csscomb: {
       dist: {
         files: {
-          '.tmp/css/styles.css': '.tmp/css/styles.css'
+          '.tmp/concat/css/styles.css': '.tmp/concat/css/styles.css'
         }
       }
     },
