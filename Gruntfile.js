@@ -146,6 +146,13 @@ module.exports = function (grunt) {
         height : 800
       }
     },
+    csscomb: {
+      dist: {
+        files: {
+          '.tmp/css/styles.css': '.tmp/css/styles.css'
+        }
+      }
+    },
     jekyll: {
       options: {
         bundleExec: true,
@@ -404,6 +411,7 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concat',
     'autoprefixer:dist',
+    'csscomb',
     'cssmin',
     'uglify',
     'imagemin',
