@@ -4,7 +4,7 @@ GEM
     blankslate (2.1.2.4)
     celluloid (0.16.0)
       timers (~> 4.0.0)
-    classifier-reborn (2.0.2)
+    classifier-reborn (2.0.3)
       fast-stemmer (~> 1.0)
     coffee-script (2.3.0)
       coffee-script-source
@@ -15,7 +15,7 @@ GEM
     fast-stemmer (1.0.2)
     ffi (1.9.6)
     hitimes (1.2.2)
-    jekyll (2.5.2)
+    jekyll (2.5.3)
       classifier-reborn (~> 2.0)
       colorator (~> 0.1)
       jekyll-coffeescript (~> 1.0)
@@ -40,7 +40,7 @@ GEM
       listen (~> 2.7)
     kramdown (1.5.0)
     liquid (2.6.1)
-    listen (2.8.3)
+    listen (2.8.4)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -71,7 +71,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll (~> 2.5.2)
+  jekyll (~> 2.5.3)
   kramdown
   sass (~> 3.4.9)
   scss-lint (~> 0.31.0)
