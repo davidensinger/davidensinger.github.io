@@ -8,6 +8,7 @@
   "private": true,
   "devDependencies": {
     "loadCSS": "git://github.com/filamentgroup/loadCSS.git",
+    "OptimizedWebfontLoading": "git://github.com/bdadam/OptimizedWebfontLoading.git",
     "typesettings": "~2.2.0"
   }
 }

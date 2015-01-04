@@ -5,7 +5,6 @@
 //   sass: _scss
 //   javascript: js
 //   images: img
-//   fonts: fonts
 
 module.exports = function (grunt) {
   // Show elapsed time after tasks run
@@ -270,7 +269,6 @@ module.exports = function (grunt) {
             // Usemin moves CSS and javascript inside of Usemin blocks.
             // Copy moves asset files and directories.
             'img/**/*',
-            'fonts/**/*',
             // Like Jekyll, exclude files & folders prefixed with an underscore.
             '!**/_*{,/**}',
             // Explicitly add any files your site needs for distribution here.
@@ -293,6 +291,11 @@ module.exports = function (grunt) {
         files: {
           '<%= yeoman.app %>/_includes/loadCSS.js': '<%= yeoman.app %>/_bower_components/loadCSS/loadCSS.js'
         }
+      },
+      stageOptimizedWebfontLoading: {
+        files: {
+          '<%= yeoman.app %>/_includes/fontloader.js': '<%= yeoman.app %>/_bower_components/OptimizedWebfontLoading/build/fontloader.js'
+        }
       }
     },
     filerev: {
@@ -303,10 +306,9 @@ module.exports = function (grunt) {
         files: [{
           src: [
             '<%= yeoman.dist %>/js/**/*.js',
-            '<%= yeoman.dist %>/css/**/*.css',
+            '<%= yeoman.dist %>/css/styles.css',
             '<%= yeoman.dist %>/favicon*.png',
-            '<%= yeoman.dist %>/img/**/*.{gif,jpg,jpeg,png,svg}',
-            '<%= yeoman.dist %>/fonts/**/*.{woff,woff2}'
+            '<%= yeoman.dist %>/img/**/*.{gif,jpg,jpeg,png,svg}'
           ]
         }]
       }
@@ -390,6 +392,11 @@ module.exports = function (grunt) {
     ]);
   });
 
+  grunt.registerTask('stage', [
+    'copy:stageLoadCSS',
+    'copy:stageOptimizedWebfontLoading'
+  ]);
+
   grunt.registerTask('check', [
     'devUpdate',
     'clean:server',
@@ -405,7 +412,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean',
-    'copy:stageLoadCSS',
+    'stage',
     'jekyll:dist',
     'concurrent:dist',
     'useminPrepare',

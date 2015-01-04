@@ -85,6 +85,11 @@
       {% endfor %}
     {% endif %}
 
+    <script>
+      {% include fontloader.js %}
+      loadFont("optimizedWebFonts", "/css/optimizedWebFonts.woff.css", "/css/optimizedWebFonts.woff2.css");
+    </script>
+
     {% if site.environment == 'production' %}
       <style>{% include critical.css %}</style>
       <script>
