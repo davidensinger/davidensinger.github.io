@@ -4,6 +4,7 @@ layout: post
 title: 'Performant Websites with Jekyll, Grunt, GitHub Pages, and CloudFlare'
 description: 'Or how having the right tools for the job lends itself to building fast sites.'
 tags: ['Jekyll', 'Grunt', 'Webperf']
+image: 2015-01-15-google-pagespeed-insights-mobile.png
 suggested_tweet:
   hashtags: ['webperf', 'Jekyllrb', 'GruntJS']
   related: ['jekyllrb']
@@ -92,6 +93,17 @@ In and of itself, GitHub Pages is incredibly fast and reliable, as well as free!
 
 ### CloudFlare for Everything Else
 I host my DNS with CloudFlare, which opens up a whole world of server-side optimizations. I get my site served by a CDN, compression of my assets via gzip, the ability to set the TTL for static resources (the whole site, basically) for browser caching, and SSL (even though the connection from GitHub Pages to CloudFlare is unencrypted, but hey beggars can’t be choosers).
+
+## Results
+
+### WebPagetest
+<img src="/img/posts/2015-01-15-webpagetest.png" alt="Image of Webpagetest.org results for davidensinger.com"/>
+
+### Google PageSpeed Insights
+<img src="/img/posts/2015-01-15-google-pagespeed-insights-mobile.png" alt="Image of Google PageSpeed Insights results for davidensinger.com"/>
+
+### YSlow
+<img src="/img/posts/2015-01-15-yslow.png" alt="Image of YSlow results for davidensinger.com"/>
 
 ## Todo
 I still have work to do and the following is my shortlist of improvements to implement in these coming months:
