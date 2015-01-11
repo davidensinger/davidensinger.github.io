@@ -225,15 +225,31 @@ module.exports = function (grunt) {
         }
       }
     },
-    imagemin: {
-      dist: {
+    imageoptim: {
+      options: {
+        quitAfter: true
+      },
+      distLossless: {
         options: {
-          progressive: true
+          jpegMini: false,
+          imageAlpha: true
         },
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: '**/*.{gif,jpg,jpeg,png}',
+          src: '**/*.{gif,png}',
+          dest: '<%= yeoman.dist %>'
+        }]
+      },
+      distLossy: {
+        options: {
+          jpegMini: true,
+          imageAlpha: false
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.dist %>',
+          src: '**/*.{jpg,jpeg}',
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -414,6 +430,7 @@ module.exports = function (grunt) {
     'clean',
     'stage',
     'jekyll:dist',
+    'newer:imageoptim',
     'concurrent:dist',
     'useminPrepare',
     'concat',
@@ -421,7 +438,6 @@ module.exports = function (grunt) {
     'csscomb',
     'cssmin',
     'uglify',
-    'imagemin',
     'svgmin',
     'filerev',
     'usemin',
