@@ -1,1 +1,0 @@
-document.addEventListener("DOMContentLoaded",function(){function a(a){var b=document.getElementById("js-navigation--"+a);if(b){var c=b.getAttribute("href");return window.location.href=c,!1}}document.onkeydown=function(b){switch(b=b||window.event,b.which||b.keyCode){case 37:a("previous");break;case 39:a("next");break;default:return}b.preventDefault()}});
