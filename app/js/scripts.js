@@ -9,7 +9,7 @@ var keyboardNavigation = (function () {
       window.location.href = anchor;
       return false;
     }
-  }
+  };
 
   return {
     navigationElement: navigationElement
