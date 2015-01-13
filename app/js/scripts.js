@@ -24,7 +24,7 @@ document.onkeydown = function(e) {
       keyboardNavigation.navigationElement('previous');
       break;
     case 39: // right
-    keyboardNavigation.navigationElement('next');
+      keyboardNavigation.navigationElement('next');
       break;
     default: return;
   }
