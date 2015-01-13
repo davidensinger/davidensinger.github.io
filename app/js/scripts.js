@@ -1,21 +1,30 @@
-// Keyboard navigation
-function keyboardNavigation(ID) {
-  var element = document.getElementById('js-navigation--' + ID);
-  if (element) {
-    var anchor = element.getAttribute('href');
-    window.location.href = anchor;
-    return false;
+var keyboardNavigation = (function () {
+
+  var navigationElement = function (id) {
+    var element = document.getElementById('js-navigation--' + id);
+
+    if (element) {
+      var anchor = element.getAttribute('href');
+
+      window.location.href = anchor;
+      return false;
+    }
   }
-}
+
+  return {
+    navigationElement: navigationElement
+  };
+
+})();
 
 document.onkeydown = function(e) {
   e = e || window.event;
   switch(e.which || e.keyCode) {
     case 37: // left
-      keyboardNavigation('previous');
+      keyboardNavigation.navigationElement('previous');
       break;
     case 39: // right
-      keyboardNavigation('next');
+    keyboardNavigation.navigationElement('next');
       break;
     default: return;
   }
