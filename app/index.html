@@ -31,18 +31,18 @@ sitemap:
 {% endfor %}
 
 <nav class="paging-navigation clearfix" role="navigation">
+  {% if paginator.next_page %}
+  <div class="nav-previous">
+    <a id="js-navigation--previous" href="/page{{ paginator.next_page }}/" class="nav-previous--link">Older Posts</a>
+  </div>
+  {% endif %}
   {% if paginator.previous_page %}
-    <div class="nav-previous">
+    <div class="nav-next">
       {% if paginator.previous_page == 1 %}
-      <a id="js-navigation--previous" href="/" class="nav-previous--link">Newer Posts</a>
+      <a id="js-navigation--next" href="/" class="nav-next--link">Newer Posts</a>
       {% else %}
-      <a id="js-navigation--previous" href="/page{{ paginator.previous_page }}/" class="nav-previous--link">Newer Posts</a>
+      <a id="js-navigation--next" href="/page{{ paginator.previous_page }}/" class="nav-next--link">Newer Posts</a>
       {% endif %}
     </div>
-  {% endif %}
-  {% if paginator.next_page %}
-  <div class="nav-next">
-    <a id="js-navigation--next" href="/page{{ paginator.next_page }}/" class="nav-next--link">Older Posts</a>
-  </div>
   {% endif %}
 </nav>
