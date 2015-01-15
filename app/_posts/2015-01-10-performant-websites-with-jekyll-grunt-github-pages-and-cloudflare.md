@@ -10,7 +10,7 @@ suggested_tweet:
   related: ['jekyllrb']
 ---
 
-Over the past year I’ve been slowing improving the performance of this website and [Webworke.rs](http://webworke.rs).
+Over the past year I’ve been slowly improving the performance of this website and [Webworke.rs](http://webworke.rs).
 
 I’ve put a lot of work into my sites, but many of the performance improvements couldn’t have been made so easily without the great ecosystem of open source software and free services available to me. To say that I’m thankful for this is a gross understatement.
 
