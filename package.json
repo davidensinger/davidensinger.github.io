@@ -16,6 +16,7 @@
     "grunt-autoprefixer": "^2.1.0",
     "grunt-browser-sync": "^1.5.3",
     "grunt-build-control": "^0.2.2",
+    "grunt-casperjs": "^2.1.0",
     "grunt-concurrent": "^1.0.0",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-concat": "^0.5.0",

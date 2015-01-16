@@ -349,6 +349,9 @@ module.exports = function (grunt) {
         '<%= yeoman.app %>/js/**/*.js'
       ]
     },
+    casperjs: {
+      all:['tests/**/*.js']
+    },
     pagespeed: {
       options: {
         locale: 'en_GB',
@@ -419,6 +422,7 @@ module.exports = function (grunt) {
     'jekyll:check',
     'scsslint',
     'jshint',
+    'casperjs'
   ]);
 
   grunt.registerTask('perf', [
