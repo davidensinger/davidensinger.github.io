@@ -346,11 +346,12 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= yeoman.app %>/js/**/*.js'
+        '<%= yeoman.app %>/js/**/*.js',
+        'test/**/*.js'
       ]
     },
     casperjs: {
-      all:['tests/**/*.js']
+      all: ['test/tests.js']
     },
     pagespeed: {
       options: {
@@ -416,13 +417,19 @@ module.exports = function (grunt) {
     'copy:stageOptimizedWebfontLoading'
   ]);
 
+  grunt.registerTask('test', [
+    'clean:server',
+    'concurrent:server',
+    'browserSync:server',
+    'casperjs'
+  ]);
+
   grunt.registerTask('check', [
     'devUpdate',
     'clean:server',
     'jekyll:check',
     'scsslint',
     'jshint',
-    'casperjs'
   ]);
 
   grunt.registerTask('perf', [
