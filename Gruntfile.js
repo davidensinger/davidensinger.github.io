@@ -346,9 +346,9 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= yeoman.app %>/js/**/*.js',
-        'test/**/*.js'
-      ]
+        '<%= yeoman.app %>/js/**/*.js'
+      ],
+      test: ['test/*.js']
     },
     casperjs: {
       all: ['test/tests.js']
@@ -418,7 +418,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('test', [
-    'jshint',
+    'jshint:test',
     'clean:server',
     'concurrent:server',
     'browserSync:server',
