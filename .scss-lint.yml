@@ -1,4 +1,4 @@
-# For SCSS-Lint v0.31.0
+# For SCSS-Lint v0.34.0
 
 linters:
 
@@ -9,9 +9,13 @@ linters:
 
   BorderZero:
     enabled: true
+    convention: zero # or `none`
 
   ColorKeyword:
     enabled: true
+
+  ColorVariable:
+    enabled: false
 
   Comment:
     enabled: true
@@ -42,16 +46,20 @@ linters:
 
   HexLength:
     enabled: false
+    style: short # or 'long'
 
   HexNotation:
     enabled: true
-    style: lowercase
+    style: lowercase # or 'uppercase'
 
   HexValidation:
     enabled: true
 
   IdSelector:
     enabled: true
+
+  ImportantRule:
+    enabled: false
 
   ImportPath:
     enabled: true
@@ -60,18 +68,22 @@ linters:
 
   Indentation:
     enabled: true
+    allow_non_nested_indentation: false
     character: space
     width: 2
 
   LeadingZero:
     enabled: true
-    style: include_zero
+    style: include_zero # or exclude_zero
 
   MergeableSelector:
     enabled: false
+    force_nesting: true
 
   NameFormat:
     enabled: false
+    allow_leading_underscore: true
+    convention: hyphenated_lowercase # or 'BEM', or a regex pattern
 
   NestingDepth:
     enabled: true
@@ -80,8 +92,15 @@ linters:
   PlaceholderInExtend:
     enabled: true
 
+  PropertyCount:
+    enabled: false
+    include_nested: false
+    max_properties: 10
+
   PropertySortOrder:
     enabled: false
+    ignore_unspecified: false
+    separate_groups: false
 
   PropertySpelling:
     enabled: true
@@ -99,6 +118,7 @@ linters:
 
   SelectorFormat:
     enabled: false
+    convention: hyphenated_lowercase # or 'BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
 
   Shorthand:
     enabled: true
@@ -115,14 +135,14 @@ linters:
 
   SpaceAfterPropertyColon:
     enabled: true
-    style: one_space
+    style: one_space # or 'no_space', or 'at_least_one_space', or 'aligned'
 
   SpaceAfterPropertyName:
     enabled: true
 
   SpaceBeforeBrace:
     enabled: true
-    style: space
+    style: space # or 'new_line'
     allow_single_line_padding: true
 
   SpaceBetweenParens:
@@ -131,7 +151,7 @@ linters:
 
   StringQuotes:
     enabled: true
-    style: single_quotes
+    style: single_quotes # or double_quotes
 
   TrailingSemicolon:
     enabled: true
