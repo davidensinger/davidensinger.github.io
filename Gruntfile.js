@@ -184,6 +184,11 @@ module.exports = function (grunt) {
     usemin: {
       options: {
         assetsDirs: '<%= yeoman.dist %>',
+        blockReplacements: { // https://github.com/yeoman/grunt-usemin/issues/391
+          js: function (block){
+            return '<script async src="' + block.dest + '"><\/script>';
+          }
+        },
         patterns: {
           html: [
             [/<link[^\>]+href=['"]([^"']+)["']/gm, 'Update the link tags'],
