@@ -197,7 +197,7 @@ In the following example of an author profile component, we test if the author h
 <div class="c c-authorProfile">
   <h4 class="authorProfile-heading">${authorProfile.fullName}</h4>
   <c:if test="${authorHasPhoto}">
-    <img src="${authorProfile.photo}" alt="A photo of ${authorProfile.fullName}" class="authorProfile-photo" />
+    <img src="${authorProfile.photo}" alt="${authorProfile.fullName}" class="authorProfile-photo" />
   </c:if>
   <div class="authorProfile-biography">
     ${authorProfile.biography}
