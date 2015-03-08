@@ -11,7 +11,7 @@ suggested_tweet:
   related: ['jekyllrb', 'havvg']
 ---
 
-During my switch from **WordPress** to **Jekyll**, I decided to simplify the scope of my site. One of the changes I made was to remove my portfolio, as I’d like to put more of an emphasis on my writing than on my past projects. As a result, I culled many pages that were indexed by search engines. This meant that I needed a proper **sitemap.xml**, principally for use with Google’s [Webmaster Tools](www.google.com/webmasters/tools).
+During my switch from **WordPress** to **Jekyll**, I decided to simplify the scope of my site. One of the changes I made was to remove my portfolio, as I’d like to put more of an emphasis on my writing than on my past projects. As a result, I culled many pages that were indexed by search engines. This meant that I needed a proper **sitemap.xml**, principally for use with Google’s [Webmaster Tools](http://www.google.com/webmasters/tools).
 
 <div class="yellow-box">
   <p><strong>Please Note:</strong> I’ve since updated the configuration of my <strong>Sitemap.xml</strong>, which I’ve written about in <a href="http://davidensinger.com/2013/11/building-a-better-sitemap-xml-with-jekyll/">Building a Better Sitemap.xml with Jekyll</a>.</p>
