@@ -25,7 +25,7 @@ To use Reduce I added it to my site’s project with **Bundler** so that I may t
 
 I previously tried several **Jekyll** plugins to manage this, but didn’t like the delay between saving a file and then waiting for Jekyll to rebuild. Invariably, the bottleneck was the file compression, especially in regards to the minification of the HTML, which is perhaps due to the sheer quantity of files involved.
 
-The task I invoke to minify the assets is courtesy of [Emanuele Bardelli](http://www.pacbard.tk/), who added the HTML compression functionality to Reduce. See [his rake task](https://github.com/pacbard/blog/blob/master/_rake/minify.rake), which I’ve only superficially modified:
+The task I invoke to minify the assets is courtesy of Emanuele Bardelli, who added the HTML compression functionality to Reduce. See [his rake task](https://github.com/pacbard/blog/blob/master/_rake/minify.rake), which I’ve only superficially modified:
 
 {% highlight ruby %}
 desc "Minify _site/"
