@@ -3,6 +3,7 @@ layout: page
 title: About
 permalink: /about/
 page-class: page-about
+description: 'About David Ensinger, a Front End Developer from Columbus, OH'
 sitemap:
   priority: 0.7
   changefreq: 'monthly'

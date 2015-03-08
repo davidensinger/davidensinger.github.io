@@ -19,10 +19,14 @@
       <meta content="{{ site.title }}" name="twitter:title">
     {% endif %}
     <meta content="{{ site.title }}" property="og:site_name">
-    {% if page.description %}
+    {% if page.description and page.grouptype != "tag" %}
       <meta content="{{ page.description }}" name="description">
       <meta content="{{ page.description }}" property="og:description">
       <meta content="{{ page.description }}" name="twitter:description">
+    {% elsif page.grouptype == "tag" %}
+      <meta content="Posts Tagged “{{ page.tag }}” &ndash; {{ site.title }}" name="description">
+      <meta content="Posts Tagged “{{ page.tag }}” &ndash; {{ site.title }}" property="og:description">
+      <meta content="Posts Tagged “{{ page.tag }}” &ndash; {{ site.title }}" name="twitter:description">
     {% else %}
       <meta content="{{ site.description }}" name="description">
       <meta content="{{ site.description }}" property="og:description">
