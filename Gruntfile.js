@@ -223,11 +223,11 @@ module.exports = function (grunt) {
     // Usemin adds files to uglify
     uglify: {},
     // Usemin adds files to cssmin
+    // https://github.com/jakubpawlowicz/clean-css
     cssmin: {
-      dist: {
-        options: {
-          check: 'min'
-        }
+      options: {
+        check: 'min',
+        shorthandCompacting: false
       }
     },
     imageoptim: {
