@@ -33,5 +33,5 @@ document.onkeydown = function(e) {
   e.preventDefault();
 };
 
-// Event Tracking
+// Event tracking
 eventTracking.init();
