@@ -1,4 +1,4 @@
-/* global eventTracking */
+/* global errorTracking */
 
 var keyboardNavigation = (function () {
 
@@ -33,5 +33,5 @@ document.onkeydown = function(e) {
   e.preventDefault();
 };
 
-// Event tracking
-eventTracking.init();
+// Error tracking
+errorTracking.init();
