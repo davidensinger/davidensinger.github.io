@@ -15,9 +15,8 @@ var errorTracking = (function() {
       var errorLineNumber = ', Line: ' + (err.lineno || ie.errorLine);
       var errorColumnNumber = ', Column: ' + (err.colno || 'undefined'); // print undefined as a string if it doesn’t exist
       var userAgent = ', User Agent: ' + navigator.userAgent;
-      var platform = ', Platform: ' + navigator.platform;
 
-      ga('send', 'event', 'JavaScript Errors', errorMessage, errorFilename + errorLineNumber + errorColumnNumber + userAgent + platform, 0, true);
+      ga('send', 'event', 'JavaScript Errors', errorMessage, errorFilename + errorLineNumber + errorColumnNumber + userAgent, 0, true);
     });
   };
 
