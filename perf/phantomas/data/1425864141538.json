@@ -3,33 +3,33 @@
   "metrics": {
     "requests": {
       "values": [
-        6,
-        6,
-        6,
-        6,
-        6,
+        5,
+        5,
+        5,
+        5,
+        5,
         null
       ],
-      "sum": 30,
-      "min": 6,
-      "max": 6,
-      "median": 6,
-      "average": 6
+      "sum": 25,
+      "min": 5,
+      "max": 5,
+      "median": 5,
+      "average": 5
     },
     "gzipRequests": {
       "values": [
-        4,
-        4,
-        4,
-        4,
-        4,
+        3,
+        3,
+        3,
+        3,
+        3,
         null
       ],
-      "sum": 20,
-      "min": 4,
-      "max": 4,
-      "median": 4,
-      "average": 4
+      "sum": 15,
+      "min": 3,
+      "max": 3,
+      "median": 3,
+      "average": 3
     },
     "postRequests": {
       "values": [
@@ -78,78 +78,78 @@
     },
     "bodySize": {
       "values": [
-        75261,
-        75261,
-        76579,
-        76582,
-        84451,
+        53047,
+        53052,
+        54512,
+        61560,
+        63096,
         null
       ],
-      "sum": 388134,
-      "min": 75261,
-      "max": 84451,
-      "median": 76579,
-      "average": 77626.8
+      "sum": 285267,
+      "min": 53047,
+      "max": 63096,
+      "median": 54512,
+      "average": 57053.4
     },
     "contentLength": {
       "values": [
-        136890,
-        136890,
-        138211,
-        138211,
-        146080,
+        114630,
+        114630,
+        114630,
+        120302,
+        123138,
         null
       ],
-      "sum": 696282,
-      "min": 136890,
-      "max": 146080,
-      "median": 138211,
-      "average": 139256.4
+      "sum": 587330,
+      "min": 114630,
+      "max": 123138,
+      "median": 114630,
+      "average": 117466
     },
     "httpTrafficCompleted": {
       "values": [
-        4651,
-        4882,
-        4909,
-        4929,
-        4947,
+        448,
+        638,
+        6893,
+        6961,
+        7029,
         null
       ],
-      "sum": 24318,
-      "min": 4651,
-      "max": 4947,
-      "median": 4909,
-      "average": 4863.6
+      "sum": 21969,
+      "min": 448,
+      "max": 7029,
+      "median": 6893,
+      "average": 4393.8
     },
     "timeToFirstByte": {
       "values": [
-        172,
-        173,
-        176,
-        177,
-        182,
+        194,
+        234,
+        238,
+        246,
+        275,
         null
       ],
-      "sum": 880,
-      "min": 172,
-      "max": 182,
-      "median": 176,
-      "average": 176
+      "sum": 1187,
+      "min": 194,
+      "max": 275,
+      "median": 238,
+      "average": 237.4
     },
     "timeToLastByte": {
       "values": [
-        198,
-        199,
-        199,
-        200,
-        206,
+        230,
+        267,
+        271,
+        279,
+        305,
         null
       ],
-      "sum": 1002,
-      "min": 198,
-      "max": 206,
-      "median": 199,
-      "average": 200.4
+      "sum": 1352,
+      "min": 230,
+      "max": 305,
+      "median": 271,
+      "average": 270.4
     },
     "ajaxRequests": {
       "values": [
@@ -183,48 +183,48 @@
     },
     "htmlSize": {
       "values": [
-        32296,
-        32296,
-        32296,
-        32296,
-        32296,
+        32337,
+        32337,
+        32337,
+        32337,
+        32337,
         null
       ],
-      "sum": 161480,
-      "min": 32296,
-      "max": 32296,
-      "median": 32296,
-      "average": 32296
+      "sum": 161685,
+      "min": 32337,
+      "max": 32337,
+      "median": 32337,
+      "average": 32337
     },
     "cssCount": {
       "values": [
-        2,
-        2,
-        2,
-        2,
-        2,
+        1,
+        1,
+        1,
+        1,
+        1,
         null
       ],
-      "sum": 10,
-      "min": 2,
-      "max": 2,
-      "median": 2,
-      "average": 2
+      "sum": 5,
+      "min": 1,
+      "max": 1,
+      "median": 1,
+      "average": 1
     },
     "cssSize": {
       "values": [
-        40667,
-        40667,
-        41988,
-        41988,
-        49857,
+        18316,
+        18316,
+        18316,
+        18316,
+        18316,
         null
       ],
-      "sum": 215167,
-      "min": 40667,
-      "max": 49857,
-      "median": 41988,
-      "average": 43033.4
+      "sum": 91580,
+      "min": 18316,
+      "max": 18316,
+      "median": 18316,
+      "average": 18316
     },
     "jsCount": {
       "values": [
@@ -243,18 +243,18 @@
     },
     "jsSize": {
       "values": [
-        1421,
-        1421,
-        1421,
-        1421,
-        1421,
+        1471,
+        1471,
+        1471,
+        7143,
+        9979,
         null
       ],
-      "sum": 7105,
-      "min": 1421,
-      "max": 1421,
-      "median": 1421,
-      "average": 1421
+      "sum": 21535,
+      "min": 1471,
+      "max": 9979,
+      "median": 1471,
+      "average": 4307
     },
     "jsonCount": {
       "values": [
@@ -453,18 +453,18 @@
     },
     "cacheMisses": {
       "values": [
-        4,
-        4,
-        4,
-        4,
-        4,
+        3,
+        3,
+        3,
+        3,
+        3,
         null
       ],
-      "sum": 20,
-      "min": 4,
-      "max": 4,
-      "median": 4,
-      "average": 4
+      "sum": 15,
+      "min": 3,
+      "max": 3,
+      "median": 3,
+      "average": 3
     },
     "cachePasses": {
       "values": [
@@ -528,18 +528,18 @@
     },
     "oldCachingHeaders": {
       "values": [
-        6,
-        6,
-        6,
-        6,
-        6,
+        5,
+        5,
+        5,
+        5,
+        5,
         null
       ],
-      "sum": 30,
-      "min": 6,
-      "max": 6,
-      "median": 6,
-      "average": 6
+      "sum": 25,
+      "min": 5,
+      "max": 5,
+      "median": 5,
+      "average": 5
     },
     "consoleMessages": {
       "values": [
@@ -603,18 +603,18 @@
     },
     "documentCookiesLength": {
       "values": [
-        37,
-        37,
         38,
         38,
         38,
+        38,
+        39,
         null
       ],
-      "sum": 188,
-      "min": 37,
-      "max": 38,
+      "sum": 191,
+      "min": 38,
+      "max": 39,
       "median": 38,
-      "average": 37.6
+      "average": 38.2
     },
     "documentCookiesCount": {
       "values": [
@@ -633,18 +633,18 @@
     },
     "documentHeight": {
       "values": [
-        2574,
-        2574,
-        2574,
-        2574,
-        2574,
+        2542,
+        2542,
+        2542,
+        2542,
+        2542,
         null
       ],
-      "sum": 12870,
-      "min": 2574,
-      "max": 2574,
-      "median": 2574,
-      "average": 2574
+      "sum": 12710,
+      "min": 2542,
+      "max": 2542,
+      "median": 2542,
+      "average": 2542
     },
     "commentsSize": {
       "values": [
@@ -963,33 +963,33 @@
     },
     "maxRequestsPerDomain": {
       "values": [
-        5,
-        5,
-        5,
-        5,
-        5,
+        4,
+        4,
+        4,
+        4,
+        4,
         null
       ],
-      "sum": 25,
-      "min": 5,
-      "max": 5,
-      "median": 5,
-      "average": 5
+      "sum": 20,
+      "min": 4,
+      "max": 4,
+      "median": 4,
+      "average": 4
     },
     "medianRequestsPerDomain": {
       "values": [
-        3,
-        3,
-        3,
-        3,
-        3,
+        2.5,
+        2.5,
+        2.5,
+        2.5,
+        2.5,
         null
       ],
-      "sum": 15,
-      "min": 3,
-      "max": 3,
-      "median": 3,
-      "average": 3
+      "sum": 12.5,
+      "min": 2.5,
+      "max": 2.5,
+      "median": 2.5,
+      "average": 2.5
     },
     "eventsBound": {
       "values": [
@@ -1038,93 +1038,93 @@
     },
     "headersCount": {
       "values": [
-        115,
-        115,
-        115,
-        115,
-        115,
+        99,
+        99,
+        99,
+        99,
+        99,
         null
       ],
-      "sum": 575,
-      "min": 115,
-      "max": 115,
-      "median": 115,
-      "average": 115
+      "sum": 495,
+      "min": 99,
+      "max": 99,
+      "median": 99,
+      "average": 99
     },
     "headersSentCount": {
       "values": [
-        17,
-        17,
-        17,
-        17,
-        17,
+        14,
+        14,
+        14,
+        14,
+        14,
         null
       ],
-      "sum": 85,
-      "min": 17,
-      "max": 17,
-      "median": 17,
-      "average": 17
+      "sum": 70,
+      "min": 14,
+      "max": 14,
+      "median": 14,
+      "average": 14
     },
     "headersRecvCount": {
       "values": [
-        98,
-        98,
-        98,
-        98,
-        98,
+        85,
+        85,
+        85,
+        85,
+        85,
         null
       ],
-      "sum": 490,
-      "min": 98,
-      "max": 98,
-      "median": 98,
-      "average": 98
+      "sum": 425,
+      "min": 85,
+      "max": 85,
+      "median": 85,
+      "average": 85
     },
     "headersSize": {
       "values": [
-        3643,
-        3643,
-        3646,
-        3651,
-        3654,
+        3166,
+        3167,
+        3172,
+        3175,
+        3182,
         null
       ],
-      "sum": 18237,
-      "min": 3643,
-      "max": 3654,
-      "median": 3646,
-      "average": 3647.4
+      "sum": 15862,
+      "min": 3166,
+      "max": 3182,
+      "median": 3172,
+      "average": 3172.4
     },
     "headersSentSize": {
       "values": [
-        687,
-        687,
-        687,
-        687,
-        687,
+        579,
+        579,
+        579,
+        579,
+        579,
         null
       ],
-      "sum": 3435,
-      "min": 687,
-      "max": 687,
-      "median": 687,
-      "average": 687
+      "sum": 2895,
+      "min": 579,
+      "max": 579,
+      "median": 579,
+      "average": 579
     },
     "headersRecvSize": {
       "values": [
-        2956,
-        2956,
-        2959,
-        2964,
-        2967,
+        2587,
+        2588,
+        2593,
+        2596,
+        2603,
         null
       ],
-      "sum": 14802,
-      "min": 2956,
-      "max": 2967,
-      "median": 2959,
-      "average": 2960.4
+      "sum": 12967,
+      "min": 2587,
+      "max": 2603,
+      "median": 2593,
+      "average": 2593.4
     },
     "headersBiggerThanContent": {
       "values": [
@@ -1293,18 +1293,18 @@
     },
     "assetsWithCookies": {
       "values": [
-        4,
-        4,
-        4,
-        4,
-        4,
+        3,
+        3,
+        3,
+        3,
+        3,
         null
       ],
-      "sum": 20,
-      "min": 4,
-      "max": 4,
-      "median": 4,
-      "average": 4
+      "sum": 15,
+      "min": 3,
+      "max": 3,
+      "median": 3,
+      "average": 3
     },
     "smallImages": {
       "values": [
@@ -1338,138 +1338,138 @@
     },
     "timeToFirstCss": {
       "values": [
-        678,
-        838,
-        875,
-        880,
-        909,
+        436,
+        664,
+        6920,
+        7010,
+        7050,
         null
       ],
-      "sum": 4180,
-      "min": 678,
-      "max": 909,
-      "median": 875,
-      "average": 836
+      "sum": 22080,
+      "min": 436,
+      "max": 7050,
+      "median": 6920,
+      "average": 4416
     },
     "timeToFirstJs": {
       "values": [
-        272,
-        272,
+        276,
         293,
-        348,
-        362,
+        303,
+        312,
+        339,
         null
       ],
-      "sum": 1547,
-      "min": 272,
-      "max": 362,
-      "median": 293,
-      "average": 309.4
+      "sum": 1523,
+      "min": 276,
+      "max": 339,
+      "median": 303,
+      "average": 304.6
     },
     "timeToFirstImage": {
       "values": [
-        674,
-        675,
-        835,
-        4634,
-        4923,
+        397,
+        475,
+        574,
+        594,
+        622,
         null
       ],
-      "sum": 11741,
-      "min": 674,
-      "max": 4923,
-      "median": 835,
-      "average": 2348.2
+      "sum": 2662,
+      "min": 397,
+      "max": 622,
+      "median": 574,
+      "average": 532.4
     },
     "domInteractive": {
       "values": [
-        277,
-        277,
-        299,
-        354,
-        367,
+        238,
+        273,
+        278,
+        284,
+        312,
         null
       ],
-      "sum": 1574,
-      "min": 277,
-      "max": 367,
-      "median": 299,
-      "average": 314.8
+      "sum": 1385,
+      "min": 238,
+      "max": 312,
+      "median": 278,
+      "average": 277
     },
     "domContentLoaded": {
       "values": [
-        277,
-        277,
-        299,
-        355,
-        367,
+        238,
+        273,
+        278,
+        284,
+        313,
         null
       ],
-      "sum": 1575,
-      "min": 277,
-      "max": 367,
-      "median": 299,
-      "average": 315
+      "sum": 1386,
+      "min": 238,
+      "max": 313,
+      "median": 278,
+      "average": 277.2
     },
     "domContentLoadedEnd": {
       "values": [
-        278,
-        279,
-        301,
-        356,
-        368,
+        242,
+        277,
+        281,
+        287,
+        316,
         null
       ],
-      "sum": 1582,
-      "min": 278,
-      "max": 368,
-      "median": 301,
-      "average": 316.4
+      "sum": 1403,
+      "min": 242,
+      "max": 316,
+      "median": 281,
+      "average": 280.6
     },
     "domComplete": {
       "values": [
-        4676,
-        4905,
-        4931,
-        4955,
-        4971,
+        683,
+        708,
+        6939,
+        7031,
+        7065,
         null
       ],
-      "sum": 24438,
-      "min": 4676,
-      "max": 4971,
-      "median": 4931,
-      "average": 4887.6
+      "sum": 22426,
+      "min": 683,
+      "max": 7065,
+      "median": 6939,
+      "average": 4485.2
     },
     "timeBackend": {
       "values": [
         3,
         3,
         3,
-        3,
-        4,
+        26,
+        28,
         null
       ],
-      "sum": 16,
+      "sum": 63,
       "min": 3,
-      "max": 4,
+      "max": 28,
       "median": 3,
-      "average": 3.2
+      "average": 12.6
     },
     "timeFrontend": {
       "values": [
-        96,
-        97,
+        72,
+        74,
         97,
         97,
         97,
         null
       ],
-      "sum": 484,
-      "min": 96,
+      "sum": 437,
+      "min": 72,
       "max": 97,
       "median": 97,
-      "average": 96.8
+      "average": 87.4
     },
     "blockedRequests": {
       "values": [
@@ -1533,18 +1533,18 @@
     },
     "bodyHTMLSize": {
       "values": [
-        20376,
-        20376,
-        20376,
-        20376,
-        20376,
+        20385,
+        20385,
+        20385,
+        20385,
+        20385,
         null
       ],
-      "sum": 101880,
-      "min": 20376,
-      "max": 20376,
-      "median": 20376,
-      "average": 20376
+      "sum": 101925,
+      "min": 20385,
+      "max": 20385,
+      "median": 20385,
+      "average": 20385
     },
     "iframesCount": {
       "values": [
@@ -1593,116 +1593,112 @@
     },
     "fastestResponse": {
       "values": [
-        25,
-        39,
-        77,
-        97,
-        167,
+        28,
+        38,
+        44,
+        51,
+        57,
         null
       ],
-      "sum": 405,
-      "min": 25,
-      "max": 167,
-      "median": 77,
-      "average": 81
+      "sum": 218,
+      "min": 28,
+      "max": 57,
+      "median": 44,
+      "average": 43.6
     },
     "slowestResponse": {
       "values": [
-        4022,
-        4035,
-        4045,
-        4436,
-        4723,
+        271,
+        305,
+        306,
+        6325,
+        6387,
         null
       ],
-      "sum": 21261,
-      "min": 4022,
-      "max": 4723,
-      "median": 4045,
-      "average": 4252.2
+      "sum": 13594,
+      "min": 271,
+      "max": 6387,
+      "median": 306,
+      "average": 2718.8
     },
     "smallestLatency": {
       "values": [
-        24,
-        39,
-        77,
-        96,
-        109,
+        27,
+        37,
+        44,
+        50,
+        56,
         null
       ],
-      "sum": 345,
-      "min": 24,
-      "max": 109,
-      "median": 77,
-      "average": 69
+      "sum": 214,
+      "min": 27,
+      "max": 56,
+      "median": 44,
+      "average": 42.8
     },
     "biggestLatency": {
       "values": [
-        192,
-        374,
-        4022,
-        4035,
-        4045,
+        234,
+        238,
+        275,
+        6325,
+        6386,
         null
       ],
-      "sum": 12668,
-      "min": 192,
-      "max": 4045,
-      "median": 4022,
-      "average": 2533.6
+      "sum": 13458,
+      "min": 234,
+      "max": 6386,
+      "median": 275,
+      "average": 2691.6
     },
     "medianResponse": {
       "values": [
-        346,
-        427,
-        551,
-        566.5,
-        570.5,
+        125,
+        187,
+        228,
+        279,
+        366,
         null
       ],
-      "sum": 2461,
-      "min": 346,
-      "max": 570.5,
-      "median": 551,
-      "average": 492.2
+      "sum": 1185,
+      "min": 125,
+      "max": 366,
+      "median": 228,
+      "average": 237
     },
     "medianLatency": {
       "values": [
-        126,
-        148.5,
-        173,
-        183,
-        183.5,
+        50,
+        124,
+        138,
+        160,
+        182,
         null
       ],
-      "sum": 814,
-      "min": 126,
-      "max": 183.5,
-      "median": 173,
-      "average": 162.8
+      "sum": 654,
+      "min": 50,
+      "max": 182,
+      "median": 138,
+      "average": 130.8
     }
   },
   "offenders": {
     "gzipRequests": [
-      "http://davidensinger.com/ (gzip: 31.54 kB / uncompressed: 31.54 kB)",
+      "http://davidensinger.com/ (gzip: 31.58 kB / uncompressed: 31.58 kB)",
       "http://davidensinger.com/js/scripts.4926.js (gzip: 0.43 kB / uncompressed: 0.43 kB)",
-      "http://davidensinger.com/css/optimizedWebFonts.woff.css (gzip: 22.63 kB / uncompressed: 22.63 kB)",
-      "http://davidensinger.com/css/styles.a36d.css (gzip: 18.37 kB / uncompressed: 18.37 kB)",
-      "http://davidensinger.com/css/optimizedWebFonts.woff.css (gzip: 30.32 kB / uncompressed: 30.32 kB)",
-      "http://davidensinger.com/css/optimizedWebFonts.woff.css (gzip: 21.34 kB / uncompressed: 21.34 kB)"
+      "http://davidensinger.com/css/styles.8b36.css (gzip: 17.89 kB / uncompressed: 17.89 kB)"
     ],
     "htmlCount": [
-      "http://davidensinger.com/ (31.54 kB)"
+      "http://davidensinger.com/ (31.58 kB)"
     ],
     "cssCount": [
-      "http://davidensinger.com/css/optimizedWebFonts.woff.css (22.63 kB)",
-      "http://davidensinger.com/css/styles.a36d.css (18.37 kB)",
-      "http://davidensinger.com/css/optimizedWebFonts.woff.css (30.32 kB)",
-      "http://davidensinger.com/css/optimizedWebFonts.woff.css (21.34 kB)"
+      "http://davidensinger.com/css/styles.8b36.css (17.89 kB)"
     ],
     "jsCount": [
       "http://davidensinger.com/js/scripts.4926.js (0.43 kB)",
-      "http://www.google-analytics.com/analytics.js (0.96 kB)"
+      "http://www.google-analytics.com/analytics.js (1.01 kB)",
+      "http://www.google-analytics.com/analytics.js (6.55 kB)",
+      "http://www.google-analytics.com/analytics.js (9.32 kB)"
     ],
     "imageCount": [
       "http://davidensinger.com/img/david-ensinger.2b8e.jpg (61.04 kB)"
@@ -1714,21 +1710,20 @@
     "cacheMisses": [
       "http://davidensinger.com/js/scripts.4926.js",
       "http://davidensinger.com/img/david-ensinger.2b8e.jpg",
-      "http://davidensinger.com/css/optimizedWebFonts.woff.css",
-      "http://davidensinger.com/css/styles.a36d.css"
+      "http://davidensinger.com/css/styles.8b36.css"
     ],
     "cachingTooShort": [
       "http://www.google-analytics.com/analytics.js cached for 7200 s"
     ],
     "oldCachingHeaders": [
-      "http://davidensinger.com/ - Expires: Thu, 15 Jan 2015 13:57:19 GMT",
-      "http://davidensinger.com/js/scripts.4926.js - Expires: Fri, 15 Jan 2016 13:47:23 GMT",
-      "http://www.google-analytics.com/analytics.js - Expires: Thu, 15 Jan 2015 15:08:46 GMT",
-      "http://davidensinger.com/img/david-ensinger.2b8e.jpg - Expires: Fri, 15 Jan 2016 13:47:23 GMT",
-      "http://davidensinger.com/css/optimizedWebFonts.woff.css - Expires: Fri, 15 Jan 2016 13:47:23 GMT",
-      "http://davidensinger.com/css/styles.a36d.css - Expires: Fri, 15 Jan 2016 13:47:24 GMT",
-      "http://davidensinger.com/css/styles.a36d.css - Expires: Fri, 15 Jan 2016 13:47:28 GMT",
-      "http://davidensinger.com/css/styles.a36d.css - Expires: Fri, 15 Jan 2016 13:47:27 GMT"
+      "http://davidensinger.com/ - Expires: Sun, 08 Mar 2015 19:58:26 GMT",
+      "http://davidensinger.com/js/scripts.4926.js - Expires: Tue, 08 Mar 2016 01:22:24 GMT",
+      "http://www.google-analytics.com/analytics.js - Expires: Mon, 09 Mar 2015 02:16:37 GMT",
+      "http://davidensinger.com/img/david-ensinger.2b8e.jpg - Expires: Tue, 08 Mar 2016 01:22:24 GMT",
+      "http://davidensinger.com/css/styles.8b36.css - Expires: Tue, 08 Mar 2016 01:22:25 GMT",
+      "http://davidensinger.com/css/styles.8b36.css - Expires: Tue, 08 Mar 2016 01:22:24 GMT",
+      "http://davidensinger.com/css/styles.8b36.css - Expires: Tue, 08 Mar 2016 01:22:31 GMT",
+      "http://davidensinger.com/ - Expires: Sun, 08 Mar 2015 22:00:37 GMT"
     ],
     "domainsWithCookies": [
       "davidensinger.com: 1 cookie(s)"
@@ -1752,7 +1747,7 @@
       "tag name \"script\" (in #document): 3 queries"
     ],
     "domains": [
-      "davidensinger.com: 5 request(s)",
+      "davidensinger.com: 4 request(s)",
       "www.google-analytics.com: 1 request(s)"
     ],
     "globalVariables": [
@@ -1765,7 +1760,8 @@
       "gaGlobal"
     ],
     "headersBiggerThanContent": [
-      "http://davidensinger.com/js/scripts.4926.js (body: 0.43 kB / headers: 0.51 kB)"
+      "http://davidensinger.com/js/scripts.4926.js (body: 0.43 kB / headers: 0.53 kB)",
+      "http://davidensinger.com/js/scripts.4926.js (body: 0.43 kB / headers: 0.54 kB)"
     ],
     "localStorageEntries": [
       "font-optimizedWebFontsurl",
@@ -1779,35 +1775,35 @@
     "assetsWithCookies": [
       "http://davidensinger.com/js/scripts.4926.js (JS)",
       "http://davidensinger.com/img/david-ensinger.2b8e.jpg (IMAGE)",
-      "http://davidensinger.com/css/optimizedWebFonts.woff.css (CSS)",
-      "http://davidensinger.com/css/styles.a36d.css (CSS)"
+      "http://davidensinger.com/css/styles.8b36.css (CSS)"
     ],
     "timeToFirstCss": [
-      "http://davidensinger.com/css/optimizedWebFonts.woff.css received in 875 ms",
-      "http://davidensinger.com/css/optimizedWebFonts.woff.css received in 838 ms",
-      "http://davidensinger.com/css/optimizedWebFonts.woff.css received in 909 ms",
-      "http://davidensinger.com/css/optimizedWebFonts.woff.css received in 880 ms",
-      "http://davidensinger.com/css/optimizedWebFonts.woff.css received in 678 ms"
+      "http://davidensinger.com/css/styles.8b36.css received in 7010 ms",
+      "http://davidensinger.com/css/styles.8b36.css received in 664 ms",
+      "http://davidensinger.com/css/styles.8b36.css received in 7050 ms",
+      "http://davidensinger.com/css/styles.8b36.css received in 436 ms",
+      "http://davidensinger.com/css/styles.8b36.css received in 6920 ms"
     ],
     "timeToFirstJs": [
-      "http://davidensinger.com/js/scripts.4926.js received in 362 ms",
-      "http://davidensinger.com/js/scripts.4926.js received in 272 ms",
+      "http://davidensinger.com/js/scripts.4926.js received in 303 ms",
+      "http://davidensinger.com/js/scripts.4926.js received in 339 ms",
+      "http://davidensinger.com/js/scripts.4926.js received in 312 ms",
       "http://davidensinger.com/js/scripts.4926.js received in 293 ms",
-      "http://davidensinger.com/js/scripts.4926.js received in 348 ms"
+      "http://davidensinger.com/js/scripts.4926.js received in 276 ms"
     ],
     "timeToFirstImage": [
-      "http://davidensinger.com/img/david-ensinger.2b8e.jpg received in 835 ms",
-      "http://davidensinger.com/img/david-ensinger.2b8e.jpg received in 675 ms",
-      "http://davidensinger.com/img/david-ensinger.2b8e.jpg received in 674 ms",
-      "http://davidensinger.com/img/david-ensinger.2b8e.jpg received in 4923 ms",
-      "http://davidensinger.com/img/david-ensinger.2b8e.jpg received in 4634 ms"
+      "http://davidensinger.com/img/david-ensinger.2b8e.jpg received in 622 ms",
+      "http://davidensinger.com/img/david-ensinger.2b8e.jpg received in 475 ms",
+      "http://davidensinger.com/img/david-ensinger.2b8e.jpg received in 574 ms",
+      "http://davidensinger.com/img/david-ensinger.2b8e.jpg received in 397 ms",
+      "http://davidensinger.com/img/david-ensinger.2b8e.jpg received in 594 ms"
     ],
     "blockedRequests": [
-      "http://www.google-analytics.com/r/collect?v=1&_v=j31&a=446749771&t=pageview&_s=1&dl=http%3A%2F%2Fdavidensinger.com%2F&ul=en-us&de=UTF-8&dt=Development%2C%20design%2C%20and%20more%20by%20%40DavidEnsinger&sd=32-bit&sr=1440x900&vp=1280x1024&je=0&_u=MEAAAEQAI~&jid=622152750&cid=49014695.1421329645&tid=UA-26697016-1&_r=1&z=655894560",
-      "http://www.google-analytics.com/r/collect?v=1&_v=j31&a=134545432&t=pageview&_s=1&dl=http%3A%2F%2Fdavidensinger.com%2F&ul=en-us&de=UTF-8&dt=Development%2C%20design%2C%20and%20more%20by%20%40DavidEnsinger&sd=32-bit&sr=1440x900&vp=1280x1024&je=0&_u=MEAAAEQAI~&jid=1129924859&cid=987481879.1421329645&tid=UA-26697016-1&_r=1&z=1318327782",
-      "http://www.google-analytics.com/r/collect?v=1&_v=j31&a=1315984033&t=pageview&_s=1&dl=http%3A%2F%2Fdavidensinger.com%2F&ul=en-us&de=UTF-8&dt=Development%2C%20design%2C%20and%20more%20by%20%40DavidEnsinger&sd=32-bit&sr=1440x900&vp=1280x1024&je=0&_u=MEAAAEQAI~&jid=268550308&cid=921556062.1421329645&tid=UA-26697016-1&_r=1&z=60058736",
-      "http://www.google-analytics.com/r/collect?v=1&_v=j31&a=1653674672&t=pageview&_s=1&dl=http%3A%2F%2Fdavidensinger.com%2F&ul=en-us&de=UTF-8&dt=Development%2C%20design%2C%20and%20more%20by%20%40DavidEnsinger&sd=32-bit&sr=1440x900&vp=1280x1024&je=0&_u=MEAAAEQAI~&jid=2130083941&cid=40882946.1421329645&tid=UA-26697016-1&_r=1&z=2027071079",
-      "http://www.google-analytics.com/r/collect?v=1&_v=j31&a=81866414&t=pageview&_s=1&dl=http%3A%2F%2Fdavidensinger.com%2F&ul=en-us&de=UTF-8&dt=Development%2C%20design%2C%20and%20more%20by%20%40DavidEnsinger&sd=32-bit&sr=1440x900&vp=1280x1024&je=0&_u=MEAAAEQAI~&jid=963663023&cid=141391071.1421329649&tid=UA-26697016-1&_r=1&z=1655936630"
+      "http://www.google-analytics.com/r/collect?v=1&_v=j33&a=310259922&t=pageview&_s=1&dl=http%3A%2F%2Fdavidensinger.com%2F&ul=en-us&de=UTF-8&dt=Development%2C%20design%2C%20and%20more%20by%20%40DavidEnsinger&sd=32-bit&sr=2560x1440&vp=1280x1024&je=0&_u=AEAAAEQAI~&jid=1858558636&cid=479718616.1425864145&tid=UA-26697016-1&_r=1&z=1070702668",
+      "http://www.google-analytics.com/r/collect?v=1&_v=j33&a=745881429&t=pageview&_s=1&dl=http%3A%2F%2Fdavidensinger.com%2F&ul=en-us&de=UTF-8&dt=Development%2C%20design%2C%20and%20more%20by%20%40DavidEnsinger&sd=32-bit&sr=2560x1440&vp=1280x1024&je=0&_u=AEAAAEQAI~&jid=773097028&cid=557736436.1425864145&tid=UA-26697016-1&_r=1&z=260331893",
+      "http://www.google-analytics.com/r/collect?v=1&_v=j33&a=334201753&t=pageview&_s=1&dl=http%3A%2F%2Fdavidensinger.com%2F&ul=en-us&de=UTF-8&dt=Development%2C%20design%2C%20and%20more%20by%20%40DavidEnsinger&sd=32-bit&sr=2560x1440&vp=1280x1024&je=0&_u=AEAAAEQAI~&jid=1920553717&cid=1305097001.1425864145&tid=UA-26697016-1&_r=1&z=450455747",
+      "http://www.google-analytics.com/r/collect?v=1&_v=j33&a=717469768&t=pageview&_s=1&dl=http%3A%2F%2Fdavidensinger.com%2F&ul=en-us&de=UTF-8&dt=Development%2C%20design%2C%20and%20more%20by%20%40DavidEnsinger&sd=32-bit&sr=2560x1440&vp=1280x1024&je=0&_u=AEAAAEQAI~&jid=1426321718&cid=805221140.1425864145&tid=UA-26697016-1&_r=1&z=718172953",
+      "http://www.google-analytics.com/r/collect?v=1&_v=j33&a=1290400157&t=pageview&_s=1&dl=http%3A%2F%2Fdavidensinger.com%2F&ul=en-us&de=UTF-8&dt=Development%2C%20design%2C%20and%20more%20by%20%40DavidEnsinger&sd=32-bit&sr=2560x1440&vp=1280x1024&je=0&_u=AEAAAEQAI~&jid=562077090&cid=392192558.1425864145&tid=UA-26697016-1&_r=1&z=1588958733"
     ],
     "smallestResponse": [
       "http://davidensinger.com/js/scripts.4926.js (0.43 kB)"
@@ -1816,32 +1812,32 @@
       "http://davidensinger.com/img/david-ensinger.2b8e.jpg (61.04 kB)"
     ],
     "fastestResponse": [
-      "http://davidensinger.com/js/scripts.4926.js (167 ms)",
-      "http://davidensinger.com/js/scripts.4926.js (77 ms)",
-      "http://davidensinger.com/js/scripts.4926.js (97 ms)",
-      "http://davidensinger.com/css/styles.a36d.css (39 ms)",
-      "http://davidensinger.com/css/styles.a36d.css (25 ms)"
+      "http://davidensinger.com/js/scripts.4926.js (38 ms)",
+      "http://davidensinger.com/js/scripts.4926.js (44 ms)",
+      "http://davidensinger.com/css/styles.8b36.css (51 ms)",
+      "http://davidensinger.com/js/scripts.4926.js (28 ms)",
+      "http://davidensinger.com/js/scripts.4926.js (57 ms)"
     ],
     "slowestResponse": [
-      "http://davidensinger.com/css/styles.a36d.css (4035 ms)",
-      "http://davidensinger.com/css/styles.a36d.css (4045 ms)",
-      "http://davidensinger.com/css/styles.a36d.css (4022 ms)",
-      "http://davidensinger.com/img/david-ensinger.2b8e.jpg (4723 ms)",
-      "http://www.google-analytics.com/analytics.js (4436 ms)"
+      "http://davidensinger.com/css/styles.8b36.css (6387 ms)",
+      "http://davidensinger.com/ (305 ms)",
+      "http://davidensinger.com/img/david-ensinger.2b8e.jpg (306 ms)",
+      "http://davidensinger.com/ (271 ms)",
+      "http://davidensinger.com/css/styles.8b36.css (6325 ms)"
     ],
     "smallestLatency": [
-      "http://davidensinger.com/css/optimizedWebFonts.woff.css (109 ms)",
-      "http://davidensinger.com/js/scripts.4926.js (77 ms)",
-      "http://davidensinger.com/js/scripts.4926.js (96 ms)",
-      "http://davidensinger.com/css/styles.a36d.css (39 ms)",
-      "http://davidensinger.com/css/styles.a36d.css (24 ms)"
+      "http://davidensinger.com/js/scripts.4926.js (37 ms)",
+      "http://davidensinger.com/js/scripts.4926.js (44 ms)",
+      "http://davidensinger.com/css/styles.8b36.css (50 ms)",
+      "http://davidensinger.com/js/scripts.4926.js (27 ms)",
+      "http://davidensinger.com/js/scripts.4926.js (56 ms)"
     ],
     "biggestLatency": [
-      "http://davidensinger.com/css/styles.a36d.css (4035 ms)",
-      "http://davidensinger.com/css/styles.a36d.css (4045 ms)",
-      "http://davidensinger.com/css/styles.a36d.css (4022 ms)",
-      "http://www.google-analytics.com/analytics.js (192 ms)",
-      "http://www.google-analytics.com/analytics.js (374 ms)"
+      "http://davidensinger.com/css/styles.8b36.css (6386 ms)",
+      "http://davidensinger.com/ (275 ms)",
+      "http://davidensinger.com/ (234 ms)",
+      "http://davidensinger.com/ (238 ms)",
+      "http://davidensinger.com/css/styles.8b36.css (6325 ms)"
     ]
   }
 }
