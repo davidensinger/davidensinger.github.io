@@ -1,4 +1,4 @@
-/* global errorTracking */
+/* global breakpointsTracking, errorTracking */
 
 var keyboardNavigation = (function () {
 
@@ -32,6 +32,9 @@ document.onkeydown = function(e) {
   }
   e.preventDefault();
 };
+
+// Breakpoints tracking
+breakpointsTracking.init();
 
 // Error tracking
 errorTracking.init();
