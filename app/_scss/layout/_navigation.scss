@@ -25,14 +25,14 @@ nav {
 .main-navigation {
 
   li {
-    margin-left: 6%;
+    margin-left: 12%;
 
-    @include breakpoint(smaller-than-small-desktop) {
+    @include breakpoint(s) {
       margin-left: 9%;
     }
 
-    @include breakpoint(mobile-portrait-to-mobile-landscape) {
-      margin-left: 12%;
+    @include breakpoint(l) {
+      margin-left: 6%;
     }
   }
 

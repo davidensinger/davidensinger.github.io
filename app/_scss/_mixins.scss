@@ -5,31 +5,19 @@
 // Breakpoint
 // ==========================================================================
 @mixin breakpoint($point) {
-  @if $point == desktop {
-    @media (min-width: 1281px) { @content; }
+  @if $point == s {
+    @media (min-width: 480px) { @content; }
   }
-  @if $point == large-desktop {
-    @media (min-width: 1441px) { @content; }
+  @if $point == m {
+    @media (min-width: 768px) { @content; }
   }
-  @if $point == extra-large-desktop {
+  @if $point == l {
+    @media (min-width: 960px) { @content; }
+  }
+  @if $point == xl {
     @media (min-width: 1600px) { @content; }
   }
-  @if $point == extra-extra-large-desktop {
+  @elseif $point == xxl {
     @media (min-width: 1800px) { @content; }
-  }
-  @if $point == smaller-than-small-desktop {
-    @media (max-width: 959px) { @content; }
-  }
-  @if $point == tablet-portrait-to-small-desktop {
-    @media (min-width: 768px) and (max-width: 959px) { @content; }
-  }
-  @if $point == all-mobile {
-    @media (max-width: 767px) { @content; }
-  }
-  @if $point == mobile-landscape-to-tablet-portrait {
-    @media (min-width: 480px) and (max-width: 767px) { @content; }
-  }
-  @elseif $point == mobile-portrait-to-mobile-landscape {
-    @media (max-width: 479px) { @content; }
   }
 }

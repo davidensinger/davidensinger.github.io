@@ -3,11 +3,12 @@
 // ==========================================================================
 
 .site-footer {
+  text-align: center;
   color: $color-footer--color;
   text-shadow: 0 1px 1px rgba($color-text--color, 0.25);
 
-  @include breakpoint(smaller-than-small-desktop) {
-    text-align: center;
+  @include breakpoint(l) {
+    text-align: left;
   }
 }
 
@@ -16,11 +17,11 @@
 // -------------------------------------
 
 .site-footer--primary {
-  float: left;
+  display: inline-block;
 
-  @include breakpoint(smaller-than-small-desktop) {
-    float: none;
-    display: inline-block;
+  @include breakpoint(l) {
+    float: left;
+    display: block;
   }
 }
 
@@ -74,11 +75,11 @@
 // -------------------------------------
 
 .site-footer--secondary {
-  float: right;
+  margin-bottom: 6%;
 
-  @include breakpoint(smaller-than-small-desktop) {
-    float: none;
-    margin-bottom: 6%;
+  @include breakpoint(l) {
+    float: right;
+    margin-bottom: 0;
   }
 }
 

@@ -21,18 +21,17 @@ html {
 }
 
 .outer-container {
-  max-width: 94%;
 
-  @include breakpoint(extra-large-desktop) {
+  @include breakpoint(m) {
+    max-width: 94%;
+  }
+
+  @include breakpoint(xl) {
     max-width: 1600px;
   }
 
-  @include breakpoint(extra-extra-large-desktop) {
+  @include breakpoint(xxl) {
     margin: 0 auto;
-  }
-
-  @include breakpoint(all-mobile) {
-    max-width: 100%;
   }
 }
 
@@ -43,45 +42,37 @@ html {
 // Primary
 // ==========================================================================
 .primary {
-  padding: 6% 4% 12% 6%;
-  width: 70%;
+  padding: 6% 6% 12%;
 
-  @include breakpoint(smaller-than-small-desktop) {
-    padding: 6% 6% 12%;
+  @include breakpoint(l) {
+    float: left;
+    padding: 6% 4% 12% 6%;
+    width: 70%;
   }
 }
 
 // Secondary
 // ==========================================================================
 .secondary {
-  padding: 6% 6% 12% 4%;
-  width: 30%;
+  padding: 6%;
 
-  @include breakpoint(smaller-than-small-desktop) {
-    padding: 6%;
-  }
-}
-
-.primary,
-.secondary {
-  float: left;
-
-  @include breakpoint(smaller-than-small-desktop) {
-    float: none;
-    width: auto;
+  @include breakpoint(l) {
+    float: left;
+    padding: 6% 6% 12% 4%;
+    width: 30%;
   }
 }
 
 // Footer
 // ==========================================================================
 .site-footer {
-  padding: 6%;
+  padding: 12% 6%;
 
-  @include breakpoint(all-mobile) {
+  @include breakpoint(s) {
     padding: 9% 6%;
   }
 
-  @include breakpoint(mobile-portrait-to-mobile-landscape) {
-    padding: 12% 6%;
+  @include breakpoint(m) {
+    padding: 6%;
   }
 }

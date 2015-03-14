@@ -37,31 +37,31 @@ h4,
 
 h1,
 %h1 {
-  @include setType(10, $ms-up3);
+  @include setType(7, $ms-up2);
   margin-bottom: emRhythm(2, $ms-up3);
 
-  @include breakpoint(mobile-portrait-to-mobile-landscape) {
-    @include setType(7, $ms-up2);
+  @include breakpoint(s) {
+    @include setType(10, $ms-up3);
   }
 }
 
 h2,
 %h2 {
-  @include setType(8, $ms-up2);
+  @include setType(5, $ms-up1);
   margin-bottom: emRhythm(1, $ms-up2);
 
-  @include breakpoint(mobile-portrait-to-mobile-landscape) {
-    @include setType(5, $ms-up1);
+  @include breakpoint(s) {
+    @include setType(8, $ms-up2);
   }
 }
 
 h3,
 %h3 {
-  @include setType(6, $ms-up1);
+  @include setType(4);
   margin-bottom: emRhythm(1, $ms-up1);
 
-  @include breakpoint(mobile-portrait-to-mobile-landscape) {
-    @include setType(4);
+  @include breakpoint(s) {
+    @include setType(6, $ms-up1);
   }
 }
 
@@ -190,9 +190,10 @@ pre {
   @extend %gray-box;
   overflow: auto;
   max-width: 100%;
+  font-size: 75%;
 
-  @include breakpoint(mobile-portrait-to-mobile-landscape) {
-    font-size: 75%;
+  @include breakpoint(s) {
+    font-size: 100%;
   }
 
   code {
@@ -220,10 +221,11 @@ figure {
 
 table {
   width: 100%;
+  font-size: 75%;
   margin-bottom: emRhythm($base-line-multi);
 
-  @include breakpoint(mobile-portrait-to-mobile-landscape) {
-    font-size: 75%;
+  @include breakpoint(s) {
+    font-size: 100%;
   }
 
   caption {

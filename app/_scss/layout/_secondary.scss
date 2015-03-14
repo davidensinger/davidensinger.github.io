@@ -3,27 +3,27 @@
 // ==========================================================================
 
 .secondary {
+  background-color: $color-secondary;
 
-  @include breakpoint(smaller-than-small-desktop) {
-    background-color: $color-secondary;
+  @include breakpoint(l) {
+    background-color: inherit;
   }
 }
 
 .secondary-photo {
   display: block;
-  margin-bottom: 6%;
-  width: 100%;
+  margin: 0 auto 6%;
+  width: 75%;
 
-  @include breakpoint(smaller-than-small-desktop) {
+  @include breakpoint(s) {
     float: right;
     margin: 0 0 3% 3%;
     width: 150px;
   }
 
-  @include breakpoint(mobile-portrait-to-mobile-landscape) {
-    margin: 0 auto 6%;
-    float: none;
-    width: 75%;
+  @include breakpoint(l) {
+    margin-bottom: 6%;
+    width: 100%;
   }
 }
 

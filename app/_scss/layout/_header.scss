@@ -24,18 +24,18 @@
 // -------------------------------------
 
 .site-header--primary {
-  width: 12%;
+  width: 100px;
 
-  @include breakpoint(smaller-than-small-desktop) {
-    width: 16%;
-  }
-
-  @include breakpoint(all-mobile) {
+  @include breakpoint(s) {
     width: 20%;
   }
 
-  @include breakpoint(mobile-portrait-to-mobile-landscape) {
-    width: 100px;
+  @include breakpoint(m) {
+    width: 16%;
+  }
+
+  @include breakpoint(l) {
+    width: 12%;
   }
 }
 
