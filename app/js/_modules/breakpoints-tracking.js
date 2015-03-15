@@ -31,10 +31,10 @@ var breakpointsTracking = (function() {
       }
 
       // Update the breakpoint as the matched media changes, and send an event.
-      mql.addListener(function(mql) {
+      mql.addListener(function (mql) {
         if (mql.matches) {
           clearTimeout(timeout);
-          timeout = setTimeout(function() {
+          timeout = setTimeout(function () {
             ga('set', 'dimension1', breakpoint);
             ga('send', 'event', 'Breakpoint', 'change', breakpoint);
           }, 1000);
