@@ -1,4 +1,4 @@
-/* global breakpointsTracking, errorTracking, ga */
+/* global breakpointsTracking, ga */
 
 var keyboardNavigation = (function () {
 
@@ -35,9 +35,6 @@ document.onkeydown = function(e) {
 
 // Breakpoints tracking
 breakpointsTracking.init();
-
-// Error tracking
-errorTracking.init();
 
 // Send pageview to Google Analytics
 ga('send', 'pageview');
