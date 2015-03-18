@@ -230,6 +230,39 @@ module.exports = function (grunt) {
         shorthandCompacting: false
       }
     },
+    responsive_images_extender: {
+      options: {
+        // Task-specific options go here.
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.dist %>',
+          src: ['**/*.html', '!perf/**/*.html'],
+          dest: '<%= yeoman.dist %>'
+        }]
+      },
+    },
+    responsive_images: {
+      dist: {
+        options: {
+          createNoScaledImage: true,
+          sizes: [{
+            width: 320,
+          },{
+            width: 640
+          },{
+            width: 1024,
+          }]
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.dist %>',
+          src: 'img/**/*.{jpg,gif,png}',
+          dest: '<%= yeoman.dist %>'
+        }]
+      }
+    },
     imageoptim: {
       options: {
         quitAfter: true
@@ -448,6 +481,8 @@ module.exports = function (grunt) {
     'stage',
     'jekyll:dist',
     'concurrent:dist',
+    'responsive_images_extender',
+    'responsive_images',
     'newer:imageoptim',
     'useminPrepare',
     'concat',
