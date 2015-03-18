@@ -5,7 +5,7 @@ title: 'Getting Started with Sublime Text'
 description: 'A quick start guide to configuring Sublime Text.'
 tags: ['Sublime Text']
 sitemap:
-  lastmod: 2014-11-07
+  lastmod: 2015-03-18
 suggested_tweet:
   hashtags: ['SublimeText']
   related: ['sublimehq']
@@ -92,7 +92,6 @@ import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330
 - [Modific](https://sublime.wbond.net/packages/Modific) - Highlight lines changed since the last commit
 - [SideBarEnhancements](https://sublime.wbond.net/packages/SideBarEnhancements) - Adds useful file operations to the sidebar, such as “New file”, “New folder”, etc
 - [SublimeLinter](https://sublime.wbond.net/packages/SublimeLinter) - Lint code as you type
-- [Sublime​Linter-csslint](https://sublime.wbond.net/packages/SublimeLinter-csslint) - SublimeLinter plugin for CSS, using csslint
 - [Sublime​Linter-contrib-scss-lint](https://sublime.wbond.net/packages/SublimeLinter-contrib-scss-lint) - SublimeLinter plugin for Sass scss syntax, using scss-lint
 - [Sublime​Linter-jshint](https://sublime.wbond.net/packages/SublimeLinter-jshint) - SublimeLinter plugin for JavaScript, using JSHint
 - [Sublime​Linter-json](https://sublime.wbond.net/packages/SublimeLinter-csslint) - SublimeLinter plugin for JSON
