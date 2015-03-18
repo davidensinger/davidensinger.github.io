@@ -86,7 +86,8 @@ import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330
 - [CSS Color Converter](https://sublime.wbond.net/packages/CSS%20Color%20Converter) - Convert hex to rgb to back
 - [CSS3](https://sublime.wbond.net/packages/CSS3) - The most complete CSS support for Sublime Text 3
 - [EditorConfig](https://sublime.wbond.net/packages/EditorConfig) - [Editor Config](http://editorconfig.org/) helps define and maintain consistent coding styles between different editors and IDEs
-- [Inc-Dec-Value](https://sublime.wbond.net/packages/Inc-Dec-Value) - increase / decrease of numbers, dates, hex color values, etc.
+- [GitHub Tools](https://packagecontrol.io/packages/Github%20Tools) - A set of handy tools for using Sublime Text editor with Github
+- [Inc-Dec-Value](https://sublime.wbond.net/packages/Inc-Dec-Value) - increase / decrease of numbers, dates, hex color values, etc
 - [Java​Script​Next - ES6 Syntax](https://sublime.wbond.net/packages/JavaScriptNext%20-%20ES6%20Syntax) - JavaScript language definition for TextMate and SublimeText2
 - [LESS](https://sublime.wbond.net/packages/LESS) - LESS syntax highlighting
 - [Modific](https://sublime.wbond.net/packages/Modific) - Highlight lines changed since the last commit
@@ -96,7 +97,7 @@ import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330
 - [Sublime​Linter-jshint](https://sublime.wbond.net/packages/SublimeLinter-jshint) - SublimeLinter plugin for JavaScript, using JSHint
 - [Sublime​Linter-json](https://sublime.wbond.net/packages/SublimeLinter-csslint) - SublimeLinter plugin for JSON
 - [Syntax Highlighting for Sass](https://sublime.wbond.net/packages/Syntax%20Highlighting%20for%20Sass) - Sass syntax highlighting
-- [TrailingSpaces](https://sublime.wbond.net/packages/TrailingSpaces) - Strips trailing whitespace from files
+- [TrailingSpaces](https://sublime.wbond.net/packages/TrailingSpaces) - Strips trailing whitespace from files.
 
 There are also innumerable packages to support syntax highlighting, linting, and snippets in any and all languages. You can easily [discover these via Package Control](https://sublime.wbond.net/).
 
