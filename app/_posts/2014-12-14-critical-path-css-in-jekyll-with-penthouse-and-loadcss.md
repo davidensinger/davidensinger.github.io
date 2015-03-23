@@ -76,7 +76,7 @@ My “development” environment is provided courtesy of `grunt serve`, while my
 I only inline my above-the-fold CSS, print the markup to asynchronously load my stylesheet, and wrap my `<link>` tag with a `<noscript>` when I’m ready to build the site for deployment.
 
 ## Filerev the CSS
-Tthe stylesheet in our [usemin](https://github.com/yeoman/grunt-usemin) block will be [revved](https://github.com/yeoman/grunt-filerev), which requires a corresponding revving of the stylesheet within the loadCSS function. This can be resolved with a regular expression in a custom usemin pattern.
+The stylesheet in our [usemin](https://github.com/yeoman/grunt-usemin) block will be [revved](https://github.com/yeoman/grunt-filerev), which requires a corresponding revving of the stylesheet within the loadCSS function. This can be resolved with a regular expression in a custom usemin pattern.
 
 {% highlight js %}
 usemin: {
