@@ -93,7 +93,7 @@ Here’s the final snippet of code with the appropriate meta data:
   <meta content="{{ site.url }}/about/" property="article:author">
 {% endif %}
 {% if page.image %}
-  <meta content="/img/posts/{{ page.image }}" property="og:image">
+  <meta content="/img/srcset/{{ page.image }}" property="og:image">
 {% else %}
   <meta content="/img/logo-high-resolution.png" property="og:image">
 {% endif %}

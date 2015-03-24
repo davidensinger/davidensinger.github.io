@@ -6,6 +6,7 @@ This website runs on [Jekyll](http://jekyllrb.com/), a blog-aware, static site g
 ## The Stack
 - [Bower](http://bower.io/): Manage front end dependencies
 - [Bundler](http://gembundler.com/): Manage Ruby dependencies
+- [GraphicsMagick](http://sourceforge.net/projects/graphicsmagick/): Required for [grunt-responsive-images](https://github.com/andismith/grunt-responsive-images)
 - [Grunt](http://gruntjs.com/): Automate Jekyll development and build tasks
 - [Node.js](http://nodejs.org/) and [NPM](https://npmjs.org/): Required for Grunt
 - [Ruby](http://www.ruby-lang.org/): Required for Jekyll.
@@ -21,6 +22,8 @@ This website runs on [Jekyll](http://jekyllrb.com/), a blog-aware, static site g
 - Install [Bower](http://bower.io/)
     - To install: `npm install -g bower`
 - For the E2E tests, install [CasperJS](http://casperjs.org/) and [PhantomJS](http://phantomjs.org/)
+- Make sure you’ve installed GraphicsMagic, presumably via Homebrew:
+    - To install: `brew install GraphicsMagick`
 
 ## Install Dependencies
 Run the following commands to install the dependencies:

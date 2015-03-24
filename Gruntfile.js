@@ -75,10 +75,10 @@ module.exports = function (grunt) {
           dot: true,
           src: [
             '<%= yeoman.dist %>/*',
-            // Running Jekyll also cleans the target directory.  Exclude any
-            // non-standard `keep_files` here (e.g., the generated files
-            // directory from Jekyll Picture Tag).
             '!<%= yeoman.dist %>/.git*',
+            '!<%= yeoman.dist %>/img', // don’t clean
+            '<%= yeoman.dist %>/img/*', // clean these files because they get revved
+            '!<%= yeoman.dist %>/img/srcset', // don’t clean this directory because these files don’t get revved :(
             '!<%= yeoman.dist %>/perf'
           ]
         }]
@@ -192,7 +192,6 @@ module.exports = function (grunt) {
         patterns: {
           html: [
             [/<link[^\>]+href=['"]([^"']+)["']/gm, 'Update the link tags'],
-            [/<meta[^\>]+content=['"]http?:?\/\/[^\/"']+([^"']+)["']/gm,'Update meta tags'],
             [/loadCSS\(['"]([^"']+)['"]\)/gm, 'Replacing reference to CSS within loadCSS']
           ]
         }
@@ -230,19 +229,6 @@ module.exports = function (grunt) {
         shorthandCompacting: false
       }
     },
-    responsive_images_extender: {
-      options: {
-        // Task-specific options go here.
-      },
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.dist %>',
-          src: ['**/*.html', '!perf/**/*.html'],
-          dest: '<%= yeoman.dist %>'
-        }]
-      },
-    },
     responsive_images: {
       dist: {
         options: {
@@ -257,11 +243,33 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: '<%= yeoman.dist %>',
-          src: 'img/**/*.{jpg,gif,png}',
+          cwd: '<%= yeoman.app %>',
+          src: 'img/srcset/**/*.{gif,jpg,jpeg,png,svg}',
           dest: '<%= yeoman.dist %>'
         }]
       }
+    },
+    responsive_images_extender: {
+      options: {
+        srcset: [{
+          suffix: '-320',
+          value: '320w'
+        },{
+          suffix: '-640',
+          value: '640w'
+        },{
+          suffix: '-1024',
+          value: '1024w'
+        }]
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.dist %>',
+          src: ['**/*.html', '!perf/**/*.html'],
+          dest: '<%= yeoman.dist %>'
+        }]
+      },
     },
     imageoptim: {
       options: {
@@ -362,7 +370,8 @@ module.exports = function (grunt) {
             '<%= yeoman.dist %>/js/**/*.js',
             '<%= yeoman.dist %>/css/styles.css',
             '<%= yeoman.dist %>/favicon*.png',
-            '<%= yeoman.dist %>/img/**/*.{gif,jpg,jpeg,png,svg}'
+            '<%= yeoman.dist %>/img/**/*.{gif,jpg,jpeg,png,svg}',
+            '!<%= yeoman.dist %>/img/srcset/**/*.{gif,jpg,jpeg,png,svg}',
           ]
         }]
       }
