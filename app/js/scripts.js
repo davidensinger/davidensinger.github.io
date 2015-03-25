@@ -19,9 +19,9 @@ var keyboardNavigation = (function () {
 
 })();
 
-document.onkeydown = function(e) {
-  e = e || window.event;
-  switch(e.which || e.keyCode) {
+document.onkeydown = function(event) {
+  event = event || window.event;
+  switch(event.which || event.keyCode) {
     case 37: // left
       keyboardNavigation.navigationElement('previous');
       break;
@@ -30,7 +30,7 @@ document.onkeydown = function(e) {
       break;
     default: return;
   }
-  e.preventDefault();
+  event.preventDefault ? event.preventDefault() : event.returnValue = false;
 };
 
 // Breakpoints tracking
