@@ -97,13 +97,13 @@ I host my DNS with CloudFlare, which opens up a whole world of server-side optim
 ## Results
 
 ### WebPagetest
-<img src="/img/srcset/2015-01-15-webpagetest.png" alt="Image of Webpagetest.org results for davidensinger.com"/>
+<img src="/img/srcset/2015-01-15-webpagetest.png" alt="Webpagetest.org results for davidensinger.com" class="media-full srcset-full" />
 
 ### Google PageSpeed Insights
-<img src="/img/srcset/2015-01-15-google-pagespeed-insights-mobile.png" alt="Image of Google PageSpeed Insights results for davidensinger.com"/>
+<img src="/img/srcset/2015-01-15-google-pagespeed-insights-mobile.png" alt="Google PageSpeed Insights results for davidensinger.com" class="media-half-to-third srcset-half-to-third" />
 
 ### YSlow
-<img src="/img/srcset/2015-01-15-yslow.png" alt="Image of YSlow results for davidensinger.com"/>
+<img src="/img/srcset/2015-01-15-yslow.png" alt="YSlow results for davidensinger.com" class="media-full srcset-full" />
 
 ## Todo
 I still have work to do and the following is my shortlist of improvements to implement in these coming months:
