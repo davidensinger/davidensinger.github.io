@@ -232,13 +232,20 @@ module.exports = function (grunt) {
     responsive_images: {
       dist: {
         options: {
-          createNoScaledImage: true,
           sizes: [{
+            width: 160,
+          },{
             width: 320,
+          },{
+            width: 480,
           },{
             width: 640
           },{
-            width: 1024,
+            width: 800
+          },{
+            width: 960,
+          },{
+            width: 1280,
           }]
         },
         files: [{
@@ -251,15 +258,113 @@ module.exports = function (grunt) {
     },
     responsive_images_extender: {
       options: {
+        ignore: ['.srcset-ignore'],
         srcset: [{
+          suffix: '-160',
+          value: '160w'
+        },{
           suffix: '-320',
           value: '320w'
+        },{
+          suffix: '-480',
+          value: '480w'
         },{
           suffix: '-640',
           value: '640w'
         },{
-          suffix: '-1024',
-          value: '1024w'
+          suffix: '-800',
+          value: '800w'
+        },{
+          suffix: '-960',
+          value: '960w'
+        },{
+          suffix: '-1280',
+          value: '1280w'
+        }],
+        sizes: [{
+          selector: '.srcset-secondary',
+          sizeList: [{
+            cond: 'min-width: 1600px',
+            size: '320px'
+          },{
+            cond: 'min-width: 960px',
+            size: '18.8vw'
+          },{
+            cond: 'min-width: 480px',
+            size: '150px'
+          },{
+            cond: 'default',
+            size: '63vw'
+          }]
+        },{
+          selector: '.srcset-full',
+          sizeList: [{
+            cond: 'min-width: 1600px',
+            size: '960px'
+          },{
+            cond: 'min-width: 960px',
+            size: '59.22vw'
+          },{
+            cond: 'min-width: 768px',
+            size: '82.72vw'
+          },{
+            cond: 'default',
+            size: '88vw'
+          }],
+        },{
+          selector: '.srcset-half',
+          sizeList: [{
+            cond: 'min-width: 1600px',
+            size: '480px'
+          },{
+            cond: 'min-width: 960px',
+            size: '29.61vw'
+          },{
+            cond: 'min-width: 768px',
+            size: '41.36vw'
+          },{
+            cond: 'min-width: 480px',
+            size: '44vw'
+          },{
+            cond: 'default',
+            size: '88vw'
+          }],
+        },{
+          selector: '.srcset-half-to-third',
+          sizeList: [{
+            cond: 'min-width: 1600px',
+            size: '320px'
+          },{
+            cond: 'min-width: 960px',
+            size: '19.74vw'
+          },{
+            cond: 'min-width: 768px',
+            size: '27.57vw'
+          },{
+            cond: 'min-width: 480px',
+            size: '44vw'
+          },{
+            cond: 'default',
+            size: '88vw'
+          }],
+        },{
+          selector: '.srcset-third',
+          sizeList: [{
+            cond: 'min-width: 1600px',
+            size: '320px'
+          },{
+            cond: 'min-width: 960px',
+            size: '19.74vw'
+          },{
+            cond: 'min-width: 768px',
+            size: '27.57vw'
+          },{
+            cond: 'min-width: 480px',
+            size: '29.33vw'
+          },{
+            cond: 'default',
+            size: '88vw'
+          }]
         }]
       },
       dist: {

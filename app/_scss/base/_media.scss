@@ -29,17 +29,53 @@ img {
 
 // alignment
 .media-left {
-  float: left;
-  margin-right: 1.5em;
+
+  @include breakpoint(s) {
+    float: left;
+    margin-right: 1.5em;
+  }
 }
 
 .media-right {
-  float: right;
-  margin-left: 1.5em;
+
+  @include breakpoint(s) {
+    float: right;
+    margin-left: 1.5em;
+  }
 }
 
 .media-center {
   clear: both;
   display: block;
   margin: 0 auto;
+}
+
+// width
+.media-full {
+  width: 100%;
+}
+
+.media-half {
+
+  @include breakpoint(s) {
+    max-width: 50%;
+  }
+}
+
+.media-half-to-third {
+
+  @include breakpoint(s) {
+    max-width: 50%;
+  }
+
+  @include breakpoint(m) {
+    max-width: 33.3333%;
+  }
+}
+
+.media-third {
+
+  @include breakpoint(s) {
+    max-width: 33.3333%;
+  }
 }
