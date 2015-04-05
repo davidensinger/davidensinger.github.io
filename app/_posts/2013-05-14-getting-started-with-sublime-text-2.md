@@ -68,7 +68,7 @@ There are a lot of really useful keyboard shortcuts in Sublime Text. Instead of 
 </div>
 
 ## Package Control
-One of the best things about Sublime Text is how extensible it is. There are hundreds of community developed plugins and with [Package Control](https://sublime.wbond.net/) it’s quick and easy to install, update, and remove them from your installation.
+One of the best things about Sublime Text is how extensible it is. There are hundreds of community developed plugins and with [Package Control](https://packagecontrol.io/) it’s quick and easy to install, update, and remove them from your installation.
 
 ### Installation
 
@@ -81,25 +81,26 @@ import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330
 
 ### Favorite Packages
 
-- [All Autocomplete](https://sublime.wbond.net/packages/All%20Autocomplete) - Allows autocompletion across open files
-- [Color Highlighter](https://sublime.wbond.net/packages/Color%20Highlighter) - Underlays selected hexadecimal color codes (like "#FFFFFF", "rgb(255,255,255)", "white", etc.) with their real color
-- [CSS Color Converter](https://sublime.wbond.net/packages/CSS%20Color%20Converter) - Convert hex to rgb to back
-- [CSS3](https://sublime.wbond.net/packages/CSS3) - The most complete CSS support for Sublime Text 3
-- [EditorConfig](https://sublime.wbond.net/packages/EditorConfig) - [Editor Config](http://editorconfig.org/) helps define and maintain consistent coding styles between different editors and IDEs
+- [All Autocomplete](https://packagecontrol.io/packages/All%20Autocomplete) - Allows autocompletion across open files
+- [Color Highlighter](https://packagecontrol.io/packages/Color%20Highlighter) - Underlays selected hexadecimal color codes (like "#FFFFFF", "rgb(255,255,255)", "white", etc.) with their real color
+- [CSS Color Converter](https://packagecontrol.io/packages/CSS%20Color%20Converter) - Convert hex to rgb to back
+- [CSS3](https://packagecontrol.io/packages/CSS3) - The most complete CSS support for Sublime Text 3
+- [EditorConfig](https://packagecontrol.io/packages/EditorConfig) - [Editor Config](http://editorconfig.org/) helps define and maintain consistent coding styles between different editors and IDEs
 - [GitHub Tools](https://packagecontrol.io/packages/Github%20Tools) - A set of handy tools for using Sublime Text editor with Github
-- [Inc-Dec-Value](https://sublime.wbond.net/packages/Inc-Dec-Value) - increase / decrease of numbers, dates, hex color values, etc
-- [Java​Script​Next - ES6 Syntax](https://sublime.wbond.net/packages/JavaScriptNext%20-%20ES6%20Syntax) - JavaScript language definition for TextMate and SublimeText2
-- [LESS](https://sublime.wbond.net/packages/LESS) - LESS syntax highlighting
-- [Modific](https://sublime.wbond.net/packages/Modific) - Highlight lines changed since the last commit
-- [SideBarEnhancements](https://sublime.wbond.net/packages/SideBarEnhancements) - Adds useful file operations to the sidebar, such as “New file”, “New folder”, etc
-- [SublimeLinter](https://sublime.wbond.net/packages/SublimeLinter) - Lint code as you type
-- [Sublime​Linter-contrib-scss-lint](https://sublime.wbond.net/packages/SublimeLinter-contrib-scss-lint) - SublimeLinter plugin for Sass scss syntax, using scss-lint
-- [Sublime​Linter-jshint](https://sublime.wbond.net/packages/SublimeLinter-jshint) - SublimeLinter plugin for JavaScript, using JSHint
-- [Sublime​Linter-json](https://sublime.wbond.net/packages/SublimeLinter-csslint) - SublimeLinter plugin for JSON
-- [Syntax Highlighting for Sass](https://sublime.wbond.net/packages/Syntax%20Highlighting%20for%20Sass) - Sass syntax highlighting
-- [TrailingSpaces](https://sublime.wbond.net/packages/TrailingSpaces) - Strips trailing whitespace from files.
+- [Inc-Dec-Value](https://packagecontrol.io/packages/Inc-Dec-Value) - increase / decrease of numbers, dates, hex color values, etc
+- [Java​Script​Next - ES6 Syntax](https://packagecontrol.io/packages/JavaScriptNext%20-%20ES6%20Syntax) - JavaScript language definition for TextMate and SublimeText2
+- [LESS](https://packagecontrol.io/packages/LESS) - LESS syntax highlighting
+- [Modific](https://packagecontrol.io/packages/Modific) - Highlight lines changed since the last commit
+- [SideBarEnhancements](https://packagecontrol.io/packages/SideBarEnhancements) - Adds useful file operations to the sidebar, such as “New file”, “New folder”, etc
+- [SublimeLinter](https://packagecontrol.io/packages/SublimeLinter) - Lint code as you type
+- [SublimeLinter-csslint](https://packagecontrol.io/packages/SublimeLinter-csslint) - SublimeLinter plugin for CSS, using csslint
+- [Sublime​Linter-contrib-scss-lint](https://packagecontrol.io/packages/SublimeLinter-contrib-scss-lint) - SublimeLinter plugin for Sass scss syntax, using scss-lint
+- [Sublime​Linter-jshint](https://packagecontrol.io/packages/SublimeLinter-jshint) - SublimeLinter plugin for JavaScript, using JSHint
+- [Sublime​Linter-json](https://packagecontrol.io/packages/SublimeLinter-csslint) - SublimeLinter plugin for JSON
+- [Syntax Highlighting for Sass](https://packagecontrol.io/packages/Syntax%20Highlighting%20for%20Sass) - Sass syntax highlighting
+- [TrailingSpaces](https://packagecontrol.io/packages/TrailingSpaces) - Strips trailing whitespace from files.
 
-There are also innumerable packages to support syntax highlighting, linting, and snippets in any and all languages. You can easily [discover these via Package Control](https://sublime.wbond.net/).
+There are also innumerable packages to support syntax highlighting, linting, and snippets in any and all languages. You can easily [discover these via Package Control](https://packagecontrol.io/).
 
 ## Spaces
 Open **TrailingSpace's** preferences (**Preferences › Package Settings › TrailingSpaces › Settings - User**), and add:
