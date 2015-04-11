@@ -58,7 +58,7 @@ GEM
     redcarpet (3.2.2)
     safe_yaml (1.0.4)
     sass (3.4.13)
-    scss-lint (0.34.0)
+    scss-lint (0.36.1)
       rainbow (~> 2.0)
       sass (~> 3.4.1)
     timers (4.0.1)
@@ -74,4 +74,4 @@ DEPENDENCIES
   jekyll (~> 2.5.3)
   kramdown
   sass (~> 3.4.13)
-  scss-lint (~> 0.34.0)
+  scss-lint (~> 0.36.1)
