@@ -13,7 +13,7 @@ Hi, my name is __David Ensinger__ and I’m a __Front End Developer__ with equal
 
 I develop websites that are well designed, useable, and adhere to modern standards and accessibility requirements. I’m also no slouch at writing documentation, leading training, and providing ongoing support. My clients and co-workers will vouch that I play well with others too.
 
-I’m currently employed by [CITYTECH, Inc](http://www.citytechinc.com/) (Now part of [ICF Interactive](http://www.icfi.com/interactive)), a global IT consultancy. Previously I worked for [The Ohio State University Libraries](http://library.osu.edu/). In a past life I was a Peace Corps Volunteer in the Republic of Moldova. I graduated from the Ohio State University’s Fisher College of Business with a B.S. in Business Administration with a specialization in Finance.
+I’m currently employed at [Acceptd](http://getacceptd.com), the world’s largest arts network. In a past life I was a Peace Corps Volunteer in the Republic of Moldova. I graduated from the Ohio State University’s Fisher College of Business with a B.S. in Business Administration with a specialization in Finance.
 
 I am interested in the liberal arts, finance and investing, and staying physically fit and eating well. I also really enjoy living in Columbus, Ohio.
 
