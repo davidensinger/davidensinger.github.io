@@ -595,7 +595,7 @@ module.exports = function (grunt) {
     'stage',
     'jekyll:dist',
     'concurrent:dist',
-    'responsive_images_extender',
+    //'responsive_images_extender',
     'responsive_images',
     'newer:imageoptim',
     'useminPrepare',
