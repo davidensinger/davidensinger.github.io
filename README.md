@@ -21,7 +21,6 @@ This website runs on [Jekyll](http://jekyllrb.com/), a blog-aware, static site g
     - To install: `npm install -g grunt-cli`
 - Install [Bower](http://bower.io/)
     - To install: `npm install -g bower`
-- For the E2E tests, install [CasperJS](http://casperjs.org/) and [PhantomJS](http://phantomjs.org/)
 - Make sure you’ve installed GraphicsMagic, presumably via Homebrew:
     - To install: `brew install GraphicsMagick`
 
@@ -35,7 +34,6 @@ Run the following commands to install the dependencies:
 - `grunt stage`: Copies the loadFont() and loadCSS() functions from Bower to the Jekyll _includes directory
 - `grunt serve`: Compiles all files and opens the site in your default browser. A watch task watches for changes to files, recompiles if necessary, and injects the changes into the browser with BrowserSync
 - `grunt check`: Checks for outdated dependencies with grunt-dev-update, Javascript code quality with JSHint, Sass code quality with [SCSS-Lint](https://github.com/causes/scss-lint), and Jekyll health with `jekyll doctor`
-- `grunt test`: Runs through the E2E tests via [CasperJS](http://casperjs.org/) and [PhantomJS](http://phantomjs.org/)
 - `grunt build`: Builds an optimized site to the dist directory
 - `grunt deploy`: Runs the perf task, runs the build task, and then deploys it
 - `grunt perf`: Checks Google’s PageSpeed Insights and then runs [Phantomas](https://github.com/macbre/phantomas) to return and record site metrics.

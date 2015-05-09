@@ -47,12 +47,12 @@ page-class: page-post
 <nav class="post-navigation clearfix" role="navigation">
   {% if page.previous %}
     <div class="nav-previous">
-      <a id="js-navigation--previous" class="nav-previous--link" href="{{ site.url }}{{ page.previous.url }}" rel="prev">{{ page.previous.title }}</a>
+      <a class="nav-previous--link" href="{{ site.url }}{{ page.previous.url }}" rel="prev">{{ page.previous.title }}</a>
     </div>
   {% endif %}
   {% if page.next %}
     <div class="nav-next">
-      <a id="js-navigation--next" class="nav-next--link" href="{{ site.url }}{{ page.next.url }}" rel="next">{{ page.next.title }}</a>
+      <a class="nav-next--link" href="{{ site.url }}{{ page.next.url }}" rel="next">{{ page.next.title }}</a>
     </div>
   {% endif %}
 </nav>

@@ -33,15 +33,15 @@ sitemap:
 <nav class="paging-navigation clearfix" role="navigation">
   {% if paginator.next_page %}
   <div class="nav-previous">
-    <a id="js-navigation--previous" href="/page{{ paginator.next_page }}/" class="nav-previous--link" rel="prev">Older Posts</a>
+    <a href="/page{{ paginator.next_page }}/" class="nav-previous--link" rel="prev">Older Posts</a>
   </div>
   {% endif %}
   {% if paginator.previous_page %}
     <div class="nav-next">
       {% if paginator.previous_page == 1 %}
-      <a id="js-navigation--next" href="/" class="nav-next--link" rel="next">Newer Posts</a>
+      <a href="/" class="nav-next--link" rel="next">Newer Posts</a>
       {% else %}
-      <a id="js-navigation--next" href="/page{{ paginator.previous_page }}/" class="nav-next--link" rel="next">Newer Posts</a>
+      <a href="/page{{ paginator.previous_page }}/" class="nav-next--link" rel="next">Newer Posts</a>
       {% endif %}
     </div>
   {% endif %}

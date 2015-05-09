@@ -497,11 +497,7 @@ module.exports = function (grunt) {
       all: [
         'Gruntfile.js',
         '<%= yeoman.app %>/js/**/*.js'
-      ],
-      test: ['test/*.js']
-    },
-    casperjs: {
-      all: ['test/tests.js']
+      ]
     },
     pagespeed: {
       options: {
@@ -571,8 +567,7 @@ module.exports = function (grunt) {
     'jshint:test',
     'clean:server',
     'concurrent:server',
-    'browserSync:server',
-    'casperjs'
+    'browserSync:server'
   ]);
 
   grunt.registerTask('check', [
@@ -580,7 +575,7 @@ module.exports = function (grunt) {
     'clean:server',
     'jekyll:check',
     'scsslint',
-    'jshint',
+    'jshint'
   ]);
 
   grunt.registerTask('perf', [
