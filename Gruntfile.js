@@ -380,7 +380,7 @@ module.exports = function (grunt) {
       options: {
         quitAfter: true
       },
-      distLossless: {
+      dist: {
         options: {
           jpegMini: false,
           imageAlpha: true
@@ -388,22 +388,10 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: '**/*.{gif,png}',
+          src: '**/*.{gif,jpg,jpeg,png}',
           dest: '<%= yeoman.dist %>'
         }]
       },
-      distLossy: {
-        options: {
-          jpegMini: true,
-          imageAlpha: false
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.dist %>',
-          src: '**/*.{jpg,jpeg}',
-          dest: '<%= yeoman.dist %>'
-        }]
-      }
     },
     svgmin: {
       dist: {
