@@ -29,11 +29,11 @@ module.exports = function (grunt) {
     watch: {
       sass: {
         files: ['<%= yeoman.app %>/_scss/**/*.scss'],
-        tasks: ['sass', 'autoprefixer:server', 'penthouse']
+        tasks: ['sass', 'postcss:server', 'penthouse']
       },
       autoprefixer: {
         files: ['<%= yeoman.app %>/css/styles.css'],
-        tasks: ['copy:stageCss', 'autoprefixer:server']
+        tasks: ['copy:stageCss', 'postcss:server']
       },
       jekyll: {
         files: ['<%= yeoman.app %>/**/*.{html,md,rb,svg,xml,yml}'],
@@ -112,28 +112,18 @@ module.exports = function (grunt) {
         }
       },
     },
-    autoprefixer: {
+    postcss: {
       options: {
-        browsers: [
-          'last 2 version',
-          'safari 6',
-          'ie 9',
-          'opera 12.1',
-          'ios 6',
-          'android 4'
+        processors: [
+          require('autoprefixer-core')({browsers: 'last 2 versions, safari 6, ie 9, opera 12.1, ios 6, android 4'})
         ]
       },
       dist: {
-        expand: true,
-        cwd: '.tmp',
-        src: 'concat/css/styles.css',
-        dest: '.tmp'
+        src: '.tmp/concat/css/styles.css',
+        dest: '.tmp/styles.css'
       },
       server: {
-        expand: true,
-        cwd: '.tmp',
-        src: 'css/*.css',
-        dest: '.tmp'
+        src: '.tmp/css/*.css',
       }
     },
     penthouse: {
@@ -540,7 +530,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'concurrent:server',
-      'autoprefixer:server',
+      'postcss:server',
       'browserSync:server',
       'watch'
     ]);
@@ -581,7 +571,7 @@ module.exports = function (grunt) {
     'imageoptim',
     'useminPrepare',
     'concat',
-    'autoprefixer:dist',
+    'postcss:dist',
     'csscomb',
     'cssmin',
     'uglify',
