@@ -3,6 +3,8 @@ loadCSS: load a CSS file asynchronously.
 [c]2014 @scottjehl, Filament Group, Inc.
 Licensed MIT
 */
+
+/* exported loadCSS */
 function loadCSS( href, before, media, callback ){
 	"use strict";
 	// Arguments explained:
@@ -31,14 +33,13 @@ function loadCSS( href, before, media, callback ){
 	ss.onloadcssdefined = function( cb ){
 		var defined;
 		for( var i = 0; i < sheets.length; i++ ){
-			if( sheets[ i ].href && sheets[ i ].href.indexOf( href ) > -1 ){
+			if( sheets[ i ].href && sheets[ i ].href === ss.href ){
 				defined = true;
 			}
 		}
 		if( defined ){
 			cb();
-		}
-		else {
+		} else {
 			setTimeout(function() {
 				ss.onloadcssdefined( cb );
 			});
