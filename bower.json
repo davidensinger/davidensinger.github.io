@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "loadcss": "~0.1.7",
+    "loadcss": "~0.1.8",
     "OptimizedWebfontLoading": "git://github.com/bdadam/OptimizedWebfontLoading.git",
     "typesettings": "~2.3.3"
   }
