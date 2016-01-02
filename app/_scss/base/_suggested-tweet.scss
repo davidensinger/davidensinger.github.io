@@ -17,7 +17,7 @@
   &:hover {
     background-color: $white-darker;
 
-    &:after {
+    &::after {
       border-color: $white-darker transparent;
     }
 
@@ -30,7 +30,7 @@
     color: $white;
     background-color: $color-link--color__focus;
 
-    &:after {
+    &::after {
       border-color: $color-link--color__focus transparent;
     }
 
@@ -39,7 +39,7 @@
     }
   }
 
-  &:after {
+  &::after {
     content: '';
     position: absolute;
     bottom: -18px;

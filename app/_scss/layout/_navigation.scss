@@ -81,7 +81,7 @@ nav {
 
 .nav-previous--link {
 
-  &:before {
+  &::before {
     content: '\2190';
     margin-right: 0.25em;
   }
@@ -93,7 +93,7 @@ nav {
 
 .nav-next--link {
 
-  &:after {
+  &::after {
     content: '\2192';
     margin-left: 0.25em;
   }

@@ -147,7 +147,7 @@ blockquote {
   color: $gray-lighter;
   text-shadow: 0 1px 0 $gray-darkest;
 
-  &:before {
+  &::before {
     @extend %font-open-sans-semibold;
     content: '\201C';
     position: absolute;

@@ -106,7 +106,7 @@
 .continue-reading {
   @extend %button;
 
-  &:after {
+  &::after {
     content: '\2192';
     margin-left: 0.5em;
   }

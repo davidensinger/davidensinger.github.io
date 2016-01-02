@@ -8,7 +8,7 @@
   border: 0;
   overflow: hidden;
 
-  &:before {
+  &::before {
     content: '';
     display: block;
     width: 0;
@@ -63,13 +63,13 @@
 %clearfix,
 .clearfix {
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: ' '; // 1
     display: table; // 2
   }
 
-  &:after {
+  &::after {
     clear: both;
   }
 }
