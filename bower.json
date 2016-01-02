@@ -9,6 +9,6 @@
   "devDependencies": {
     "loadcss": "~0.2.4",
     "OptimizedWebfontLoading": "git://github.com/bdadam/OptimizedWebfontLoading.git",
-    "typesettings": "~2.3.3"
+    "typesettings": "~3.0.0"
   }
 }
