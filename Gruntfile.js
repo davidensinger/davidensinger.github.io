@@ -367,19 +367,15 @@ module.exports = function (grunt) {
         }]
       },
     },
-    imageoptim: {
-      options: {
-        quitAfter: true
-      },
+    imagemin: {
       dist: {
         options: {
-          jpegMini: false,
-          imageAlpha: true
+          progressive: true
         },
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: '**/*.{gif,jpg,jpeg,png}',
+          src: ['**/*.{png}', '**/*.{jpg}'], // https://github.com/gruntjs/grunt-contrib-imagemin/issues/208 ?
           dest: '<%= yeoman.dist %>'
         }]
       },
@@ -569,7 +565,7 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'responsive_images_extender',
     'responsive_images',
-    'imageoptim',
+    'imagemin',
     'useminPrepare',
     'concat',
     'postcss:dist',
