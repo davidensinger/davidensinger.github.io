@@ -248,6 +248,7 @@ module.exports = function (grunt) {
     },
     responsive_images_extender: {
       options: {
+        baseDir: '<%= yeoman.dist %>',
         ignore: ['.srcset-ignore'],
         srcset: [{
           suffix: '-160',
@@ -566,8 +567,8 @@ module.exports = function (grunt) {
     'stage',
     'jekyll:dist',
     'concurrent:dist',
-    //'responsive_images_extender',
-    //'responsive_images',
+    'responsive_images_extender',
+    'responsive_images',
     'imageoptim',
     'useminPrepare',
     'concat',
