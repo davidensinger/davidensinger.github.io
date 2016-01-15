@@ -17,6 +17,15 @@ a {
     color: $color-link--color__focus;
     outline: none;
   }
+
+  .entry-content & {
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
 }
 
 h1,
