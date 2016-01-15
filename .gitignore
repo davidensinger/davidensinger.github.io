@@ -5,3 +5,4 @@ node_modules
 .tmp
 bower_components
 app/_includes/critical.css
+.jekyll-metadata
