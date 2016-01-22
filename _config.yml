@@ -14,7 +14,7 @@ description: 'David Ensinger is a Front End Developer from Columbus, OH'
 environment: development
 
 exclude: ['img', 'js', '**.png', '**.jpg', '**.jpeg', '**.gif', '**.svg', '**.ico']
-keep_files: ['img/srcset', 'perf']
+keep_files: ['img', 'perf']
 
 # Publish posts with future date.
 # _config.build.yml sets this to false on `grunt build`

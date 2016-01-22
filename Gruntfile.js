@@ -68,9 +68,7 @@ module.exports = function (grunt) {
           src: [
             '<%= yeoman.dist %>/*',
             '!<%= yeoman.dist %>/.git*',
-            '!<%= yeoman.dist %>/img', // don’t clean
-            '<%= yeoman.dist %>/img/*', // clean these files because they get revved
-            '!<%= yeoman.dist %>/img/srcset', // don’t clean this directory because these files don’t get revved :(
+            '!<%= yeoman.dist %>/img/**', // don’t clean this directory because these files don’t get revved and I optimize by hand
             '!<%= yeoman.dist %>/perf'
           ]
         }]
@@ -360,19 +358,6 @@ module.exports = function (grunt) {
         }]
       },
     },
-    imagemin: {
-      dist: {
-        options: {
-          progressive: true
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.dist %>',
-          src: ['**/*.{png}', '**/*.{jpg}'], // https://github.com/gruntjs/grunt-contrib-imagemin/issues/208 ?
-          dest: '<%= yeoman.dist %>'
-        }]
-      },
-    },
     svgmin: {
       dist: {
         files: [{
@@ -557,7 +542,6 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'responsive_images_extender',
     'responsive_images',
-    'imagemin',
     'useminPrepare',
     'concat',
     'postcss:dist',
@@ -573,7 +557,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('deploy', [
     //'perf',
-    'build',
     'buildcontrol'
   ]);
 
