@@ -5,7 +5,7 @@
   "author": "David Ensinger <hello@davidensinger.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/davidensinger/davidensinger.github.io"
+    "url": "https://github.com/davidensinger/davidensinger.github.io.git"
   },
   "bugs": {
     "url": "https://github.com/davidensinger/davidensinger.github.io/issues"
