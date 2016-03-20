@@ -23,7 +23,7 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/_scss/**/*.scss'],
         tasks: ['sass', 'postcss:server', 'penthouse']
       },
-      autoprefixer: {
+      postcss: {
         files: ['<%= yeoman.app %>/css/styles.css'],
         tasks: ['copy:stageCss', 'postcss:server']
       },
