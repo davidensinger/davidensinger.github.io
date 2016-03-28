@@ -5,12 +5,15 @@ page-class: page-post
 <article class="post hentry clearfix">
   <header class="entry-header">
     <h1 class="entry-title">{{ page.title }}</h1>
-    <span class="visuallyhidden author" aria-hidden="true">{{ site.author }}</span>
+    <span class="visuallyhidden author">{{ site.author }}</span>
     <div class="entry-meta entry-meta--header">
       <span class="entry-meta--icon">
         {% include icons/icon-clock.svg %}
       </span>
-      <time class="date updated" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      <time class="date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      {% if page.sitemap.lastmod %}
+        (Last updated: <time class="updated" datetime="{{ page.sitemap.lastmod | date_to_xmlschema }}">{{ page.sitemap.lastmod | date: "%B %d, %Y" }}</time>)
+      {% endif %}
     </div>
   </header>
   <div class="entry-content">

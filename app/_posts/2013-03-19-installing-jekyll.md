@@ -13,10 +13,6 @@ suggested_tweet:
 
 After much deliberation, I decided to simplify my blogging workflow. To that end I made the switch from __WordPress to Jekyll__, which is ”a simple, blog aware, static site generator.” Although Jekyll is easy to maintain, it can be confusing to set up. Thankfully, there is a wealth of documentation available from developers who have also made the switch. With that in mind, I’d like to contribute my experience with installing __Jekyll on OS X__.
 
-<div class="yellow-box">
-  <p><strong>Please Note:</strong> This post has been updated on November 7th, 2014, although no guarantees about the accuracy of the information, as I installed Jekyll long ago.</p>
-</div>
-
 ## Getting Started
 
 The consensus on the internet is to first install [Xcode](http://developer.apple.com/xcode/), which is available from the App Store. It will take a bit of time to download and install.
