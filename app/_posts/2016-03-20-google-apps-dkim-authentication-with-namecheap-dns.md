@@ -4,13 +4,22 @@ layout: post
 title: 'Authenticate your Google Apps’ Gmail with DKIM and Namecheap DNS'
 description: 'Also known as adding a TXT record and then praying to the gods of DNS propagation.'
 image: 2016-03-20-gmail-email-without-authentication-via-dkim.png
-tags: ['DNS', 'Gmail', 'Namecheap']
+sitemap:
+  lastmod: 2016-05-18
 suggested_tweet:
   hashtags: ['Namecheap', 'DNS', 'Gmail']
   related: ['Namecheap']
+tags: ['DNS', 'Gmail', 'Namecheap']
 ---
 
 In February [Gmail began displaying a warning icon](https://gmail.googleblog.com/2016/02/making-email-safer-for-you-posted-by.html), instead of the usual contact photo, to denote an email sent from an unauthenticated domain. This change affected several of my domains, all of which use Google Apps for their email. The recommended fix is to add [DKIM](http://www.dkim.org/) authentication to my emails, which required the addition of a TXT record to my DNS.
+
+<div class="yellow-box">
+  <p><strong>Please Note:</strong> Google recently <a href="http://googleappsupdates.blogspot.com/2016/05/getting-rid-of-spoofers-digitally-sign.html">upgraded their DKIM keys to be 2048-bit</a>.</p>
+  <p>Unfortunately Namecheap doesn’t yet support the longer key length, although they say that they’re working on it. In response Google Apps now allows for the <a href="http://superuser.com/questions/1065788/using-a-410-character-dkim-txt-record-on-namecheap#answer-1077633">shorter 1024 key bit length</a>, which I was (and am) using before the upgrade.</p>
+  <p>I look forward to upgrading my DKIM key to be 2048-bit and will update this post after Namecheap supports it.</p>
+  <p>Also a big thanks to the folks who brought this to my attention via Twitter: <a href="https://twitter.com/jmbase">@jmbase</a>, <a href="https://twitter.com/amanjeev">@amanjeev</a>, and <a href="https://twitter.com/mattdebouge">@mattdebouge</a>.</p>
+</div>
 
 Here are the steps I took to make this happen with my favorite domain registrar, [Namecheap](http://www.namecheap.com/?aff=32887). If your DNS is elsewhere, fear not, as these steps apply to other registrars (and DNS hosts) too.
 
