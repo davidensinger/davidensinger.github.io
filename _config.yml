@@ -33,5 +33,10 @@ paginate: 5
 # disable this with ''
 excerpt_separator: ''
 
-# Use Pygments to highlight code blocks
-highlighter: pygments
+# Since Jekyll 3, kramdown = default markdown converter + rouge = default highlighter
+kramdown:
+  input: GFM # Github-flavoured Markdown -- See http://kramdown.gettalong.org/documentation.html
+  syntax_highlighter: rouge
+
+# Since Jekyll 3, jekyll-paginate is no longer in Jekyll's core -- See http://jekyllrb.com/docs/pagination/
+gems: [jekyll-paginate]
