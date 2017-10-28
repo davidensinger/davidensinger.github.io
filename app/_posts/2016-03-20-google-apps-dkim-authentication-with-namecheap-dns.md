@@ -21,7 +21,7 @@ In February [Gmail began displaying a warning icon](https://gmail.googleblog.com
   <p>Also a big thanks to the folks who brought this to my attention via Twitter: <a href="https://twitter.com/jmbase">@jmbase</a>, <a href="https://twitter.com/amanjeev">@amanjeev</a>, and <a href="https://twitter.com/mattdebouge">@mattdebouge</a>.</p>
 </div>
 
-Here are the steps I took to make this happen with my favorite domain registrar, [Namecheap](http://www.namecheap.com/?aff=32887). If your DNS is elsewhere, fear not, as these steps apply to other registrars (and DNS hosts) too.
+Here are the steps I took to make this happen with my favorite domain registrar, [Namecheap](https://namecheap.pxf.io/c/477139/386170/5618). If your DNS is elsewhere, fear not, as these steps apply to other registrars (and DNS hosts) too.
 
 <div class="yellow-box">
   <p><strong>Please Note:</strong> You may also want to consult this post, <a href="https://support.google.com/a/answer/174124">Authenticate email with DKIM</a>, while you set this up.</p>
@@ -54,7 +54,7 @@ Some things to note here:
 <img src="/img/srcset/2016-03-20-google-apps-settings-authenticate-email-success.png" alt="Successful authentication of the TXT record" class="media-full srcset-full" />
 
 ## The Namecheap Dashboard
-Now that you’ve got the two required values, you’ll want to log into [Namecheap](http://www.namecheap.com/?aff=32887) to navigate to the “Advanced DNS” for your domain:
+Now that you’ve got the two required values, you’ll want to log into [Namecheap](https://namecheap.pxf.io/c/477139/386170/5618) to navigate to the “Advanced DNS” for your domain:
 
 <img src="/img/srcset/2016-03-20-namecheap-dashboard-advanced-dns.png" alt="How to navigate to the Advanced DNS" class="media-full srcset-full" />
 

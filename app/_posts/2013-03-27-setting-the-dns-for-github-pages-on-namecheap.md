@@ -14,7 +14,7 @@ suggested_tweet:
 
 After pushing my site to **GitHub** and verifying that it worked at [davidensinger.github.io](http://davidensinger.github.io/), I then went to set up my custom domain name. The [documentation](https://help.github.com/articles/setting-up-a-custom-domain-with-pages) provided by GitHub is clear on the subject, but I still managed to forget about my subdomains. For more than eight hours, anyone who attempted to visit [davidensinger.com](http://davidensinger.com/) was served with a 404, which is [rather embarrassing](https://twitter.com/DavidEnsinger/status/316642135216619522) for one who makes a living as a developer.
 
-In the interest of helping others avoid the mistakes I made, here’s a guide to setting up the DNS for GitHub pages on [Namecheap](http://www.namecheap.com/?aff=32887), my registrar of choice.
+In the interest of helping others avoid the mistakes I made, here’s a guide to setting up the DNS for GitHub pages on [Namecheap](https://namecheap.pxf.io/c/477139/386170/5618), my registrar of choice.
 
 <div class="yellow-box">
   <p><strong>Please Note:</strong> I no longer use Namecheap to host the DNS for this site. See my new setup at <a href="http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages/">Transferring the DNS from Namecheap to CloudFlare for GitHub Pages</a>.</p>

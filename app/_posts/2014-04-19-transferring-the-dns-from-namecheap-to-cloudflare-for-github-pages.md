@@ -30,7 +30,7 @@ An extended look at the first request reveals our culprit, which is a [302 redir
 ## 302 Redirects
 After a quick search, I found [Analyzing the GitHub Pages Waterfall Chart](http://helloanselm.com/2014/github-pages-redirect-performance/), wherein [@helloanselm](https://twitter.com/helloanselm) discovers that [GitHub Pages](https://pages.github.com/) intentionally redirects sites that are setup with DNS `A` records.
 
-This is our exact setup since [Namecheap](http://www.namecheap.com/?aff=32887) doesn’t support the `ALIAS` record, which is suggested by [Setting up a custom domain with Pages](https://help.github.com/articles/setting-up-a-custom-domain-with-pages). For more info see my previous post on [Setting the DNS for GitHub Pages on Namecheap](http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/).
+This is our exact setup since [Namecheap](https://namecheap.pxf.io/c/477139/386170/5618) doesn’t support the `ALIAS` record, which is suggested by [Setting up a custom domain with Pages](https://help.github.com/articles/setting-up-a-custom-domain-with-pages). For more info see my previous post on [Setting the DNS for GitHub Pages on Namecheap](http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/).
 
 That said, the `ALIAS` record doesn’t have robust support amongst registrars. I don’t have a good technical understanding of DNS, so I defer to the following post for a better explanation of the potential pitfalls of the `ALIAS` record.
 
